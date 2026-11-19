@@ -1,0 +1,100 @@
+export interface Tier {
+  min: number;
+  label: string;
+  color: string;
+}
+
+export interface EpisodeLinks {
+  onepace: string | null;
+  stremio: string | null;
+  netflix: string | null;
+  mega: string | null;
+  drive: string | null;
+  nyaa: string | null;
+  other: string | null;
+}
+
+export interface Episode {
+  id: string;
+  title: string;
+  fullTitle: string;
+  rating: number | null;
+  tierColor: string | null;
+  pace: string | null;
+  paceNumber: number | null;
+  anime: string | null;
+  chapters: string | null;
+  meta: string | null;
+  description: string | null;
+  links: EpisodeLinks;
+  canon: boolean;
+  notes?: string[];
+}
+
+export type GroupKind =
+  | 'onepace'
+  | 'onigashima'
+  | 'kuma-shaved'
+  | 'netflix'
+  | 'funpace'
+  | 'original'
+  | 'original-continuation'
+  | 'log'
+  | 'movie'
+  | 'special'
+  | 'filler'
+  | 'theatre'
+  | 'upcoming'
+  | 'other';
+
+export interface Group {
+  id: string;
+  label: string;
+  kind: GroupKind;
+  canonPath: boolean;
+  isAlternative: boolean;
+  defaultOpen: boolean;
+  rating: number | null;
+  notes: string[];
+  episodes: Episode[];
+}
+
+export type NodeType = 'arc' | 'movie' | 'special' | 'filler' | 'upcoming';
+
+export interface GuideNode {
+  id: string;
+  type: NodeType;
+  title: string;
+  rating: number | null;
+  pace: string | null;
+  anime: string | null;
+  chapters: string | null;
+  isAlternative: boolean;
+  groups: Group[];
+}
+
+export interface Saga {
+  id: string;
+  title: string;
+  rating: number | null;
+  pace: string | null;
+  anime: string | null;
+  chapters: string | null;
+  nodes: GuideNode[];
+}
+
+export interface GuideMeta {
+  generatedFrom: string;
+  generatedAt: string;
+  tiers: Tier[];
+  sagaCount: number;
+  nodeCount: number;
+  episodeCount: number;
+  canonPathCount: number;
+  paceNumberedCount: number;
+}
+
+export interface GuideData {
+  meta: GuideMeta;
+  sagas: Saga[];
+}

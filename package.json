@@ -1,0 +1,23 @@
+{
+  "name": "one-pace-viewing-guide",
+  "version": "1.0.0",
+  "description": "Interactive One Pace viewing guide with progress tracking, filtering, and search.",
+  "type": "module",
+  "scripts": {
+    "data": "python3 -I scripts/parse_md_to_json.py",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.3",
+    "tailwindcss": "^4.1.3",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7",
+    "vite-plugin-solid": "^2.11.0"
+  },
+  "dependencies": {
+    "solid-js": "^1.9.3"
+  }
+}

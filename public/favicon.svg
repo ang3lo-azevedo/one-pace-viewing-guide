@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#13191c"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#66c0ef" stroke-opacity="0.35" stroke-width="2"/>
+  <!-- straw hat -->
+  <g>
+    <!-- brim -->
+    <ellipse cx="32" cy="40" rx="24" ry="9" fill="#f2cf7e"/>
+    <ellipse cx="32" cy="39" rx="24" ry="8" fill="#e6b85a"/>
+    <!-- crown -->
+    <path d="M14 39 C14 24 22 16 32 16 C42 16 50 24 50 39 Z" fill="#f2cf7e"/>
+    <path d="M14 39 C14 24 22 16 32 16 C42 16 50 24 50 39 Z" fill="#e6b85a" opacity="0.35"/>
+    <!-- red band -->
+    <path d="M15 37 C22 33 42 33 49 37 L49 33 C42 29 22 29 15 33 Z" fill="#ff0408"/>
+  </g>
+</svg>

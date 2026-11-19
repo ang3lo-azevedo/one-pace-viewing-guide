@@ -24,7 +24,12 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm ci
+      # `npm run build` runs a prebuild step that refreshes ratings from SeriesGraph
+      # (non-fatal if the site is unreachable, so deploys never break).
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

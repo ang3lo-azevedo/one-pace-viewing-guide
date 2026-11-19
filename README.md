@@ -28,6 +28,20 @@ was generated once from the older Markdown guide (`one_pace_viewing_guide.md`) b
 npm run data        # python3 -I scripts/parse_md_to_json.py
 ```
 
+### Ratings
+
+Ratings come from [SeriesGraph](https://seriesgraph.com/show/37854-one-piece). Each
+entry records the anime episode(s) it adapts, so a rating is the mean of the SeriesGraph
+IMDb rating of those anime episodes, rounded to one decimal. Refresh them in place with:
+
+```bash
+npm run ratings     # python3 -I scripts/fetch_ratings.py
+```
+
+This updates episode, arc and saga ratings (and their tier colors) from SeriesGraph's
+API. Live Action, movie and other entries without One Piece anime episode numbers keep
+their existing ratings.
+
 ## Develop
 
 ```bash

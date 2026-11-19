@@ -2,6 +2,7 @@ import { For, Show, createMemo } from 'solid-js';
 import type { Episode, EpisodeLinks } from '../types';
 import { isWatched, toggle } from '../store/progress';
 import { prefs } from '../store/prefs';
+import { splitTitle } from '../lib/guide';
 import RatingBadge from './RatingBadge';
 import Tooltip from './Tooltip';
 
@@ -19,8 +20,14 @@ const ORDER: (keyof EpisodeLinks)[] = ['onepace', 'stremio', 'netflix', 'drive',
 
 export default function EpisodeRow(props: { ep: Episode }) {
   const watched = () => isWatched(props.ep.id);
+  const parts = createMemo(() => splitTitle(props.ep.title));
+  const hideSub = () => prefs.spoilerSafe && parts().subtitle !== '';
+  const displayed = () => (hideSub() ? parts().label : props.ep.title);
+  const tipText = () => {
+    const t = props.ep.fullTitle;
+    return t && t !== displayed() ? t : null;
+  };
 
-  // Primary link honors the stream-source preference, with graceful fallbacks.
   const primaryKey = createMemo<keyof EpisodeLinks | null>(() => {
     const l = props.ep.links;
     const pref = prefs.streamSource;
@@ -31,29 +38,25 @@ export default function EpisodeRow(props: { ep: Episode }) {
     return null;
   });
 
-  const secondaryKeys = createMemo(() =>
-    ORDER.filter((k) => props.ep.links[k] && k !== primaryKey()),
-  );
+  const secondaryKeys = createMemo(() => ORDER.filter((k) => props.ep.links[k] && k !== primaryKey()));
 
   const metaBits = () =>
     [props.ep.pace, props.ep.anime ? `Anime ${props.ep.anime}` : null, props.ep.chapters ? `Ch. ${props.ep.chapters}` : null]
       .filter(Boolean)
       .join('  •  ');
 
-  const showTooltip = () => props.ep.fullTitle && props.ep.fullTitle !== props.ep.title;
-
   return (
     <li
-      class="group/ep flex items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-slate-100 dark:hover:bg-sea-800/60"
+      class="group/ep flex items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
       classList={{ 'opacity-55': watched() }}
     >
       <label class="mt-0.5 flex cursor-pointer items-center">
         <input
           type="checkbox"
-          class="h-5 w-5 cursor-pointer rounded border-slate-400 text-strawhat-500 accent-strawhat-500 focus:ring-strawhat-500 dark:border-sea-600"
+          class="h-5 w-5 cursor-pointer rounded border-sea-400 accent-strawhat-500 focus:ring-strawhat-500 dark:border-sea-600"
           checked={watched()}
           onChange={() => toggle(props.ep.id)}
-          aria-label={`Mark ${props.ep.title} watched`}
+          aria-label={`Mark ${displayed()} watched`}
         />
       </label>
 
@@ -61,42 +64,37 @@ export default function EpisodeRow(props: { ep: Episode }) {
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
           <RatingBadge rating={props.ep.rating} color={props.ep.tierColor} />
           <Show
-            when={showTooltip()}
+            when={tipText()}
             fallback={
-              <span
-                class="text-sm font-medium leading-snug"
-                classList={{ 'line-through': watched() }}
-              >
-                {props.ep.title}
+              <span class="text-sm font-semibold leading-snug" classList={{ 'line-through': watched() }}>
+                {displayed()}
               </span>
             }
           >
-            <Tooltip text={props.ep.fullTitle}>
+            <Tooltip text={tipText()}>
               <span
-                class="cursor-help text-sm font-medium leading-snug decoration-dotted underline-offset-4 hover:underline"
+                class="cursor-help text-sm font-semibold leading-snug decoration-dotted underline-offset-4 hover:underline"
                 classList={{ 'line-through': watched() }}
               >
-                {props.ep.title}
+                {displayed()}
               </span>
             </Tooltip>
           </Show>
         </div>
 
         <Show when={metaBits()}>
-          <div class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{metaBits()}</div>
+          <div class="mt-0.5 text-xs text-sea-500 dark:text-sea-400">{metaBits()}</div>
         </Show>
 
         <Show when={props.ep.description}>
-          <p class="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-            {props.ep.description}
-          </p>
+          <p class="mt-1 text-xs leading-relaxed text-sea-500 dark:text-sea-400">{props.ep.description}</p>
         </Show>
 
         <Show when={props.ep.notes && props.ep.notes.length}>
           <ul class="mt-1 space-y-0.5">
             <For each={props.ep.notes}>
               {(note) => (
-                <li class="flex gap-1.5 text-xs text-amber-700 dark:text-gold-400">
+                <li class="flex gap-1.5 text-xs text-accent-600 dark:text-accent-300">
                   <span aria-hidden="true">⚑</span>
                   <span class="min-w-0">{note}</span>
                 </li>
@@ -109,12 +107,7 @@ export default function EpisodeRow(props: { ep: Episode }) {
       <div class="flex shrink-0 flex-wrap items-center justify-end gap-1">
         <Show when={primaryKey()}>
           {(k) => (
-            <a
-              href={props.ep.links[k()]!}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="chip border-strawhat-500/40 bg-strawhat-500/10 text-strawhat-600 hover:bg-strawhat-500/20 dark:text-strawhat-500"
-            >
+            <a href={props.ep.links[k()]!} target="_blank" rel="noopener noreferrer" class="btn-watch">
               ▶ {LINK_LABEL[k()]}
             </a>
           )}
@@ -125,7 +118,7 @@ export default function EpisodeRow(props: { ep: Episode }) {
               href={props.ep.links[k]!}
               target="_blank"
               rel="noopener noreferrer"
-              class="chip border-slate-300 text-slate-500 hover:border-slate-400 hover:text-slate-700 dark:border-sea-600 dark:text-slate-400 dark:hover:text-slate-200"
+              class="chip border-sea-300 text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300 dark:hover:text-accent-300"
             >
               {LINK_LABEL[k]}
             </a>

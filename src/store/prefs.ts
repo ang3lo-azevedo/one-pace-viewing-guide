@@ -15,6 +15,8 @@ export interface Prefs {
   /** Saga id to focus on, or null for all. */
   sagaId: string | null;
   hideWatched: boolean;
+  /** Hide spoilery episode subtitles (reveal on hover). */
+  spoilerSafe: boolean;
   theme: Theme;
 }
 
@@ -25,6 +27,7 @@ const DEFAULTS: Prefs = {
   tierMin: null,
   sagaId: null,
   hideWatched: false,
+  spoilerSafe: true,
   theme: 'dark',
 };
 

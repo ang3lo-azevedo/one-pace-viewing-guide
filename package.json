@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "data": "python3 -I scripts/parse_md_to_json.py",
+    "ratings": "python3 -I scripts/fetch_ratings.py",
     "dev": "vite",
+    "prebuild": "python3 -I scripts/fetch_ratings.py || true",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },

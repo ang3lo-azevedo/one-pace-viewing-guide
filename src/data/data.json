@@ -33,13 +33,14 @@
     "nodeCount": 58,
     "episodeCount": 639,
     "canonPathCount": 521,
-    "paceNumberedCount": 441
+    "paceNumberedCount": 441,
+    "ratingsSource": "SeriesGraph IMDb (https://seriesgraph.com/show/37854-one-piece)"
   },
   "sagas": [
     {
       "id": "east-blue-saga",
       "title": "East Blue Saga",
-      "rating": null,
+      "rating": 7.9,
       "pace": "Pace 1–37",
       "anime": "1–53",
       "chapters": "1–100",
@@ -48,7 +49,7 @@
           "id": "romance-dawn-arc",
           "type": "arc",
           "title": "Romance Dawn Arc",
-          "rating": 8.7,
+          "rating": 8.4,
           "pace": "Pace 1–4",
           "anime": "1–4, 19",
           "chapters": "1–7",
@@ -67,8 +68,8 @@
                 {
                   "title": "Romance Dawn 01 - ROMANCE DAWN, ~The Dawn…",
                   "fullTitle": "ROMANCE DAWN, ~The Dawn of an Adventure~",
-                  "rating": 9.7,
-                  "tierColor": "#1DA1F2",
+                  "rating": 8.4,
+                  "tierColor": "#28B463",
                   "pace": "Pace 1",
                   "paceNumber": 1,
                   "anime": "4 / Episode of East Blue",
@@ -335,7 +336,7 @@
           "id": "syrup-village-arc",
           "type": "arc",
           "title": "Syrup Village Arc",
-          "rating": 7.5,
+          "rating": 7.6,
           "pace": "Pace 8–14",
           "anime": "9–17",
           "chapters": "23–41",
@@ -377,7 +378,7 @@
                 {
                   "title": "Syrup Village 02 - Captain Kuro",
                   "fullTitle": "Captain Kuro",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 9",
                   "paceNumber": 9,
@@ -926,7 +927,7 @@
                 {
                   "title": "Arlong Park 01 - Arlong Park",
                   "fullTitle": "Arlong Park",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 24",
                   "paceNumber": 24,
@@ -949,7 +950,7 @@
                 {
                   "title": "Arlong Park 02 - Monsters of the Grand…",
                   "fullTitle": "Monsters of the Grand Line",
-                  "rating": 7.7,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 25",
                   "paceNumber": 25,
@@ -1044,7 +1045,7 @@
                 {
                   "title": "Arlong Park 06 - OK, LET'S STAND UP",
                   "fullTitle": "OK, LET'S STAND UP",
-                  "rating": 8.1,
+                  "rating": 8.2,
                   "tierColor": "#28B463",
                   "pace": "Pace 29",
                   "paceNumber": 29,
@@ -1113,7 +1114,7 @@
                 {
                   "title": "Arlong Park 09 - The Second",
                   "fullTitle": "The Second",
-                  "rating": 8.3,
+                  "rating": 8.4,
                   "tierColor": "#28B463",
                   "pace": "Pace 32",
                   "paceNumber": 32,
@@ -1230,7 +1231,7 @@
           "id": "the-adventures-of-buggy-s-crew-arc",
           "type": "arc",
           "title": "The Adventures of Buggy's Crew Arc",
-          "rating": 8.4,
+          "rating": 6.2,
           "pace": "Pace 34",
           "anime": "46–47",
           "chapters": "35–75",
@@ -1249,8 +1250,8 @@
                 {
                   "title": "The Adventures of Buggy's Crew 01 - The Adventures of…",
                   "fullTitle": "The Adventures of Buggy's Crew",
-                  "rating": 8.4,
-                  "tierColor": "#28B463",
+                  "rating": 6.2,
+                  "tierColor": "#F39C12",
                   "pace": "Pace 34",
                   "paceNumber": 34,
                   "anime": "46–47",
@@ -1410,7 +1411,7 @@
     {
       "id": "alabasta-saga",
       "title": "Alabasta Saga",
-      "rating": null,
+      "rating": 7.9,
       "pace": "Pace 38–76",
       "anime": "55–130",
       "chapters": "101–217",
@@ -1419,7 +1420,7 @@
           "id": "reverse-mountain-arc",
           "type": "arc",
           "title": "Reverse Mountain Arc",
-          "rating": 7.3,
+          "rating": 7.4,
           "pace": "Pace 38–39",
           "anime": "55, 61–63",
           "chapters": "101–105",
@@ -1640,7 +1641,7 @@
           "id": "diary-of-koby-meppo-arc",
           "type": "arc",
           "title": "Diary of Koby-Meppo Arc",
-          "rating": 8.4,
+          "rating": 6.7,
           "pace": "Pace 42",
           "anime": "68–69",
           "chapters": "83–119",
@@ -1659,8 +1660,8 @@
                 {
                   "title": "The Trials of Koby-Meppo 01 - The Trials of Koby-Meppo",
                   "fullTitle": "The Trials of Koby-Meppo",
-                  "rating": 8.4,
-                  "tierColor": "#28B463",
+                  "rating": 6.7,
+                  "tierColor": "#F39C12",
                   "pace": "Pace 42",
                   "paceNumber": 42,
                   "anime": "68–69",
@@ -1729,7 +1730,7 @@
                 {
                   "title": "Little Garden 02 - Dorry and Brogy",
                   "fullTitle": "Dorry and Brogy",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 44",
                   "paceNumber": 44,
@@ -1775,7 +1776,7 @@
                 {
                   "title": "Little Garden 04 - ...",
                   "fullTitle": "Luffy vs. Mr. 3",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 46",
                   "paceNumber": 46,
@@ -1892,7 +1893,7 @@
           "id": "drum-island-arc",
           "type": "arc",
           "title": "Drum Island Arc",
-          "rating": 8.0,
+          "rating": 8.1,
           "pace": "Pace 48–55",
           "anime": "78–91",
           "chapters": "129–154",
@@ -2003,8 +2004,8 @@
                 {
                   "title": "Drum Island 05 - Inherited Will",
                   "fullTitle": "Inherited Will",
-                  "rating": 8.9,
-                  "tierColor": "#28B463",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
                   "pace": "Pace 52",
                   "paceNumber": 52,
                   "anime": "85–86",
@@ -2072,7 +2073,7 @@
                 {
                   "title": "Drum Island 08 - ...",
                   "fullTitle": "Hiriluk's Cherry Blossoms",
-                  "rating": 8.3,
+                  "rating": 8.4,
                   "tierColor": "#28B463",
                   "pace": "Pace 55",
                   "paceNumber": 55,
@@ -2214,7 +2215,7 @@
                 {
                   "title": "Alabasta 01 - Sir Crocodile, the…",
                   "fullTitle": "Sir Crocodile, the Pirate",
-                  "rating": 8.2,
+                  "rating": 8.3,
                   "tierColor": "#28B463",
                   "pace": "Pace 56",
                   "paceNumber": 56,
@@ -2329,7 +2330,7 @@
                 {
                   "title": "Alabasta 06 - Rainbase, the City of…",
                   "fullTitle": "Rainbase, the City of Dreams",
-                  "rating": 7.7,
+                  "rating": 7.8,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 61",
                   "paceNumber": 61,
@@ -2375,7 +2376,7 @@
                 {
                   "title": "Alabasta 08 - Rebellion",
                   "fullTitle": "Rebellion",
-                  "rating": 8.1,
+                  "rating": 8.2,
                   "tierColor": "#28B463",
                   "pace": "Pace 63",
                   "paceNumber": 63,
@@ -2421,8 +2422,8 @@
                 {
                   "title": "Alabasta 10 - Showdown at Alubarna",
                   "fullTitle": "Showdown at Alubarna",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": "Pace 65",
                   "paceNumber": 65,
                   "anime": "111–112",
@@ -2513,7 +2514,7 @@
                 {
                   "title": "Alabasta 14 - Cutting Steel",
                   "fullTitle": "Cutting Steel",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 69",
                   "paceNumber": 69,
@@ -2582,7 +2583,7 @@
                 {
                   "title": "Alabasta 17 - Croc-ish",
                   "fullTitle": "Croc-ish",
-                  "rating": 8.1,
+                  "rating": 8.2,
                   "tierColor": "#28B463",
                   "pace": "Pace 72",
                   "paceNumber": 72,
@@ -2605,7 +2606,7 @@
                 {
                   "title": "Alabasta 18 - I Will Defeat You",
                   "fullTitle": "I Will Defeat You",
-                  "rating": 9.2,
+                  "rating": 9.3,
                   "tierColor": "#186A3B",
                   "pace": "Pace 73",
                   "paceNumber": 73,
@@ -2753,7 +2754,7 @@
     {
       "id": "sky-island-saga",
       "title": "Sky Island Saga",
-      "rating": null,
+      "rating": 7.9,
       "pace": "Pace 77–109",
       "anime": "144–206",
       "chapters": "218–303",
@@ -2781,7 +2782,7 @@
                 {
                   "title": "Jaya 01 - Why the Log Pose Is…",
                   "fullTitle": "Why the Log Pose Is Spherical",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 77",
                   "paceNumber": 77,
@@ -2919,7 +2920,7 @@
                 {
                   "title": "Jaya 07 - The Highest Authority…",
                   "fullTitle": "The Highest Authority in the World",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 83",
                   "paceNumber": 83,
@@ -3058,7 +3059,7 @@
                 {
                   "title": "Skypiea 04 - Ordeal",
                   "fullTitle": "Ordeal",
-                  "rating": 7.4,
+                  "rating": 7.5,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 88",
                   "paceNumber": 88,
@@ -3380,7 +3381,7 @@
                 {
                   "title": "Skypiea 18 - On the Front Line of…",
                   "fullTitle": "On the Front Line of Love's Salvation",
-                  "rating": 8.2,
+                  "rating": 8.3,
                   "tierColor": "#28B463",
                   "pace": "Pace 102",
                   "paceNumber": 102,
@@ -3403,7 +3404,7 @@
                 {
                   "title": "Skypiea 19 - ...",
                   "fullTitle": "Godkiller",
-                  "rating": 7.8,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 103",
                   "paceNumber": 103,
@@ -3426,8 +3427,8 @@
                 {
                   "title": "Skypiea 20 - The Light of Shandora",
                   "fullTitle": "The Light of Shandora",
-                  "rating": 8.4,
-                  "tierColor": "#28B463",
+                  "rating": 7.8,
+                  "tierColor": "#F4D03F",
                   "pace": "Pace 104",
                   "paceNumber": 104,
                   "anime": "188",
@@ -3997,7 +3998,7 @@
     {
       "id": "water-7-saga",
       "title": "Water 7 Saga",
-      "rating": null,
+      "rating": 8.2,
       "pace": "Pace 110–166",
       "anime": "207–325",
       "chapters": "304–441",
@@ -4106,7 +4107,7 @@
           "id": "long-ring-long-land-arc",
           "type": "arc",
           "title": "Long Ring Long Land Arc",
-          "rating": 7.1,
+          "rating": 7.2,
           "pace": "Pace 110–116",
           "anime": "207–219, 226–228",
           "chapters": "304–321",
@@ -4500,8 +4501,8 @@
                 {
                   "title": "Water Seven 07 - Rumors",
                   "fullTitle": "Rumors",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": "Pace 123",
                   "paceNumber": 123,
                   "anime": "239–240",
@@ -4661,7 +4662,7 @@
                 {
                   "title": "Water Seven 14 - Bingo",
                   "fullTitle": "Bingo",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 130",
                   "paceNumber": 130,
@@ -4799,7 +4800,7 @@
                 {
                   "title": "Water Seven 20 - Necessary Evil",
                   "fullTitle": "Necessary Evil",
-                  "rating": 8.2,
+                  "rating": 8.1,
                   "tierColor": "#28B463",
                   "pace": "Pace 136",
                   "paceNumber": 136,
@@ -4961,7 +4962,7 @@
                 {
                   "title": "Enies Lobby 06 - Unprecedented",
                   "fullTitle": "Unprecedented",
-                  "rating": 8.9,
+                  "rating": 8.6,
                   "tierColor": "#28B463",
                   "pace": "Pace 142",
                   "paceNumber": 142,
@@ -5076,8 +5077,8 @@
                 {
                   "title": "Enies Lobby 11 - Jump into the…",
                   "fullTitle": "Jump into the Waterfall!!",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": "Pace 147",
                   "paceNumber": 147,
                   "anime": "284–285",
@@ -5122,8 +5123,8 @@
                 {
                   "title": "Enies Lobby 13 - Mr. Chivalry",
                   "fullTitle": "Mr. Chivalry",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": "Pace 149",
                   "paceNumber": 149,
                   "anime": "287–288",
@@ -5168,8 +5169,8 @@
                 {
                   "title": "Enies Lobby 15 - ...",
                   "fullTitle": "Monster",
-                  "rating": 8.2,
-                  "tierColor": "#28B463",
+                  "rating": 7.0,
+                  "tierColor": "#F4D03F",
                   "pace": "Pace 151",
                   "paceNumber": 151,
                   "anime": "290–293",
@@ -5214,7 +5215,7 @@
                 {
                   "title": "Enies Lobby 17 - The Hunter",
                   "fullTitle": "The Hunter",
-                  "rating": 8.1,
+                  "rating": 8.2,
                   "tierColor": "#28B463",
                   "pace": "Pace 153",
                   "paceNumber": 153,
@@ -5445,8 +5446,8 @@
                 {
                   "title": "Post-Enies Lobby 01 - Fist of Love",
                   "fullTitle": "Fist of Love",
-                  "rating": 8.9,
-                  "tierColor": "#28B463",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
                   "pace": "Pace 162",
                   "paceNumber": 162,
                   "anime": "313–314",
@@ -5537,7 +5538,7 @@
                 {
                   "title": "Post-Enies Lobby 05 - The Astonishing…",
                   "fullTitle": "The Astonishing Thousand Sunny and Usopp's Tearful Apology!",
-                  "rating": 8.3,
+                  "rating": 8.4,
                   "tierColor": "#28B463",
                   "pace": "Pace 166",
                   "paceNumber": 166,
@@ -5566,7 +5567,7 @@
     {
       "id": "thriller-bark-saga",
       "title": "Thriller Bark Saga",
-      "rating": null,
+      "rating": 7.9,
       "pace": "Pace 167–188",
       "anime": "337–381",
       "chapters": "442–489",
@@ -5801,7 +5802,7 @@
                 {
                   "title": "Thriller Bark 10 - Already Negative!…",
                   "fullTitle": "Already Negative! Usopp's Courageous Stand!",
-                  "rating": 7.8,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 176",
                   "paceNumber": 176,
@@ -5896,7 +5897,7 @@
                 {
                   "title": "Thriller Bark 14 - Show Yourselves, Straw…",
                   "fullTitle": "Show Yourselves, Straw Hat Pirates! The Crew's Hopeless Counterattack!",
-                  "rating": 7.3,
+                  "rating": 7.4,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 180",
                   "paceNumber": 180,
@@ -5988,7 +5989,7 @@
                 {
                   "title": "Thriller Bark 18 - The Crew's…",
                   "fullTitle": "The Crew's Annihilation! Oars vs. Nightmare Luffy",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 184",
                   "paceNumber": 184,
@@ -6254,7 +6255,7 @@
                   "anime": "OVA",
                   "chapters": "0",
                   "meta": "Anime OVA • Ch. 0 • FunPace",
-                  "description": "Canon prologue by Eiichiro Oda chronicling legendary pirate history 20 years ago. Watch right before *Movie 10: Strong World*.",
+                  "description": "Canon prologue written by Eiichiro Oda. Watch right before Movie 10: Strong World.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -6267,7 +6268,7 @@
                   "canon": false,
                   "id": "special-strong-world-episode-0-main:fun-pace-special-strong-world-episode-0",
                   "notes": [
-                    "**Alternative Watch Placement:** If watching the original One Pace release instead of Fun Pace, it contains future arc spoilers and should be watched after the Summit War Saga: [One Pace Special (Alternative)](#special-strong-world-episode-0-alternative)."
+                    "Alternative placement: the original One Pace release of this prologue reveals later story details, so if you use it instead of the Fun Pace version, watch it at the alternative placement later in this guide."
                   ]
                 }
               ]
@@ -6317,7 +6318,7 @@
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-main:movie-10-strong-world-2009-written-by-oda",
                   "notes": [
-                    "**Watch Order & Spoilers:** Chronologically, this theatrical adventure fits immediately after completing the Thriller Bark Arc. If watching the anime tie-in prequel **Little East Blue** (Anime Eps 426–429), it can **only** be watched here if using the **Fun Pace version** (`FunPace 21.3`), as the original TV broadcast version contains heavy spoilers for future arcs. (Alternatively, this entire movie bundle can be saved for after the Summit War Saga: [One Piece Movie 10 (Alternative)](#one-piece-movie-10-strong-world-alternative))."
+                    "Watch order: this film fits right after the current arc. If you watch the anime tie-in prequel Little East Blue, use the Fun Pace version, as the original broadcast version reveals later story details. The film can also be saved for the alternative placement later in this guide."
                   ]
                 }
               ]
@@ -6329,7 +6330,7 @@
     {
       "id": "summit-war-saga",
       "title": "Summit War Saga",
-      "rating": null,
+      "rating": 8.6,
       "pace": "Pace 189–239",
       "anime": "385–516",
       "chapters": "490–597",
@@ -6380,7 +6381,7 @@
                 {
                   "title": "Sabaody Archipelago 02 - Iron Mask Duval",
                   "fullTitle": "Iron Mask Duval",
-                  "rating": 7.4,
+                  "rating": 7.5,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 190",
                   "paceNumber": 190,
@@ -6637,7 +6638,7 @@
                 {
                   "title": "Amazon Lily 01 - Adventure on the Island…",
                   "fullTitle": "Adventure on the Island of Women",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 200",
                   "paceNumber": 200,
@@ -7227,7 +7228,7 @@
                 {
                   "title": "Marineford 03 - Conflict at the Summit",
                   "fullTitle": "Conflict at the Summit",
-                  "rating": 9.2,
+                  "rating": 9.3,
                   "tierColor": "#186A3B",
                   "pace": "Pace 218",
                   "paceNumber": 218,
@@ -7411,7 +7412,7 @@
                 {
                   "title": "Marineford 11 - The White Monster",
                   "fullTitle": "The White Monster",
-                  "rating": 9.3,
+                  "rating": 9.4,
                   "tierColor": "#186A3B",
                   "pace": "Pace 226",
                   "paceNumber": 226,
@@ -7526,7 +7527,7 @@
                 {
                   "title": "Marineford 16 - A Gift to a New Era",
                   "fullTitle": "A Gift to a New Era",
-                  "rating": 9.4,
+                  "rating": 9.5,
                   "tierColor": "#186A3B",
                   "pace": "Pace 231",
                   "paceNumber": 231,
@@ -7577,7 +7578,7 @@
           "id": "post-war-arc",
           "type": "arc",
           "title": "Post-War Arc",
-          "rating": 8.1,
+          "rating": 8.2,
           "pace": "Pace 233–239",
           "anime": "490–516",
           "chapters": "581–597",
@@ -7596,7 +7597,7 @@
                 {
                   "title": "Post-War 01 - Creeping Future",
                   "fullTitle": "Creeping Future",
-                  "rating": 8.6,
+                  "rating": 8.7,
                   "tierColor": "#28B463",
                   "pace": "Pace 233",
                   "paceNumber": 233,
@@ -7619,7 +7620,7 @@
                 {
                   "title": "Post-War 02 - Gray Terminal",
                   "fullTitle": "Gray Terminal",
-                  "rating": 8.1,
+                  "rating": 8.0,
                   "tierColor": "#28B463",
                   "pace": "Pace 234",
                   "paceNumber": 234,
@@ -7773,7 +7774,7 @@
                 {
                   "title": "Episodes 497–499: ASL childhood filler",
                   "fullTitle": "Episodes 497–499: ASL childhood filler",
-                  "rating": 7.8,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -7796,8 +7797,8 @@
                 {
                   "title": "Episode 506: The Straw Hats' Reactions",
                   "fullTitle": "Episode 506: The Straw Hats' Reactions",
-                  "rating": 7.6,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "506",
@@ -7850,7 +7851,7 @@
                   "anime": null,
                   "chapters": "0",
                   "meta": "Original One Pace OVA release • Ch. 0 • Pace",
-                  "description": "Canon prologue by Eiichiro Oda chronicling legendary pirate history 20 years ago. Watch right before *Movie 10: Strong World*.",
+                  "description": "Canon prologue written by Eiichiro Oda. Watch right before Movie 10: Strong World.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -7944,7 +7945,7 @@
                   "anime": "TV Special 08",
                   "chapters": "597 Timeskip",
                   "meta": "Anime TV Special 08 • Ch. 597 Timeskip",
-                  "description": "Covers time skip training. **Warning:** Last 3 mins spoil Return to Sabaody and Dressrosa.",
+                  "description": "Covers the crew's training during the two-year time skip. Warning: the final few minutes contain spoilers for later arcs, so stop before the ending.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -7966,7 +7967,7 @@
     {
       "id": "fish-man-island-saga",
       "title": "Fish-Man Island Saga",
-      "rating": null,
+      "rating": 7.6,
       "pace": "Pace 240–266",
       "anime": "517–574",
       "chapters": "598–653",
@@ -8017,7 +8018,7 @@
                 {
                   "title": "Log 02 - Set Sail! The Dawn of…",
                   "fullTitle": "Set Sail! The Dawn of Adventure to the New World",
-                  "rating": 8.0,
+                  "rating": 8.3,
                   "tierColor": "#28B463",
                   "pace": null,
                   "paceNumber": null,
@@ -8040,7 +8041,7 @@
                 {
                   "title": "Log 03 - A Shocking Revelation…",
                   "fullTitle": "A Shocking Revelation - A Great Benefactor, Kuma",
-                  "rating": 8.5,
+                  "rating": 8.3,
                   "tierColor": "#28B463",
                   "pace": null,
                   "paceNumber": null,
@@ -8175,7 +8176,7 @@
                   "anime": "TV Special 14",
                   "chapters": null,
                   "meta": "Anime TV Special 14 • Novel: Straw Hat Stories",
-                  "description": "2024 masterpiece directed by Megumi Ishitani. Watch immediately after reunion.",
+                  "description": "Acclaimed 2024 special directed by Megumi Ishitani. Watch at its placement in this guide.",
                   "links": {
                     "onepace": "https://onepace.net/en/watch#one-piece-fan-letter",
                     "stremio": null,
@@ -8196,7 +8197,7 @@
           "id": "fish-man-island-arc",
           "type": "arc",
           "title": "Fish-Man Island Arc",
-          "rating": 7.8,
+          "rating": 7.6,
           "pace": "Pace 243–266",
           "anime": "523–574",
           "chapters": "603–653",
@@ -8215,7 +8216,7 @@
                 {
                   "title": "Log 04 - A Deep Sea Adventure!…",
                   "fullTitle": "A Deep Sea Adventure! A Looming Undersea Threat",
-                  "rating": 7.8,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8376,7 +8377,7 @@
                 {
                   "title": "Log 11 - Jinbe's Confession - A…",
                   "fullTitle": "Jinbe's Confession - A Shocking History of the Fish-Men",
-                  "rating": 7.8,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8422,7 +8423,7 @@
                 {
                   "title": "Log 13 - Tiger's Regret - The…",
                   "fullTitle": "Tiger's Regret - The Future That Otohime Envisions!",
-                  "rating": 7.8,
+                  "rating": 7.9,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8445,7 +8446,7 @@
                 {
                   "title": "Log 14 - The Tragedy of Otohime…",
                   "fullTitle": "The Tragedy of Otohime - Hody Declares War",
-                  "rating": 7.5,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8468,7 +8469,7 @@
                 {
                   "title": "Log 15 - Hody's Accident! The…",
                   "fullTitle": "Hody's Accident! The Princes Strike Back",
-                  "rating": 7.2,
+                  "rating": 7.1,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8514,7 +8515,7 @@
                 {
                   "title": "Log 17 - Battle Royal! The Straw…",
                   "fullTitle": "Battle Royal! The Straw Hats vs. 100,000 Opponents",
-                  "rating": 8.2,
+                  "rating": 8.0,
                   "tierColor": "#28B463",
                   "pace": null,
                   "paceNumber": null,
@@ -8537,7 +8538,7 @@
                 {
                   "title": "Log 18 - Fish-Man Island Faces…",
                   "fullTitle": "Fish-Man Island Faces Destruction! Noah, the Ancient Ark",
-                  "rating": 7.4,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8560,7 +8561,7 @@
                 {
                   "title": "Log 19 - Luffy vs. Hody! All-Out…",
                   "fullTitle": "Luffy vs. Hody! All-Out Red Hawk",
-                  "rating": 7.4,
+                  "rating": 7.2,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8583,7 +8584,7 @@
                 {
                   "title": "Log 20 - The Promise of the…",
                   "fullTitle": "The Promise of the Future - The Road Toward the Sun",
-                  "rating": 7.7,
+                  "rating": 7.8,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8606,7 +8607,7 @@
                 {
                   "title": "Log 21 - Goodbye, Fish-Man Island!…",
                   "fullTitle": "Goodbye, Fish-Man Island! To the New World, the Mightiest Sea in the World",
-                  "rating": 7.8,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -8641,7 +8642,7 @@
                 {
                   "title": "Fish-Man Island 01 - To the Deep Sea",
                   "fullTitle": "To the Deep Sea",
-                  "rating": 7.8,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 243",
                   "paceNumber": 243,
@@ -8687,7 +8688,7 @@
                 {
                   "title": "Fish-Man Island 03 - Landing on Fishman…",
                   "fullTitle": "Landing on Fishman Island! The Mermaid Cove and Gyoverly Hills!",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 245",
                   "paceNumber": 245,
@@ -8756,7 +8757,7 @@
                 {
                   "title": "Fish-Man Island 06 - The Mermaid Princess in…",
                   "fullTitle": "The Mermaid Princess in Hard-Shell Tower! Shirahoshi of the Neptune Family!",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 248",
                   "paceNumber": 248,
@@ -8802,7 +8803,7 @@
                 {
                   "title": "Fish-Man Island 09 - At the Sea Forest!…",
                   "fullTitle": "At the Sea Forest! Arlong and Hody",
-                  "rating": 7.8,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 251",
                   "paceNumber": 251,
@@ -9124,7 +9125,7 @@
                 {
                   "title": "Fish-Man Island 24 - The Hero's Hat",
                   "fullTitle": "The Hero's Hat",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 266",
                   "paceNumber": 266,
@@ -9311,7 +9312,7 @@
                 {
                   "title": "Z's Ambition (Eps 575–578)",
                   "fullTitle": "Z's Ambition (Eps 575–578)",
-                  "rating": 6.8,
+                  "rating": 6.7,
                   "tierColor": "#F39C12",
                   "pace": null,
                   "paceNumber": null,
@@ -9434,7 +9435,7 @@
     {
       "id": "dressrosa-saga",
       "title": "Dressrosa Saga",
-      "rating": null,
+      "rating": 8.1,
       "pace": "Pace 267–336",
       "anime": "579–746",
       "chapters": "654–800",
@@ -9462,7 +9463,7 @@
                 {
                   "title": "Punk Hazard 01 - Punk Hazard",
                   "fullTitle": "Punk Hazard",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 267",
                   "paceNumber": 267,
@@ -9508,7 +9509,7 @@
                 {
                   "title": "Punk Hazard 03 - About My Torso",
                   "fullTitle": "About My Torso",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 269",
                   "paceNumber": 269,
@@ -9531,7 +9532,7 @@
                 {
                   "title": "Punk Hazard 04 - The Lake of Bandits",
                   "fullTitle": "The Lake of Bandits",
-                  "rating": 8.0,
+                  "rating": 8.1,
                   "tierColor": "#28B463",
                   "pace": "Pace 270",
                   "paceNumber": 270,
@@ -9623,7 +9624,7 @@
                 {
                   "title": "Punk Hazard 08 - Blizzard with a Chance…",
                   "fullTitle": "Blizzard with a Chance of Slime",
-                  "rating": 7.4,
+                  "rating": 7.5,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 274",
                   "paceNumber": 274,
@@ -9692,7 +9693,7 @@
                 {
                   "title": "Punk Hazard 11 - The Experiment Begins!…",
                   "fullTitle": "The Experiment Begins! Shinokuni Unleashed!",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 277",
                   "paceNumber": 277,
@@ -10027,7 +10028,7 @@
                 {
                   "title": "Caesar's Retrieval (Eps 626–628)",
                   "fullTitle": "Caesar's Retrieval (Eps 626–628)",
-                  "rating": 6.7,
+                  "rating": 6.6,
                   "tierColor": "#F39C12",
                   "pace": null,
                   "paceNumber": null,
@@ -10074,7 +10075,7 @@
                 {
                   "title": "Dressrosa 01 - Arriving at Dressrosa!…",
                   "fullTitle": "Arriving at Dressrosa! The Country of Passion, Love, and Toys!",
-                  "rating": 7.6,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 289",
                   "paceNumber": 289,
@@ -10258,7 +10259,7 @@
                 {
                   "title": "Dressrosa 09 - C Block's Blazing…",
                   "fullTitle": "C Block's Blazing Battle and the Forgotten of Dressrosa!",
-                  "rating": 8.3,
+                  "rating": 8.4,
                   "tierColor": "#28B463",
                   "pace": "Pace 297",
                   "paceNumber": 297,
@@ -10373,7 +10374,7 @@
                 {
                   "title": "Dressrosa 14 - The Plight of the Riku…",
                   "fullTitle": "The Plight of the Riku Clan! The Lurking Hero Awaits in the Shadows!",
-                  "rating": 7.8,
+                  "rating": 7.9,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 302",
                   "paceNumber": 302,
@@ -10442,7 +10443,7 @@
                 {
                   "title": "Dressrosa 17 - The Underground World",
                   "fullTitle": "The Underground World",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 305",
                   "paceNumber": 305,
@@ -10741,7 +10742,7 @@
                 {
                   "title": "Dressrosa 30 - Secret Plan",
                   "fullTitle": "Secret Plan",
-                  "rating": 8.6,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 318",
                   "paceNumber": 318,
@@ -10856,7 +10857,7 @@
                 {
                   "title": "Dressrosa 35 - Bellamy the Pirate",
                   "fullTitle": "Bellamy the Pirate",
-                  "rating": 8.3,
+                  "rating": 8.4,
                   "tierColor": "#28B463",
                   "pace": "Pace 323",
                   "paceNumber": 323,
@@ -10948,7 +10949,7 @@
                 {
                   "title": "Dressrosa 39 - ...",
                   "fullTitle": "Zoro vs. Pica",
-                  "rating": 8.8,
+                  "rating": 8.9,
                   "tierColor": "#28B463",
                   "pace": "Pace 327",
                   "paceNumber": 327,
@@ -10971,7 +10972,7 @@
                 {
                   "title": "Dressrosa 40 - The Curse of Heart",
                   "fullTitle": "The Curse of Heart",
-                  "rating": 9.0,
+                  "rating": 9.3,
                   "tierColor": "#186A3B",
                   "pace": "Pace 328",
                   "paceNumber": 328,
@@ -11155,7 +11156,7 @@
                 {
                   "title": "Dressrosa 48 - Father and Sons",
                   "fullTitle": "Father and Sons",
-                  "rating": 8.8,
+                  "rating": 8.9,
                   "tierColor": "#28B463",
                   "pace": "Pace 336",
                   "paceNumber": 336,
@@ -11281,7 +11282,7 @@
     {
       "id": "whole-cake-island-saga",
       "title": "Whole Cake Island Saga",
-      "rating": null,
+      "rating": 8.3,
       "pace": "Pace 337–388",
       "anime": "751–889",
       "chapters": "801–908",
@@ -11563,7 +11564,7 @@
                 {
                   "title": "Whole Cake Island 01 - A World Abuzz",
                   "fullTitle": "A World Abuzz",
-                  "rating": 7.3,
+                  "rating": 7.4,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 347",
                   "paceNumber": 347,
@@ -11816,8 +11817,8 @@
                 {
                   "title": "Whole Cake Island 12 - Forces of Rage",
                   "fullTitle": "Forces of Rage",
-                  "rating": 8.9,
-                  "tierColor": "#28B463",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
                   "pace": "Pace 358",
                   "paceNumber": 358,
                   "anime": "809–812",
@@ -11885,7 +11886,7 @@
                 {
                   "title": "Whole Cake Island 15 - Germa's Failure",
                   "fullTitle": "Germa's Failure",
-                  "rating": 9.2,
+                  "rating": 9.3,
                   "tierColor": "#186A3B",
                   "pace": "Pace 361",
                   "paceNumber": 361,
@@ -12230,7 +12231,7 @@
                 {
                   "title": "Whole Cake Island 30 - Wave Room",
                   "fullTitle": "Wave Room",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 376",
                   "paceNumber": 376,
@@ -12394,7 +12395,7 @@
                 {
                   "title": "Whole Cake Island 37 - One Last Thing",
                   "fullTitle": "One Last Thing",
-                  "rating": 9.2,
+                  "rating": 9.3,
                   "tierColor": "#186A3B",
                   "pace": "Pace 383",
                   "paceNumber": 383,
@@ -12625,7 +12626,7 @@
                   "anime": "Original Movie",
                   "chapters": null,
                   "meta": "Anime Original Movie",
-                  "description": "All-star theatrical film celebrating the 20th anime anniversary. Released August 2019 directly following Reverie.",
+                  "description": "All-star theatrical film celebrating the anime's 20th anniversary (2019).",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -12665,8 +12666,8 @@
                 {
                   "title": "Romance Dawn, Version 2",
                   "fullTitle": "Romance Dawn, Version 2",
-                  "rating": 7.7,
-                  "tierColor": "#F4D03F",
+                  "rating": 6.1,
+                  "tierColor": "#F39C12",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "907",
@@ -12694,7 +12695,7 @@
     {
       "id": "wano-country-saga",
       "title": "Wano Country Saga",
-      "rating": null,
+      "rating": 8.4,
       "pace": "Pace 389–450",
       "anime": "890–1085",
       "chapters": "909–1057",
@@ -12703,7 +12704,7 @@
           "id": "wano-country-arc",
           "type": "arc",
           "title": "Wano Country Arc",
-          "rating": 8.5,
+          "rating": 8.4,
           "pace": "Pace 389–450",
           "anime": "890–1085",
           "chapters": "909–1057",
@@ -12722,8 +12723,8 @@
                 {
                   "title": "Wano Acts 1 & 2 - Onward to Wano",
                   "fullTitle": "Onward to Wano",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": "Pace 389",
                   "paceNumber": 389,
                   "anime": "890–891",
@@ -12768,8 +12769,8 @@
                 {
                   "title": "Wano Acts 1 & 2 - Amigasa Village",
                   "fullTitle": "Amigasa Village",
-                  "rating": 8.9,
-                  "tierColor": "#28B463",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
                   "pace": "Pace 391",
                   "paceNumber": 391,
                   "anime": "894, 897",
@@ -12791,7 +12792,7 @@
                 {
                   "title": "Wano Acts 1 & 2 - Tsuru Returns the Favor",
                   "fullTitle": "Tsuru Returns the Favor",
-                  "rating": 8.8,
+                  "rating": 8.9,
                   "tierColor": "#28B463",
                   "pace": "Pace 392",
                   "paceNumber": 392,
@@ -12952,8 +12953,8 @@
                 {
                   "title": "Wano Acts 1 & 2 - Emperor Kaido vs. Luffy",
                   "fullTitle": "Emperor Kaido vs. Luffy",
-                  "rating": 9.6,
-                  "tierColor": "#186A3B",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
                   "pace": "Pace 399",
                   "paceNumber": 399,
                   "anime": "914–915",
@@ -13021,7 +13022,7 @@
                 {
                   "title": "Wano Acts 1 & 2 - Otoko the Kamuro",
                   "fullTitle": "Otoko the Kamuro",
-                  "rating": 7.6,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 402",
                   "paceNumber": 402,
@@ -13159,7 +13160,7 @@
                 {
                   "title": "Wano Acts 1 & 2 - A Woman's Secret",
                   "fullTitle": "A Woman's Secret",
-                  "rating": 8.3,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 408",
                   "paceNumber": 408,
@@ -13366,7 +13367,7 @@
                 {
                   "title": "Wano Acts 1 & 2 - Once a Fox",
                   "fullTitle": "Once a Fox",
-                  "rating": 8.3,
+                  "rating": 8.4,
                   "tierColor": "#28B463",
                   "pace": "Pace 417",
                   "paceNumber": 417,
@@ -13475,8 +13476,8 @@
                 {
                   "title": "Onigashima Raid 02 - The Designated Port",
                   "fullTitle": "The Designated Port",
-                  "rating": 8.9,
-                  "tierColor": "#28B463",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
                   "pace": "Pace 421",
                   "paceNumber": 421,
                   "anime": "959–960",
@@ -13567,7 +13568,7 @@
                 {
                   "title": "Onigashima Raid 06 - Roger and Whitebeard",
                   "fullTitle": "Roger and Whitebeard",
-                  "rating": 9.4,
+                  "rating": 9.5,
                   "tierColor": "#186A3B",
                   "pace": "Pace 425",
                   "paceNumber": 425,
@@ -13705,7 +13706,7 @@
                 {
                   "title": "Onigashima Raid 12 - The Party's Off!!!",
                   "fullTitle": "The Party's Off!!!",
-                  "rating": 9.3,
+                  "rating": 9.4,
                   "tierColor": "#186A3B",
                   "pace": "Pace 431",
                   "paceNumber": 431,
@@ -13777,7 +13778,7 @@
                 {
                   "title": "Onigashima Raid 15 - Thunder",
                   "fullTitle": "Thunder",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Pace 434",
                   "paceNumber": 434,
@@ -13869,7 +13870,7 @@
                 {
                   "title": "Onigashima Raid 19 - Army of One",
                   "fullTitle": "Army of One",
-                  "rating": 8.3,
+                  "rating": 8.6,
                   "tierColor": "#28B463",
                   "pace": "Pace 438",
                   "paceNumber": 438,
@@ -14511,7 +14512,7 @@
                 {
                   "title": "Onigashima 15 - A Kunoichi's Oath",
                   "fullTitle": "A Kunoichi's Oath",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "Onigashima Paced 15",
                   "paceNumber": null,
@@ -14557,8 +14558,8 @@
                 {
                   "title": "Onigashima 17 - Flame Clouds",
                   "fullTitle": "Flame Clouds",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
                   "pace": "Onigashima Paced 17",
                   "paceNumber": null,
                   "anime": "1010–1011",
@@ -14741,7 +14742,7 @@
                 {
                   "title": "Onigashima 25 - Ashura Doji",
                   "fullTitle": "Ashura Doji",
-                  "rating": 8.4,
+                  "rating": 8.5,
                   "tierColor": "#28B463",
                   "pace": "Onigashima Paced 25",
                   "paceNumber": null,
@@ -14856,7 +14857,7 @@
                 {
                   "title": "Onigashima 30 - This is Otama!!",
                   "fullTitle": "This is Otama!!",
-                  "rating": 7.8,
+                  "rating": 7.9,
                   "tierColor": "#F4D03F",
                   "pace": "Onigashima Paced 30",
                   "paceNumber": null,
@@ -15040,7 +15041,7 @@
                 {
                   "title": "Onigashima 38 - Soldier of Science",
                   "fullTitle": "Soldier of Science",
-                  "rating": 8.7,
+                  "rating": 8.8,
                   "tierColor": "#28B463",
                   "pace": "Onigashima Paced 38",
                   "paceNumber": null,
@@ -15247,7 +15248,7 @@
                 {
                   "title": "Onigashima 47 - The World You Wish…",
                   "fullTitle": "The World You Wish For",
-                  "rating": 9.3,
+                  "rating": 9.4,
                   "tierColor": "#186A3B",
                   "pace": "Onigashima Paced 47",
                   "paceNumber": null,
@@ -15351,7 +15352,7 @@
                 {
                   "title": "End of Wano 03 - New Era",
                   "fullTitle": "New Era",
-                  "rating": 8.2,
+                  "rating": 8.3,
                   "tierColor": "#28B463",
                   "pace": "End of Wano 3",
                   "paceNumber": null,
@@ -15447,14 +15448,14 @@
                 {
                   "title": "Uta's Past (Episodes 1029–1030)",
                   "fullTitle": "Uta's Past (Episodes 1029–1030)",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "1029–1030",
                   "chapters": "Film Red Prequel",
                   "meta": "Anime 1029–1030 • Ch. Film Red Prequel",
-                  "description": "Prequel arc to Film Red detailing Luffy and Uta's childhood. Watch after finishing Wano.",
+                  "description": "Short two-episode prequel to Movie 15: Film Red. Watch at its placement in this guide.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -15501,7 +15502,7 @@
                   "anime": "Movie",
                   "chapters": null,
                   "meta": "Anime Movie • Lore: Uta & Shanks",
-                  "description": "**Warning:** Contains major spoilers for the climax of Wano. Watch only after finishing Wano.",
+                  "description": "Warning: contains major spoilers for earlier arcs, so watch only at its placement in this guide.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -15523,7 +15524,7 @@
     {
       "id": "final-saga",
       "title": "Final Saga",
-      "rating": null,
+      "rating": 9.0,
       "pace": "Pace 451–472",
       "anime": "1086–1155+",
       "chapters": "1058–1125+",
@@ -15558,7 +15559,7 @@
                   "anime": "TV Special 15",
                   "chapters": null,
                   "meta": "Anime TV Special 15 • Novel: ONE PIECE novel HEROINES",
-                  "description": "Directed by Haruka Kamatani (*One Piece: Fan Letter*), character designs by Takashi Kojima. Adapts Jun Esaka's spin-off novel focusing on Nami and Nico Robin in a fashion runway adventure with designer Lebno and craftswoman Miucha. Watch at the start of Final Saga before Egghead.",
+                  "description": "Directed by Haruka Kamatani (One Piece: Fan Letter), with character designs by Takashi Kojima. Adapts Jun Esaka's spin-off novel. Watch at the start of the Final Saga.",
                   "links": {
                     "onepace": null,
                     "stremio": "https://web.stremio.com/#/detail/series/tt34927513",
@@ -15579,7 +15580,7 @@
           "id": "egghead-arc",
           "type": "arc",
           "title": "Egghead Arc",
-          "rating": 8.9,
+          "rating": 9.0,
           "pace": "Pace 451–472",
           "anime": "1086–1155+",
           "chapters": "1058–1125+",
@@ -15621,7 +15622,7 @@
                 {
                   "title": "Egghead 02 - The Matter Involving…",
                   "fullTitle": "The Matter Involving Captain Koby",
-                  "rating": 9.2,
+                  "rating": 9.3,
                   "tierColor": "#186A3B",
                   "pace": "Pace 452",
                   "paceNumber": 452,
@@ -15920,7 +15921,7 @@
                 {
                   "title": "Egghead 15 - Let's Go and Take It!!",
                   "fullTitle": "Let's Go and Take It!!",
-                  "rating": 8.2,
+                  "rating": 8.3,
                   "tierColor": "#28B463",
                   "pace": "Pace 465",
                   "paceNumber": 465,
@@ -15989,8 +15990,8 @@
                 {
                   "title": "Egghead 18 - The Final Lesson",
                   "fullTitle": "The Final Lesson",
-                  "rating": 9.6,
-                  "tierColor": "#186A3B",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
                   "pace": "Pace 468",
                   "paceNumber": 468,
                   "anime": "1121–1122",
@@ -16121,8 +16122,8 @@
                 {
                   "title": "01 - Shaved Egghead…",
                   "fullTitle": "Shaved Egghead 1127+8",
-                  "rating": 9.6,
-                  "tierColor": "#186A3B",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
                   "pace": "Shaved Egghead 1",
                   "paceNumber": null,
                   "anime": "1127–1128",
@@ -16340,8 +16341,8 @@
                 {
                   "title": "10 - Kuma Cut 1137+8",
                   "fullTitle": "Kuma Cut 1137+8",
-                  "rating": 9.8,
-                  "tierColor": "#1DA1F2",
+                  "rating": 8.9,
+                  "tierColor": "#28B463",
                   "pace": "Kuma Cut Ep. 10",
                   "paceNumber": null,
                   "anime": "1137–1138",
@@ -16386,7 +16387,7 @@
                 {
                   "title": "12 - Shaved Egghead…",
                   "fullTitle": "Shaved Egghead 1141+2",
-                  "rating": 8.8,
+                  "rating": 8.9,
                   "tierColor": "#28B463",
                   "pace": "Shaved Egghead 12",
                   "paceNumber": null,
@@ -16547,7 +16548,7 @@
                 {
                   "title": "19 - Shaved Egghead…",
                   "fullTitle": "Shaved Egghead 1150+1",
-                  "rating": 9.1,
+                  "rating": 9.2,
                   "tierColor": "#186A3B",
                   "pace": "Shaved Egghead 19",
                   "paceNumber": null,
@@ -16570,7 +16571,7 @@
                 {
                   "title": "20 - Shaved Egghead 1152",
                   "fullTitle": "Shaved Egghead 1152",
-                  "rating": 9.7,
+                  "rating": 9.8,
                   "tierColor": "#1DA1F2",
                   "pace": "Shaved Egghead 20",
                   "paceNumber": null,
@@ -16593,7 +16594,7 @@
                 {
                   "title": "21 - Shaved Egghead…",
                   "fullTitle": "Shaved Egghead 1153+4",
-                  "rating": 9.4,
+                  "rating": 9.5,
                   "tierColor": "#186A3B",
                   "pace": "Shaved Egghead 21",
                   "paceNumber": null,

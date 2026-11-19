@@ -26,6 +26,32 @@ export const paceNumberedIds: string[] = flatEpisodes
   .filter((f) => f.group.kind === 'onepace' && f.ep.paceNumber != null)
   .map((f) => f.ep.id);
 
+/** Episode ids in watch order (document order). */
+export const orderedIds: string[] = flatEpisodes.map((f) => f.ep.id);
+
+const firstIdxOfNode = new Map<string, number>();
+const firstIdxOfSaga = new Map<string, number>();
+flatEpisodes.forEach((f, i) => {
+  if (!firstIdxOfNode.has(f.node.id)) firstIdxOfNode.set(f.node.id, i);
+  if (!firstIdxOfSaga.has(f.saga.id)) firstIdxOfSaga.set(f.saga.id, i);
+});
+
+export const allIdsOfNode = (nodeId: string): string[] =>
+  flatEpisodes.filter((f) => f.node.id === nodeId).map((f) => f.ep.id);
+export const allIdsOfSaga = (sagaId: string): string[] =>
+  flatEpisodes.filter((f) => f.saga.id === sagaId).map((f) => f.ep.id);
+export const idsBeforeNode = (nodeId: string): string[] =>
+  orderedIds.slice(0, firstIdxOfNode.get(nodeId) ?? 0);
+export const idsBeforeSaga = (sagaId: string): string[] =>
+  orderedIds.slice(0, firstIdxOfSaga.get(sagaId) ?? 0);
+
+/** Split "Egghead 13 - The Emperor's Crew" into a safe label and a subtitle. */
+export function splitTitle(title: string): { label: string; subtitle: string } {
+  const i = title.indexOf(' - ');
+  if (i > 0) return { label: title.slice(0, i), subtitle: title.slice(i + 3) };
+  return { label: title, subtitle: '' };
+}
+
 export function tierForRating(rating: number | null): Tier | null {
   if (rating == null) return null;
   for (const t of tiers) if (rating >= t.min) return t;

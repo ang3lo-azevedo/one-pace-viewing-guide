@@ -1,6 +1,6 @@
 import { createMemo } from 'solid-js';
 import type { Episode, Group, GuideNode, Saga } from '../types';
-import { guide } from './guide';
+import { extraCategory, flatById, guide } from './guide';
 import { prefs } from '../store/prefs';
 import { isWatched } from '../store/progress';
 
@@ -23,10 +23,35 @@ function matchesSearch(ep: Episode, q: string): boolean {
   return hay.includes(q);
 }
 
+/**
+ * Whether a section counts as part of the user's current selection: everything, minus
+ * hidden extra types, or only the canon route when "Canon Only" is on. This drives both
+ * what is listed and every completion percentage.
+ */
+export function groupIncluded(group: Group, node: GuideNode): boolean {
+  const cat = extraCategory(group, node);
+  if (cat === null) return true;
+  if (prefs.canonOnly) return false;
+  return !prefs.hiddenExtras.includes(cat);
+}
+
+export function episodeIncluded(ep: Episode, group: Group, node: GuideNode): boolean {
+  if (prefs.canonOnly) return ep.canon;
+  return groupIncluded(group, node);
+}
+
+/** Keep only ids in the current selection (bulk "mark" actions skip hidden types). */
+export function onlyIncluded(ids: string[]): string[] {
+  return ids.filter((id) => {
+    const f = flatById.get(id);
+    return !!f && episodeIncluded(f.ep, f.group, f.node);
+  });
+}
+
 /** The visible tree after applying all active preferences. */
 export const visibleSagas = createMemo<FilteredSaga[]>(() => {
   const q = prefs.search.trim().toLowerCase();
-  const { canonOnly, tierMin, sagaId, hideWatched } = prefs;
+  const { tierMin, sagaId, hideWatched } = prefs;
 
   const out: FilteredSaga[] = [];
   for (const saga of guide.sagas) {
@@ -36,7 +61,7 @@ export const visibleSagas = createMemo<FilteredSaga[]>(() => {
       const groups: FilteredGroup[] = [];
       for (const group of node.groups) {
         const eps = group.episodes.filter((ep) => {
-          if (canonOnly && !ep.canon) return false;
+          if (!episodeIncluded(ep, group, node)) return false;
           if (tierMin != null && (ep.rating == null || ep.rating < tierMin)) return false;
           if (hideWatched && isWatched(ep.id)) return false;
           if (!matchesSearch(ep, q)) return false;

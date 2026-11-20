@@ -1,8 +1,7 @@
 import { For, Show, createSignal } from 'solid-js';
-import type { FilteredSaga } from '../lib/filter';
+import { hasActiveFilters, onlyIncluded, type FilteredSaga } from '../lib/filter';
 import { allIdsOfSaga, idsBeforeSaga, tierForRating } from '../lib/guide';
 import { stats } from '../lib/stats';
-import { hasActiveFilters } from '../lib/filter';
 import { isWatched, setMany } from '../store/progress';
 import RatingBadge from './RatingBadge';
 import ArcCard from './ArcCard';
@@ -11,8 +10,8 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
   const [open, setOpen] = createSignal(props.index === 0 || hasActiveFilters());
 
   const prog = () => stats().perSaga[props.saga.id];
-  const sagaIds = () => allIdsOfSaga(props.saga.id);
-  const allSagaWatched = () => sagaIds().every((id) => isWatched(id));
+  const sagaIds = () => onlyIncluded(allIdsOfSaga(props.saga.id));
+  const allSagaWatched = () => sagaIds().length > 0 && sagaIds().every((id) => isWatched(id));
   const meta = () =>
     [props.saga.pace, props.saga.anime ? `Anime ${props.saga.anime}` : null, props.saga.chapters ? `Ch. ${props.saga.chapters}` : null]
       .filter(Boolean)
@@ -58,7 +57,7 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
           </button>
           <button
             class="chip border-sea-300 text-[10px] text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300"
-            onClick={() => setMany(idsBeforeSaga(props.saga.id), true)}
+            onClick={() => setMany(onlyIncluded(idsBeforeSaga(props.saga.id)), true)}
             title="Mark everything before this saga watched"
           >
             Catch up

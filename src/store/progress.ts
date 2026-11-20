@@ -40,34 +40,38 @@ export function isWatched(id: string): boolean {
   return !!state.watched[id];
 }
 
-export function toggle(id: string) {
-  setState(
-    produce((s) => {
-      if (s.watched[id]) delete s.watched[id];
-      else s.watched[id] = true;
-    }),
-  );
-}
-
-export function setWatched(id: string, value: boolean) {
-  setState(
-    produce((s) => {
-      if (value) s.watched[id] = true;
-      else delete s.watched[id];
-    }),
-  );
+/**
+ * Listeners are told which ids actually changed (used by Trakt sync). Changes made with
+ * `silent` (pulling from Trakt, import, reset) are not reported, so they never echo back.
+ */
+type Listener = (ids: string[], watched: boolean) => void;
+const listeners = new Set<Listener>();
+export function onWatchedChange(fn: Listener): () => void {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
 }
 
 /** Mark/unmark many episode ids at once. */
-export function setMany(ids: string[], value: boolean) {
+export function setMany(ids: string[], value: boolean, opts: { silent?: boolean } = {}) {
+  const changed = ids.filter((id) => !!state.watched[id] !== value);
+  if (!changed.length) return;
   setState(
     produce((s) => {
-      for (const id of ids) {
+      for (const id of changed) {
         if (value) s.watched[id] = true;
         else delete s.watched[id];
       }
     }),
   );
+  if (!opts.silent) for (const fn of listeners) fn(changed, value);
+}
+
+export function setWatched(id: string, value: boolean) {
+  setMany([id], value);
+}
+
+export function toggle(id: string) {
+  setMany([id], !state.watched[id]);
 }
 
 export function watchedCount(): number {

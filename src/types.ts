@@ -60,6 +60,12 @@ export interface Group {
   rating: number | null;
   notes: string[];
   episodes: Episode[];
+  /** Details table from the guide: sources and an episode/chapter summary. */
+  info?: { links: { label: string; url: string }[]; text: string };
+  /** Shown inline right after this episode id (e.g. a special in the middle of an arc). */
+  afterEpisode?: string;
+  /** Unique key assigned at load ("saga.node.group" indices). */
+  uid: string;
 }
 
 export type NodeType = 'arc' | 'movie' | 'special' | 'filler' | 'upcoming';
@@ -74,6 +80,8 @@ export interface GuideNode {
   chapters: string | null;
   isAlternative: boolean;
   groups: Group[];
+  /** Unique key assigned at load ("saga.node" indices); ids can repeat. */
+  uid: string;
 }
 
 export interface Saga {

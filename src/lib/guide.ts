@@ -4,6 +4,14 @@ import type { Episode, GuideData, Group, GuideNode, Saga, Tier } from '../types'
 export const guide = raw as unknown as GuideData;
 export const tiers: Tier[] = guide.meta.tiers;
 
+// Stable unique keys (node ids can repeat, e.g. two "One Pace Special" entries).
+guide.sagas.forEach((saga, si) =>
+  saga.nodes.forEach((node, ni) => {
+    node.uid = `${si}.${ni}`;
+    node.groups.forEach((group, gi) => (group.uid = `${si}.${ni}.${gi}`));
+  }),
+);
+
 export interface FlatEpisode {
   ep: Episode;
   group: Group;
@@ -17,6 +25,8 @@ for (const saga of guide.sagas)
     for (const group of node.groups)
       for (const ep of group.episodes) flatEpisodes.push({ ep, group, node, saga });
 
+export const flatById = new Map(flatEpisodes.map((f) => [f.ep.id, f]));
+
 /** Canon-path episode ids (the recommended One Pace viewing route). */
 export const canonIds: string[] = flatEpisodes.filter((f) => f.ep.canon).map((f) => f.ep.id);
 export const allIds: string[] = flatEpisodes.map((f) => f.ep.id);
@@ -26,22 +36,57 @@ export const paceNumberedIds: string[] = flatEpisodes
   .filter((f) => f.group.kind === 'onepace' && f.ep.paceNumber != null)
   .map((f) => f.ep.id);
 
+export type ExtraCategory = 'liveAction' | 'movies' | 'specials' | 'filler' | 'original' | 'alternatives';
+
+export const EXTRA_LABELS: Record<ExtraCategory, string> = {
+  liveAction: 'Live Action',
+  movies: 'Movies',
+  specials: 'Specials',
+  filler: 'Filler & Fun Pace',
+  original: 'Original anime',
+  alternatives: 'Alternatives',
+};
+
+/** Which hideable "extra" category an entry belongs to, or null for the canon route. */
+export function extraCategory(group: Group, node: GuideNode): ExtraCategory | null {
+  if (group.episodes.length && group.episodes.every((e) => e.canon)) return null;
+  if (group.isAlternative || node.isAlternative) return 'alternatives';
+  switch (group.kind) {
+    case 'netflix':
+      return 'liveAction';
+    case 'movie':
+    case 'upcoming':
+      return 'movies';
+    case 'special':
+    case 'theatre':
+      return 'specials';
+    case 'filler':
+    case 'funpace':
+      return 'filler';
+    case 'original':
+    case 'original-continuation':
+      return 'original';
+    default:
+      return null;
+  }
+}
+
 /** Episode ids in watch order (document order). */
 export const orderedIds: string[] = flatEpisodes.map((f) => f.ep.id);
 
 const firstIdxOfNode = new Map<string, number>();
 const firstIdxOfSaga = new Map<string, number>();
 flatEpisodes.forEach((f, i) => {
-  if (!firstIdxOfNode.has(f.node.id)) firstIdxOfNode.set(f.node.id, i);
+  if (!firstIdxOfNode.has(f.node.uid)) firstIdxOfNode.set(f.node.uid, i);
   if (!firstIdxOfSaga.has(f.saga.id)) firstIdxOfSaga.set(f.saga.id, i);
 });
 
-export const allIdsOfNode = (nodeId: string): string[] =>
-  flatEpisodes.filter((f) => f.node.id === nodeId).map((f) => f.ep.id);
+export const allIdsOfNode = (nodeUid: string): string[] =>
+  flatEpisodes.filter((f) => f.node.uid === nodeUid).map((f) => f.ep.id);
 export const allIdsOfSaga = (sagaId: string): string[] =>
   flatEpisodes.filter((f) => f.saga.id === sagaId).map((f) => f.ep.id);
-export const idsBeforeNode = (nodeId: string): string[] =>
-  orderedIds.slice(0, firstIdxOfNode.get(nodeId) ?? 0);
+export const idsBeforeNode = (nodeUid: string): string[] =>
+  orderedIds.slice(0, firstIdxOfNode.get(nodeUid) ?? 0);
 export const idsBeforeSaga = (sagaId: string): string[] =>
   orderedIds.slice(0, firstIdxOfSaga.get(sagaId) ?? 0);
 

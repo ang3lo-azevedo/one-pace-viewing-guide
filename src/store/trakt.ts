@@ -2,7 +2,7 @@ import { createStore } from 'solid-js/store';
 import { config, traktConfigured } from '../config';
 import { guide } from '../lib/guide';
 import type { Episode } from '../types';
-import { setMany } from './progress';
+import { onWatchedChange, setMany } from './progress';
 
 const KEY = 'op-trakt-v1';
 const API = 'https://api.trakt.tv';
@@ -15,12 +15,16 @@ interface TraktState {
   username: string | null;
   status: 'idle' | 'connecting' | 'syncing';
   lastMessage: string | null;
+  /** Our episode ids that map to a Trakt episode (known after the map is built). */
+  mapped: Record<string, true>;
+  /** Your own Trakt ratings (1-10), by our episode id. */
+  myRatings: Record<string, number>;
 }
 
 function load(): TraktState {
   try {
     const raw = localStorage.getItem(KEY);
-    if (raw) return { status: 'idle', lastMessage: null, ...JSON.parse(raw) };
+    if (raw) return { status: 'idle', lastMessage: null, mapped: {}, myRatings: {}, ...JSON.parse(raw) };
   } catch {
     /* ignore */
   }
@@ -31,6 +35,8 @@ function load(): TraktState {
     username: null,
     status: 'idle',
     lastMessage: null,
+    mapped: {},
+    myRatings: {},
   };
 }
 
@@ -87,7 +93,7 @@ export async function connect() {
 }
 
 export function disconnect() {
-  setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, lastMessage: 'Disconnected.' });
+  setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, lastMessage: 'Disconnected.', myRatings: {} });
   persist();
 }
 
@@ -132,6 +138,7 @@ export async function handleRedirectCallback(): Promise<void> {
     await fetchUsername();
     setTrakt('lastMessage', 'Connected to Trakt. Pulling your history…');
     await pullFromTrakt();
+    await loadMyRatings();
   } catch (e) {
     setTrakt({ status: 'idle', lastMessage: 'Trakt login failed: ' + (e as Error).message });
   }
@@ -211,12 +218,21 @@ function norm(t: string): string {
 
 interface MapResult {
   toTrakt: Map<string, number>; // our episode id -> trakt episode id
+  fromTrakt: Map<number, string>; // trakt episode id -> our episode id
   bySeasonEp: Map<string, string>; // "<seasonNumber>:<episodeNumber>" -> our episode id
   matched: number;
   total: number;
 }
 
 let cachedMap: MapResult | null = null;
+let mapPromise: Promise<MapResult> | null = null;
+
+/** Build the Trakt episode map once (concurrent callers share the same request). */
+function getMap(): Promise<MapResult> {
+  if (cachedMap) return Promise.resolve(cachedMap);
+  mapPromise ??= buildMap().finally(() => (mapPromise = null));
+  return mapPromise;
+}
 
 /**
  * Map our One Pace episodes to the Trakt "One Pace" show. Trakt's seasons are unnamed but
@@ -276,7 +292,10 @@ async function buildMap(): Promise<MapResult> {
     });
   });
 
-  cachedMap = { toTrakt, bySeasonEp, matched: toTrakt.size, total };
+  const fromTrakt = new Map<number, string>();
+  for (const [ours, tid] of toTrakt) fromTrakt.set(tid, ours);
+  cachedMap = { toTrakt, fromTrakt, bySeasonEp, matched: toTrakt.size, total };
+  setTrakt('mapped', Object.fromEntries([...toTrakt.keys()].map((k) => [k, true as const])));
   return cachedMap;
 }
 
@@ -287,7 +306,7 @@ export async function pullFromTrakt(): Promise<void> {
   if (!isConnected()) return;
   setTrakt('status', 'syncing');
   try {
-    const map = await buildMap();
+    const map = await getMap();
     const r = await traktFetch(`/shows/${config.traktShowSlug}/progress/watched?hidden=false&specials=false`);
     if (!r.ok) throw new Error(`progress ${r.status}`);
     const prog = await r.json();
@@ -298,11 +317,27 @@ export async function pullFromTrakt(): Promise<void> {
           const ourId = map.bySeasonEp.get(`${season.number}:${ep.number}`);
           if (ourId) watchedIds.push(ourId);
         }
-    if (watchedIds.length) setMany(watchedIds, true);
+    // Silent: these came from Trakt, so they must not be pushed back.
+    if (watchedIds.length) setMany(watchedIds, true, { silent: true });
     setTrakt({ status: 'idle', lastMessage: `Pulled ${watchedIds.length} watched from Trakt (${map.matched}/${map.total} episodes mapped).` });
   } catch (e) {
     setTrakt({ status: 'idle', lastMessage: 'Pull failed: ' + (e as Error).message });
   }
+}
+
+async function sendHistory(ourIds: string[], watched: boolean): Promise<number> {
+  const map = await getMap();
+  const episodes = ourIds
+    .map((id) => map.toTrakt.get(id))
+    .filter((v): v is number => v != null)
+    .map((trakt) => ({ ids: { trakt } }));
+  if (!episodes.length) return 0;
+  const r = await traktFetch(watched ? '/sync/history' : '/sync/history/remove', {
+    method: 'POST',
+    body: JSON.stringify({ episodes }),
+  });
+  if (!r.ok) throw new Error(`history ${r.status}`);
+  return episodes.length;
 }
 
 /** Push locally-watched episodes to Trakt history. */
@@ -310,33 +345,89 @@ export async function pushToTrakt(watchedLocalIds: string[]): Promise<void> {
   if (!isConnected()) return;
   setTrakt('status', 'syncing');
   try {
-    const map = await buildMap();
-    const episodes = watchedLocalIds
-      .map((id) => map.toTrakt.get(id))
-      .filter((v): v is number => v != null)
-      .map((trakt) => ({ ids: { trakt } }));
-    if (!episodes.length) {
-      setTrakt({ status: 'idle', lastMessage: 'Nothing to push (no mapped watched episodes).' });
-      return;
-    }
-    const r = await traktFetch('/sync/history', { method: 'POST', body: JSON.stringify({ episodes }) });
-    if (!r.ok) throw new Error(`history ${r.status}`);
-    setTrakt({ status: 'idle', lastMessage: `Pushed ${episodes.length} episodes to Trakt.` });
+    const n = await sendHistory(watchedLocalIds, true);
+    setTrakt({ status: 'idle', lastMessage: n ? `Pushed ${n} episodes to Trakt.` : 'Nothing to push (no mapped watched episodes).' });
   } catch (e) {
     setTrakt({ status: 'idle', lastMessage: 'Push failed: ' + (e as Error).message });
   }
 }
 
-/** Push or remove a single episode as it is toggled (fire-and-forget). */
-export async function syncToggle(ourId: string, watched: boolean): Promise<void> {
+// Every local change (single checkbox, Mark arc/saga, Catch up, Mark all) is queued and sent
+// to Trakt in one batch shortly after, so bulk actions sync too without flooding the API.
+const pending = new Map<string, boolean>();
+let flushTimer: ReturnType<typeof setTimeout> | undefined;
+
+async function flush() {
+  flushTimer = undefined;
+  if (!isConnected() || !pending.size) return;
+  const add: string[] = [];
+  const remove: string[] = [];
+  for (const [id, w] of pending) (w ? add : remove).push(id);
+  pending.clear();
+  try {
+    const a = add.length ? await sendHistory(add, true) : 0;
+    const r = remove.length ? await sendHistory(remove, false) : 0;
+    if (a || r) setTrakt('lastMessage', `Synced to Trakt: ${a} added, ${r} removed.`);
+  } catch (e) {
+    setTrakt('lastMessage', 'Trakt sync failed: ' + (e as Error).message);
+  }
+}
+
+onWatchedChange((ids, watched) => {
+  if (!isConnected()) return;
+  for (const id of ids) pending.set(id, watched);
+  clearTimeout(flushTimer);
+  flushTimer = setTimeout(flush, 1500);
+});
+
+// ---- ratings -----------------------------------------------------------------
+
+/** Load your own episode ratings from Trakt. */
+export async function loadMyRatings(): Promise<void> {
   if (!isConnected()) return;
   try {
-    const map = await buildMap();
-    const traktId = map.toTrakt.get(ourId);
-    if (traktId == null) return;
-    const path = watched ? '/sync/history' : '/sync/history/remove';
-    await traktFetch(path, { method: 'POST', body: JSON.stringify({ episodes: [{ ids: { trakt: traktId } }] }) });
+    const map = await getMap();
+    const r = await traktFetch('/sync/ratings/episodes');
+    if (!r.ok) return;
+    const items: any[] = await r.json();
+    const mine: Record<string, number> = {};
+    for (const it of items) {
+      const ours = map.fromTrakt.get(it.episode?.ids?.trakt);
+      if (ours && it.rating) mine[ours] = it.rating;
+    }
+    setTrakt('myRatings', mine);
   } catch {
-    /* best-effort */
+    /* ignore */
+  }
+}
+
+/** Rate an episode on Trakt (1-10), or remove your rating with null. */
+export async function rateEpisode(ourId: string, rating: number | null): Promise<void> {
+  if (!isConnected()) return;
+  const map = await getMap();
+  const traktId = map.toTrakt.get(ourId);
+  if (traktId == null) return;
+  const prev = trakt.myRatings[ourId];
+  setTrakt('myRatings', ourId, rating ?? undefined!);
+  try {
+    const r = await traktFetch(rating == null ? '/sync/ratings/remove' : '/sync/ratings', {
+      method: 'POST',
+      body: JSON.stringify({ episodes: [{ ...(rating == null ? {} : { rating }), ids: { trakt: traktId } }] }),
+    });
+    if (!r.ok) throw new Error(`ratings ${r.status}`);
+  } catch (e) {
+    setTrakt('myRatings', ourId, prev ?? undefined!);
+    setTrakt('lastMessage', 'Rating failed: ' + (e as Error).message);
+  }
+}
+
+/** On app start with a saved login: build the episode map and load your ratings. */
+export async function initTrakt(): Promise<void> {
+  if (!isConnected()) return;
+  try {
+    await getMap();
+    await loadMyRatings();
+  } catch {
+    /* ignore; the menu shows errors on manual actions */
   }
 }

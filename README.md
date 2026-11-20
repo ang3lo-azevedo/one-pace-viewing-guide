@@ -48,16 +48,26 @@ their existing ratings.
 ## Trakt sync (optional)
 
 Connect a [Trakt](https://trakt.tv) account to sync watched episodes two ways. Login uses
-**PKCE**, so there is no client secret and no server component — everything runs in the
+**PKCE**, so there is no client secret and no server component; everything runs in the
 browser. Configure it in `src/config.ts`:
 
-- `traktClientId` — from your Trakt app at https://trakt.tv/oauth/applications
-- `traktShowSlug` — the Trakt One Pace show slug (`one-pace`)
+- `traktClientId`: from your Trakt app at https://trakt.tv/oauth/applications
+- `traktShowSlug`: the Trakt One Pace show slug (`one-pace`)
 
 On the Trakt app, set the **Redirect URIs** to the site URL(s) and add them as **Allowed
 origins** too (for browser CORS). Episodes map to Trakt by title with a positional
 fallback (~98% of the standard One Pace releases; Wano/Egghead-continuation cuts that use
-Stremio-only links are not mapped). The **Trakt** controls live under ⚙ Filters → Progress.
+Stremio-only links are not mapped). The **Connect Trakt** button is in the header; once connected, checking or bulk-marking
+episodes syncs to Trakt, and watched episodes can be rated (1 to 10).
+
+### Arc details and placement
+
+`npm run enrich` (`scripts/enrich_from_md.py`) copies each section's details table
+(episode guide spreadsheet, One Pace Web and Stremio links) from the Markdown guide into
+`data.json`, records sections that sit in the middle of an arc (like the Monsters special in
+Thriller Bark), and marks the One Piece Log remaster as the canon route for Return to
+Sabaody and Fish-Man Island. It only touches those fields, so ratings and the spoiler-free
+descriptions are kept.
 
 ## Develop
 

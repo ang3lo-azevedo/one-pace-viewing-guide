@@ -32,7 +32,7 @@
     "sagaCount": 11,
     "nodeCount": 58,
     "episodeCount": 639,
-    "canonPathCount": 521,
+    "canonPathCount": 540,
     "paceNumberedCount": 441,
     "ratingsSource": "SeriesGraph IMDb (https://seriesgraph.com/show/37854-one-piece)",
     "traktRatingsSource": "Trakt (https://trakt.tv/shows/one-pace)"
@@ -166,7 +166,24 @@
                   "traktRating": 9.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1122135437#gid=1122135437"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#romance-dawn"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=1"
+                  }
+                ],
+                "text": "Pace: Eps 1–4 • Anime: Eps 1–4, 19 • Ch: 1–7"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -304,7 +321,24 @@
                   "traktRating": 9.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=928032798#gid=928032798"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#orange-town"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=2"
+                  }
+                ],
+                "text": "Pace: Eps 5–7 • Anime: Eps 4–8 • Ch: 8–21"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -542,7 +576,24 @@
                   "traktRating": 9.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1568594768#gid=1568594768"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#syrup-village"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=3"
+                  }
+                ],
+                "text": "Pace: Eps 8–14 • Anime: Eps 9–17 • Ch: 23–41"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -657,7 +708,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=217544397#gid=217544397"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#gaimon"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=4"
+                  }
+                ],
+                "text": "Pace: Ep. 15 • Anime: Ep. 18 • Ch: 42, 22"
+              }
             }
           ]
         },
@@ -881,7 +949,24 @@
                   "traktRating": 6.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=563366367#gid=563366367"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#baratie"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=5"
+                  }
+                ],
+                "text": "Pace: Eps 16–23 • Anime: Eps 19–30 • Ch: 42–68"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -1224,7 +1309,24 @@
                   "traktRating": 9.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1076173334#gid=1076173334"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#arlong-park"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=6"
+                  }
+                ],
+                "text": "Pace: Eps 24–33 • Anime: Eps 31–44 • Ch: 69–95"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -1339,7 +1441,24 @@
                   "traktRating": 7.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1955340365#gid=1955340365"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#the-adventures-of-buggys-crew"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=7"
+                  }
+                ],
+                "text": "Pace: Ep. 34 • Anime: Eps 46–47 • Ch: 35–75"
+              }
             }
           ]
         },
@@ -1438,7 +1557,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=702404357#gid=702404357"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#loguetown"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=8"
+                  }
+                ],
+                "text": "Pace: Eps 35–37 • Anime: Eps 45, 48–53 • Ch: 96–100"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -1564,7 +1700,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=603231379#gid=603231379"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#reverse-mountain"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=9"
+                  }
+                ],
+                "text": "Pace: Eps 38–39 • Anime: Eps 55, 61–63 • Ch: 101–105"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -1677,7 +1830,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=92257054#gid=92257054"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#whisky-peak"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=10"
+                  }
+                ],
+                "text": "Pace: Eps 40–41 • Anime: Eps 64–67 • Ch: 106–114"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -1765,7 +1935,24 @@
                   "traktRating": 7.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=187728198#gid=187728198"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#the-trials-of-koby-meppo"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=11"
+                  }
+                ],
+                "text": "Pace: Ep. 42 • Anime: Eps 68–69 • Ch: 83–119"
+              }
             }
           ]
         },
@@ -1914,7 +2101,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1340008658#gid=1340008658"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#little-garden"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=12"
+                  }
+                ],
+                "text": "Pace: Eps 43–47 • Anime: Eps 70–78 • Ch: 115–129"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -2202,7 +2406,24 @@
                   "canon": true,
                   "id": "one-pace:drum-island-08"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=793018827#gid=793018827"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#drum-island"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=13"
+                  }
+                ],
+                "text": "Pace: Eps 48–55 • Anime: Eps 78–91 • Ch: 129–154"
+              }
             },
             {
               "id": "one-piece-netflix-live-action",
@@ -2804,7 +3025,24 @@
                   "canon": true,
                   "id": "one-pace:alabasta-21"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=209591769#gid=209591769"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#alabasta"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=14"
+                  }
+                ],
+                "text": "Pace: Eps 56–76 • Anime: Eps 92–130 • Ch: 155–217"
+              }
             }
           ]
         },
@@ -3072,7 +3310,24 @@
                   "canon": true,
                   "id": "one-pace:jaya-08"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1386602210#gid=1386602210"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#jaya"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=15"
+                  }
+                ],
+                "text": "Pace: Eps 77–84 • Anime: Eps 144–152 • Ch: 218–236"
+              }
             }
           ]
         },
@@ -3717,7 +3972,24 @@
                   "traktRating": 9.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=277573788#gid=277573788"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#skypiea"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=16"
+                  }
+                ],
+                "text": "Pace: Eps 85–109 • Anime: Eps 153–195, 203 • Ch: 237–303"
+              }
             }
           ]
         },
@@ -3879,7 +4151,24 @@
                   "canon": false,
                   "id": "fun-pace:g-8-06-high-flyers"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Fun Pace Project Status (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1LYxp1i5FldNiKdL8BKaQ3T8EeueCSpgDWvN51kCBcKI/edit?gid=0#gid=0"
+                  },
+                  {
+                    "label": "Google Drive",
+                    "url": "https://drive.google.com/drive/folders/1wglxsln46TVM4LFOo4kVK910fyfl-fWS"
+                  },
+                  {
+                    "label": "Mega",
+                    "url": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ"
+                  }
+                ],
+                "text": "Fun Pace: Eps 1–6 • Anime: Eps 196–206 • Filler"
+              }
             },
             {
               "id": "original-anime-episodes-alternative",
@@ -4144,7 +4433,16 @@
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A11"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/tt0388629?season=8"
+                  }
+                ],
+                "text": ""
+              }
             }
           ]
         }
@@ -4453,7 +4751,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=988886513#gid=988886513"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#long-ring-long-land"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=17"
+                  }
+                ],
+                "text": "Pace: Eps 110–116 • Anime: Eps 207–219, 226–228 • Ch: 304–321"
+              }
             }
           ]
         },
@@ -5025,7 +5340,24 @@
                   "traktRating": 7.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=709330688#gid=709330688"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#water-seven"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=18"
+                  }
+                ],
+                "text": "Pace: Eps 117–136 • Anime: Eps 229–263 • Ch: 322–374"
+              }
             }
           ]
         },
@@ -5674,7 +6006,24 @@
                   "traktRating": 9.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1348628353#gid=1348628353"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#enies-lobby"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=19"
+                  }
+                ],
+                "text": "Pace: Eps 137–161 • Anime: Eps 263–312 • Ch: 375–430"
+              }
             }
           ]
         },
@@ -5823,7 +6172,24 @@
                   "traktRating": 9.5,
                   "traktVotes": 2
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=437050304#gid=437050304"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#post-enies-lobby"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=20"
+                  }
+                ],
+                "text": "Pace: Eps 162–166 • Anime: Eps 313–325 • Ch: 431–441"
+              }
             }
           ]
         }
@@ -6372,7 +6738,24 @@
                   "canon": true,
                   "id": "one-pace:thriller-bark-22"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=836546175#gid=836546175"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#thriller-bark"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=21"
+                  }
+                ],
+                "text": "Pace: Eps 167–188 • Anime: Eps 337–381 • Ch: 442–489"
+              }
             },
             {
               "id": "special-monsters",
@@ -6410,7 +6793,8 @@
                     "**Spoiler Warning:** If watching here, **skip the last minute** (it flashes forward to scenes from this arc), or alternatively watch this special at any point after completing Thriller Bark."
                   ]
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace:thriller-bark-13"
             }
           ]
         },
@@ -6882,7 +7266,24 @@
                     "Filler Scene: Luffy/Zoro fighting bounty hunters in Episode 392 (04:55–05:55; setup at end of 391)."
                   ]
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=704086980#gid=704086980"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#sabaody-archipelago"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=23"
+                  }
+                ],
+                "text": "Pace: Eps 189–199 • Anime: Eps 385–405 • Ch: 490–513"
+              }
             }
           ]
         },
@@ -7021,7 +7422,24 @@
                   "canon": true,
                   "id": "one-pace:amazon-lily-05"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=704086980#gid=704086980"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#amazon-lily"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=24"
+                  }
+                ],
+                "text": "Pace: Eps 200–204 • Anime: Eps 408–421 • Ch: 514–524"
+              }
             }
           ]
         },
@@ -7275,7 +7693,24 @@
                   "canon": true,
                   "id": "one-pace:impel-down-10"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=704086980#gid=704086980"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#impel-down"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=26"
+                  }
+                ],
+                "text": "Pace: Eps 205–214 • Anime: Eps 422–452 • Ch: 525–548"
+              }
             }
           ]
         },
@@ -7391,7 +7826,16 @@
                   "canon": false,
                   "id": "original-anime:/detail/series/tt0388629/tt0388629%3A13%3A75"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/tt0388629?season=13"
+                  }
+                ],
+                "text": "Extended Straw Hat separation cover stories (Eps 453–456)"
+              }
             },
             {
               "id": "one-pace-alternative",
@@ -7426,7 +7870,24 @@
                   "canon": false,
                   "id": "one-pace-alternative:if-you-could-go-anywhere-the-adventures-of-the-straw-hats-01"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=704086980#gid=704086980"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#if-you-could-go-anywhere-the-adventures-of-the-straw-hats"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=25"
+                  }
+                ],
+                "text": "Pace: Ep. 215 • Anime: Eps 453–456 • Ch: 543–560 • Default Choice: Original Anime (4 Eps above)"
+              }
             }
           ]
         },
@@ -7843,7 +8304,24 @@
                   "canon": true,
                   "id": "one-pace:marineford-17"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=704086980#gid=704086980"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#marineford"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=27"
+                  }
+                ],
+                "text": "Pace: Eps 216–232 • Anime: Eps 457–489 • Ch: 549–580"
+              }
             }
           ]
         },
@@ -8032,7 +8510,24 @@
                     "**Pause PW 03 at 19:53**: Watch Filler Episodes 497–499 (ASL childhood; safe up to Ep 500 at 07:37)."
                   ]
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1001237700#gid=1001237700"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#post-war"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=27"
+                  }
+                ],
+                "text": "Pace: Eps 233–239 • Anime: Eps 490–516 • Ch: 581–597"
+              }
             },
             {
               "id": "filler",
@@ -8259,7 +8754,7 @@
               "id": "one-piece-log",
               "label": "One Piece Log",
               "kind": "log",
-              "canonPath": false,
+              "canonPath": true,
               "isAlternative": false,
               "defaultOpen": true,
               "rating": 8.3,
@@ -8285,7 +8780,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A1"
                 },
                 {
@@ -8308,7 +8803,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A2"
                 },
                 {
@@ -8331,10 +8826,19 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A3"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/tt33992229"
+                  }
+                ],
+                "text": "Official 21-Episode Remaster (Eps 1–3)"
+              }
             },
             {
               "id": "one-pace-alternative",
@@ -8415,7 +8919,24 @@
                   "canon": false,
                   "id": "one-pace-alternative:return-to-sabaody-03"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1999155271#gid=1999155271"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#return-to-sabaody"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=28"
+                  }
+                ],
+                "text": "Pace: Eps 240–242 • Anime: Eps 517–522 • Ch: 598–602 • Default Choice: One Piece Log (3 Eps above)"
+              }
             }
           ]
         },
@@ -8480,7 +9001,7 @@
               "id": "one-piece-log",
               "label": "One Piece Log",
               "kind": "log",
-              "canonPath": false,
+              "canonPath": true,
               "isAlternative": false,
               "defaultOpen": true,
               "rating": 7.8,
@@ -8506,7 +9027,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A4"
                 },
                 {
@@ -8529,7 +9050,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A5"
                 },
                 {
@@ -8552,7 +9073,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A6"
                 },
                 {
@@ -8575,7 +9096,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A7"
                 },
                 {
@@ -8598,7 +9119,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A8"
                 },
                 {
@@ -8621,7 +9142,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A9"
                 },
                 {
@@ -8644,7 +9165,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A10"
                 },
                 {
@@ -8667,7 +9188,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A11"
                 },
                 {
@@ -8690,7 +9211,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A12"
                 },
                 {
@@ -8713,7 +9234,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A13"
                 },
                 {
@@ -8736,7 +9257,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A14"
                 },
                 {
@@ -8759,7 +9280,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A15"
                 },
                 {
@@ -8782,7 +9303,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A16"
                 },
                 {
@@ -8805,7 +9326,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A17"
                 },
                 {
@@ -8828,7 +9349,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A18"
                 },
                 {
@@ -8851,7 +9372,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A19"
                 },
                 {
@@ -8874,7 +9395,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A20"
                 },
                 {
@@ -8897,10 +9418,19 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "one-piece-log:/detail/series/tt33992229/tt33992229%3A1%3A21"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/tt33992229"
+                  }
+                ],
+                "text": "Official 21-Episode Remaster (Eps 4–21)"
+              }
             },
             {
               "id": "one-pace-alternative",
@@ -9418,14 +9948,31 @@
                   "canon": false,
                   "id": "one-pace-alternative:fishman-island-24"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=2070578030#gid=2070578030"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#fishman-island-01"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=29"
+                  }
+                ],
+                "text": "Pace: Eps 243–266 • Anime: Eps 523–574 • Ch: 603–653"
+              }
             },
             {
               "id": "fixed-fish-man-island-07",
               "label": "Fixed Fish-Man Island 07",
               "kind": "onepace",
-              "canonPath": true,
-              "isAlternative": false,
+              "canonPath": false,
+              "isAlternative": true,
               "defaultOpen": true,
               "rating": 7.4,
               "notes": [],
@@ -9450,10 +9997,11 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": true,
+                  "canon": false,
                   "id": "fixed-fish-man-island-07:/detail/series/onepace/FI_7"
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace-alternative:fishman-island-06"
             },
             {
               "id": "one-pace-alternative",
@@ -9488,14 +10036,15 @@
                   "canon": false,
                   "id": "one-pace-alternative:fishman-island-07"
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace-alternative:fishman-island-06"
             },
             {
               "id": "fish-man-island-15-fixed-group-shot",
               "label": "Fish-Man Island 15 (Fixed Group Shot)",
               "kind": "onepace",
-              "canonPath": true,
-              "isAlternative": false,
+              "canonPath": false,
+              "isAlternative": true,
               "defaultOpen": true,
               "rating": 7.8,
               "notes": [],
@@ -9520,10 +10069,11 @@
                     "nyaa": null,
                     "other": "https://pixeldrain.com/l/kuoQYqfR#item=1"
                   },
-                  "canon": true,
+                  "canon": false,
                   "id": "fish-man-island-15-fixed-group-shot:/detail/series/onepace/FI_15"
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace-alternative:fishman-island-14"
             },
             {
               "id": "one-pace-alternative",
@@ -9558,7 +10108,8 @@
                   "canon": false,
                   "id": "one-pace-alternative:fishman-island-15"
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace-alternative:fishman-island-14"
             }
           ]
         },
@@ -10216,7 +10767,24 @@
                   "canon": true,
                   "id": "one-pace:punk-hazard-22"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=545721945#gid=545721945"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#punk-hazard"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=30"
+                  }
+                ],
+                "text": "Pace: Eps 267–288 • Anime: Eps 579–626, 628 • Ch: 654–699"
+              }
             },
             {
               "id": "tweaked-punk-hazard-20",
@@ -10251,7 +10819,8 @@
                   "canon": true,
                   "id": "tweaked-punk-hazard-20:/detail/series/onepace/PH_20"
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace:punk-hazard-19"
             },
             {
               "id": "one-pace-alternative",
@@ -10286,7 +10855,8 @@
                   "canon": false,
                   "id": "one-pace-alternative:punk-hazard-20"
                 }
-              ]
+              ],
+              "afterEpisode": "one-pace:punk-hazard-19"
             },
             {
               "id": "filler",
@@ -11452,7 +12022,24 @@
                     "Saves nearly 50 hours of viewing time."
                   ]
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=168502639#gid=168502639"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#dressrosa"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=31"
+                  }
+                ],
+                "text": "Pace: Eps 289–336 • Anime: Eps 629–746 • Ch: 700–800"
+              }
             }
           ]
         },
@@ -11810,7 +12397,24 @@
                   "canon": true,
                   "id": "one-pace:zou-10"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1146420179#gid=1146420179"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#zou"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=32"
+                  }
+                ],
+                "text": "Pace: Eps 337–346 • Anime: Eps 751–776 • Ch: 801–822"
+              }
             }
           ]
         },
@@ -12759,7 +13363,24 @@
                   "traktRating": 6.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1510623527#gid=1510623527"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#whole-cake-island"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=33"
+                  }
+                ],
+                "text": "Pace: Eps 347–385 • Anime: Eps 777–877 • Ch: 823–902"
+              }
             },
             {
               "id": "filler",
@@ -12893,7 +13514,24 @@
                   "traktRating": 10.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1529137639#gid=1529137639"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#reverie"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=34"
+                  }
+                ],
+                "text": "Pace: Eps 386–388 • Anime: Eps 878–889 • Ch: 903–908"
+              }
             }
           ]
         },
@@ -13787,7 +14425,24 @@
                   "traktRating": 8.0,
                   "traktVotes": 1
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1926352856#gid=1926352856"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#wano"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=35"
+                  }
+                ],
+                "text": "Pace: Eps 389–450 • Anime: Eps 958–1034 (Full Raid: 958–1085) • Ch: 957–1013 (Full Raid: 957–1057) · Anime: Eps 890–958 • Ch: 909–956"
+              }
             },
             {
               "id": "one-pace-onigashima-raid",
@@ -14524,7 +15179,24 @@
                     "One Pace now covers the raid up to Wano 62 (Chapter 1013 / Anime Episode 1034). To continue with **Onigashima Paced**, resume at **Onigashima 29** (Chapter 1014+ / Anime Episode 1035+)."
                   ]
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1926352856#gid=1926352856"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#wano-32"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=36"
+                  }
+                ],
+                "text": "Pace: Eps 420–450 • Anime: Eps 958–1034 • Ch: 957–1013"
+              }
             },
             {
               "id": "onigashima-paced-onigashima",
@@ -15640,7 +16312,20 @@
                   "canon": true,
                   "id": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_48"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima Paced Spreadsheet",
+                    "url": "https://docs.google.com/spreadsheets/d/1HoYogAchoU5DWxVJzUy3eZcHMZk_hUmzUVnQm9KxeFI/edit?usp=sharing"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/pp_onipace?season=1"
+                  }
+                ],
+                "text": "Anime: Eps 1079–1085 (covers Ch. 1052–1057) · Anime: Eps 982–1078 (covers Ch. 977–1051)"
+              }
             },
             {
               "id": "onigashima-paced-end-of-wano",
@@ -15770,7 +16455,20 @@
                     "**End of Wano 03.5** (Anime Episode 1084) is a standalone farewell expansion showing emotional Straw Hat goodbyes before departing Wano."
                   ]
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima Paced Spreadsheet",
+                    "url": "https://docs.google.com/spreadsheets/d/1HoYogAchoU5DWxVJzUy3eZcHMZk_hUmzUVnQm9KxeFI/edit?usp=sharing"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/pp_onipace?season=2"
+                  }
+                ],
+                "text": ""
+              }
             }
           ]
         },
@@ -15921,7 +16619,16 @@
                   "canon": false,
                   "id": "special-one-piece-heroines-main:/detail/series/tt34927513"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/tt34927513"
+                  }
+                ],
+                "text": "TV Special 15 (23 min) • Adapted from ONE PIECE novel HEROINES"
+              }
             }
           ]
         },
@@ -16456,7 +17163,24 @@
                     "One Pace covers Egghead through Chapter 1096 (Anime Episode 1130). For unreleased episodes (Egghead 23+ covering Ch. 1097–1125 / Anime Eps 1131–1155), continue with **Kuma Cut** (1131–1136) $\\rightarrow$ **Shaved Egghead** (1137–1155) or the original uncut anime."
                   ]
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1664435609#gid=1664435609"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#egghead"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=37"
+                  }
+                ],
+                "text": "Pace: Eps 451–472 • Anime: Eps 1086–1130 (Full Arc: 1086–1155) • Ch: 1058–1096 (Full Arc: 1058–1125)"
+              }
             },
             {
               "id": "kuma-cut",
@@ -16675,7 +17399,20 @@
                   "canon": true,
                   "id": "kuma-cut:/detail/series/pp_KUMA_SHAVED/pp_KUMA_SHAVED_9"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Kuma Cut + Shaved Egghead Spreadsheet",
+                    "url": "https://docs.google.com/spreadsheets/d/1ODt-b2L9PyAr0xEWhj1yIOqp__crBFVXhvejblvP_mU/edit?usp=sharing"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/pp_KUMA_SHAVED?season=1"
+                  }
+                ],
+                "text": "Anime: Eps 1131–1136 (Optional recap: Eps 1127–1130) • Ch: 1097–1102"
+              }
             },
             {
               "id": "shaved-egghead",

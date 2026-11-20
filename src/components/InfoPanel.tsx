@@ -67,7 +67,7 @@ const SECTIONS: { title: string; items: Source[] }[] = [
       {
         name: 'Trakt',
         url: 'https://trakt.tv/shows/one-pace',
-        what: 'The red "Trakt" badge is the community rating on Trakt (hover for the vote count). Connect your account to sync watched episodes both ways.',
+        what: 'The red "Trakt" badge is the community rating on Trakt (hover for the vote count). Connect your account to sync watched episodes both ways and rate episodes (your rating shows as a filled heart).',
       },
     ],
   },
@@ -107,12 +107,13 @@ export default function InfoPanel() {
               reveals earlier than the anime, so each episode notes the safest point to watch it.
             </li>
             <li>
-              <b class="text-sea-700 dark:text-sea-200">Time estimates:</b> about 25 min per One Pace episode, 24 min
-              per anime episode, 110 min per movie and 60 min per Live Action episode.
+              <b class="text-sea-700 dark:text-sea-200">Time estimates:</b> about 24 min per One Pace and anime episode,
+              110 min per movie and 60 min per Live Action episode. Hidden content types (Filters) are left out of
+              the times and percentages.
             </li>
             <li>
-              <b class="text-sea-700 dark:text-sea-200">Progress</b> is stored in this browser only. Use Export and
-              Import (under Filters) or connect Trakt to keep it across devices.
+              <b class="text-sea-700 dark:text-sea-200">Progress</b> is stored in this browser only. Use the Progress menu
+              in the header to export or import it, or connect Trakt to sync it and rate episodes after watching.
             </li>
           </ul>
 

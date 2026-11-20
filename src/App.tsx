@@ -7,6 +7,7 @@ import FilterBar from './components/FilterBar';
 import SagaSection from './components/SagaSection';
 import InfoPanel from './components/InfoPanel';
 import TraktMenu from './components/TraktMenu';
+import ProgressMenu from './components/ProgressMenu';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
               </a>
             </p>
           </div>
+          <ProgressMenu />
           <TraktMenu />
           <button
             class="chip shrink-0 border-sea-600 text-sea-200 hover:border-accent-400 hover:text-accent-400"

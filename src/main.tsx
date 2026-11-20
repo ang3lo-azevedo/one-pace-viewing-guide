@@ -2,10 +2,10 @@
 import { render } from 'solid-js/web';
 import './index.css';
 import App from './App';
-import { handleRedirectCallback } from './store/trakt';
+import { handleRedirectCallback, initTrakt } from './store/trakt';
 
-// If we returned from a Trakt login, finish the exchange before rendering.
-handleRedirectCallback();
+// Finish a Trakt login if we just came back from it, then load the episode map and ratings.
+handleRedirectCallback().then(initTrakt);
 
 const root = document.getElementById('root');
 if (root) render(() => <App />, root);

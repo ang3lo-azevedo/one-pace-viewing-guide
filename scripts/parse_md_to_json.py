@@ -36,6 +36,7 @@ RATING_COLOR_RE = re.compile(r"\\color\{(#[0-9A-Fa-f]{6})\}\\text\{\(★\s*([0-9
 RATING_PLAIN_RE = re.compile(r"\(★\s*([0-9.]+)\)")
 COLOR_STRIP_RE = re.compile(r"\$?\\color\{#[0-9A-Fa-f]{6}\}\\text\{\(★\s*[0-9.]+\)\}\$?")
 SUMMARY_RE = re.compile(r"<summary>(.*?)</summary>")
+TABLE_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
 LINK_RE = re.compile(r"\[\[([^\]]+)\]\]\(([^)]+)\)")
 # Tooltip uses a non-greedy body so it tolerates nested unescaped quotes
 # (e.g. `"They Call Him "Straw Hat" Luffy"`): it stops at the first `"` that
@@ -290,6 +291,26 @@ def main():
     def top():
         return stack[-1] if stack else None
 
+    in_table = False
+    table_header_done = False
+
+    def add_table_row(row):
+        """Attach an info-table row (sources + details) to the current group or node."""
+        links = [{"label": m.group(1), "url": m.group(2)} for m in TABLE_LINK_RE.finditer(row)]
+        text = TABLE_LINK_RE.sub("", row)
+        text = text.replace("&bull;", "•").replace("<br/>", " · ").replace("**", "").replace("*", "")
+        text = re.sub(r"\s*\|\s*", "  ", text)
+        text = re.sub(r"\s{2,}", " ", text).strip(" ·/|")
+        t = top()
+        target = t["obj"] if t and t["type"] == "group" else cur("node")
+        if target is None:
+            return
+        key = "info" if t and t["type"] == "group" else "_pendingInfo"
+        info = target.setdefault(key, {"links": [], "text": ""})
+        info["links"].extend(links)
+        if text:
+            info["text"] = (info["text"] + " · " + text).strip(" ·") if info["text"] else text
+
     for ln, raw in enumerate(lines, 1):
         stripped = raw.strip()
         if not stripped:
@@ -297,6 +318,21 @@ def main():
         in_bq = stripped.startswith(">")
         body = stripped.lstrip(">").strip() if in_bq else stripped
         indent = len(raw) - len(raw.lstrip(" "))
+
+        # ---- info tables inside a group/node ----
+        if in_bq:
+            is_sep = bool(body) and re.fullmatch(r"[:\-\s|]+", body) is not None
+            if body.startswith("|") or (in_table and ("|" in body or is_sep)):
+                if not in_table:
+                    in_table, table_header_done = True, False
+                if is_sep:
+                    continue
+                if not table_header_done:
+                    table_header_done = True  # first row is the header
+                    continue
+                add_table_row(body)
+                continue
+        in_table = False
 
         # ---- close ----
         if body.startswith("</details>"):
@@ -358,6 +394,11 @@ def main():
                        "label": label, "kind": kind, "canonPath": canon_path and not is_alt,
                        "isAlternative": is_alt, "defaultOpen": default_open,
                        "rating": rating, "notes": [], "episodes": []}
+                # A section opened inside another section (e.g. the Monsters special in
+                # the middle of Thriller Bark) is shown right after the episode it follows.
+                parent = top()
+                if parent and parent["type"] == "group" and parent["obj"]["episodes"]:
+                    obj["afterEpisode"] = parent["obj"]["episodes"][-1]["id"]
                 node["groups"].append(obj)
                 stack.append({"type": "group", "obj": obj})
             continue
@@ -380,6 +421,8 @@ def main():
                            "canonPath": canon_path and not node_alt,
                            "isAlternative": node_alt, "defaultOpen": True,
                            "rating": node.get("rating"), "notes": [], "episodes": []}
+                if "_pendingInfo" in node:
+                    grp_obj["info"] = node.pop("_pendingInfo")
                 node["groups"].append(grp_obj)
                 stack.append({"type": "group", "obj": grp_obj})
                 grp = top()
@@ -406,6 +449,10 @@ def main():
             if grp and grp["type"] == "group":
                 grp["obj"]["notes"].append(body[len("Note:"):].strip())
             continue
+
+    for s in sagas:
+        for n in s["nodes"]:
+            n.pop("_pendingInfo", None)
 
     data = {
         "meta": {
@@ -436,11 +483,14 @@ def main():
     data["meta"]["canonPathCount"] = canon_eps
     data["meta"]["paceNumberedCount"] = len(pace_numbers)
 
-    os.makedirs(os.path.dirname(OUT_JSON), exist_ok=True)
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
+    out = OUT_JSON
+    if "--out" in sys.argv:
+        out = sys.argv[sys.argv.index("--out") + 1]
+    os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
+    with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {OUT_JSON}")
+    print(f"Wrote {out}")
     print(f"  sagas={len(sagas)} nodes={n_nodes} episodes={all_eps}")
     print(f"  canon-path episodes={canon_eps}  pace-numbered (official 472 set)={len(pace_numbers)}")
     if pace_numbers:

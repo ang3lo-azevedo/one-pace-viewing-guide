@@ -1,9 +1,10 @@
-import { For, Show, createMemo } from 'solid-js';
+import { For, Show, createMemo, createSignal } from 'solid-js';
 import type { Episode, EpisodeLinks } from '../types';
 import { isWatched, toggle } from '../store/progress';
 import { prefs } from '../store/prefs';
-import { syncToggle } from '../store/trakt';
+import { isConnected, rateEpisode, trakt } from '../store/trakt';
 import { splitTitle } from '../lib/guide';
+import { inlineMd } from '../lib/format';
 import RatingBadge from './RatingBadge';
 import Tooltip from './Tooltip';
 
@@ -19,8 +20,13 @@ const LINK_LABEL: Record<keyof EpisodeLinks, string> = {
 
 const ORDER: (keyof EpisodeLinks)[] = ['onepace', 'stremio', 'netflix', 'drive', 'mega', 'nyaa', 'other'];
 
+const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
+
 export default function EpisodeRow(props: { ep: Episode }) {
   const watched = () => isWatched(props.ep.id);
+  const [rating, setRating] = createSignal(false);
+  const canRate = () => isConnected() && !!trakt.mapped[props.ep.id];
+  const myRating = () => trakt.myRatings[props.ep.id];
   const parts = createMemo(() => splitTitle(props.ep.title));
   const hideSub = () => prefs.spoilerSafe && parts().subtitle !== '';
   const displayed = () => (hideSub() ? parts().label : props.ep.title);
@@ -58,7 +64,8 @@ export default function EpisodeRow(props: { ep: Episode }) {
           checked={watched()}
           onChange={() => {
             toggle(props.ep.id);
-            syncToggle(props.ep.id, isWatched(props.ep.id));
+            // Offer to rate right after marking a Trakt-synced episode as watched.
+            if (isWatched(props.ep.id) && canRate() && !myRating()) setRating(true);
           }}
           aria-label={`Mark ${displayed()} watched`}
         />
@@ -98,8 +105,58 @@ export default function EpisodeRow(props: { ep: Episode }) {
           <div class="mt-0.5 text-xs text-sea-500 dark:text-sea-400">{metaBits()}</div>
         </Show>
 
+        <Show when={canRate() && (watched() || myRating())}>
+          <div class="mt-1 flex flex-wrap items-center gap-1">
+            <button
+              class="inline-flex items-center gap-1 rounded-md border px-1.5 py-[3px] text-[11px] font-semibold leading-none"
+              classList={{
+                'border-[#ed1c24] bg-[#ed1c24] text-white': !!myRating(),
+                'border-[#ed1c24]/50 text-[#ff5a5f] hover:bg-[#ed1c24]/10': !myRating(),
+              }}
+              onClick={() => setRating(!rating())}
+              title={myRating() ? `Your Trakt rating: ${myRating()} (${RATING_WORDS[myRating()!]}). Click to change.` : 'Rate this episode on Trakt'}
+            >
+              {myRating() ? `♥ Your rating ${myRating()}` : '♡ Rate on Trakt'}
+            </button>
+            <Show when={rating()}>
+              <For each={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}>
+                {(n) => (
+                  <button
+                    class="h-6 w-6 rounded text-[11px] font-bold tabular-nums transition-colors"
+                    classList={{
+                      'bg-[#ed1c24] text-white': myRating() === n,
+                      'bg-sea-200 text-sea-700 hover:bg-[#ed1c24]/70 hover:text-white dark:bg-sea-800 dark:text-sea-200': myRating() !== n,
+                    }}
+                    title={RATING_WORDS[n]}
+                    onClick={() => {
+                      rateEpisode(props.ep.id, n);
+                      setRating(false);
+                    }}
+                  >
+                    {n}
+                  </button>
+                )}
+              </For>
+              <Show when={myRating()}>
+                <button
+                  class="px-1 text-[11px] text-sea-400 hover:text-sea-200"
+                  onClick={() => {
+                    rateEpisode(props.ep.id, null);
+                    setRating(false);
+                  }}
+                >
+                  remove
+                </button>
+              </Show>
+              <button class="px-1 text-[11px] text-sea-400 hover:text-sea-200" onClick={() => setRating(false)}>
+                ✕
+              </button>
+            </Show>
+          </div>
+        </Show>
+
         <Show when={props.ep.description}>
-          <p class="mt-1 text-xs leading-relaxed text-sea-500 dark:text-sea-400">{props.ep.description}</p>
+          <p class="mt-1 text-xs leading-relaxed text-sea-500 dark:text-sea-400" innerHTML={inlineMd(props.ep.description!)} />
         </Show>
 
         <Show when={props.ep.notes && props.ep.notes.length}>
@@ -108,7 +165,7 @@ export default function EpisodeRow(props: { ep: Episode }) {
               {(note) => (
                 <li class="flex gap-1.5 text-xs text-accent-600 dark:text-accent-300">
                   <span aria-hidden="true">⚑</span>
-                  <span class="min-w-0">{note}</span>
+                  <span class="min-w-0" innerHTML={inlineMd(note)} />
                 </li>
               )}
             </For>

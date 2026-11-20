@@ -1,7 +1,6 @@
 import { For, Show, createSignal } from 'solid-js';
-import { prefs, resetFilters, setPrefs } from '../store/prefs';
-import { clearAll, exportJSON, importJSON } from '../store/progress';
-import { guide, tiers } from '../lib/guide';
+import { prefs, resetFilters, setPrefs, toggleExtra } from '../store/prefs';
+import { EXTRA_LABELS, guide, tiers, type ExtraCategory } from '../lib/guide';
 import { hasActiveFilters, visibleEpisodeCount } from '../lib/filter';
 
 function Toggle(props: { active: boolean; onClick: () => void; children: any; title?: string }) {
@@ -21,35 +20,11 @@ function Toggle(props: { active: boolean; onClick: () => void; children: any; ti
   );
 }
 
+const EXTRAS = Object.keys(EXTRA_LABELS) as ExtraCategory[];
+
 export default function FilterBar() {
   const [showMore, setShowMore] = createSignal(false);
-  let fileInput: HTMLInputElement | undefined;
-
-  function doExport() {
-    const blob = new Blob([exportJSON()], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `one-pace-progress-${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  async function onFile(e: Event) {
-    const input = e.target as HTMLInputElement;
-    const file = input.files?.[0];
-    if (!file) return;
-    try {
-      const text = await file.text();
-      const merge = confirm('Merge with your current progress? Click Cancel to REPLACE instead.');
-      const n = importJSON(text, merge);
-      alert(`Imported ${n} watched episodes.`);
-    } catch (err) {
-      alert('Could not import that file: ' + (err as Error).message);
-    } finally {
-      input.value = '';
-    }
-  }
+  const anyFilter = () => hasActiveFilters() || prefs.hiddenExtras.length > 0;
 
   return (
     <div class="sticky top-0 z-20 border-b border-sea-200 bg-sea-50/95 backdrop-blur dark:border-sea-800 dark:bg-sea-950/95">
@@ -92,16 +67,38 @@ export default function FilterBar() {
           </div>
 
           <button
-            class="chip border-sea-300 text-xs font-semibold text-sea-500 hover:border-sea-400 dark:border-sea-600 dark:text-sea-300"
+            class="chip text-xs font-semibold hover:border-sea-400"
+            classList={{
+              'border-accent-400 text-accent-500 dark:text-accent-300': anyFilter() && !showMore(),
+              'border-sea-300 text-sea-500 dark:border-sea-600 dark:text-sea-300': !(anyFilter() && !showMore()),
+            }}
             onClick={() => setShowMore(!showMore())}
             aria-expanded={showMore()}
           >
-            ⚙ Filters
+            ⚙ Filters{anyFilter() ? ' •' : ''}
           </button>
         </div>
 
         <Show when={showMore()}>
           <div class="mt-2.5 space-y-2.5 border-t border-sea-200 pt-2.5 dark:border-sea-800">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Show</span>
+              <For each={EXTRAS}>
+                {(cat) => (
+                  <Toggle
+                    active={!prefs.canonOnly && !prefs.hiddenExtras.includes(cat)}
+                    onClick={() => {
+                      if (prefs.canonOnly) setPrefs('canonOnly', false);
+                      toggleExtra(cat);
+                    }}
+                    title={`Show or hide ${EXTRA_LABELS[cat]} (also changes the completion percentages)`}
+                  >
+                    {EXTRA_LABELS[cat]}
+                  </Toggle>
+                )}
+              </For>
+            </div>
+
             <div class="flex flex-wrap items-center gap-2">
               <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Tier</span>
               <Toggle active={prefs.tierMin == null} onClick={() => setPrefs('tierMin', null)}>
@@ -137,33 +134,13 @@ export default function FilterBar() {
                 Hide watched
               </Toggle>
 
-              <Show when={hasActiveFilters()}>
+              <Show when={anyFilter()}>
                 <button class="chip border-strawhat-500/50 text-xs font-semibold text-strawhat-500" onClick={resetFilters}>
                   ✕ Clear filters
                 </button>
               </Show>
               <span class="text-xs text-sea-400">{visibleEpisodeCount()} shown</span>
             </div>
-
-            <div class="flex flex-wrap items-center gap-2 border-t border-sea-200 pt-2.5 dark:border-sea-800">
-              <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Progress</span>
-              <button class="chip border-sea-300 text-xs font-semibold dark:border-sea-600" onClick={doExport}>
-                ⭳ Export
-              </button>
-              <button class="chip border-sea-300 text-xs font-semibold dark:border-sea-600" onClick={() => fileInput?.click()}>
-                ⭱ Import
-              </button>
-              <button
-                class="chip border-red-400/50 text-xs font-semibold text-red-600 dark:text-red-400"
-                onClick={() => {
-                  if (confirm('Reset ALL watched progress? This cannot be undone.')) clearAll();
-                }}
-              >
-                ⟲ Reset progress
-              </button>
-              <input ref={fileInput} type="file" accept="application/json,.json" class="hidden" onChange={onFile} />
-            </div>
-
           </div>
         </Show>
       </div>

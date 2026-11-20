@@ -1,15 +1,17 @@
-import { For, Show, createMemo, createSignal } from 'solid-js';
-import type { FilteredGroup } from '../lib/filter';
-import { kindColor, kindLabel } from '../lib/guide';
+import { For, Show, createSignal } from 'solid-js';
+import { onlyIncluded, type FilteredGroup } from '../lib/filter';
+import { flatEpisodes, kindColor, kindLabel } from '../lib/guide';
+import { stats } from '../lib/stats';
 import { isWatched, setMany } from '../store/progress';
 import EpisodeRow from './EpisodeRow';
+import { inlineMd } from '../lib/format';
 
-export default function GroupBlock(props: { group: FilteredGroup }) {
+export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<string, FilteredGroup[]> }) {
   const [open, setOpen] = createSignal(props.group.defaultOpen);
 
-  const ids = () => props.group.episodes.map((e) => e.id);
-  const watchedCount = createMemo(() => props.group.episodes.filter((e) => isWatched(e.id)).length);
-  const allWatched = () => watchedCount() === props.group.episodes.length && props.group.episodes.length > 0;
+  const prog = () => stats().perGroup[props.group.uid];
+  const ids = () => onlyIncluded(flatEpisodes.filter((f) => f.group.uid === props.group.uid).map((f) => f.ep.id));
+  const allWatched = () => ids().length > 0 && ids().every((id) => isWatched(id));
 
   return (
     <div
@@ -44,8 +46,16 @@ export default function GroupBlock(props: { group: FilteredGroup }) {
           </Show>
         </button>
 
+        <Show when={prog()}>
+          <span class="hidden shrink-0 items-center gap-1.5 sm:flex">
+            <span class="h-1.5 w-14 overflow-hidden rounded-full bg-sea-200 dark:bg-sea-800">
+              <span class="voyage-fill block h-full rounded-full" style={{ width: `${prog()!.pct}%` }} />
+            </span>
+            <span class="text-[11px] tabular-nums text-sea-500 dark:text-sea-400">{Math.round(prog()!.pct)}%</span>
+          </span>
+        </Show>
         <span class="shrink-0 text-xs tabular-nums text-sea-500 dark:text-sea-400">
-          {watchedCount()}/{props.group.episodes.length}
+          {prog()?.watched ?? 0}/{prog()?.total ?? 0}
         </span>
         <button
           class="chip shrink-0 border-sea-300 text-[11px] text-sea-500 hover:border-strawhat-500 hover:text-strawhat-500 dark:border-sea-600 dark:text-sea-300"
@@ -58,20 +68,52 @@ export default function GroupBlock(props: { group: FilteredGroup }) {
 
       <Show when={open()}>
         <div class="border-t border-sea-200 px-1.5 pb-1.5 pt-1 dark:border-sea-800/70">
+          <Show when={props.group.info && (props.group.info.links.length || props.group.info.text)}>
+            <div class="mx-2 mb-1.5 mt-1 rounded-md bg-sea-100 px-2.5 py-1.5 text-xs dark:bg-sea-900/70">
+              <Show when={props.group.info!.text}>
+                <div class="text-sea-600 dark:text-sea-300">{props.group.info!.text}</div>
+              </Show>
+              <Show when={props.group.info!.links.length}>
+                <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wide text-sea-400">Sources</span>
+                  <For each={props.group.info!.links}>
+                    {(l) => (
+                      <a href={l.url} target="_blank" rel="noopener noreferrer" class="font-semibold text-accent-500 hover:underline dark:text-accent-300">
+                        {l.label}
+                      </a>
+                    )}
+                  </For>
+                </div>
+              </Show>
+            </div>
+          </Show>
           <Show when={props.group.notes.length}>
             <ul class="mb-1 space-y-0.5 px-2 pt-1">
               <For each={props.group.notes}>
                 {(note) => (
                   <li class="flex gap-1.5 text-xs text-accent-600 dark:text-accent-300">
                     <span aria-hidden="true">⚑</span>
-                    <span>{note}</span>
+                    <span innerHTML={inlineMd(note)} />
                   </li>
                 )}
               </For>
             </ul>
           </Show>
           <ul class="divide-y divide-sea-200/60 dark:divide-sea-800/60">
-            <For each={props.group.episodes}>{(ep) => <EpisodeRow ep={ep} />}</For>
+            <For each={props.group.episodes}>
+              {(ep) => (
+                <>
+                  <EpisodeRow ep={ep} />
+                  <For each={props.inline?.get(ep.id) ?? []}>
+                    {(child) => (
+                      <li class="py-2 pl-4">
+                        <GroupBlock group={child} inline={props.inline} />
+                      </li>
+                    )}
+                  </For>
+                </>
+              )}
+            </For>
           </ul>
         </div>
       </Show>

@@ -1,17 +1,19 @@
 import { createMemo } from 'solid-js';
-import { flatEpisodes, guide, paceNumberedIds, type FlatEpisode } from './guide';
+import { flatEpisodes, guide, type FlatEpisode } from './guide';
+import { episodeIncluded } from './filter';
 import { isWatched } from '../store/progress';
+import { BOUNTY_PER_EPISODE, BOUNTY_REVEALS, CREW, pirateRank } from './bounties';
 
 /**
- * Rough runtime per entry (minutes), by group kind. One Pace episodes run a little longer
- * than a TV episode; movies and Live Action episodes are much longer. Placeholder entries
- * (upcoming films, "continue with the original anime" pointers) count as 0.
+ * Rough runtime per entry (minutes), by section kind. One Pace episodes average ~24 min;
+ * movies and Live Action episodes run much longer. Placeholder entries (upcoming films,
+ * "continue with the original anime" pointers) count as 0.
  */
 const KIND_MINUTES: Record<string, number> = {
-  onepace: 25,
-  onigashima: 25,
+  onepace: 24,
+  onigashima: 24,
   'kuma-shaved': 24,
-  funpace: 25,
+  funpace: 24,
   original: 24,
   log: 24,
   filler: 24,
@@ -24,13 +26,13 @@ const KIND_MINUTES: Record<string, number> = {
   other: 24,
 };
 
-/** Length of one original TV anime episode (minutes), for the time-saved comparison. */
+/** One original TV anime episode (minutes), for the "vs. full anime" comparison. */
 const ANIME_EP_MIN = 24;
 
-const minutesOf = (f: FlatEpisode) => KIND_MINUTES[f.group.kind] ?? 24;
+export const minutesOf = (f: FlatEpisode) => KIND_MINUTES[f.group.kind] ?? 24;
 
-/** Anime episode numbers from an `anime` field such as "250–251, 256, 320". */
-function animeNumbers(text: string | null): number[] {
+/** Integers from fields like "250–251, 256, 320" (anime episodes or manga chapters). */
+function numbers(text: string | null): number[] {
   if (!text) return [];
   const out: number[] = [];
   for (const part of text.replace(/[–—]/g, '-').split(/[,/]/)) {
@@ -39,90 +41,147 @@ function animeNumbers(text: string | null): number[] {
     if (range) {
       const a = +range[1];
       const b = +range[2];
-      if (b > a && b - a < 60) for (let n = a; n <= b; n++) out.push(n);
+      if (b >= a && b - a < 80) for (let n = a; n <= b; n++) out.push(n);
     } else if (/^\d+$/.test(p)) out.push(+p);
   }
   return out;
 }
 
-const canonEntries = flatEpisodes.filter((f) => f.ep.canon);
+export function fmtHours(min: number): string {
+  const m = Math.round(min);
+  const h = Math.floor(m / 60);
+  return `${h}h ${String(m % 60).padStart(2, '0')}m`;
+}
 
-/** Minutes of original anime the canon route replaces vs. the One Pace minutes to watch it. */
-const animeCovered = new Set<number>();
-for (const f of canonEntries) for (const n of animeNumbers(f.ep.anime)) animeCovered.add(n);
-const totalSavedMin = Math.max(
-  0,
-  animeCovered.size * ANIME_EP_MIN - canonEntries.reduce((m, f) => m + minutesOf(f), 0),
-);
-
-const hours = (min: number) => Math.round(min / 60);
 const pct = (a: number, b: number) => (b ? (a / b) * 100 : 0);
 
-export interface SagaProgress {
-  id: string;
+export interface Progress {
   watched: number;
   total: number;
   pct: number;
 }
 
+/** Arcs ("islands") in story order: arc nodes that have canon-route episodes. */
+const islands = guide.sagas.flatMap((s) =>
+  s.nodes.filter((n) => n.type === 'arc' && n.groups.some((g) => g.episodes.some((e) => e.canon))),
+);
+
 export const stats = createMemo(() => {
+  // --- selection (respects Canon Only and hidden extra types) ---
+  const perSaga: Record<string, Progress> = {};
+  const perNode: Record<string, Progress> = {};
+  const perGroup: Record<string, Progress> = {};
+  const bump = (rec: Record<string, Progress>, key: string, w: boolean) => {
+    const p = (rec[key] ??= { watched: 0, total: 0, pct: 0 });
+    p.total++;
+    if (w) p.watched++;
+  };
+
+  let selWatched = 0;
+  let selTotal = 0;
+  let selMinWatched = 0;
+  let selMinTotal = 0;
+  const selAnime = new Set<number>();
+
+  // --- canon route ---
   let canonWatched = 0;
-  let canonMinLeft = 0;
-  let allWatched = 0;
-  let allMinLeft = 0;
-  const animeSeen = new Set<number>();
+  let canonTotal = 0;
   let canonMinWatched = 0;
+  const animeSeen = new Set<number>();
+  const chaptersSeen = new Set<number>();
+  const animeAll = new Set<number>();
+  let canonMinTotal = 0;
 
   for (const f of flatEpisodes) {
     const w = isWatched(f.ep.id);
     const min = minutesOf(f);
-    if (w) allWatched++;
-    else allMinLeft += min;
+
     if (f.ep.canon) {
+      canonTotal++;
+      canonMinTotal += min;
+      for (const n of numbers(f.ep.anime)) animeAll.add(n);
       if (w) {
         canonWatched++;
         canonMinWatched += min;
-        for (const n of animeNumbers(f.ep.anime)) animeSeen.add(n);
-      } else canonMinLeft += min;
+        for (const n of numbers(f.ep.anime)) animeSeen.add(n);
+        for (const n of numbers(f.ep.chapters)) chaptersSeen.add(n);
+      }
     }
+
+    if (!episodeIncluded(f.ep, f.group, f.node)) continue;
+    selTotal++;
+    selMinTotal += min;
+    if (f.ep.canon) for (const n of numbers(f.ep.anime)) selAnime.add(n);
+    if (w) {
+      selWatched++;
+      selMinWatched += min;
+    }
+    bump(perSaga, f.saga.id, w);
+    bump(perNode, f.node.uid, w);
+    bump(perGroup, f.group.uid, w);
   }
+  for (const rec of [perSaga, perNode, perGroup]) for (const p of Object.values(rec)) p.pct = pct(p.watched, p.total);
 
-  const paceWatched = paceNumberedIds.filter((id) => isWatched(id)).length;
+  // --- islands & sagas conquered (canon route) ---
+  const done = (eps: { id: string; canon: boolean }[]) => {
+    const c = eps.filter((e) => e.canon);
+    return c.length > 0 && c.every((e) => isWatched(e.id));
+  };
+  const islandDone = islands.map((n) => done(n.groups.flatMap((g) => g.episodes)));
+  const islandsConquered = islandDone.filter(Boolean).length;
+  const sagasConquered = guide.sagas.filter((s) => done(s.nodes.flatMap((n) => n.groups.flatMap((g) => g.episodes)))).length;
 
-  const perSaga: Record<string, SagaProgress> = {};
-  let sagasCleared = 0;
-  for (const saga of guide.sagas) {
-    let total = 0;
-    let watched = 0;
-    for (const node of saga.nodes)
-      for (const group of node.groups)
-        for (const ep of group.episodes)
-          if (ep.canon) {
-            total++;
-            if (isWatched(ep.id)) watched++;
-          }
-    perSaga[saga.id] = { id: saga.id, watched, total, pct: pct(watched, total) };
-    if (total > 0 && watched === total) sagasCleared++;
-  }
+  // An island is "passed" once it is complete or any later island has been started.
+  let lastStarted = -1;
+  islands.forEach((n, i) => {
+    if (n.groups.some((g) => g.episodes.some((e) => e.canon && isWatched(e.id)))) lastStarted = i;
+  });
+  const passed = new Set<string>();
+  islands.forEach((n, i) => {
+    if (islandDone[i] || i < lastStarted) passed.add(n.id);
+  });
+  const lastPassed = [...islands].reverse().find((n) => passed.has(n.id)) ?? null;
 
-  const canonTotal = canonEntries.length;
-  const allTotal = flatEpisodes.length;
+  // --- crew bounties (spoiler-gated) ---
+  const bounties: Record<string, number | null> = {};
+  for (const [arc, vals] of BOUNTY_REVEALS) if (passed.has(arc)) Object.assign(bounties, vals);
+  const crew = CREW.filter((c) => c.key === 'luffy' || passed.has(c.joins) || (c.joins === 'romance-dawn-arc' && lastStarted >= 0)).map(
+    (c) => ({ ...c, bounty: bounties[c.key] ?? null }),
+  );
+
+  const bounty = canonWatched * BOUNTY_PER_EPISODE;
+  const animeMinSeen = animeSeen.size * ANIME_EP_MIN;
 
   return {
-    canonTotal,
+    // canon route
     canonWatched,
+    canonTotal,
     canonPct: pct(canonWatched, canonTotal),
-    allTotal,
-    allWatched,
-    allPct: pct(allWatched, allTotal),
-    paceTotal: paceNumberedIds.length,
-    paceWatched,
+    // current selection
+    selWatched,
+    selTotal,
+    selPct: pct(selWatched, selTotal),
+    minWatched: selMinWatched,
+    minTotal: selMinTotal,
+    minLeft: selMinTotal - selMinWatched,
+    canonMinLeft: canonMinTotal - canonMinWatched,
+    animeEquivMin: selAnime.size * ANIME_EP_MIN,
+    savedSoFarMin: Math.max(0, animeMinSeen - canonMinWatched),
+    savedTotalMin: Math.max(0, animeAll.size * ANIME_EP_MIN - canonMinTotal),
+    // progress tables
     perSaga,
-    sagasCleared,
+    perNode,
+    perGroup,
+    // achievements
+    islandsConquered,
+    islandsTotal: islands.length,
+    sagasConquered,
     sagasTotal: guide.sagas.length,
-    hoursLeftCanon: hours(canonMinLeft),
-    hoursLeftAll: hours(allMinLeft),
-    hoursSavedTotal: hours(totalSavedMin),
-    hoursSavedSoFar: hours(Math.max(0, animeSeen.size * ANIME_EP_MIN - canonMinWatched)),
+    chaptersSeen: chaptersSeen.size,
+    animeSeen: animeSeen.size,
+    bounty,
+    rank: pirateRank(bounty),
+    crew,
+    crewAsOf: lastPassed?.title ?? null,
   };
 });

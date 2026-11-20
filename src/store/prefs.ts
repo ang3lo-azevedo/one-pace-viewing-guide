@@ -5,6 +5,8 @@ const KEY = 'op-prefs-v1';
 
 export type StreamSource = 'onepace' | 'stremio';
 export type Theme = 'dark' | 'light';
+import type { ExtraCategory } from '../lib/guide';
+export type { ExtraCategory };
 
 export interface Prefs {
   canonOnly: boolean;
@@ -17,6 +19,8 @@ export interface Prefs {
   hideWatched: boolean;
   /** Hide spoilery episode subtitles (reveal on hover). */
   spoilerSafe: boolean;
+  /** Extra content types hidden from the list and from progress. */
+  hiddenExtras: ExtraCategory[];
   theme: Theme;
 }
 
@@ -28,6 +32,7 @@ const DEFAULTS: Prefs = {
   sagaId: null,
   hideWatched: false,
   spoilerSafe: true,
+  hiddenExtras: [],
   theme: 'dark',
 };
 
@@ -68,5 +73,10 @@ export function toggleTheme() {
 }
 
 export function resetFilters() {
-  setPrefs({ search: '', tierMin: null, sagaId: null, hideWatched: false, canonOnly: false });
+  setPrefs({ search: '', tierMin: null, sagaId: null, hideWatched: false, canonOnly: false, hiddenExtras: [] });
+}
+
+export function toggleExtra(cat: ExtraCategory) {
+  const cur = prefs.hiddenExtras;
+  setPrefs('hiddenExtras', cur.includes(cat) ? cur.filter((c) => c !== cat) : [...cur, cat]);
 }

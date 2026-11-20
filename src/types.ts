@@ -32,6 +32,8 @@ export interface Episode {
   /** Trakt community rating (only present when the episode has votes on Trakt). */
   traktRating?: number;
   traktVotes?: number;
+  /** Where this episode lives on the Trakt One Pace show. */
+  traktEpisode?: { season: number; number: number };
 }
 
 export type GroupKind =

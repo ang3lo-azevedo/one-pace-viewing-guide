@@ -13,8 +13,13 @@ interface TraktState {
   refreshToken: string | null;
   expiresAt: number | null; // epoch seconds
   username: string | null;
+  /** Display name and avatar of the signed-in Trakt account. */
+  name: string | null;
+  avatar: string | null;
   status: 'idle' | 'connecting' | 'syncing';
   lastMessage: string | null;
+  /** When watched history was last exchanged with Trakt (ms epoch). */
+  lastSyncedAt: number | null;
   /** Our episode ids that map to a Trakt episode (known after the map is built). */
   mapped: Record<string, true>;
   /** Your own Trakt ratings (1-10), by our episode id. */
@@ -33,8 +38,11 @@ function load(): TraktState {
     refreshToken: null,
     expiresAt: null,
     username: null,
+    name: null,
+    avatar: null,
     status: 'idle',
     lastMessage: null,
+    lastSyncedAt: null,
     mapped: {},
     myRatings: {},
   };
@@ -44,9 +52,9 @@ const [trakt, setTrakt] = createStore<TraktState>(load());
 export { trakt };
 
 function persist() {
-  const { accessToken, refreshToken, expiresAt, username } = trakt;
+  const { accessToken, refreshToken, expiresAt, username, name, avatar, lastSyncedAt } = trakt;
   try {
-    localStorage.setItem(KEY, JSON.stringify({ accessToken, refreshToken, expiresAt, username }));
+    localStorage.setItem(KEY, JSON.stringify({ accessToken, refreshToken, expiresAt, username, name, avatar, lastSyncedAt }));
   } catch {
     /* ignore */
   }
@@ -93,7 +101,7 @@ export async function connect() {
 }
 
 export function disconnect() {
-  setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, lastMessage: 'Disconnected.', myRatings: {} });
+  setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, name: null, avatar: null, lastMessage: 'Disconnected.', myRatings: {}, lastSyncedAt: null });
   persist();
 }
 
@@ -188,13 +196,18 @@ async function traktFetch(path: string, init?: RequestInit): Promise<Response> {
   });
 }
 
+/** Load the signed-in account's username, display name and avatar (and remember them). */
 async function fetchUsername() {
   try {
-    const r = await traktFetch('/users/me');
-    if (r.ok) {
-      const u = await r.json();
-      setTrakt('username', u.username ?? u.ids?.slug ?? 'trakt user');
-    }
+    const r = await traktFetch('/users/settings');
+    if (!r.ok) return;
+    const u = (await r.json()).user ?? {};
+    setTrakt({
+      username: u.username ?? u.ids?.slug ?? null,
+      name: u.name || null,
+      avatar: u.images?.avatar?.full ?? null,
+    });
+    persist();
   } catch {
     /* ignore */
   }
@@ -301,6 +314,9 @@ async function buildMap(): Promise<MapResult> {
 
 // ---- sync --------------------------------------------------------------------
 
+/** Last pull in this page session (not persisted, so each page load pulls once). */
+let lastPullAt = 0;
+
 /** Pull watched history from Trakt and mark matching episodes watched locally. */
 export async function pullFromTrakt(): Promise<void> {
   if (!isConnected()) return;
@@ -319,13 +335,16 @@ export async function pullFromTrakt(): Promise<void> {
         }
     // Silent: these came from Trakt, so they must not be pushed back.
     if (watchedIds.length) setMany(watchedIds, true, { silent: true });
+    lastPullAt = Date.now();
+    setTrakt('lastSyncedAt', lastPullAt);
+    persist();
     setTrakt({ status: 'idle', lastMessage: `Pulled ${watchedIds.length} watched from Trakt (${map.matched}/${map.total} episodes mapped).` });
   } catch (e) {
     setTrakt({ status: 'idle', lastMessage: 'Pull failed: ' + (e as Error).message });
   }
 }
 
-async function sendHistory(ourIds: string[], watched: boolean): Promise<number> {
+async function sendHistory(ourIds: string[], watched: boolean, keepalive = false): Promise<number> {
   const map = await getMap();
   const episodes = ourIds
     .map((id) => map.toTrakt.get(id))
@@ -335,6 +354,7 @@ async function sendHistory(ourIds: string[], watched: boolean): Promise<number> 
   const r = await traktFetch(watched ? '/sync/history' : '/sync/history/remove', {
     method: 'POST',
     body: JSON.stringify({ episodes }),
+    keepalive,
   });
   if (!r.ok) throw new Error(`history ${r.status}`);
   return episodes.length;
@@ -357,19 +377,26 @@ export async function pushToTrakt(watchedLocalIds: string[]): Promise<void> {
 const pending = new Map<string, boolean>();
 let flushTimer: ReturnType<typeof setTimeout> | undefined;
 
-async function flush() {
+async function flush(keepalive = false) {
+  clearTimeout(flushTimer);
   flushTimer = undefined;
   if (!isConnected() || !pending.size) return;
+  const batch = new Map(pending);
+  pending.clear();
   const add: string[] = [];
   const remove: string[] = [];
-  for (const [id, w] of pending) (w ? add : remove).push(id);
-  pending.clear();
+  for (const [id, w] of batch) (w ? add : remove).push(id);
   try {
-    const a = add.length ? await sendHistory(add, true) : 0;
-    const r = remove.length ? await sendHistory(remove, false) : 0;
+    const a = add.length ? await sendHistory(add, true, keepalive) : 0;
+    const r = remove.length ? await sendHistory(remove, false, keepalive) : 0;
+    setTrakt('lastSyncedAt', Date.now());
+    persist();
     if (a || r) setTrakt('lastMessage', `Synced to Trakt: ${a} added, ${r} removed.`);
   } catch (e) {
-    setTrakt('lastMessage', 'Trakt sync failed: ' + (e as Error).message);
+    // Put the changes back (newer local changes win) and retry in 30 s.
+    for (const [id, w] of batch) if (!pending.has(id)) pending.set(id, w);
+    flushTimer = setTimeout(() => flush(), 30_000);
+    setTrakt('lastMessage', 'Trakt sync failed, will retry: ' + (e as Error).message);
   }
 }
 
@@ -422,10 +449,36 @@ export async function rateEpisode(ourId: string, rating: number | null): Promise
 }
 
 /** On app start with a saved login: build the episode map and load your ratings. */
+const AUTO_PULL_EVERY = 5 * 60_000;
+
+/** Pull from Trakt if the last exchange is older than 5 minutes. */
+async function autoPull() {
+  if (!isConnected() || trakt.status !== 'idle') return;
+  if (lastPullAt && Date.now() - lastPullAt < AUTO_PULL_EVERY) return;
+  await pullFromTrakt();
+}
+
+let listenersAdded = false;
+
+/**
+ * On app start with a saved login: load the profile, episode map and ratings, then pull
+ * your watched history. While the page is open it pulls again when you come back to the tab
+ * (at most every 5 minutes), and sends pending changes when the tab is hidden or closed.
+ */
 export async function initTrakt(): Promise<void> {
   if (!isConnected()) return;
+  if (!listenersAdded) {
+    listenersAdded = true;
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flush(true);
+      else autoPull();
+    });
+    window.addEventListener('pagehide', () => flush(true));
+  }
   try {
+    await fetchUsername();
     await getMap();
+    await autoPull();
     await loadMyRatings();
   } catch {
     /* ignore; the menu shows errors on manual actions */

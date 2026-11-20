@@ -103,7 +103,7 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
             <For each={props.group.episodes}>
               {(ep) => (
                 <>
-                  <EpisodeRow ep={ep} />
+                  <EpisodeRow ep={ep} kind={props.group.kind} />
                   <For each={props.inline?.get(ep.id) ?? []}>
                     {(child) => (
                       <li class="py-2 pl-4">

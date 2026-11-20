@@ -95,6 +95,14 @@ export function pirateRank(bounty: number): string {
   return 'Cabin Boy';
 }
 
+/** The next rank above this bounty, or null at the top. */
+export function nextRank(bounty: number): { name: string; at: number } | null {
+  const above = RANKS.filter(([min]) => min > bounty);
+  if (!above.length) return null;
+  const [at, name] = above[above.length - 1];
+  return { name, at };
+}
+
 export function formatBerry(n: number): string {
   return '฿' + n.toLocaleString('en-US');
 }

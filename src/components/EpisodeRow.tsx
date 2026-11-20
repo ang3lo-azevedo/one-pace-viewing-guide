@@ -4,7 +4,8 @@ import { isWatched, toggle } from '../store/progress';
 import { prefs } from '../store/prefs';
 import { isConnected, rateEpisode, trakt } from '../store/trakt';
 import { splitTitle } from '../lib/guide';
-import { inlineMd } from '../lib/format';
+import { SERIESGRAPH_SHOW, firstAnimeEpisode, inlineMd } from '../lib/format';
+import { config } from '../config';
 import RatingBadge from './RatingBadge';
 import Tooltip from './Tooltip';
 
@@ -22,7 +23,20 @@ const ORDER: (keyof EpisodeLinks)[] = ['onepace', 'stremio', 'netflix', 'drive',
 
 const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
 
-export default function EpisodeRow(props: { ep: Episode }) {
+/** Section kinds whose star rating is not a SeriesGraph One Piece anime rating. */
+const NOT_SERIESGRAPH = new Set(['netflix', 'movie', 'upcoming', 'original-continuation']);
+
+export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
+  // The star rating averages the anime episodes this entry adapts; link to the first one.
+  const sgHref = () => {
+    if (NOT_SERIESGRAPH.has(props.kind ?? '')) return null;
+    const n = firstAnimeEpisode(props.ep.anime);
+    return n ? `${SERIESGRAPH_SHOW}/episode/${n}` : null;
+  };
+  const traktHref = () => {
+    const t = props.ep.traktEpisode;
+    return t ? `https://trakt.tv/shows/${config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}` : null;
+  };
   const watched = () => isWatched(props.ep.id);
   const [rating, setRating] = createSignal(false);
   const canRate = () => isConnected() && !!trakt.mapped[props.ep.id];
@@ -73,14 +87,22 @@ export default function EpisodeRow(props: { ep: Episode }) {
 
       <div class="min-w-0 flex-1">
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <RatingBadge rating={props.ep.rating} color={props.ep.tierColor} />
+          <RatingBadge
+            rating={props.ep.rating}
+            color={props.ep.tierColor}
+            href={sgHref()}
+            title={sgHref() ? `SeriesGraph rating ${props.ep.rating}, averaged over anime ${props.ep.anime}. Open on SeriesGraph` : undefined}
+          />
           <Show when={props.ep.traktRating}>
-            <span
-              class="inline-flex items-center gap-0.5 rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24]"
-              title={`Trakt rating ${props.ep.traktRating} (${props.ep.traktVotes} vote${props.ep.traktVotes === 1 ? '' : 's'})`}
+            <a
+              href={traktHref() ?? `https://trakt.tv/shows/${config.traktShowSlug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-0.5 rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24] hover:bg-[#ed1c24]/10"
+              title={`Trakt rating ${props.ep.traktRating} (${props.ep.traktVotes} vote${props.ep.traktVotes === 1 ? '' : 's'}). Open on Trakt`}
             >
               Trakt {props.ep.traktRating?.toFixed(1)}
-            </span>
+            </a>
           </Show>
           <Show
             when={tipText()}

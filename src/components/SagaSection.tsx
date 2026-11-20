@@ -4,6 +4,7 @@ import { allIdsOfSaga, idsBeforeSaga, tierForRating } from '../lib/guide';
 import { stats } from '../lib/stats';
 import { isWatched, setMany } from '../store/progress';
 import RatingBadge from './RatingBadge';
+import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
 
 export default function SagaSection(props: { saga: FilteredSaga; index: number }) {
@@ -20,20 +21,36 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
   return (
     <section class="scroll-mt-24" id={props.saga.id}>
       <div class="group sticky top-[4.25rem] z-10 flex items-center gap-3 rounded-xl border border-sea-200 bg-white/90 px-3 py-3 shadow-sm backdrop-blur dark:border-sea-800 dark:bg-sea-900/90 sm:px-4">
-        <button class="flex min-w-0 flex-1 items-center gap-3 text-left" onClick={() => setOpen(!open())} aria-expanded={open()}>
+        <div
+          role="button"
+          tabindex="0"
+          class="flex min-w-0 flex-1 items-center gap-3 text-left cursor-pointer"
+          onClick={() => setOpen(!open())}
+          onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setOpen(!open()))}
+          aria-expanded={open()}
+        >
+          <span class="w-3 shrink-0 text-xs transition-transform" classList={{ 'rotate-90': open() }} aria-hidden="true">
+            ▶
+          </span>
           <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-strawhat-500/15 text-sm font-black text-strawhat-500" aria-hidden="true">
             {props.index + 1}
           </span>
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-2">
               <h2 class="text-lg font-black leading-tight">{props.saga.title}</h2>
-              <RatingBadge rating={props.saga.rating} color={tierForRating(props.saga.rating)?.color ?? null} size="md" />
+              <RatingBadge
+                rating={props.saga.rating}
+                color={tierForRating(props.saga.rating)?.color ?? null}
+                size="md"
+                href={SERIESGRAPH_SHOW}
+                title={`Average of this saga\'s One Pace episodes on SeriesGraph (${props.saga.rating}). Open One Piece on SeriesGraph`}
+              />
             </div>
             <Show when={meta()}>
               <div class="mt-0.5 text-xs text-sea-500 dark:text-sea-400">{meta()}</div>
             </Show>
           </div>
-        </button>
+        </div>
 
         <div class="hidden w-36 shrink-0 sm:block">
           <div class="mb-1 flex justify-between text-[11px] font-semibold tabular-nums text-sea-500 dark:text-sea-400">
@@ -63,10 +80,6 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
             Catch up
           </button>
         </div>
-
-        <button class="shrink-0 text-xs transition-transform" classList={{ 'rotate-90': open() }} onClick={() => setOpen(!open())} aria-label="Toggle saga">
-          ▶
-        </button>
       </div>
 
       <Show when={open()}>

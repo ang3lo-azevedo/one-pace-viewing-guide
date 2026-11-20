@@ -1,21 +1,50 @@
 import { For, Show } from 'solid-js';
 import { fmtHours, stats } from '../lib/stats';
-import { formatBerry } from '../lib/bounties';
+import { BOUNTY_PER_EPISODE, formatBerry, nextRank } from '../lib/bounties';
 import { prefs } from '../store/prefs';
 import { EXTRA_LABELS } from '../lib/guide';
 
-function Tile(props: { label: string; value: string; sub?: string; accent?: string }) {
+function Panel(props: { title: string; accent: string; children: any }) {
   return (
-    <div class="card flex flex-col justify-center px-3 py-2.5">
-      <div
-        class="font-display font-black leading-tight tabular-nums whitespace-nowrap"
-        classList={{ 'text-base sm:text-lg': props.value.length <= 11, 'text-sm sm:text-[15px]': props.value.length > 11 }}
-        style={{ color: props.accent }}
-      >
+    <div class="card flex flex-col p-3.5">
+      <div class="mb-2 text-[11px] font-bold uppercase tracking-widest" style={{ color: props.accent }}>
+        {props.title}
+      </div>
+      {props.children}
+    </div>
+  );
+}
+
+function Big(props: { value: string; label: string; color: string }) {
+  return (
+    <div class="mb-2">
+      <div class="font-display text-2xl font-black leading-tight tabular-nums whitespace-nowrap" style={{ color: props.color }}>
         {props.value}
       </div>
-      <div class="text-[11px] font-semibold uppercase tracking-wide text-sea-500 dark:text-sea-400">{props.label}</div>
-      {props.sub && <div class="text-[11px] text-sea-400 dark:text-sea-500">{props.sub}</div>}
+      <div class="text-[11px] text-sea-500 dark:text-sea-400">{props.label}</div>
+    </div>
+  );
+}
+
+function Row(props: { label: string; value: string; title?: string }) {
+  return (
+    <div class="flex items-baseline justify-between gap-2 border-t border-sea-200 py-1 text-xs dark:border-sea-800" title={props.title}>
+      <span class="text-sea-500 dark:text-sea-400">{props.label}</span>
+      <span class="font-semibold tabular-nums text-sea-700 dark:text-sea-100">{props.value}</span>
+    </div>
+  );
+}
+
+function Mini(props: { value: string; label: string; pct?: number }) {
+  return (
+    <div class="rounded-lg bg-sea-100 px-2.5 py-2 dark:bg-sea-950/60">
+      <div class="font-display text-lg font-black leading-tight tabular-nums text-accent-500 dark:text-accent-300">{props.value}</div>
+      <div class="text-[10px] font-semibold uppercase tracking-wide text-sea-500 dark:text-sea-400">{props.label}</div>
+      {props.pct != null && (
+        <div class="mt-1 h-1 overflow-hidden rounded-full bg-sea-200 dark:bg-sea-800">
+          <div class="voyage-fill h-full rounded-full" style={{ width: `${props.pct}%` }} />
+        </div>
+      )}
     </div>
   );
 }
@@ -78,25 +107,43 @@ export default function VoyageHero() {
         </Show>
       </div>
 
-      <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
-        <For
-          each={[
-            { label: 'Watched', value: `${s().selWatched} / ${s().selTotal}`, sub: prefs.canonOnly ? 'canon episodes' : 'entries', accent: '#66c0ef' },
-            { label: 'Time Watched', value: fmtHours(s().minWatched), sub: `of ${fmtHours(s().minTotal)} total`, accent: '#66c0ef' },
-            { label: 'Time Remaining', value: fmtHours(s().minLeft), sub: `canon only: ${fmtHours(s().canonMinLeft)}`, accent: '#ff0408' },
-            { label: 'Full Anime Equivalent', value: fmtHours(s().animeEquivMin), sub: 'same story in the original anime', accent: '#90a4ae' },
-            { label: 'Saved vs Anime', value: fmtHours(s().savedSoFarMin), sub: `so far · ${fmtHours(s().savedTotalMin)} in total`, accent: '#2dd4bf' },
-            { label: 'Islands Conquered', value: `${s().islandsConquered} / ${s().islandsTotal}`, sub: 'arcs completed', accent: '#8fd0f3' },
-            { label: 'Sagas Conquered', value: `${s().sagasConquered} / ${s().sagasTotal}`, sub: 'sagas completed', accent: '#8fd0f3' },
-            { label: 'Manga Chapters', value: `~${s().chaptersSeen}`, sub: 'covered so far', accent: '#c4b5fd' },
-            { label: 'Anime Eps Covered', value: `~${s().animeSeen}`, sub: 'covered so far', accent: '#c4b5fd' },
-            { label: 'Bounty', value: formatBerry(s().bounty), sub: '฿3M per canon episode', accent: '#f4d35e' },
-            { label: 'Pirate Rank', value: s().rank, sub: 'based on your bounty', accent: '#f4d35e' },
-            { label: 'Canon Route', value: `${s().canonPct.toFixed(1)}%`, sub: `${s().canonWatched} / ${s().canonTotal}`, accent: '#66c0ef' },
-          ]}
-        >
-          {(t) => <Tile label={t.label} value={t.value} sub={t.sub} accent={t.accent} />}
-        </For>
+      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+        <Panel title="Time" accent="#66c0ef">
+          <Big value={fmtHours(s().minLeft)} label="left to watch" color="#ff0408" />
+          <Row label="Watched" value={fmtHours(s().minWatched)} />
+          <Row label="Total" value={fmtHours(s().minTotal)} />
+          <Row label="Canon route left" value={fmtHours(s().canonMinLeft)} />
+        </Panel>
+
+        <Panel title="Saved vs full anime" accent="#2dd4bf">
+          <Big value={fmtHours(s().savedSoFarMin)} label="saved so far" color="#2dd4bf" />
+          <Row label="Saved in total" value={fmtHours(s().savedTotalMin)} />
+          <Row label="Full anime equivalent" value={fmtHours(s().animeEquivMin)} title="Time to watch the same story in the original anime" />
+          <Row label="With this guide" value={fmtHours(s().minTotal)} />
+        </Panel>
+
+        <Panel title="Journey" accent="#8fd0f3">
+          <div class="grid grid-cols-2 gap-1.5">
+            <Mini value={`${s().islandsConquered}/${s().islandsTotal}`} label="Islands" pct={(s().islandsConquered / s().islandsTotal) * 100} />
+            <Mini value={`${s().sagasConquered}/${s().sagasTotal}`} label="Sagas" pct={(s().sagasConquered / s().sagasTotal) * 100} />
+            <Mini value={`~${s().chaptersSeen}`} label="Manga chapters" />
+            <Mini value={`~${s().animeSeen}`} label="Anime episodes" />
+          </div>
+        </Panel>
+
+        <Panel title="Pirate" accent="#f4d35e">
+          <Big value={formatBerry(s().bounty)} label="your bounty (฿3M per canon episode)" color="#f4d35e" />
+          <Row label="Rank" value={s().rank} />
+          <Show when={nextRank(s().bounty)}>
+            {(n) => (
+              <Row
+                label={`Next: ${n().name}`}
+                value={`${Math.ceil((n().at - s().bounty) / BOUNTY_PER_EPISODE)} eps`}
+                title={`Reached at ${formatBerry(n().at)}`}
+              />
+            )}
+          </Show>
+        </Panel>
       </div>
 
       <Show when={s().crew.length}>

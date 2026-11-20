@@ -58,7 +58,9 @@ On the Trakt app, set the **Redirect URIs** to the site URL(s) and add them as *
 origins** too (for browser CORS). Episodes map to Trakt by title with a positional
 fallback (~98% of the standard One Pace releases; Wano/Egghead-continuation cuts that use
 Stremio-only links are not mapped). The **Connect Trakt** button is in the header; once connected, checking or bulk-marking
-episodes syncs to Trakt, and watched episodes can be rated (1 to 10).
+episodes syncs to Trakt, and watched episodes can be rated (1 to 10). Your watched
+history is pulled from Trakt when the page opens and when you return to the tab (at
+most every 5 minutes); pending changes are sent when the tab is hidden or closed.
 
 ### Arc details and placement
 

@@ -4,6 +4,7 @@ import { isWatched, setMany } from '../store/progress';
 import { allIdsOfNode, idsBeforeNode, tierForRating } from '../lib/guide';
 import { stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
+import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
 
 const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
@@ -47,7 +48,14 @@ export default function ArcCard(props: { node: FilteredNode }) {
   return (
     <div class="card scroll-mt-28 overflow-hidden" id={props.node.id}>
       <div class="flex items-start gap-2 px-3 py-3 sm:px-4">
-        <button class="mt-0.5 flex min-w-0 flex-1 items-start gap-3 text-left" onClick={() => setOpen(!open())} aria-expanded={open()}>
+        <div
+          role="button"
+          tabindex="0"
+          class="mt-0.5 flex min-w-0 flex-1 items-start gap-3 text-left cursor-pointer"
+          onClick={() => setOpen(!open())}
+          onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setOpen(!open()))}
+          aria-expanded={open()}
+        >
           <span class="mt-1 text-xs transition-transform" classList={{ 'rotate-90': open() }} aria-hidden="true">
             ▶
           </span>
@@ -55,7 +63,12 @@ export default function ArcCard(props: { node: FilteredNode }) {
             <div class="flex flex-wrap items-center gap-2">
               <span class={`chip ${badge().cls}`}>{badge().label}</span>
               <h3 class="text-base font-extrabold leading-tight">{props.node.title}</h3>
-              <RatingBadge rating={props.node.rating} color={tierForRating(props.node.rating)?.color ?? null} />
+              <RatingBadge
+                rating={props.node.rating}
+                color={tierForRating(props.node.rating)?.color ?? null}
+                href={props.node.type === 'arc' ? SERIESGRAPH_SHOW : null}
+                title={props.node.type === 'arc' ? `Average of this arc\'s One Pace episodes on SeriesGraph (${props.node.rating}). Open One Piece on SeriesGraph` : undefined}
+              />
               <Show when={props.node.isAlternative}>
                 <span class="chip border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
               </Show>
@@ -72,7 +85,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
               </div>
             </Show>
           </div>
-        </button>
+        </div>
 
         <div class="flex shrink-0 flex-col items-end gap-1">
           <span class="text-xs font-semibold tabular-nums text-sea-500 dark:text-sea-400">

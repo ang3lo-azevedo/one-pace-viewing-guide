@@ -89,7 +89,11 @@
                   "canon": true,
                   "id": "one-pace:romance-dawn-01",
                   "traktRating": 9.5,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 1,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Romance Dawn 02 - They Call Him \"Straw…",
@@ -114,7 +118,11 @@
                   "canon": true,
                   "id": "one-pace:romance-dawn-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 1,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Romance Dawn 03 - The Pirate King and the…",
@@ -139,7 +147,11 @@
                   "canon": true,
                   "id": "one-pace:romance-dawn-03",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 1,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Romance Dawn 04 - The First",
@@ -164,7 +176,11 @@
                   "canon": true,
                   "id": "one-pace:romance-dawn-04",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 1,
+                    "number": 4
+                  }
                 }
               ],
               "info": {
@@ -269,7 +285,11 @@
                   "canon": true,
                   "id": "one-pace:orange-town-01",
                   "traktRating": 8.5,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 2,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Orange Town 02 - Treasure",
@@ -294,7 +314,11 @@
                   "canon": true,
                   "id": "one-pace:orange-town-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 2,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Orange Town 03 - Pirate Buggy \"the Clown\"",
@@ -319,7 +343,11 @@
                   "canon": true,
                   "id": "one-pace:orange-town-03",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 2,
+                    "number": 3
+                  }
                 }
               ],
               "info": {
@@ -424,7 +452,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Syrup Village 02 - Captain Kuro",
@@ -449,7 +481,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-02",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Syrup Village 03 - The Slope",
@@ -474,7 +510,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-03",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Syrup Village 04 - The Silent Man",
@@ -499,7 +539,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-04",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Syrup Village 05 - The Pirate \"Kuro of a…",
@@ -524,7 +568,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-05",
                   "traktRating": 5.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Syrup Village 06 - For Whom the Bell Tolls",
@@ -549,7 +597,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-06",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Syrup Village 07 - To the Sea",
@@ -574,7 +626,11 @@
                   "canon": true,
                   "id": "one-pace:syrup-village-07",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 3,
+                    "number": 7
+                  }
                 }
               ],
               "info": {
@@ -706,7 +762,11 @@
                   "canon": true,
                   "id": "one-pace:gaimon-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 4,
+                    "number": 1
+                  }
                 }
               ],
               "info": {
@@ -772,7 +832,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-01",
                   "traktRating": 8.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Baratie 02 - Pirate Commodore Don…",
@@ -797,7 +861,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-02",
                   "traktRating": 9.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Baratie 03 - The Oath",
@@ -822,7 +890,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Baratie 04 - Pearl",
@@ -847,7 +919,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-04",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Baratie 05 - Because of a Dream",
@@ -872,7 +948,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-05",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Baratie 06 - MH5",
@@ -897,7 +977,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-06",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Baratie 07 - The Stalwart War Spear",
@@ -922,7 +1006,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-07",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Baratie 08 - The Fourth",
@@ -947,7 +1035,11 @@
                   "canon": true,
                   "id": "one-pace:baratie-08",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 5,
+                    "number": 8
+                  }
                 }
               ],
               "info": {
@@ -1079,7 +1171,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Arlong Park 02 - Monsters of the Grand…",
@@ -1104,7 +1200,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Arlong Park 03 - Sea Charts and Fishmen",
@@ -1129,7 +1229,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Arlong Park 04 - Bell-mère",
@@ -1154,7 +1258,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-04",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Arlong Park 05 Extended - Live",
@@ -1182,7 +1290,11 @@
                     "This episode includes an extended version of the iconic \"Walk to Arlong Park\" scene (28:46-29:32)."
                   ],
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Arlong Park 06 - OK, LET'S STAND UP",
@@ -1207,7 +1319,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-06",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Arlong Park 07 - ...",
@@ -1232,7 +1348,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-07",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Arlong Park 08 - My Turn",
@@ -1257,7 +1377,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-08",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Arlong Park 09 - The Second",
@@ -1282,7 +1406,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-09",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Arlong Park 10 Extended - Spin, Pinwheel, Spin",
@@ -1307,7 +1435,11 @@
                   "canon": true,
                   "id": "one-pace:arlong-park-10",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 6,
+                    "number": 10
+                  }
                 }
               ],
               "info": {
@@ -1439,7 +1571,11 @@
                   "canon": true,
                   "id": "one-pace:the-adventures-of-buggys-crew-01",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 7,
+                    "number": 1
+                  }
                 }
               ],
               "info": {
@@ -1505,7 +1641,11 @@
                   "canon": true,
                   "id": "one-pace:loguetown-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 8,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Loguetown 02 - Luffy Is Dead",
@@ -1530,7 +1670,11 @@
                   "canon": true,
                   "id": "one-pace:loguetown-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 8,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Loguetown 03 - The Legend Begins",
@@ -1555,7 +1699,11 @@
                   "canon": true,
                   "id": "one-pace:loguetown-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 8,
+                    "number": 3
+                  }
                 }
               ],
               "info": {
@@ -1670,7 +1818,11 @@
                   "canon": true,
                   "id": "one-pace:reverse-mountain-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 9,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Reverse Mountain 02 Extended - Cape Promise",
@@ -1698,7 +1850,11 @@
                     "This extended version restores the Crocus running gag (03:02-04:44)."
                   ],
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 9,
+                    "number": 2
+                  }
                 }
               ],
               "info": {
@@ -1803,7 +1959,11 @@
                   "canon": true,
                   "id": "one-pace:whisky-peak-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 10,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Whisky Peak 02 - The Secret Criminal…",
@@ -1828,7 +1988,11 @@
                   "canon": true,
                   "id": "one-pace:whisky-peak-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 10,
+                    "number": 2
+                  }
                 }
               ],
               "info": {
@@ -1933,7 +2097,11 @@
                   "canon": true,
                   "id": "one-pace:the-trials-of-koby-meppo-01",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 11,
+                    "number": 1
+                  }
                 }
               ],
               "info": {
@@ -1999,7 +2167,11 @@
                   "canon": true,
                   "id": "little-garden-arc-main:little-garden-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 12,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Little Garden 02 - Dorry and Brogy",
@@ -2024,7 +2196,11 @@
                   "canon": true,
                   "id": "little-garden-arc-main:little-garden-02",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 12,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Little Garden 03 - Foul Play",
@@ -2049,7 +2225,11 @@
                   "canon": true,
                   "id": "little-garden-arc-main:little-garden-03",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 12,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Little Garden 04 - ...",
@@ -2074,7 +2254,11 @@
                   "canon": true,
                   "id": "little-garden-arc-main:little-garden-04",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 12,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Little Garden 05 - Straight Ahead!!",
@@ -2099,7 +2283,11 @@
                   "canon": true,
                   "id": "little-garden-arc-main:little-garden-05",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 12,
+                    "number": 5
+                  }
                 }
               ],
               "info": {
@@ -2231,7 +2419,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-01",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Drum Island 02 - Adventure in a Nameless…",
@@ -2256,7 +2448,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-02",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Drum Island 03 - The Summit",
@@ -2281,7 +2477,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Drum Island 04 - ...",
@@ -2306,7 +2506,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-04",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Drum Island 05 - Inherited Will",
@@ -2331,7 +2535,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-05",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Drum Island 06 - Unbreakable",
@@ -2356,7 +2564,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-06",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Drum Island 07 - The Skies of Drum",
@@ -2381,7 +2593,11 @@
                   "canon": true,
                   "id": "one-pace:drum-island-07",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Drum Island 08 - ...",
@@ -2404,7 +2620,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-08"
+                  "id": "one-pace:drum-island-08",
+                  "traktEpisode": {
+                    "season": 13,
+                    "number": 8
+                  }
                 }
               ],
               "info": {
@@ -2563,7 +2783,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-01"
+                  "id": "one-pace:alabasta-01",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Alabasta 02 - Landfall in Alabasta",
@@ -2586,7 +2810,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-02"
+                  "id": "one-pace:alabasta-02",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Alabasta 03 - Adventure in the…",
@@ -2609,7 +2837,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-03"
+                  "id": "one-pace:alabasta-03",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Alabasta 04 - Yuba, the Town of Rebels",
@@ -2632,7 +2864,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-04"
+                  "id": "one-pace:alabasta-04",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Alabasta 05 - I Love My Country",
@@ -2655,7 +2891,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-05"
+                  "id": "one-pace:alabasta-05",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Alabasta 06 - Rainbase, the City of…",
@@ -2678,7 +2918,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-06"
+                  "id": "one-pace:alabasta-06",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Alabasta 07 - It Begins",
@@ -2701,7 +2945,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-07"
+                  "id": "one-pace:alabasta-07",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Alabasta 08 - Rebellion",
@@ -2724,7 +2972,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-08"
+                  "id": "one-pace:alabasta-08",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Alabasta 09 - Rush!!",
@@ -2747,7 +2999,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-09"
+                  "id": "one-pace:alabasta-09",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Alabasta 10 - Showdown at Alubarna",
@@ -2770,7 +3026,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-10"
+                  "id": "one-pace:alabasta-10",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Alabasta 11 - Molehill Zone Four",
@@ -2793,7 +3053,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-11"
+                  "id": "one-pace:alabasta-11",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Alabasta 12 - Okama Kenpo",
@@ -2816,7 +3080,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-12"
+                  "id": "one-pace:alabasta-12",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Alabasta 13 - She Who Controls the…",
@@ -2839,7 +3107,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-13"
+                  "id": "one-pace:alabasta-13",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Alabasta 14 - Cutting Steel",
@@ -2862,7 +3134,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-14"
+                  "id": "one-pace:alabasta-14",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Alabasta 15 - The Leaders",
@@ -2885,7 +3161,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-15"
+                  "id": "one-pace:alabasta-15",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Alabasta 16 - HOPE!!",
@@ -2908,7 +3188,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-16"
+                  "id": "one-pace:alabasta-16",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Alabasta 17 - Croc-ish",
@@ -2931,7 +3215,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-17"
+                  "id": "one-pace:alabasta-17",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Alabasta 18 - I Will Defeat You",
@@ -2954,7 +3242,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-18"
+                  "id": "one-pace:alabasta-18",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Alabasta 19 - Some Justice",
@@ -2977,7 +3269,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-19"
+                  "id": "one-pace:alabasta-19",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Alabasta 20 - Vivi's Adventure",
@@ -3000,7 +3296,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-20"
+                  "id": "one-pace:alabasta-20",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Alabasta 21 - Stowaway",
@@ -3023,7 +3323,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:alabasta-21"
+                  "id": "one-pace:alabasta-21",
+                  "traktEpisode": {
+                    "season": 14,
+                    "number": 21
+                  }
                 }
               ],
               "info": {
@@ -3147,7 +3451,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-01"
+                  "id": "one-pace:jaya-01",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Jaya 02 - Never Dream",
@@ -3170,7 +3478,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-02"
+                  "id": "one-pace:jaya-02",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Jaya 03 - People's Dreams",
@@ -3193,7 +3505,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-03"
+                  "id": "one-pace:jaya-03",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Jaya 04 - Noland the Liar",
@@ -3216,7 +3532,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-04"
+                  "id": "one-pace:jaya-04",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Jaya 05 - Let's Eat",
@@ -3239,7 +3559,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-05"
+                  "id": "one-pace:jaya-05",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Jaya 06 - The Hundred Million Man",
@@ -3262,7 +3586,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-06"
+                  "id": "one-pace:jaya-06",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Jaya 07 - The Highest Authority…",
@@ -3285,7 +3613,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-07"
+                  "id": "one-pace:jaya-07",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Jaya 08 - The Knock-Up Stream",
@@ -3308,7 +3640,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:jaya-08"
+                  "id": "one-pace:jaya-08",
+                  "traktEpisode": {
+                    "season": 15,
+                    "number": 8
+                  }
                 }
               ],
               "info": {
@@ -3374,7 +3710,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Skypiea 02 - Angel Beach",
@@ -3399,7 +3739,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Skypiea 03 - Divine Reckoning",
@@ -3424,7 +3768,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Skypiea 04 - Ordeal",
@@ -3449,7 +3797,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-04",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Skypiea 05 - Adventure on God's…",
@@ -3472,7 +3824,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-05"
+                  "id": "one-pace:skypiea-05",
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Skypiea 06 - The Village Hidden in…",
@@ -3495,7 +3851,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-06"
+                  "id": "one-pace:skypiea-06",
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Skypiea 07 - Overture",
@@ -3520,7 +3880,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-07",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Skypiea 08 - Vearth",
@@ -3545,7 +3909,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-08",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Skypiea 09 - Dial Battle",
@@ -3570,7 +3938,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-09",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Skypiea 10 - ...",
@@ -3595,7 +3967,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-10",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Skypiea 11 - ...",
@@ -3620,7 +3996,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-11",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Skypiea 12 - ...",
@@ -3645,7 +4025,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-12",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Skypiea 13 - Concerto",
@@ -3670,7 +4054,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-13",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Skypiea 14 - ...",
@@ -3695,7 +4083,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-14",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Skypiea 15 - Quintet",
@@ -3720,7 +4112,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-15",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Skypiea 16 - Conis",
@@ -3745,7 +4141,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-16",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Skypiea 17 - ...",
@@ -3770,7 +4170,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-17",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Skypiea 18 - On the Front Line of…",
@@ -3795,7 +4199,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-18",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Skypiea 19 - ...",
@@ -3820,7 +4228,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-19",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Skypiea 20 - The Light of Shandora",
@@ -3845,7 +4257,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-20",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Skypiea 21 - ...",
@@ -3870,7 +4286,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-21",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Skypiea 22 - Love Song",
@@ -3895,7 +4315,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-22",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 22
+                  }
                 },
                 {
                   "title": "Skypiea 23 - Fantasia",
@@ -3920,7 +4344,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-23",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 23
+                  }
                 },
                 {
                   "title": "Skypiea 24 - I Made It Here",
@@ -3945,7 +4373,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-24",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 24
+                  }
                 },
                 {
                   "title": "Skypiea 25 Alternate (G-8) - Finale",
@@ -3970,7 +4402,11 @@
                   "canon": true,
                   "id": "one-pace:skypiea-25",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 16,
+                    "number": 25
+                  }
                 }
               ],
               "info": {
@@ -4624,7 +5060,11 @@
                   "canon": true,
                   "id": "one-pace:long-ring-long-land-01",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 17,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Long Ring Long Land 02 - Donut Race!!",
@@ -4649,7 +5089,11 @@
                   "canon": true,
                   "id": "one-pace:long-ring-long-land-02",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 17,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Long Ring Long Land 03 - Groggy Ring!!",
@@ -4674,7 +5118,11 @@
                   "canon": true,
                   "id": "one-pace:long-ring-long-land-03",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 17,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Long Ring Long Land 04 - Combat",
@@ -4699,7 +5147,11 @@
                   "canon": true,
                   "id": "one-pace:long-ring-long-land-04",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 17,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Long Ring Long Land 05 - ...",
@@ -4724,7 +5176,11 @@
                   "canon": true,
                   "id": "one-pace:long-ring-long-land-05",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 17,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Long Ring Long Land 06 - ...",
@@ -4749,7 +5205,11 @@
                   "canon": true,
                   "id": "one-pace:long-ring-long-land-06",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 17,
+                    "number": 6
+                  }
                 }
               ],
               "info": {
@@ -4865,7 +5325,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Water Seven 02 - Mr. Iceburg",
@@ -4890,7 +5354,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Water Seven 03 - The Case of the…",
@@ -4915,7 +5383,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Water Seven 04 - Impasse",
@@ -4940,7 +5412,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-04",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Water Seven 05 - ...",
@@ -4965,7 +5441,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-05",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Water Seven 06 - Warning",
@@ -4990,7 +5470,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-06",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Water Seven 07 - Rumors",
@@ -5015,7 +5499,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-07",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Water Seven 08 - Devil",
@@ -5040,7 +5528,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-08",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Water Seven 09 - Cipher Pol No. 9",
@@ -5065,7 +5557,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-09",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Water Seven 10 - Six Powers",
@@ -5090,7 +5586,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-10",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Water Seven 11 - Klabautermann",
@@ -5115,7 +5615,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-11",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Water Seven 12 - The Legendary Shipwright",
@@ -5140,7 +5644,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-12",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Water Seven 13 - Mr. Tom",
@@ -5165,7 +5673,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-13",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Water Seven 14 - Bingo",
@@ -5190,7 +5702,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-14",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Water Seven 15 - Departing Shortly",
@@ -5213,7 +5729,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-15"
+                  "id": "one-pace:water-seven-15",
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Water Seven 16 - Aqua Laguna",
@@ -5238,7 +5758,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-16",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Water Seven 17 - ...",
@@ -5263,7 +5787,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-17",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Water Seven 18 - Ramen Kenpo",
@@ -5288,7 +5816,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-18",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Water Seven 19 - The Honorable Captain…",
@@ -5313,7 +5845,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-19",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Water Seven 20 - Necessary Evil",
@@ -5338,7 +5874,11 @@
                   "canon": true,
                   "id": "one-pace:water-seven-20",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 18,
+                    "number": 20
+                  }
                 }
               ],
               "info": {
@@ -5404,7 +5944,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Enies Lobby 02 - The Big Showdown on the…",
@@ -5429,7 +5973,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-02",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Enies Lobby 03 - Express to the Main…",
@@ -5454,7 +6002,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-03",
                   "traktRating": 8.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Enies Lobby 04 - Fired",
@@ -5479,7 +6031,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-04",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Enies Lobby 05 - Raise the Counterattack…",
@@ -5504,7 +6060,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-05",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Enies Lobby 06 - Unprecedented",
@@ -5529,7 +6089,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-06",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Enies Lobby 07 - ...",
@@ -5554,7 +6118,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-07",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Enies Lobby 08 - ...",
@@ -5579,7 +6147,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-08",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Enies Lobby 09 - ...",
@@ -5604,7 +6176,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-09",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Enies Lobby 10 - ...",
@@ -5629,7 +6205,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-10",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Enies Lobby 11 - Jump into the…",
@@ -5654,7 +6234,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-11",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Enies Lobby 12 - ...",
@@ -5679,7 +6263,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-12",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Enies Lobby 13 - Mr. Chivalry",
@@ -5704,7 +6292,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-13",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Enies Lobby 14 - Vital Response",
@@ -5729,7 +6321,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-14",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Enies Lobby 15 - ...",
@@ -5754,7 +6350,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-15",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Enies Lobby 16 - The Terrifying…",
@@ -5779,7 +6379,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-16",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Enies Lobby 17 - The Hunter",
@@ -5804,7 +6408,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-17",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Enies Lobby 18 - ...",
@@ -5829,7 +6437,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-18",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Enies Lobby 19 - ...",
@@ -5854,7 +6466,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-19",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Enies Lobby 20 - ...",
@@ -5879,7 +6495,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-20",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Enies Lobby 21 - ...",
@@ -5904,7 +6524,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-21",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Enies Lobby 22 - The Legend of the…",
@@ -5929,7 +6553,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-22",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 22
+                  }
                 },
                 {
                   "title": "Enies Lobby 23 - We're Not in Hell",
@@ -5954,7 +6582,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-23",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 23
+                  }
                 },
                 {
                   "title": "Enies Lobby 24 - ...",
@@ -5979,7 +6611,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-24",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 24
+                  }
                 },
                 {
                   "title": "Enies Lobby 25 - A Gentle Snowfall of…",
@@ -6004,7 +6640,11 @@
                   "canon": true,
                   "id": "one-pace:enies-lobby-25",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 19,
+                    "number": 25
+                  }
                 }
               ],
               "info": {
@@ -6070,7 +6710,11 @@
                   "canon": true,
                   "id": "one-pace:post-enies-lobby-01",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 20,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Post-Enies Lobby 02 - The Name of That Sea",
@@ -6095,7 +6739,11 @@
                   "canon": true,
                   "id": "one-pace:post-enies-lobby-02",
                   "traktRating": 9.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 20,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Post-Enies Lobby 03 - You Have My Sympathies",
@@ -6120,7 +6768,11 @@
                   "canon": true,
                   "id": "one-pace:post-enies-lobby-03",
                   "traktRating": 9.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 20,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Post-Enies Lobby 04 - Forgive Yourself!…",
@@ -6145,7 +6797,11 @@
                   "canon": true,
                   "id": "one-pace:post-enies-lobby-04",
                   "traktRating": 9.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 20,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Post-Enies Lobby 05 - The Astonishing…",
@@ -6170,7 +6826,11 @@
                   "canon": true,
                   "id": "one-pace:post-enies-lobby-05",
                   "traktRating": 9.5,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 20,
+                    "number": 4
+                  }
                 }
               ],
               "info": {
@@ -6246,7 +6906,11 @@
                   "canon": true,
                   "id": "one-pace:thriller-bark-01",
                   "traktRating": 8.0,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Thriller Bark 02 - Adventure on the Ghost…",
@@ -6271,7 +6935,11 @@
                   "canon": true,
                   "id": "one-pace:thriller-bark-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Thriller Bark 03 - The Invisible Man and…",
@@ -6296,7 +6964,11 @@
                   "canon": true,
                   "id": "one-pace:thriller-bark-03",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Thriller Bark 04 - General Zombie Night!…",
@@ -6319,7 +6991,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-04"
+                  "id": "one-pace:thriller-bark-04",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Thriller Bark 05 - Perona's Wonder Garden…",
@@ -6342,7 +7018,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-05"
+                  "id": "one-pace:thriller-bark-05",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Thriller Bark 06 - Number 900?! Lola's…",
@@ -6365,7 +7045,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-06"
+                  "id": "one-pace:thriller-bark-06",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Thriller Bark 07 - The Fearsome Ability of…",
@@ -6388,7 +7072,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-07"
+                  "id": "one-pace:thriller-bark-07",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Thriller Bark 08 - Oars' Awakening and…",
@@ -6411,7 +7099,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-08"
+                  "id": "one-pace:thriller-bark-08",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Thriller Bark 09 - The Hope and Despair of…",
@@ -6434,7 +7126,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-09"
+                  "id": "one-pace:thriller-bark-09",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Thriller Bark 10 - Already Negative!…",
@@ -6457,7 +7153,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-10"
+                  "id": "one-pace:thriller-bark-10",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Thriller Bark 11 - A Stolen Dream!…",
@@ -6480,7 +7180,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-11"
+                  "id": "one-pace:thriller-bark-11",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Thriller Bark 12 - Perona's Terror!…",
@@ -6503,7 +7207,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-12"
+                  "id": "one-pace:thriller-bark-12",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Thriller Bark 13 - ...",
@@ -6529,7 +7237,11 @@
                   "id": "one-pace:thriller-bark-13",
                   "notes": [
                     "Pause at 06:40, then watch the **Monsters** special below before continuing."
-                  ]
+                  ],
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Thriller Bark 14 - Show Yourselves, Straw…",
@@ -6552,7 +7264,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-14"
+                  "id": "one-pace:thriller-bark-14",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Thriller Bark 15 - Clash! The Titanic…",
@@ -6575,7 +7291,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-15"
+                  "id": "one-pace:thriller-bark-15",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Thriller Bark 16 - The Mysterious Visitor!…",
@@ -6598,7 +7318,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-16"
+                  "id": "one-pace:thriller-bark-16",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Thriller Bark 17 - Combination of Brains…",
@@ -6621,7 +7345,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-17"
+                  "id": "one-pace:thriller-bark-17",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Thriller Bark 18 - The Crew's…",
@@ -6644,7 +7372,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-18"
+                  "id": "one-pace:thriller-bark-18",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Thriller Bark 19 - Morning Comes! The…",
@@ -6667,7 +7399,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-19"
+                  "id": "one-pace:thriller-bark-19",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Thriller Bark 20 - The Power That Can…",
@@ -6690,7 +7426,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-20"
+                  "id": "one-pace:thriller-bark-20",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Thriller Bark 21 - Brook's Past! The…",
@@ -6713,7 +7453,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-21"
+                  "id": "one-pace:thriller-bark-21",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Thriller Bark 22 - Brook's Promise!…",
@@ -6736,7 +7480,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-22"
+                  "id": "one-pace:thriller-bark-22",
+                  "traktEpisode": {
+                    "season": 21,
+                    "number": 22
+                  }
                 }
               ],
               "info": {
@@ -7031,7 +7779,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-01"
+                  "id": "one-pace:sabaody-archipelago-01",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 02 - Iron Mask Duval",
@@ -7054,7 +7806,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-02"
+                  "id": "one-pace:sabaody-archipelago-02",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 03 - Duval's Tragedy",
@@ -7077,7 +7833,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-03"
+                  "id": "one-pace:sabaody-archipelago-03",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 04 - Adventure on the…",
@@ -7100,7 +7860,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-04"
+                  "id": "one-pace:sabaody-archipelago-04",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 05 - The Embers of History",
@@ -7123,7 +7887,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-05"
+                  "id": "one-pace:sabaody-archipelago-05",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 06 - The Auction House…",
@@ -7146,7 +7914,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-06"
+                  "id": "one-pace:sabaody-archipelago-06",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 07 - An Island in Chaos",
@@ -7169,7 +7941,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-07"
+                  "id": "one-pace:sabaody-archipelago-07",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 08 - Roger and Rayleigh",
@@ -7192,7 +7968,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-08"
+                  "id": "one-pace:sabaody-archipelago-08",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 09 - Kizaru Arrives",
@@ -7215,7 +7995,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-09"
+                  "id": "one-pace:sabaody-archipelago-09",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 10 - Kizaru vs. the Four…",
@@ -7238,7 +8022,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:sabaody-archipelago-10"
+                  "id": "one-pace:sabaody-archipelago-10",
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Sabaody Archipelago 11 - ...",
@@ -7264,7 +8052,11 @@
                   "id": "one-pace:sabaody-archipelago-11",
                   "notes": [
                     "Filler Scene: Luffy/Zoro fighting bounty hunters in Episode 392 (04:55–05:55; setup at end of 391)."
-                  ]
+                  ],
+                  "traktEpisode": {
+                    "season": 22,
+                    "number": 11
+                  }
                 }
               ],
               "info": {
@@ -7328,7 +8120,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:amazon-lily-01"
+                  "id": "one-pace:amazon-lily-01",
+                  "traktEpisode": {
+                    "season": 23,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Amazon Lily 02 - Pirate Empress Boa…",
@@ -7351,7 +8147,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:amazon-lily-02"
+                  "id": "one-pace:amazon-lily-02",
+                  "traktEpisode": {
+                    "season": 23,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Amazon Lily 03 - The Arena",
@@ -7374,7 +8174,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:amazon-lily-03"
+                  "id": "one-pace:amazon-lily-03",
+                  "traktEpisode": {
+                    "season": 23,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Amazon Lily 04 - Hancock's Confession",
@@ -7397,7 +8201,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:amazon-lily-04"
+                  "id": "one-pace:amazon-lily-04",
+                  "traktEpisode": {
+                    "season": 23,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Amazon Lily 05 - No One Can Stop This Now",
@@ -7420,7 +8228,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:amazon-lily-05"
+                  "id": "one-pace:amazon-lily-05",
+                  "traktEpisode": {
+                    "season": 23,
+                    "number": 5
+                  }
                 }
               ],
               "info": {
@@ -7484,7 +8296,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-01"
+                  "id": "one-pace:impel-down-01",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Impel Down 02 - First Son of the Sea",
@@ -7507,7 +8323,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-02"
+                  "id": "one-pace:impel-down-02",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Impel Down 03 - From One Hell to Another",
@@ -7530,7 +8350,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-03"
+                  "id": "one-pace:impel-down-03",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Impel Down 04 - Inferno Hell",
@@ -7553,7 +8377,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-04"
+                  "id": "one-pace:impel-down-04",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Impel Down 05 - Friend",
@@ -7576,7 +8404,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-05"
+                  "id": "one-pace:impel-down-05",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Impel Down 06 - A Ray of Hope",
@@ -7599,7 +8431,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-06"
+                  "id": "one-pace:impel-down-06",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Impel Down 07 - Infinite Hell",
@@ -7622,7 +8458,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-07"
+                  "id": "one-pace:impel-down-07",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Impel Down 08 - Yet Another Epic…",
@@ -7645,7 +8485,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-08"
+                  "id": "one-pace:impel-down-08",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Impel Down 09 - To Sunshine and Freedom",
@@ -7668,7 +8512,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-09"
+                  "id": "one-pace:impel-down-09",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Impel Down 10 - Thank You",
@@ -7691,7 +8539,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:impel-down-10"
+                  "id": "one-pace:impel-down-10",
+                  "traktEpisode": {
+                    "season": 24,
+                    "number": 10
+                  }
                 }
               ],
               "info": {
@@ -7934,7 +8786,11 @@
                   "canon": true,
                   "id": "one-pace:marineford-01",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Marineford 02 - Ace and Whitebeard",
@@ -7957,7 +8813,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-02"
+                  "id": "one-pace:marineford-02",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Marineford 03 - Conflict at the Summit",
@@ -7980,7 +8840,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-03"
+                  "id": "one-pace:marineford-03",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Marineford 04 - Justice Will Prevail!!",
@@ -8003,7 +8867,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-04"
+                  "id": "one-pace:marineford-04",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Marineford 05 - Luffy and Whitebeard",
@@ -8026,7 +8894,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-05"
+                  "id": "one-pace:marineford-05",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Marineford 06 - The Prisoners of Impel…",
@@ -8049,7 +8921,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-06"
+                  "id": "one-pace:marineford-06",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Marineford 07 - The Whirl Spider",
@@ -8072,7 +8948,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-07"
+                  "id": "one-pace:marineford-07",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Marineford 08 - The Man Who Shook the…",
@@ -8095,7 +8975,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-08"
+                  "id": "one-pace:marineford-08",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Marineford 09 - Assault",
@@ -8118,7 +9002,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-09"
+                  "id": "one-pace:marineford-09",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Marineford 10 - Oris Plaza",
@@ -8141,7 +9029,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-10"
+                  "id": "one-pace:marineford-10",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Marineford 11 - The White Monster",
@@ -8164,7 +9056,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-11"
+                  "id": "one-pace:marineford-11",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Marineford 12 - The Execution Platform",
@@ -8187,7 +9083,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-12"
+                  "id": "one-pace:marineford-12",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Marineford 13 - The Times They Are…",
@@ -8210,7 +9110,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-13"
+                  "id": "one-pace:marineford-13",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Marineford 14 - Thank You for Loving Me",
@@ -8233,7 +9137,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-14"
+                  "id": "one-pace:marineford-14",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Marineford 15 - Edward Newgate",
@@ -8256,7 +9164,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-15"
+                  "id": "one-pace:marineford-15",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Marineford 16 - A Gift to a New Era",
@@ -8279,7 +9191,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-16"
+                  "id": "one-pace:marineford-16",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Marineford 17 - The War's Conclusion",
@@ -8302,7 +9218,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-17"
+                  "id": "one-pace:marineford-17",
+                  "traktEpisode": {
+                    "season": 26,
+                    "number": 17
+                  }
                 }
               ],
               "info": {
@@ -8366,7 +9286,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-war-01"
+                  "id": "one-pace:post-war-01",
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Post-War 02 - Gray Terminal",
@@ -8389,7 +9313,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-war-02"
+                  "id": "one-pace:post-war-02",
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Post-War 03 - Oath of Brotherhood",
@@ -8412,7 +9340,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-war-03"
+                  "id": "one-pace:post-war-03",
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Post-War 04 - Sabo's Sea",
@@ -8435,7 +9367,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-war-04"
+                  "id": "one-pace:post-war-04",
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Post-War 05 - Will of the Winds",
@@ -8458,7 +9394,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-war-05"
+                  "id": "one-pace:post-war-05",
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Post-War 06 - Cheer",
@@ -8481,7 +9421,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-war-06"
+                  "id": "one-pace:post-war-06",
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Post-War 07 - NEWS",
@@ -8508,7 +9452,11 @@
                   "notes": [
                     "**Pause PW 01 at 22:33**: Filler Scene: Extended awakening sequence (Ep 491, 14:10–15:26).",
                     "**Pause PW 03 at 19:53**: Watch Filler Episodes 497–499 (ASL childhood; safe up to Ep 500 at 07:37)."
-                  ]
+                  ],
+                  "traktEpisode": {
+                    "season": 27,
+                    "number": 7
+                  }
                 }
               ],
               "info": {
@@ -10305,7 +11253,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-01"
+                  "id": "one-pace:punk-hazard-01",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Punk Hazard 02 - Adventure on the…",
@@ -10328,7 +11280,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-02"
+                  "id": "one-pace:punk-hazard-02",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Punk Hazard 03 - About My Torso",
@@ -10351,7 +11307,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-03"
+                  "id": "one-pace:punk-hazard-03",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Punk Hazard 04 - The Lake of Bandits",
@@ -10374,7 +11334,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-04"
+                  "id": "one-pace:punk-hazard-04",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Punk Hazard 05 - CC",
@@ -10397,7 +11361,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-05"
+                  "id": "one-pace:punk-hazard-05",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Punk Hazard 06 - Yeti Cool Brothers",
@@ -10420,7 +11388,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-06"
+                  "id": "one-pace:punk-hazard-06",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Punk Hazard 07 - Pirate Alliance",
@@ -10443,7 +11415,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-07"
+                  "id": "one-pace:punk-hazard-07",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Punk Hazard 08 - Blizzard with a Chance…",
@@ -10466,7 +11442,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-08"
+                  "id": "one-pace:punk-hazard-08",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Punk Hazard 09 - My Name Is Kin'emon!!",
@@ -10489,7 +11469,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-09"
+                  "id": "one-pace:punk-hazard-09",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Punk Hazard 10 - Vergo and Joker! The…",
@@ -10512,7 +11496,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-10"
+                  "id": "one-pace:punk-hazard-10",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Punk Hazard 11 - The Experiment Begins!…",
@@ -10535,7 +11523,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-11"
+                  "id": "one-pace:punk-hazard-11",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Punk Hazard 12 - The Counterattack…",
@@ -10558,7 +11550,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-12"
+                  "id": "one-pace:punk-hazard-12",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Punk Hazard 13 - G-5's Sacrifice and the…",
@@ -10581,7 +11577,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-13"
+                  "id": "one-pace:punk-hazard-13",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Punk Hazard 14 - The Mastermind in the…",
@@ -10604,7 +11604,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-14"
+                  "id": "one-pace:punk-hazard-14",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Punk Hazard 15 - ...",
@@ -10627,7 +11631,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-15"
+                  "id": "one-pace:punk-hazard-15",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Punk Hazard 16 - The Dragon Named…",
@@ -10650,7 +11658,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-16"
+                  "id": "one-pace:punk-hazard-16",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Punk Hazard 17 - Zoro's Strongest…",
@@ -10673,7 +11685,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-17"
+                  "id": "one-pace:punk-hazard-17",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Punk Hazard 18 - Luffy and Law's All-out…",
@@ -10696,7 +11712,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-18"
+                  "id": "one-pace:punk-hazard-18",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Punk Hazard 19 - The Strongest Grizzly…",
@@ -10719,7 +11739,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-19"
+                  "id": "one-pace:punk-hazard-19",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Punk Hazard 21 - The Alliance's Target…",
@@ -10742,7 +11766,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-21"
+                  "id": "one-pace:punk-hazard-21",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Punk Hazard 22 - The Arrival of the…",
@@ -10765,7 +11793,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:punk-hazard-22"
+                  "id": "one-pace:punk-hazard-22",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 22
+                  }
                 }
               ],
               "info": {
@@ -10817,7 +11849,11 @@
                     "other": "https://www.reddit.com/r/onepace/comments/1eb2e3i/one_pace_sub_watch_guide/"
                   },
                   "canon": true,
-                  "id": "tweaked-punk-hazard-20:/detail/series/onepace/PH_20"
+                  "id": "tweaked-punk-hazard-20:/detail/series/onepace/PH_20",
+                  "traktEpisode": {
+                    "season": 30,
+                    "number": 20
+                  }
                 }
               ],
               "afterEpisode": "one-pace:punk-hazard-19"
@@ -10936,7 +11972,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-01"
+                  "id": "one-pace:dressrosa-01",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Dressrosa 02 - Corrida Colosseum! The…",
@@ -10959,7 +11999,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-02"
+                  "id": "one-pace:dressrosa-02",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Dressrosa 03 - The Colosseum of Many…",
@@ -10982,7 +12026,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-03"
+                  "id": "one-pace:dressrosa-03",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Dressrosa 04 - Bellamy's Changed…",
@@ -11005,7 +12053,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-04"
+                  "id": "one-pace:dressrosa-04",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Dressrosa 05 - B Block on Fire!…",
@@ -11028,7 +12080,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-05"
+                  "id": "one-pace:dressrosa-05",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Dressrosa 06 - To Green Bit! The…",
@@ -11051,7 +12107,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-06"
+                  "id": "one-pace:dressrosa-06",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Dressrosa 07 - Doflamingo Arrives! The…",
@@ -11074,7 +12134,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-07"
+                  "id": "one-pace:dressrosa-07",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Dressrosa 08 - Closely Contested Block…",
@@ -11097,7 +12161,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-08"
+                  "id": "one-pace:dressrosa-08",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Dressrosa 09 - C Block's Blazing…",
@@ -11120,7 +12188,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-09"
+                  "id": "one-pace:dressrosa-09",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Dressrosa 10 - The Tontatta Rebellion…",
@@ -11143,7 +12215,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-10"
+                  "id": "one-pace:dressrosa-10",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Dressrosa 11 - A Sad Past! Rebecca and…",
@@ -11166,7 +12242,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-11"
+                  "id": "one-pace:dressrosa-11",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Dressrosa 12 - D Block's Fiery Start…",
@@ -11189,7 +12269,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-12"
+                  "id": "one-pace:dressrosa-12",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Dressrosa 13 - Law's New Strategy and…",
@@ -11212,7 +12296,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-13"
+                  "id": "one-pace:dressrosa-13",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Dressrosa 14 - The Plight of the Riku…",
@@ -11235,7 +12323,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-14"
+                  "id": "one-pace:dressrosa-14",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Dressrosa 15 - Doflamingo's Relentless…",
@@ -11258,7 +12350,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-15"
+                  "id": "one-pace:dressrosa-15",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Dressrosa 16 - SOP Strategy",
@@ -11281,7 +12377,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-16"
+                  "id": "one-pace:dressrosa-16",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Dressrosa 17 - The Underground World",
@@ -11304,7 +12404,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-17"
+                  "id": "one-pace:dressrosa-17",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Dressrosa 18 - Fujitora's Outlook",
@@ -11327,7 +12431,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-18"
+                  "id": "one-pace:dressrosa-18",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Dressrosa 19 - Diamante and Pica",
@@ -11350,7 +12458,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-19"
+                  "id": "one-pace:dressrosa-19",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Dressrosa 20 - Captain",
@@ -11373,7 +12485,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-20"
+                  "id": "one-pace:dressrosa-20",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Dressrosa 21 - Usoland the Liar",
@@ -11396,7 +12512,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-21"
+                  "id": "one-pace:dressrosa-21",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Dressrosa 22 - Dressrosa in Turmoil",
@@ -11419,7 +12539,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-22"
+                  "id": "one-pace:dressrosa-22",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 22
+                  }
                 },
                 {
                   "title": "Dressrosa 23 - Bird Cage",
@@ -11442,7 +12566,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-23"
+                  "id": "one-pace:dressrosa-23",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 23
+                  }
                 },
                 {
                   "title": "Dressrosa 24 - Executive Officer Pica",
@@ -11465,7 +12593,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-24"
+                  "id": "one-pace:dressrosa-24",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 24
+                  }
                 },
                 {
                   "title": "Dressrosa 25 - Onward!! Army of Rogues",
@@ -11488,7 +12620,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-25"
+                  "id": "one-pace:dressrosa-25",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 25
+                  }
                 },
                 {
                   "title": "Dressrosa 26 - The State of the War",
@@ -11511,7 +12647,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-26"
+                  "id": "one-pace:dressrosa-26",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 26
+                  }
                 },
                 {
                   "title": "Dressrosa 27 - Battle",
@@ -11534,7 +12674,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-27"
+                  "id": "one-pace:dressrosa-27",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 27
+                  }
                 },
                 {
                   "title": "Dressrosa 28 - A Man's World",
@@ -11557,7 +12701,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-28"
+                  "id": "one-pace:dressrosa-28",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 28
+                  }
                 },
                 {
                   "title": "Dressrosa 29 - Trump Card",
@@ -11580,7 +12728,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-29"
+                  "id": "one-pace:dressrosa-29",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 29
+                  }
                 },
                 {
                   "title": "Dressrosa 30 - Secret Plan",
@@ -11603,7 +12755,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-30"
+                  "id": "one-pace:dressrosa-30",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 30
+                  }
                 },
                 {
                   "title": "Dressrosa 31 - The Operation Fruit",
@@ -11626,7 +12782,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-31"
+                  "id": "one-pace:dressrosa-31",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 31
+                  }
                 },
                 {
                   "title": "Dressrosa 32 - White Town",
@@ -11649,7 +12809,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-32"
+                  "id": "one-pace:dressrosa-32",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 32
+                  }
                 },
                 {
                   "title": "Dressrosa 33 - The Island of Fate:…",
@@ -11672,7 +12836,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-33"
+                  "id": "one-pace:dressrosa-33",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 33
+                  }
                 },
                 {
                   "title": "Dressrosa 34 - Cora",
@@ -11695,7 +12863,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-34"
+                  "id": "one-pace:dressrosa-34",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 34
+                  }
                 },
                 {
                   "title": "Dressrosa 35 - Bellamy the Pirate",
@@ -11718,7 +12890,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-35"
+                  "id": "one-pace:dressrosa-35",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 35
+                  }
                 },
                 {
                   "title": "Dressrosa 36 - The Spear of Elbaph and…",
@@ -11741,7 +12917,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-36"
+                  "id": "one-pace:dressrosa-36",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 36
+                  }
                 },
                 {
                   "title": "Dressrosa 37 - Cabbage and Lomeo",
@@ -11764,7 +12944,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-37"
+                  "id": "one-pace:dressrosa-37",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 37
+                  }
                 },
                 {
                   "title": "Dressrosa 38 - To Russian, with Love",
@@ -11787,7 +12971,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-38"
+                  "id": "one-pace:dressrosa-38",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 38
+                  }
                 },
                 {
                   "title": "Dressrosa 39 - ...",
@@ -11810,7 +12998,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-39"
+                  "id": "one-pace:dressrosa-39",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 39
+                  }
                 },
                 {
                   "title": "Dressrosa 40 - The Curse of Heart",
@@ -11833,7 +13025,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-40"
+                  "id": "one-pace:dressrosa-40",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 40
+                  }
                 },
                 {
                   "title": "Dressrosa 41 - In My Way",
@@ -11856,7 +13052,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-41"
+                  "id": "one-pace:dressrosa-41",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 41
+                  }
                 },
                 {
                   "title": "Dressrosa 42 - ...",
@@ -11879,7 +13079,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-42"
+                  "id": "one-pace:dressrosa-42",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 42
+                  }
                 },
                 {
                   "title": "Dressrosa 43 - Gatz",
@@ -11902,7 +13106,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-43"
+                  "id": "one-pace:dressrosa-43",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 43
+                  }
                 },
                 {
                   "title": "Dressrosa 44 - Heaven and Earth",
@@ -11925,7 +13133,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-44"
+                  "id": "one-pace:dressrosa-44",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 44
+                  }
                 },
                 {
                   "title": "Dressrosa 45 - Prostration",
@@ -11948,7 +13160,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-45"
+                  "id": "one-pace:dressrosa-45",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 45
+                  }
                 },
                 {
                   "title": "Dressrosa 46 - Sabo's Adventure",
@@ -11971,7 +13187,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-46"
+                  "id": "one-pace:dressrosa-46",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 46
+                  }
                 },
                 {
                   "title": "Dressrosa 47 - Soldier's Conviction",
@@ -11994,7 +13214,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:dressrosa-47"
+                  "id": "one-pace:dressrosa-47",
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 47
+                  }
                 },
                 {
                   "title": "Dressrosa 48 - Father and Sons",
@@ -12020,7 +13244,11 @@
                   "id": "one-pace:dressrosa-48",
                   "notes": [
                     "Saves nearly 50 hours of viewing time."
-                  ]
+                  ],
+                  "traktEpisode": {
+                    "season": 31,
+                    "number": 48
+                  }
                 }
               ],
               "info": {
@@ -12188,7 +13416,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-01"
+                  "id": "one-pace:zou-01",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Zou 02 - The Mink Tribe",
@@ -12234,7 +13466,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-03"
+                  "id": "one-pace:zou-03",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Zou 04 - Duke Inuarashi and…",
@@ -12257,7 +13493,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-04"
+                  "id": "one-pace:zou-04",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Zou 05 - The Curly Hat Pirates…",
@@ -12280,7 +13520,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-05"
+                  "id": "one-pace:zou-05",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Zou 06 - Tea Party Invitation",
@@ -12303,7 +13547,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-06"
+                  "id": "one-pace:zou-06",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Zou 07 - Let's Go See Master…",
@@ -12326,7 +13574,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-07"
+                  "id": "one-pace:zou-07",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Zou 08 - Raizo of the Mist",
@@ -12349,7 +13601,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-08"
+                  "id": "one-pace:zou-08",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Zou 09 - Momonosuke, Heir of the…",
@@ -12372,7 +13628,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-09"
+                  "id": "one-pace:zou-09",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Zou 10 - Understood",
@@ -12395,7 +13655,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:zou-10"
+                  "id": "one-pace:zou-10",
+                  "traktEpisode": {
+                    "season": 32,
+                    "number": 10
+                  }
                 }
               ],
               "info": {
@@ -12459,7 +13723,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-01"
+                  "id": "one-pace:whole-cake-island-01",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Whole Cake Island 02 - 0 and 4",
@@ -12482,7 +13750,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-02"
+                  "id": "one-pace:whole-cake-island-02",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Whole Cake Island 03 - Totto Land",
@@ -12505,7 +13777,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-03"
+                  "id": "one-pace:whole-cake-island-03",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Whole Cake Island 04 - Pirate Emperor,…",
@@ -12528,7 +13804,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-04"
+                  "id": "one-pace:whole-cake-island-04",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Whole Cake Island 05 - Adventure in the…",
@@ -12551,7 +13831,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-05"
+                  "id": "one-pace:whole-cake-island-05",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Whole Cake Island 06 - Vinsmoke Judge",
@@ -12574,7 +13858,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-06"
+                  "id": "one-pace:whole-cake-island-06",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Whole Cake Island 07 - Lola's Vivre Card",
@@ -12597,7 +13885,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-07"
+                  "id": "one-pace:whole-cake-island-07",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Whole Cake Island 08 - ...",
@@ -12620,7 +13912,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-08"
+                  "id": "one-pace:whole-cake-island-08",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Whole Cake Island 09 - The Iron Mask",
@@ -12643,7 +13939,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-09"
+                  "id": "one-pace:whole-cake-island-09",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Whole Cake Island 10 - To the East Blue",
@@ -12666,7 +13966,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-10"
+                  "id": "one-pace:whole-cake-island-10",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Whole Cake Island 11 - ...",
@@ -12689,7 +13993,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-11"
+                  "id": "one-pace:whole-cake-island-11",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Whole Cake Island 12 - Forces of Rage",
@@ -12712,7 +14020,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-12"
+                  "id": "one-pace:whole-cake-island-12",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Whole Cake Island 13 - Luffy and Big Mom",
@@ -12735,7 +14047,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-13"
+                  "id": "one-pace:whole-cake-island-13",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Whole Cake Island 14 - A Ray of Light",
@@ -12758,7 +14074,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-14"
+                  "id": "one-pace:whole-cake-island-14",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Whole Cake Island 15 - Germa's Failure",
@@ -12781,7 +14101,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-15"
+                  "id": "one-pace:whole-cake-island-15",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Whole Cake Island 16 - Not Here",
@@ -12804,7 +14128,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-16"
+                  "id": "one-pace:whole-cake-island-16",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Whole Cake Island 17 - Liar",
@@ -12827,7 +14155,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-17"
+                  "id": "one-pace:whole-cake-island-17",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Whole Cake Island 18 - Rook",
@@ -12850,7 +14182,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-18"
+                  "id": "one-pace:whole-cake-island-18",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Whole Cake Island 19 - Emperor Assassination…",
@@ -12873,7 +14209,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-19"
+                  "id": "one-pace:whole-cake-island-19",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Whole Cake Island 20 - Veteran Actor",
@@ -12896,7 +14236,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-20"
+                  "id": "one-pace:whole-cake-island-20",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Whole Cake Island 21 - The Honorable",
@@ -12919,7 +14263,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-21"
+                  "id": "one-pace:whole-cake-island-21",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Whole Cake Island 22 - Hey, Mother",
@@ -12942,7 +14290,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-22"
+                  "id": "one-pace:whole-cake-island-22",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 22
+                  }
                 },
                 {
                   "title": "Whole Cake Island 23 - HAPPY BIRTHDAY",
@@ -12965,7 +14317,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-23"
+                  "id": "one-pace:whole-cake-island-23",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 23
+                  }
                 },
                 {
                   "title": "Whole Cake Island 24 - Under Siege",
@@ -12988,7 +14344,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-24"
+                  "id": "one-pace:whole-cake-island-24",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 24
+                  }
                 },
                 {
                   "title": "Whole Cake Island 25 - You Can Do It, Caesar!!",
@@ -13011,7 +14371,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-25"
+                  "id": "one-pace:whole-cake-island-25",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 25
+                  }
                 },
                 {
                   "title": "Whole Cake Island 26 - Become My Servant",
@@ -13034,7 +14398,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-26"
+                  "id": "one-pace:whole-cake-island-26",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 26
+                  }
                 },
                 {
                   "title": "Whole Cake Island 27 - A Woman's Honor",
@@ -13057,7 +14425,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-27"
+                  "id": "one-pace:whole-cake-island-27",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 27
+                  }
                 },
                 {
                   "title": "Whole Cake Island 28 - Mink Pedro, Captain of…",
@@ -13080,7 +14452,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-28"
+                  "id": "one-pace:whole-cake-island-28",
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 28
+                  }
                 },
                 {
                   "title": "Whole Cake Island 29 - Zero Escape",
@@ -13105,7 +14481,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-29",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 29
+                  }
                 },
                 {
                   "title": "Whole Cake Island 30 - Wave Room",
@@ -13130,7 +14510,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-30",
                   "traktRating": 5.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 30
+                  }
                 },
                 {
                   "title": "Whole Cake Island 31 - Merienda",
@@ -13155,7 +14539,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-31",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 31
+                  }
                 },
                 {
                   "title": "Whole Cake Island 32 - Way of Life",
@@ -13180,7 +14568,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-32",
                   "traktRating": 5.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 32
+                  }
                 },
                 {
                   "title": "Whole Cake Island 33 - Lion",
@@ -13205,7 +14597,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-33",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 33
+                  }
                 },
                 {
                   "title": "Whole Cake Island 34 - Unknown Mama",
@@ -13230,7 +14626,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-34",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 34
+                  }
                 },
                 {
                   "title": "Whole Cake Island 35 - They Believe in Me",
@@ -13255,7 +14655,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-35",
                   "traktRating": 4.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 35
+                  }
                 },
                 {
                   "title": "Whole Cake Island 36 - ...",
@@ -13283,7 +14687,11 @@
                     "**Extended Sakuga Climax:** Anime Episode 870 features legendary, world-class uncut animation for the arc's climactic battle. Watching the uncut original episode is highly recommended."
                   ],
                   "traktRating": 4.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 36
+                  }
                 },
                 {
                   "title": "Whole Cake Island 37 - One Last Thing",
@@ -13308,7 +14716,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-37",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 37
+                  }
                 },
                 {
                   "title": "Whole Cake Island 38 - BAD END MUSICAL",
@@ -13333,7 +14745,11 @@
                   "canon": true,
                   "id": "one-pace:whole-cake-island-38",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 38
+                  }
                 },
                 {
                   "title": "Whole Cake Island 39 - END ROLL",
@@ -13361,7 +14777,11 @@
                     "Watch Anime Ep 818 for expanded peak fight."
                   ],
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 33,
+                    "number": 39
+                  }
                 }
               ],
               "info": {
@@ -13462,7 +14882,11 @@
                   "canon": true,
                   "id": "one-pace:reverie-01",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 34,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Reverie 02 - A Beautiful World",
@@ -13487,7 +14911,11 @@
                   "canon": true,
                   "id": "one-pace:reverie-02",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 34,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Reverie 03 - The Empty Throne",
@@ -13512,7 +14940,11 @@
                   "canon": true,
                   "id": "one-pace:reverie-03",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 34,
+                    "number": 3
+                  }
                 }
               ],
               "info": {
@@ -13682,7 +15114,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-01",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Seppuku",
@@ -13728,7 +15164,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-03"
+                  "id": "one-pace-wano-acts-1-2:wano-03",
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Tsuru Returns the Favor",
@@ -13753,7 +15193,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-04",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Okobore Town",
@@ -13778,7 +15222,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-05",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Wano's Grand Sumo…",
@@ -13803,7 +15251,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-06",
                   "traktRating": 5.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - The Provisions Ship",
@@ -13828,7 +15280,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-07",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - The Ruins of Oden Castle",
@@ -13853,7 +15309,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-08",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 8
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - I Love Oden",
@@ -13878,7 +15338,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-09",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Shutenmaru",
@@ -13903,7 +15367,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-10",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Emperor Kaido vs. Luffy",
@@ -13928,7 +15396,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-11",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Hah",
@@ -13953,7 +15425,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-12",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Void",
@@ -13978,7 +15454,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-13",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 13
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Otoko the Kamuro",
@@ -14003,7 +15483,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-14",
                   "traktRating": 9.5,
-                  "traktVotes": 2
+                  "traktVotes": 2,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 14
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Oiran Komurasaki Arrives",
@@ -14028,7 +15512,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-15",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Soba Mask",
@@ -14053,7 +15541,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-16",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - The Shogun and the Oiran",
@@ -14078,7 +15570,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-17",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Hyogoro the Flower",
@@ -14103,7 +15599,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-18",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Gyukimaru of Bandit's…",
@@ -14128,7 +15628,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-19",
                   "traktRating": 9.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 19
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - A Woman's Secret",
@@ -14151,7 +15655,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-20"
+                  "id": "one-pace-wano-acts-1-2:wano-20",
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Sparks of Rebellion",
@@ -14174,7 +15682,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-21"
+                  "id": "one-pace-wano-acts-1-2:wano-21",
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 21
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Shimotsuki Yasuie, the…",
@@ -14197,7 +15709,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-22"
+                  "id": "one-pace-wano-acts-1-2:wano-22",
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 22
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - SMILE",
@@ -14220,7 +15736,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-23"
+                  "id": "one-pace-wano-acts-1-2:wano-23",
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 23
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Olin",
@@ -14243,7 +15763,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-24"
+                  "id": "one-pace-wano-acts-1-2:wano-24",
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 24
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Queen vs. Olin",
@@ -14268,7 +15792,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-25",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 25
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Mummy",
@@ -14293,7 +15821,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-26",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 26
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - A Soldier's Dream",
@@ -14318,7 +15850,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-27",
                   "traktRating": 7.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 27
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - RAMPAGE",
@@ -14343,7 +15879,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-28",
                   "traktRating": 6.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 28
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Once a Fox",
@@ -14368,7 +15908,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-29",
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 29
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Enma",
@@ -14393,7 +15937,11 @@
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-30",
                   "traktRating": 10.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 30
+                  }
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Big News",
@@ -14423,7 +15971,11 @@
                     "Pause **Wano 28** at 13:39 to watch an anime-only scene (Anime Ep 954, 05:40–07:44)."
                   ],
                   "traktRating": 8.0,
-                  "traktVotes": 1
+                  "traktVotes": 1,
+                  "traktEpisode": {
+                    "season": 35,
+                    "number": 31
+                  }
                 }
               ],
               "info": {
@@ -16673,7 +18225,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-01"
+                  "id": "one-pace-egghead:egghead-01",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 1
+                  }
                 },
                 {
                   "title": "Egghead 02 - The Matter Involving…",
@@ -16696,7 +18252,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-02"
+                  "id": "one-pace-egghead:egghead-02",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 2
+                  }
                 },
                 {
                   "title": "Egghead 03 - Future Island Egghead",
@@ -16719,7 +18279,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-03"
+                  "id": "one-pace-egghead:egghead-03",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 3
+                  }
                 },
                 {
                   "title": "Egghead 04 - Adventure in the Land…",
@@ -16742,7 +18306,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-04"
+                  "id": "one-pace-egghead:egghead-04",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 4
+                  }
                 },
                 {
                   "title": "Egghead 05 - The Six Vegapunks",
@@ -16765,7 +18333,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-05"
+                  "id": "one-pace-egghead:egghead-05",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 5
+                  }
                 },
                 {
                   "title": "Egghead 06 - The Will of Ohara",
@@ -16788,7 +18360,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-06"
+                  "id": "one-pace-egghead:egghead-06",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 6
+                  }
                 },
                 {
                   "title": "Egghead 07 - Punk Records",
@@ -16811,7 +18387,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-07"
+                  "id": "one-pace-egghead:egghead-07",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 7
+                  }
                 },
                 {
                   "title": "Egghead 08 - The Strongest Form of…",
@@ -16857,7 +18437,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-09"
+                  "id": "one-pace-egghead:egghead-09",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 9
+                  }
                 },
                 {
                   "title": "Egghead 10 - Miss Buckingham Stussy",
@@ -16880,7 +18464,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-10"
+                  "id": "one-pace-egghead:egghead-10",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 10
+                  }
                 },
                 {
                   "title": "Egghead 11 - Labophase Death Game",
@@ -16903,7 +18491,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-11"
+                  "id": "one-pace-egghead:egghead-11",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 11
+                  }
                 },
                 {
                   "title": "Egghead 12 - Escape Limit",
@@ -16926,7 +18518,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-12"
+                  "id": "one-pace-egghead:egghead-12",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 12
+                  }
                 },
                 {
                   "title": "Egghead 13 - The Emperor's Crew, The…",
@@ -16995,7 +18591,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-15"
+                  "id": "one-pace-egghead:egghead-15",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 15
+                  }
                 },
                 {
                   "title": "Egghead 16 - The Attempted Murder of…",
@@ -17018,7 +18618,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-16"
+                  "id": "one-pace-egghead:egghead-16",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 16
+                  }
                 },
                 {
                   "title": "Egghead 17 - The Five Elders",
@@ -17041,7 +18645,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-17"
+                  "id": "one-pace-egghead:egghead-17",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 17
+                  }
                 },
                 {
                   "title": "Egghead 18 - The Final Lesson",
@@ -17064,7 +18672,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-18"
+                  "id": "one-pace-egghead:egghead-18",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 18
+                  }
                 },
                 {
                   "title": "Egghead 19 - Hostage Situation",
@@ -17110,7 +18722,11 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-egghead:egghead-20"
+                  "id": "one-pace-egghead:egghead-20",
+                  "traktEpisode": {
+                    "season": 36,
+                    "number": 20
+                  }
                 },
                 {
                   "title": "Egghead 21 - ...",

@@ -89,6 +89,9 @@ def main():
             te = title_idx.get(norm(ep.get("fullTitle")))
             if te is None and ts and ts["count"] == len(eps):
                 te = ts["byNum"].get(ei + 1)
+            if te:
+                # Remember where the episode lives on Trakt, so the badge can link to it.
+                ep["traktEpisode"] = {"season": te.get("season"), "number": te.get("number")}
             rating = te.get("rating") if te else None
             votes = te.get("votes") if te else None
             if rating and votes:

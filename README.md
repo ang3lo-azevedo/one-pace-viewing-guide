@@ -42,6 +42,20 @@ This updates episode, arc and saga ratings (and their tier colors) from SeriesGr
 API. Live Action, movie and other entries without One Piece anime episode numbers keep
 their existing ratings.
 
+## Trakt sync (optional)
+
+Connect a [Trakt](https://trakt.tv) account to sync watched episodes two ways. Login uses
+**PKCE**, so there is no client secret and no server component — everything runs in the
+browser. Configure it in `src/config.ts`:
+
+- `traktClientId` — from your Trakt app at https://trakt.tv/oauth/applications
+- `traktShowSlug` — the Trakt One Pace show slug (`one-pace`)
+
+On the Trakt app, set the **Redirect URIs** to the site URL(s) and add them as **Allowed
+origins** too (for browser CORS). Episodes map to Trakt by title with a positional
+fallback (~98% of the standard One Pace releases; Wano/Egghead-continuation cuts that use
+Stremio-only links are not mapped). The **Trakt** controls live under ⚙ Filters → Progress.
+
 ## Develop
 
 ```bash

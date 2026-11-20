@@ -2,6 +2,7 @@ import { For, Show, createMemo } from 'solid-js';
 import type { Episode, EpisodeLinks } from '../types';
 import { isWatched, toggle } from '../store/progress';
 import { prefs } from '../store/prefs';
+import { syncToggle } from '../store/trakt';
 import { splitTitle } from '../lib/guide';
 import RatingBadge from './RatingBadge';
 import Tooltip from './Tooltip';
@@ -55,7 +56,10 @@ export default function EpisodeRow(props: { ep: Episode }) {
           type="checkbox"
           class="h-5 w-5 cursor-pointer rounded border-sea-400 accent-strawhat-500 focus:ring-strawhat-500 dark:border-sea-600"
           checked={watched()}
-          onChange={() => toggle(props.ep.id)}
+          onChange={() => {
+            toggle(props.ep.id);
+            syncToggle(props.ep.id, isWatched(props.ep.id));
+          }}
           aria-label={`Mark ${displayed()} watched`}
         />
       </label>

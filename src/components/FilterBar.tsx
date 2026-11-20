@@ -1,10 +1,8 @@
 import { For, Show, createSignal } from 'solid-js';
 import { prefs, resetFilters, setPrefs } from '../store/prefs';
-import { clearAll, exportJSON, importJSON, progress } from '../store/progress';
+import { clearAll, exportJSON, importJSON } from '../store/progress';
 import { guide, tiers } from '../lib/guide';
 import { hasActiveFilters, visibleEpisodeCount } from '../lib/filter';
-import { traktConfigured } from '../config';
-import { connect, disconnect, isConnected, pullFromTrakt, pushToTrakt, trakt } from '../store/trakt';
 
 function Toggle(props: { active: boolean; onClick: () => void; children: any; title?: string }) {
   return (
@@ -166,41 +164,6 @@ export default function FilterBar() {
               <input ref={fileInput} type="file" accept="application/json,.json" class="hidden" onChange={onFile} />
             </div>
 
-            <Show when={traktConfigured()}>
-              <div class="flex flex-wrap items-center gap-2 border-t border-sea-200 pt-2.5 dark:border-sea-800">
-                <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Trakt</span>
-                <Show
-                  when={isConnected()}
-                  fallback={
-                    <button class="chip border-strawhat-500/50 text-xs font-semibold text-strawhat-500" onClick={connect}>
-                      Connect Trakt
-                    </button>
-                  }
-                >
-                  <span class="chip border-accent-400/50 text-xs text-accent-500">● {trakt.username ?? 'connected'}</span>
-                  <button
-                    class="chip border-sea-300 text-xs font-semibold dark:border-sea-600"
-                    onClick={pullFromTrakt}
-                    disabled={trakt.status === 'syncing'}
-                  >
-                    ⭳ Pull from Trakt
-                  </button>
-                  <button
-                    class="chip border-sea-300 text-xs font-semibold dark:border-sea-600"
-                    onClick={() => pushToTrakt(Object.keys(progress.watched))}
-                    disabled={trakt.status === 'syncing'}
-                  >
-                    ⭱ Push to Trakt
-                  </button>
-                  <button class="chip border-sea-300 text-xs text-sea-500 dark:border-sea-600" onClick={disconnect}>
-                    Disconnect
-                  </button>
-                </Show>
-                <Show when={trakt.lastMessage}>
-                  <span class="text-xs text-sea-400">{trakt.lastMessage}</span>
-                </Show>
-              </div>
-            </Show>
           </div>
         </Show>
       </div>

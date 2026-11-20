@@ -5,6 +5,8 @@ import { prefs, toggleTheme } from './store/prefs';
 import VoyageHero from './components/VoyageHero';
 import FilterBar from './components/FilterBar';
 import SagaSection from './components/SagaSection';
+import InfoPanel from './components/InfoPanel';
+import TraktMenu from './components/TraktMenu';
 
 export default function App() {
   return (
@@ -23,6 +25,7 @@ export default function App() {
               </a>
             </p>
           </div>
+          <TraktMenu />
           <button
             class="chip shrink-0 border-sea-600 text-sea-200 hover:border-accent-400 hover:text-accent-400"
             onClick={toggleTheme}
@@ -37,6 +40,7 @@ export default function App() {
 
       <main class="mx-auto max-w-5xl space-y-4 px-3 py-4 sm:px-4 sm:py-6">
         <VoyageHero />
+        <InfoPanel />
 
         <div class="space-y-4">
           <Show

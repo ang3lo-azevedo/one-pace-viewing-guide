@@ -1,5 +1,5 @@
 import { For, Show, createMemo, createSignal } from 'solid-js';
-import type { FilteredNode } from '../lib/filter';
+import { hasActiveFilters, type FilteredNode } from '../lib/filter';
 import { isWatched, setMany } from '../store/progress';
 import { allIdsOfNode, idsBeforeNode, tierForRating } from '../lib/guide';
 import RatingBadge from './RatingBadge';
@@ -14,7 +14,8 @@ const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
 };
 
 export default function ArcCard(props: { node: FilteredNode }) {
-  const [open, setOpen] = createSignal(true);
+  // Arcs start collapsed; open them automatically when searching/filtering so matches show.
+  const [open, setOpen] = createSignal(hasActiveFilters());
 
   const allEps = createMemo(() => props.node.groups.flatMap((g) => g.episodes));
   const watched = createMemo(() => allEps().filter((e) => isWatched(e.id)).length);

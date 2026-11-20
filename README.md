@@ -38,6 +38,9 @@ IMDb rating of those anime episodes, rounded to one decimal. Refresh them in pla
 npm run ratings     # python3 -I scripts/fetch_ratings.py
 ```
 
+Each episode also shows its Trakt community rating (with vote count on hover) when it has
+votes on Trakt (`npm run trakt-ratings`). Both refreshes run automatically before every build.
+
 This updates episode, arc and saga ratings (and their tier colors) from SeriesGraph's
 API. Live Action, movie and other entries without One Piece anime episode numbers keep
 their existing ratings.

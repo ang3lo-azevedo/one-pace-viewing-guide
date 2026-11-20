@@ -67,6 +67,14 @@ export default function EpisodeRow(props: { ep: Episode }) {
       <div class="min-w-0 flex-1">
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
           <RatingBadge rating={props.ep.rating} color={props.ep.tierColor} />
+          <Show when={props.ep.traktRating}>
+            <span
+              class="inline-flex items-center gap-0.5 rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24]"
+              title={`Trakt rating ${props.ep.traktRating} (${props.ep.traktVotes} vote${props.ep.traktVotes === 1 ? '' : 's'})`}
+            >
+              Trakt {props.ep.traktRating?.toFixed(1)}
+            </span>
+          </Show>
           <Show
             when={tipText()}
             fallback={

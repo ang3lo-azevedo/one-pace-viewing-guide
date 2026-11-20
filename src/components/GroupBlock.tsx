@@ -31,6 +31,14 @@ export default function GroupBlock(props: { group: FilteredGroup }) {
             {kindLabel(props.group.kind)}
           </span>
           <span class="truncate text-sm font-bold">{props.group.label}</span>
+          <Show when={props.group.kind === 'netflix'}>
+            <span
+              class="chip shrink-0 border-amber-400/50 text-[10px] uppercase tracking-wide text-amber-600 dark:text-amber-300"
+              title="Optional extra, not part of the One Pace canon route"
+            >
+              Extra
+            </span>
+          </Show>
           <Show when={props.group.isAlternative}>
             <span class="chip shrink-0 border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
           </Show>

@@ -29,6 +29,9 @@ export interface Episode {
   links: EpisodeLinks;
   canon: boolean;
   notes?: string[];
+  /** Trakt community rating (only present when the episode has votes on Trakt). */
+  traktRating?: number;
+  traktVotes?: number;
 }
 
 export type GroupKind =

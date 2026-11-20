@@ -34,7 +34,8 @@
     "episodeCount": 639,
     "canonPathCount": 521,
     "paceNumberedCount": 441,
-    "ratingsSource": "SeriesGraph IMDb (https://seriesgraph.com/show/37854-one-piece)"
+    "ratingsSource": "SeriesGraph IMDb (https://seriesgraph.com/show/37854-one-piece)",
+    "traktRatingsSource": "Trakt (https://trakt.tv/shows/one-pace)"
   },
   "sagas": [
     {
@@ -86,7 +87,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:romance-dawn-01"
+                  "id": "one-pace:romance-dawn-01",
+                  "traktRating": 9.5,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Romance Dawn 02 - They Call Him \"Straw…",
@@ -109,7 +112,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:romance-dawn-02"
+                  "id": "one-pace:romance-dawn-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Romance Dawn 03 - The Pirate King and the…",
@@ -132,7 +137,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:romance-dawn-03"
+                  "id": "one-pace:romance-dawn-03",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Romance Dawn 04 - The First",
@@ -155,7 +162,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:romance-dawn-04"
+                  "id": "one-pace:romance-dawn-04",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -241,7 +250,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:orange-town-01"
+                  "id": "one-pace:orange-town-01",
+                  "traktRating": 8.5,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Orange Town 02 - Treasure",
@@ -264,7 +275,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:orange-town-02"
+                  "id": "one-pace:orange-town-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Orange Town 03 - Pirate Buggy \"the Clown\"",
@@ -287,7 +300,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:orange-town-03"
+                  "id": "one-pace:orange-town-03",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -373,7 +388,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-01"
+                  "id": "one-pace:syrup-village-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Syrup Village 02 - Captain Kuro",
@@ -396,7 +413,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-02"
+                  "id": "one-pace:syrup-village-02",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Syrup Village 03 - The Slope",
@@ -419,7 +438,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-03"
+                  "id": "one-pace:syrup-village-03",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Syrup Village 04 - The Silent Man",
@@ -442,7 +463,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-04"
+                  "id": "one-pace:syrup-village-04",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Syrup Village 05 - The Pirate \"Kuro of a…",
@@ -465,7 +488,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-05"
+                  "id": "one-pace:syrup-village-05",
+                  "traktRating": 5.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Syrup Village 06 - For Whom the Bell Tolls",
@@ -488,7 +513,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-06"
+                  "id": "one-pace:syrup-village-06",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Syrup Village 07 - To the Sea",
@@ -511,7 +538,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:syrup-village-07"
+                  "id": "one-pace:syrup-village-07",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -624,7 +653,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:gaimon-01"
+                  "id": "one-pace:gaimon-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -671,7 +702,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-01"
+                  "id": "one-pace:baratie-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Baratie 02 - Pirate Commodore Don…",
@@ -694,7 +727,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-02"
+                  "id": "one-pace:baratie-02",
+                  "traktRating": 9.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Baratie 03 - The Oath",
@@ -717,7 +752,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-03"
+                  "id": "one-pace:baratie-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Baratie 04 - Pearl",
@@ -740,7 +777,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-04"
+                  "id": "one-pace:baratie-04",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Baratie 05 - Because of a Dream",
@@ -763,7 +802,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-05"
+                  "id": "one-pace:baratie-05",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Baratie 06 - MH5",
@@ -786,7 +827,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-06"
+                  "id": "one-pace:baratie-06",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Baratie 07 - The Stalwart War Spear",
@@ -809,7 +852,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-07"
+                  "id": "one-pace:baratie-07",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Baratie 08 - The Fourth",
@@ -832,7 +877,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:baratie-08"
+                  "id": "one-pace:baratie-08",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -945,7 +992,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-01"
+                  "id": "one-pace:arlong-park-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 02 - Monsters of the Grand…",
@@ -968,7 +1017,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-02"
+                  "id": "one-pace:arlong-park-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 03 - Sea Charts and Fishmen",
@@ -991,7 +1042,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-03"
+                  "id": "one-pace:arlong-park-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 04 - Bell-mère",
@@ -1014,7 +1067,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-04"
+                  "id": "one-pace:arlong-park-04",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 05 Extended - Live",
@@ -1040,7 +1095,9 @@
                   "id": "one-pace:arlong-park-05",
                   "notes": [
                     "This episode includes an extended version of the iconic \"Walk to Arlong Park\" scene (28:46-29:32)."
-                  ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 06 - OK, LET'S STAND UP",
@@ -1063,7 +1120,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-06"
+                  "id": "one-pace:arlong-park-06",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 07 - ...",
@@ -1086,7 +1145,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-07"
+                  "id": "one-pace:arlong-park-07",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 08 - My Turn",
@@ -1109,7 +1170,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-08"
+                  "id": "one-pace:arlong-park-08",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 09 - The Second",
@@ -1132,7 +1195,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-09"
+                  "id": "one-pace:arlong-park-09",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Arlong Park 10 Extended - Spin, Pinwheel, Spin",
@@ -1155,7 +1220,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:arlong-park-10"
+                  "id": "one-pace:arlong-park-10",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -1268,7 +1335,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:the-adventures-of-buggys-crew-01"
+                  "id": "one-pace:the-adventures-of-buggys-crew-01",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -1315,7 +1384,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:loguetown-01"
+                  "id": "one-pace:loguetown-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Loguetown 02 - Luffy Is Dead",
@@ -1338,7 +1409,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:loguetown-02"
+                  "id": "one-pace:loguetown-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Loguetown 03 - The Legend Begins",
@@ -1361,7 +1434,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:loguetown-03"
+                  "id": "one-pace:loguetown-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -1457,7 +1532,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:reverse-mountain-01"
+                  "id": "one-pace:reverse-mountain-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Reverse Mountain 02 Extended - Cape Promise",
@@ -1483,7 +1560,9 @@
                   "id": "one-pace:reverse-mountain-02",
                   "notes": [
                     "This extended version restores the Crocus running gag (03:02-04:44)."
-                  ]
+                  ],
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -1569,7 +1648,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whisky-peak-01"
+                  "id": "one-pace:whisky-peak-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whisky Peak 02 - The Secret Criminal…",
@@ -1592,7 +1673,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whisky-peak-02"
+                  "id": "one-pace:whisky-peak-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -1678,7 +1761,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:the-trials-of-koby-meppo-01"
+                  "id": "one-pace:the-trials-of-koby-meppo-01",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -1725,7 +1810,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "little-garden-arc-main:little-garden-01"
+                  "id": "little-garden-arc-main:little-garden-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Little Garden 02 - Dorry and Brogy",
@@ -1748,7 +1835,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "little-garden-arc-main:little-garden-02"
+                  "id": "little-garden-arc-main:little-garden-02",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Little Garden 03 - Foul Play",
@@ -1771,7 +1860,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "little-garden-arc-main:little-garden-03"
+                  "id": "little-garden-arc-main:little-garden-03",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Little Garden 04 - ...",
@@ -1794,7 +1885,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "little-garden-arc-main:little-garden-04"
+                  "id": "little-garden-arc-main:little-garden-04",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Little Garden 05 - Straight Ahead!!",
@@ -1817,7 +1910,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "little-garden-arc-main:little-garden-05"
+                  "id": "little-garden-arc-main:little-garden-05",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -1930,7 +2025,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-01"
+                  "id": "one-pace:drum-island-01",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 02 - Adventure in a Nameless…",
@@ -1953,7 +2050,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-02"
+                  "id": "one-pace:drum-island-02",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 03 - The Summit",
@@ -1976,7 +2075,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-03"
+                  "id": "one-pace:drum-island-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 04 - ...",
@@ -1999,7 +2100,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-04"
+                  "id": "one-pace:drum-island-04",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 05 - Inherited Will",
@@ -2022,7 +2125,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-05"
+                  "id": "one-pace:drum-island-05",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 06 - Unbreakable",
@@ -2045,7 +2150,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-06"
+                  "id": "one-pace:drum-island-06",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 07 - The Skies of Drum",
@@ -2068,7 +2175,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:drum-island-07"
+                  "id": "one-pace:drum-island-07",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Drum Island 08 - ...",
@@ -3008,7 +3117,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-01"
+                  "id": "one-pace:skypiea-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 02 - Angel Beach",
@@ -3031,7 +3142,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-02"
+                  "id": "one-pace:skypiea-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 03 - Divine Reckoning",
@@ -3054,7 +3167,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-03"
+                  "id": "one-pace:skypiea-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 04 - Ordeal",
@@ -3077,7 +3192,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-04"
+                  "id": "one-pace:skypiea-04",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 05 - Adventure on God's…",
@@ -3146,7 +3263,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-07"
+                  "id": "one-pace:skypiea-07",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 08 - Vearth",
@@ -3169,7 +3288,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-08"
+                  "id": "one-pace:skypiea-08",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 09 - Dial Battle",
@@ -3192,7 +3313,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-09"
+                  "id": "one-pace:skypiea-09",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 10 - ...",
@@ -3215,7 +3338,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-10"
+                  "id": "one-pace:skypiea-10",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 11 - ...",
@@ -3238,7 +3363,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-11"
+                  "id": "one-pace:skypiea-11",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 12 - ...",
@@ -3261,7 +3388,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-12"
+                  "id": "one-pace:skypiea-12",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 13 - Concerto",
@@ -3284,7 +3413,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-13"
+                  "id": "one-pace:skypiea-13",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 14 - ...",
@@ -3307,7 +3438,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-14"
+                  "id": "one-pace:skypiea-14",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 15 - Quintet",
@@ -3330,7 +3463,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-15"
+                  "id": "one-pace:skypiea-15",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 16 - Conis",
@@ -3353,7 +3488,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-16"
+                  "id": "one-pace:skypiea-16",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 17 - ...",
@@ -3376,7 +3513,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-17"
+                  "id": "one-pace:skypiea-17",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 18 - On the Front Line of…",
@@ -3399,7 +3538,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-18"
+                  "id": "one-pace:skypiea-18",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 19 - ...",
@@ -3422,7 +3563,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-19"
+                  "id": "one-pace:skypiea-19",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 20 - The Light of Shandora",
@@ -3445,7 +3588,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-20"
+                  "id": "one-pace:skypiea-20",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 21 - ...",
@@ -3468,7 +3613,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-21"
+                  "id": "one-pace:skypiea-21",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 22 - Love Song",
@@ -3491,7 +3638,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-22"
+                  "id": "one-pace:skypiea-22",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 23 - Fantasia",
@@ -3514,7 +3663,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-23"
+                  "id": "one-pace:skypiea-23",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 24 - I Made It Here",
@@ -3537,7 +3688,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-24"
+                  "id": "one-pace:skypiea-24",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Skypiea 25 Alternate (G-8) - Finale",
@@ -3560,7 +3713,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:skypiea-25"
+                  "id": "one-pace:skypiea-25",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -4169,7 +4324,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:long-ring-long-land-01"
+                  "id": "one-pace:long-ring-long-land-01",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Long Ring Long Land 02 - Donut Race!!",
@@ -4192,7 +4349,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:long-ring-long-land-02"
+                  "id": "one-pace:long-ring-long-land-02",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Long Ring Long Land 03 - Groggy Ring!!",
@@ -4215,7 +4374,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:long-ring-long-land-03"
+                  "id": "one-pace:long-ring-long-land-03",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Long Ring Long Land 04 - Combat",
@@ -4238,7 +4399,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:long-ring-long-land-04"
+                  "id": "one-pace:long-ring-long-land-04",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Long Ring Long Land 05 - ...",
@@ -4261,7 +4424,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:long-ring-long-land-05"
+                  "id": "one-pace:long-ring-long-land-05",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Long Ring Long Land 06 - ...",
@@ -4284,7 +4449,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:long-ring-long-land-06"
+                  "id": "one-pace:long-ring-long-land-06",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -4381,7 +4548,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-01"
+                  "id": "one-pace:water-seven-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 02 - Mr. Iceburg",
@@ -4404,7 +4573,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-02"
+                  "id": "one-pace:water-seven-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 03 - The Case of the…",
@@ -4427,7 +4598,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-03"
+                  "id": "one-pace:water-seven-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 04 - Impasse",
@@ -4450,7 +4623,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-04"
+                  "id": "one-pace:water-seven-04",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 05 - ...",
@@ -4473,7 +4648,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-05"
+                  "id": "one-pace:water-seven-05",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 06 - Warning",
@@ -4496,7 +4673,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-06"
+                  "id": "one-pace:water-seven-06",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 07 - Rumors",
@@ -4519,7 +4698,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-07"
+                  "id": "one-pace:water-seven-07",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 08 - Devil",
@@ -4542,7 +4723,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-08"
+                  "id": "one-pace:water-seven-08",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 09 - Cipher Pol No. 9",
@@ -4565,7 +4748,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-09"
+                  "id": "one-pace:water-seven-09",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 10 - Six Powers",
@@ -4588,7 +4773,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-10"
+                  "id": "one-pace:water-seven-10",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 11 - Klabautermann",
@@ -4611,7 +4798,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-11"
+                  "id": "one-pace:water-seven-11",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 12 - The Legendary Shipwright",
@@ -4634,7 +4823,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-12"
+                  "id": "one-pace:water-seven-12",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 13 - Mr. Tom",
@@ -4657,7 +4848,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-13"
+                  "id": "one-pace:water-seven-13",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 14 - Bingo",
@@ -4680,7 +4873,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-14"
+                  "id": "one-pace:water-seven-14",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 15 - Departing Shortly",
@@ -4726,7 +4921,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-16"
+                  "id": "one-pace:water-seven-16",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 17 - ...",
@@ -4749,7 +4946,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-17"
+                  "id": "one-pace:water-seven-17",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 18 - Ramen Kenpo",
@@ -4772,7 +4971,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-18"
+                  "id": "one-pace:water-seven-18",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 19 - The Honorable Captain…",
@@ -4795,7 +4996,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-19"
+                  "id": "one-pace:water-seven-19",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Water Seven 20 - Necessary Evil",
@@ -4818,7 +5021,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:water-seven-20"
+                  "id": "one-pace:water-seven-20",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -4865,7 +5070,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-01"
+                  "id": "one-pace:enies-lobby-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 02 - The Big Showdown on the…",
@@ -4888,7 +5095,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-02"
+                  "id": "one-pace:enies-lobby-02",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 03 - Express to the Main…",
@@ -4911,7 +5120,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-03"
+                  "id": "one-pace:enies-lobby-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Enies Lobby 04 - Fired",
@@ -4934,7 +5145,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-04"
+                  "id": "one-pace:enies-lobby-04",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 05 - Raise the Counterattack…",
@@ -4957,7 +5170,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-05"
+                  "id": "one-pace:enies-lobby-05",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 06 - Unprecedented",
@@ -4980,7 +5195,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-06"
+                  "id": "one-pace:enies-lobby-06",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 07 - ...",
@@ -5003,7 +5220,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-07"
+                  "id": "one-pace:enies-lobby-07",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 08 - ...",
@@ -5026,7 +5245,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-08"
+                  "id": "one-pace:enies-lobby-08",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 09 - ...",
@@ -5049,7 +5270,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-09"
+                  "id": "one-pace:enies-lobby-09",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 10 - ...",
@@ -5072,7 +5295,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-10"
+                  "id": "one-pace:enies-lobby-10",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 11 - Jump into the…",
@@ -5095,7 +5320,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-11"
+                  "id": "one-pace:enies-lobby-11",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 12 - ...",
@@ -5118,7 +5345,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-12"
+                  "id": "one-pace:enies-lobby-12",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 13 - Mr. Chivalry",
@@ -5141,7 +5370,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-13"
+                  "id": "one-pace:enies-lobby-13",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 14 - Vital Response",
@@ -5164,7 +5395,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-14"
+                  "id": "one-pace:enies-lobby-14",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 15 - ...",
@@ -5187,7 +5420,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-15"
+                  "id": "one-pace:enies-lobby-15",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 16 - The Terrifying…",
@@ -5210,7 +5445,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-16"
+                  "id": "one-pace:enies-lobby-16",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 17 - The Hunter",
@@ -5233,7 +5470,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-17"
+                  "id": "one-pace:enies-lobby-17",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 18 - ...",
@@ -5256,7 +5495,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-18"
+                  "id": "one-pace:enies-lobby-18",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 19 - ...",
@@ -5279,7 +5520,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-19"
+                  "id": "one-pace:enies-lobby-19",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 20 - ...",
@@ -5302,7 +5545,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-20"
+                  "id": "one-pace:enies-lobby-20",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 21 - ...",
@@ -5325,7 +5570,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-21"
+                  "id": "one-pace:enies-lobby-21",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 22 - The Legend of the…",
@@ -5348,7 +5595,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-22"
+                  "id": "one-pace:enies-lobby-22",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 23 - We're Not in Hell",
@@ -5371,7 +5620,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-23"
+                  "id": "one-pace:enies-lobby-23",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 24 - ...",
@@ -5394,7 +5645,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-24"
+                  "id": "one-pace:enies-lobby-24",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Enies Lobby 25 - A Gentle Snowfall of…",
@@ -5417,7 +5670,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:enies-lobby-25"
+                  "id": "one-pace:enies-lobby-25",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -5464,7 +5719,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-enies-lobby-01"
+                  "id": "one-pace:post-enies-lobby-01",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Post-Enies Lobby 02 - The Name of That Sea",
@@ -5487,7 +5744,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-enies-lobby-02"
+                  "id": "one-pace:post-enies-lobby-02",
+                  "traktRating": 9.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Post-Enies Lobby 03 - You Have My Sympathies",
@@ -5510,7 +5769,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-enies-lobby-03"
+                  "id": "one-pace:post-enies-lobby-03",
+                  "traktRating": 9.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Post-Enies Lobby 04 - Forgive Yourself!…",
@@ -5533,7 +5794,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-enies-lobby-04"
+                  "id": "one-pace:post-enies-lobby-04",
+                  "traktRating": 9.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Post-Enies Lobby 05 - The Astonishing…",
@@ -5556,7 +5819,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:post-enies-lobby-05"
+                  "id": "one-pace:post-enies-lobby-05",
+                  "traktRating": 9.5,
+                  "traktVotes": 2
                 }
               ]
             }
@@ -5613,7 +5878,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-01"
+                  "id": "one-pace:thriller-bark-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Thriller Bark 02 - Adventure on the Ghost…",
@@ -5636,7 +5903,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-02"
+                  "id": "one-pace:thriller-bark-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Thriller Bark 03 - The Invisible Man and…",
@@ -5659,7 +5928,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:thriller-bark-03"
+                  "id": "one-pace:thriller-bark-03",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Thriller Bark 04 - General Zombie Night!…",
@@ -7200,7 +7471,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:marineford-01"
+                  "id": "one-pace:marineford-01",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Marineford 02 - Ace and Whitebeard",
@@ -12226,7 +12499,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-29"
+                  "id": "one-pace:whole-cake-island-29",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 30 - Wave Room",
@@ -12249,7 +12524,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-30"
+                  "id": "one-pace:whole-cake-island-30",
+                  "traktRating": 5.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 31 - Merienda",
@@ -12272,7 +12549,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-31"
+                  "id": "one-pace:whole-cake-island-31",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 32 - Way of Life",
@@ -12295,7 +12574,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-32"
+                  "id": "one-pace:whole-cake-island-32",
+                  "traktRating": 5.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 33 - Lion",
@@ -12318,7 +12599,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-33"
+                  "id": "one-pace:whole-cake-island-33",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 34 - Unknown Mama",
@@ -12341,7 +12624,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-34"
+                  "id": "one-pace:whole-cake-island-34",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 35 - They Believe in Me",
@@ -12364,7 +12649,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-35"
+                  "id": "one-pace:whole-cake-island-35",
+                  "traktRating": 4.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 36 - ...",
@@ -12390,7 +12677,9 @@
                   "id": "one-pace:whole-cake-island-36",
                   "notes": [
                     "**Extended Sakuga Climax:** Anime Episode 870 features legendary, world-class uncut animation for the arc's climactic battle. Watching the uncut original episode is highly recommended."
-                  ]
+                  ],
+                  "traktRating": 4.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 37 - One Last Thing",
@@ -12413,7 +12702,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-37"
+                  "id": "one-pace:whole-cake-island-37",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 38 - BAD END MUSICAL",
@@ -12436,7 +12727,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:whole-cake-island-38"
+                  "id": "one-pace:whole-cake-island-38",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Whole Cake Island 39 - END ROLL",
@@ -12462,7 +12755,9 @@
                   "id": "one-pace:whole-cake-island-39",
                   "notes": [
                     "Watch Anime Ep 818 for expanded peak fight."
-                  ]
+                  ],
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 }
               ]
             },
@@ -12544,7 +12839,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:reverie-01"
+                  "id": "one-pace:reverie-01",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Reverie 02 - A Beautiful World",
@@ -12567,7 +12864,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:reverie-02"
+                  "id": "one-pace:reverie-02",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Reverie 03 - The Empty Throne",
@@ -12590,7 +12889,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace:reverie-03"
+                  "id": "one-pace:reverie-03",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 }
               ]
             }
@@ -12741,7 +13042,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-01"
+                  "id": "one-pace-wano-acts-1-2:wano-01",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Seppuku",
@@ -12810,7 +13113,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-04"
+                  "id": "one-pace-wano-acts-1-2:wano-04",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Okobore Town",
@@ -12833,7 +13138,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-05"
+                  "id": "one-pace-wano-acts-1-2:wano-05",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Wano's Grand Sumo…",
@@ -12856,7 +13163,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-06"
+                  "id": "one-pace-wano-acts-1-2:wano-06",
+                  "traktRating": 5.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - The Provisions Ship",
@@ -12879,7 +13188,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-07"
+                  "id": "one-pace-wano-acts-1-2:wano-07",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - The Ruins of Oden Castle",
@@ -12902,7 +13213,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-08"
+                  "id": "one-pace-wano-acts-1-2:wano-08",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - I Love Oden",
@@ -12925,7 +13238,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-09"
+                  "id": "one-pace-wano-acts-1-2:wano-09",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Shutenmaru",
@@ -12948,7 +13263,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-10"
+                  "id": "one-pace-wano-acts-1-2:wano-10",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Emperor Kaido vs. Luffy",
@@ -12971,7 +13288,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-11"
+                  "id": "one-pace-wano-acts-1-2:wano-11",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Hah",
@@ -12994,7 +13313,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-12"
+                  "id": "one-pace-wano-acts-1-2:wano-12",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Void",
@@ -13017,7 +13338,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-13"
+                  "id": "one-pace-wano-acts-1-2:wano-13",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Otoko the Kamuro",
@@ -13040,7 +13363,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-14"
+                  "id": "one-pace-wano-acts-1-2:wano-14",
+                  "traktRating": 9.5,
+                  "traktVotes": 2
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Oiran Komurasaki Arrives",
@@ -13063,7 +13388,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-15"
+                  "id": "one-pace-wano-acts-1-2:wano-15",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Soba Mask",
@@ -13086,7 +13413,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-16"
+                  "id": "one-pace-wano-acts-1-2:wano-16",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - The Shogun and the Oiran",
@@ -13109,7 +13438,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-17"
+                  "id": "one-pace-wano-acts-1-2:wano-17",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Hyogoro the Flower",
@@ -13132,7 +13463,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-18"
+                  "id": "one-pace-wano-acts-1-2:wano-18",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Gyukimaru of Bandit's…",
@@ -13155,7 +13488,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-19"
+                  "id": "one-pace-wano-acts-1-2:wano-19",
+                  "traktRating": 9.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - A Woman's Secret",
@@ -13293,7 +13628,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-25"
+                  "id": "one-pace-wano-acts-1-2:wano-25",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Mummy",
@@ -13316,7 +13653,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-26"
+                  "id": "one-pace-wano-acts-1-2:wano-26",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - A Soldier's Dream",
@@ -13339,7 +13678,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-27"
+                  "id": "one-pace-wano-acts-1-2:wano-27",
+                  "traktRating": 7.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - RAMPAGE",
@@ -13362,7 +13703,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-28"
+                  "id": "one-pace-wano-acts-1-2:wano-28",
+                  "traktRating": 6.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Once a Fox",
@@ -13385,7 +13728,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-29"
+                  "id": "one-pace-wano-acts-1-2:wano-29",
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Enma",
@@ -13408,7 +13753,9 @@
                     "other": null
                   },
                   "canon": true,
-                  "id": "one-pace-wano-acts-1-2:wano-30"
+                  "id": "one-pace-wano-acts-1-2:wano-30",
+                  "traktRating": 10.0,
+                  "traktVotes": 1
                 },
                 {
                   "title": "Wano Acts 1 & 2 - Big News",
@@ -13436,7 +13783,9 @@
                     "**Megumi Ishitani Masterpiece:** Directed by Megumi Ishitani, Anime Episode 957 features movie-level storyboarding and cinematic direction covering the global aftermath of the Reverie. Highly recommended to experience uncut!",
                     "**Wano 02 Extended** includes extended Zoro vs. Samurai combat (16:01–17:21, 29:50–31:26).",
                     "Pause **Wano 28** at 13:39 to watch the Emperors' clash filler scene (Anime Ep 954, 05:40–07:44)."
-                  ]
+                  ],
+                  "traktRating": 8.0,
+                  "traktVotes": 1
                 }
               ]
             },

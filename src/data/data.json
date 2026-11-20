@@ -13782,7 +13782,7 @@
                   "notes": [
                     "**Megumi Ishitani Masterpiece:** Directed by Megumi Ishitani, Anime Episode 957 features movie-level storyboarding and cinematic direction covering the global aftermath of the Reverie. Highly recommended to experience uncut!",
                     "**Wano 02 Extended** includes extended Zoro vs. Samurai combat (16:01–17:21, 29:50–31:26).",
-                    "Pause **Wano 28** at 13:39 to watch the Emperors' clash filler scene (Anime Ep 954, 05:40–07:44)."
+                    "Pause **Wano 28** at 13:39 to watch an anime-only scene (Anime Ep 954, 05:40–07:44)."
                   ],
                   "traktRating": 8.0,
                   "traktVotes": 1
@@ -14518,8 +14518,8 @@
                   "canon": true,
                   "id": "one-pace-onigashima-raid:wano-62",
                   "notes": [
-                    "Between **Wano 35** and **36**, an extra minute of the Oden vs. Whitebeard clash exists in the original anime.",
-                    "Between **Wano 47** and **48**, an emotional duel in the snow is expanded in Anime Episode 994 (11:00–18:28).",
+                    "Between **Wano 35** and **36**, an extra minute of a flashback fight exists in the original anime.",
+                    "Between **Wano 47** and **48**, a flashback duel is expanded in Anime Episode 994 (11:00–18:28).",
                     "**Extended Episodes** with notable expansions include **Wano 49** (expanded combat 09:14–10:55), **Wano 55** (extensive battle scenes), and **Wano 62** (expanded battle sequences 15:44–18:54 & 26:54–30:18).",
                     "One Pace now covers the raid up to Wano 62 (Chapter 1013 / Anime Episode 1034). To continue with **Onigashima Paced**, resume at **Onigashima 29** (Chapter 1014+ / Anime Episode 1035+)."
                   ]
@@ -17057,8 +17057,8 @@
               "notes": [],
               "episodes": [
                 {
-                  "title": "One Piece Film: God Valley (Summer 2027):** Commemorating the 30th Anniversary of the *One Piece* manga (1997–2027). The film centers on the legendary God Valley Incident, chronicling the clash involving Gol D. Roger, Monkey D. Garp, and the Rocks Pirates led by Rocks D. Xebec.",
-                  "fullTitle": "One Piece Film: God Valley (Summer 2027):** Commemorating the 30th Anniversary of the *One Piece* manga (1997–2027). The film centers on the legendary God Valley Incident, chronicling the clash involving Gol D. Roger, Monkey D. Garp, and the Rocks Pirates led by Rocks D. Xebec.",
+                  "title": "One Piece Film: God Valley (2027)",
+                  "fullTitle": "One Piece Film: God Valley (2027)",
                   "rating": null,
                   "tierColor": null,
                   "pace": null,
@@ -17066,7 +17066,7 @@
                   "anime": null,
                   "chapters": null,
                   "meta": null,
-                  "description": "God Valley (Summer 2027):** Commemorating the 30th Anniversary of the *One Piece* manga (1997–2027). The film centers on the legendary God Valley Incident, chronicling the clash involving Gol D. Roger, Monkey D. Garp, and the Rocks Pirates led by Rocks D. Xebec.",
+                  "description": "Upcoming film for the manga's 30th anniversary. Watch at its placement in this guide once it is released.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -17077,11 +17077,12 @@
                     "other": null
                   },
                   "canon": false,
-                  "id": "upcoming-theatrical-movies:one-piece-film-god-valley-summer-2027-commemorating-the-30th-anniversary-of-the-one-piece-manga-1997-2027-the-film-centers-on-the-legendary-god-valley-incident-chronicling-the-clash-involving-gol-d-roger-monkey-d-garp-and-the-rocks-pirates-led-by-rocks-d-xebec"
+                  "id": "upcoming-theatrical-movies:one-piece-film-god-valley-summer-2027-commemorating-the-30th-anniversary-of-the-one-piece-manga-1997-2027-the-film-centers-on-the-legendary-god-valley-incident-chronicling-the-clash-involving-gol-d-roger-monkey-d-garp-and-the-rocks-pirates-led-by-rocks-d-xebec",
+                  "notes": []
                 },
                 {
-                  "title": "One Piece Film: BAAD (2029):** Commemorating the 30th Anniversary of the television anime series (1999–2029).",
-                  "fullTitle": "One Piece Film: BAAD (2029):** Commemorating the 30th Anniversary of the television anime series (1999–2029).",
+                  "title": "One Piece Film: BAAD (2029)",
+                  "fullTitle": "One Piece Film: BAAD (2029)",
                   "rating": null,
                   "tierColor": null,
                   "pace": null,
@@ -17089,7 +17090,7 @@
                   "anime": null,
                   "chapters": null,
                   "meta": null,
-                  "description": "BAAD (2029):** Commemorating the 30th Anniversary of the television anime series (1999–2029).",
+                  "description": "Upcoming film for the anime's 30th anniversary. Watch at its placement in this guide once it is released.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -17100,7 +17101,8 @@
                     "other": null
                   },
                   "canon": false,
-                  "id": "upcoming-theatrical-movies:one-piece-film-baad-2029-commemorating-the-30th-anniversary-of-the-television-anime-series-1999-2029"
+                  "id": "upcoming-theatrical-movies:one-piece-film-baad-2029-commemorating-the-30th-anniversary-of-the-television-anime-series-1999-2029",
+                  "notes": []
                 }
               ]
             }

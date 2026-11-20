@@ -41,6 +41,24 @@ NOTE_FIXES = [
      "Watch order: this film fits right after the current arc. If you watch the anime tie-in prequel Little East Blue, use the Fun Pace version, as the original broadcast version reveals later story details. The film can also be saved for the alternative placement later in this guide."),
 ]
 
+# Whole-entry fixes, matched on the start of the current title. The upcoming films were
+# parsed with their full (spoilery) blurb as the title, so title and description are reset.
+ENTRY_FIXES = [
+    ("One Piece Film: God Valley",
+     {"title": "One Piece Film: God Valley (2027)",
+      "description": "Upcoming film for the manga's 30th anniversary. Watch at its placement in this guide once it is released."}),
+    ("One Piece Film: BAAD",
+     {"title": "One Piece Film: BAAD (2029)",
+      "description": "Upcoming film for the anime's 30th anniversary. Watch at its placement in this guide once it is released."}),
+]
+
+# Spoilery phrases inside episode notes -> neutral wording (timestamps are kept).
+PHRASE_FIXES = [
+    ("to watch the Emperors' clash filler scene", "to watch an anime-only scene"),
+    ("an extra minute of the Oden vs. Whitebeard clash exists", "an extra minute of a flashback fight exists"),
+    ("an emotional duel in the snow is expanded", "a flashback duel is expanded"),
+]
+
 MD_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
@@ -61,6 +79,21 @@ def main():
         for node in saga["nodes"]:
             for group in node["groups"]:
                 for ep in group["episodes"]:
+                    for prefix, fields in ENTRY_FIXES:
+                        if (ep.get("title") or "").startswith(prefix) and ep.get("title") != fields["title"]:
+                            ep["title"] = ep["fullTitle"] = fields["title"]
+                            ep["description"] = fields["description"]
+                            ep["notes"] = []
+                            changed += 1
+                    if ep.get("notes"):
+                        fixed = []
+                        for n in ep["notes"]:
+                            for old, new in PHRASE_FIXES:
+                                n = n.replace(old, new)
+                            fixed.append(n)
+                        if fixed != ep["notes"]:
+                            ep["notes"] = fixed
+                            changed += 1
                     new_desc = fix_text(ep.get("description"), DESCRIPTION_FIXES)
                     if new_desc != ep.get("description"):
                         ep["description"] = new_desc

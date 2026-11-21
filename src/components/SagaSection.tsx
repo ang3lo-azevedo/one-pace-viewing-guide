@@ -6,9 +6,13 @@ import { isWatched, setMany } from '../store/progress';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
+import { focusTarget } from '../lib/focus';
 
 export default function SagaSection(props: { saga: FilteredSaga; index: number }) {
-  const [open, setOpen] = createSignal(props.index === 0 || hasActiveFilters());
+  // Open the saga with your last watched episode (or the first saga if you have none).
+  const [open, setOpen] = createSignal(
+    hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.index === 0),
+  );
 
   const prog = () => stats().perSaga[props.saga.id];
   const sagaIds = () => onlyIncluded(allIdsOfSaga(props.saga.id));

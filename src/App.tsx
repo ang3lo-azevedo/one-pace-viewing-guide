@@ -1,4 +1,5 @@
-import { For, Show } from 'solid-js';
+import { For, Show, onMount } from 'solid-js';
+import { scrollToFocus } from './lib/focus';
 import { guide } from './lib/guide';
 import { visibleSagas } from './lib/filter';
 import { prefs, toggleTheme } from './store/prefs';
@@ -10,6 +11,9 @@ import TraktMenu from './components/TraktMenu';
 import ProgressMenu from './components/ProgressMenu';
 
 export default function App() {
+  // Jump to the last episode you watched once the list has rendered.
+  onMount(() => setTimeout(scrollToFocus, 60));
+
   return (
     <div class="min-h-screen">
       <header class="border-b border-sea-800 bg-sea-975 text-sea-50">

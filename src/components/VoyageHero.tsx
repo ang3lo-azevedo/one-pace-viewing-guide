@@ -1,4 +1,4 @@
-import { For, Show } from 'solid-js';
+import { For, Show, createSignal } from 'solid-js';
 import { fmtHours, stats } from '../lib/stats';
 import { BOUNTY_PER_EPISODE, formatBerry, nextRank } from '../lib/bounties';
 import { prefs } from '../store/prefs';
@@ -91,6 +91,7 @@ function Poster(props: { emoji: string; name: string; bounty: number | null }) {
 }
 
 export default function VoyageHero() {
+  const [crewOpen, setCrewOpen] = createSignal(false);
   const s = stats;
   const selectionLabel = () => {
     if (prefs.canonOnly) return null;
@@ -147,14 +148,25 @@ export default function VoyageHero() {
       </div>
 
       <Show when={s().crew.length}>
-        <div class="card p-3 sm:p-4">
-          <div class="mb-2 flex items-baseline justify-between gap-2">
-            <div class="text-xs font-bold uppercase tracking-widest text-accent-400">Crew Bounties</div>
-            <div class="text-[11px] text-sea-400">{s().crewAsOf ? `as of ${s().crewAsOf}` : 'start watching to meet the crew'}</div>
-          </div>
-          <div class="flex gap-2 overflow-x-auto pb-1">
-            <For each={s().crew}>{(c) => <Poster emoji={c.emoji} name={c.name} bounty={c.bounty} />}</For>
-          </div>
+        <div class="card overflow-hidden">
+          <button
+            class="flex w-full items-center gap-2 px-3 py-2.5 text-left hover:bg-sea-100 dark:hover:bg-sea-800/40 sm:px-4"
+            onClick={() => setCrewOpen(!crewOpen())}
+            aria-expanded={crewOpen()}
+          >
+            <span class="text-xs transition-transform" classList={{ 'rotate-90': crewOpen() }} aria-hidden="true">
+              ▶
+            </span>
+            <span class="text-xs font-bold uppercase tracking-widest text-accent-400">Crew Bounties</span>
+            <span class="text-[11px] text-sea-400">
+              · {s().crew.length} crew{s().crewAsOf ? ` · as of ${s().crewAsOf}` : ''}
+            </span>
+          </button>
+          <Show when={crewOpen()}>
+            <div class="flex gap-2 overflow-x-auto px-3 pb-3 sm:px-4">
+              <For each={s().crew}>{(c) => <Poster emoji={c.emoji} name={c.name} bounty={c.bounty} />}</For>
+            </div>
+          </Show>
         </div>
       </Show>
     </div>

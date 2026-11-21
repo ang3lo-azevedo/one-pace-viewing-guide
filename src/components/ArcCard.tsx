@@ -6,6 +6,7 @@ import { stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
+import { focusTarget } from '../lib/focus';
 
 const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
   arc: { label: 'Arc', cls: 'border-accent-400/40 text-accent-500 dark:text-accent-300' },
@@ -17,7 +18,7 @@ const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
 
 export default function ArcCard(props: { node: FilteredNode }) {
   // Arcs start collapsed; open them automatically when searching/filtering so matches show.
-  const [open, setOpen] = createSignal(hasActiveFilters());
+  const [open, setOpen] = createSignal(hasActiveFilters() || focusTarget?.nodeUid === props.node.uid);
 
   const prog = () => stats().perNode[props.node.uid];
   const arcIds = () => onlyIncluded(allIdsOfNode(props.node.uid));

@@ -68,7 +68,8 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
 
   return (
     <li
-      class="group/ep flex items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
+      data-ep={props.ep.id}
+      class="group/ep flex scroll-mt-40 items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
       classList={{ 'opacity-55': watched() }}
     >
       <label class="mt-0.5 flex cursor-pointer items-center">

@@ -4,10 +4,11 @@ import { flatEpisodes, kindColor, kindLabel } from '../lib/guide';
 import { stats } from '../lib/stats';
 import { isWatched, setMany } from '../store/progress';
 import EpisodeRow from './EpisodeRow';
+import { focusTarget } from '../lib/focus';
 import { inlineMd } from '../lib/format';
 
 export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<string, FilteredGroup[]> }) {
-  const [open, setOpen] = createSignal(props.group.defaultOpen);
+  const [open, setOpen] = createSignal(props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid));
 
   const prog = () => stats().perGroup[props.group.uid];
   const ids = () => onlyIncluded(flatEpisodes.filter((f) => f.group.uid === props.group.uid).map((f) => f.ep.id));

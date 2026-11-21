@@ -8,7 +8,7 @@ import { isWatched, toggle } from '../store/progress';
 import { prefs } from '../store/prefs';
 import { LINK_LABEL, LINK_ORDER, primaryLinkKey } from '../lib/links';
 import { isConnected, rateEpisode, trakt } from '../store/trakt';
-import { flatEpisodes, splitTitle } from '../lib/guide';
+import { splitTitle } from '../lib/guide';
 import { NonCanonTag } from './Tags';
 import { SERIESGRAPH_SHOW, firstAnimeEpisode, inlineMd } from '../lib/format';
 import { config } from '../config';
@@ -30,25 +30,18 @@ const NOT_SERIESGRAPH = new Set(['netflix', 'movie', 'upcoming', 'original-conti
 
 /** Live Action episodes numbered across seasons, as SeriesGraph does (S2E1 is episode 9). */
 const LIVE_ACTION_SG = 'https://seriesgraph.com/show/111110-one-piece';
-const liveActionNumber = new Map<string, number>(
-  flatEpisodes
-    .filter((f) => f.group.kind === 'netflix')
-    .map((f) => ({ id: f.ep.id, m: f.ep.title.match(/S(\d+)E(\d+)/) }))
-    .filter((x) => x.m)
-    .sort((a, b) => +a.m![1] - +b.m![1] || +a.m![2] - +b.m![2])
-    .map((x, i) => [x.id, i + 1] as [string, number]),
-);
 
 export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonCanon?: boolean }) {
   // The star rating averages the anime episodes this entry adapts; link to the first one.
   const sgHref = () => {
+    // SeriesGraph episode pages are /episode/S<season>E<episode>; it lists the whole anime as season 1.
     if (props.kind === 'netflix') {
-      const n = liveActionNumber.get(props.ep.id);
-      return n ? `${LIVE_ACTION_SG}/episode/${n}` : LIVE_ACTION_SG;
+      const m = props.ep.title.match(/S(\d+)E(\d+)/);
+      return m ? `${LIVE_ACTION_SG}/episode/S${+m[1]}E${+m[2]}` : LIVE_ACTION_SG;
     }
     if (NOT_SERIESGRAPH.has(props.kind ?? '')) return null;
     const n = firstAnimeEpisode(props.ep.anime);
-    return n ? `${SERIESGRAPH_SHOW}/episode/${n}` : null;
+    return n ? `${SERIESGRAPH_SHOW}/episode/S1E${n}` : null;
   };
   // Films and specials: their IMDb page.
   const imdbHref = () => (props.ep.traktMovie?.imdb ? `https://www.imdb.com/title/${props.ep.traktMovie.imdb}/` : null);

@@ -17,6 +17,7 @@ import { extraCategory } from '../lib/guide';
 import type { Group, GuideNode } from '../types';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
+import VersionPicker, { LiveActionPicker } from './VersionPicker';
 import { focusTarget, reveal } from '../lib/focus';
 
 const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
@@ -146,7 +147,22 @@ export default function ArcCard(props: { node: FilteredNode }) {
 
       <Show when={open()}>
         <div class="space-y-2 border-t border-sea-200 p-2 dark:border-sea-800 sm:p-3">
-          <For each={layout().top}>{(group) => <GroupBlock group={group} inline={layout().inline} node={props.node} nodeExtra={isExtraNode()} nodeNonCanon={isNonCanonNode()} />}</For>
+          <VersionPicker node={props.node} />
+          <Show when={props.node.type === 'liveaction'}>
+            <LiveActionPicker />
+          </Show>
+          <For each={layout().top}>
+            {(group) => (
+              <GroupBlock
+                group={group}
+                inline={layout().inline}
+                node={props.node}
+                nodeExtra={isExtraNode()}
+                nodeNonCanon={isNonCanonNode()}
+                bare={layout().top.length === 1 && layout().inline.size === 0}
+              />
+            )}
+          </For>
         </div>
       </Show>
     </div>

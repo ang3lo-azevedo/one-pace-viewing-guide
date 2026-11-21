@@ -14,6 +14,8 @@ import { prefs } from '../store/prefs';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
+import { FinalSagaPicker } from './VersionPicker';
+import { isFinalSaga } from '../lib/layout';
 import { focusTarget, reveal } from '../lib/focus';
 
 export default function SagaSection(props: { saga: FilteredSaga }) {
@@ -107,6 +109,9 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
 
       <Show when={open()}>
         <div class="mt-2 space-y-2 pl-0 sm:pl-2">
+          <Show when={isFinalSaga(props.saga.parentId)}>
+            <FinalSagaPicker />
+          </Show>
           <For each={props.saga.nodes}>{(node) => <ArcCard node={node} />}</For>
         </div>
       </Show>

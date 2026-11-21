@@ -6,6 +6,7 @@ import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
 import { Tags } from './Tags';
+import { LiveActionPicker } from './VersionPicker';
 import type { FilteredNode } from '../lib/filter';
 import type { Group, GuideNode } from '../types';
 import { notNeeded } from '../lib/alternatives';
@@ -19,11 +20,13 @@ export default function GroupBlock(props: {
   /** The arc itself is already tagged as an extra / non-canon. */
   nodeExtra?: boolean;
   nodeNonCanon?: boolean;
+  /** The only section of its arc: show the entries directly, without a second header. */
+  bare?: boolean;
 }) {
   // Extra sections inside a main-route arc (e.g. Live Action, a special) are tagged and indented.
   const isExtra = () => !props.nodeExtra && !!props.node && !props.group.isAlternative && extraCategory(props.group as Group, props.node as GuideNode) !== null;
   const allNonCanon = () => props.group.episodes.length > 0 && props.group.episodes.every((e) => e.nonCanon);
-  const [open, setOpen] = createSignal(props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid));
+  const [open, setOpen] = createSignal(!!props.bare || props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid));
   // Open when an episode inside is revealed (page load or "Continue watching").
   createEffect(() => {
     if (!!reveal()?.groupUids.has(props.group.uid)) setOpen(true);
@@ -35,13 +38,14 @@ export default function GroupBlock(props: {
 
   return (
     <div
-      class="overflow-hidden rounded-lg border bg-sea-50 dark:bg-sea-950/50"
       classList={{
-        'ml-4 sm:ml-8 border-l-4 !border-l-amber-400/60': isExtra(),
-        'border-dashed opacity-90': props.group.isAlternative,
-        'border-sea-200 dark:border-sea-800': !props.group.isAlternative,
+        'overflow-hidden rounded-lg border bg-sea-50 dark:bg-sea-950/50': !props.bare,
+        'ml-4 sm:ml-8 border-l-4 !border-l-amber-400/60': !props.bare && isExtra(),
+        'border-dashed opacity-90': !props.bare && props.group.isAlternative,
+        'border-sea-200 dark:border-sea-800': !props.bare && !props.group.isAlternative,
       }}
     >
+      <Show when={!props.bare}>
       <div class="flex items-center gap-2 px-3 py-2">
         <button class="flex min-w-0 flex-1 items-center gap-2 text-left" onClick={() => setOpen(!open())} aria-expanded={open()}>
           <span class="text-xs transition-transform" classList={{ 'rotate-90': open() }} aria-hidden="true">
@@ -87,9 +91,15 @@ export default function GroupBlock(props: {
           {allWatched() ? 'Clear' : 'Mark all'}
         </button>
       </div>
+      </Show>
 
       <Show when={open()}>
-        <div class="border-t border-sea-200 px-1.5 pb-1.5 pt-1 dark:border-sea-800/70">
+        <div classList={{ 'border-t border-sea-200 px-1.5 pb-1.5 pt-1 dark:border-sea-800/70': !props.bare }}>
+          <Show when={props.group.kind === 'netflix' && props.node?.type !== 'liveaction'}>
+            <div class="mx-2 mb-1.5 mt-1">
+              <LiveActionPicker />
+            </div>
+          </Show>
           <Show when={props.group.info && (props.group.info.links.length || extraInfoText(props.group.info.text))}>
             <div class="mx-2 mb-1.5 mt-1 rounded-md bg-sea-100 px-2.5 py-1.5 text-xs dark:bg-sea-900/70">
               <Show when={extraInfoText(props.group.info!.text)}>

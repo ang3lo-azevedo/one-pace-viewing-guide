@@ -2,8 +2,9 @@ export const SERIESGRAPH_SHOW = 'https://seriesgraph.com/show/37854-one-piece';
 
 /** First anime episode number in a field like "234–235, 240" (or null). */
 export function firstAnimeEpisode(text: string | null): number | null {
-  const m = text?.match(/\d+/);
-  return m ? +m[0] : null;
+  // Only real episode numbers ("196", "196–197", "250-251, 256"), not "TV Special 14" or "Ep. Omakes 1–5".
+  const m = text?.match(/^\s*(\d+)/);
+  return m ? +m[1] : null;
 }
 
 /** Render the guide's small Markdown subset (**bold**, *italic*, `code`) as safe HTML. */

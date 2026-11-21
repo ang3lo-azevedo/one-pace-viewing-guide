@@ -88,7 +88,7 @@ export default function SettingsMenu() {
               {
                 value: 'thriller-bark-arc',
                 label: 'After Thriller Bark',
-                title: 'Safest: the second season covers Laboon, which ties into a character met in Thriller Bark',
+                title: 'Safest: some Live Action episodes show things the anime only reveals by the end of Thriller Bark',
               },
             ]}
           />

@@ -2,7 +2,7 @@ import { createStore } from 'solid-js/store';
 import { config, traktConfigured } from '../config';
 import { guide } from '../lib/guide';
 import type { Episode } from '../types';
-import { onWatchedChange, progress, setMany } from './progress';
+import { applyWatchTimes, onWatchedChange, progress } from './progress';
 
 const KEY = 'op-trakt-v1';
 const API = 'https://api.trakt.tv';
@@ -261,39 +261,42 @@ function getMap(): Promise<MapResult> {
 /** Last pull in this page session (not persisted, so each page load pulls once). */
 let lastPullAt = 0;
 
-async function completedSet(slug: string): Promise<Set<string>> {
+/** Completed episodes of a Trakt show: "<season>:<episode>" -> last watched time (ms, 0 if unknown). */
+async function completedMap(slug: string): Promise<Map<string, number>> {
   const r = await traktFetch(`/shows/${slug}/progress/watched?hidden=false&specials=false`);
-  if (r.status === 404) return new Set();
+  if (r.status === 404) return new Map();
   if (!r.ok) throw new Error(`progress ${r.status}`);
   const prog = await r.json();
-  const done = new Set<string>();
+  const done = new Map<string, number>();
   for (const season of prog.seasons || [])
-    for (const ep of season.episodes || []) if (ep.completed) done.add(`${season.number}:${ep.number}`);
+    for (const ep of season.episodes || [])
+      if (ep.completed) done.set(`${season.number}:${ep.number}`, ep.last_watched_at ? Date.parse(ep.last_watched_at) || 0 : 0);
   return done;
 }
 
-/** Pull watched history from Trakt and mark matching episodes watched locally. */
+/** Pull watched history from Trakt and mark matching episodes watched locally (with Trakt's dates). */
 export async function pullFromTrakt(): Promise<void> {
   if (!isConnected()) return;
   setTrakt('status', 'syncing');
   try {
     const map = await getMap();
-    const watchedIds: string[] = [];
-    for (const key of await completedSet(config.traktShowSlug)) {
+    const times: Record<string, number> = {};
+    for (const [key, t] of await completedMap(config.traktShowSlug)) {
       const ourId = map.bySeasonEp.get(key);
-      if (ourId) watchedIds.push(ourId);
+      if (ourId) times[ourId] = t;
     }
     // A community cut counts as watched once every anime episode it covers is watched.
     if (map.toAnime.size) {
-      const anime = await completedSet(ANIME_SHOW);
-      for (const [ourId, eps] of map.toAnime) if (eps.every(([s, n]) => anime.has(`${s}:${n}`))) watchedIds.push(ourId);
+      const anime = await completedMap(ANIME_SHOW);
+      for (const [ourId, eps] of map.toAnime)
+        if (eps.every(([s, n]) => anime.has(`${s}:${n}`))) times[ourId] = Math.max(...eps.map(([s, n]) => anime.get(`${s}:${n}`) ?? 0));
     }
     // Silent: these came from Trakt, so they must not be pushed back.
-    if (watchedIds.length) setMany(watchedIds, true, { silent: true });
+    applyWatchTimes(times);
     lastPullAt = Date.now();
     setTrakt('lastSyncedAt', lastPullAt);
     persist();
-    setTrakt({ status: 'idle', lastMessage: `Pulled ${watchedIds.length} watched from Trakt (${map.matched}/${map.total} episodes mapped).` });
+    setTrakt({ status: 'idle', lastMessage: `Pulled ${Object.keys(times).length} watched from Trakt (${map.matched}/${map.total} episodes mapped).` });
   } catch (e) {
     setTrakt({ status: 'idle', lastMessage: 'Pull failed: ' + (e as Error).message });
   }

@@ -5,7 +5,7 @@ import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
 import { splitTitle } from '../lib/guide';
 import { setWatched } from '../store/progress';
-import { prefs } from '../store/prefs';
+import { prefs, setPrefs } from '../store/prefs';
 import { EXTRA_LABELS } from '../lib/guide';
 
 function Panel(props: { title: string; accent: string; children: any }) {
@@ -95,35 +95,64 @@ function Poster(props: { emoji: string; name: string; bounty: number | null }) {
   );
 }
 
+const PACES: [number | null, string][] = [
+  [null, 'Auto'],
+  [30, '30m'],
+  [60, '1h'],
+  [120, '2h'],
+  [180, '3h'],
+];
+
 function FinishLine() {
   const s = stats;
   return (
     <div class="card px-4 py-3 text-sm">
-      <Show
-        when={s().pacePerDay > 0}
-        fallback={
-          <span class="text-sea-500 dark:text-sea-400">
-            📅 Check off episodes as you watch them and you'll see when you're on track to finish each episode, arc and saga.
+      <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <div class="flex flex-wrap items-baseline gap-x-5 gap-y-1">
+          <span>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Time left</span>{' '}
+            <b class="text-sea-800 dark:text-sea-50">{fmtHours(s().minLeft)}</b>
+            <span class="text-sea-500 dark:text-sea-400"> (canon route {fmtHours(s().canonMinLeft)})</span>
           </span>
-        }
-      >
-        <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          <span class="text-[11px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">At your pace</span>
-          <span class="text-xs text-sea-500 dark:text-sea-400" title="Watch time of episodes you checked in the last 28 days">
-            {fmtHours(s().pacePerDay)} a day (last {Math.round(s().paceDays)} days)
-          </span>
+          <Show when={s().pacePerDay > 0}>
+            <Show when={s().finishSelection}>
+              <span>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Done by</span>{' '}
+                <b class="text-sea-800 dark:text-sea-50">{fmtDate(s().finishSelection!)}</b>
+                <Show when={s().finishCanonOnly && !prefs.canonOnly}>
+                  <span class="text-sea-500 dark:text-sea-400"> (canon route only {fmtDate(s().finishCanonOnly!)})</span>
+                </Show>
+              </span>
+            </Show>
+          </Show>
         </div>
-        <div class="mt-1 flex flex-wrap gap-x-5 gap-y-1">
-          <Show when={s().finishCanonOnly}>
-            <span>
-              Canon route only: <b class="text-sea-800 dark:text-sea-50">{fmtDate(s().finishCanonOnly!)}</b>
-            </span>
-          </Show>
-          <Show when={s().finishSelection}>
-            <span>
-              {prefs.canonOnly ? 'Your list' : 'Everything you show'}: <b class="text-sea-800 dark:text-sea-50">{fmtDate(s().finishSelection!)}</b>
-            </span>
-          </Show>
+
+        <div class="flex items-center gap-1.5" role="radiogroup" aria-label="Watching pace">
+          <span class="text-[11px] text-sea-500 dark:text-sea-400">Pace a day</span>
+          <For each={PACES}>
+            {([value, label]) => (
+              <button
+                role="radio"
+                aria-checked={prefs.paceMinutes === value}
+                class="rounded-full px-2 py-0.5 text-[11px] font-semibold transition-colors"
+                classList={{
+                  'bg-accent-500 text-white': prefs.paceMinutes === value,
+                  'text-sea-500 hover:text-sea-800 dark:text-sea-400 dark:hover:text-sea-100': prefs.paceMinutes !== value,
+                }}
+                onClick={() => setPrefs('paceMinutes', value)}
+                title={value == null ? 'Use how much you actually watched in the last 28 days' : `Assume ${label} of watching a day`}
+              >
+                {label}
+                {value == null && s().historyPace > 0 ? ` (${fmtHours(s().historyPace)})` : ''}
+              </button>
+            )}
+          </For>
+        </div>
+      </div>
+      <Show when={s().pacePerDay <= 0}>
+        <div class="mt-1.5 text-xs text-sea-500 dark:text-sea-400">
+          No recent watch times yet, so there is no finish date. Pick a pace above, or keep checking episodes as you
+          watch them and Auto will use your real pace{' '}(connecting Trakt fills it in from your history).
         </div>
       </Show>
     </div>

@@ -94,6 +94,22 @@ export function watchedCount(): number {
   return Object.keys(state.watched).length;
 }
 
+/**
+ * Fill in watch times from another source (Trakt) for episodes that are marked watched
+ * without a known time, and mark any that aren't watched yet. Silent: nothing is echoed
+ * back to Trakt.
+ */
+export function applyWatchTimes(times: Record<string, number>) {
+  setState(
+    produce((s) => {
+      for (const [id, t] of Object.entries(times)) {
+        const cur = s.watched[id];
+        if (cur == null || cur <= UNKNOWN) s.watched[id] = t > UNKNOWN ? t : UNKNOWN;
+      }
+    }),
+  );
+}
+
 export function clearAll() {
   setState('watched', {});
 }

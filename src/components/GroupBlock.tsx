@@ -1,7 +1,7 @@
 import { For, Show, createSignal, createEffect } from 'solid-js';
 import { onlyIncluded, type FilteredGroup } from '../lib/filter';
 import { flatEpisodes, kindColor, kindLabel } from '../lib/guide';
-import { stats } from '../lib/stats';
+import { fmtDuration, stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
@@ -64,6 +64,9 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
               <span class="voyage-fill block h-full rounded-full" style={{ width: `${prog()!.pct}%` }} />
             </span>
             <span class="text-[11px] tabular-nums text-sea-500 dark:text-sea-400">{Math.round(prog()!.pct)}%</span>
+            <span class="text-[11px] tabular-nums text-sea-400 dark:text-sea-500" title="Watch time left / total">
+              · {prog()!.minDone >= prog()!.minTotal ? fmtDuration(prog()!.minTotal) : `${fmtDuration(prog()!.minTotal - prog()!.minDone)} left of ${fmtDuration(prog()!.minTotal)}`}
+            </span>
           </span>
         </Show>
         <span class="shrink-0 text-xs tabular-nums text-sea-500 dark:text-sea-400">

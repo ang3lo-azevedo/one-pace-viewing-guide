@@ -1,6 +1,6 @@
 import { For, Show, createMemo, createSignal } from 'solid-js';
 import InfoLine from './InfoLine';
-import { fmtDate, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, minutesForKind, stats } from '../lib/stats';
 import { isDone, notNeeded } from '../lib/alternatives';
 import { episodeInfo } from '../lib/format';
 import type { Episode } from '../types';
@@ -48,6 +48,8 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
 
   const info = createMemo(() => {
     const parts = episodeInfo(props.ep);
+    const min = minutesForKind(props.kind ?? 'onepace');
+    if (min > 0) parts.push({ label: 'Length', value: `~${fmtDuration(min)}`, title: 'Estimated length' });
     const eta = stats().eta[props.ep.id];
     return eta && !watched() ? [...parts, { label: 'ETA', value: fmtDate(eta), title: 'When you should get here at your current pace' }] : parts;
   });

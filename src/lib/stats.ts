@@ -2,6 +2,7 @@ import { createMemo } from 'solid-js';
 import { displayOrder, guide, type FlatEpisode } from './guide';
 import { episodeIncluded } from './filter';
 import { watchedAt } from '../store/progress';
+import { prefs } from '../store/prefs';
 import { isAlternativeEntry, isDone } from './alternatives';
 import { extraCategory, type ExtraCategory } from './guide';
 import { BOUNTY_REVEALS, CREW } from './bounties';
@@ -31,7 +32,8 @@ const KIND_MINUTES: Record<string, number> = {
 /** One original TV anime episode (minutes), for the "vs. full anime" comparison. */
 const ANIME_EP_MIN = 24;
 
-export const minutesOf = (f: FlatEpisode) => KIND_MINUTES[f.group.kind] ?? 24;
+export const minutesForKind = (kind: string) => KIND_MINUTES[kind] ?? 24;
+export const minutesOf = (f: FlatEpisode) => minutesForKind(f.group.kind);
 
 /** Integers from fields like "250–251, 256, 320" (anime episodes or manga chapters). */
 function numbers(text: string | null): number[] {
@@ -171,7 +173,9 @@ export const stats = createMemo(() => {
 
   // --- pace and finish estimates ---
   const paceDays = Math.max(3, (now - paceFrom) / DAY);
-  const pacePerDay = paceMin > 0 ? paceMin / paceDays : 0; // minutes per day
+  const historyPace = paceMin > 0 ? paceMin / paceDays : 0; // minutes per day
+  // A pace you picked wins; otherwise your recent history.
+  const pacePerDay = prefs.paceMinutes ?? historyPace;
   const eta: Record<string, number> = {};
   const etaNode: Record<string, number> = {};
   const etaSaga: Record<string, number> = {};
@@ -240,6 +244,7 @@ export const stats = createMemo(() => {
     extras: EXTRA_KINDS.map(([k]) => ({ key: k, ...extras[k] })),
     // pace and finish estimates (null / empty without recent watching)
     pacePerDay,
+    historyPace,
     paceDays,
     eta,
     etaNode,
@@ -258,6 +263,13 @@ export const stats = createMemo(() => {
     crewAsOf: lastPassed?.title ?? null,
   };
 });
+
+/** "24m", "1h 50m". */
+export function fmtDuration(min: number): string {
+  const m = Math.round(min);
+  if (m < 60) return `${m}m`;
+  return `${Math.floor(m / 60)}h${m % 60 ? ` ${String(m % 60).padStart(2, '0')}m` : ''}`;
+}
 
 /** "12 Jan" (adds the year when it is not this year). */
 export function fmtDate(t: number): string {

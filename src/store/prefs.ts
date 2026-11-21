@@ -21,6 +21,8 @@ export interface Prefs {
   spoilerSafe: boolean;
   /** Extra content types hidden from the list and from progress. */
   hiddenExtras: ExtraCategory[];
+  /** Minutes watched per day for finish dates, or null to use your recent history. */
+  paceMinutes: number | null;
   theme: Theme;
 }
 
@@ -33,6 +35,7 @@ const DEFAULTS: Prefs = {
   hideWatched: false,
   spoilerSafe: true,
   hiddenExtras: [],
+  paceMinutes: null,
   theme: 'dark',
 };
 

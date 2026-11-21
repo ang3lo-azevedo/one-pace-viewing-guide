@@ -15,7 +15,7 @@ export function timeVsAnime(canonEpisodes: number, anime: string | null): InfoPa
   const full = animeCount * MIN;
   const saved = full - pace;
   return {
-    label: 'Time',
+    label: 'Canon',
     value: `~${fmtHours(pace)}` + (saved > 0 ? ` (anime ${fmtHours(full)})` : ''),
     title: saved > 0 ? `About ${fmtHours(saved)} shorter than the original anime` : undefined,
   };

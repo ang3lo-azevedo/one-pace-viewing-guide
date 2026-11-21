@@ -2,7 +2,8 @@ import { For, Show, createSignal } from 'solid-js';
 import { onlyIncluded, type FilteredGroup } from '../lib/filter';
 import { flatEpisodes, kindColor, kindLabel } from '../lib/guide';
 import { stats } from '../lib/stats';
-import { isWatched, setMany } from '../store/progress';
+import { isWatched } from '../store/progress';
+import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
 import { focusTarget } from '../lib/focus';
 import { inlineMd } from '../lib/format';
@@ -60,7 +61,7 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
         </span>
         <button
           class="chip shrink-0 border-sea-300 text-[11px] text-sea-500 hover:border-strawhat-500 hover:text-strawhat-500 dark:border-sea-600 dark:text-sea-300"
-          onClick={() => setMany(ids(), !allWatched())}
+          onClick={() => confirmBulk(ids(), !allWatched(), `in "${props.group.label}"`)}
           title={allWatched() ? 'Unmark all in this section' : 'Mark all in this section watched'}
         >
           {allWatched() ? 'Clear' : 'Mark all'}

@@ -2,7 +2,8 @@ import { For, Show, createSignal } from 'solid-js';
 import { hasActiveFilters, onlyIncluded, type FilteredSaga } from '../lib/filter';
 import { allIdsOfSaga, idsBeforeSaga, tierForRating } from '../lib/guide';
 import { stats } from '../lib/stats';
-import { isWatched, setMany } from '../store/progress';
+import { isWatched } from '../store/progress';
+import { confirmBulk } from '../lib/confirm';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
@@ -71,14 +72,14 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
         <div class="flex shrink-0 flex-col gap-1">
           <button
             class="chip border-sea-300 text-[10px] text-sea-500 hover:border-strawhat-500 hover:text-strawhat-500 dark:border-sea-600 dark:text-sea-300"
-            onClick={() => setMany(sagaIds(), !allSagaWatched())}
+            onClick={() => confirmBulk(sagaIds(), !allSagaWatched(), `in ${props.saga.title}`)}
             title={allSagaWatched() ? 'Unmark this saga' : 'Mark this whole saga watched'}
           >
             {allSagaWatched() ? 'Clear saga' : 'Mark saga'}
           </button>
           <button
             class="chip border-sea-300 text-[10px] text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300"
-            onClick={() => setMany(onlyIncluded(idsBeforeSaga(props.saga.id)), true)}
+            onClick={() => confirmBulk(onlyIncluded(idsBeforeSaga(props.saga.id)), true, `before ${props.saga.title}`)}
             title="Mark everything before this saga watched"
           >
             Catch up

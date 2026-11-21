@@ -1,6 +1,6 @@
 import { For, Show, createSignal } from 'solid-js';
 import { fmtHours, stats } from '../lib/stats';
-import { BOUNTY_PER_EPISODE, formatBerry, nextRank } from '../lib/bounties';
+import { formatBerry } from '../lib/bounties';
 import { prefs } from '../store/prefs';
 import { EXTRA_LABELS } from '../lib/guide';
 
@@ -108,7 +108,7 @@ export default function VoyageHero() {
         </Show>
       </div>
 
-      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         <Panel title="Time" accent="#66c0ef">
           <Big value={fmtHours(s().minLeft)} label="left to watch" color="#ff0408" />
           <Row label="Watched" value={fmtHours(s().minWatched)} />
@@ -130,20 +130,6 @@ export default function VoyageHero() {
             <Mini value={`~${s().chaptersSeen}`} label="Manga chapters" />
             <Mini value={`~${s().animeSeen}`} label="Anime episodes" />
           </div>
-        </Panel>
-
-        <Panel title="Pirate" accent="#f4d35e">
-          <Big value={formatBerry(s().bounty)} label="your bounty (฿3M per canon episode)" color="#f4d35e" />
-          <Row label="Rank" value={s().rank} />
-          <Show when={nextRank(s().bounty)}>
-            {(n) => (
-              <Row
-                label={`Next: ${n().name}`}
-                value={`${Math.ceil((n().at - s().bounty) / BOUNTY_PER_EPISODE)} eps`}
-                title={`Reached at ${formatBerry(n().at)}`}
-              />
-            )}
-          </Show>
         </Panel>
       </div>
 

@@ -1,6 +1,7 @@
 import { For, Show, createMemo, createSignal } from 'solid-js';
 import { hasActiveFilters, onlyIncluded, type FilteredGroup, type FilteredNode } from '../lib/filter';
-import { isWatched, setMany } from '../store/progress';
+import { isWatched } from '../store/progress';
+import { confirmBulk } from '../lib/confirm';
 import { allIdsOfNode, idsBeforeNode, tierForRating } from '../lib/guide';
 import { stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
@@ -95,14 +96,14 @@ export default function ArcCard(props: { node: FilteredNode }) {
           <div class="flex gap-1">
             <button
               class="chip border-sea-300 text-[10px] text-sea-500 hover:border-strawhat-500 hover:text-strawhat-500 dark:border-sea-600 dark:text-sea-300"
-              onClick={() => setMany(arcIds(), !allArcWatched())}
+              onClick={() => confirmBulk(arcIds(), !allArcWatched(), `in ${props.node.title}`)}
               title={allArcWatched() ? 'Unmark this arc' : 'Mark this whole arc watched'}
             >
               {allArcWatched() ? 'Clear arc' : 'Mark arc'}
             </button>
             <button
               class="chip border-sea-300 text-[10px] text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300"
-              onClick={() => setMany(onlyIncluded(idsBeforeNode(props.node.uid)), true)}
+              onClick={() => confirmBulk(onlyIncluded(idsBeforeNode(props.node.uid)), true, `before ${props.node.title}`)}
               title="Mark everything before this arc watched"
             >
               Catch up

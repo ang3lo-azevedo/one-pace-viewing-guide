@@ -41,29 +41,41 @@ export default function FilterBar() {
             />
           </div>
 
-          <Toggle active={prefs.canonOnly} onClick={() => setPrefs('canonOnly', !prefs.canonOnly)} title="Show only the canon One Pace route">
-            {prefs.canonOnly ? '● Canon Only' : '○ Canon Only'}
+          <Toggle
+            active={prefs.canonOnly}
+            onClick={() => setPrefs('canonOnly', !prefs.canonOnly)}
+            title="Show only the canon One Pace route: hides movies, specials, Live Action, filler, original anime and alternatives"
+          >
+            {prefs.canonOnly ? '● Extras hidden' : '○ Hide extras'}
           </Toggle>
 
           <Toggle active={prefs.spoilerSafe} onClick={() => setPrefs('spoilerSafe', !prefs.spoilerSafe)} title="Hide episode subtitles; reveal on hover">
             🛡 Spoiler-safe
           </Toggle>
 
-          <div class="chip gap-0 overflow-hidden border-sea-300 p-0 dark:border-sea-600">
-            <button
-              class="px-2.5 py-1 text-xs font-semibold"
-              classList={{ 'bg-strawhat-500/15 text-strawhat-500': prefs.streamSource === 'onepace' }}
-              onClick={() => setPrefs('streamSource', 'onepace')}
-            >
-              One Pace
-            </button>
-            <button
-              class="px-2.5 py-1 text-xs font-semibold"
-              classList={{ 'bg-strawhat-500/15 text-strawhat-500': prefs.streamSource === 'stremio' }}
-              onClick={() => setPrefs('streamSource', 'stremio')}
-            >
-              Stremio
-            </button>
+          <div
+            class="inline-flex items-center gap-1 rounded-full border border-sea-300 p-0.5 dark:border-sea-600"
+            role="radiogroup"
+            aria-label="Default stream"
+            title="Where the red ▶ watch button on each episode opens"
+          >
+            <span class="pl-2 pr-0.5 text-[11px] font-semibold text-sea-400">Watch on</span>
+            <For each={[['onepace', 'One Pace'], ['stremio', 'Stremio']] as const}>
+              {([value, label]) => (
+                <button
+                  role="radio"
+                  aria-checked={prefs.streamSource === value}
+                  class="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors"
+                  classList={{
+                    'bg-strawhat-500 text-white shadow-sm': prefs.streamSource === value,
+                    'text-sea-400 hover:text-sea-700 dark:hover:text-sea-100': prefs.streamSource !== value,
+                  }}
+                  onClick={() => setPrefs('streamSource', value)}
+                >
+                  {label}
+                </button>
+              )}
+            </For>
           </div>
 
           <button

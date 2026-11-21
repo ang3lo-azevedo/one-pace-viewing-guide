@@ -6,9 +6,15 @@ import { flatEpisodes } from '../lib/guide';
 import { hasActiveFilters, onlyIncluded, type FilteredGroup, type FilteredNode } from '../lib/filter';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
-import { allIdsOfNode, idsBeforeNode, tierForRating } from '../lib/guide';
-import { fmtDate, fmtDuration, minutesOf, stats } from '../lib/stats';
+import { tierForRating } from '../lib/guide';
+import { idsOfNodeKey, nodeKeyOf } from '../lib/layout';
+import { catchUpIds } from '../lib/catchup';
+import { prefs } from '../store/prefs';
+import { fmtDate, fmtDuration, fmtFromNow, minutesOf, stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
+import { Tags } from './Tags';
+import { extraCategory } from '../lib/guide';
+import type { Group, GuideNode } from '../types';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
 import { focusTarget, reveal } from '../lib/focus';
@@ -19,6 +25,7 @@ const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
   special: { label: 'Special', cls: 'border-teal-400/40 text-teal-600 dark:text-teal-300' },
   filler: { label: 'Filler', cls: 'border-sea-400/40 text-sea-500 dark:text-sea-300' },
   upcoming: { label: 'Upcoming', cls: 'border-sea-400/40 text-sea-500 dark:text-sea-300' },
+  liveaction: { label: 'Live Action', cls: 'border-red-500/40 text-red-600 dark:text-red-400' },
 };
 
 export default function ArcCard(props: { node: FilteredNode }) {
@@ -30,7 +37,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
   });
 
   const prog = () => stats().perNode[props.node.uid];
-  const arcIds = () => onlyIncluded(allIdsOfNode(props.node.uid));
+  const arcIds = () => onlyIncluded(idsOfNodeKey(props.node.uid));
   const allArcWatched = () => arcIds().length > 0 && arcIds().every((id) => isWatched(id));
 
   // Sections nested inside another one (e.g. a special mid-arc) render right after their
@@ -50,8 +57,12 @@ export default function ArcCard(props: { node: FilteredNode }) {
   });
 
   const badge = () => TYPE_BADGE[props.node.type] ?? TYPE_BADGE.arc;
+  // Whole arcs that are extras (films, specials, Live Action, filler arcs) sit indented and tagged.
+  const isExtraNode = () =>
+    props.node.type !== 'arc' || props.node.groups.every((g) => extraCategory(g as Group, props.node as GuideNode) !== null);
+  const isNonCanonNode = () => props.node.groups.every((g) => g.episodes.every((e) => e.nonCanon));
   // Canon episodes in this arc (independent of filters), for the summary line.
-  const canonEntries = flatEpisodes.filter((f) => f.node.uid === props.node.uid && f.ep.canon);
+  const canonEntries = flatEpisodes.filter((f) => f.ep.canon && nodeKeyOf(f) === props.node.uid);
   const canonCount = canonEntries.length;
   const canonMinutes = canonEntries.reduce((m, f) => m + minutesOf(f), 0);
   const info = () => {
@@ -62,11 +73,15 @@ export default function ArcCard(props: { node: FilteredNode }) {
     // Total of everything shown in this arc/saga (extras included), when it differs from the canon time.
     const total = p && p.minTotal > canonMinutes ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
     const left = p && p.minDone > 0 && p.minDone < p.minTotal ? [{ label: 'Left', value: fmtDuration(p.minTotal - p.minDone), title: 'Watch time left in your current selection' }] : [];
-    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: 'At your current pace' }] : [])];
+    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: `At your current pace (${fmtFromNow(eta)})` }] : [])];
   };
 
   return (
-    <div class="card scroll-mt-28 overflow-hidden" id={props.node.id}>
+    <div
+      class="card scroll-mt-28 overflow-hidden"
+      classList={{ 'ml-5 sm:ml-10 border-l-4 !border-l-amber-400/60': isExtraNode() }}
+      id={props.node.id}
+    >
       <div class="flex items-start gap-2 px-3 py-3 sm:px-4">
         <div
           role="button"
@@ -82,6 +97,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-2">
               <span class={`chip ${badge().cls}`}>{badge().label}</span>
+              <Tags extra={isExtraNode()} nonCanon={isNonCanonNode()} />
               <h3 class="text-base font-extrabold leading-tight">{props.node.title}</h3>
               <RatingBadge
                 rating={props.node.rating}
@@ -119,7 +135,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
             </button>
             <button
               class="chip border-sea-300 text-[10px] text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300"
-              onClick={() => confirmBulk(onlyIncluded(idsBeforeNode(props.node.uid)), true, `before ${props.node.title}`)}
+              onClick={() => confirmBulk(catchUpIds(idsOfNodeKey(props.node.uid)), true, `before ${props.node.title}${prefs.catchUpExtras ? '' : ' (canon route only)'}`)}
               title="Mark everything before this arc watched"
             >
               Catch up
@@ -130,7 +146,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
 
       <Show when={open()}>
         <div class="space-y-2 border-t border-sea-200 p-2 dark:border-sea-800 sm:p-3">
-          <For each={layout().top}>{(group) => <GroupBlock group={group} inline={layout().inline} />}</For>
+          <For each={layout().top}>{(group) => <GroupBlock group={group} inline={layout().inline} node={props.node} nodeExtra={isExtraNode()} nodeNonCanon={isNonCanonNode()} />}</For>
         </div>
       </Show>
     </div>

@@ -29,6 +29,11 @@ const SECTIONS: { title: string; items: Source[] }[] = [
         url: 'https://docs.google.com/document/d/1zYFrLPPS3FOYrz4MDyog8R9reAsGxOqM-Sxh2Y2EvXg/edit?tab=t.0#heading=h.7hgr1xkj23na',
         what: 'Community consensus on which movies, OVAs and specials are worth watching, and where.',
       },
+      {
+        name: 'One Pace Guide (r/OnePiece)',
+        url: 'https://reddit.com/r/OnePiece/comments/16jsyop/one_pace_guide/',
+        what: 'Community guide to One Pace with the recommended order for the films, specials and filler around it.',
+      },
       { name: 'One Pace Dub Watch Guide', url: 'https://redd.it/1rtpukk', what: 'Use this instead if you watch the English dub. This guide assumes Japanese audio with subtitles.' },
       {
         name: 'Onigashima Paced (spreadsheet)',
@@ -103,8 +108,19 @@ export default function InfoPanel() {
               them. Turn it off in the top bar to see full titles.
             </li>
             <li>
-              <b class="text-sea-700 dark:text-sea-200">Live Action:</b> tagged Extra. It introduces characters and
-              reveals earlier than the anime, so each episode notes the safest point to watch it.
+              <b class="text-sea-700 dark:text-sea-200">Extra and Non-canon tags:</b> Extra is anything outside the
+              One Pace route (films, specials, filler, Live Action, original anime). Non-canon is what is not part of
+              the story (films, filler and most specials). The Live Action and a few specials are extras but still
+              canon, so "Hide extras" and "Hide non-canon" are separate switches.
+            </li>
+            <li>
+              <b class="text-sea-700 dark:text-sea-200">Live Action:</b> it introduces characters and reveals earlier
+              than the anime. Under Filters you can keep each episode next to its arc, or move the whole show after
+              Post-Enies Lobby or after Thriller Bark (the safest point).
+            </li>
+            <li>
+              <b class="text-sea-700 dark:text-sea-200">Final Saga:</b> Egghead and Elbaph can stay inside one Final
+              Saga or be listed as separate sections, under Filters.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Lengths:</b> real runtimes from onepace.net, Trakt (movies,
@@ -115,7 +131,8 @@ export default function InfoPanel() {
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Finish dates:</b> based on the watch time of episodes you
-              checked in the last 28 days. Each remaining episode, arc and saga shows when you'd reach it at that pace.
+              checked in the last 28 days (or your Trakt history when connected). You can also pick or type a pace a
+              day, like 90, 1h30 or 2 eps. Each remaining episode, arc and saga shows when you'd reach it at that pace.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Alternative versions</b> are optional and never count as

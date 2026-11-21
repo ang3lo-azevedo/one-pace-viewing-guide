@@ -1,5 +1,6 @@
 import { createMemo } from 'solid-js';
 import { displayOrder, guide, type FlatEpisode } from './guide';
+import { nodeKeyOf, orderedEntries, sagaKeyOf } from './layout';
 import { episodeIncluded } from './filter';
 import { isWatched, watchedAt } from '../store/progress';
 import { prefs } from '../store/prefs';
@@ -140,7 +141,7 @@ export const stats = createMemo(() => {
   // Remaining entries in watch order, for the finish estimates.
   const remaining: { f: FlatEpisode; min: number }[] = [];
 
-  for (const f of displayOrder) {
+  for (const f of orderedEntries()) {
     // Alternative versions are optional: never counted as remaining.
     if (isAlternativeEntry(f)) continue;
     const done = isDone(f.ep.id);
@@ -175,8 +176,8 @@ export const stats = createMemo(() => {
       const t = watchedAt(f.ep.id);
       if (t) localPlays.push({ t, min });
     } else if (min > 0) remaining.push({ f, min });
-    bump(perSaga, f.saga.id, done, min);
-    bump(perNode, f.node.uid, done, min);
+    bump(perSaga, sagaKeyOf(f), done, min);
+    bump(perNode, nodeKeyOf(f), done, min);
     bump(perGroup, f.group.uid, done, min);
   }
   for (const rec of [perSaga, perNode, perGroup])
@@ -202,8 +203,8 @@ export const stats = createMemo(() => {
       cum += min;
       const t = now + (cum / pacePerDay) * DAY;
       eta[f.ep.id] = t;
-      etaNode[f.node.uid] = t;
-      etaSaga[f.saga.id] = t;
+      etaNode[nodeKeyOf(f)] = t;
+      etaSaga[sagaKeyOf(f)] = t;
       if (f.ep.canon) canonEta = t;
     }
   }
@@ -287,6 +288,7 @@ export const stats = createMemo(() => {
 export function fmtDuration(min: number): string {
   const m = Math.round(min);
   if (m < 60) return `${m}m`;
+  if (m >= 24 * 60) return fmtSpan(m);
   return `${Math.floor(m / 60)}h${m % 60 ? ` ${String(m % 60).padStart(2, '0')}m` : ''}`;
 }
 
@@ -295,4 +297,45 @@ export function fmtDate(t: number): string {
   const d = new Date(t);
   const sameYear = d.getFullYear() === new Date().getFullYear();
   return d.toLocaleDateString(undefined, sameYear ? { day: 'numeric', month: 'short' } : { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+/** Long durations in days: "8d 23h" (or "Xh YYm" under a day). */
+export function fmtSpan(min: number): string {
+  const m = Math.round(min);
+  if (m < 24 * 60) return fmtHours(m);
+  const d = Math.floor(m / 1440);
+  const h = Math.round((m % 1440) / 60);
+  return h ? `${d}d ${h}h` : `${d}d`;
+}
+
+/** Calendar distance from now: "today", "in 5 days", "in 3 weeks", "in 7 months", "in 1 year 2 months". */
+export function fmtFromNow(t: number): string {
+  const days = Math.round((t - Date.now()) / 86_400_000);
+  if (days <= 0) return 'today';
+  if (days === 1) return 'tomorrow';
+  if (days < 14) return `in ${days} days`;
+  if (days < 61) return `in ${Math.round(days / 7)} weeks`;
+  const months = Math.round(days / 30.44);
+  if (months < 12) return `in ${months} months`;
+  const y = Math.floor(months / 12);
+  const rest = months % 12;
+  return `in ${y} year${y > 1 ? 's' : ''}${rest ? ` ${rest} month${rest > 1 ? 's' : ''}` : ''}`;
+}
+
+/**
+ * Read a typed pace as minutes per day: "90", "90m", "1h", "1.5h", "1h30", "1:30",
+ * "2 eps" (episodes of ~25 min). Returns null when it can't be read.
+ */
+export function parsePace(text: string): number | null {
+  const t = text.trim().toLowerCase().replace(',', '.');
+  if (!t) return null;
+  let m = t.match(/^(\d+(?:\.\d+)?)\s*(?:eps?|episodes?)$/);
+  if (m) return Math.round(+m[1] * 25) || null;
+  m = t.match(/^(\d+):(\d{1,2})$/);
+  if (m) return +m[1] * 60 + +m[2] || null;
+  m = t.match(/^(\d+(?:\.\d+)?)\s*h(?:ours?)?\s*(?:(\d+)\s*(?:m(?:in(?:utes?)?)?)?)?$/) ?? t.match(/^()(\d+)\s*m(?:in(?:utes?)?)?$/);
+  if (m && (m[1] || m[2])) return Math.round((m[1] ? +m[1] * 60 : 0) + (m[2] ? +m[2] : 0)) || null;
+  m = t.match(/^(\d+)$/);
+  if (m) return +m[1] || null;
+  return null;
 }

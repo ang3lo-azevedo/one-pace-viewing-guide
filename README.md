@@ -11,14 +11,18 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 
 - Per-episode progress, saved locally, with JSON export and import.
 - Progress dashboard: canon progress, sagas cleared, hours watched and remaining.
-- Canon-only vs. full list toggle (hide or show Movies, OVAs, Specials, Live Action, Fun Pace).
+- Hide extras toggle (hide or show Movies, OVAs, Specials, Live Action, Fun Pace).
+- Separate Hide non-canon toggle (the Live Action and canon specials are extras but stay), with Extra and Non-canon tags on every entry.
+- Live Action placement: next to each arc, all after Post-Enies Lobby, or all after Thriller Bark.
+- Egghead and Elbaph inside the Final Saga or as separate sections.
+- Catch up can include the extras before that point or only the main route.
 - Search across titles, anime episode numbers and manga chapters.
 - SeriesGraph rating badges and a rating-tier filter.
 - Stream toggle for default links (One Pace Web or Stremio).
 - Abbreviated titles that reveal the full title on hover or focus, to avoid spoilers.
 - Responsive layout with light and dark themes.
 - Continue watching: your next unwatched episode, with watch, mark watched and jump-to buttons.
-- Finish estimates at your recent pace for the whole list and every saga, arc and episode; progress percentages by watch time.
+- Finish estimates at your recent pace (or Trakt history, or a pace you pick or type) for the whole list and every saga, arc and episode; long times shown in days and finish dates as weeks or months away; progress percentages by watch time.
 - Counters for movies, specials, Live Action, filler and original anime. Alternative versions are optional and count the main version as done.
 - Installable as an app (PWA) and usable offline once loaded.
 

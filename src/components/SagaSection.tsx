@@ -4,19 +4,22 @@ import { rangeInfo } from '../lib/format';
 import { timeVsAnime } from '../lib/rangeTime';
 import { flatEpisodes } from '../lib/guide';
 import { hasActiveFilters, onlyIncluded, type FilteredSaga } from '../lib/filter';
-import { allIdsOfSaga, idsBeforeSaga, tierForRating } from '../lib/guide';
-import { fmtDate, fmtDuration, minutesOf, stats } from '../lib/stats';
+import { tierForRating } from '../lib/guide';
+import { idsOfSagaKey, sagaKeyOf } from '../lib/layout';
+import { catchUpIds } from '../lib/catchup';
+import { fmtDate, fmtFromNow, fmtDuration, minutesOf, stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
+import { prefs } from '../store/prefs';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
 import { focusTarget, reveal } from '../lib/focus';
 
-export default function SagaSection(props: { saga: FilteredSaga; index: number }) {
+export default function SagaSection(props: { saga: FilteredSaga }) {
   // Open the saga with your last watched episode (or the first saga if you have none).
   const [open, setOpen] = createSignal(
-    hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.index === 0),
+    hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.saga.number === 1),
   );
   // Open when an episode inside is revealed (page load or "Continue watching").
   createEffect(() => {
@@ -24,9 +27,9 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
   });
 
   const prog = () => stats().perSaga[props.saga.id];
-  const sagaIds = () => onlyIncluded(allIdsOfSaga(props.saga.id));
+  const sagaIds = () => onlyIncluded(idsOfSagaKey(props.saga.id));
   const allSagaWatched = () => sagaIds().length > 0 && sagaIds().every((id) => isWatched(id));
-  const canonEntries = flatEpisodes.filter((f) => f.saga.id === props.saga.id && f.ep.canon);
+  const canonEntries = flatEpisodes.filter((f) => f.ep.canon && sagaKeyOf(f) === props.saga.id);
   const canonCount = canonEntries.length;
   const canonMinutes = canonEntries.reduce((m, f) => m + minutesOf(f), 0);
   const info = () => {
@@ -37,7 +40,7 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
     // Total of everything shown in this arc/saga (extras included), when it differs from the canon time.
     const total = p && p.minTotal > canonMinutes ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
     const left = p && p.minDone > 0 && p.minDone < p.minTotal ? [{ label: 'Left', value: fmtDuration(p.minTotal - p.minDone), title: 'Watch time left in your current selection' }] : [];
-    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: 'At your current pace' }] : [])];
+    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: `At your current pace (${fmtFromNow(eta)})` }] : [])];
   };
 
   return (
@@ -55,7 +58,7 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
             ▶
           </span>
           <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-strawhat-500/15 text-sm font-black text-strawhat-500" aria-hidden="true">
-            {props.index + 1}
+            {props.saga.number}
           </span>
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-2">
@@ -94,7 +97,7 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
           </button>
           <button
             class="chip border-sea-300 text-[10px] text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300"
-            onClick={() => confirmBulk(onlyIncluded(idsBeforeSaga(props.saga.id)), true, `before ${props.saga.title}`)}
+            onClick={() => confirmBulk(catchUpIds(idsOfSagaKey(props.saga.id)), true, `before ${props.saga.title}${prefs.catchUpExtras ? '' : ' (canon route only)'}`)}
             title="Mark everything before this saga watched"
           >
             Catch up

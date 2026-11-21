@@ -5,6 +5,7 @@ const KEY = 'op-prefs-v1';
 
 export type StreamSource = 'onepace' | 'stremio';
 export type Theme = 'dark' | 'light';
+export type LiveActionPlacement = 'arc' | 'post-enies-lobby-arc' | 'thriller-bark-arc';
 import type { ExtraCategory } from '../lib/guide';
 export type { ExtraCategory };
 
@@ -23,6 +24,14 @@ export interface Prefs {
   hiddenExtras: ExtraCategory[];
   /** Minutes watched per day for finish dates, or null to use your recent history. */
   paceMinutes: number | null;
+  /** Hide everything that is not story canon (films, filler, most specials). */
+  hideNonCanon: boolean;
+  /** Where the Live Action episodes go: next to each arc, or all together after an arc. */
+  liveActionPlacement: LiveActionPlacement;
+  /** Show Egghead and Elbaph as their own sections instead of inside the Final Saga. */
+  splitFinalSaga: boolean;
+  /** "Catch up" also marks the extras (films, specials, Live Action, filler) before that point. */
+  catchUpExtras: boolean;
   theme: Theme;
 }
 
@@ -36,6 +45,10 @@ const DEFAULTS: Prefs = {
   spoilerSafe: true,
   hiddenExtras: [],
   paceMinutes: null,
+  hideNonCanon: false,
+  liveActionPlacement: 'arc',
+  splitFinalSaga: false,
+  catchUpExtras: true,
   theme: 'dark',
 };
 
@@ -76,7 +89,7 @@ export function toggleTheme() {
 }
 
 export function resetFilters() {
-  setPrefs({ search: '', tierMin: null, sagaId: null, hideWatched: false, canonOnly: false, hiddenExtras: [] });
+  setPrefs({ search: '', tierMin: null, sagaId: null, hideWatched: false, canonOnly: false, hiddenExtras: [], hideNonCanon: false });
 }
 
 export function toggleExtra(cat: ExtraCategory) {

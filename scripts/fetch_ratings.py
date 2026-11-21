@@ -28,6 +28,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "src", "data", "data.json")
 SHOW_ID = 37854
 API_URL = f"https://seriesgraph.com/api/shows/{SHOW_ID}/season-ratings"
+LIVE_ACTION_API = "https://seriesgraph.com/api/shows/111110/season-ratings"
 
 # Keep tiers in sync with data.json meta.tiers / src/types.ts.
 TIERS = [
@@ -142,6 +143,34 @@ def main():
                 node["rating"] = round1(sum(Decimal(str(v)) for v in node_vals) / len(node_vals))
         if saga_vals:
             saga["rating"] = round1(sum(Decimal(str(v)) for v in saga_vals) / len(saga_vals))
+
+    # Live Action: its own SeriesGraph page (TMDB 111110), matched by season and episode.
+    try:
+        req = urllib.request.Request(LIVE_ACTION_API, headers={"User-Agent": "one-pace-guide/1.0"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            la = json.load(resp)
+        la_rating = {}
+        for season in la:
+            for ep in season.get("episodes", []):
+                r = ep.get("imdb_rating") or ep.get("vote_average")
+                if r:
+                    la_rating[(ep.get("season_number") or season.get("season_number"), ep.get("episode_number"))] = r
+        la_updated = 0
+        for saga in data["sagas"]:
+            for node in saga["nodes"]:
+                for group in node["groups"]:
+                    if group["kind"] != "netflix":
+                        continue
+                    for ep in group["episodes"]:
+                        m = re.match(r"S(\d+)E(\d+)", ep.get("title") or "")
+                        r = la_rating.get((int(m.group(1)), int(m.group(2)))) if m else None
+                        if r:
+                            ep["rating"] = round1(Decimal(str(r)))
+                            ep["tierColor"] = tier_color(ep["rating"])
+                            la_updated += 1
+        print(f"Live Action: {la_updated} episodes rated from SeriesGraph")
+    except Exception as exc:
+        print(f"Live Action ratings skipped: {exc}", file=sys.stderr)
 
     data["meta"]["ratingsSource"] = "SeriesGraph IMDb (https://seriesgraph.com/show/37854-one-piece)"
 

@@ -4840,9 +4840,11 @@
                   "notes": [
                     "Early One Piece film, not canon."
                   ],
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-dead-end-adventure-2003",
-                    "trakt": 30394
+                    "trakt": 30394,
+                    "imdb": "tt1006926"
                   },
                   "traktRating": 7.6,
                   "traktVotes": 716,
@@ -5929,7 +5931,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Skypiea 25 Alternate (G-8) - Finale",
+                  "title": "Skypiea 25 - Finale",
                   "fullTitle": "Finale",
                   "rating": 7.3,
                   "tierColor": "#F4D03F",
@@ -5950,6 +5952,10 @@
                   },
                   "canon": true,
                   "id": "one-pace:skypiea-25",
+                  "withFiller": {
+                    "title": "Skypiea 25 (G-8 Alternate Cut) - Finale",
+                    "note": "You are watching the G-8 filler, so pick the \"G-8 Alternate Cut\" of this episode on One Pace."
+                  },
                   "traktEpisode": {
                     "season": 16,
                     "number": 25,
@@ -6023,6 +6029,7 @@
                   },
                   "canon": false,
                   "id": "fun-pace:g-8-01-the-ghosting-merry",
+                  "nonCanon": true,
                   "runtime": 30,
                   "runtimeSource": "sheet-average"
                 },
@@ -6048,6 +6055,7 @@
                   },
                   "canon": false,
                   "id": "fun-pace:g-8-02-operation-subterfuge",
+                  "nonCanon": true,
                   "runtime": 30,
                   "runtimeSource": "sheet-average"
                 },
@@ -6073,6 +6081,7 @@
                   },
                   "canon": false,
                   "id": "fun-pace:g-8-03-a-battle-of-wits",
+                  "nonCanon": true,
                   "runtime": 30,
                   "runtimeSource": "sheet-average"
                 },
@@ -6098,6 +6107,7 @@
                   },
                   "canon": false,
                   "id": "fun-pace:g-8-04-escape-from-navarone",
+                  "nonCanon": true,
                   "runtime": 30,
                   "runtimeSource": "sheet-average"
                 },
@@ -6123,6 +6133,7 @@
                   },
                   "canon": false,
                   "id": "fun-pace:g-8-05-now-you-see-merry",
+                  "nonCanon": true,
                   "runtime": 30,
                   "runtimeSource": "sheet-average"
                 },
@@ -6148,6 +6159,7 @@
                   },
                   "canon": false,
                   "id": "fun-pace:g-8-06-high-flyers",
+                  "nonCanon": true,
                   "runtime": 30,
                   "runtimeSource": "sheet-average"
                 }
@@ -6202,6 +6214,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A1",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6227,6 +6240,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A2",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6252,6 +6266,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A3",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6277,6 +6292,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A4",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6302,6 +6318,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A5",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6327,6 +6344,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A6",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6352,6 +6370,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A7",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6377,6 +6396,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A8",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6402,6 +6422,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A9",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6427,6 +6448,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A10",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 },
@@ -6452,6 +6474,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-episodes-alternative:/detail/series/tt0388629/tt0388629%3A10%3A11",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 }
@@ -6522,7 +6545,8 @@
                   "id": "straw-hat-theatre:urn:btih:ddbca2961dab0ad1e2a1d362ca7e03f7db3c7484",
                   "notes": [
                     "Adaptation of non-canon comic strips by Oda."
-                  ]
+                  ],
+                  "nonCanon": true
                 }
               ]
             }
@@ -6895,9 +6919,11 @@
                   "notes": [
                     "Non-canon film."
                   ],
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-baron-omatsuri-and-the-secret-island-2005",
-                    "trakt": 30396
+                    "trakt": 30396,
+                    "imdb": "tt1018764"
                   },
                   "traktRating": 7.8,
                   "traktVotes": 823,
@@ -8718,8 +8744,8 @@
                     "number": 2,
                     "trakt": 14318068
                   },
-                  "traktRating": 8.0,
-                  "traktVotes": 1,
+                  "traktRating": 7.5,
+                  "traktVotes": 2,
                   "runtime": 24,
                   "runtimeSource": "onepace"
                 },
@@ -9384,7 +9410,8 @@
                   ],
                   "traktMovie": {
                     "slug": "monsters-103-mercies-dragon-damnation-2024",
-                    "trakt": 994908
+                    "trakt": 994908,
+                    "imdb": "tt30475122"
                   },
                   "traktRating": 8.4,
                   "traktVotes": 947,
@@ -9438,6 +9465,7 @@
                   },
                   "canon": false,
                   "id": "filler-episode-384-boat-piece-main:fun-pace-episode-384-boat-piece",
+                  "nonCanon": true,
                   "runtime": 20,
                   "runtimeSource": "sheet"
                 }
@@ -9475,6 +9503,7 @@
                   },
                   "canon": false,
                   "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A11%3A12",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 }
@@ -9529,7 +9558,8 @@
                   ],
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
-                    "trakt": 168446
+                    "trakt": 168446,
+                    "imdb": "tt7947592"
                   },
                   "traktRating": 8.3,
                   "traktVotes": 315,
@@ -9585,9 +9615,11 @@
                   "notes": [
                     "Watch order: this film fits right after the current arc. If you watch the anime tie-in prequel Little East Blue, use the Fun Pace version, as the original broadcast version reveals later story details. The film can also be saved for the alternative placement later in this guide."
                   ],
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
-                    "trakt": 27466
+                    "trakt": 27466,
+                    "imdb": "tt1485763"
                   },
                   "traktRating": 8.0,
                   "traktVotes": 1266,
@@ -11544,6 +11576,7 @@
                   },
                   "canon": false,
                   "id": "filler:episodes-497-499-asl-childhood-filler",
+                  "nonCanon": true,
                   "runtime": 72,
                   "runtimeSource": "anime"
                 },
@@ -11569,6 +11602,7 @@
                   },
                   "canon": false,
                   "id": "filler:episode-506-the-straw-hats-reactions",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 }
@@ -11620,7 +11654,8 @@
                   "id": "special-strong-world-episode-0-alternative-main:pace-special-strong-world-episode-0",
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
-                    "trakt": 168446
+                    "trakt": 168446,
+                    "imdb": "tt7947592"
                   },
                   "traktRating": 8.3,
                   "traktVotes": 315,
@@ -11673,9 +11708,11 @@
                   },
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-alternative-main:movie-10-strong-world-2009-written-by-oda",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
-                    "trakt": 27466
+                    "trakt": 27466,
+                    "imdb": "tt1485763"
                   },
                   "traktRating": 8.0,
                   "traktVotes": 1266,
@@ -11728,9 +11765,11 @@
                   },
                   "canon": false,
                   "id": "special-3d2y-main:3d2y",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-3d2y-overcome-ace-s-death-luffy-s-vow-to-his-friends-2014",
-                    "trakt": 187194
+                    "trakt": 187194,
+                    "imdb": "tt5098548"
                   },
                   "traktRating": 8.0,
                   "traktVotes": 460,
@@ -12066,9 +12105,11 @@
                   },
                   "canon": false,
                   "id": "special-fan-letter-main:one-piece-fan-letter",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-fan-letter-2024-10-20",
-                    "trakt": 1400060
+                    "trakt": 1400060,
+                    "imdb": "tt33998607"
                   },
                   "traktRating": 9.4,
                   "traktVotes": 37,
@@ -13771,6 +13812,7 @@
                   },
                   "canon": false,
                   "id": "filler-z-s-ambition-main:z-s-ambition-eps-575-578",
+                  "nonCanon": true,
                   "runtime": 96,
                   "runtimeSource": "anime"
                 }
@@ -13820,9 +13862,11 @@
                   },
                   "canon": false,
                   "id": "special-glorious-island-main:special-glorious-island-2012-film-z-prologue-short",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-glorious-island-2012",
-                    "trakt": 532619
+                    "trakt": 532619,
+                    "imdb": "tt15711758"
                   },
                   "traktRating": 6.8,
                   "traktVotes": 46,
@@ -13875,9 +13919,11 @@
                   },
                   "canon": false,
                   "id": "one-piece-movie-12-film-z-main:one-piece-movie-12-film-z-2012",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-film-z-2012",
-                    "trakt": 112137
+                    "trakt": 112137,
+                    "imdb": "tt2375379"
                   },
                   "traktRating": 8.2,
                   "traktVotes": 1383,
@@ -14697,6 +14743,7 @@
                   },
                   "canon": false,
                   "id": "filler:caesar-s-retrieval-eps-626-628",
+                  "nonCanon": true,
                   "runtime": 72,
                   "runtimeSource": "anime"
                 }
@@ -16230,9 +16277,11 @@
                   },
                   "canon": false,
                   "id": "special-film-gold-episode-0-main:special-film-gold-episode-0-2016-prologue-short",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-film-gold-episode-0-2016",
-                    "trakt": 616965
+                    "trakt": 616965,
+                    "imdb": null
                   },
                   "traktRating": 7.3,
                   "traktVotes": 76,
@@ -16285,9 +16334,11 @@
                   },
                   "canon": false,
                   "id": "one-piece-movie-13-film-gold-main:one-piece-movie-13-film-gold-2016",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-film-gold-2016",
-                    "trakt": 224554
+                    "trakt": 224554,
+                    "imdb": "tt5251328"
                   },
                   "traktRating": 7.9,
                   "traktVotes": 1479,
@@ -17918,6 +17969,7 @@
                   },
                   "canon": false,
                   "id": "filler:marine-rookies-eps-780-782",
+                  "nonCanon": true,
                   "runtime": 72,
                   "runtimeSource": "anime"
                 }
@@ -18104,9 +18156,11 @@
                   },
                   "canon": false,
                   "id": "one-piece-movie-14-stampede-main:one-piece-movie-14-stampede-2019",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-stampede-2019",
-                    "trakt": 419509
+                    "trakt": 419509,
+                    "imdb": "tt9430698"
                   },
                   "traktRating": 8.2,
                   "traktVotes": 1740,
@@ -18159,6 +18213,7 @@
                   },
                   "canon": false,
                   "id": "special-romance-dawn-v2-main:urn:btih:9a825f40a0a36882a51e221fff3e5b54d342f7f4",
+                  "nonCanon": true,
                   "runtime": 24,
                   "runtimeSource": "anime"
                 }
@@ -22265,6 +22320,7 @@
                   },
                   "canon": true,
                   "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_3.5",
+                  "nonCanon": true,
                   "traktAnime": [
                     [
                       21,
@@ -22369,6 +22425,7 @@
                   },
                   "canon": false,
                   "id": "special-uta-s-past-main:uta-s-past-episodes-1029-1030",
+                  "nonCanon": true,
                   "runtime": 48,
                   "runtimeSource": "anime"
                 }
@@ -22418,9 +22475,11 @@
                   },
                   "canon": false,
                   "id": "one-piece-movie-15-film-red-main:one-piece-movie-15-film-red-2022",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-film-red-2022",
-                    "trakt": 722637
+                    "trakt": 722637,
+                    "imdb": "tt16183464"
                   },
                   "traktRating": 7.7,
                   "traktVotes": 3378,
@@ -22483,9 +22542,11 @@
                   },
                   "canon": false,
                   "id": "special-one-piece-heroines-main:/detail/series/tt34927513",
+                  "nonCanon": true,
                   "traktMovie": {
                     "slug": "one-piece-heroines-2026",
-                    "trakt": 1380671
+                    "trakt": 1380671,
+                    "imdb": "tt41295042"
                   },
                   "traktRating": 8.0,
                   "traktVotes": 342,
@@ -23999,7 +24060,7 @@
             },
             {
               "id": "original-anime-continuation-egghead-elbaph-eps-1131",
-              "label": "Original Anime Continuation: Egghead & Elbaph (Eps 1131+)",
+              "label": "Original Anime Continuation: Egghead (Eps 1131–1155)",
               "kind": "original-continuation",
               "canonPath": false,
               "isAlternative": false,
@@ -24029,7 +24090,33 @@
                   },
                   "canon": false,
                   "id": "original-anime-continuation-egghead-elbaph-eps-1131:egghead-climax"
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "elbaph-arc",
+          "type": "arc",
+          "title": "Elbaph Arc",
+          "rating": null,
+          "pace": null,
+          "anime": "1156+",
+          "chapters": "1126+",
+          "isAlternative": false,
+          "groups": [
+            {
+              "id": "original-anime-elbaph",
+              "label": "Original Anime (Eps 1156+)",
+              "kind": "original-continuation",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [
+                "One Pace has not reached Elbaph yet; watch the original anime episodes."
+              ],
+              "episodes": [
                 {
                   "title": "Elbaph Arc",
                   "fullTitle": "Elbaph Arc",
@@ -24054,7 +24141,19 @@
                   "id": "original-anime-continuation-egghead-elbaph-eps-1131:elbaph-arc"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "id": "upcoming-films",
+          "type": "upcoming",
+          "title": "Upcoming Films",
+          "rating": null,
+          "pace": null,
+          "anime": null,
+          "chapters": null,
+          "isAlternative": false,
+          "groups": [
             {
               "id": "upcoming-theatrical-movies",
               "label": "Upcoming Theatrical Movies",

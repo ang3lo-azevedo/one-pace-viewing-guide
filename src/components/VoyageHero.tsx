@@ -1,5 +1,5 @@
 import { For, Show, createSignal } from 'solid-js';
-import { fmtDate, fmtHours, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, fmtFromNow, fmtHours, fmtSpan, parsePace, stats } from '../lib/stats';
 import { formatBerry } from '../lib/bounties';
 import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
@@ -103,6 +103,46 @@ const PACES: [number | null, string][] = [
   [180, '3h'],
 ];
 
+/** Type any pace: "90", "1h30", "1:30", "1.5h" or "2 eps". */
+function CustomPace() {
+  const preset = () => PACES.some(([v]) => v === prefs.paceMinutes);
+  const [text, setText] = createSignal(preset() || prefs.paceMinutes == null ? '' : fmtDuration(prefs.paceMinutes));
+  const [bad, setBad] = createSignal(false);
+  const apply = () => {
+    const t = text().trim();
+    if (!t) {
+      setBad(false);
+      if (!preset()) setPrefs('paceMinutes', null);
+      return;
+    }
+    const m = parsePace(t);
+    setBad(m == null || m > 24 * 60);
+    if (m != null && m <= 24 * 60) {
+      setPrefs('paceMinutes', m);
+      setText(fmtDuration(m));
+    }
+  };
+  return (
+    <input
+      type="text"
+      inputmode="text"
+      placeholder="Custom"
+      aria-label="Custom pace a day"
+      title={'Type your own pace a day, e.g. 90, 1h30, 1:30, 1.5h or 2 eps. Press Enter to apply.'}
+      class="w-20 rounded-full border bg-white px-2 py-0.5 text-[11px] font-semibold outline-none dark:bg-sea-900"
+      classList={{
+        'border-accent-500 text-accent-600 dark:text-accent-300': !preset() && prefs.paceMinutes != null && !bad(),
+        'border-red-500 text-red-600': bad(),
+        'border-sea-300 dark:border-sea-700': preset() && !bad(),
+      }}
+      value={text()}
+      onInput={(e) => setText(e.currentTarget.value)}
+      onKeyDown={(e) => e.key === 'Enter' && apply()}
+      onBlur={apply}
+    />
+  );
+}
+
 function FinishLine() {
   const s = stats;
   return (
@@ -111,16 +151,17 @@ function FinishLine() {
         <div class="flex flex-wrap items-baseline gap-x-5 gap-y-1">
           <span>
             <span class="text-[11px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Time left</span>{' '}
-            <b class="text-sea-800 dark:text-sea-50">{fmtHours(s().minLeft)}</b>
-            <span class="text-sea-500 dark:text-sea-400"> (canon route {fmtHours(s().canonMinLeft)})</span>
+            <b class="text-sea-800 dark:text-sea-50" title={fmtHours(s().minLeft)}>{fmtSpan(s().minLeft)}</b>
+            <span class="text-sea-500 dark:text-sea-400" title={fmtHours(s().canonMinLeft)}> (canon route {fmtSpan(s().canonMinLeft)})</span>
           </span>
           <Show when={s().pacePerDay > 0}>
             <Show when={s().finishSelection}>
               <span>
                 <span class="text-[11px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Done by</span>{' '}
                 <b class="text-sea-800 dark:text-sea-50">{fmtDate(s().finishSelection!)}</b>
+                <span class="text-sea-500 dark:text-sea-400"> ({fmtFromNow(s().finishSelection!)})</span>
                 <Show when={s().finishCanonOnly && !prefs.canonOnly}>
-                  <span class="text-sea-500 dark:text-sea-400"> (canon route only {fmtDate(s().finishCanonOnly!)})</span>
+                  <span class="text-sea-500 dark:text-sea-400"> · canon route only {fmtDate(s().finishCanonOnly!)} ({fmtFromNow(s().finishCanonOnly!)})</span>
                 </Show>
               </span>
             </Show>
@@ -153,6 +194,7 @@ function FinishLine() {
               </button>
             )}
           </For>
+          <CustomPace />
         </div>
       </div>
       <Show when={s().pacePerDay <= 0}>
@@ -181,7 +223,7 @@ function ContinueWatching() {
   return (
     <Show
       when={next()}
-      fallback={<div class="text-sm font-semibold text-accent-600 dark:text-accent-400">You have watched everything in your selection. 🏴‍☠️</div>}
+      fallback={<div class="text-sm font-semibold text-accent-600 dark:text-accent-400">You have watched everything in your selection.</div>}
     >
       {(n) => (
         <div class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-accent-400/30 bg-accent-400/10 px-3 py-2.5">
@@ -226,7 +268,8 @@ export default function VoyageHero() {
   const selectionLabel = () => {
     if (prefs.canonOnly) return null;
     const hidden = prefs.hiddenExtras.map((c) => EXTRA_LABELS[c]);
-    return hidden.length ? `Your selection (without ${hidden.join(', ')})` : 'Everything, incl. non-canon';
+    if (prefs.hideNonCanon) hidden.unshift('non-canon');
+    return hidden.length ? `Your selection (without ${hidden.join(', ')})` : 'Everything, incl. extras and non-canon';
   };
 
   return (
@@ -243,14 +286,14 @@ export default function VoyageHero() {
 
       <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
         <Panel title="Watched" accent="text-accent-600 dark:text-accent-400">
-          <Big value={fmtHours(s().minWatched)} label={`of ${fmtHours(s().minTotal)} in total`} color="text-accent-600 dark:text-accent-300" />
+          <Big value={fmtSpan(s().minWatched)} label={`of ${fmtSpan(s().minTotal)} in total`} color="text-accent-600 dark:text-accent-300" />
           <Row label="One Pace episodes" value={`${s().onePaceWatched} / ${s().onePaceTotal}`} title="One Pace's own numbered episodes" />
         </Panel>
 
         <Panel title="Saved vs full anime" accent="text-teal-700 dark:text-teal-300">
-          <Big value={fmtHours(s().savedSoFarMin)} label="saved so far" color="text-teal-600 dark:text-teal-300" />
-          <Row label="Saved in total" value={fmtHours(s().savedTotalMin)} />
-          <Row label="Full anime equivalent" value={fmtHours(s().animeEquivMin)} title="Time to watch the same story in the original anime" />
+          <Big value={fmtSpan(s().savedSoFarMin)} label="saved so far" color="text-teal-600 dark:text-teal-300" />
+          <Row label="Saved in total" value={fmtSpan(s().savedTotalMin)} />
+          <Row label="Full anime equivalent" value={fmtSpan(s().animeEquivMin)} title="Time to watch the same story in the original anime" />
         </Panel>
 
         <Panel title="Journey" accent="text-sky-700 dark:text-accent-300">
@@ -267,8 +310,8 @@ export default function VoyageHero() {
             {(x) => (
               <Row
                 label={x.label}
-                value={x.total ? `${x.watched}/${x.total}` : '—'}
-                title={x.minLeft ? `${fmtHours(x.minLeft)} left` : undefined}
+                value={x.total ? `${x.watched}/${x.total}` : '-'}
+                title={x.minLeft ? `${fmtSpan(x.minLeft)} left` : undefined}
               />
             )}
           </For>

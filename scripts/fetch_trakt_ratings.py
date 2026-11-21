@@ -243,7 +243,7 @@ def main():
         info = movie_info.get(slug) if slug else None
         if not info:
             continue
-        e["traktMovie"] = {"slug": slug, "trakt": info["ids"]["trakt"]}
+        e["traktMovie"] = {"slug": slug, "trakt": info["ids"]["trakt"], "imdb": info["ids"].get("imdb")}
         if info.get("rating") and info.get("votes"):
             e["traktRating"] = round(float(info["rating"]), 1)
             e["traktVotes"] = int(info["votes"])

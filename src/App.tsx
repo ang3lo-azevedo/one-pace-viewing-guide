@@ -68,7 +68,6 @@ export default function App() {
             when={visibleSagas().length}
             fallback={
               <div class="card px-4 py-12 text-center text-sea-500 dark:text-sea-400">
-                <div class="text-3xl">🧭</div>
                 <p class="mt-2 font-semibold">No episodes match your filters.</p>
                 <p class="text-sm">Try clearing the search or filters above.</p>
               </div>
@@ -76,8 +75,7 @@ export default function App() {
           >
             <For each={visibleSagas()}>
               {(saga) => {
-                const idx = guide.sagas.findIndex((s) => s.id === saga.id);
-                return <SagaSection saga={saga} index={idx} />;
+                return <SagaSection saga={saga} />;
               }}
             </For>
           </Show>

@@ -37,7 +37,11 @@ export interface Episode {
   /** Original anime episodes this community cut covers on Trakt: [season, number, trakt id]. */
   traktAnime?: [number, number, number][];
   /** Movies and specials: their Trakt movie. */
-  traktMovie?: { slug: string; trakt: number };
+  traktMovie?: { slug: string; trakt: number; imdb?: string | null };
+  /** Not part of the story canon (films, filler, most specials). */
+  nonCanon?: boolean;
+  /** Shown instead when filler is shown (e.g. the G-8 cut of Skypiea 25). */
+  withFiller?: { title: string; note: string };
   /** Real length in minutes (onepace.net, Trakt or the project's spreadsheet), if published. */
   runtime?: number;
   runtimeSource?: string;
@@ -77,7 +81,7 @@ export interface Group {
   uid: string;
 }
 
-export type NodeType = 'arc' | 'movie' | 'special' | 'filler' | 'upcoming';
+export type NodeType = 'arc' | 'movie' | 'special' | 'filler' | 'upcoming' | 'liveaction';
 
 export interface GuideNode {
   id: string;

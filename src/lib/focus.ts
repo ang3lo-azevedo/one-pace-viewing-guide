@@ -2,7 +2,7 @@ import { createMemo, createRoot, createSignal } from 'solid-js';
 import { visibleSagas } from './filter';
 import { isWatched } from '../store/progress';
 import { isDone } from './alternatives';
-import { displayIndex } from './guide';
+import { orderKey } from './layout';
 import type { Episode } from '../types';
 
 /**
@@ -37,7 +37,8 @@ function rows(): Row[] {
         for (const e of g.episodes)
           out.push({ ep: e, kind: g.kind, nodeTitle: n.title, sagaId: s.id, nodeUid: n.uid, groupUid: g.uid, anchorOf: g.afterEpisode, alt: g.isAlternative || n.isAlternative });
   // On-screen order (nested sections right after the episode they follow).
-  return out.sort((a, b) => (displayIndex.get(a.ep.id) ?? 0) - (displayIndex.get(b.ep.id) ?? 0));
+  const key = orderKey();
+  return out.sort((a, b) => (key.get(a.ep.id) ?? 0) - (key.get(b.ep.id) ?? 0));
 }
 
 function targetFor(epId: string, list: Row[] = rows()): FocusTarget | null {

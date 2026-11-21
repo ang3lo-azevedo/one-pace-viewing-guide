@@ -1,15 +1,28 @@
 import { For, Show, createSignal, createEffect } from 'solid-js';
 import { onlyIncluded, type FilteredGroup } from '../lib/filter';
-import { flatEpisodes, kindColor, kindLabel } from '../lib/guide';
+import { extraCategory, flatEpisodes, kindColor, kindLabel } from '../lib/guide';
 import { fmtDuration, stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
+import { Tags } from './Tags';
+import type { FilteredNode } from '../lib/filter';
+import type { Group, GuideNode } from '../types';
 import { notNeeded } from '../lib/alternatives';
 import { focusTarget, reveal } from '../lib/focus';
 import { extraInfoText, inlineMd } from '../lib/format';
 
-export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<string, FilteredGroup[]> }) {
+export default function GroupBlock(props: {
+  group: FilteredGroup;
+  inline?: Map<string, FilteredGroup[]>;
+  node?: FilteredNode;
+  /** The arc itself is already tagged as an extra / non-canon. */
+  nodeExtra?: boolean;
+  nodeNonCanon?: boolean;
+}) {
+  // Extra sections inside a main-route arc (e.g. Live Action, a special) are tagged and indented.
+  const isExtra = () => !props.nodeExtra && !!props.node && !props.group.isAlternative && extraCategory(props.group as Group, props.node as GuideNode) !== null;
+  const allNonCanon = () => props.group.episodes.length > 0 && props.group.episodes.every((e) => e.nonCanon);
   const [open, setOpen] = createSignal(props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid));
   // Open when an episode inside is revealed (page load or "Continue watching").
   createEffect(() => {
@@ -24,6 +37,7 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
     <div
       class="overflow-hidden rounded-lg border bg-sea-50 dark:bg-sea-950/50"
       classList={{
+        'ml-4 sm:ml-8 border-l-4 !border-l-amber-400/60': isExtra(),
         'border-dashed opacity-90': props.group.isAlternative,
         'border-sea-200 dark:border-sea-800': !props.group.isAlternative,
       }}
@@ -40,14 +54,7 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
             {kindLabel(props.group.kind)}
           </span>
           <span class="truncate text-sm font-bold">{props.group.label}</span>
-          <Show when={props.group.kind === 'netflix'}>
-            <span
-              class="chip shrink-0 border-amber-400/50 text-[10px] uppercase tracking-wide text-amber-600 dark:text-amber-300"
-              title="Optional extra, not part of the One Pace canon route"
-            >
-              Extra
-            </span>
-          </Show>
+          <Tags extra={isExtra()} nonCanon={!props.nodeNonCanon && allNonCanon()} />
           <Show when={props.group.isAlternative}>
             <span class="chip shrink-0 border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
           </Show>
@@ -118,11 +125,11 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
             <For each={props.group.episodes}>
               {(ep) => (
                 <>
-                  <EpisodeRow ep={ep} kind={props.group.kind} />
+                  <EpisodeRow ep={ep} kind={props.group.kind} showNonCanon={!props.nodeNonCanon && !allNonCanon()} />
                   <For each={props.inline?.get(ep.id) ?? []}>
                     {(child) => (
                       <li class="py-2 pl-4">
-                        <GroupBlock group={child} inline={props.inline} />
+                        <GroupBlock group={child} inline={props.inline} node={props.node} nodeExtra={props.nodeExtra} nodeNonCanon={props.nodeNonCanon} />
                       </li>
                     )}
                   </For>

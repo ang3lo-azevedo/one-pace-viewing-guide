@@ -55,7 +55,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   const traktHref = () => {
     if (props.ep.traktMovie) return `https://trakt.tv/movies/${props.ep.traktMovie.slug}`;
     const t = props.ep.traktEpisode;
-    return t ? `https://trakt.tv/shows/${config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}` : null;
+    return t ? `https://trakt.tv/shows/${t.show ?? config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}` : null;
   };
   const watched = () => isWatched(props.ep.id);
   const [rating, setRating] = createSignal(false);

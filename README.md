@@ -13,9 +13,8 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 - Progress dashboard: canon progress, sagas cleared, hours watched and remaining.
 - Hide extras toggle (hide or show Movies, OVAs, Specials, Live Action, Fun Pace).
 - Separate Hide non-canon toggle (the Live Action and canon specials are extras but stay), with Extra and Non-canon tags on every entry.
-- Live Action placement: next to each arc, all after Post-Enies Lobby, or all after Thriller Bark.
-- Egghead and Elbaph inside the Final Saga or as separate sections.
-- Catch up can include the extras before that point or only the main route.
+- Settings menu: One Piece Log or One Pace for Fish-Man Island, Fun Pace or the original anime for filler (G-8, Boat Piece), and Live Action placement (next to each arc, all after Post-Enies Lobby, or all after Thriller Bark).
+- Egghead and Elbaph inside the Final Saga or as separate sections, and whether Catch up includes extras (also in Settings).
 - Search across titles, anime episode numbers and manga chapters.
 - SeriesGraph rating badges and a rating-tier filter.
 - Stream toggle for default links (One Pace Web or Stremio).

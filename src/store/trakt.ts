@@ -219,7 +219,8 @@ async function fetchUsername() {
 
 // ---- episode mapping ---------------------------------------------------------
 // The mapping is computed at build time (scripts/fetch_trakt_ratings.py) and stored on each
-// episode: One Pace releases point at the Trakt "one-pace" show (`traktEpisode`), and
+// episode: One Pace releases point at the Trakt "one-pace" show and the Live Action at
+// "one-piece-2023" (`traktEpisode`), and
 // community cuts (Onigashima Paced, Kuma Cut / Shaved Egghead, One Piece Log) point at the
 // original anime episodes they cover on the "one-piece" show (`traktAnime`).
 
@@ -228,7 +229,7 @@ const ANIME_SHOW = 'one-piece';
 interface MapResult {
   toTrakt: Map<string, number>; // our episode id -> One Pace trakt episode id
   fromTrakt: Map<number, string>; // One Pace trakt episode id -> our episode id
-  bySeasonEp: Map<string, string>; // One Pace "<season>:<episode>" -> our episode id
+  bySeasonEp: Map<string, string>; // "<show>:<season>:<episode>" -> our episode id (One Pace and Live Action)
   toAnime: Map<string, [number, number, number][]>; // our id -> anime [season, number, trakt]
   toMovie: Map<string, number>; // our id -> Trakt movie id (movies and specials)
   fromMovie: Map<number, string[]>; // Trakt movie id -> our ids (a film can appear twice)
@@ -256,7 +257,7 @@ function getMap(): Promise<MapResult> {
           if (t?.trakt) {
             toTrakt.set(e.id, t.trakt);
             fromTrakt.set(t.trakt, e.id);
-            bySeasonEp.set(`${t.season}:${t.number}`, e.id);
+            bySeasonEp.set(`${t.show ?? config.traktShowSlug}:${t.season}:${t.number}`, e.id);
           } else if (e.traktAnime?.length) toAnime.set(e.id, e.traktAnime);
           if (e.traktMovie) {
             total++;
@@ -294,10 +295,12 @@ export async function pullFromTrakt(): Promise<void> {
   try {
     const map = await getMap();
     const times: Record<string, number> = {};
-    for (const [key, t] of await completedMap(config.traktShowSlug)) {
-      const ourId = map.bySeasonEp.get(key);
-      if (ourId) times[ourId] = t;
-    }
+    const shows = new Set([...map.bySeasonEp.keys()].map((k) => k.split(':')[0]));
+    for (const show of shows)
+      for (const [key, t] of await completedMap(show)) {
+        const ourId = map.bySeasonEp.get(`${show}:${key}`);
+        if (ourId) times[ourId] = t;
+      }
     // A community cut counts as watched once every anime episode it covers is watched.
     if (map.toAnime.size) {
       const anime = await completedMap(ANIME_SHOW);

@@ -9,6 +9,7 @@ import SagaSection from './components/SagaSection';
 import InfoPanel from './components/InfoPanel';
 import TraktMenu from './components/TraktMenu';
 import ProgressMenu from './components/ProgressMenu';
+import SettingsMenu from './components/SettingsMenu';
 
 export default function App() {
   // Jump to the last episode you watched once the list has rendered.
@@ -44,6 +45,7 @@ export default function App() {
               </svg>
               Source
             </a>
+            <SettingsMenu />
             <ProgressMenu />
             <TraktMenu />
             <button

@@ -102,53 +102,6 @@ export default function FilterBar() {
         <Show when={showMore()}>
           <div class="mt-2.5 space-y-2.5 border-t border-sea-200 pt-2.5 dark:border-sea-800">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="text-xs font-semibold uppercase tracking-wide text-sea-400" title="It shows characters and reveals earlier than the anime">
-                Live Action
-              </span>
-              <For
-                each={[
-                  ['arc', 'Next to each arc'],
-                  ['post-enies-lobby-arc', 'All after Post-Enies Lobby'],
-                  ['thriller-bark-arc', 'All after Thriller Bark'],
-                ] as const}
-              >
-                {([value, label]) => (
-                  <Toggle
-                    active={prefs.liveActionPlacement === value}
-                    onClick={() => setPrefs('liveActionPlacement', value)}
-                    title={
-                      value === 'arc'
-                        ? 'Watch each episode where the guide places it (some reveal things early)'
-                        : value === 'thriller-bark-arc'
-                          ? 'Safest: the second season covers Laboon, which ties into a character met in Thriller Bark'
-                          : 'Watch it all once the earlier reveals are covered'
-                    }
-                  >
-                    {label}
-                  </Toggle>
-                )}
-              </For>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Final Saga</span>
-              <Toggle active={!prefs.splitFinalSaga} onClick={() => setPrefs('splitFinalSaga', false)}>
-                One saga
-              </Toggle>
-              <Toggle active={prefs.splitFinalSaga} onClick={() => setPrefs('splitFinalSaga', true)} title="List Egghead and Elbaph like the other sagas">
-                Egghead and Elbaph separate
-              </Toggle>
-              <span class="ml-2 text-xs font-semibold uppercase tracking-wide text-sea-400">Catch up</span>
-              <Toggle
-                active={prefs.catchUpExtras}
-                onClick={() => setPrefs('catchUpExtras', !prefs.catchUpExtras)}
-                title="Whether Catch up also marks the films, specials, Live Action and filler before that point"
-              >
-                {prefs.catchUpExtras ? 'Includes extras' : 'Main route only'}
-              </Toggle>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-2">
               <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Show</span>
               <For each={EXTRAS}>
                 {(cat) => (

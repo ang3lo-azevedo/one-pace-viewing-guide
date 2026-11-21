@@ -12,6 +12,39 @@ guide.sagas.forEach((saga, si) =>
   }),
 );
 
+// Interchangeable versions (Settings): the picked one is the main route, the other becomes an
+// optional alternative. Applied once at load; changing the setting reloads the page.
+export type FishmanVersion = 'log' | 'onepace';
+export type FillerVersion = 'funpace' | 'original';
+export const versionChoice: { fishman: FishmanVersion; filler: FillerVersion } = (() => {
+  try {
+    const p = JSON.parse(localStorage.getItem('op-prefs-v1') ?? '{}');
+    return { fishman: p.fishmanVersion === 'onepace' ? 'onepace' : 'log', filler: p.fillerVersion === 'original' ? 'original' : 'funpace' };
+  } catch {
+    return { fishman: 'log', filler: 'funpace' };
+  }
+})();
+for (const saga of guide.sagas)
+  for (const node of saga.nodes)
+    for (const group of node.groups) {
+      if (!group.version) continue;
+      const [choice, value] = group.version.split(':') as ['fishman' | 'filler', string];
+      const alt = versionChoice[choice] !== value;
+      group.isAlternative = alt;
+      const base = group.label.replace(/\s*\(Alternative\)\s*$/i, '');
+      group.label = alt && !group.afterEpisode ? `${base} (Alternative)` : base;
+      if (!group.afterEpisode) group.defaultOpen = !alt;
+      // Fish-Man Island is canon either way: whichever version you watch is the canon route.
+      if (choice === 'fishman') for (const ep of group.episodes) ep.canon = !alt;
+    }
+// The picked version comes first in its arc (stable, so everything else keeps its order).
+for (const saga of guide.sagas)
+  for (const node of saga.nodes) {
+    if (!node.groups.some((g) => g.version)) continue;
+    const late = (g: Group) => (g.version && g.isAlternative && !g.afterEpisode ? 1 : 0);
+    node.groups = node.groups.map((g, i) => ({ g, i })).sort((x, y) => late(x.g) - late(y.g) || x.i - y.i).map((x) => x.g);
+  }
+
 export interface FlatEpisode {
   ep: Episode;
   group: Group;
@@ -51,6 +84,7 @@ export const EXTRA_LABELS: Record<ExtraCategory, string> = {
 export function extraCategory(group: Group, node: GuideNode): ExtraCategory | null {
   if (group.episodes.length && group.episodes.every((e) => e.canon)) return null;
   if (group.isAlternative || node.isAlternative) return 'alternatives';
+  if (group.version?.startsWith('filler:')) return 'filler';
   switch (group.kind) {
     case 'netflix':
       return 'liveAction';

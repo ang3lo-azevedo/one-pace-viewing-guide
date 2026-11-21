@@ -13,6 +13,8 @@ Runs before every build (public API, Client ID only). Two Trakt shows are used:
   (Onigashima Paced, Kuma Cut / Shaved Egghead, One Piece Log) are mapped to the anime
   episodes they cover by absolute episode number. Stored as `traktAnime` [[season, number,
   trakt], ...] so syncing marks those anime episodes.
+* "one-piece-2023" - the Netflix Live Action, matched by its SxEy number. Stored as
+  `traktEpisode` with `show` set, plus its ratings.
 
 If Trakt cannot be reached the existing data is left untouched.
 
@@ -31,6 +33,7 @@ DATA = os.path.join(ROOT, "src", "data", "data.json")
 CONFIG = os.path.join(ROOT, "src", "config.ts")
 PACE_SHOW = "one-pace"
 ANIME_SHOW = "one-piece"
+LIVE_SHOW = "one-piece-2023"  # Netflix Live Action
 
 # Hand-checked fixes, keyed by the One Pace link slug: (Trakt season, episode) or None to
 # leave an episode unmapped. Trakt's season layout differs from One Pace here, so neither
@@ -100,6 +103,7 @@ def main():
     try:
         pace = fetch(cid, PACE_SHOW)
         anime = fetch(cid, ANIME_SHOW)
+        live = fetch(cid, LIVE_SHOW)
     except Exception as exc:
         print(f"Trakt mapping skipped (fetch failed): {exc}", file=sys.stderr)
         sys.exit(0)
@@ -207,6 +211,23 @@ def main():
             e["traktVotes"] = int(te["votes"])
             rated += 1
 
+    # ---- Netflix Live Action -------------------------------------------------
+    live_eps = {(se["number"], e["number"]): e for se in live if se["number"] > 0 for e in se.get("episodes", [])}
+    live_mapped = 0
+    for e, g in entries:
+        if g["kind"] != "netflix":
+            continue
+        m = re.search(r"S(\d+)E(\d+)", e.get("title") or "")
+        te = live_eps.get((int(m.group(1)), int(m.group(2)))) if m else None
+        if not te:
+            continue
+        e["traktEpisode"] = {"season": te["season"] if "season" in te else int(m.group(1)), "number": te["number"],
+                             "trakt": te["ids"]["trakt"], "show": LIVE_SHOW}
+        if te.get("rating") and te.get("votes"):
+            e["traktRating"] = round(float(te["rating"]), 1)
+            e["traktVotes"] = int(te["votes"])
+        live_mapped += 1
+
     # ---- original anime (community cuts) -------------------------------------
     abs_index = {}
     for s in anime:
@@ -254,7 +275,8 @@ def main():
         json.dump(data, f, ensure_ascii=False, indent=2)
     missing = [e["title"] for e, _ in releases if e["id"] not in match]
     print(f"Trakt: {len(match)}/{len(releases)} One Pace releases mapped, {rated} with ratings, "
-          f"{cuts} community cuts mapped to the original anime, {films} movies/specials")
+          f"{cuts} community cuts mapped to the original anime, {films} movies/specials, "
+          f"{live_mapped} Live Action episodes")
     if missing:
         print("  unmapped:", "; ".join(t[:30] for t in missing))
 

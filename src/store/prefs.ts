@@ -32,6 +32,10 @@ export interface Prefs {
   splitFinalSaga: boolean;
   /** "Catch up" also marks the extras (films, specials, Live Action, filler) before that point. */
   catchUpExtras: boolean;
+  /** Fish-Man Island: the One Piece Log remaster or the One Pace edit (the other becomes the alternative). */
+  fishmanVersion: 'log' | 'onepace';
+  /** Filler with a paced cut (G-8, Boat Piece): Fun Pace or the original anime episodes. */
+  fillerVersion: 'funpace' | 'original';
   theme: Theme;
 }
 
@@ -49,6 +53,8 @@ const DEFAULTS: Prefs = {
   liveActionPlacement: 'arc',
   splitFinalSaga: false,
   catchUpExtras: true,
+  fishmanVersion: 'log',
+  fillerVersion: 'funpace',
   theme: 'dark',
 };
 
@@ -95,4 +101,16 @@ export function resetFilters() {
 export function toggleExtra(cat: ExtraCategory) {
   const cur = prefs.hiddenExtras;
   setPrefs('hiddenExtras', cur.includes(cat) ? cur.filter((c) => c !== cat) : [...cur, cat]);
+}
+
+/** Change a setting that reshapes the guide data (applied at load), then reload. */
+export function setVersionPref<K extends 'fishmanVersion' | 'fillerVersion'>(key: K, value: Prefs[K]) {
+  if (prefs[key] === value) return;
+  setPrefs(key, value);
+  try {
+    localStorage.setItem(KEY, JSON.stringify({ ...prefs, [key]: value }));
+  } catch {
+    /* ignore */
+  }
+  location.reload();
 }

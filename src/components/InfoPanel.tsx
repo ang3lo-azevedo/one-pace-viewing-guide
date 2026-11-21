@@ -115,12 +115,12 @@ export default function InfoPanel() {
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Live Action:</b> it introduces characters and reveals earlier
-              than the anime. Under Filters you can keep each episode next to its arc, or move the whole show after
+              than the anime. In Settings you can keep each episode next to its arc, or move the whole show after
               Post-Enies Lobby or after Thriller Bark (the safest point).
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Final Saga:</b> Egghead and Elbaph can stay inside one Final
-              Saga or be listed as separate sections, under Filters.
+              Saga or be listed as separate sections, in Settings.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Lengths:</b> real runtimes from onepace.net, Trakt (movies,
@@ -133,6 +133,10 @@ export default function InfoPanel() {
               <b class="text-sea-700 dark:text-sea-200">Finish dates:</b> based on the watch time of episodes you
               checked in the last 28 days (or your Trakt history when connected). You can also pick or type a pace a
               day, like 90, 1h30 or 2 eps. Each remaining episode, arc and saga shows when you'd reach it at that pace.
+            </li>
+            <li>
+              <b class="text-sea-700 dark:text-sea-200">Versions:</b> in Settings, pick the One Piece Log or One Pace
+              for Fish-Man Island, and Fun Pace or the original anime for filler like G-8.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Alternative versions</b> are optional and never count as

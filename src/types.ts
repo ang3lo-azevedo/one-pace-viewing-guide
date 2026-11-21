@@ -33,7 +33,8 @@ export interface Episode {
   traktRating?: number;
   traktVotes?: number;
   /** Where this episode lives on the Trakt One Pace show. */
-  traktEpisode?: { season: number; number: number; trakt: number };
+  /** Trakt episode; `show` is set when it is not the One Pace show (e.g. the Live Action). */
+  traktEpisode?: { season: number; number: number; trakt: number; show?: string };
   /** Original anime episodes this community cut covers on Trakt: [season, number, trakt id]. */
   traktAnime?: [number, number, number][];
   /** Movies and specials: their Trakt movie. */
@@ -77,6 +78,12 @@ export interface Group {
   info?: { links: { label: string; url: string }[]; text: string };
   /** Shown inline right after this episode id (e.g. a special in the middle of an arc). */
   afterEpisode?: string;
+  /**
+   * One of two interchangeable versions, as "<choice>:<value>" (e.g. "fishman:log",
+   * "filler:funpace"). The version you pick in Settings is the main one, the other becomes
+   * the alternative.
+   */
+  version?: string;
   /** Unique key assigned at load ("saga.node.group" indices). */
   uid: string;
 }

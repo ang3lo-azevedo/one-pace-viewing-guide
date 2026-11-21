@@ -14,6 +14,14 @@ import { config } from '../config';
 import RatingBadge from './RatingBadge';
 import Tooltip from './Tooltip';
 
+const SOURCE_NAME: Record<string, string> = {
+  onepace: 'onepace.net',
+  trakt: 'Trakt',
+  anime: 'the original anime episodes on Trakt',
+  sheet: "the project's spreadsheet",
+  'sheet-average': "the project's spreadsheet (average for the arc)",
+};
+
 const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
 
 /** Section kinds whose star rating is not a SeriesGraph One Piece anime rating. */
@@ -27,6 +35,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
     return n ? `${SERIESGRAPH_SHOW}/episode/${n}` : null;
   };
   const traktHref = () => {
+    if (props.ep.traktMovie) return `https://trakt.tv/movies/${props.ep.traktMovie.slug}`;
     const t = props.ep.traktEpisode;
     return t ? `https://trakt.tv/shows/${config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}` : null;
   };
@@ -48,8 +57,14 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
 
   const info = createMemo(() => {
     const parts = episodeInfo(props.ep);
-    const min = minutesForKind(props.kind ?? 'onepace');
-    if (min > 0) parts.push({ label: 'Length', value: `~${fmtDuration(min)}`, title: 'Estimated length' });
+    const real = props.ep.runtime;
+    const min = real ?? minutesForKind(props.kind ?? 'onepace');
+    if (min > 0)
+      parts.push({
+        label: 'Length',
+        value: real ? fmtDuration(min) : `~${fmtDuration(min)}`,
+        title: real ? `Length from ${SOURCE_NAME[props.ep.runtimeSource ?? ''] ?? 'the source'}` : 'Estimated length (no published length)',
+      });
     const eta = stats().eta[props.ep.id];
     return eta && !watched() ? [...parts, { label: 'ETA', value: fmtDate(eta), title: 'When you should get here at your current pace' }] : parts;
   });

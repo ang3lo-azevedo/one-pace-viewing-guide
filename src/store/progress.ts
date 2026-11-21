@@ -69,7 +69,9 @@ export function onWatchedChange(fn: Listener): () => void {
 /** Mark/unmark many episode ids at once. */
 export function setMany(ids: string[], value: boolean, opts: { silent?: boolean } = {}) {
   const changed = ids.filter((id) => isWatched(id) !== value);
-  const now = opts.silent ? UNKNOWN : Date.now();
+  // Only a single episode marked by hand records "watched now". Bulk marks (Catch up, Mark arc/
+  // saga/all) are catching up, not watching, so they don't count toward your pace.
+  const now = opts.silent || ids.length > 1 ? UNKNOWN : Date.now();
   if (!changed.length) return;
   setState(
     produce((s) => {

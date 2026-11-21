@@ -36,6 +36,11 @@ export interface Episode {
   traktEpisode?: { season: number; number: number; trakt: number };
   /** Original anime episodes this community cut covers on Trakt: [season, number, trakt id]. */
   traktAnime?: [number, number, number][];
+  /** Movies and specials: their Trakt movie. */
+  traktMovie?: { slug: string; trakt: number };
+  /** Real length in minutes (onepace.net, Trakt or the project's spreadsheet), if published. */
+  runtime?: number;
+  runtimeSource?: string;
 }
 
 export type GroupKind =

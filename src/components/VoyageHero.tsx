@@ -140,10 +140,16 @@ function FinishLine() {
                   'text-sea-500 hover:text-sea-800 dark:text-sea-400 dark:hover:text-sea-100': prefs.paceMinutes !== value,
                 }}
                 onClick={() => setPrefs('paceMinutes', value)}
-                title={value == null ? 'Use how much you actually watched in the last 28 days' : `Assume ${label} of watching a day`}
+                title={
+                  value == null
+                    ? s().paceSource === 'trakt'
+                      ? `Your One Piece watching on Trakt over the last ${Math.round(s().paceDays)} days (bulk-added history ignored)`
+                      : 'How much you watched in the last 28 days (episodes you checked one at a time)'
+                    : `Assume ${label} of watching a day`
+                }
               >
                 {label}
-                {value == null && s().historyPace > 0 ? ` (${fmtHours(s().historyPace)})` : ''}
+                {value == null && s().historyPace > 0 ? ` (${fmtHours(s().historyPace)}${s().paceSource === 'trakt' ? ' · Trakt' : ''})` : ''}
               </button>
             )}
           </For>
@@ -236,18 +242,15 @@ export default function VoyageHero() {
       <FinishLine />
 
       <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
-        <Panel title="Time" accent="text-accent-600 dark:text-accent-400">
-          <Big value={fmtHours(s().minLeft)} label="left to watch" color="text-strawhat-600 dark:text-strawhat-500" />
-          <Row label="Watched" value={fmtHours(s().minWatched)} />
-          <Row label="Total" value={fmtHours(s().minTotal)} />
-          <Row label="Canon route left" value={fmtHours(s().canonMinLeft)} />
+        <Panel title="Watched" accent="text-accent-600 dark:text-accent-400">
+          <Big value={fmtHours(s().minWatched)} label={`of ${fmtHours(s().minTotal)} in total`} color="text-accent-600 dark:text-accent-300" />
+          <Row label="One Pace episodes" value={`${s().onePaceWatched} / ${s().onePaceTotal}`} title="One Pace's own numbered episodes" />
         </Panel>
 
         <Panel title="Saved vs full anime" accent="text-teal-700 dark:text-teal-300">
           <Big value={fmtHours(s().savedSoFarMin)} label="saved so far" color="text-teal-600 dark:text-teal-300" />
           <Row label="Saved in total" value={fmtHours(s().savedTotalMin)} />
           <Row label="Full anime equivalent" value={fmtHours(s().animeEquivMin)} title="Time to watch the same story in the original anime" />
-          <Row label="With this guide" value={fmtHours(s().minTotal)} />
         </Panel>
 
         <Panel title="Journey" accent="text-sky-700 dark:text-accent-300">

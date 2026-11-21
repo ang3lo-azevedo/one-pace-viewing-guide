@@ -5,7 +5,7 @@ import { timeVsAnime } from '../lib/rangeTime';
 import { flatEpisodes } from '../lib/guide';
 import { hasActiveFilters, onlyIncluded, type FilteredSaga } from '../lib/filter';
 import { allIdsOfSaga, idsBeforeSaga, tierForRating } from '../lib/guide';
-import { fmtDate, fmtDuration, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, minutesOf, stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import RatingBadge from './RatingBadge';
@@ -26,14 +26,16 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
   const prog = () => stats().perSaga[props.saga.id];
   const sagaIds = () => onlyIncluded(allIdsOfSaga(props.saga.id));
   const allSagaWatched = () => sagaIds().length > 0 && sagaIds().every((id) => isWatched(id));
-  const canonCount = flatEpisodes.filter((f) => f.saga.id === props.saga.id && f.ep.canon).length;
+  const canonEntries = flatEpisodes.filter((f) => f.saga.id === props.saga.id && f.ep.canon);
+  const canonCount = canonEntries.length;
+  const canonMinutes = canonEntries.reduce((m, f) => m + minutesOf(f), 0);
   const info = () => {
     const parts = rangeInfo(props.saga, canonCount || undefined);
-    const t = timeVsAnime(canonCount, props.saga.anime);
+    const t = timeVsAnime(canonMinutes, props.saga.anime);
     const eta = stats().etaSaga[props.saga.id];
     const p = stats().perSaga[props.saga.id];
     // Total of everything shown in this arc/saga (extras included), when it differs from the canon time.
-    const total = p && p.minTotal > canonCount * 24 ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
+    const total = p && p.minTotal > canonMinutes ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
     const left = p && p.minDone > 0 && p.minDone < p.minTotal ? [{ label: 'Left', value: fmtDuration(p.minTotal - p.minDone), title: 'Watch time left in your current selection' }] : [];
     return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: 'At your current pace' }] : [])];
   };

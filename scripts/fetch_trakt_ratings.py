@@ -39,7 +39,7 @@ OVERRIDES = {
     "baratie-03": (5, 4),             # "The Oath" is Trakt's "The Vow"
     "post-enies-lobby-01": (20, 1),   # Trakt S20 is ordered differently from One Pace
     "post-enies-lobby-02": (20, 2),
-    "post-enies-lobby-03": None,      # no Trakt counterpart
+    "post-enies-lobby-03": (20, 5),   # bounty episode; Trakt's older cut files it as E5 "Circling Bounties"
 }
 
 
@@ -107,7 +107,7 @@ def main():
     data = json.load(open(DATA, encoding="utf-8"))
     entries = [(e, g) for s in data["sagas"] for n in s["nodes"] for g in n["groups"] for e in g["episodes"]]
     for e, _ in entries:
-        for k in ("traktEpisode", "traktAnime", "traktRating", "traktVotes"):
+        for k in ("traktEpisode", "traktAnime", "traktMovie", "traktRating", "traktVotes"):
             e.pop(k, None)
 
     # ---- One Pace show -------------------------------------------------------
@@ -224,12 +224,37 @@ def main():
             e["traktAnime"] = [abs_index[n] for n in nums]
             cuts += 1
 
+    # ---- movies and specials (Trakt movies) ------------------------------------
+    movies = json.load(open(os.path.join(ROOT, "scripts", "trakt-movies.json"), encoding="utf-8"))["movies"]
+    movie_info = {}
+    for m in movies:
+        try:
+            req = urllib.request.Request(
+                f"https://api.trakt.tv/movies/{m['trakt']}?extended=full",
+                headers={"trakt-api-version": "2", "trakt-api-key": cid, "User-Agent": "one-pace-guide/1.0"},
+            )
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                movie_info[m["trakt"]] = json.load(resp)
+        except Exception as exc:
+            print(f"  movie {m['trakt']} skipped: {exc}", file=sys.stderr)
+    films = 0
+    for e, _ in entries:
+        slug = next((m["trakt"] for m in movies if (e.get("title") or "").startswith(m["title"])), None)
+        info = movie_info.get(slug) if slug else None
+        if not info:
+            continue
+        e["traktMovie"] = {"slug": slug, "trakt": info["ids"]["trakt"]}
+        if info.get("rating") and info.get("votes"):
+            e["traktRating"] = round(float(info["rating"]), 1)
+            e["traktVotes"] = int(info["votes"])
+        films += 1
+
     data["meta"]["traktRatingsSource"] = f"Trakt (https://trakt.tv/shows/{PACE_SHOW})"
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     missing = [e["title"] for e, _ in releases if e["id"] not in match]
     print(f"Trakt: {len(match)}/{len(releases)} One Pace releases mapped, {rated} with ratings, "
-          f"{cuts} community cuts mapped to the original anime")
+          f"{cuts} community cuts mapped to the original anime, {films} movies/specials")
     if missing:
         print("  unmapped:", "; ".join(t[:30] for t in missing))
 

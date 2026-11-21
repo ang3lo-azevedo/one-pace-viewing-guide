@@ -27,6 +27,13 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 `src/data/data.json` holds all episode data (sagas, arcs, sections, episodes, links,
 notes and the details/sources for each section) and is the file to edit.
 
+### Lengths
+
+`npm run runtimes` (`scripts/fetch_runtimes.py`, also run before every build) adds each
+entry's real length: One Pace episodes from onepace.net, movies, specials, Live Action and
+original anime from Trakt, and Onigashima Paced, Kuma Cut / Shaved Egghead and Fun Pace from
+their project spreadsheets. Entries without a published length fall back to an estimate.
+
 ### Ratings
 
 Ratings come from [SeriesGraph](https://seriesgraph.com/show/37854-one-piece). Each

@@ -1,6 +1,7 @@
 import { createStore } from 'solid-js/store';
 import { config, traktConfigured } from '../config';
-import { guide } from '../lib/guide';
+import { flatById, guide } from '../lib/guide';
+import { measurePace, PACE_WINDOW_DAYS, type Pace, type Play } from '../lib/pace';
 import type { Episode } from '../types';
 import { applyWatchTimes, onWatchedChange, progress } from './progress';
 
@@ -24,12 +25,14 @@ interface TraktState {
   mapped: Record<string, true>;
   /** Your own Trakt ratings (1-10), by our episode id. */
   myRatings: Record<string, number>;
+  /** Watching pace measured from your Trakt history (last 28 days). */
+  pace: Pace | null;
 }
 
 function load(): TraktState {
   try {
     const raw = localStorage.getItem(KEY);
-    if (raw) return { status: 'idle', lastMessage: null, mapped: {}, myRatings: {}, ...JSON.parse(raw) };
+    if (raw) return { status: 'idle', lastMessage: null, mapped: {}, myRatings: {}, pace: null, ...JSON.parse(raw) };
   } catch {
     /* ignore */
   }
@@ -45,6 +48,7 @@ function load(): TraktState {
     lastSyncedAt: null,
     mapped: {},
     myRatings: {},
+    pace: null,
   };
 }
 
@@ -52,9 +56,9 @@ const [trakt, setTrakt] = createStore<TraktState>(load());
 export { trakt };
 
 function persist() {
-  const { accessToken, refreshToken, expiresAt, username, name, avatar, lastSyncedAt } = trakt;
+  const { accessToken, refreshToken, expiresAt, username, name, avatar, lastSyncedAt, pace } = trakt;
   try {
-    localStorage.setItem(KEY, JSON.stringify({ accessToken, refreshToken, expiresAt, username, name, avatar, lastSyncedAt }));
+    localStorage.setItem(KEY, JSON.stringify({ accessToken, refreshToken, expiresAt, username, name, avatar, lastSyncedAt, pace }));
   } catch {
     /* ignore */
   }
@@ -101,7 +105,7 @@ export async function connect() {
 }
 
 export function disconnect() {
-  setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, name: null, avatar: null, lastMessage: 'Disconnected.', myRatings: {}, lastSyncedAt: null });
+  setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, name: null, avatar: null, lastMessage: 'Disconnected.', myRatings: {}, lastSyncedAt: null, pace: null });
   persist();
 }
 
@@ -226,6 +230,8 @@ interface MapResult {
   fromTrakt: Map<number, string>; // One Pace trakt episode id -> our episode id
   bySeasonEp: Map<string, string>; // One Pace "<season>:<episode>" -> our episode id
   toAnime: Map<string, [number, number, number][]>; // our id -> anime [season, number, trakt]
+  toMovie: Map<string, number>; // our id -> Trakt movie id (movies and specials)
+  fromMovie: Map<number, string[]>; // Trakt movie id -> our ids (a film can appear twice)
   matched: number;
   total: number;
 }
@@ -238,6 +244,8 @@ function getMap(): Promise<MapResult> {
   const fromTrakt = new Map<number, string>();
   const bySeasonEp = new Map<string, string>();
   const toAnime = new Map<string, [number, number, number][]>();
+  const toMovie = new Map<string, number>();
+  const fromMovie = new Map<number, string[]>();
   let total = 0;
   for (const s of guide.sagas)
     for (const n of s.nodes)
@@ -250,9 +258,14 @@ function getMap(): Promise<MapResult> {
             fromTrakt.set(t.trakt, e.id);
             bySeasonEp.set(`${t.season}:${t.number}`, e.id);
           } else if (e.traktAnime?.length) toAnime.set(e.id, e.traktAnime);
+          if (e.traktMovie) {
+            total++;
+            toMovie.set(e.id, e.traktMovie.trakt);
+            fromMovie.set(e.traktMovie.trakt, [...(fromMovie.get(e.traktMovie.trakt) ?? []), e.id]);
+          }
         }
-  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, matched: toTrakt.size + toAnime.size, total };
-  setTrakt('mapped', Object.fromEntries([...toTrakt.keys()].map((k) => [k, true as const])));
+  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, toMovie, fromMovie, matched: toTrakt.size + toAnime.size + toMovie.size, total };
+  setTrakt('mapped', Object.fromEntries([...toTrakt.keys(), ...toMovie.keys()].map((k) => [k, true as const])));
   return Promise.resolve(cachedMap);
 }
 
@@ -291,12 +304,22 @@ export async function pullFromTrakt(): Promise<void> {
       for (const [ourId, eps] of map.toAnime)
         if (eps.every(([s, n]) => anime.has(`${s}:${n}`))) times[ourId] = Math.max(...eps.map(([s, n]) => anime.get(`${s}:${n}`) ?? 0));
     }
+    // Movies and specials.
+    if (map.toMovie.size) {
+      const r = await traktFetch('/sync/watched/movies');
+      if (r.ok)
+        for (const it of await r.json()) {
+          const t = it.last_watched_at ? Date.parse(it.last_watched_at) || 0 : 0;
+          for (const ourId of map.fromMovie.get(it.movie?.ids?.trakt) ?? []) times[ourId] = t;
+        }
+    }
     // Silent: these came from Trakt, so they must not be pushed back.
     applyWatchTimes(times);
     lastPullAt = Date.now();
     setTrakt('lastSyncedAt', lastPullAt);
     persist();
     setTrakt({ status: 'idle', lastMessage: `Pulled ${Object.keys(times).length} watched from Trakt (${map.matched}/${map.total} episodes mapped).` });
+    void loadTraktPace();
   } catch (e) {
     setTrakt({ status: 'idle', lastMessage: 'Pull failed: ' + (e as Error).message });
   }
@@ -305,25 +328,32 @@ export async function pullFromTrakt(): Promise<void> {
 async function sendHistory(ourIds: string[], watched: boolean, keepalive = false): Promise<number> {
   const map = await getMap();
   const ids = new Set<number>();
+  const movies = new Set<number>();
   for (const id of ourIds) {
     const t = map.toTrakt.get(id);
     if (t != null) ids.add(t);
     for (const [, , tid] of map.toAnime.get(id) ?? []) ids.add(tid);
+    const m = map.toMovie.get(id);
+    if (m != null) movies.add(m);
   }
   if (!watched) {
-    // Keep anime episodes that another still-watched cut also covers.
+    // Keep anime episodes / films that another still-watched entry also covers.
     const changing = new Set(ourIds);
     for (const [ourId, eps] of map.toAnime)
       if (!changing.has(ourId) && progress.watched[ourId]) for (const [, , tid] of eps) ids.delete(tid);
+    for (const [ourId, m] of map.toMovie) if (!changing.has(ourId) && progress.watched[ourId]) movies.delete(m);
   }
-  if (!ids.size) return 0;
+  if (!ids.size && !movies.size) return 0;
   const r = await traktFetch(watched ? '/sync/history' : '/sync/history/remove', {
     method: 'POST',
-    body: JSON.stringify({ episodes: [...ids].map((trakt) => ({ ids: { trakt } })) }),
+    body: JSON.stringify({
+      episodes: [...ids].map((trakt) => ({ ids: { trakt } })),
+      movies: [...movies].map((trakt) => ({ ids: { trakt } })),
+    }),
     keepalive,
   });
   if (!r.ok) throw new Error(`history ${r.status}`);
-  return ourIds.filter((id) => map.toTrakt.has(id) || map.toAnime.has(id)).length;
+  return ourIds.filter((id) => map.toTrakt.has(id) || map.toAnime.has(id) || map.toMovie.has(id)).length;
 }
 
 /** Push locally-watched episodes to Trakt history. */
@@ -373,6 +403,47 @@ onWatchedChange((ids, watched) => {
   flushTimer = setTimeout(flush, 1500);
 });
 
+// ---- pace from Trakt history ---------------------------------------------------
+
+/** Trakt shows that are part of this guide. */
+const PACE_SHOWS = new Set(['one-pace', 'one-piece', 'one-piece-2023', 'one-piece-log-fish-man-island-saga']);
+
+/**
+ * Measure your watching pace from Trakt: every One Piece play (One Pace, original anime,
+ * Live Action, One Piece Log, films) in the last 28 days, using this guide's real lengths
+ * where known. Bulk-added history is filtered out by measurePace.
+ */
+export async function loadTraktPace(): Promise<void> {
+  if (!isConnected()) return;
+  try {
+    const map = await getMap();
+    const since = new Date(Date.now() - PACE_WINDOW_DAYS * 86_400_000).toISOString();
+    const plays: Play[] = [];
+    for (let page = 1; page <= 10; page++) {
+      const r = await traktFetch(`/sync/history?start_at=${encodeURIComponent(since)}&limit=500&page=${page}&extended=full`);
+      if (!r.ok) break;
+      const items: any[] = await r.json();
+      for (const it of items) {
+        const t = Date.parse(it.watched_at);
+        if (!t) continue;
+        if (it.type === 'episode' && PACE_SHOWS.has(it.show?.ids?.slug)) {
+          const ours = map.fromTrakt.get(it.episode?.ids?.trakt);
+          const runtime = (ours && flatById.get(ours)?.ep.runtime) || it.episode?.runtime || 24;
+          plays.push({ t, min: runtime });
+        } else if (it.type === 'movie' && /one piece|monsters/i.test(it.movie?.title ?? '')) {
+          plays.push({ t, min: it.movie?.runtime || 100 });
+        }
+      }
+      const pages = Number(r.headers.get('X-Pagination-Page-Count') ?? '1');
+      if (page >= pages) break;
+    }
+    setTrakt('pace', measurePace(plays));
+    persist();
+  } catch {
+    /* keep the previous pace */
+  }
+}
+
 // ---- ratings -----------------------------------------------------------------
 
 /** Load your own episode ratings from Trakt. */
@@ -380,13 +451,18 @@ export async function loadMyRatings(): Promise<void> {
   if (!isConnected()) return;
   try {
     const map = await getMap();
-    const r = await traktFetch('/sync/ratings/episodes');
-    if (!r.ok) return;
-    const items: any[] = await r.json();
     const mine: Record<string, number> = {};
-    for (const it of items) {
-      const ours = map.fromTrakt.get(it.episode?.ids?.trakt);
-      if (ours && it.rating) mine[ours] = it.rating;
+    const r = await traktFetch('/sync/ratings/episodes');
+    if (r.ok)
+      for (const it of await r.json()) {
+        const ours = map.fromTrakt.get(it.episode?.ids?.trakt);
+        if (ours && it.rating) mine[ours] = it.rating;
+      }
+    if (map.toMovie.size) {
+      const rm = await traktFetch('/sync/ratings/movies');
+      if (rm.ok)
+        for (const it of await rm.json())
+          for (const ours of map.fromMovie.get(it.movie?.ids?.trakt) ?? []) if (it.rating) mine[ours] = it.rating;
     }
     setTrakt('myRatings', mine);
   } catch {
@@ -394,22 +470,26 @@ export async function loadMyRatings(): Promise<void> {
   }
 }
 
-/** Rate an episode on Trakt (1-10), or remove your rating with null. */
+/** Rate an episode, movie or special on Trakt (1-10), or remove your rating with null. */
 export async function rateEpisode(ourId: string, rating: number | null): Promise<void> {
   if (!isConnected()) return;
   const map = await getMap();
-  const traktId = map.toTrakt.get(ourId);
-  if (traktId == null) return;
+  const episode = map.toTrakt.get(ourId);
+  const movie = map.toMovie.get(ourId);
+  if (episode == null && movie == null) return;
+  // A film listed twice (main and alternative placement) shares one rating.
+  const same = movie != null ? (map.fromMovie.get(movie) ?? [ourId]) : [ourId];
   const prev = trakt.myRatings[ourId];
-  setTrakt('myRatings', ourId, rating ?? undefined!);
+  for (const id of same) setTrakt('myRatings', id, rating ?? undefined!);
   try {
+    const item = { ...(rating == null ? {} : { rating }), ids: { trakt: (episode ?? movie)! } };
     const r = await traktFetch(rating == null ? '/sync/ratings/remove' : '/sync/ratings', {
       method: 'POST',
-      body: JSON.stringify({ episodes: [{ ...(rating == null ? {} : { rating }), ids: { trakt: traktId } }] }),
+      body: JSON.stringify(episode != null ? { episodes: [item] } : { movies: [item] }),
     });
     if (!r.ok) throw new Error(`ratings ${r.status}`);
   } catch (e) {
-    setTrakt('myRatings', ourId, prev ?? undefined!);
+    for (const id of same) setTrakt('myRatings', id, prev ?? undefined!);
     setTrakt('lastMessage', 'Rating failed: ' + (e as Error).message);
   }
 }
@@ -446,6 +526,7 @@ export async function initTrakt(): Promise<void> {
     await getMap();
     await autoPull();
     await loadMyRatings();
+    await loadTraktPace();
   } catch {
     /* ignore; the menu shows errors on manual actions */
   }

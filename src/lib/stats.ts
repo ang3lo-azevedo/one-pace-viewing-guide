@@ -1,8 +1,10 @@
 import { createMemo } from 'solid-js';
 import { displayOrder, guide, type FlatEpisode } from './guide';
 import { episodeIncluded } from './filter';
-import { watchedAt } from '../store/progress';
+import { isWatched, watchedAt } from '../store/progress';
 import { prefs } from '../store/prefs';
+import { trakt } from '../store/trakt';
+import { measurePace, type Play } from './pace';
 import { isAlternativeEntry, isDone } from './alternatives';
 import { extraCategory, type ExtraCategory } from './guide';
 import { BOUNTY_REVEALS, CREW } from './bounties';
@@ -29,11 +31,18 @@ const KIND_MINUTES: Record<string, number> = {
   other: 24,
 };
 
-/** One original TV anime episode (minutes), for the "vs. full anime" comparison. */
-const ANIME_EP_MIN = 24;
+/** Real runtimes of the original anime episodes (from Trakt), for the "vs. full anime" comparison. */
+const ANIME_RT = (guide.meta as { animeRuntimes?: Record<string, number> }).animeRuntimes ?? {};
+/** Minutes of the original anime for a set of episode numbers (24 min where unknown). */
+export const animeMinutes = (nums: Iterable<number>) => {
+  let m = 0;
+  for (const n of nums) m += ANIME_RT[n] ?? 24;
+  return m;
+};
 
 export const minutesForKind = (kind: string) => KIND_MINUTES[kind] ?? 24;
-export const minutesOf = (f: FlatEpisode) => minutesForKind(f.group.kind);
+/** Real length when published, otherwise the estimate for its kind. */
+export const minutesOf = (f: FlatEpisode) => f.ep.runtime ?? minutesForKind(f.group.kind);
 
 /** Integers from fields like "250–251, 256, 320" (anime episodes or manga chapters). */
 function numbers(text: string | null): number[] {
@@ -75,8 +84,6 @@ const islands = guide.sagas.flatMap((s) =>
 );
 
 const DAY = 86_400_000;
-/** Pace window: minutes watched over the last 28 days (at least 3 days, so a binge day isn't a pace). */
-const PACE_WINDOW = 28 * DAY;
 
 /** Hideable extra types with their own counters. */
 const EXTRA_KINDS: [ExtraCategory, string][] = [
@@ -120,8 +127,15 @@ export const stats = createMemo(() => {
 
   // Pace: minutes of entries marked in the last 28 days.
   const now = Date.now();
-  let paceMin = 0;
-  let paceFrom = now;
+  const localPlays: Play[] = [];
+  // One Pace's own numbered episodes (onepace.net watch links), including alternative ones.
+  let onePaceWatched = 0;
+  let onePaceTotal = 0;
+  for (const f of displayOrder)
+    if (/\/watch#[a-z0-9-]+-\d+$/.test(f.ep.links.onepace ?? '')) {
+      onePaceTotal++;
+      if (isDone(f.ep.id) || isWatched(f.ep.id)) onePaceWatched++;
+    }
 
   // Remaining entries in watch order, for the finish estimates.
   const remaining: { f: FlatEpisode; min: number }[] = [];
@@ -159,10 +173,7 @@ export const stats = createMemo(() => {
       selWatched++;
       selMinWatched += min;
       const t = watchedAt(f.ep.id);
-      if (t && now - t <= PACE_WINDOW) {
-        paceMin += min;
-        paceFrom = Math.min(paceFrom, t);
-      }
+      if (t) localPlays.push({ t, min });
     } else if (min > 0) remaining.push({ f, min });
     bump(perSaga, f.saga.id, done, min);
     bump(perNode, f.node.uid, done, min);
@@ -172,8 +183,13 @@ export const stats = createMemo(() => {
     for (const p of Object.values(rec)) p.pct = p.minTotal ? (p.minDone / p.minTotal) * 100 : pct(p.watched, p.total);
 
   // --- pace and finish estimates ---
-  const paceDays = Math.max(3, (now - paceFrom) / DAY);
-  const historyPace = paceMin > 0 ? paceMin / paceDays : 0; // minutes per day
+  // Auto: your Trakt history when connected (covers other devices), else what you checked here.
+  const local = measurePace(localPlays, now);
+  const fromTrakt = trakt.pace && trakt.pace.perDay > 0 ? trakt.pace : null;
+  const auto = fromTrakt ?? local;
+  const historyPace = auto.perDay;
+  const paceDays = auto.days;
+  const paceSource: 'trakt' | 'local' | null = fromTrakt ? 'trakt' : local.perDay > 0 ? 'local' : null;
   // A pace you picked wins; otherwise your recent history.
   const pacePerDay = prefs.paceMinutes ?? historyPace;
   const eta: Record<string, number> = {};
@@ -219,7 +235,7 @@ export const stats = createMemo(() => {
     (c) => ({ ...c, bounty: bounties[c.key] ?? null }),
   );
 
-  const animeMinSeen = animeSeen.size * ANIME_EP_MIN;
+  const animeMinSeen = animeMinutes(animeSeen);
 
   return {
     // canon route (percentages by time)
@@ -234,9 +250,11 @@ export const stats = createMemo(() => {
     minTotal: selMinTotal,
     minLeft: selMinTotal - selMinWatched,
     canonMinLeft: canonMinTotal - canonMinWatched,
-    animeEquivMin: selAnime.size * ANIME_EP_MIN,
+    onePaceWatched,
+    onePaceTotal,
+    animeEquivMin: animeMinutes(selAnime),
     savedSoFarMin: Math.max(0, animeMinSeen - canonMinWatched),
-    savedTotalMin: Math.max(0, animeAll.size * ANIME_EP_MIN - canonMinTotal),
+    savedTotalMin: Math.max(0, animeMinutes(animeAll) - canonMinTotal),
     // progress tables
     perSaga,
     perNode,
@@ -246,6 +264,7 @@ export const stats = createMemo(() => {
     pacePerDay,
     historyPace,
     paceDays,
+    paceSource,
     eta,
     etaNode,
     etaSaga,

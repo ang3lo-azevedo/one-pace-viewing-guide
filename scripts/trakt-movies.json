@@ -1,0 +1,65 @@
+{
+  "_comment": "Guide entry title prefix -> Trakt movie slug. Used for real lengths, Trakt ratings and syncing.",
+  "movies": [
+    {
+      "title": "Movie 04",
+      "trakt": "one-piece-dead-end-adventure-2003"
+    },
+    {
+      "title": "One Piece Movie 06",
+      "trakt": "one-piece-baron-omatsuri-and-the-secret-island-2005"
+    },
+    {
+      "title": "Movie 10: Strong World",
+      "trakt": "one-piece-film-strong-world-2010"
+    },
+    {
+      "title": "Fun Pace Special: Strong World",
+      "trakt": "one-piece-strong-world-episode-0-2010"
+    },
+    {
+      "title": "Pace Special: Strong World",
+      "trakt": "one-piece-strong-world-episode-0-2010"
+    },
+    {
+      "title": "3D2Y",
+      "trakt": "one-piece-3d2y-overcome-ace-s-death-luffy-s-vow-to-his-friends-2014"
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "trakt": "one-piece-fan-letter-2024-10-20"
+    },
+    {
+      "title": "Special: Glorious Island",
+      "trakt": "one-piece-glorious-island-2012"
+    },
+    {
+      "title": "One Piece Movie 12: Film Z",
+      "trakt": "one-piece-film-z-2012"
+    },
+    {
+      "title": "Special: Film Gold Episode 0",
+      "trakt": "one-piece-film-gold-episode-0-2016"
+    },
+    {
+      "title": "One Piece Movie 13: Film Gold",
+      "trakt": "one-piece-film-gold-2016"
+    },
+    {
+      "title": "One Piece Movie 14: Stampede",
+      "trakt": "one-piece-stampede-2019"
+    },
+    {
+      "title": "One Piece Movie 15: Film Red",
+      "trakt": "one-piece-film-red-2022"
+    },
+    {
+      "title": "Monsters: 103",
+      "trakt": "monsters-103-mercies-dragon-damnation-2024"
+    },
+    {
+      "title": "TV Special 15 - ONE PIECE HEROINES",
+      "trakt": "one-piece-heroines-2026"
+    }
+  ]
+}

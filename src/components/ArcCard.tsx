@@ -7,7 +7,7 @@ import { hasActiveFilters, onlyIncluded, type FilteredGroup, type FilteredNode }
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import { allIdsOfNode, idsBeforeNode, tierForRating } from '../lib/guide';
-import { fmtDate, fmtDuration, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, minutesOf, stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
@@ -51,14 +51,16 @@ export default function ArcCard(props: { node: FilteredNode }) {
 
   const badge = () => TYPE_BADGE[props.node.type] ?? TYPE_BADGE.arc;
   // Canon episodes in this arc (independent of filters), for the summary line.
-  const canonCount = flatEpisodes.filter((f) => f.node.uid === props.node.uid && f.ep.canon).length;
+  const canonEntries = flatEpisodes.filter((f) => f.node.uid === props.node.uid && f.ep.canon);
+  const canonCount = canonEntries.length;
+  const canonMinutes = canonEntries.reduce((m, f) => m + minutesOf(f), 0);
   const info = () => {
     const parts = rangeInfo(props.node, canonCount || undefined);
-    const t = timeVsAnime(canonCount, props.node.anime);
+    const t = timeVsAnime(canonMinutes, props.node.anime);
     const eta = stats().etaNode[props.node.uid];
     const p = stats().perNode[props.node.uid];
     // Total of everything shown in this arc/saga (extras included), when it differs from the canon time.
-    const total = p && p.minTotal > canonCount * 24 ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
+    const total = p && p.minTotal > canonMinutes ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
     const left = p && p.minDone > 0 && p.minDone < p.minTotal ? [{ label: 'Left', value: fmtDuration(p.minTotal - p.minDone), title: 'Watch time left in your current selection' }] : [];
     return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: 'At your current pace' }] : [])];
   };

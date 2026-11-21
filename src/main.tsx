@@ -9,3 +9,8 @@ handleRedirectCallback().then(initTrakt);
 
 const root = document.getElementById('root');
 if (root) render(() => <App />, root);
+
+// Installable app + offline support (production builds only, so dev reloads stay fresh).
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}

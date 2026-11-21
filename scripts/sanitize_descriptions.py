@@ -59,6 +59,30 @@ PHRASE_FIXES = [
     ("an emotional duel in the snow is expanded", "a flashback duel is expanded"),
 ]
 
+# Plain wording instead of promotional phrasing (substring -> replacement, in descriptions
+# and notes). Facts such as directors, timestamps and episode numbers are kept.
+WORDING_FIXES = [
+    ('the iconic "Walk to Arlong Park" scene', 'the "Walk to Arlong Park" scene'),
+    ("Fan-favorite early One Piece film.", "Early One Piece film, not canon."),
+    ("Fan-favorite slice-of-life filler depicting daily life aboard the ship.",
+     "Slice-of-life filler about daily life aboard the ship."),
+    ("Fan-favorite theatrical film written directly by Eiichiro Oda.", "Theatrical film written by Eiichiro Oda."),
+    ("Acclaimed 2024 special directed by Megumi Ishitani.", "2024 special directed by Megumi Ishitani."),
+    ("Fan-favorite film overseen by Oda.", "Film with Eiichiro Oda as executive producer."),
+    ("All-star theatrical film celebrating the anime's 20th anniversary (2019).",
+     "Theatrical film for the anime's 20th anniversary (2019)."),
+    ("**Extended Sakuga Climax:** Anime Episode 870 features legendary, world-class uncut animation for the arc's climactic battle. Watching the uncut original episode is highly recommended.",
+     "**Longer fight:** Anime Episode 870 has more animation for the arc's final fight than One Pace keeps. Consider watching the original episode."),
+    ("Watch Anime Ep 818 for expanded peak fight.", "Anime Episode 818 has a longer version of this fight."),
+    ("**Megumi Ishitani Masterpiece:** Directed by Megumi Ishitani, Anime Episode 957 features movie-level storyboarding and cinematic direction covering the global aftermath of the Reverie. Highly recommended to experience uncut!",
+     "**Directed by Megumi Ishitani:** Anime Episode 957 has film-like storyboarding for the news after the Reverie. Consider watching it uncut."),
+    ("**Megumi Ishitani Masterpiece:** Directed by Megumi Ishitani, Anime Episode 982 features breathtaking theatrical direction and visual animation. Highly recommended to experience uncut!",
+     "**Directed by Megumi Ishitani:** Anime Episode 982 has film-like direction and animation. Consider watching it uncut."),
+    ("**Must-Watch in Original Anime:** Directed by Megumi Ishitani, Anime Episode 1015 is widely acclaimed as the single greatest episode in One Piece history. Watching the uncut original episode is strongly recommended for the best experience!",
+     "**Directed by Megumi Ishitani:** Anime Episode 1015 is one of the highest-rated episodes of the anime. Consider watching the original episode uncut."),
+    ("(expanded battle sequences and cinematic buildups)", "(expanded fight scenes)"),
+]
+
 MD_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
@@ -93,6 +117,21 @@ def main():
                             fixed.append(n)
                         if fixed != ep["notes"]:
                             ep["notes"] = fixed
+                            changed += 1
+                    for field in ("description",):
+                        if ep.get(field):
+                            v = ep[field]
+                            for a, b in WORDING_FIXES:
+                                v = v.replace(a, b)
+                            if v != ep[field]:
+                                ep[field] = v
+                                changed += 1
+                    if ep.get("notes"):
+                        notes = ep["notes"]
+                        for a, b in WORDING_FIXES:
+                            notes = [n.replace(a, b) for n in notes]
+                        if notes != ep["notes"]:
+                            ep["notes"] = notes
                             changed += 1
                     new_desc = fix_text(ep.get("description"), DESCRIPTION_FIXES)
                     if new_desc != ep.get("description"):

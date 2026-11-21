@@ -1,15 +1,20 @@
-import { For, Show, createSignal } from 'solid-js';
+import { For, Show, createSignal, createEffect } from 'solid-js';
 import { onlyIncluded, type FilteredGroup } from '../lib/filter';
 import { flatEpisodes, kindColor, kindLabel } from '../lib/guide';
 import { stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
-import { focusTarget } from '../lib/focus';
-import { inlineMd } from '../lib/format';
+import { notNeeded } from '../lib/alternatives';
+import { focusTarget, reveal } from '../lib/focus';
+import { extraInfoText, inlineMd } from '../lib/format';
 
 export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<string, FilteredGroup[]> }) {
   const [open, setOpen] = createSignal(props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid));
+  // Open when an episode inside is revealed (page load or "Continue watching").
+  createEffect(() => {
+    if (!!reveal()?.groupUids.has(props.group.uid)) setOpen(true);
+  });
 
   const prog = () => stats().perGroup[props.group.uid];
   const ids = () => onlyIncluded(flatEpisodes.filter((f) => f.group.uid === props.group.uid).map((f) => f.ep.id));
@@ -46,6 +51,11 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
           <Show when={props.group.isAlternative}>
             <span class="chip shrink-0 border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
           </Show>
+          <Show when={props.group.isAlternative && props.group.episodes.length > 0 && props.group.episodes.every((e) => notNeeded(e.id))}>
+            <span class="chip shrink-0 border-teal-500/50 text-[10px] text-teal-700 dark:text-teal-300" title="You watched the main version, so this alternative is optional">
+              ✓ Not needed
+            </span>
+          </Show>
         </button>
 
         <Show when={prog()}>
@@ -70,13 +80,13 @@ export default function GroupBlock(props: { group: FilteredGroup; inline?: Map<s
 
       <Show when={open()}>
         <div class="border-t border-sea-200 px-1.5 pb-1.5 pt-1 dark:border-sea-800/70">
-          <Show when={props.group.info && (props.group.info.links.length || props.group.info.text)}>
+          <Show when={props.group.info && (props.group.info.links.length || extraInfoText(props.group.info.text))}>
             <div class="mx-2 mb-1.5 mt-1 rounded-md bg-sea-100 px-2.5 py-1.5 text-xs dark:bg-sea-900/70">
-              <Show when={props.group.info!.text}>
-                <div class="text-sea-600 dark:text-sea-300">{props.group.info!.text}</div>
+              <Show when={extraInfoText(props.group.info!.text)}>
+                <div class="mb-1 text-sea-600 dark:text-sea-300">{extraInfoText(props.group.info!.text)}</div>
               </Show>
               <Show when={props.group.info!.links.length}>
-                <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
                   <span class="text-[10px] font-bold uppercase tracking-wide text-sea-400">Sources</span>
                   <For each={props.group.info!.links}>
                     {(l) => (

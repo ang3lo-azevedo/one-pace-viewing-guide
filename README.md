@@ -17,16 +17,15 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 - Stream toggle for default links (One Pace Web or Stremio).
 - Abbreviated titles that reveal the full title on hover or focus, to avoid spoilers.
 - Responsive layout with light and dark themes.
+- Continue watching: your next unwatched episode, with watch, mark watched and jump-to buttons.
+- Finish estimates at your recent pace for the whole list and every saga, arc and episode; progress percentages by watch time.
+- Counters for movies, specials, Live Action, filler and original anime. Alternative versions are optional and count the main version as done.
+- Installable as an app (PWA) and usable offline once loaded.
 
 ## Data
 
-`src/data/data.json` holds the episode data and is the file to edit going forward. It
-was generated once from the older Markdown guide (`one_pace_viewing_guide.md`) by
-`scripts/parse_md_to_json.py`. To regenerate it from the Markdown:
-
-```bash
-npm run data        # python3 -I scripts/parse_md_to_json.py
-```
+`src/data/data.json` holds all episode data (sagas, arcs, sections, episodes, links,
+notes and the details/sources for each section) and is the file to edit.
 
 ### Ratings
 
@@ -55,21 +54,21 @@ browser. Configure it in `src/config.ts`:
 - `traktShowSlug`: the Trakt One Pace show slug (`one-pace`)
 
 On the Trakt app, set the **Redirect URIs** to the site URL(s) and add them as **Allowed
-origins** too (for browser CORS). Episodes map to Trakt by title with a positional
-fallback (~98% of the standard One Pace releases; Wano/Egghead-continuation cuts that use
-Stremio-only links are not mapped). The **Connect Trakt** button is in the header; once connected, checking or bulk-marking
+origins** too (for browser CORS). Episodes are mapped to Trakt at build time: 466 of 472 One Pace releases map to the
+Trakt One Pace show, and the Onigashima Paced, Kuma Cut / Shaved Egghead and One Piece Log
+episodes sync to the original anime episodes they cover on Trakt's One Piece show. The **Connect Trakt** button is in the header; once connected, checking or bulk-marking
 episodes syncs to Trakt, and watched episodes can be rated (1 to 10). Your watched
 history is pulled from Trakt when the page opens and when you return to the tab (at
 most every 5 minutes); pending changes are sent when the tab is hidden or closed.
 
-### Arc details and placement
+### Episode ids
 
-`npm run enrich` (`scripts/enrich_from_md.py`) copies each section's details table
-(episode guide spreadsheet, One Pace Web and Stremio links) from the Markdown guide into
-`data.json`, records sections that sit in the middle of an arc (like the Monsters special in
-Thriller Bark), and marks the One Piece Log remaster as the canon route for Return to
-Sabaody and Fish-Man Island. It only touches those fields, so ratings and the spoiler-free
-descriptions are kept.
+Each episode's `id` is the key of everyone's saved progress. `scripts/check_ids.py` runs at
+the start of every build and fails it if an id is duplicated or disappears. To rename one
+on purpose, add `"old-id": "new-id"` to `meta.idAliases` in `data.json` (saved progress is
+migrated through it) and run `python3 -I scripts/check_ids.py --update`.
+
+The site also rebuilds every Monday (scheduled workflow) so ratings stay current.
 
 ## Develop
 

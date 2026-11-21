@@ -1,21 +1,30 @@
 import { createStore, produce } from 'solid-js/store';
 import { createEffect, createRoot } from 'solid-js';
+import { guide } from '../lib/guide';
+
+/** Renamed episode ids (old -> new), so saved progress survives id changes. */
+const ALIASES: Record<string, string> = (guide.meta as { idAliases?: Record<string, string> }).idAliases ?? {};
+const migrate = (id: string) => ALIASES[id] ?? id;
 
 const KEY = 'op-progress-v1';
 
-type WatchedMap = Record<string, true>;
+/**
+ * Watched episodes -> when they were marked (ms epoch). `UNKNOWN` (1) means watched at an
+ * unknown time (older saves, Trakt pulls, imports); those don't count toward your pace.
+ */
+type WatchedMap = Record<string, number>;
+export const UNKNOWN = 1;
 
 function load(): WatchedMap {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return {};
     const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed)) {
-      // legacy array form
-      return Object.fromEntries(parsed.map((id: string) => [id, true]));
-    }
-    if (parsed && typeof parsed === 'object' && parsed.watched) return parsed.watched;
-    return parsed ?? {};
+    if (Array.isArray(parsed)) return Object.fromEntries(parsed.map((id: string) => [migrate(id), UNKNOWN])); // legacy
+    const map = (parsed && typeof parsed === 'object' && parsed.watched) || parsed || {};
+    return Object.fromEntries(
+      Object.entries(map).map(([id, v]) => [migrate(id), typeof v === 'number' && v > UNKNOWN ? v : UNKNOWN]),
+    );
   } catch {
     return {};
   }
@@ -37,7 +46,13 @@ createRoot(() => {
 export const progress = state;
 
 export function isWatched(id: string): boolean {
-  return !!state.watched[id];
+  return state.watched[id] != null;
+}
+
+/** When an episode was marked watched (ms epoch), or null if unknown / not watched. */
+export function watchedAt(id: string): number | null {
+  const v = state.watched[id];
+  return v != null && v > UNKNOWN ? v : null;
 }
 
 /**
@@ -53,12 +68,13 @@ export function onWatchedChange(fn: Listener): () => void {
 
 /** Mark/unmark many episode ids at once. */
 export function setMany(ids: string[], value: boolean, opts: { silent?: boolean } = {}) {
-  const changed = ids.filter((id) => !!state.watched[id] !== value);
+  const changed = ids.filter((id) => isWatched(id) !== value);
+  const now = opts.silent ? UNKNOWN : Date.now();
   if (!changed.length) return;
   setState(
     produce((s) => {
       for (const id of changed) {
-        if (value) s.watched[id] = true;
+        if (value) s.watched[id] = now;
         else delete s.watched[id];
       }
     }),
@@ -84,7 +100,8 @@ export function clearAll() {
 
 export function exportJSON(): string {
   return JSON.stringify(
-    { app: 'one-pace-viewing-guide', version: 1, watched: Object.keys(state.watched) },
+    // `watched` stays a plain id list (older versions can read it); `watchedAt` adds the times.
+    { app: 'one-pace-viewing-guide', version: 2, watched: Object.keys(state.watched), watchedAt: { ...state.watched } },
     null,
     2,
   );
@@ -101,10 +118,15 @@ export function importJSON(text: string, merge = false): number {
         ? Object.keys(parsed.watched)
         : null;
   if (!ids) throw new Error('Unrecognized progress file.');
+  const times: Record<string, unknown> = (parsed?.watchedAt && typeof parsed.watchedAt === 'object' && parsed.watchedAt) || {};
   setState(
     produce((s) => {
       if (!merge) s.watched = {};
-      for (const id of ids) if (typeof id === 'string') s.watched[id] = true;
+      for (const id of ids) {
+        if (typeof id !== 'string') continue;
+        const t = times[id];
+        s.watched[migrate(id)] = typeof t === 'number' && t > UNKNOWN ? t : (s.watched[migrate(id)] ?? UNKNOWN);
+      }
     }),
   );
   return ids.length;

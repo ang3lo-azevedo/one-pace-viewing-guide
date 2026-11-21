@@ -1,13 +1,17 @@
-import { For, Show, createMemo, createSignal } from 'solid-js';
+import { For, Show, createMemo, createSignal, createEffect } from 'solid-js';
+import InfoLine from './InfoLine';
+import { rangeInfo } from '../lib/format';
+import { timeVsAnime } from '../lib/rangeTime';
+import { flatEpisodes } from '../lib/guide';
 import { hasActiveFilters, onlyIncluded, type FilteredGroup, type FilteredNode } from '../lib/filter';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import { allIdsOfNode, idsBeforeNode, tierForRating } from '../lib/guide';
-import { stats } from '../lib/stats';
+import { fmtDate, stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
-import { focusTarget } from '../lib/focus';
+import { focusTarget, reveal } from '../lib/focus';
 
 const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
   arc: { label: 'Arc', cls: 'border-accent-400/40 text-accent-500 dark:text-accent-300' },
@@ -20,6 +24,10 @@ const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
 export default function ArcCard(props: { node: FilteredNode }) {
   // Arcs start collapsed; open them automatically when searching/filtering so matches show.
   const [open, setOpen] = createSignal(hasActiveFilters() || focusTarget?.nodeUid === props.node.uid);
+  // Open when an episode inside is revealed (page load or "Continue watching").
+  createEffect(() => {
+    if (reveal()?.nodeUid === props.node.uid) setOpen(true);
+  });
 
   const prog = () => stats().perNode[props.node.uid];
   const arcIds = () => onlyIncluded(allIdsOfNode(props.node.uid));
@@ -42,10 +50,14 @@ export default function ArcCard(props: { node: FilteredNode }) {
   });
 
   const badge = () => TYPE_BADGE[props.node.type] ?? TYPE_BADGE.arc;
-  const meta = () =>
-    [props.node.pace, props.node.anime ? `Anime ${props.node.anime}` : null, props.node.chapters ? `Ch. ${props.node.chapters}` : null]
-      .filter(Boolean)
-      .join('  •  ');
+  // Canon episodes in this arc (independent of filters), for the summary line.
+  const canonCount = flatEpisodes.filter((f) => f.node.uid === props.node.uid && f.ep.canon).length;
+  const info = () => {
+    const parts = rangeInfo(props.node, canonCount || undefined);
+    const t = timeVsAnime(canonCount, props.node.anime);
+    const eta = stats().etaNode[props.node.uid];
+    return [...parts, ...(t ? [t] : []), ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: 'At your current pace' }] : [])];
+  };
 
   return (
     <div class="card scroll-mt-28 overflow-hidden" id={props.node.id}>
@@ -75,9 +87,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
                 <span class="chip border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
               </Show>
             </div>
-            <Show when={meta()}>
-              <div class="mt-1 text-xs text-sea-500 dark:text-sea-400">{meta()}</div>
-            </Show>
+            <InfoLine parts={info()} class="mt-1" />
             <Show when={prog()}>
               <div class="mt-2 flex max-w-xs items-center gap-2">
                 <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-sea-200 dark:bg-sea-800">

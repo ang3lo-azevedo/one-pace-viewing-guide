@@ -9,7 +9,7 @@ how the guide's ratings were originally derived.
 
 Entries whose `anime` field has no numeric anime episodes (Movies, OVAs, Specials, Live
 Action, text-only entries) are left untouched. Arc (node) and saga ratings are recomputed
-as the mean of their One Pace episode ratings so the whole tree stays consistent.
+as the mean of their canon-route episode ratings so the whole tree stays consistent.
 
 Usage:  python3 -I scripts/fetch_ratings.py
         python3 -I scripts/fetch_ratings.py --cache /tmp/sr.json   # use a saved API dump
@@ -29,7 +29,7 @@ DATA = os.path.join(ROOT, "src", "data", "data.json")
 SHOW_ID = 37854
 API_URL = f"https://seriesgraph.com/api/shows/{SHOW_ID}/season-ratings"
 
-# Keep tiers in sync with parse_md_to_json.py / src/types.ts.
+# Keep tiers in sync with data.json meta.tiers / src/types.ts.
 TIERS = [
     (9.7, "#1DA1F2"),
     (9.0, "#186A3B"),
@@ -113,7 +113,6 @@ def main():
         for node in saga["nodes"]:
             node_vals = []
             for group in node["groups"]:
-                is_onepace = group["kind"] == "onepace"
                 # The `anime` field of Live Action entries points at the adapted
                 # One Piece anime episodes, but Netflix is a different show with its
                 # own ratings, so never remap those.
@@ -133,7 +132,9 @@ def main():
                         ep["tierColor"] = tier_color(new)
                     else:
                         skipped += 1
-                    if is_onepace and ep.get("rating") is not None:
+                    # Arc/saga ratings average every canon-route episode shown (One Pace,
+                    # Onigashima Paced, Kuma Cut / Shaved Egghead, One Piece Log).
+                    if ep.get("canon") and ep.get("rating") is not None:
                         node_vals.append(ep["rating"])
                         saga_vals.append(ep["rating"])
             # Recompute arc/movie/special rating from its One Pace episodes when available.

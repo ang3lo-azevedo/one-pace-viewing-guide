@@ -1,27 +1,38 @@
-import { For, Show, createSignal } from 'solid-js';
+import { For, Show, createSignal, createEffect } from 'solid-js';
+import InfoLine from './InfoLine';
+import { rangeInfo } from '../lib/format';
+import { timeVsAnime } from '../lib/rangeTime';
+import { flatEpisodes } from '../lib/guide';
 import { hasActiveFilters, onlyIncluded, type FilteredSaga } from '../lib/filter';
 import { allIdsOfSaga, idsBeforeSaga, tierForRating } from '../lib/guide';
-import { stats } from '../lib/stats';
+import { fmtDate, stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import RatingBadge from './RatingBadge';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
-import { focusTarget } from '../lib/focus';
+import { focusTarget, reveal } from '../lib/focus';
 
 export default function SagaSection(props: { saga: FilteredSaga; index: number }) {
   // Open the saga with your last watched episode (or the first saga if you have none).
   const [open, setOpen] = createSignal(
     hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.index === 0),
   );
+  // Open when an episode inside is revealed (page load or "Continue watching").
+  createEffect(() => {
+    if (reveal()?.sagaId === props.saga.id) setOpen(true);
+  });
 
   const prog = () => stats().perSaga[props.saga.id];
   const sagaIds = () => onlyIncluded(allIdsOfSaga(props.saga.id));
   const allSagaWatched = () => sagaIds().length > 0 && sagaIds().every((id) => isWatched(id));
-  const meta = () =>
-    [props.saga.pace, props.saga.anime ? `Anime ${props.saga.anime}` : null, props.saga.chapters ? `Ch. ${props.saga.chapters}` : null]
-      .filter(Boolean)
-      .join('  •  ');
+  const canonCount = flatEpisodes.filter((f) => f.saga.id === props.saga.id && f.ep.canon).length;
+  const info = () => {
+    const parts = rangeInfo(props.saga, canonCount || undefined);
+    const t = timeVsAnime(canonCount, props.saga.anime);
+    const eta = stats().etaSaga[props.saga.id];
+    return [...parts, ...(t ? [t] : []), ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: 'At your current pace' }] : [])];
+  };
 
   return (
     <section class="scroll-mt-24" id={props.saga.id}>
@@ -51,9 +62,7 @@ export default function SagaSection(props: { saga: FilteredSaga; index: number }
                 title={`Average of this saga\'s One Pace episodes on SeriesGraph (${props.saga.rating}). Open One Piece on SeriesGraph`}
               />
             </div>
-            <Show when={meta()}>
-              <div class="mt-0.5 text-xs text-sea-500 dark:text-sea-400">{meta()}</div>
-            </Show>
+            <InfoLine parts={info()} class="mt-0.5" />
           </div>
         </div>
 

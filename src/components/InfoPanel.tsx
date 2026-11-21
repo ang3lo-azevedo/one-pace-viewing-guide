@@ -85,7 +85,7 @@ export default function InfoPanel() {
         <span class="text-xs transition-transform" classList={{ 'rotate-90': open() }} aria-hidden="true">
           ▶
         </span>
-        <span class="font-display text-sm font-extrabold uppercase tracking-wide text-accent-400">About this guide & sources</span>
+        <span class="font-display text-sm font-extrabold uppercase tracking-wide text-accent-600 dark:text-accent-400">About this guide & sources</span>
       </button>
 
       <Show when={open()}>
@@ -109,7 +109,17 @@ export default function InfoPanel() {
             <li>
               <b class="text-sea-700 dark:text-sea-200">Time estimates:</b> about 24 min per One Pace and anime episode,
               110 min per movie and 60 min per Live Action episode. Hidden content types (Filters) are left out of
-              the times and percentages.
+              the times and percentages. Percentages are by watch time, so a movie counts for more than a single
+              episode.
+            </li>
+            <li>
+              <b class="text-sea-700 dark:text-sea-200">Finish dates:</b> based on the watch time of episodes you
+              checked in the last 28 days. Each remaining episode, arc and saga shows when you'd reach it at that pace.
+            </li>
+            <li>
+              <b class="text-sea-700 dark:text-sea-200">Alternative versions</b> are optional and never count as
+              remaining. Watching an alternative instead (for example the original anime episodes of G-8) also counts
+              the main version as done.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Progress</b> is stored in this browser only. Use the Progress menu

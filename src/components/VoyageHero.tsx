@@ -1,13 +1,18 @@
 import { For, Show, createSignal } from 'solid-js';
-import { fmtHours, stats } from '../lib/stats';
+import { fmtDate, fmtHours, stats } from '../lib/stats';
 import { formatBerry } from '../lib/bounties';
+import { nextUp, revealEpisode } from '../lib/focus';
+import { LINK_LABEL, primaryLinkKey } from '../lib/links';
+import { splitTitle } from '../lib/guide';
+import { setWatched } from '../store/progress';
 import { prefs } from '../store/prefs';
 import { EXTRA_LABELS } from '../lib/guide';
 
 function Panel(props: { title: string; accent: string; children: any }) {
+  // `accent` is a Tailwind class list (with a dark: variant) so both themes stay readable.
   return (
     <div class="card flex flex-col p-3.5">
-      <div class="mb-2 text-[11px] font-bold uppercase tracking-widest" style={{ color: props.accent }}>
+      <div class={`mb-2 text-[11px] font-bold uppercase tracking-widest ${props.accent}`}>
         {props.title}
       </div>
       {props.children}
@@ -18,7 +23,7 @@ function Panel(props: { title: string; accent: string; children: any }) {
 function Big(props: { value: string; label: string; color: string }) {
   return (
     <div class="mb-2">
-      <div class="font-display text-2xl font-black leading-tight tabular-nums whitespace-nowrap" style={{ color: props.color }}>
+      <div class={`font-display text-2xl font-black leading-tight tabular-nums whitespace-nowrap ${props.color}`}>
         {props.value}
       </div>
       <div class="text-[11px] text-sea-500 dark:text-sea-400">{props.label}</div>
@@ -54,14 +59,14 @@ function Bar(props: { label: string; detail: string; pct: number; muted?: boolea
     <div>
       <div class="mb-1 flex items-end justify-between gap-3">
         <div>
-          <div class="text-xs font-bold uppercase tracking-widest" classList={{ 'text-accent-400': !props.muted, 'text-sea-400': props.muted }}>
+          <div class="text-xs font-bold uppercase tracking-widest" classList={{ 'text-accent-600 dark:text-accent-400': !props.muted, 'text-sea-500 dark:text-sea-400': props.muted }}>
             {props.label}
           </div>
           <div class="text-sm text-sea-500 dark:text-sea-400">{props.detail}</div>
         </div>
         <div
           class="font-display font-black tabular-nums"
-          classList={{ 'text-3xl text-accent-400 sm:text-4xl': !props.muted, 'text-2xl text-sea-300 sm:text-3xl': props.muted }}
+          classList={{ 'text-3xl text-accent-600 dark:text-accent-400 sm:text-4xl': !props.muted, 'text-2xl text-sea-400 dark:text-sea-300 sm:text-3xl': props.muted }}
         >
           {props.pct.toFixed(1)}%
         </div>
@@ -90,6 +95,96 @@ function Poster(props: { emoji: string; name: string; bounty: number | null }) {
   );
 }
 
+function FinishLine() {
+  const s = stats;
+  return (
+    <div class="card px-4 py-3 text-sm">
+      <Show
+        when={s().pacePerDay > 0}
+        fallback={
+          <span class="text-sea-500 dark:text-sea-400">
+            📅 Check off episodes as you watch them and you'll see when you're on track to finish each episode, arc and saga.
+          </span>
+        }
+      >
+        <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">At your pace</span>
+          <span class="text-xs text-sea-500 dark:text-sea-400" title="Watch time of episodes you checked in the last 28 days">
+            {fmtHours(s().pacePerDay)} a day (last {Math.round(s().paceDays)} days)
+          </span>
+        </div>
+        <div class="mt-1 flex flex-wrap gap-x-5 gap-y-1">
+          <Show when={s().finishCanonOnly}>
+            <span>
+              Canon route only: <b class="text-sea-800 dark:text-sea-50">{fmtDate(s().finishCanonOnly!)}</b>
+            </span>
+          </Show>
+          <Show when={s().finishSelection}>
+            <span>
+              {prefs.canonOnly ? 'Your list' : 'Everything you show'}: <b class="text-sea-800 dark:text-sea-50">{fmtDate(s().finishSelection!)}</b>
+            </span>
+          </Show>
+        </div>
+      </Show>
+    </div>
+  );
+}
+
+function ContinueWatching() {
+  const next = nextUp;
+  const link = () => {
+    const n = next();
+    if (!n) return null;
+    const k = primaryLinkKey(n.ep.links, prefs.streamSource);
+    return k ? { url: n.ep.links[k]!, label: LINK_LABEL[k] } : null;
+  };
+  const title = () => {
+    const n = next();
+    if (!n) return '';
+    return prefs.spoilerSafe ? splitTitle(n.ep.title).label : n.ep.title;
+  };
+  return (
+    <Show
+      when={next()}
+      fallback={<div class="text-sm font-semibold text-accent-600 dark:text-accent-400">You have watched everything in your selection. 🏴‍☠️</div>}
+    >
+      {(n) => (
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-accent-400/30 bg-accent-400/10 px-3 py-2.5">
+          <div class="min-w-0 flex-1">
+            <div class="text-[10px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Continue watching</div>
+            <div class="truncate font-display text-base font-extrabold" title={prefs.spoilerSafe ? undefined : n().ep.fullTitle}>
+              {title()}
+            </div>
+            <div class="truncate text-xs text-sea-500 dark:text-sea-400">{n().nodeTitle}</div>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <Show when={link()}>
+              {(l) => (
+                <a href={l().url} target="_blank" rel="noopener noreferrer" class="btn-watch px-3.5 py-1.5 text-sm">
+                  ▶ Watch on {l().label}
+                </a>
+              )}
+            </Show>
+            <button
+              class="chip border-sea-300 text-xs font-semibold text-sea-600 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-200"
+              onClick={() => setWatched(n().ep.id, true)}
+              title="Mark this episode watched and move on to the next one"
+            >
+              ✓ Mark watched
+            </button>
+            <button
+              class="chip border-sea-300 text-xs font-semibold text-sea-600 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-200"
+              onClick={() => revealEpisode(n().ep.id)}
+            >
+              Show in list
+            </button>
+          </div>
+        </div>
+      )}
+    </Show>
+  );
+}
+
 export default function VoyageHero() {
   const [crewOpen, setCrewOpen] = createSignal(false);
   const s = stats;
@@ -102,34 +197,50 @@ export default function VoyageHero() {
   return (
     <div class="space-y-4">
       <div class="card space-y-4 overflow-hidden p-4 sm:p-5">
-        <Bar label="Canon route" detail={`${s().canonWatched} of ${s().canonTotal} episodes watched`} pct={s().canonPct} />
+        <ContinueWatching />
+        <Bar label="Canon route" detail={`${s().canonWatched} of ${s().canonTotal} episodes watched · % by watch time`} pct={s().canonPct} />
         <Show when={selectionLabel()}>
-          <Bar label={selectionLabel()!} detail={`${s().selWatched} of ${s().selTotal} entries watched`} pct={s().selPct} muted />
+          <Bar label={selectionLabel()!} detail={`${s().selWatched} of ${s().selTotal} entries watched · % by watch time`} pct={s().selPct} muted />
         </Show>
       </div>
 
-      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-        <Panel title="Time" accent="#66c0ef">
-          <Big value={fmtHours(s().minLeft)} label="left to watch" color="#ff0408" />
+      <FinishLine />
+
+      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+        <Panel title="Time" accent="text-accent-600 dark:text-accent-400">
+          <Big value={fmtHours(s().minLeft)} label="left to watch" color="text-strawhat-600 dark:text-strawhat-500" />
           <Row label="Watched" value={fmtHours(s().minWatched)} />
           <Row label="Total" value={fmtHours(s().minTotal)} />
           <Row label="Canon route left" value={fmtHours(s().canonMinLeft)} />
         </Panel>
 
-        <Panel title="Saved vs full anime" accent="#2dd4bf">
-          <Big value={fmtHours(s().savedSoFarMin)} label="saved so far" color="#2dd4bf" />
+        <Panel title="Saved vs full anime" accent="text-teal-700 dark:text-teal-300">
+          <Big value={fmtHours(s().savedSoFarMin)} label="saved so far" color="text-teal-600 dark:text-teal-300" />
           <Row label="Saved in total" value={fmtHours(s().savedTotalMin)} />
           <Row label="Full anime equivalent" value={fmtHours(s().animeEquivMin)} title="Time to watch the same story in the original anime" />
           <Row label="With this guide" value={fmtHours(s().minTotal)} />
         </Panel>
 
-        <Panel title="Journey" accent="#8fd0f3">
+        <Panel title="Journey" accent="text-sky-700 dark:text-accent-300">
           <div class="grid grid-cols-2 gap-1.5">
             <Mini value={`${s().islandsConquered}/${s().islandsTotal}`} label="Islands" pct={(s().islandsConquered / s().islandsTotal) * 100} />
             <Mini value={`${s().sagasConquered}/${s().sagasTotal}`} label="Sagas" pct={(s().sagasConquered / s().sagasTotal) * 100} />
             <Mini value={`~${s().chaptersSeen}`} label="Manga chapters" />
             <Mini value={`~${s().animeSeen}`} label="Anime episodes" />
           </div>
+        </Panel>
+
+        <Panel title="Extras" accent="text-amber-700 dark:text-amber-300">
+          <For each={s().extras}>
+            {(x) => (
+              <Row
+                label={x.label}
+                value={x.total ? `${x.watched}/${x.total}` : '—'}
+                title={x.minLeft ? `${fmtHours(x.minLeft)} left` : undefined}
+              />
+            )}
+          </For>
+          <div class="mt-1 text-[10px] text-sea-400">Alternative versions are optional and not counted.</div>
         </Panel>
       </div>
 
@@ -143,7 +254,7 @@ export default function VoyageHero() {
             <span class="text-xs transition-transform" classList={{ 'rotate-90': crewOpen() }} aria-hidden="true">
               ▶
             </span>
-            <span class="text-xs font-bold uppercase tracking-widest text-accent-400">Crew Bounties</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Crew Bounties</span>
             <span class="text-[11px] text-sea-400">
               · {s().crew.length} crew{s().crewAsOf ? ` · as of ${s().crewAsOf}` : ''}
             </span>

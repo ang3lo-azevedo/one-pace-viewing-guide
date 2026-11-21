@@ -4,8 +4,7 @@
 
 Status: done. The web app (SolidJS, Vite, TypeScript, Tailwind) is live at
 https://ang3lo-azevedo.github.io/one-pace-viewing-guide/ and deploys from
-`.github/workflows/deploy.yml`. Episode data lives in `src/data/data.json`, generated
-from the Markdown by `scripts/parse_md_to_json.py`. See `README.md` for setup.
+`.github/workflows/deploy.yml`. Episode data lives in `src/data/data.json`. See `README.md` for setup.
 
 ### Objective
 Migrate the One Pace Viewing Guide from a static Markdown file into an interactive web application hosted via GitHub Pages.

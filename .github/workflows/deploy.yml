@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Rebuild every Monday so SeriesGraph and Trakt ratings stay current without a push.
+  schedule:
+    - cron: '17 4 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -19,20 +22,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: '3.13'
       - run: npm ci
-      # `npm run build` runs a prebuild step that refreshes ratings from SeriesGraph
-      # (non-fatal if the site is unreachable, so deploys never break).
+      # `npm run build` first refreshes SeriesGraph ratings and the Trakt mapping/ratings
+      # (non-fatal if either site is unreachable, so deploys never break).
       - run: npm run build
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -44,4 +47,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

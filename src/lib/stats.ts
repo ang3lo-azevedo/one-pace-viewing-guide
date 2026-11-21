@@ -1,8 +1,10 @@
 import { createMemo } from 'solid-js';
-import { flatEpisodes, guide, type FlatEpisode } from './guide';
+import { displayOrder, guide, type FlatEpisode } from './guide';
 import { episodeIncluded } from './filter';
-import { isWatched } from '../store/progress';
-import { BOUNTY_PER_EPISODE, BOUNTY_REVEALS, CREW, pirateRank } from './bounties';
+import { watchedAt } from '../store/progress';
+import { isAlternativeEntry, isDone } from './alternatives';
+import { extraCategory, type ExtraCategory } from './guide';
+import { BOUNTY_REVEALS, CREW } from './bounties';
 
 /**
  * Rough runtime per entry (minutes), by section kind. One Pace episodes average ~24 min;
@@ -56,8 +58,12 @@ export function fmtHours(min: number): string {
 const pct = (a: number, b: number) => (b ? (a / b) * 100 : 0);
 
 export interface Progress {
+  /** Entries done / total (for the "x/y" counters). */
   watched: number;
   total: number;
+  /** Minutes done / total; the percentage is by time, not by number of entries. */
+  minDone: number;
+  minTotal: number;
   pct: number;
 }
 
@@ -66,15 +72,31 @@ const islands = guide.sagas.flatMap((s) =>
   s.nodes.filter((n) => n.type === 'arc' && n.groups.some((g) => g.episodes.some((e) => e.canon))),
 );
 
+const DAY = 86_400_000;
+/** Pace window: minutes watched over the last 28 days (at least 3 days, so a binge day isn't a pace). */
+const PACE_WINDOW = 28 * DAY;
+
+/** Hideable extra types with their own counters. */
+const EXTRA_KINDS: [ExtraCategory, string][] = [
+  ['movies', 'Movies'],
+  ['specials', 'Specials'],
+  ['liveAction', 'Live Action'],
+  ['filler', 'Filler & Fun Pace'],
+  ['original', 'Original anime'],
+];
+
 export const stats = createMemo(() => {
-  // --- selection (respects Canon Only and hidden extra types) ---
   const perSaga: Record<string, Progress> = {};
   const perNode: Record<string, Progress> = {};
   const perGroup: Record<string, Progress> = {};
-  const bump = (rec: Record<string, Progress>, key: string, w: boolean) => {
-    const p = (rec[key] ??= { watched: 0, total: 0, pct: 0 });
+  const bump = (rec: Record<string, Progress>, key: string, done: boolean, min: number) => {
+    const p = (rec[key] ??= { watched: 0, total: 0, minDone: 0, minTotal: 0, pct: 0 });
     p.total++;
-    if (w) p.watched++;
+    p.minTotal += min;
+    if (done) {
+      p.watched++;
+      p.minDone += min;
+    }
   };
 
   let selWatched = 0;
@@ -83,24 +105,36 @@ export const stats = createMemo(() => {
   let selMinTotal = 0;
   const selAnime = new Set<number>();
 
-  // --- canon route ---
   let canonWatched = 0;
   let canonTotal = 0;
   let canonMinWatched = 0;
+  let canonMinTotal = 0;
   const animeSeen = new Set<number>();
   const chaptersSeen = new Set<number>();
   const animeAll = new Set<number>();
-  let canonMinTotal = 0;
 
-  for (const f of flatEpisodes) {
-    const w = isWatched(f.ep.id);
+  const extras: Record<string, { label: string; watched: number; total: number; minLeft: number }> = {};
+  for (const [k, label] of EXTRA_KINDS) extras[k] = { label, watched: 0, total: 0, minLeft: 0 };
+
+  // Pace: minutes of entries marked in the last 28 days.
+  const now = Date.now();
+  let paceMin = 0;
+  let paceFrom = now;
+
+  // Remaining entries in watch order, for the finish estimates.
+  const remaining: { f: FlatEpisode; min: number }[] = [];
+
+  for (const f of displayOrder) {
+    // Alternative versions are optional: never counted as remaining.
+    if (isAlternativeEntry(f)) continue;
+    const done = isDone(f.ep.id);
     const min = minutesOf(f);
 
     if (f.ep.canon) {
       canonTotal++;
       canonMinTotal += min;
       for (const n of numbers(f.ep.anime)) animeAll.add(n);
-      if (w) {
+      if (done) {
         canonWatched++;
         canonMinWatched += min;
         for (const n of numbers(f.ep.anime)) animeSeen.add(n);
@@ -108,24 +142,56 @@ export const stats = createMemo(() => {
       }
     }
 
+    const cat = extraCategory(f.group, f.node);
+    if (cat && extras[cat]) {
+      extras[cat].total++;
+      if (done) extras[cat].watched++;
+      else extras[cat].minLeft += min;
+    }
+
     if (!episodeIncluded(f.ep, f.group, f.node)) continue;
     selTotal++;
     selMinTotal += min;
     if (f.ep.canon) for (const n of numbers(f.ep.anime)) selAnime.add(n);
-    if (w) {
+    if (done) {
       selWatched++;
       selMinWatched += min;
-    }
-    bump(perSaga, f.saga.id, w);
-    bump(perNode, f.node.uid, w);
-    bump(perGroup, f.group.uid, w);
+      const t = watchedAt(f.ep.id);
+      if (t && now - t <= PACE_WINDOW) {
+        paceMin += min;
+        paceFrom = Math.min(paceFrom, t);
+      }
+    } else if (min > 0) remaining.push({ f, min });
+    bump(perSaga, f.saga.id, done, min);
+    bump(perNode, f.node.uid, done, min);
+    bump(perGroup, f.group.uid, done, min);
   }
-  for (const rec of [perSaga, perNode, perGroup]) for (const p of Object.values(rec)) p.pct = pct(p.watched, p.total);
+  for (const rec of [perSaga, perNode, perGroup])
+    for (const p of Object.values(rec)) p.pct = p.minTotal ? (p.minDone / p.minTotal) * 100 : pct(p.watched, p.total);
+
+  // --- pace and finish estimates ---
+  const paceDays = Math.max(3, (now - paceFrom) / DAY);
+  const pacePerDay = paceMin > 0 ? paceMin / paceDays : 0; // minutes per day
+  const eta: Record<string, number> = {};
+  const etaNode: Record<string, number> = {};
+  const etaSaga: Record<string, number> = {};
+  let canonEta: number | null = null;
+  if (pacePerDay > 0) {
+    let cum = 0;
+    for (const { f, min } of remaining) {
+      cum += min;
+      const t = now + (cum / pacePerDay) * DAY;
+      eta[f.ep.id] = t;
+      etaNode[f.node.uid] = t;
+      etaSaga[f.saga.id] = t;
+      if (f.ep.canon) canonEta = t;
+    }
+  }
 
   // --- islands & sagas conquered (canon route) ---
   const done = (eps: { id: string; canon: boolean }[]) => {
     const c = eps.filter((e) => e.canon);
-    return c.length > 0 && c.every((e) => isWatched(e.id));
+    return c.length > 0 && c.every((e) => isDone(e.id));
   };
   const islandDone = islands.map((n) => done(n.groups.flatMap((g) => g.episodes)));
   const islandsConquered = islandDone.filter(Boolean).length;
@@ -134,7 +200,7 @@ export const stats = createMemo(() => {
   // An island is "passed" once it is complete or any later island has been started.
   let lastStarted = -1;
   islands.forEach((n, i) => {
-    if (n.groups.some((g) => g.episodes.some((e) => e.canon && isWatched(e.id)))) lastStarted = i;
+    if (n.groups.some((g) => g.episodes.some((e) => e.canon && isDone(e.id)))) lastStarted = i;
   });
   const passed = new Set<string>();
   islands.forEach((n, i) => {
@@ -149,18 +215,17 @@ export const stats = createMemo(() => {
     (c) => ({ ...c, bounty: bounties[c.key] ?? null }),
   );
 
-  const bounty = canonWatched * BOUNTY_PER_EPISODE;
   const animeMinSeen = animeSeen.size * ANIME_EP_MIN;
 
   return {
-    // canon route
+    // canon route (percentages by time)
     canonWatched,
     canonTotal,
-    canonPct: pct(canonWatched, canonTotal),
+    canonPct: pct(canonMinWatched, canonMinTotal),
     // current selection
     selWatched,
     selTotal,
-    selPct: pct(selWatched, selTotal),
+    selPct: pct(selMinWatched, selMinTotal),
     minWatched: selMinWatched,
     minTotal: selMinTotal,
     minLeft: selMinTotal - selMinWatched,
@@ -172,6 +237,16 @@ export const stats = createMemo(() => {
     perSaga,
     perNode,
     perGroup,
+    extras: EXTRA_KINDS.map(([k]) => ({ key: k, ...extras[k] })),
+    // pace and finish estimates (null / empty without recent watching)
+    pacePerDay,
+    paceDays,
+    eta,
+    etaNode,
+    etaSaga,
+    finishSelection: remaining.length && pacePerDay ? eta[remaining[remaining.length - 1].f.ep.id] : null,
+    finishCanon: canonEta,
+    finishCanonOnly: pacePerDay ? now + ((canonMinTotal - canonMinWatched) / pacePerDay) * DAY : null,
     // achievements
     islandsConquered,
     islandsTotal: islands.length,
@@ -179,9 +254,14 @@ export const stats = createMemo(() => {
     sagasTotal: guide.sagas.length,
     chaptersSeen: chaptersSeen.size,
     animeSeen: animeSeen.size,
-    bounty,
-    rank: pirateRank(bounty),
     crew,
     crewAsOf: lastPassed?.title ?? null,
   };
 });
+
+/** "12 Jan" (adds the year when it is not this year). */
+export function fmtDate(t: number): string {
+  const d = new Date(t);
+  const sameYear = d.getFullYear() === new Date().getFullYear();
+  return d.toLocaleDateString(undefined, sameYear ? { day: 'numeric', month: 'short' } : { day: 'numeric', month: 'short', year: 'numeric' });
+}

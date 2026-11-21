@@ -1,25 +1,18 @@
 import { For, Show, createMemo, createSignal } from 'solid-js';
-import type { Episode, EpisodeLinks } from '../types';
+import InfoLine from './InfoLine';
+import { fmtDate, stats } from '../lib/stats';
+import { isDone, notNeeded } from '../lib/alternatives';
+import { episodeInfo } from '../lib/format';
+import type { Episode } from '../types';
 import { isWatched, toggle } from '../store/progress';
 import { prefs } from '../store/prefs';
+import { LINK_LABEL, LINK_ORDER, primaryLinkKey } from '../lib/links';
 import { isConnected, rateEpisode, trakt } from '../store/trakt';
 import { splitTitle } from '../lib/guide';
 import { SERIESGRAPH_SHOW, firstAnimeEpisode, inlineMd } from '../lib/format';
 import { config } from '../config';
 import RatingBadge from './RatingBadge';
 import Tooltip from './Tooltip';
-
-const LINK_LABEL: Record<keyof EpisodeLinks, string> = {
-  onepace: 'One Pace',
-  stremio: 'Stremio',
-  netflix: 'Netflix',
-  mega: 'Mega',
-  drive: 'Drive',
-  nyaa: 'Nyaa',
-  other: 'Watch',
-};
-
-const ORDER: (keyof EpisodeLinks)[] = ['onepace', 'stremio', 'netflix', 'drive', 'mega', 'nyaa', 'other'];
 
 const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
 
@@ -49,28 +42,24 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
     return t && t !== displayed() ? t : null;
   };
 
-  const primaryKey = createMemo<keyof EpisodeLinks | null>(() => {
-    const l = props.ep.links;
-    const pref = prefs.streamSource;
-    const pref1 = pref === 'onepace' ? 'onepace' : 'stremio';
-    const pref2 = pref === 'onepace' ? 'stremio' : 'onepace';
-    const chain: (keyof EpisodeLinks)[] = [pref1, pref2, 'drive', 'mega', 'nyaa', 'netflix', 'other'];
-    for (const k of chain) if (l[k]) return k;
-    return null;
+  const primaryKey = createMemo(() => primaryLinkKey(props.ep.links, prefs.streamSource));
+
+  const secondaryKeys = createMemo(() => LINK_ORDER.filter((k) => props.ep.links[k] && k !== primaryKey()));
+
+  const info = createMemo(() => {
+    const parts = episodeInfo(props.ep);
+    const eta = stats().eta[props.ep.id];
+    return eta && !watched() ? [...parts, { label: 'ETA', value: fmtDate(eta), title: 'When you should get here at your current pace' }] : parts;
   });
-
-  const secondaryKeys = createMemo(() => ORDER.filter((k) => props.ep.links[k] && k !== primaryKey()));
-
-  const metaBits = () =>
-    [props.ep.pace, props.ep.anime ? `Anime ${props.ep.anime}` : null, props.ep.chapters ? `Ch. ${props.ep.chapters}` : null]
-      .filter(Boolean)
-      .join('  •  ');
+  // Covered by watching the alternative version instead, or an alternative you no longer need.
+  const viaAlternative = () => !watched() && isDone(props.ep.id);
+  const skippable = () => !watched() && notNeeded(props.ep.id);
 
   return (
     <li
       data-ep={props.ep.id}
       class="group/ep flex scroll-mt-40 items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
-      classList={{ 'opacity-55': watched() }}
+      classList={{ 'opacity-55': watched() || viaAlternative() || skippable() }}
     >
       <label class="mt-0.5 flex cursor-pointer items-center">
         <input
@@ -124,8 +113,12 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string }) {
           </Show>
         </div>
 
-        <Show when={metaBits()}>
-          <div class="mt-0.5 text-xs text-sea-500 dark:text-sea-400">{metaBits()}</div>
+        <InfoLine parts={info()} class="mt-0.5" />
+        <Show when={viaAlternative()}>
+          <div class="mt-0.5 text-[11px] font-semibold text-teal-700 dark:text-teal-300">✓ Done: you watched the alternative version</div>
+        </Show>
+        <Show when={skippable()}>
+          <div class="mt-0.5 text-[11px] font-semibold text-teal-700 dark:text-teal-300">Not needed: you watched the main version</div>
         </Show>
 
         <Show when={canRate() && (watched() || myRating())}>

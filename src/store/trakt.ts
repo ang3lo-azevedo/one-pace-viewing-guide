@@ -2,7 +2,7 @@ import { createStore } from 'solid-js/store';
 import { config, traktConfigured } from '../config';
 import { guide } from '../lib/guide';
 import type { Episode } from '../types';
-import { onWatchedChange, setMany } from './progress';
+import { onWatchedChange, progress, setMany } from './progress';
 
 const KEY = 'op-trakt-v1';
 const API = 'https://api.trakt.tv';
@@ -214,102 +214,46 @@ async function fetchUsername() {
 }
 
 // ---- episode mapping ---------------------------------------------------------
+// The mapping is computed at build time (scripts/fetch_trakt_ratings.py) and stored on each
+// episode: One Pace releases point at the Trakt "one-pace" show (`traktEpisode`), and
+// community cuts (Onigashima Paced, Kuma Cut / Shaved Egghead, One Piece Log) point at the
+// original anime episodes they cover on the "one-piece" show (`traktAnime`).
 
-/** Normalize an episode title for fuzzy comparison across data sources. */
-function norm(t: string): string {
-  if (!t) return '';
-  return t
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/\benter\b/g, '')
-    .replace(/\bthe\b/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim()
-    .replace(/\s+/g, ' ');
-}
+const ANIME_SHOW = 'one-piece';
 
 interface MapResult {
-  toTrakt: Map<string, number>; // our episode id -> trakt episode id
-  fromTrakt: Map<number, string>; // trakt episode id -> our episode id
-  bySeasonEp: Map<string, string>; // "<seasonNumber>:<episodeNumber>" -> our episode id
+  toTrakt: Map<string, number>; // our episode id -> One Pace trakt episode id
+  fromTrakt: Map<number, string>; // One Pace trakt episode id -> our episode id
+  bySeasonEp: Map<string, string>; // One Pace "<season>:<episode>" -> our episode id
+  toAnime: Map<string, [number, number, number][]>; // our id -> anime [season, number, trakt]
   matched: number;
   total: number;
 }
 
 let cachedMap: MapResult | null = null;
-let mapPromise: Promise<MapResult> | null = null;
 
-/** Build the Trakt episode map once (concurrent callers share the same request). */
 function getMap(): Promise<MapResult> {
   if (cachedMap) return Promise.resolve(cachedMap);
-  mapPromise ??= buildMap().finally(() => (mapPromise = null));
-  return mapPromise;
-}
-
-/**
- * Map our One Pace episodes to the Trakt "One Pace" show. Trakt's seasons are unnamed but
- * follow the same arc order, so we match primarily by normalized episode title (unique
- * titles only) and fall back to position (arc index + episode number) when an arc and its
- * aligned Trakt season have the same episode count.
- */
-async function buildMap(): Promise<MapResult> {
-  if (cachedMap) return cachedMap;
-
-  const r = await traktFetch(`/shows/${config.traktShowSlug}/seasons?extended=episodes`);
-  if (!r.ok) throw new Error(`Trakt show "${config.traktShowSlug}" not found (${r.status})`);
-  const seasons: any[] = await r.json();
-
-  // Global index of unique normalized titles.
-  const titleCount = new Map<string, number>();
-  const flat: { sn: number; en: number; tid: number; nt: string }[] = [];
-  for (const s of seasons)
-    for (const e of s.episodes || []) {
-      if (e.ids?.trakt == null) continue;
-      const nt = norm(e.title || '');
-      flat.push({ sn: s.number, en: e.number, tid: e.ids.trakt, nt });
-      titleCount.set(nt, (titleCount.get(nt) || 0) + 1);
-    }
-  const titleIdx = new Map<string, { sn: number; en: number; tid: number }>();
-  for (const f of flat) if (titleCount.get(f.nt) === 1) titleIdx.set(f.nt, f);
-
-  // Trakt episodes by number within each season, in season order.
-  const tSeasons = seasons.map((s) => {
-    const byNum = new Map<number, { en: number; tid: number }>();
-    for (const e of s.episodes || []) if (e.ids?.trakt != null) byNum.set(e.number, { en: e.number, tid: e.ids.trakt });
-    return { num: s.number, count: (s.episodes || []).length, byNum };
-  });
-
-  // Our onepace arcs in order.
-  const arcs: Episode[][] = [];
-  for (const sg of guide.sagas)
-    for (const nd of sg.nodes)
-      for (const g of nd.groups) if (g.kind === 'onepace' && !g.isAlternative) arcs.push(g.episodes);
-
   const toTrakt = new Map<string, number>();
-  const bySeasonEp = new Map<string, string>();
-  let total = 0;
-  arcs.forEach((eps, ai) => {
-    const ts = tSeasons[ai];
-    eps.forEach((e, ei) => {
-      total++;
-      let hit = titleIdx.get(norm(e.fullTitle || ''));
-      if (!hit && ts && ts.count === eps.length) {
-        const byn = ts.byNum.get(ei + 1);
-        if (byn) hit = { sn: ts.num, en: byn.en, tid: byn.tid };
-      }
-      if (hit) {
-        toTrakt.set(e.id, hit.tid);
-        bySeasonEp.set(`${hit.sn}:${hit.en}`, e.id);
-      }
-    });
-  });
-
   const fromTrakt = new Map<number, string>();
-  for (const [ours, tid] of toTrakt) fromTrakt.set(tid, ours);
-  cachedMap = { toTrakt, fromTrakt, bySeasonEp, matched: toTrakt.size, total };
+  const bySeasonEp = new Map<string, string>();
+  const toAnime = new Map<string, [number, number, number][]>();
+  let total = 0;
+  for (const s of guide.sagas)
+    for (const n of s.nodes)
+      for (const g of n.groups)
+        for (const e of g.episodes as Episode[]) {
+          if (e.links.onepace || e.canon) total++;
+          const t = e.traktEpisode;
+          if (t?.trakt) {
+            toTrakt.set(e.id, t.trakt);
+            fromTrakt.set(t.trakt, e.id);
+            bySeasonEp.set(`${t.season}:${t.number}`, e.id);
+          } else if (e.traktAnime?.length) toAnime.set(e.id, e.traktAnime);
+        }
+  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, matched: toTrakt.size + toAnime.size, total };
   setTrakt('mapped', Object.fromEntries([...toTrakt.keys()].map((k) => [k, true as const])));
-  return cachedMap;
+  return Promise.resolve(cachedMap);
 }
 
 // ---- sync --------------------------------------------------------------------
@@ -317,22 +261,33 @@ async function buildMap(): Promise<MapResult> {
 /** Last pull in this page session (not persisted, so each page load pulls once). */
 let lastPullAt = 0;
 
+async function completedSet(slug: string): Promise<Set<string>> {
+  const r = await traktFetch(`/shows/${slug}/progress/watched?hidden=false&specials=false`);
+  if (r.status === 404) return new Set();
+  if (!r.ok) throw new Error(`progress ${r.status}`);
+  const prog = await r.json();
+  const done = new Set<string>();
+  for (const season of prog.seasons || [])
+    for (const ep of season.episodes || []) if (ep.completed) done.add(`${season.number}:${ep.number}`);
+  return done;
+}
+
 /** Pull watched history from Trakt and mark matching episodes watched locally. */
 export async function pullFromTrakt(): Promise<void> {
   if (!isConnected()) return;
   setTrakt('status', 'syncing');
   try {
     const map = await getMap();
-    const r = await traktFetch(`/shows/${config.traktShowSlug}/progress/watched?hidden=false&specials=false`);
-    if (!r.ok) throw new Error(`progress ${r.status}`);
-    const prog = await r.json();
     const watchedIds: string[] = [];
-    for (const season of prog.seasons || [])
-      for (const ep of season.episodes || [])
-        if (ep.completed) {
-          const ourId = map.bySeasonEp.get(`${season.number}:${ep.number}`);
-          if (ourId) watchedIds.push(ourId);
-        }
+    for (const key of await completedSet(config.traktShowSlug)) {
+      const ourId = map.bySeasonEp.get(key);
+      if (ourId) watchedIds.push(ourId);
+    }
+    // A community cut counts as watched once every anime episode it covers is watched.
+    if (map.toAnime.size) {
+      const anime = await completedSet(ANIME_SHOW);
+      for (const [ourId, eps] of map.toAnime) if (eps.every(([s, n]) => anime.has(`${s}:${n}`))) watchedIds.push(ourId);
+    }
     // Silent: these came from Trakt, so they must not be pushed back.
     if (watchedIds.length) setMany(watchedIds, true, { silent: true });
     lastPullAt = Date.now();
@@ -346,18 +301,26 @@ export async function pullFromTrakt(): Promise<void> {
 
 async function sendHistory(ourIds: string[], watched: boolean, keepalive = false): Promise<number> {
   const map = await getMap();
-  const episodes = ourIds
-    .map((id) => map.toTrakt.get(id))
-    .filter((v): v is number => v != null)
-    .map((trakt) => ({ ids: { trakt } }));
-  if (!episodes.length) return 0;
+  const ids = new Set<number>();
+  for (const id of ourIds) {
+    const t = map.toTrakt.get(id);
+    if (t != null) ids.add(t);
+    for (const [, , tid] of map.toAnime.get(id) ?? []) ids.add(tid);
+  }
+  if (!watched) {
+    // Keep anime episodes that another still-watched cut also covers.
+    const changing = new Set(ourIds);
+    for (const [ourId, eps] of map.toAnime)
+      if (!changing.has(ourId) && progress.watched[ourId]) for (const [, , tid] of eps) ids.delete(tid);
+  }
+  if (!ids.size) return 0;
   const r = await traktFetch(watched ? '/sync/history' : '/sync/history/remove', {
     method: 'POST',
-    body: JSON.stringify({ episodes }),
+    body: JSON.stringify({ episodes: [...ids].map((trakt) => ({ ids: { trakt } })) }),
     keepalive,
   });
   if (!r.ok) throw new Error(`history ${r.status}`);
-  return episodes.length;
+  return ourIds.filter((id) => map.toTrakt.has(id) || map.toAnime.has(id)).length;
 }
 
 /** Push locally-watched episodes to Trakt history. */

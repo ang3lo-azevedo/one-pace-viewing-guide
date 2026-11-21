@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
-"""Add Trakt community ratings to src/data/data.json.
+"""Map guide episodes to Trakt and add Trakt community ratings (src/data/data.json).
 
-Fetches the Trakt "one-pace" show's episodes (public API, Client ID only) and copies each
-episode's Trakt rating + vote count onto the matching One Pace episode. Matching mirrors the
-app's mapper: by normalized episode title, with a positional fallback when an arc and its
-aligned Trakt season have the same episode count. Trakt ratings are sparse (many episodes
-have few or no votes), so only ratings with at least one vote are stored.
+Runs before every build (public API, Client ID only). Two Trakt shows are used:
+
+* "one-pace"  - the One Pace releases. Every guide entry with a onepace.net link is matched
+  by normalized episode title (unique titles only). Entries without a title match use the
+  episode number from their One Pace link, in the Trakt season their arc maps to (taken
+  from the arc's other matches, or inferred from the neighbouring arcs). Stored as
+  `traktEpisode` {season, number, trakt}, plus `traktRating`/`traktVotes` when the episode
+  has votes.
+* "one-piece" - the original anime. Canon-route entries that are not One Pace releases
+  (Onigashima Paced, Kuma Cut / Shaved Egghead, One Piece Log) are mapped to the anime
+  episodes they cover by absolute episode number. Stored as `traktAnime` [[season, number,
+  trakt], ...] so syncing marks those anime episodes.
+
+If Trakt cannot be reached the existing data is left untouched.
 
 Usage:  python3 -I scripts/fetch_trakt_ratings.py
-Run with -I so a stray local module can't shadow the standard library.
 """
 import json
 import os
@@ -16,17 +24,28 @@ import re
 import sys
 import unicodedata
 import urllib.request
+from collections import Counter, defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "src", "data", "data.json")
 CONFIG = os.path.join(ROOT, "src", "config.ts")
-SLUG = "one-pace"
+PACE_SHOW = "one-pace"
+ANIME_SHOW = "one-piece"
+
+# Hand-checked fixes, keyed by the One Pace link slug: (Trakt season, episode) or None to
+# leave an episode unmapped. Trakt's season layout differs from One Pace here, so neither
+# the title nor the number lines up on its own.
+OVERRIDES = {
+    "baratie-03": (5, 4),             # "The Oath" is Trakt's "The Vow"
+    "post-enies-lobby-01": (20, 1),   # Trakt S20 is ordered differently from One Pace
+    "post-enies-lobby-02": (20, 2),
+    "post-enies-lobby-03": None,      # no Trakt counterpart
+}
 
 
 def client_id():
     try:
-        text = open(CONFIG, encoding="utf-8").read()
-        m = re.search(r"traktClientId:\s*'([^']+)'", text)
+        m = re.search(r"traktClientId:\s*'([^']+)'", open(CONFIG, encoding="utf-8").read())
         if m:
             return m.group(1)
     except OSError:
@@ -40,16 +59,37 @@ def norm(t):
     t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()
     t = re.sub(r"\benter\b", "", t)
     t = re.sub(r"\bthe\b", "", t)
-    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]+", " ", t)).strip()
+    t = re.sub(r"\(extended\)", "", t)
+    return re.sub(r"[^a-z0-9]+", "", t)
 
 
-def fetch_seasons(cid):
+def anime_numbers(text):
+    out = []
+    for part in (text or "").replace("–", "-").replace("—", "-").split(","):
+        p = part.strip()
+        r = re.match(r"^(\d+)\s*-\s*(\d+)$", p)
+        if r:
+            a, b = int(r.group(1)), int(r.group(2))
+            if 0 <= b - a < 80:
+                out += list(range(a, b + 1))
+        elif p.isdigit():
+            out.append(int(p))
+    return out
+
+
+def fetch(cid, slug):
     req = urllib.request.Request(
-        f"https://api.trakt.tv/shows/{SLUG}/seasons?extended=full,episodes",
+        f"https://api.trakt.tv/shows/{slug}/seasons?extended=full,episodes",
         headers={"trakt-api-version": "2", "trakt-api-key": cid, "User-Agent": "one-pace-guide/1.0"},
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    with urllib.request.urlopen(req, timeout=60) as resp:
         return json.load(resp)
+
+
+def pace_key(ep):
+    """("wano", 32) from a onepace.net link like ...#wano-32."""
+    m = re.match(r"^(.*)-(\d+)$", ep["links"]["onepace"].split("#", 1)[1])
+    return (m.group(1), int(m.group(2))) if m else (None, None)
 
 
 def main():
@@ -58,55 +98,140 @@ def main():
         print("no Trakt client id (src/config.ts); skipping", file=sys.stderr)
         sys.exit(0)
     try:
-        seasons = fetch_seasons(cid)
+        pace = fetch(cid, PACE_SHOW)
+        anime = fetch(cid, ANIME_SHOW)
     except Exception as exc:
-        print(f"Trakt ratings skipped (fetch failed): {exc}", file=sys.stderr)
+        print(f"Trakt mapping skipped (fetch failed): {exc}", file=sys.stderr)
         sys.exit(0)
 
-    # Global unique-title index + per-season episodes.
-    counts = {}
+    data = json.load(open(DATA, encoding="utf-8"))
+    entries = [(e, g) for s in data["sagas"] for n in s["nodes"] for g in n["groups"] for e in g["episodes"]]
+    for e, _ in entries:
+        for k in ("traktEpisode", "traktAnime", "traktRating", "traktVotes"):
+            e.pop(k, None)
+
+    # ---- One Pace show -------------------------------------------------------
+    counts = Counter()
     flat = []
-    for s in seasons:
+    for s in pace:
+        if s["number"] == 0:
+            continue
         for e in s.get("episodes", []):
             n = norm(e.get("title"))
             flat.append((n, s["number"], e))
-            counts[n] = counts.get(n, 0) + 1
-    title_idx = {n: e for n, _, e in flat if counts[n] == 1}
-    season_eps = [{ "count": len(s.get("episodes", [])), "byNum": {e["number"]: e for e in s.get("episodes", [])} } for s in seasons]
+            counts[n] += 1
+    by_title = {n: (sn, e) for n, sn, e in flat if counts[n] == 1}
+    by_season = {s["number"]: {e["number"]: e for e in s.get("episodes", [])} for s in pace if s["number"] > 0}
 
-    data = json.load(open(DATA, encoding="utf-8"))
-    arcs = []
-    for s in data["sagas"]:
-        for n in s["nodes"]:
-            for g in n["groups"]:
-                if g["kind"] == "onepace" and not g["isAlternative"]:
-                    arcs.append(g["episodes"])
+    releases = [(e, g) for e, g in entries if (e["links"].get("onepace") or "").count("#") == 1 and pace_key(e)[0]]
+    used, match, skip = set(), {}, set()
+    for e, _ in releases:
+        slug = e["links"]["onepace"].split("#", 1)[1]
+        if slug in OVERRIDES:
+            if OVERRIDES[slug] is None:
+                skip.add(e["id"])
+            else:
+                sn, num = OVERRIDES[slug]
+                te = by_season[sn][num]
+                match[e["id"]] = (sn, te)
+                used.add(te["ids"]["trakt"])
+    for e, _ in releases:
+        if e["id"] in match or e["id"] in skip:
+            continue
+        hit = by_title.get(norm(e.get("fullTitle")))
+        if hit and hit[1]["ids"]["trakt"] not in used:
+            match[e["id"]] = hit
+            used.add(hit[1]["ids"]["trakt"])
 
-    applied = cleared = 0
-    for ai, eps in enumerate(arcs):
-        ts = season_eps[ai] if ai < len(season_eps) else None
-        for ei, ep in enumerate(eps):
-            te = title_idx.get(norm(ep.get("fullTitle")))
-            if te is None and ts and ts["count"] == len(eps):
-                te = ts["byNum"].get(ei + 1)
-            if te:
-                # Remember where the episode lives on Trakt, so the badge can link to it.
-                ep["traktEpisode"] = {"season": te.get("season"), "number": te.get("number")}
-            rating = te.get("rating") if te else None
-            votes = te.get("votes") if te else None
-            if rating and votes:
-                ep["traktRating"] = round(float(rating), 1)
-                ep["traktVotes"] = int(votes)
-                applied += 1
-            elif "traktRating" in ep:
-                del ep["traktRating"]
-                ep.pop("traktVotes", None)
-                cleared += 1
+    # Which Trakt season each arc lives in: majority of its title matches, otherwise the
+    # season right after the previous arc's (arcs and seasons share the same order).
+    votes = defaultdict(Counter)
+    arc_order = []
+    for e, _ in releases:
+        arc, _num = pace_key(e)
+        if arc not in arc_order:
+            arc_order.append(arc)
+        if e["id"] in match:
+            votes[arc][match[e["id"]][0]] += 1
+    arc_season, prev = {}, 0
+    taken = {v.most_common(1)[0][0] for v in votes.values()}
+    for arc in arc_order:
+        if votes[arc]:
+            arc_season[arc] = votes[arc].most_common(1)[0][0]
+        elif prev + 1 in by_season and prev + 1 not in taken:
+            arc_season[arc] = prev + 1
+        prev = arc_season.get(arc, prev)
 
-    data["meta"]["traktRatingsSource"] = f"Trakt (https://trakt.tv/shows/{SLUG})"
+    # Fill the gaps by number, using the numbering shift of the matched episodes around each
+    # gap (Trakt sometimes has an extra or missing episode in an arc). If the matched
+    # neighbours disagree on the shift, the episode is left unmapped rather than guessed.
+    by_arc = defaultdict(list)
+    for e, _ in releases:
+        by_arc[pace_key(e)[0]].append(e)
+    for arc, eps in by_arc.items():
+        sn = arc_season.get(arc)
+        season = by_season.get(sn, {})
+        if not season:
+            continue
+        offsets = {}
+        for e in eps:
+            if e["id"] in match and match[e["id"]][0] == sn:
+                offsets[e["id"]] = match[e["id"]][1]["number"] - pace_key(e)[1]
+        for i, e in enumerate(eps):
+            if e["id"] in match or e["id"] in skip:
+                continue
+            below = next((offsets[x["id"]] for x in reversed(eps[:i]) if x["id"] in offsets), None)
+            above = next((offsets[x["id"]] for x in eps[i + 1:] if x["id"] in offsets), None)
+            if below is not None and above is not None and below != above:
+                continue
+            if below is None and above not in (None, 0):
+                continue  # gap at the start of an arc: only trust an unshifted numbering
+            shift = below if below is not None else above
+            if shift is None:
+                if len(eps) != len(season):
+                    continue
+                shift = 0
+            te = season.get(pace_key(e)[1] + shift)
+            if te and te["ids"]["trakt"] not in used:
+                match[e["id"]] = (sn, te)
+                used.add(te["ids"]["trakt"])
+
+    rated = 0
+    for e, _ in releases:
+        if e["id"] not in match:
+            continue
+        sn, te = match[e["id"]]
+        e["traktEpisode"] = {"season": sn, "number": te["number"], "trakt": te["ids"]["trakt"]}
+        if te.get("rating") and te.get("votes"):
+            e["traktRating"] = round(float(te["rating"]), 1)
+            e["traktVotes"] = int(te["votes"])
+            rated += 1
+
+    # ---- original anime (community cuts) -------------------------------------
+    abs_index = {}
+    for s in anime:
+        if s["number"] == 0:
+            continue
+        for e in s.get("episodes", []):
+            if e.get("number_abs"):
+                abs_index[e["number_abs"]] = [s["number"], e["number"], e["ids"]["trakt"]]
+    cuts = 0
+    for e, g in entries:
+        if not e["canon"] or "traktEpisode" in e:
+            continue
+        nums = anime_numbers(e.get("anime"))
+        if nums and all(n in abs_index for n in nums):
+            e["traktAnime"] = [abs_index[n] for n in nums]
+            cuts += 1
+
+    data["meta"]["traktRatingsSource"] = f"Trakt (https://trakt.tv/shows/{PACE_SHOW})"
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"Trakt ratings applied to {applied} episodes (cleared {cleared})")
+    missing = [e["title"] for e, _ in releases if e["id"] not in match]
+    print(f"Trakt: {len(match)}/{len(releases)} One Pace releases mapped, {rated} with ratings, "
+          f"{cuts} community cuts mapped to the original anime")
+    if missing:
+        print("  unmapped:", "; ".join(t[:30] for t in missing))
 
 
 if __name__ == "__main__":

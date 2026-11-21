@@ -33,7 +33,9 @@ export interface Episode {
   traktRating?: number;
   traktVotes?: number;
   /** Where this episode lives on the Trakt One Pace show. */
-  traktEpisode?: { season: number; number: number };
+  traktEpisode?: { season: number; number: number; trakt: number };
+  /** Original anime episodes this community cut covers on Trakt: [season, number, trakt id]. */
+  traktAnime?: [number, number, number][];
 }
 
 export type GroupKind =
@@ -97,7 +99,7 @@ export interface Saga {
 }
 
 export interface GuideMeta {
-  generatedFrom: string;
+  generatedFrom?: string;
   generatedAt: string;
   tiers: Tier[];
   sagaCount: number;

@@ -72,11 +72,39 @@ export function extraCategory(group: Group, node: GuideNode): ExtraCategory | nu
 }
 
 /** Episode ids in watch order (document order). */
-export const orderedIds: string[] = flatEpisodes.map((f) => f.ep.id);
+/**
+ * Watch order as shown on screen: sections nested in another one (e.g. the Monsters special
+ * in the middle of Thriller Bark) come right after the episode they follow.
+ */
+export const displayIndex = new Map<string, number>();
+{
+  let k = 0;
+  for (const saga of guide.sagas)
+    for (const node of saga.nodes) {
+      const ids = new Set(node.groups.flatMap((g) => g.episodes.map((e) => e.id)));
+      const inline = new Map<string, Group[]>();
+      const top: Group[] = [];
+      for (const g of node.groups)
+        if (g.afterEpisode && ids.has(g.afterEpisode)) inline.set(g.afterEpisode, [...(inline.get(g.afterEpisode) ?? []), g]);
+        else top.push(g);
+      const visit = (g: Group) => {
+        for (const e of g.episodes) {
+          displayIndex.set(e.id, k++);
+          for (const child of inline.get(e.id) ?? []) visit(child);
+        }
+      };
+      top.forEach(visit);
+    }
+}
+export const displayOrder: FlatEpisode[] = [...flatEpisodes].sort(
+  (a, b) => (displayIndex.get(a.ep.id) ?? 0) - (displayIndex.get(b.ep.id) ?? 0),
+);
+
+export const orderedIds: string[] = displayOrder.map((f) => f.ep.id);
 
 const firstIdxOfNode = new Map<string, number>();
 const firstIdxOfSaga = new Map<string, number>();
-flatEpisodes.forEach((f, i) => {
+displayOrder.forEach((f, i) => {
   if (!firstIdxOfNode.has(f.node.uid)) firstIdxOfNode.set(f.node.uid, i);
   if (!firstIdxOfSaga.has(f.saga.id)) firstIdxOfSaga.set(f.saga.id, i);
 });
@@ -126,18 +154,18 @@ export function kindLabel(kind: string): string {
 
 /** Color accent per group kind (tailwind text/border friendly hex). */
 const KIND_COLORS: Record<string, string> = {
-  onepace: '#38bdf8',
-  onigashima: '#38bdf8',
-  'kuma-shaved': '#38bdf8',
+  onepace: '#0ea5e9',
+  onigashima: '#0ea5e9',
+  'kuma-shaved': '#0ea5e9',
   netflix: '#e50914',
   funpace: '#a855f7',
-  original: '#94a3b8',
-  'original-continuation': '#94a3b8',
+  original: '#64748b',
+  'original-continuation': '#64748b',
   log: '#f59e0b',
-  movie: '#f4d35e',
-  special: '#2dd4bf',
+  movie: '#d97706',
+  special: '#0d9488',
   filler: '#64748b',
-  theatre: '#2dd4bf',
+  theatre: '#0d9488',
   upcoming: '#64748b',
   other: '#64748b',
 };

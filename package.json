@@ -4,13 +4,11 @@
   "description": "Interactive One Pace viewing guide with progress tracking, filtering, and search.",
   "type": "module",
   "scripts": {
-    "data": "python3 -I scripts/parse_md_to_json.py",
-    "enrich": "python3 -I scripts/enrich_from_md.py",
     "ratings": "python3 -I scripts/fetch_ratings.py",
     "dev": "vite",
     "trakt-ratings": "python3 -I scripts/fetch_trakt_ratings.py",
     "prebuild": "(python3 -I scripts/fetch_ratings.py || true) && (python3 -I scripts/fetch_trakt_ratings.py || true)",
-    "build": "tsc --noEmit && vite build",
+    "build": "python3 -I scripts/check_ids.py && tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "license": "MIT",

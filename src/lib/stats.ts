@@ -123,6 +123,11 @@ export const stats = createMemo(() => {
   const chaptersSeen = new Set<number>();
   const animeAll = new Set<number>();
 
+  // Everything in your list by kind (main route + each kind of extra), with time watched.
+  const kinds: Record<string, { label: string; watched: number; total: number; minWatched: number; minTotal: number }> = {
+    main: { label: 'Main route', watched: 0, total: 0, minWatched: 0, minTotal: 0 },
+  };
+  for (const [k, label] of EXTRA_KINDS) kinds[k] = { label, watched: 0, total: 0, minWatched: 0, minTotal: 0 };
   const extras: Record<string, { label: string; watched: number; total: number; minLeft: number }> = {};
   for (const [k, label] of EXTRA_KINDS) extras[k] = { label, watched: 0, total: 0, minLeft: 0 };
 
@@ -167,6 +172,15 @@ export const stats = createMemo(() => {
     }
 
     if (!episodeIncluded(f.ep, f.group, f.node)) continue;
+    const kind = kinds[cat ?? 'main'];
+    if (kind) {
+      kind.total++;
+      kind.minTotal += min;
+      if (done) {
+        kind.watched++;
+        kind.minWatched += min;
+      }
+    }
     selTotal++;
     selMinTotal += min;
     if (f.ep.canon) for (const n of numbers(f.ep.anime)) selAnime.add(n);
@@ -261,6 +275,7 @@ export const stats = createMemo(() => {
     perNode,
     perGroup,
     extras: EXTRA_KINDS.map(([k]) => ({ key: k, ...extras[k] })),
+    kinds: ['main', ...EXTRA_KINDS.map(([k]) => k)].map((k) => ({ key: k, ...kinds[k] })).filter((k) => k.total > 0),
     // pace and finish estimates (null / empty without recent watching)
     pacePerDay,
     historyPace,

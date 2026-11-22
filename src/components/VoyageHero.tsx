@@ -338,10 +338,24 @@ export default function VoyageHero() {
 
       <FinishLine />
 
-      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         <Panel title="Watched" accent="text-accent-600 dark:text-accent-400">
-          <Big value={fmtSpan(s().minWatched)} label={`of ${fmtSpan(s().minTotal)} in total`} color="text-accent-600 dark:text-accent-300" />
-          <Row label="One Pace episodes" value={`${s().onePaceWatched} / ${s().onePaceTotal}`} title="One Pace's own numbered episodes" />
+          <Big
+            value={fmtSpan(s().minWatched)}
+            label={`of ${fmtSpan(s().minTotal)} · ${s().selWatched} of ${s().selTotal} entries`}
+            color="text-accent-600 dark:text-accent-300"
+          />
+          <For each={s().kinds}>
+            {(k) => (
+              <Row
+                label={k.label}
+                value={k.minWatched > 0 ? `${k.watched}/${k.total} · ${fmtSpan(k.minWatched)}` : `${k.watched}/${k.total}`}
+                title={`${fmtSpan(k.minWatched)} of ${fmtSpan(k.minTotal)} watched`}
+              />
+            )}
+          </For>
+          <Row label="One Pace episodes" value={`${s().onePaceWatched}/${s().onePaceTotal}`} title="One Pace's own numbered releases (part of the main route)" />
+          <div class="mt-1 text-[10px] text-sea-400">Alternative versions are optional and not counted.</div>
         </Panel>
 
         <Panel title="Saved vs full anime" accent="text-teal-700 dark:text-teal-300">
@@ -359,18 +373,6 @@ export default function VoyageHero() {
           </div>
         </Panel>
 
-        <Panel title="Extras" accent="text-amber-700 dark:text-amber-300">
-          <For each={s().extras}>
-            {(x) => (
-              <Row
-                label={x.label}
-                value={x.total ? `${x.watched}/${x.total}` : '-'}
-                title={x.minLeft ? `${fmtSpan(x.minLeft)} left` : undefined}
-              />
-            )}
-          </For>
-          <div class="mt-1 text-[10px] text-sea-400">Alternative versions are optional and not counted.</div>
-        </Panel>
       </div>
 
       <Show when={s().crew.length}>

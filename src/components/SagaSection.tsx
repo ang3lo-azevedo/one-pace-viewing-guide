@@ -54,7 +54,7 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
       data-open-key={open() ? `saga:${props.saga.id}` : undefined}
       data-open-title={props.saga.title}
     >
-      <div class="group flex items-center gap-3 rounded-xl border border-sea-200 bg-white px-3 py-3 shadow-sm dark:border-sea-800 dark:bg-sea-900 sm:px-4">
+      <div class="group flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl sm:flex-nowrap border border-sea-200 bg-white px-3 py-3 shadow-sm dark:border-sea-800 dark:bg-sea-900 sm:px-4">
         <div
           role="button"
           tabindex="0"
@@ -97,7 +97,10 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
           </div>
         </div>
 
-        <div class="flex shrink-0 flex-col gap-1">
+        <div class="flex w-full shrink-0 items-center gap-1 pl-[2.75rem] sm:w-auto sm:flex-col sm:pl-0">
+          <span class="mr-auto text-[11px] font-semibold tabular-nums text-sea-500 sm:hidden dark:text-sea-400">
+            {Math.round(prog()?.pct ?? 0)}% · {prog()?.watched ?? 0}/{prog()?.total ?? 0}
+          </span>
           <button
             class="chip border-sea-300 text-[10px] text-sea-500 hover:border-strawhat-500 hover:text-strawhat-500 dark:border-sea-600 dark:text-sea-300"
             onClick={() => confirmBulk(sagaIds(), !allSagaWatched(), `in ${props.saga.title}`)}

@@ -1,5 +1,6 @@
 import { For, Show, createSignal, onCleanup, onMount } from 'solid-js';
-import { prefs, setPrefs, setVersionPref, type Prefs } from '../store/prefs';
+import { prefs, setPrefs, setVersion, type Prefs } from '../store/prefs';
+import { VERSION_SETS } from '../lib/versions';
 
 interface Option<T> {
   value: T;
@@ -47,7 +48,7 @@ export default function SettingsMenu() {
   onCleanup(() => document.removeEventListener('click', onDocClick));
 
   return (
-    <div class="relative shrink-0" ref={root}>
+    <div class="shrink-0 sm:relative" ref={root}>
       <button
         class="chip border-sea-600 font-semibold text-sea-200 hover:border-accent-400 hover:text-accent-400"
         onClick={() => setOpen(!open())}
@@ -57,27 +58,19 @@ export default function SettingsMenu() {
         Settings ▾
       </button>
       <Show when={open()}>
-        <div class="absolute right-0 z-40 mt-2 w-80 max-w-[calc(100vw-1.5rem)] space-y-3.5 rounded-xl border border-sea-700 bg-sea-900 p-3 text-sm text-sea-100 shadow-xl">
-          <Choice<Prefs['fishmanVersion']>
-            label="Fish-Man Island"
-            value={prefs.fishmanVersion}
-            onPick={(v) => setVersionPref('fishmanVersion', v)}
-            options={[
-              { value: 'log', label: 'One Piece Log', title: 'The official 21-episode remaster' },
-              { value: 'onepace', label: 'One Pace', title: 'The One Pace edit (Return to Sabaody and Fish-Man Island)' },
-            ]}
-            hint="The other version stays listed as an optional alternative."
-          />
-          <Choice<Prefs['fillerVersion']>
-            label="Filler (G-8, Boat Piece)"
-            value={prefs.fillerVersion}
-            onPick={(v) => setVersionPref('fillerVersion', v)}
-            options={[
-              { value: 'funpace', label: 'Fun Pace', title: 'Paced cuts of the filler' },
-              { value: 'original', label: 'Original anime', title: 'The full original anime episodes' },
-            ]}
-            hint="To skip filler entirely, turn off Filler & Fun Pace under Filters."
-          />
+        <div class="absolute inset-x-3 z-40 mt-2 sm:inset-x-auto sm:right-0 max-h-[75vh] sm:w-80 space-y-3.5 overflow-y-auto rounded-xl border border-sea-700 bg-sea-900 p-3 text-sm text-sea-100 shadow-xl">
+          <div class="text-[11px] leading-snug text-sea-400">Which version is your main route. The others stay listed as optional alternatives.</div>
+          <For each={VERSION_SETS}>
+            {(set) => (
+              <Choice<string>
+                label={set.label}
+                value={prefs.versions[set.key]}
+                onPick={(v) => setVersion(set.key, v)}
+                options={set.options}
+              />
+            )}
+          </For>
+          <div class="text-[11px] leading-snug text-sea-400">To skip filler entirely, turn off Filler &amp; Fun Pace under Filters.</div>
           <Choice<Prefs['liveActionPlacement']>
             label="Live Action"
             value={prefs.liveActionPlacement}

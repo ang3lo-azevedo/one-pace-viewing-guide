@@ -13,7 +13,7 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 - Progress dashboard: canon progress, sagas cleared, hours watched and remaining.
 - Hide extras toggle (hide or show Movies, OVAs, Specials, Live Action, Fun Pace).
 - Separate Hide non-canon toggle (the Live Action and canon specials are extras but stay), with Extra and Non-canon tags on every entry.
-- Settings menu: One Piece Log or One Pace for Fish-Man Island, Fun Pace or the original anime for filler (G-8, Boat Piece), and Live Action placement (next to each arc, all after Post-Enies Lobby, or all after Thriller Bark).
+- Settings menu, also shown inside each affected section: pick the version of Fish-Man Island (One Piece Log or One Pace), The Adventures of the Straw Hats, G-8 and Boat Piece (Fun Pace or original anime), and where to watch Strong World (after Thriller Bark or after Post-War); Live Action placement (next to each arc, after Post-Enies Lobby, or after Thriller Bark).
 - Egghead and Elbaph inside the Final Saga or as separate sections, and whether Catch up includes extras (also in Settings).
 - Search across titles, anime episode numbers and manga chapters.
 - SeriesGraph rating badges and a rating-tier filter.
@@ -21,6 +21,7 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 - Abbreviated titles that reveal the full title on hover or focus, to avoid spoilers.
 - Responsive layout with light and dark themes.
 - Continue watching: your next unwatched episode, with watch, mark watched and jump-to buttons.
+- Rate an episode on Trakt right after marking it watched, from the list or the Continue watching card. Entries with few Trakt votes show the Trakt rating of the anime episodes they cover.
 - Finish estimates at your recent pace (or Trakt history, or a pace you pick or type) for the whole list and every saga, arc and episode; long times shown in days and finish dates as weeks or months away; progress percentages by watch time.
 - Counters for movies, specials, Live Action, filler and original anime. Alternative versions are optional and count the main version as done.
 - Installable as an app (PWA) and usable offline once loaded.

@@ -1,6 +1,7 @@
 import { For, Show } from 'solid-js';
 import { guide } from '../lib/guide';
-import { prefs, setPrefs, setVersionPref, type Prefs } from '../store/prefs';
+import { prefs, setPrefs, setVersion, type Prefs } from '../store/prefs';
+import { versionSet } from '../lib/versions';
 
 interface Option<T> {
   value: T;
@@ -39,43 +40,30 @@ export function InlineChoice<T>(props: { label: string; options: Option<T>[]; va
   );
 }
 
-const versionsByUid = new Map<string, Set<string>>();
+const versionsByUid = new Map<string, string[]>();
 for (const s of guide.sagas)
   for (const n of s.nodes) {
-    const v = new Set(n.groups.flatMap((g) => (g.version ? [g.version.split(':')[0]] : [])));
-    if (v.size) versionsByUid.set(n.uid, v);
+    const keys = new Set([n.version, ...n.groups.map((g) => g.version)].filter(Boolean).map((v) => v!.split(':')[0]));
+    if (keys.size) versionsByUid.set(n.uid, [...keys]);
   }
 
-/** Version choices for the arc they affect (Fish-Man Island, G-8, Boat Piece). */
+/** Version choices for the section they affect (Fish-Man Island, G-8, Strong World...). */
 export default function VersionPicker(props: { node: { uid: string } }) {
-  const sets = () => versionsByUid.get(props.node.uid);
   return (
-    <Show when={sets()}>
-      <Show when={sets()!.has('fishman')}>
-        <InlineChoice<Prefs['fishmanVersion']>
-          label="Watching"
-          value={prefs.fishmanVersion}
-          onPick={(v) => setVersionPref('fishmanVersion', v)}
-          options={[
-            { value: 'log', label: 'One Piece Log', title: 'The official 21-episode remaster' },
-            { value: 'onepace', label: 'One Pace', title: 'The One Pace edit' },
-          ]}
-          hint="Also in Settings. The other version stays as an alternative."
-        />
-      </Show>
-      <Show when={sets()!.has('filler')}>
-        <InlineChoice<Prefs['fillerVersion']>
-          label="Watching"
-          value={prefs.fillerVersion}
-          onPick={(v) => setVersionPref('fillerVersion', v)}
-          options={[
-            { value: 'funpace', label: 'Fun Pace', title: 'Paced cut of the filler' },
-            { value: 'original', label: 'Original anime', title: 'The full original anime episodes' },
-          ]}
-          hint="Also in Settings. Applies to all filler with a Fun Pace cut."
-        />
-      </Show>
-    </Show>
+    <For each={versionsByUid.get(props.node.uid) ?? []}>
+      {(key) => {
+        const set = versionSet.get(key)!;
+        return (
+          <InlineChoice<string>
+            label={key === 'strongworld' ? 'Watch it' : 'Watching'}
+            value={prefs.versions[key]}
+            onPick={(v) => setVersion(key, v)}
+            options={set.options}
+            hint="Also in Settings. The other version stays as an alternative."
+          />
+        );
+      }}
+    </For>
   );
 }
 

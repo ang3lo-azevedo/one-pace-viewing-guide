@@ -1,6 +1,7 @@
 import { createStore } from 'solid-js/store';
 import { createEffect, createRoot } from 'solid-js';
 import { saveView } from '../lib/restore';
+import { readVersions, type Versions } from '../lib/versions';
 
 const KEY = 'op-prefs-v1';
 
@@ -33,10 +34,8 @@ export interface Prefs {
   splitFinalSaga: boolean;
   /** "Catch up" also marks the extras (films, specials, Live Action, filler) before that point. */
   catchUpExtras: boolean;
-  /** Fish-Man Island: the One Piece Log remaster or the One Pace edit (the other becomes the alternative). */
-  fishmanVersion: 'log' | 'onepace';
-  /** Filler with a paced cut (G-8, Boat Piece): Fun Pace or the original anime episodes. */
-  fillerVersion: 'funpace' | 'original';
+  /** Picked version per section (Fish-Man Island, G-8, Strong World...), see lib/versions.ts. */
+  versions: Versions;
   theme: Theme;
 }
 
@@ -54,8 +53,7 @@ const DEFAULTS: Prefs = {
   liveActionPlacement: 'arc',
   splitFinalSaga: false,
   catchUpExtras: true,
-  fishmanVersion: 'log',
-  fillerVersion: 'funpace',
+  versions: readVersions({}),
   theme: 'dark',
 };
 
@@ -64,7 +62,7 @@ function load(): Prefs {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...DEFAULTS };
     const parsed = JSON.parse(raw);
-    return { ...DEFAULTS, ...parsed, search: '' }; // never persist search text as active
+    return { ...DEFAULTS, ...parsed, versions: readVersions(parsed), search: '' }; // never persist search text as active
   } catch {
     return { ...DEFAULTS };
   }
@@ -104,13 +102,13 @@ export function toggleExtra(cat: ExtraCategory) {
   setPrefs('hiddenExtras', cur.includes(cat) ? cur.filter((c) => c !== cat) : [...cur, cat]);
 }
 
-/** Change a setting that reshapes the guide data (applied at load), then reload. */
-export function setVersionPref<K extends 'fishmanVersion' | 'fillerVersion'>(key: K, value: Prefs[K]) {
-  if (prefs[key] === value) return;
-  setPrefs(key, value);
+/** Change a version (it reshapes the guide data, applied at load), then reload keeping your place. */
+export function setVersion(key: string, value: string) {
+  if (prefs.versions[key] === value) return;
+  setPrefs('versions', key, value);
   saveView();
   try {
-    localStorage.setItem(KEY, JSON.stringify({ ...prefs, [key]: value }));
+    localStorage.setItem(KEY, JSON.stringify({ ...prefs, versions: { ...prefs.versions, [key]: value } }));
   } catch {
     /* ignore */
   }

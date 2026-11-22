@@ -23,7 +23,7 @@ const SOURCE_NAME: Record<string, string> = {
   'sheet-average': "the project's spreadsheet (average for the arc)",
 };
 
-const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
+export const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
 
 /** Section kinds whose star rating is not a SeriesGraph One Piece anime rating. */
 const NOT_SERIESGRAPH = new Set(['netflix', 'movie', 'upcoming', 'original-continuation']);
@@ -48,7 +48,11 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   const traktHref = () => {
     if (props.ep.traktMovie) return `https://trakt.tv/movies/${props.ep.traktMovie.slug}`;
     const t = props.ep.traktEpisode;
-    return t ? `https://trakt.tv/shows/${t.show ?? config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}` : null;
+    // Rated from the anime: open the first anime episode it covers.
+    const a = props.ep.traktAnime?.[0];
+    if (props.ep.traktRatingFrom === 'anime' && a) return `https://trakt.tv/shows/one-piece/seasons/${a[0]}/episodes/${a[1]}`;
+    if (t) return `https://trakt.tv/shows/${t.show ?? config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}`;
+    return a ? `https://trakt.tv/shows/one-piece/seasons/${a[0]}/episodes/${a[1]}` : null;
   };
   const watched = () => isWatched(props.ep.id);
   const [rating, setRating] = createSignal(false);
@@ -90,7 +94,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   return (
     <li
       data-ep={props.ep.id}
-      class="group/ep flex scroll-mt-40 items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
+      class="group/ep flex scroll-mt-40 flex-wrap items-start gap-x-3 gap-y-1.5 rounded-lg px-2 py-2 sm:flex-nowrap transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
       classList={{ 'opacity-55': watched() || viaAlternative() || skippable() }}
     >
       <label class="mt-0.5 flex cursor-pointer items-center">
@@ -132,7 +136,11 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-0.5 rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24] hover:bg-[#ed1c24]/10"
-              title={`Trakt rating ${props.ep.traktRating} (${props.ep.traktVotes} vote${props.ep.traktVotes === 1 ? '' : 's'}). Open on Trakt`}
+              title={
+                props.ep.traktRatingFrom === 'anime'
+                  ? `Trakt rating ${props.ep.traktRating}: the original anime episodes this covers (${props.ep.traktVotes} votes). Open on Trakt`
+                  : `Trakt rating ${props.ep.traktRating} (${props.ep.traktVotes} vote${props.ep.traktVotes === 1 ? '' : 's'}). Open on Trakt`
+              }
             >
               Trakt {props.ep.traktRating?.toFixed(1)}
             </a>
@@ -235,7 +243,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
         </Show>
       </div>
 
-      <div class="flex shrink-0 flex-wrap items-center justify-end gap-1">
+      <div class="flex w-full shrink-0 flex-wrap items-center gap-1 pl-8 sm:w-auto sm:justify-end sm:pl-0">
         <Show when={primaryKey()}>
           {(k) => (
             <a href={props.ep.links[k()]!} target="_blank" rel="noopener noreferrer" class="btn-watch">

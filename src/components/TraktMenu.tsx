@@ -45,7 +45,7 @@ export default function TraktMenu() {
 
   return (
     <Show when={traktConfigured()}>
-      <div class="relative shrink-0" ref={root}>
+      <div class="shrink-0 sm:relative" ref={root}>
         <Show
           when={isConnected()}
           fallback={
@@ -71,7 +71,7 @@ export default function TraktMenu() {
         </Show>
 
         <Show when={open() && isConnected()}>
-          <div class="absolute right-0 z-40 mt-2 w-64 rounded-xl border border-sea-700 bg-sea-900 p-2 text-sm text-sea-100 shadow-xl">
+          <div class="absolute inset-x-3 z-40 mt-2 sm:inset-x-auto sm:right-0 sm:w-64 rounded-xl border border-sea-700 bg-sea-900 p-2 text-sm text-sea-100 shadow-xl">
             <div class="mb-2 flex items-center gap-2.5 rounded-lg bg-sea-950/60 p-2">
               <Avatar size="h-10 w-10" />
               <div class="min-w-0">

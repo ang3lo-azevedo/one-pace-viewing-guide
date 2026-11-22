@@ -43,7 +43,7 @@ export default function ProgressMenu() {
   const item = 'block w-full rounded-lg px-2 py-1.5 text-left hover:bg-sea-800';
 
   return (
-    <div class="relative shrink-0" ref={root}>
+    <div class="shrink-0 sm:relative" ref={root}>
       <button
         class="chip border-sea-600 font-semibold text-sea-200 hover:border-accent-400 hover:text-accent-400"
         onClick={() => setOpen(!open())}
@@ -53,7 +53,7 @@ export default function ProgressMenu() {
         Progress ▾
       </button>
       <Show when={open()}>
-        <div class="absolute right-0 z-40 mt-2 w-60 rounded-xl border border-sea-700 bg-sea-900 p-2 text-sm text-sea-100 shadow-xl">
+        <div class="absolute inset-x-3 z-40 mt-2 sm:inset-x-auto sm:right-0 sm:w-60 rounded-xl border border-sea-700 bg-sea-900 p-2 text-sm text-sea-100 shadow-xl">
           <div class="px-2 pb-2 text-xs text-sea-400">Progress is saved in this browser. Export it to move it to another device.</div>
           <button class={item} onClick={doExport}>
             ⭳ Export progress (.json)

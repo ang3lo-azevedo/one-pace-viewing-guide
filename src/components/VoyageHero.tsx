@@ -5,6 +5,8 @@ import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
 import { splitTitle } from '../lib/guide';
 import { setWatched } from '../store/progress';
+import { isConnected, rateEpisode, trakt } from '../store/trakt';
+import { RATING_WORDS } from './EpisodeRow';
 import { prefs, setPrefs } from '../store/prefs';
 import { EXTRA_LABELS } from '../lib/guide';
 
@@ -207,8 +209,44 @@ function FinishLine() {
   );
 }
 
+/** After "Mark watched" in the card: rate the episode you just finished on Trakt. */
+function RateJustWatched(props: { id: string; title: string; onDone: () => void }) {
+  const mine = () => trakt.myRatings[props.id];
+  return (
+    <div class="flex flex-wrap items-center gap-1.5 rounded-lg border border-[#ed1c24]/30 bg-[#ed1c24]/5 px-3 py-2">
+      <span class="w-full text-xs text-sea-600 sm:w-auto dark:text-sea-300">
+        {mine() ? 'Rated' : 'Rate'} <b class="text-sea-800 dark:text-sea-50">{props.title}</b> on Trakt
+      </span>
+      <div class="flex flex-wrap gap-1">
+        <For each={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}>
+          {(n) => (
+            <button
+              class="h-7 w-7 rounded text-xs font-bold tabular-nums transition-colors"
+              classList={{
+                'bg-[#ed1c24] text-white': mine() === n,
+                'bg-sea-200 text-sea-700 hover:bg-[#ed1c24]/70 hover:text-white dark:bg-sea-800 dark:text-sea-200': mine() !== n,
+              }}
+              title={RATING_WORDS[n]}
+              onClick={() => {
+                void rateEpisode(props.id, n);
+                setTimeout(props.onDone, 700);
+              }}
+            >
+              {n}
+            </button>
+          )}
+        </For>
+      </div>
+      <button class="ml-auto px-1 text-xs text-sea-400 hover:text-sea-700 dark:hover:text-sea-100" onClick={props.onDone}>
+        {mine() ? 'Done' : 'Skip'}
+      </button>
+    </div>
+  );
+}
+
 function ContinueWatching() {
   const next = nextUp;
+  const [justWatched, setJustWatched] = createSignal<{ id: string; title: string } | null>(null);
   const link = () => {
     const n = next();
     if (!n) return null;
@@ -221,6 +259,10 @@ function ContinueWatching() {
     return prefs.spoilerSafe ? splitTitle(n.ep.title).label : n.ep.title;
   };
   return (
+    <div class="space-y-2">
+    <Show when={justWatched()}>
+      {(j) => <RateJustWatched id={j().id} title={j().title} onDone={() => setJustWatched(null)} />}
+    </Show>
     <Show
       when={next()}
       fallback={<div class="text-sm font-semibold text-accent-600 dark:text-accent-400">You have watched everything in your selection.</div>}
@@ -244,7 +286,12 @@ function ContinueWatching() {
             </Show>
             <button
               class="chip border-sea-300 text-xs font-semibold text-sea-600 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-200"
-              onClick={() => setWatched(n().ep.id, true)}
+              onClick={() => {
+                const ep = n().ep;
+                setWatched(ep.id, true);
+                if (isConnected() && trakt.mapped[ep.id] && !trakt.myRatings[ep.id])
+                  setJustWatched({ id: ep.id, title: prefs.spoilerSafe ? splitTitle(ep.title).label : ep.title });
+              }}
               title="Mark this episode watched and move on to the next one"
             >
               ✓ Mark watched
@@ -259,6 +306,7 @@ function ContinueWatching() {
         </div>
       )}
     </Show>
+    </div>
   );
 }
 

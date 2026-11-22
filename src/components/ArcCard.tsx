@@ -86,7 +86,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
       data-open-key={open() ? `arc:${props.node.uid}` : undefined}
       data-open-title={props.node.title}
     >
-      <div class="flex items-start gap-2 px-3 py-3 sm:px-4" classList={{ 'border-b border-sea-200 dark:border-sea-800': open() }}>
+      <div class="flex flex-wrap items-start gap-x-2 gap-y-2 px-3 py-3 sm:flex-nowrap sm:px-4" classList={{ 'border-b border-sea-200 dark:border-sea-800': open() }}>
         <div
           role="button"
           tabindex="0"
@@ -126,8 +126,8 @@ export default function ArcCard(props: { node: FilteredNode }) {
           </div>
         </div>
 
-        <div class="flex shrink-0 flex-col items-end gap-1">
-          <span class="text-xs font-semibold tabular-nums text-sea-500 dark:text-sea-400">
+        <div class="flex w-full shrink-0 items-center gap-1 pl-6 sm:w-auto sm:flex-col sm:items-end sm:pl-0">
+          <span class="mr-auto text-xs font-semibold tabular-nums text-sea-500 sm:mr-0 dark:text-sea-400">
             {prog()?.watched ?? 0}/{prog()?.total ?? 0}
           </span>
           <div class="flex gap-1">

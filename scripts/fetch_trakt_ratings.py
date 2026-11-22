@@ -34,6 +34,10 @@ CONFIG = os.path.join(ROOT, "src", "config.ts")
 PACE_SHOW = "one-pace"
 ANIME_SHOW = "one-piece"
 LIVE_SHOW = "one-piece-2023"  # Netflix Live Action
+# Fewer votes than this on Trakt and the rating comes from the anime episodes instead.
+MIN_VOTES = 10
+# Kinds that are not anime episodes (or have their own Trakt entry).
+NO_ANIME_SYNC = {"netflix", "movie", "upcoming", "original-continuation"}
 
 # Hand-checked fixes, keyed by the One Pace link slug: (Trakt season, episode) or None to
 # leave an episode unmapped. Trakt's season layout differs from One Pace here, so neither
@@ -70,7 +74,8 @@ def norm(t):
 
 def anime_numbers(text):
     out = []
-    for part in (text or "").replace("–", "-").replace("—", "-").split(","):
+    text = re.sub(r"\[[^\]]*\]", "", text or "")  # "206 [207 ending]"
+    for part in text.replace("–", "-").replace("—", "-").split(","):
         p = part.strip()
         r = re.match(r"^(\d+)\s*-\s*(\d+)$", p)
         if r:
@@ -113,7 +118,7 @@ def main():
     data = json.load(open(DATA, encoding="utf-8"))
     entries = [(e, g) for s in data["sagas"] for n in s["nodes"] for g in n["groups"] for e in g["episodes"]]
     for e, _ in entries:
-        for k in ("traktEpisode", "traktAnime", "traktMovie", "traktRating", "traktVotes"):
+        for k in ("traktEpisode", "traktAnime", "traktMovie", "traktRating", "traktVotes", "traktRatingFrom"):
             e.pop(k, None)
 
     # ---- One Pace show -------------------------------------------------------
@@ -238,9 +243,19 @@ def main():
         for e in s.get("episodes", []):
             if e.get("number_abs"):
                 abs_index[e["number_abs"]] = [s["number"], e["number"], e["ids"]["trakt"]]
+    anime_eps = {}  # absolute number -> Trakt anime episode (with rating and votes)
+    for s in anime:
+        if s["number"] == 0:
+            continue
+        for e in s.get("episodes", []):
+            if e.get("number_abs"):
+                anime_eps[e["number_abs"]] = e
+    # Everything with anime episodes but no Trakt entry of its own (community cuts, One Pace
+    # releases Trakt lacks, fixed variants, Fun Pace, the original anime alternatives, specials)
+    # syncs through the anime episodes it covers.
     cuts = 0
     for e, g in entries:
-        if not e["canon"] or "traktEpisode" in e:
+        if "traktEpisode" in e or g["kind"] in NO_ANIME_SYNC:
             continue
         nums = anime_numbers(e.get("anime"))
         if nums and all(n in abs_index for n in nums):
@@ -272,13 +287,30 @@ def main():
             e["traktVotes"] = int(info["votes"])
         films += 1
 
+    # ---- ratings from the anime ---------------------------------------------------
+    # Few people rate One Pace episodes on Trakt. Entries without a Trakt rating of their own
+    # get the vote-weighted rating of the original anime episodes they cover.
+    # A rating from a handful of votes is noise, so the anime's wins below MIN_VOTES.
+    from_anime = 0
+    for e, g in entries:
+        if g["kind"] in NO_ANIME_SYNC or "traktMovie" in e or e.get("traktVotes", 0) >= MIN_VOTES:
+            continue
+        eps = [anime_eps[n] for n in anime_numbers(e.get("anime")) if n in anime_eps]
+        eps = [x for x in eps if x.get("rating") and x.get("votes")]
+        votes = sum(x["votes"] for x in eps)
+        if votes:
+            e["traktRating"] = round(sum(x["rating"] * x["votes"] for x in eps) / votes, 1)
+            e["traktVotes"] = votes
+            e["traktRatingFrom"] = "anime"
+            from_anime += 1
+
     data["meta"]["traktRatingsSource"] = f"Trakt (https://trakt.tv/shows/{PACE_SHOW})"
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     missing = [e["title"] for e, _ in releases if e["id"] not in match]
     print(f"Trakt: {len(match)}/{len(releases)} One Pace releases mapped, {rated} with ratings, "
           f"{cuts} community cuts mapped to the original anime, {films} movies/specials, "
-          f"{live_mapped} Live Action episodes")
+          f"{live_mapped} Live Action episodes, {from_anime} rated from the anime episodes they cover")
     if missing:
         print("  unmapped:", "; ".join(t[:30] for t in missing))
 

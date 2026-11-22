@@ -1,5 +1,6 @@
 import raw from '../data/data.json';
 import type { Episode, GuideData, Group, GuideNode, Saga, Tier } from '../types';
+import { readVersions, versionSet, type Versions } from './versions';
 
 export const guide = raw as unknown as GuideData;
 export const tiers: Tier[] = guide.meta.tiers;
@@ -12,31 +13,48 @@ guide.sagas.forEach((saga, si) =>
   }),
 );
 
-// Interchangeable versions (Settings): the picked one is the main route, the other becomes an
-// optional alternative. Applied once at load; changing the setting reloads the page.
-export type FishmanVersion = 'log' | 'onepace';
-export type FillerVersion = 'funpace' | 'original';
-export const versionChoice: { fishman: FishmanVersion; filler: FillerVersion } = (() => {
+// Interchangeable versions (Settings, see versions.ts): the picked one is the main route, the
+// others become optional alternatives. Applied once at load; changing one reloads the page.
+export const versionChoice: Versions = (() => {
   try {
-    const p = JSON.parse(localStorage.getItem('op-prefs-v1') ?? '{}');
-    return { fishman: p.fishmanVersion === 'onepace' ? 'onepace' : 'log', filler: p.fillerVersion === 'original' ? 'original' : 'funpace' };
+    return readVersions(JSON.parse(localStorage.getItem('op-prefs-v1') ?? '{}'));
   } catch {
-    return { fishman: 'log', filler: 'funpace' };
+    return readVersions({});
   }
 })();
+const isAltVersion = (version: string) => {
+  const [set, value] = version.split(':');
+  return versionChoice[set] !== value;
+};
+const altLabel = (label: string, alt: boolean) => {
+  const base = label.replace(/\s*\(Alternative\)\s*$/i, '');
+  return alt ? `${base} (Alternative)` : base;
+};
 for (const saga of guide.sagas)
-  for (const node of saga.nodes)
+  for (const node of saga.nodes) {
+    // A whole node can be a version (Strong World after Thriller Bark or after Post-War).
+    if (node.version) {
+      const alt = isAltVersion(node.version);
+      node.isAlternative = alt;
+      node.title = altLabel(node.title, alt);
+      for (const group of node.groups) {
+        group.isAlternative = alt;
+        group.label = altLabel(group.label, alt);
+        group.defaultOpen = !alt;
+      }
+    }
     for (const group of node.groups) {
       if (!group.version) continue;
-      const [choice, value] = group.version.split(':') as ['fishman' | 'filler', string];
-      const alt = versionChoice[choice] !== value;
+      const alt = isAltVersion(group.version);
       group.isAlternative = alt;
-      const base = group.label.replace(/\s*\(Alternative\)\s*$/i, '');
-      group.label = alt && !group.afterEpisode ? `${base} (Alternative)` : base;
-      if (!group.afterEpisode) group.defaultOpen = !alt;
-      // Fish-Man Island is canon either way: whichever version you watch is the canon route.
-      if (choice === 'fishman') for (const ep of group.episodes) ep.canon = !alt;
+      if (!group.afterEpisode) {
+        group.label = altLabel(group.label, alt);
+        group.defaultOpen = !alt;
+      }
+      // Sets like Fish-Man Island are canon whichever version you watch.
+      if (versionSet.get(group.version.split(':')[0])?.canon) for (const ep of group.episodes) ep.canon = !alt;
     }
+  }
 // The picked version comes first in its arc (stable, so everything else keeps its order).
 for (const saga of guide.sagas)
   for (const node of saga.nodes) {
@@ -84,7 +102,7 @@ export const EXTRA_LABELS: Record<ExtraCategory, string> = {
 export function extraCategory(group: Group, node: GuideNode): ExtraCategory | null {
   if (group.episodes.length && group.episodes.every((e) => e.canon)) return null;
   if (group.isAlternative || node.isAlternative) return 'alternatives';
-  if (group.version?.startsWith('filler:')) return 'filler';
+  if (group.version && versionSet.get(group.version.split(':')[0])?.filler) return 'filler';
   switch (group.kind) {
     case 'netflix':
       return 'liveAction';

@@ -82,6 +82,12 @@ h3 {
 .dark .card {
   @apply border-sea-800 shadow-none;
 }
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 .card-bg {
   background-color: var(--card-bg);
 }

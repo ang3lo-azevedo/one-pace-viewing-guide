@@ -7,7 +7,7 @@ import WhereBar from './WhereBar';
 function Toggle(props: { active: boolean; onClick: () => void; children: any; title?: string }) {
   return (
     <button
-      class="chip border text-xs font-semibold transition-colors"
+      class="chip shrink-0 whitespace-nowrap border text-xs font-semibold transition-colors"
       classList={{
         'border-strawhat-500 bg-strawhat-500/15 text-strawhat-500': props.active,
         'border-sea-300 text-sea-500 hover:border-sea-400 dark:border-sea-600 dark:text-sea-300': !props.active,
@@ -32,7 +32,7 @@ export default function FilterBar() {
     <div class="sticky top-0 z-20 border-b border-sea-200 bg-sea-50 dark:border-sea-800 dark:bg-sea-950">
       <div ref={bar} class="mx-auto max-w-5xl px-3 py-2.5 sm:px-4">
         <div class="flex flex-wrap items-center gap-2">
-          <div class="relative min-w-[11rem] flex-1">
+          <div class="relative min-w-0 flex-1 sm:min-w-[11rem]">
             <span class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-sea-400">⌕</span>
             <input
               type="search"
@@ -43,53 +43,8 @@ export default function FilterBar() {
             />
           </div>
 
-          <Toggle
-            active={prefs.canonOnly}
-            onClick={() => setPrefs('canonOnly', !prefs.canonOnly)}
-            title="Show only the main One Pace route: hides movies, specials, Live Action, filler, original anime and alternatives"
-          >
-            {prefs.canonOnly ? '● Extras hidden' : '○ Hide extras'}
-          </Toggle>
-
-          <Toggle
-            active={prefs.hideNonCanon}
-            onClick={() => setPrefs('hideNonCanon', !prefs.hideNonCanon)}
-            title="Hide what is not story canon (films, filler, most specials). Canon extras like the Live Action and Monsters stay."
-          >
-            {prefs.hideNonCanon ? '● Non-canon hidden' : '○ Hide non-canon'}
-          </Toggle>
-
-          <Toggle active={prefs.spoilerSafe} onClick={() => setPrefs('spoilerSafe', !prefs.spoilerSafe)} title="Hide episode subtitles; reveal on hover">
-            🛡 Spoiler-safe
-          </Toggle>
-
-          <div
-            class="inline-flex items-center gap-1 rounded-full border border-sea-300 p-0.5 dark:border-sea-600"
-            role="radiogroup"
-            aria-label="Default stream"
-            title="Where the red ▶ watch button on each episode opens"
-          >
-            <span class="pl-2 pr-0.5 text-[11px] font-semibold text-sea-400">Watch on</span>
-            <For each={[['onepace', 'One Pace'], ['stremio', 'Stremio']] as const}>
-              {([value, label]) => (
-                <button
-                  role="radio"
-                  aria-checked={prefs.streamSource === value}
-                  class="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors"
-                  classList={{
-                    'bg-strawhat-500 text-white shadow-sm': prefs.streamSource === value,
-                    'text-sea-400 hover:text-sea-700 dark:hover:text-sea-100': prefs.streamSource !== value,
-                  }}
-                  onClick={() => setPrefs('streamSource', value)}
-                >
-                  {label}
-                </button>
-              )}
-            </For>
-          </div>
-
           <button
-            class="chip text-xs font-semibold hover:border-sea-400"
+            class="chip shrink-0 text-xs font-semibold hover:border-sea-400"
             classList={{
               'border-accent-400 text-accent-500 dark:text-accent-300': anyFilter() && !showMore(),
               'border-sea-300 text-sea-500 dark:border-sea-600 dark:text-sea-300': !(anyFilter() && !showMore()),
@@ -99,6 +54,54 @@ export default function FilterBar() {
           >
             ⚙ Filters{anyFilter() ? ' •' : ''}
           </button>
+
+          {/* Phones: one row that scrolls sideways. Wider screens: inline with the rest. */}
+          <div class="no-scrollbar -mx-3 flex w-[calc(100%+1.5rem)] flex-nowrap items-center gap-2 overflow-x-auto px-3 sm:contents">
+          <Toggle
+              active={prefs.canonOnly}
+              onClick={() => setPrefs('canonOnly', !prefs.canonOnly)}
+              title="Show only the main One Pace route: hides movies, specials, Live Action, filler, original anime and alternatives"
+            >
+              {prefs.canonOnly ? '● Extras hidden' : '○ Hide extras'}
+            </Toggle>
+
+            <Toggle
+              active={prefs.hideNonCanon}
+              onClick={() => setPrefs('hideNonCanon', !prefs.hideNonCanon)}
+              title="Hide what is not story canon (films, filler, most specials). Canon extras like the Live Action and Monsters stay."
+            >
+              {prefs.hideNonCanon ? '● Non-canon hidden' : '○ Hide non-canon'}
+            </Toggle>
+
+            <Toggle active={prefs.spoilerSafe} onClick={() => setPrefs('spoilerSafe', !prefs.spoilerSafe)} title="Hide episode subtitles; reveal on hover">
+              🛡 Spoiler-safe
+            </Toggle>
+
+            <div
+              class="inline-flex shrink-0 items-center gap-1 rounded-full border border-sea-300 p-0.5 dark:border-sea-600"
+              role="radiogroup"
+              aria-label="Default stream"
+              title="Where the red ▶ watch button on each episode opens"
+            >
+              <span class="hidden pl-2 pr-0.5 text-[11px] font-semibold text-sea-400 sm:inline">Watch on</span>
+              <For each={[['onepace', 'One Pace'], ['stremio', 'Stremio']] as const}>
+                {([value, label]) => (
+                  <button
+                    role="radio"
+                    aria-checked={prefs.streamSource === value}
+                    class="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors"
+                    classList={{
+                      'bg-strawhat-500 text-white shadow-sm': prefs.streamSource === value,
+                      'text-sea-400 hover:text-sea-700 dark:hover:text-sea-100': prefs.streamSource !== value,
+                    }}
+                    onClick={() => setPrefs('streamSource', value)}
+                  >
+                    {label}
+                  </button>
+                )}
+              </For>
+            </div>
+          </div>
         </div>
 
         <Show when={showMore()}>

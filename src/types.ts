@@ -32,6 +32,8 @@ export interface Episode {
   /** Trakt community rating (only present when the episode has votes on Trakt). */
   traktRating?: number;
   traktVotes?: number;
+  /** "anime" when the Trakt rating is the vote-weighted rating of the anime episodes covered. */
+  traktRatingFrom?: 'anime';
   /** Where this episode lives on the Trakt One Pace show. */
   /** Trakt episode; `show` is set when it is not the One Pace show (e.g. the Live Action). */
   traktEpisode?: { season: number; number: number; trakt: number; show?: string };
@@ -80,7 +82,7 @@ export interface Group {
   afterEpisode?: string;
   /**
    * One of two interchangeable versions, as "<choice>:<value>" (e.g. "fishman:log",
-   * "filler:funpace"). The version you pick in Settings is the main one, the other becomes
+   * "g8:funpace"). The version you pick in Settings is the main one, the other becomes
    * the alternative.
    */
   version?: string;
@@ -100,6 +102,8 @@ export interface GuideNode {
   chapters: string | null;
   isAlternative: boolean;
   groups: Group[];
+  /** The whole node is one version of a set ("strongworld:post-war"), see Group.version. */
+  version?: string;
   /** Unique key assigned at load ("saga.node" indices); ids can repeat. */
   uid: string;
 }

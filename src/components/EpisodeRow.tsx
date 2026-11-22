@@ -66,7 +66,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   const links = () => ({ ...props.ep.links, ...(variant()?.links ?? {}) });
   const title = () => variant()?.title ?? props.ep.title;
   const parts = createMemo(() => splitTitle(title()));
-  const hideSub = () => prefs.spoilerSafe && parts().subtitle !== '';
+  const hideSub = () => prefs.spoilerSafe && parts().subtitle !== '' && !(prefs.revealWatched && watched());
   const displayed = () => (hideSub() ? parts().label : title());
   const tipText = () => {
     const t = props.ep.fullTitle;

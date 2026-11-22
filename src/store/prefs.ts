@@ -37,6 +37,8 @@ export interface Prefs {
   /** Picked version per section (Fish-Man Island, G-8, Strong World...), see lib/versions.ts. */
   versions: Versions;
   theme: Theme;
+  /** With spoiler-safe on: show the full titles of episodes you have watched. */
+  revealWatched: boolean;
   /** Where the page opens: at your last watched episode, or at the top. */
   openAt: 'last' | 'top';
   /** Offer to rate on Trakt right after marking an episode watched. */
@@ -65,6 +67,7 @@ const DEFAULTS: Prefs = {
   catchUpExtras: true,
   versions: readVersions({}),
   theme: 'dark',
+  revealWatched: true,
   openAt: 'last',
   askRate: true,
   confirmBulk: true,

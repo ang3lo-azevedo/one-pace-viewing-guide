@@ -122,8 +122,9 @@ export const EXTRA_LABELS: Record<ExtraCategory, string> = {
 
 /** Which hideable "extra" category an entry belongs to, or null for the canon route. */
 export function extraCategory(group: Group, node: GuideNode): ExtraCategory | null {
-  if (group.episodes.length && group.episodes.every((e) => e.canon)) return null;
+  // Alternatives first: a canon section can still be the version you did not pick.
   if (group.isAlternative || node.isAlternative) return 'alternatives';
+  if (group.episodes.length && group.episodes.every((e) => e.canon)) return null;
   if (group.version && versionSet.get(group.version.split(':')[0])?.filler) return 'filler';
   switch (group.kind) {
     case 'netflix':

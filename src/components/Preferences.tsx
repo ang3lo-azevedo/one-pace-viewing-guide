@@ -104,6 +104,18 @@ export default function Preferences() {
               ]}
               hint="Hides episode subtitles until you hover them."
             />
+            <Show when={prefs.spoilerSafe}>
+              <Choice<boolean>
+                label="Titles of watched episodes"
+                value={prefs.revealWatched}
+                onPick={(v) => setPrefs('revealWatched', v)}
+                options={[
+                  { value: true, label: 'Show' },
+                  { value: false, label: 'Keep hidden' },
+                ]}
+                hint="Once you mark an episode watched, its full title shows."
+              />
+            </Show>
             <Choice<Prefs['theme']>
               label="Theme"
               value={prefs.theme}

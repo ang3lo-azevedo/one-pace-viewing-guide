@@ -16,19 +16,19 @@ import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
 import { FinalSagaPicker } from './VersionPicker';
 import { isFinalSaga } from '../lib/layout';
-import { focusTarget, reveal } from '../lib/focus';
+import { homeSagaId, reveal } from '../lib/focus';
 import { wasOpen } from '../lib/restore';
 
 export default function SagaSection(props: { saga: FilteredSaga }) {
   // Open the saga with your last watched episode (or the first saga if you have none).
   const [open, setOpen] = createSignal(
     wasOpen(`saga:${props.saga.id}`) ??
-      (hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.saga.number === 1)),
+      (hasActiveFilters() || (homeSagaId ? homeSagaId === props.saga.id : props.saga.number === 1)),
   );
   // Open when an episode inside is revealed (page load or "Continue watching").
   // Opened only because it is the first saga (no progress yet): close it once your place
   // turns out to be elsewhere (progress synced from Trakt after load).
-  let openByDefault = open() && !focusTarget && !hasActiveFilters() && wasOpen(`saga:${props.saga.id}`) == null;
+  let openByDefault = open() && !homeSagaId && !hasActiveFilters() && wasOpen(`saga:${props.saga.id}`) == null;
   createEffect(() => {
     const r = reveal();
     if (!r) return;

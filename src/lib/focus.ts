@@ -64,12 +64,15 @@ function lastWatchedIndex(list: Row[]): number {
   return idx;
 }
 
-const initial = (() => {
-  if (prefs.openAt === 'top') return null;
+const lastWatchedTarget = (() => {
   const list = rows();
   const i = lastWatchedIndex(list);
   return i < 0 ? null : targetFor(list[i].ep.id, list);
 })();
+const initial = prefs.openAt === 'top' ? null : lastWatchedTarget;
+
+/** The saga you are in (even when the page opens at the top), or null without progress. */
+export const homeSagaId: string | null = lastWatchedTarget?.sagaId ?? null;
 
 /** The episode opened on page load (furthest watched), or null without progress. */
 export const focusTarget: FocusTarget | null = initial;

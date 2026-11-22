@@ -16,7 +16,7 @@ function Choice<T>(props: { label: string; hint?: string; options: Option<T>[]; 
         <For each={props.options}>
           {(o) => (
             <button
-              class="rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors"
+              class="rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors"
               classList={{
                 'border-accent-400 bg-accent-500 text-white': props.value === o.value,
                 'border-sea-600 text-sea-300 hover:border-accent-400 hover:text-accent-300': props.value !== o.value,

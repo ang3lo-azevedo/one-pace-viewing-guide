@@ -44,7 +44,12 @@ export interface Episode {
   /** Not part of the story canon (films, filler, most specials). */
   nonCanon?: boolean;
   /** Shown instead when filler is shown (e.g. the G-8 cut of Skypiea 25). */
-  withFiller?: { title: string; note: string };
+  /**
+   * A different cut to use when you watch a given kind of extra: Skypiea 25's G-8 cut with the
+   * filler, Loguetown 01 Extended with the Daddy the Father special. Overrides the title,
+   * adds a note and can swap links (e.g. a different torrent).
+   */
+  withExtra?: { when: 'filler' | 'specials'; title?: string; note?: string; links?: Partial<Episode['links']> };
   /** Real length in minutes (onepace.net, Trakt or the project's spreadsheet), if published. */
   runtime?: number;
   runtimeSource?: string;

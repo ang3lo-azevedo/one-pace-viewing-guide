@@ -3037,7 +3037,7 @@
                     "netflix": null,
                     "mega": null,
                     "drive": null,
-                    "nyaa": null,
+                    "nyaa": "https://nyaa.si/view/2179154",
                     "other": null
                   },
                   "canon": true,
@@ -3051,7 +3051,15 @@
                   "traktVotes": 1053,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
-                  "runtimeSource": "onepace"
+                  "runtimeSource": "onepace",
+                  "withExtra": {
+                    "when": "specials",
+                    "links": {
+                      "nyaa": "https://nyaa.si/view/2179021"
+                    },
+                    "title": "Loguetown 01 (Extended Cut) - Kitetsu III",
+                    "note": "You are watching Daddy the Father, so pick the \"Extended Cut\" of this episode on One Pace. It adds the Gold Roger bar scene that leads into it."
+                  }
                 },
                 {
                   "title": "Loguetown 02 - Luffy Is Dead",
@@ -3070,7 +3078,7 @@
                     "netflix": null,
                     "mega": null,
                     "drive": null,
-                    "nyaa": null,
+                    "nyaa": "https://nyaa.si/view/2179154",
                     "other": null
                   },
                   "canon": true,
@@ -3084,7 +3092,13 @@
                   "traktVotes": 684,
                   "traktRatingFrom": "anime",
                   "runtime": 19,
-                  "runtimeSource": "onepace"
+                  "runtimeSource": "onepace",
+                  "withExtra": {
+                    "when": "specials",
+                    "links": {
+                      "nyaa": "https://nyaa.si/view/2179021"
+                    }
+                  }
                 },
                 {
                   "title": "Loguetown 03 - The Legend Begins",
@@ -3103,7 +3117,7 @@
                     "netflix": null,
                     "mega": null,
                     "drive": null,
-                    "nyaa": null,
+                    "nyaa": "https://nyaa.si/view/2179154",
                     "other": null
                   },
                   "canon": true,
@@ -3117,7 +3131,13 @@
                   "traktVotes": 710,
                   "traktRatingFrom": "anime",
                   "runtime": 19,
-                  "runtimeSource": "onepace"
+                  "runtimeSource": "onepace",
+                  "withExtra": {
+                    "when": "specials",
+                    "links": {
+                      "nyaa": "https://nyaa.si/view/2179021"
+                    }
+                  }
                 }
               ],
               "info": {
@@ -3166,7 +3186,7 @@
                     "netflix": null,
                     "mega": null,
                     "drive": null,
-                    "nyaa": null,
+                    "nyaa": "https://nyaa.si/view/2179021",
                     "other": null
                   },
                   "canon": false,
@@ -6307,10 +6327,6 @@
                   },
                   "canon": true,
                   "id": "one-pace:skypiea-25",
-                  "withFiller": {
-                    "title": "Skypiea 25 (G-8 Alternate Cut) - Finale",
-                    "note": "You are watching the G-8 filler, so pick the \"G-8 Alternate Cut\" of this episode on One Pace."
-                  },
                   "traktEpisode": {
                     "season": 16,
                     "number": 25,
@@ -6320,7 +6336,12 @@
                   "traktVotes": 620,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
-                  "runtimeSource": "onepace"
+                  "runtimeSource": "onepace",
+                  "withExtra": {
+                    "when": "filler",
+                    "title": "Skypiea 25 (G-8 Alternate Cut) - Finale",
+                    "note": "You are watching the G-8 filler, so pick the \"G-8 Alternate Cut\" of this episode on One Pace."
+                  }
                 }
               ],
               "info": {

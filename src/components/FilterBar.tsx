@@ -78,7 +78,7 @@ export default function FilterBar() {
             </Toggle>
 
             <div
-              class="inline-flex shrink-0 items-center gap-1 rounded-full border border-sea-300 p-0.5 dark:border-sea-600"
+              class="inline-flex shrink-0 items-center gap-1 rounded-md border border-sea-300 p-0.5 dark:border-sea-600"
               role="radiogroup"
               aria-label="Default stream"
               title="Where the red ▶ watch button on each episode opens"
@@ -89,7 +89,7 @@ export default function FilterBar() {
                   <button
                     role="radio"
                     aria-checked={prefs.streamSource === value}
-                    class="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors"
+                    class="rounded px-2.5 py-0.5 text-xs font-semibold transition-colors"
                     classList={{
                       'bg-strawhat-500 text-white shadow-sm': prefs.streamSource === value,
                       'text-sea-400 hover:text-sea-700 dark:hover:text-sea-100': prefs.streamSource !== value,

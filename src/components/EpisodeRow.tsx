@@ -58,9 +58,11 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   const [rating, setRating] = createSignal(false);
   const canRate = () => isConnected() && !!trakt.mapped[props.ep.id];
   const myRating = () => trakt.myRatings[props.ep.id];
-  // Episodes with a cut that depends on whether you watch the filler (Skypiea 25 / G-8).
-  const fillerShown = () => !prefs.canonOnly && !prefs.hideNonCanon && !prefs.hiddenExtras.includes('filler');
-  const variant = () => (props.ep.withFiller && fillerShown() ? props.ep.withFiller : null);
+  // Episodes with a cut that depends on an extra you watch (Skypiea 25 with the G-8 filler,
+  // Loguetown 01 Extended with Daddy the Father).
+  const extraShown = (cat: 'filler' | 'specials') => !prefs.canonOnly && !prefs.hideNonCanon && !prefs.hiddenExtras.includes(cat);
+  const variant = () => (props.ep.withExtra && extraShown(props.ep.withExtra.when) ? props.ep.withExtra : null);
+  const links = () => ({ ...props.ep.links, ...(variant()?.links ?? {}) });
   const title = () => variant()?.title ?? props.ep.title;
   const parts = createMemo(() => splitTitle(title()));
   const hideSub = () => prefs.spoilerSafe && parts().subtitle !== '';
@@ -70,9 +72,9 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
     return t && t !== displayed() ? t : null;
   };
 
-  const primaryKey = createMemo(() => primaryLinkKey(props.ep.links, prefs.streamSource));
+  const primaryKey = createMemo(() => primaryLinkKey(links(), prefs.streamSource));
 
-  const secondaryKeys = createMemo(() => LINK_ORDER.filter((k) => props.ep.links[k] && k !== primaryKey()));
+  const secondaryKeys = createMemo(() => LINK_ORDER.filter((k) => links()[k] && k !== primaryKey()));
 
   const info = createMemo(() => {
     const parts = episodeInfo(props.ep);
@@ -226,7 +228,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
           <p class="mt-1 text-xs leading-relaxed text-sea-500 dark:text-sea-400" innerHTML={inlineMd(props.ep.description!)} />
         </Show>
 
-        <Show when={variant()}>
+        <Show when={variant()?.note}>
           <div class="mt-0.5 text-[11px] font-semibold text-amber-700 dark:text-amber-300">{variant()!.note}</div>
         </Show>
         <Show when={props.ep.notes && props.ep.notes.length}>
@@ -246,7 +248,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
       <div class="flex w-full shrink-0 flex-wrap items-center gap-1 pl-8 sm:w-auto sm:justify-end sm:pl-0">
         <Show when={primaryKey()}>
           {(k) => (
-            <a href={props.ep.links[k()]!} target="_blank" rel="noopener noreferrer" class="btn-watch">
+            <a href={links()[k()]!} target="_blank" rel="noopener noreferrer" class="btn-watch">
               ▶ {LINK_LABEL[k()]}
             </a>
           )}
@@ -254,7 +256,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
         <For each={secondaryKeys()}>
           {(k) => (
             <a
-              href={props.ep.links[k]!}
+              href={links()[k]!}
               target="_blank"
               rel="noopener noreferrer"
               class="chip border-sea-300 text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300 dark:hover:text-accent-300"

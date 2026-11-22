@@ -37,7 +37,8 @@
     "traktRatingsSource": "Trakt (https://trakt.tv/shows/one-pace)",
     "idAliases": {
       "upcoming-theatrical-movies:one-piece-film-god-valley-summer-2027-commemorating-the-30th-anniversary-of-the-one-piece-manga-1997-2027-the-film-centers-on-the-legendary-god-valley-incident-chronicling-the-clash-involving-gol-d-roger-monkey-d-garp-and-the-rocks-pirates-led-by-rocks-d-xebec": "upcoming-theatrical-movies:god-valley-2027",
-      "upcoming-theatrical-movies:one-piece-film-baad-2029-commemorating-the-30th-anniversary-of-the-television-anime-series-1999-2029": "upcoming-theatrical-movies:baad-2029"
+      "upcoming-theatrical-movies:one-piece-film-baad-2029-commemorating-the-30th-anniversary-of-the-television-anime-series-1999-2029": "upcoming-theatrical-movies:baad-2029",
+      "original-anime-continuation-egghead-elbaph-eps-1131:elbaph-arc": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A1"
     },
     "animeRuntimes": {
       "1": 25,
@@ -1444,7 +1445,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 1967,
+                  "traktVotes": 1968,
                   "runtime": 66,
                   "runtimeSource": "trakt"
                 }
@@ -2881,7 +2882,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 1463,
+                  "traktVotes": 1464,
                   "runtime": 60,
                   "runtimeSource": "trakt"
                 },
@@ -3042,6 +3043,14 @@
                   },
                   "canon": true,
                   "id": "one-pace:loguetown-01",
+                  "withExtra": {
+                    "when": "specials",
+                    "links": {
+                      "nyaa": "https://nyaa.si/view/2179021"
+                    },
+                    "title": "Loguetown 01 (Extended Cut) - Kitetsu III",
+                    "note": "You are watching Daddy the Father, so pick the \"Extended Cut\" of this episode on One Pace. It adds the Gold Roger bar scene that leads into it."
+                  },
                   "traktEpisode": {
                     "season": 8,
                     "number": 1,
@@ -3051,15 +3060,7 @@
                   "traktVotes": 1053,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
-                  "runtimeSource": "onepace",
-                  "withExtra": {
-                    "when": "specials",
-                    "links": {
-                      "nyaa": "https://nyaa.si/view/2179021"
-                    },
-                    "title": "Loguetown 01 (Extended Cut) - Kitetsu III",
-                    "note": "You are watching Daddy the Father, so pick the \"Extended Cut\" of this episode on One Pace. It adds the Gold Roger bar scene that leads into it."
-                  }
+                  "runtimeSource": "onepace"
                 },
                 {
                   "title": "Loguetown 02 - Luffy Is Dead",
@@ -3083,6 +3084,12 @@
                   },
                   "canon": true,
                   "id": "one-pace:loguetown-02",
+                  "withExtra": {
+                    "when": "specials",
+                    "links": {
+                      "nyaa": "https://nyaa.si/view/2179021"
+                    }
+                  },
                   "traktEpisode": {
                     "season": 8,
                     "number": 2,
@@ -3092,13 +3099,7 @@
                   "traktVotes": 684,
                   "traktRatingFrom": "anime",
                   "runtime": 19,
-                  "runtimeSource": "onepace",
-                  "withExtra": {
-                    "when": "specials",
-                    "links": {
-                      "nyaa": "https://nyaa.si/view/2179021"
-                    }
-                  }
+                  "runtimeSource": "onepace"
                 },
                 {
                   "title": "Loguetown 03 - The Legend Begins",
@@ -3122,6 +3123,12 @@
                   },
                   "canon": true,
                   "id": "one-pace:loguetown-03",
+                  "withExtra": {
+                    "when": "specials",
+                    "links": {
+                      "nyaa": "https://nyaa.si/view/2179021"
+                    }
+                  },
                   "traktEpisode": {
                     "season": 8,
                     "number": 3,
@@ -3131,13 +3138,7 @@
                   "traktVotes": 710,
                   "traktRatingFrom": "anime",
                   "runtime": 19,
-                  "runtimeSource": "onepace",
-                  "withExtra": {
-                    "when": "specials",
-                    "links": {
-                      "nyaa": "https://nyaa.si/view/2179021"
-                    }
-                  }
+                  "runtimeSource": "onepace"
                 }
               ],
               "info": {
@@ -3255,7 +3256,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 1050,
+                  "traktVotes": 1052,
                   "runtime": 66,
                   "runtimeSource": "trakt"
                 }
@@ -3424,7 +3425,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 972,
+                  "traktVotes": 973,
                   "runtime": 64,
                   "runtimeSource": "trakt"
                 }
@@ -3909,7 +3910,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 916,
+                  "traktVotes": 918,
                   "runtime": 55,
                   "runtimeSource": "trakt"
                 },
@@ -3946,7 +3947,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 907,
+                  "traktVotes": 908,
                   "runtime": 58,
                   "runtimeSource": "trakt"
                 }
@@ -6327,6 +6328,11 @@
                   },
                   "canon": true,
                   "id": "one-pace:skypiea-25",
+                  "withExtra": {
+                    "when": "filler",
+                    "title": "Skypiea 25 (G-8 Alternate Cut) - Finale",
+                    "note": "You are watching the G-8 filler, so pick the \"G-8 Alternate Cut\" of this episode on One Pace."
+                  },
                   "traktEpisode": {
                     "season": 16,
                     "number": 25,
@@ -6336,12 +6342,7 @@
                   "traktVotes": 620,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
-                  "runtimeSource": "onepace",
-                  "withExtra": {
-                    "when": "filler",
-                    "title": "Skypiea 25 (G-8 Alternate Cut) - Finale",
-                    "note": "You are watching the G-8 filler, so pick the \"G-8 Alternate Cut\" of this episode on One Pace."
-                  }
+                  "runtimeSource": "onepace"
                 }
               ],
               "info": {
@@ -24369,7 +24370,7 @@
     {
       "id": "final-saga",
       "title": "Final Saga",
-      "rating": 9.1,
+      "rating": 8.9,
       "pace": "Pace 452–473",
       "anime": "1086–1155+",
       "chapters": "1058–1125+",
@@ -26105,48 +26106,909 @@
           "id": "elbaph-arc",
           "type": "arc",
           "title": "Elbaph Arc",
-          "rating": null,
+          "rating": 8.6,
           "pace": null,
-          "anime": "1156+",
+          "anime": "1156–1180+",
           "chapters": "1126+",
           "isAlternative": false,
           "groups": [
             {
               "id": "original-anime-elbaph",
-              "label": "Original Anime (Eps 1156+)",
-              "kind": "original-continuation",
-              "canonPath": false,
+              "label": "Original Anime (Eps 1156–1180)",
+              "kind": "original",
+              "canonPath": true,
               "isAlternative": false,
               "defaultOpen": true,
               "rating": null,
               "notes": [
-                "One Pace has not reached Elbaph yet; watch the original anime episodes."
+                "One Pace has not reached Elbaph yet, so the original anime episodes are the main route."
               ],
               "episodes": [
                 {
-                  "title": "Elbaph Arc",
-                  "fullTitle": "Elbaph Arc",
-                  "rating": null,
-                  "tierColor": null,
+                  "title": "Episode 1156 (S23E1) - The Long-sought…",
+                  "fullTitle": "The Long-sought Elbaph! The Big Reunion Banquet!",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
                   "pace": null,
                   "paceNumber": null,
-                  "anime": null,
+                  "anime": "1156",
                   "chapters": null,
-                  "meta": "Original Anime: Episodes 1156+ • Manga Ch. 1126+",
+                  "meta": "Anime 1156",
                   "description": null,
                   "links": {
                     "onepace": null,
-                    "stremio": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A1",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
-                  "id": "original-anime-continuation-egghead-elbaph-eps-1131:elbaph-arc"
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A1",
+                  "traktAnime": [
+                    [
+                      23,
+                      1156,
+                      14088185
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 217,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1157 (S23E2) - Nami in…",
+                  "fullTitle": "Nami in a Fix! An Adventure in Block Kingdom",
+                  "rating": 7.4,
+                  "tierColor": "#F4D03F",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1157",
+                  "chapters": null,
+                  "meta": "Anime 1157",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A2",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A2",
+                  "traktAnime": [
+                    [
+                      23,
+                      1157,
+                      14095335
+                    ]
+                  ],
+                  "traktRating": 7.5,
+                  "traktVotes": 179,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1158 (S23E3) - A Quest…",
+                  "fullTitle": "A Quest in the Land of Mystery! The Secret of the Sun God",
+                  "rating": 7.4,
+                  "tierColor": "#F4D03F",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1158",
+                  "chapters": null,
+                  "meta": "Anime 1158",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A3",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A3",
+                  "traktAnime": [
+                    [
+                      23,
+                      1158,
+                      14095336
+                    ]
+                  ],
+                  "traktRating": 7.8,
+                  "traktVotes": 181,
+                  "traktRatingFrom": "anime",
+                  "runtime": 23,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1159 (S23E4) - Destroy the…",
+                  "fullTitle": "Destroy the Miniature Garden - Escape Block Kingdom!",
+                  "rating": 8.1,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1159",
+                  "chapters": null,
+                  "meta": "Anime 1159",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A4",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A4",
+                  "traktAnime": [
+                    [
+                      23,
+                      1159,
+                      14095337
+                    ]
+                  ],
+                  "traktRating": 7.9,
+                  "traktVotes": 177,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1160 (S23E5) - An Encounter…",
+                  "fullTitle": "An Encounter on a Snowfield - Loki, the Accursed Prince",
+                  "rating": 9.1,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1160",
+                  "chapters": null,
+                  "meta": "Anime 1160",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A5",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A5",
+                  "traktAnime": [
+                    [
+                      23,
+                      1160,
+                      14095338
+                    ]
+                  ],
+                  "traktRating": 8.5,
+                  "traktVotes": 176,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1161 (S23E6) - A Dangerous…",
+                  "fullTitle": "A Dangerous Deal! Loki of the Underworld and Luffy",
+                  "rating": 8.7,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1161",
+                  "chapters": null,
+                  "meta": "Anime 1161",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A6",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A6",
+                  "traktAnime": [
+                    [
+                      23,
+                      1161,
+                      14100236
+                    ]
+                  ],
+                  "traktRating": 8.3,
+                  "traktVotes": 176,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1162 (S23E7) - A Gargantuan…",
+                  "fullTitle": "A Gargantuan Wave of Emotion - The Dreamlike Scenery of Elbaph",
+                  "rating": 8.0,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1162",
+                  "chapters": null,
+                  "meta": "Anime 1162",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A7",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A7",
+                  "traktAnime": [
+                    [
+                      23,
+                      1162,
+                      14100237
+                    ]
+                  ],
+                  "traktRating": 8.2,
+                  "traktVotes": 170,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1163 (S23E8) - I Want…",
+                  "fullTitle": "I Want You to Praise Me - The Reunion of Robin and Saul",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1163",
+                  "chapters": null,
+                  "meta": "Anime 1163",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A8",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A8",
+                  "traktAnime": [
+                    [
+                      23,
+                      1163,
+                      14100238
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 258,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1164 (S23E9) - Saul's Resolve…",
+                  "fullTitle": "Saul's Resolve - The Inherited Will of Ohara",
+                  "rating": 8.3,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1164",
+                  "chapters": null,
+                  "meta": "Anime 1164",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A9",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A9",
+                  "traktAnime": [
+                    [
+                      23,
+                      1164,
+                      14158859
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 190,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1165 (S23E10) - A Welcome…",
+                  "fullTitle": "A Welcome with Friends' Cups and Intruders Seeking Loki",
+                  "rating": 7.7,
+                  "tierColor": "#F4D03F",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1165",
+                  "chapters": null,
+                  "meta": "Anime 1165",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A10",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A10",
+                  "traktAnime": [
+                    [
+                      23,
+                      1165,
+                      14158860
+                    ]
+                  ],
+                  "traktRating": 8.1,
+                  "traktVotes": 187,
+                  "traktRatingFrom": "anime",
+                  "runtime": 23,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1166 (S23E11) - Encountering Loki…",
+                  "fullTitle": "Encountering Loki - Gunko of the Knights of God",
+                  "rating": 8.1,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1166",
+                  "chapters": null,
+                  "meta": "Anime 1166",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A11",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A11",
+                  "traktAnime": [
+                    [
+                      23,
+                      1166,
+                      14158861
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 197,
+                  "traktRatingFrom": "anime",
+                  "runtime": 23,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1167 (S23E12) - Shamrock Appears…",
+                  "fullTitle": "Shamrock Appears - Commander of the Knights of God",
+                  "rating": 8.4,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1167",
+                  "chapters": null,
+                  "meta": "Anime 1167",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A12",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A12",
+                  "traktAnime": [
+                    [
+                      23,
+                      1167,
+                      14158862
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 227,
+                  "traktRatingFrom": "anime",
+                  "runtime": 23,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1168 (S23E13) - Ancient History…",
+                  "fullTitle": "Ancient History - The Harley Passed Down by Elbaph",
+                  "rating": 9.3,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1168",
+                  "chapters": null,
+                  "meta": "Anime 1168",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A13",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A13",
+                  "traktAnime": [
+                    [
+                      23,
+                      1168,
+                      14158863
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 313,
+                  "traktRatingFrom": "anime",
+                  "runtime": 23,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1169 (S23E14) - The Legend…",
+                  "fullTitle": "The Legend Lurking in Elbaph - The Identity of the Mountain-Eater",
+                  "rating": 8.1,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1169",
+                  "chapters": null,
+                  "meta": "Anime 1169",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A14",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A14",
+                  "traktAnime": [
+                    [
+                      23,
+                      1169,
+                      14161429
+                    ]
+                  ],
+                  "traktRating": 8.5,
+                  "traktVotes": 493,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1170 (S23E15) - Get the…",
+                  "fullTitle": "Get the Key! Luffy vs. Scopper Gaban",
+                  "rating": 8.8,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1170",
+                  "chapters": null,
+                  "meta": "Anime 1170",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A15",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A15",
+                  "traktAnime": [
+                    [
+                      23,
+                      1170,
+                      14161430
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 542,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1171 (S23E16) - The Heinous…",
+                  "fullTitle": "The Heinous Sinner - Loki of the Underworld Freed?!",
+                  "rating": 8.3,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1171",
+                  "chapters": null,
+                  "meta": "Anime 1171",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A16",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A16",
+                  "traktAnime": [
+                    [
+                      23,
+                      1171,
+                      14324382
+                    ]
+                  ],
+                  "traktRating": 8.5,
+                  "traktVotes": 509,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1172 (S23E17) - Monsters Appear…",
+                  "fullTitle": "Monsters Appear in Elbaph - \"What I Fear Most\"",
+                  "rating": 8.5,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1172",
+                  "chapters": null,
+                  "meta": "Anime 1172",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A17",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A17",
+                  "traktAnime": [
+                    [
+                      23,
+                      1172,
+                      14324383
+                    ]
+                  ],
+                  "traktRating": 8.3,
+                  "traktVotes": 446,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1173 (S23E18) - A Nightmarish…",
+                  "fullTitle": "A Nightmarish Game - The Dark Plot of the Knights of God",
+                  "rating": 8.2,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1173",
+                  "chapters": null,
+                  "meta": "Anime 1173",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A18",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A18",
+                  "traktAnime": [
+                    [
+                      23,
+                      1173,
+                      14324384
+                    ]
+                  ],
+                  "traktRating": 8.3,
+                  "traktVotes": 423,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1174 (S23E19) - Save the…",
+                  "fullTitle": "Save the Children! The Elbaph Warriors Rise Up",
+                  "rating": 8.1,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1174",
+                  "chapters": null,
+                  "meta": "Anime 1174",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A19",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A19",
+                  "traktAnime": [
+                    [
+                      23,
+                      1174,
+                      14324385
+                    ]
+                  ],
+                  "traktRating": 8.1,
+                  "traktVotes": 385,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1175 (S23E20) - Elbaph in…",
+                  "fullTitle": "Elbaph in Flames! Jinbe's Shoulder Throw Explodes!",
+                  "rating": 8.4,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1175",
+                  "chapters": null,
+                  "meta": "Anime 1175",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A20",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A20",
+                  "traktAnime": [
+                    [
+                      23,
+                      1175,
+                      14324386
+                    ]
+                  ],
+                  "traktRating": 8.5,
+                  "traktVotes": 397,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1176 (S23E21) - The Threat…",
+                  "fullTitle": "The Threat of the Arrow-Arrow Fruit - Gunko vs. the Straw Hats",
+                  "rating": 9.2,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1176",
+                  "chapters": null,
+                  "meta": "Anime 1176",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A21",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A21",
+                  "traktAnime": [
+                    [
+                      23,
+                      1176,
+                      14324387
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 410,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1177 (S23E22) - A Despicable…",
+                  "fullTitle": "A Despicable Hostage Game - Sommers's Brazen Demands",
+                  "rating": 8.7,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1177",
+                  "chapters": null,
+                  "meta": "Anime 1177",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A22",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A22",
+                  "traktAnime": [
+                    [
+                      23,
+                      1177,
+                      14324388
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 383,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1178 (S23E23) - Protect History…",
+                  "fullTitle": "Protect History and the Future - Robin and Gaban Go on the Attack",
+                  "rating": 9.3,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1178",
+                  "chapters": null,
+                  "meta": "Anime 1178",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A23",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A23",
+                  "traktAnime": [
+                    [
+                      23,
+                      1178,
+                      14324389
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 396,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1179 (S23E24) - One Do-or-Die…",
+                  "fullTitle": "One Do-or-Die Second - Gaban vs. the Knights of God",
+                  "rating": 9.5,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1179",
+                  "chapters": null,
+                  "meta": "Anime 1179",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A24",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A24",
+                  "traktAnime": [
+                    [
+                      23,
+                      1179,
+                      14324390
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 396,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 1180 (S23E25) - Elbaph in…",
+                  "fullTitle": "Elbaph in Despair - Diabolical Covenant, Domi Reversi",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1180",
+                  "chapters": null,
+                  "meta": "Anime 1180",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A23%3A25",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "original-anime-elbaph:/detail/series/tt0388629/tt0388629%3A23%3A25",
+                  "traktAnime": [
+                    [
+                      23,
+                      1180,
+                      14324391
+                    ]
+                  ],
+                  "traktRating": 9.2,
+                  "traktVotes": 417,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
                 }
-              ]
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/tt0388629?season=23"
+                  }
+                ],
+                "text": ""
+              }
             }
           ]
         },

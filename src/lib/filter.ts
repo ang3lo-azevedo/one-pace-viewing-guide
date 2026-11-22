@@ -116,7 +116,7 @@ export const visibleSagas = createMemo<FilteredSaga[]>(() => {
           sections.set(id, {
             ...saga,
             id,
-            title: `${arc.title.replace(/ Arc$/, '')} (Final Saga)`,
+            title: arc.title.replace(/ Arc$/, ''),
             rating: arc.rating,
             pace: arc.pace,
             anime: arc.anime,

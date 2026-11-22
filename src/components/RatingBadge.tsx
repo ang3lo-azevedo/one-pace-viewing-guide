@@ -1,3 +1,4 @@
+import { prefs } from '../store/prefs';
 import { Show } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 
@@ -20,7 +21,7 @@ export default function RatingBadge(props: {
   title?: string;
 }) {
   return (
-    <Show when={props.rating != null}>
+    <Show when={props.rating != null && prefs.ratingsShown !== 'trakt'}>
       <Dynamic
         component={props.href ? 'a' : 'span'}
         href={props.href ?? undefined}

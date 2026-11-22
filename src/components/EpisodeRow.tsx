@@ -111,7 +111,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
           onChange={() => {
             toggle(props.ep.id);
             // Offer to rate right after marking a Trakt-synced episode as watched.
-            if (isWatched(props.ep.id) && canRate() && !myRating()) setRating(true);
+            if (prefs.askRate && isWatched(props.ep.id) && canRate() && !myRating()) setRating(true);
           }}
           aria-label={`Mark ${displayed()} watched`}
         />
@@ -147,7 +147,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
           <Show when={props.showNonCanon && props.ep.nonCanon}>
             <NonCanonTag />
           </Show>
-          <Show when={props.ep.traktRating}>
+          <Show when={props.ep.traktRating && prefs.ratingsShown !== 'seriesgraph'}>
             <a
               href={traktHref() ?? `https://trakt.tv/shows/${config.traktShowSlug}`}
               target="_blank"

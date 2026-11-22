@@ -143,8 +143,6 @@ export const visibleSagas = createMemo<FilteredSaga[]>(() => {
 
 export const hasActiveFilters = createMemo(
   () =>
-    prefs.canonOnly ||
-    prefs.hideNonCanon ||
     prefs.search.trim() !== '' ||
     prefs.tierMin != null ||
     prefs.sagaId != null ||

@@ -25,7 +25,8 @@
       // Apply saved theme before paint to avoid a flash.
       try {
         const p = JSON.parse(localStorage.getItem('op-prefs-v1') || '{}');
-        if (p.theme === 'light') document.documentElement.classList.remove('dark');
+        const light = p.theme === 'light' || (p.theme === 'system' && !matchMedia('(prefers-color-scheme: dark)').matches);
+        if (light) document.documentElement.classList.remove('dark');
       } catch (e) {}
     </script>
   </head>

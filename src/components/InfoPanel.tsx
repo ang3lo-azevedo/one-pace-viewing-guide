@@ -125,7 +125,7 @@ export default function InfoPanel() {
             <li>
               <b class="text-sea-700 dark:text-sea-200">Lengths:</b> real runtimes from onepace.net, Trakt (movies,
               specials, Live Action, original anime) and the Onigashima Paced, Kuma Cut and Fun Pace spreadsheets. The
-              few without a published length are estimated and shown with "~". Hidden content types (Filters) are left out of
+              few without a published length are estimated and shown with "~". Content you leave out in Preferences are left out of
               the times and percentages. Percentages are by watch time, so a movie counts for more than a single
               episode.
             </li>

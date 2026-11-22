@@ -11,7 +11,7 @@ is kept in the browser's `localStorage` and can be exported or imported as JSON.
 
 - Per-episode progress, saved locally, with JSON export and import.
 - Progress dashboard: canon progress, sagas cleared, hours watched and remaining.
-- Preferences: watch on One Pace or Stremio, spoiler-safe titles, hide extras (movies, OVAs, specials, Live Action, Fun Pace).
+- Preferences: watch on One Pace or Stremio, spoiler-safe titles, theme (system, light or dark), which ratings to show, long times in days or hours; what to include (extras, non-canon, each kind of extra); pace a day, where the page opens, asking to rate on Trakt, confirming bulk marks.
 - Separate hide non-canon option (the Live Action and canon specials are extras but stay), with Extra and Non-canon tags on every entry.
 - Preferences section, with the choices also shown inside each affected section: pick the version of Fish-Man Island (One Piece Log or One Pace), The Adventures of the Straw Hats, G-8 and Boat Piece (Fun Pace or original anime), and where to watch Strong World (after Thriller Bark or after Post-War); Live Action placement (next to each arc, after Post-Enies Lobby, or after Thriller Bark).
 - Egghead and Elbaph inside the Final Saga or as separate sections, and whether Catch up includes extras (also in Preferences).

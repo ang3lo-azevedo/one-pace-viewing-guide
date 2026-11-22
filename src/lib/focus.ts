@@ -2,6 +2,7 @@ import { waitingOn } from './pause';
 import { createMemo, createRoot, createSignal } from 'solid-js';
 import { visibleSagas } from './filter';
 import { isWatched } from '../store/progress';
+import { prefs } from '../store/prefs';
 import { isDone } from './alternatives';
 import { orderKey } from './layout';
 import type { Episode } from '../types';
@@ -64,6 +65,7 @@ function lastWatchedIndex(list: Row[]): number {
 }
 
 const initial = (() => {
+  if (prefs.openAt === 'top') return null;
   const list = rows();
   const i = lastWatchedIndex(list);
   return i < 0 ? null : targetFor(list[i].ep.id, list);

@@ -1,6 +1,6 @@
 import { For, Show, createSignal } from 'solid-js';
-import { prefs, resetFilters, setPrefs, toggleExtra } from '../store/prefs';
-import { EXTRA_LABELS, guide, tiers, type ExtraCategory } from '../lib/guide';
+import { prefs, resetFilters, setPrefs } from '../store/prefs';
+import { guide, tiers } from '../lib/guide';
 import { hasActiveFilters, visibleEpisodeCount } from '../lib/filter';
 import WhereBar from './WhereBar';
 
@@ -21,12 +21,11 @@ function Toggle(props: { active: boolean; onClick: () => void; children: any; ti
   );
 }
 
-const EXTRAS = Object.keys(EXTRA_LABELS) as ExtraCategory[];
 
 export default function FilterBar() {
   const [showMore, setShowMore] = createSignal(false);
   let bar: HTMLDivElement | undefined;
-  const anyFilter = () => hasActiveFilters() || prefs.hiddenExtras.length > 0;
+  const anyFilter = () => hasActiveFilters();
 
   return (
     <div class="filter-bar sticky top-0 z-20 border-b border-sea-200 bg-white shadow-[0_1px_6px_rgba(16,42,60,0.06)] dark:border-sea-800 dark:bg-sea-950 dark:shadow-none">
@@ -59,24 +58,6 @@ export default function FilterBar() {
 
         <Show when={showMore()}>
           <div class="mt-2.5 space-y-2.5 border-t border-sea-200 pt-2.5 dark:border-sea-800">
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Show</span>
-              <For each={EXTRAS}>
-                {(cat) => (
-                  <Toggle
-                    active={!prefs.canonOnly && !prefs.hiddenExtras.includes(cat)}
-                    onClick={() => {
-                      if (prefs.canonOnly) setPrefs('canonOnly', false);
-                      toggleExtra(cat);
-                    }}
-                    title={`Show or hide ${EXTRA_LABELS[cat]} (also changes the completion percentages)`}
-                  >
-                    {EXTRA_LABELS[cat]}
-                  </Toggle>
-                )}
-              </For>
-            </div>
-
             <div class="flex flex-wrap items-center gap-2">
               <span class="text-xs font-semibold uppercase tracking-wide text-sea-400">Tier</span>
               <Toggle active={prefs.tierMin == null} onClick={() => setPrefs('tierMin', null)}>

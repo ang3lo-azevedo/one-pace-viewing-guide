@@ -302,7 +302,7 @@ export function fmtDate(t: number): string {
 /** Long durations in days: "8d 23h" (or "Xh YYm" under a day). */
 export function fmtSpan(min: number): string {
   const m = Math.round(min);
-  if (m < 24 * 60) return fmtHours(m);
+  if (m < 24 * 60 || prefs.longTimes === 'hours') return fmtHours(m);
   const d = Math.floor(m / 1440);
   const h = Math.round((m % 1440) / 60);
   return h ? `${d}d ${h}h` : `${d}d`;

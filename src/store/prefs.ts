@@ -1,12 +1,12 @@
 import { createStore } from 'solid-js/store';
-import { createEffect, createRoot } from 'solid-js';
+import { createEffect, createRoot, createSignal } from 'solid-js';
 import { saveView } from '../lib/restore';
 import { readVersions, type Versions } from '../lib/versions';
 
 const KEY = 'op-prefs-v1';
 
 export type StreamSource = 'onepace' | 'stremio';
-export type Theme = 'dark' | 'light';
+export type Theme = 'dark' | 'light' | 'system';
 export type LiveActionPlacement = 'arc' | 'post-enies-lobby-arc' | 'thriller-bark-arc';
 import type { ExtraCategory } from '../lib/guide';
 export type { ExtraCategory };
@@ -37,6 +37,16 @@ export interface Prefs {
   /** Picked version per section (Fish-Man Island, G-8, Strong World...), see lib/versions.ts. */
   versions: Versions;
   theme: Theme;
+  /** Where the page opens: at your last watched episode, or at the top. */
+  openAt: 'last' | 'top';
+  /** Offer to rate on Trakt right after marking an episode watched. */
+  askRate: boolean;
+  /** Ask before Mark arc / Mark saga / Catch up and other bulk changes. */
+  confirmBulk: boolean;
+  /** Which ratings the badges show. */
+  ratingsShown: 'both' | 'seriesgraph' | 'trakt';
+  /** Long durations in days ("12d 1h") or hours ("289h"). */
+  longTimes: 'days' | 'hours';
 }
 
 const DEFAULTS: Prefs = {
@@ -55,6 +65,11 @@ const DEFAULTS: Prefs = {
   catchUpExtras: true,
   versions: readVersions({}),
   theme: 'dark',
+  openAt: 'last',
+  askRate: true,
+  confirmBulk: true,
+  ratingsShown: 'both',
+  longTimes: 'days',
 };
 
 function load(): Prefs {
@@ -79,22 +94,29 @@ createRoot(() => {
     }
   });
 
-  // Keep the <html> dark class in sync with the theme preference.
+  // Keep the <html> dark class in sync with the theme preference ("system" follows the device).
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  const [systemDark, setSystemDark] = createSignal(media.matches);
+  media.addEventListener('change', (e) => setSystemDark(e.matches));
   createEffect(() => {
-    const root = document.documentElement;
-    if (prefs.theme === 'dark') root.classList.add('dark');
-    else root.classList.remove('dark');
+    const dark = prefs.theme === 'system' ? systemDark() : prefs.theme === 'dark';
+    document.documentElement.classList.toggle('dark', dark);
   });
 });
 
 export { prefs, setPrefs };
 
+/** Whether the page is dark right now (resolves "system"). */
+export const isDark = () => document.documentElement.classList.contains('dark');
+
+/** Header button: switch to the opposite of what is showing now. */
 export function toggleTheme() {
-  setPrefs('theme', prefs.theme === 'dark' ? 'light' : 'dark');
+  setPrefs('theme', isDark() ? 'light' : 'dark');
 }
 
 export function resetFilters() {
-  setPrefs({ search: '', tierMin: null, sagaId: null, hideWatched: false, canonOnly: false, hiddenExtras: [], hideNonCanon: false });
+  // Only the view filters: what to include (extras, non-canon, content types) is a preference.
+  setPrefs({ search: '', tierMin: null, sagaId: null, hideWatched: false });
 }
 
 export function toggleExtra(cat: ExtraCategory) {

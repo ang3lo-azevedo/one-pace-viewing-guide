@@ -99,7 +99,7 @@ function Poster(props: { emoji: string; name: string; bounty: number | null }) {
   );
 }
 
-const PACES: [number | null, string][] = [
+export const PACES: [number | null, string][] = [
   [null, 'Auto'],
   [30, '30m'],
   [60, '1h'],
@@ -108,7 +108,7 @@ const PACES: [number | null, string][] = [
 ];
 
 /** Type any pace: "90", "1h30", "1:30", "1.5h" or "2 eps". */
-function CustomPace() {
+export function CustomPace() {
   const preset = () => PACES.some(([v]) => v === prefs.paceMinutes);
   const [text, setText] = createSignal(preset() || prefs.paceMinutes == null ? '' : fmtDuration(prefs.paceMinutes));
   const [bad, setBad] = createSignal(false);
@@ -295,7 +295,7 @@ function ContinueWatching() {
                 // Paused episode: mark the special in between first, the episode itself after.
                 const ep = waitingOn(n().ep.id)[0]?.ep ?? n().ep;
                 setWatched(ep.id, true);
-                if (isConnected() && trakt.mapped[ep.id] && !trakt.myRatings[ep.id])
+                if (prefs.askRate && isConnected() && trakt.mapped[ep.id] && !trakt.myRatings[ep.id])
                   setJustWatched({ id: ep.id, title: prefs.spoilerSafe ? splitTitle(ep.title).label : ep.title });
               }}
               title={waitingOn(n().ep.id).length ? 'You finish this episode after the special: mark the special first' : 'Mark this episode watched and move on to the next one'}

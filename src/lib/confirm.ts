@@ -1,5 +1,6 @@
 import { isWatched, setMany } from '../store/progress';
 import { isConnected } from '../store/trakt';
+import { prefs } from '../store/prefs';
 
 /**
  * Bulk mark/clear with a confirmation that says exactly how many episodes change.
@@ -12,5 +13,6 @@ export function confirmBulk(ids: string[], watched: boolean, what: string) {
   const verb = watched ? 'Mark' : 'Unmark';
   const eps = `${n} episode${n === 1 ? '' : 's'}`;
   const trakt = isConnected() ? `\n\nThis also ${watched ? 'adds them to' : 'removes them from'} your Trakt history.` : '';
+  if (!prefs.confirmBulk) return setMany(changing, watched);
   if (confirm(`${verb} ${eps} ${what} as ${watched ? 'watched' : 'unwatched'}?${trakt}`)) setMany(changing, watched);
 }

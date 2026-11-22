@@ -3,7 +3,7 @@ import { scrollToFocus } from './lib/focus';
 import { restoreScroll } from './lib/restore';
 import { guide } from './lib/guide';
 import { visibleSagas } from './lib/filter';
-import { prefs, toggleTheme } from './store/prefs';
+import { isDark, prefs, toggleTheme } from './store/prefs';
 import VoyageHero from './components/VoyageHero';
 import FilterBar from './components/FilterBar';
 import SagaSection from './components/SagaSection';
@@ -13,8 +13,10 @@ import ProgressMenu from './components/ProgressMenu';
 import Preferences from './components/Preferences';
 
 export default function App() {
+  // Re-read after each theme change ("system" resolves to light or dark).
+  const themeDark = () => (prefs.theme, isDark());
   // Jump to the last episode you watched once the list has rendered.
-  onMount(() => setTimeout(() => restoreScroll() || scrollToFocus(), 60));
+  onMount(() => setTimeout(() => restoreScroll() || (prefs.openAt === 'last' && scrollToFocus()), 60));
 
   return (
     <div class="min-h-screen">
@@ -53,8 +55,8 @@ export default function App() {
               onClick={toggleTheme}
               title="Toggle light / dark theme"
             >
-              {prefs.theme === 'dark' ? '☀' : '☾'}
-              <span class="hidden sm:inline">{prefs.theme === 'dark' ? 'Light' : 'Dark'}</span>
+              {themeDark() ? '☀' : '☾'}
+              <span class="hidden sm:inline">{themeDark() ? 'Light' : 'Dark'}</span>
             </button>
           </div>
         </div>

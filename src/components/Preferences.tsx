@@ -1,6 +1,11 @@
 import { For, Show, createSignal, type JSX } from 'solid-js';
 import { prefs, setPrefs, setVersion, toggleExtra, type Prefs } from '../store/prefs';
 import { VERSION_SETS } from '../lib/versions';
+import { EXTRA_LABELS, type ExtraCategory } from '../lib/guide';
+import { CustomPace, PACES } from './VoyageHero';
+
+/** Content kinds you can leave out (alternatives have their own choice under Versions). */
+const CONTENT = (Object.keys(EXTRA_LABELS) as ExtraCategory[]).filter((c) => c !== 'alternatives');
 import { wasOpen } from '../lib/restore';
 
 interface Option<T> {
@@ -78,7 +83,7 @@ export default function Preferences() {
       </button>
 
       <Show when={open()}>
-        <div class="grid gap-6 border-t border-sea-200 px-4 py-4 md:grid-cols-3 dark:border-sea-800">
+        <div class="grid gap-x-8 gap-y-6 border-t border-sea-200 px-4 py-4 sm:grid-cols-2 lg:grid-cols-3 dark:border-sea-800">
           <Group title="Viewing">
             <Choice<Prefs['streamSource']>
               label="Watch on"
@@ -99,6 +104,38 @@ export default function Preferences() {
               ]}
               hint="Hides episode subtitles until you hover them."
             />
+            <Choice<Prefs['theme']>
+              label="Theme"
+              value={prefs.theme}
+              onPick={(v) => setPrefs('theme', v)}
+              options={[
+                { value: 'system', label: 'System', title: 'Follow your device' },
+                { value: 'light', label: 'Light' },
+                { value: 'dark', label: 'Dark' },
+              ]}
+            />
+            <Choice<Prefs['ratingsShown']>
+              label="Ratings shown"
+              value={prefs.ratingsShown}
+              onPick={(v) => setPrefs('ratingsShown', v)}
+              options={[
+                { value: 'both', label: 'Both' },
+                { value: 'seriesgraph', label: 'SeriesGraph', title: 'The star rating (IMDb ratings via SeriesGraph)' },
+                { value: 'trakt', label: 'Trakt' },
+              ]}
+            />
+            <Choice<Prefs['longTimes']>
+              label="Long times"
+              value={prefs.longTimes}
+              onPick={(v) => setPrefs('longTimes', v)}
+              options={[
+                { value: 'days', label: 'Days (12d 1h)' },
+                { value: 'hours', label: 'Hours (289h)' },
+              ]}
+            />
+          </Group>
+
+          <Group title="What to include" note="Part of your watch-through: changes the list, your percentages and the times.">
             <Choice<boolean>
               label="Extras"
               value={prefs.canonOnly}
@@ -119,6 +156,34 @@ export default function Preferences() {
               ]}
               hint="Hides films, filler and most specials. Canon extras like the Live Action stay."
             />
+            <div class="space-y-1.5">
+              <div class="text-xs font-semibold text-sea-700 dark:text-sea-200">Content</div>
+              <div class="flex flex-wrap gap-1.5">
+                <For each={CONTENT}>
+                  {(cat) => {
+                    const on = () => !prefs.canonOnly && !prefs.hiddenExtras.includes(cat);
+                    return (
+                      <button
+                        class="rounded-md border px-2.5 py-1 text-xs font-semibold transition-colors"
+                        classList={{
+                          'border-accent-500 bg-accent-500 text-white': on(),
+                          'border-sea-300 text-sea-600 line-through decoration-1 hover:border-accent-400 dark:border-sea-600 dark:text-sea-400': !on(),
+                        }}
+                        aria-pressed={on()}
+                        title={on() ? `Hide ${EXTRA_LABELS[cat]}` : `Show ${EXTRA_LABELS[cat]}`}
+                        onClick={() => {
+                          if (prefs.canonOnly) setPrefs('canonOnly', false);
+                          toggleExtra(cat);
+                        }}
+                      >
+                        {EXTRA_LABELS[cat]}
+                      </button>
+                    );
+                  }}
+                </For>
+              </div>
+              <div class="text-[11px] leading-snug text-sea-500 dark:text-sea-400">Tap to show or hide each kind of extra.</div>
+            </div>
           </Group>
 
           <Group title="Versions" note="Your main route for each of these. Changing one reloads the page.">
@@ -169,6 +234,59 @@ export default function Preferences() {
                 { value: false, label: 'Main route only' },
               ]}
               hint="Whether Catch up also marks the films, specials, Live Action and filler before that point."
+            />
+          </Group>
+
+          <Group title="Behaviour">
+            <div class="space-y-1.5">
+              <div class="text-xs font-semibold text-sea-700 dark:text-sea-200">Pace a day</div>
+              <div class="flex flex-wrap items-center gap-1.5">
+                <For each={PACES}>
+                  {([value, label]) => (
+                    <button
+                      class="rounded-md border px-2.5 py-1 text-xs font-semibold transition-colors"
+                      classList={{
+                        'border-accent-500 bg-accent-500 text-white': prefs.paceMinutes === value,
+                        'border-sea-300 text-sea-600 hover:border-accent-400 dark:border-sea-600 dark:text-sea-300': prefs.paceMinutes !== value,
+                      }}
+                      onClick={() => setPrefs('paceMinutes', value)}
+                    >
+                      {label}
+                    </button>
+                  )}
+                </For>
+                <CustomPace />
+              </div>
+              <div class="text-[11px] leading-snug text-sea-500 dark:text-sea-400">For the finish dates. Auto uses your recent watching (or Trakt history).</div>
+            </div>
+            <Choice<Prefs['openAt']>
+              label="When the site opens"
+              value={prefs.openAt}
+              onPick={(v) => setPrefs('openAt', v)}
+              options={[
+                { value: 'last', label: 'Jump to my last episode' },
+                { value: 'top', label: 'Start at the top' },
+              ]}
+            />
+            <Choice<boolean>
+              label="Rate on Trakt after watching"
+              value={prefs.askRate}
+              onPick={(v) => setPrefs('askRate', v)}
+              options={[
+                { value: true, label: 'Ask me' },
+                { value: false, label: "Don't ask" },
+              ]}
+              hint="Only when Trakt is connected."
+            />
+            <Choice<boolean>
+              label="Confirm bulk marks"
+              value={prefs.confirmBulk}
+              onPick={(v) => setPrefs('confirmBulk', v)}
+              options={[
+                { value: true, label: 'Ask first' },
+                { value: false, label: 'Just do it' },
+              ]}
+              hint="Mark arc, Mark saga, Catch up and Mark all."
             />
           </Group>
         </div>

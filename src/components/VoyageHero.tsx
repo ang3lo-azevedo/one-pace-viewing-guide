@@ -338,30 +338,36 @@ export default function VoyageHero() {
 
       <FinishLine />
 
-      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
         <Panel title="Watched" accent="text-accent-600 dark:text-accent-400">
-          <Big
-            value={fmtSpan(s().minWatched)}
-            label={`of ${fmtSpan(s().minTotal)} · ${s().selWatched} of ${s().selTotal} entries`}
-            color="text-accent-600 dark:text-accent-300"
-          />
-          <For each={s().kinds}>
-            {(k) => (
-              <Row
-                label={k.label}
-                value={k.minWatched > 0 ? `${k.watched}/${k.total} · ${fmtSpan(k.minWatched)}` : `${k.watched}/${k.total}`}
-                title={`${fmtSpan(k.minWatched)} of ${fmtSpan(k.minTotal)} watched`}
-              />
-            )}
+          <Big value={fmtSpan(s().minWatched)} label={`of ${fmtSpan(s().minTotal)} in your list`} color="text-accent-600 dark:text-accent-300" />
+          <Row label="Entries" value={`${s().selWatched}/${s().selTotal}`} title="Everything in your list: episodes, films, specials..." />
+          <For each={s().kinds.filter((k) => k.key === 'main')}>
+            {(k) => <Row label="Main route" value={`${k.watched}/${k.total}`} title={`${fmtSpan(k.minWatched)} of ${fmtSpan(k.minTotal)} watched`} />}
           </For>
           <Row label="One Pace episodes" value={`${s().onePaceWatched}/${s().onePaceTotal}`} title="One Pace's own numbered releases (part of the main route)" />
-          <div class="mt-1 text-[10px] text-sea-400">Alternative versions are optional and not counted.</div>
         </Panel>
 
-        <Panel title="Saved vs full anime" accent="text-teal-700 dark:text-teal-300">
-          <Big value={fmtSpan(s().savedSoFarMin)} label="saved so far" color="text-teal-600 dark:text-teal-300" />
-          <Row label="Saved in total" value={fmtSpan(s().savedTotalMin)} />
-          <Row label="Full anime equivalent" value={fmtSpan(s().animeEquivMin)} title="Time to watch the same story in the original anime" />
+        <Show when={s().kinds.some((k) => k.key !== 'main')}>
+          <Panel title="Extras" accent="text-amber-700 dark:text-amber-300">
+            <For each={s().kinds.filter((k) => k.key !== 'main')}>
+              {(k) => (
+                <Row
+                  label={k.label}
+                  value={k.minWatched > 0 ? `${k.watched}/${k.total} · ${fmtDuration(k.minWatched)}` : `${k.watched}/${k.total}`}
+                  title={`${fmtSpan(k.minWatched)} of ${fmtSpan(k.minTotal)} watched`}
+                />
+              )}
+            </For>
+            <div class="mt-1 text-[10px] text-sea-400">Alternative versions are optional and not counted.</div>
+          </Panel>
+        </Show>
+
+        <Panel title="Saved vs the anime" accent="text-teal-700 dark:text-teal-300">
+          <Big value={fmtSpan(s().savedSoFarMin)} label="saved so far, compared with the original anime" color="text-teal-600 dark:text-teal-300" />
+          <Row label="Story in the anime" value={fmtSpan(s().animeStoryMin)} title="Every original anime episode the main route covers" />
+          <Row label="Story on the main route" value={fmtSpan(s().canonMinTotal)} title="The same story through One Pace and the canon cuts" />
+          <Row label="Saved in total" value={fmtSpan(s().savedTotalMin)} title="The difference: time you save over the whole story" />
         </Panel>
 
         <Panel title="Journey" accent="text-sky-700 dark:text-accent-300">

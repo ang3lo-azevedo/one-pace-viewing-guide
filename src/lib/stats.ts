@@ -268,6 +268,8 @@ export const stats = createMemo(() => {
     onePaceWatched,
     onePaceTotal,
     animeEquivMin: animeMinutes(selAnime),
+    animeStoryMin: animeMinutes(animeAll),
+    canonMinTotal,
     savedSoFarMin: Math.max(0, animeMinSeen - canonMinWatched),
     savedTotalMin: Math.max(0, animeMinutes(animeAll) - canonMinTotal),
     // progress tables

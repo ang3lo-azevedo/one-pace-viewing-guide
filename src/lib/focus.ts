@@ -96,6 +96,28 @@ export function revealEpisode(epId: string) {
   setTimeout(() => scrollTo(epId), 80);
 }
 
+// Until you scroll, tap or type, the page may still move to your place (progress that arrives
+// from Trakt a moment after load, e.g. on a new device).
+let touched = false;
+if (typeof window !== 'undefined')
+  for (const ev of ['wheel', 'touchstart', 'keydown', 'pointerdown'])
+    window.addEventListener(ev, () => (touched = true), { once: true, passive: true });
+
+/**
+ * After a Trakt sync: if the page opened without any progress (so at the top, with the first
+ * saga open) and you have not touched it yet, open and scroll to your last watched episode.
+ */
+export function focusAfterSync() {
+  if (focusTarget || touched || prefs.openAt !== 'last') return;
+  const list = rows();
+  const i = lastWatchedIndex(list);
+  if (i < 0) return;
+  const t = targetFor(list[i].ep.id, list);
+  if (!t) return;
+  setReveal(t);
+  setTimeout(() => scrollTo(t.epId), 120);
+}
+
 /** Scroll to the page-load target (call once after the first render). */
 export function scrollToFocus() {
   if (focusTarget) scrollTo(focusTarget.epId);

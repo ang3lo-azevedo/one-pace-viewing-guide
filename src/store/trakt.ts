@@ -1,3 +1,4 @@
+import { focusAfterSync } from '../lib/focus';
 import { createStore } from 'solid-js/store';
 import { config, traktConfigured } from '../config';
 import { flatById, guide } from '../lib/guide';
@@ -318,6 +319,7 @@ export async function pullFromTrakt(): Promise<void> {
     }
     // Silent: these came from Trakt, so they must not be pushed back.
     applyWatchTimes(times);
+    focusAfterSync();
     lastPullAt = Date.now();
     setTrakt('lastSyncedAt', lastPullAt);
     persist();

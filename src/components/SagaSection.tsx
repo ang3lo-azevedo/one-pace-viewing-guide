@@ -26,8 +26,15 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
       (hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.saga.number === 1)),
   );
   // Open when an episode inside is revealed (page load or "Continue watching").
+  // Opened only because it is the first saga (no progress yet): close it once your place
+  // turns out to be elsewhere (progress synced from Trakt after load).
+  let openByDefault = open() && !focusTarget && !hasActiveFilters() && wasOpen(`saga:${props.saga.id}`) == null;
   createEffect(() => {
-    if (reveal()?.sagaId === props.saga.id) setOpen(true);
+    const r = reveal();
+    if (!r) return;
+    if (r.sagaId === props.saga.id) setOpen(true);
+    else if (openByDefault) setOpen(false);
+    openByDefault = false;
   });
 
   const prog = () => stats().perSaga[props.saga.id];
@@ -60,7 +67,7 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
           tabindex="0"
           class="flex min-w-0 flex-1 items-center gap-3 text-left cursor-pointer"
           data-toggle
-          onClick={() => setOpen(!open())}
+          onClick={() => ((openByDefault = false), setOpen(!open()))}
           onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setOpen(!open()))}
           aria-expanded={open()}
         >

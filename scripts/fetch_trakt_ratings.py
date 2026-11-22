@@ -42,7 +42,9 @@ OVERRIDES = {
     "baratie-03": (5, 4),             # "The Oath" is Trakt's "The Vow"
     "post-enies-lobby-01": (20, 1),   # Trakt S20 is ordered differently from One Pace
     "post-enies-lobby-02": (20, 2),
-    "post-enies-lobby-03": (20, 5),   # bounty episode; Trakt's older cut files it as E5 "Circling Bounties"
+    "post-enies-lobby-03": None,      # folded into E2/E3 of Trakt's older cut; no episode of its own
+    "post-enies-lobby-04": (20, 3),   # now "Briefs from Franky House", Trakt's "Forgive Yourself! Franky Departs!"
+    "post-enies-lobby-06": (20, 5),   # "The Circling Bounties and The Duel on Banaro Island!"
 }
 
 

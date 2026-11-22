@@ -2,6 +2,7 @@ import { For, Show, createSignal } from 'solid-js';
 import { prefs, resetFilters, setPrefs, toggleExtra } from '../store/prefs';
 import { EXTRA_LABELS, guide, tiers, type ExtraCategory } from '../lib/guide';
 import { hasActiveFilters, visibleEpisodeCount } from '../lib/filter';
+import WhereBar from './WhereBar';
 
 function Toggle(props: { active: boolean; onClick: () => void; children: any; title?: string }) {
   return (
@@ -24,11 +25,12 @@ const EXTRAS = Object.keys(EXTRA_LABELS) as ExtraCategory[];
 
 export default function FilterBar() {
   const [showMore, setShowMore] = createSignal(false);
+  let bar: HTMLDivElement | undefined;
   const anyFilter = () => hasActiveFilters() || prefs.hiddenExtras.length > 0;
 
   return (
-    <div class="sticky top-0 z-20 border-b border-sea-200 bg-sea-50/95 backdrop-blur dark:border-sea-800 dark:bg-sea-950/95">
-      <div class="mx-auto max-w-5xl px-3 py-2.5 sm:px-4">
+    <div class="sticky top-0 z-20 border-b border-sea-200 bg-sea-50 dark:border-sea-800 dark:bg-sea-950">
+      <div ref={bar} class="mx-auto max-w-5xl px-3 py-2.5 sm:px-4">
         <div class="flex flex-wrap items-center gap-2">
           <div class="relative min-w-[11rem] flex-1">
             <span class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-sea-400">⌕</span>
@@ -164,6 +166,7 @@ export default function FilterBar() {
           </div>
         </Show>
       </div>
+      <WhereBar below={() => bar} />
     </div>
   );
 }

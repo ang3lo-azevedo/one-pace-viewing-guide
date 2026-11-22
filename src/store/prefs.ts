@@ -1,5 +1,6 @@
 import { createStore } from 'solid-js/store';
 import { createEffect, createRoot } from 'solid-js';
+import { saveView } from '../lib/restore';
 
 const KEY = 'op-prefs-v1';
 
@@ -107,6 +108,7 @@ export function toggleExtra(cat: ExtraCategory) {
 export function setVersionPref<K extends 'fishmanVersion' | 'fillerVersion'>(key: K, value: Prefs[K]) {
   if (prefs[key] === value) return;
   setPrefs(key, value);
+  saveView();
   try {
     localStorage.setItem(KEY, JSON.stringify({ ...prefs, [key]: value }));
   } catch {

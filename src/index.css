@@ -66,12 +66,27 @@ h3 {
   scrollbar-color: var(--color-sea-600) transparent;
 }
 
-/* Reusable surfaces */
+/* Reusable surfaces. Solid colours, so sticky headers never show what scrolls behind them. */
+:root {
+  --card-bg: #fff;
+  --group-bg: var(--color-sea-50);
+}
+.dark {
+  --card-bg: color-mix(in srgb, var(--color-sea-900) 70%, var(--color-sea-950));
+  --group-bg: color-mix(in srgb, var(--color-sea-950) 50%, var(--card-bg));
+}
 .card {
-  @apply rounded-xl border border-sea-200 bg-white shadow-sm;
+  @apply rounded-xl border border-sea-200 shadow-sm;
+  background-color: var(--card-bg);
 }
 .dark .card {
-  @apply border-sea-800 bg-sea-900/70 shadow-none;
+  @apply border-sea-800 shadow-none;
+}
+.card-bg {
+  background-color: var(--card-bg);
+}
+.group-bg {
+  background-color: var(--group-bg);
 }
 
 .chip {

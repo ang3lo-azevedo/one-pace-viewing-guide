@@ -11,6 +11,7 @@ import type { FilteredNode } from '../lib/filter';
 import type { Group, GuideNode } from '../types';
 import { notNeeded } from '../lib/alternatives';
 import { focusTarget, reveal } from '../lib/focus';
+import { wasOpen } from '../lib/restore';
 import { extraInfoText, inlineMd } from '../lib/format';
 
 export default function GroupBlock(props: {
@@ -26,7 +27,9 @@ export default function GroupBlock(props: {
   // Extra sections inside a main-route arc (e.g. Live Action, a special) are tagged and indented.
   const isExtra = () => !props.nodeExtra && !!props.node && !props.group.isAlternative && extraCategory(props.group as Group, props.node as GuideNode) !== null;
   const allNonCanon = () => props.group.episodes.length > 0 && props.group.episodes.every((e) => e.nonCanon);
-  const [open, setOpen] = createSignal(!!props.bare || props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid));
+  const [open, setOpen] = createSignal(
+    !!props.bare || (wasOpen(`group:${props.group.uid}`) ?? (props.group.defaultOpen || !!focusTarget?.groupUids.has(props.group.uid))),
+  );
   // Open when an episode inside is revealed (page load or "Continue watching").
   createEffect(() => {
     if (!!reveal()?.groupUids.has(props.group.uid)) setOpen(true);
@@ -38,8 +41,10 @@ export default function GroupBlock(props: {
 
   return (
     <div
+      data-open-key={open() && !props.bare ? `group:${props.group.uid}` : undefined}
+      data-open-title={props.group.label}
       classList={{
-        'overflow-hidden rounded-lg border bg-sea-50 dark:bg-sea-950/50': !props.bare,
+        'overflow-clip rounded-lg border group-bg': !props.bare,
         'ml-4 sm:ml-8 border-l-4 !border-l-amber-400/60': !props.bare && isExtra(),
         'border-dashed opacity-90': !props.bare && props.group.isAlternative,
         'border-sea-200 dark:border-sea-800': !props.bare && !props.group.isAlternative,
@@ -47,7 +52,7 @@ export default function GroupBlock(props: {
     >
       <Show when={!props.bare}>
       <div class="flex items-center gap-2 px-3 py-2">
-        <button class="flex min-w-0 flex-1 items-center gap-2 text-left" onClick={() => setOpen(!open())} aria-expanded={open()}>
+        <button class="flex min-w-0 flex-1 items-center gap-2 text-left" data-toggle onClick={() => setOpen(!open())} aria-expanded={open()}>
           <span class="text-xs transition-transform" classList={{ 'rotate-90': open() }} aria-hidden="true">
             ▶
           </span>

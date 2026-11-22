@@ -140,7 +140,7 @@ def community_durations():
 def onepace_durations():
     html = get("https://onepace.net/en/watch", raw=True).replace('\\"', '"')
     out = {}
-    for m in re.finditer(r'"slug":"([a-z0-9-]+-\d+)","part":', html):
+    for m in re.finditer(r'"slug":"([a-z0-9-]+-\d+(?:\.\d+)?)","part":', html):
         d = re.search(r'"duration":"([^"]+)"', html[m.end():m.end() + 6000])
         if d and minutes(d.group(1)):
             out.setdefault(m.group(1), minutes(d.group(1)))

@@ -17,11 +17,13 @@ import ArcCard from './ArcCard';
 import { FinalSagaPicker } from './VersionPicker';
 import { isFinalSaga } from '../lib/layout';
 import { focusTarget, reveal } from '../lib/focus';
+import { wasOpen } from '../lib/restore';
 
 export default function SagaSection(props: { saga: FilteredSaga }) {
   // Open the saga with your last watched episode (or the first saga if you have none).
   const [open, setOpen] = createSignal(
-    hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.saga.number === 1),
+    wasOpen(`saga:${props.saga.id}`) ??
+      (hasActiveFilters() || (focusTarget ? focusTarget.sagaId === props.saga.id : props.saga.number === 1)),
   );
   // Open when an episode inside is revealed (page load or "Continue watching").
   createEffect(() => {
@@ -46,12 +48,18 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
   };
 
   return (
-    <section class="scroll-mt-24" id={props.saga.id}>
-      <div class="group sticky top-[4.25rem] z-10 flex items-center gap-3 rounded-xl border border-sea-200 bg-white/90 px-3 py-3 shadow-sm backdrop-blur dark:border-sea-800 dark:bg-sea-900/90 sm:px-4">
+    <section
+      class="scroll-mt-24"
+      id={props.saga.id}
+      data-open-key={open() ? `saga:${props.saga.id}` : undefined}
+      data-open-title={props.saga.title}
+    >
+      <div class="group flex items-center gap-3 rounded-xl border border-sea-200 bg-white px-3 py-3 shadow-sm dark:border-sea-800 dark:bg-sea-900 sm:px-4">
         <div
           role="button"
           tabindex="0"
           class="flex min-w-0 flex-1 items-center gap-3 text-left cursor-pointer"
+          data-toggle
           onClick={() => setOpen(!open())}
           onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setOpen(!open()))}
           aria-expanded={open()}

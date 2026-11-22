@@ -19,6 +19,7 @@ import { SERIESGRAPH_SHOW } from '../lib/format';
 import GroupBlock from './GroupBlock';
 import VersionPicker, { LiveActionPicker } from './VersionPicker';
 import { focusTarget, reveal } from '../lib/focus';
+import { wasOpen } from '../lib/restore';
 
 const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
   arc: { label: 'Arc', cls: 'border-accent-400/40 text-accent-500 dark:text-accent-300' },
@@ -31,7 +32,7 @@ const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
 
 export default function ArcCard(props: { node: FilteredNode }) {
   // Arcs start collapsed; open them automatically when searching/filtering so matches show.
-  const [open, setOpen] = createSignal(hasActiveFilters() || focusTarget?.nodeUid === props.node.uid);
+  const [open, setOpen] = createSignal(wasOpen(`arc:${props.node.uid}`) ?? (hasActiveFilters() || focusTarget?.nodeUid === props.node.uid));
   // Open when an episode inside is revealed (page load or "Continue watching").
   createEffect(() => {
     if (reveal()?.nodeUid === props.node.uid) setOpen(true);
@@ -79,15 +80,18 @@ export default function ArcCard(props: { node: FilteredNode }) {
 
   return (
     <div
-      class="card scroll-mt-28 overflow-hidden"
+      class="card scroll-mt-28 overflow-clip"
       classList={{ 'ml-5 sm:ml-10 border-l-4 !border-l-amber-400/60': isExtraNode() }}
       id={props.node.id}
+      data-open-key={open() ? `arc:${props.node.uid}` : undefined}
+      data-open-title={props.node.title}
     >
-      <div class="flex items-start gap-2 px-3 py-3 sm:px-4">
+      <div class="flex items-start gap-2 px-3 py-3 sm:px-4" classList={{ 'border-b border-sea-200 dark:border-sea-800': open() }}>
         <div
           role="button"
           tabindex="0"
           class="mt-0.5 flex min-w-0 flex-1 items-start gap-3 text-left cursor-pointer"
+          data-toggle
           onClick={() => setOpen(!open())}
           onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setOpen(!open()))}
           aria-expanded={open()}
@@ -146,7 +150,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
       </div>
 
       <Show when={open()}>
-        <div class="space-y-2 border-t border-sea-200 p-2 dark:border-sea-800 sm:p-3">
+        <div class="space-y-2 p-2 sm:p-3">
           <VersionPicker node={props.node} />
           <Show when={props.node.type === 'liveaction'}>
             <LiveActionPicker />

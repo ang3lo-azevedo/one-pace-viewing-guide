@@ -7190,7 +7190,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-00",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_1",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -7230,7 +7230,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-01",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_2",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_1",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -7263,7 +7263,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-02",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_3",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_2",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -7296,7 +7296,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-03",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_4",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_3",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -7329,7 +7329,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-04",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_5",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_4",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -7362,7 +7362,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-05",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_6",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_5",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -7395,7 +7395,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#long-ring-long-land-06",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_7",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/LR_6",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -9162,7 +9162,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#post-enies-lobby-03",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PEN_3",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -9217,7 +9217,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#post-enies-lobby-04",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PEN_4",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PEN_3",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -9250,7 +9250,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#post-enies-lobby-05",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PEN_5",
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PEN_4",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -9281,7 +9281,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#post-enies-lobby-06",
-                    "stremio": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PEN_5",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -12734,7 +12734,7 @@
                   "description": "Covers the crew's training during the two-year time skip. Warning: the final few minutes contain spoilers for later arcs, so stop before the ending.",
                   "links": {
                     "onepace": "https://onepace.net/en/watch#post-war-08",
-                    "stremio": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/onepace/PW_8",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21698,7 +21698,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-56",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_56",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21731,7 +21731,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-57",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_57",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21764,7 +21764,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-58",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_58",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21797,7 +21797,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-59",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_59",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21830,7 +21830,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-60",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_60",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21863,7 +21863,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-61",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_61",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -21908,7 +21908,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#wano-62",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/WA_62",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -25079,7 +25079,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-20",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/EH_20",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -25112,7 +25112,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-21",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/EH_21",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -25145,7 +25145,7 @@
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-22",
-                    "stremio": "https://web.stremio.com/#/detail/series/onepace/EH_22",
+                    "stremio": null,
                     "netflix": null,
                     "mega": null,
                     "drive": null,

@@ -267,6 +267,7 @@ export default function Preferences() {
                 { value: 'last', label: 'Jump to my last episode' },
                 { value: 'top', label: 'Start at the top' },
               ]}
+              hint="Either way your saga, arc and episode are opened; this is whether the page also scrolls down to it."
             />
             <Choice<boolean>
               label="Rate on Trakt after watching"

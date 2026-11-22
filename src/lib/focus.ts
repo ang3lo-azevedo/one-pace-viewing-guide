@@ -69,7 +69,8 @@ const lastWatchedTarget = (() => {
   const i = lastWatchedIndex(list);
   return i < 0 ? null : targetFor(list[i].ep.id, list);
 })();
-const initial = prefs.openAt === 'top' ? null : lastWatchedTarget;
+// Your place opens on load either way; only "Jump to my last episode" also scrolls to it.
+const initial = lastWatchedTarget;
 
 /** The saga you are in (even when the page opens at the top), or null without progress. */
 export const homeSagaId: string | null = lastWatchedTarget?.sagaId ?? null;
@@ -111,14 +112,14 @@ if (typeof window !== 'undefined')
  * saga open) and you have not touched it yet, open and scroll to your last watched episode.
  */
 export function focusAfterSync() {
-  if (focusTarget || touched || prefs.openAt !== 'last') return;
+  if (focusTarget || touched) return;
   const list = rows();
   const i = lastWatchedIndex(list);
   if (i < 0) return;
   const t = targetFor(list[i].ep.id, list);
   if (!t) return;
   setReveal(t);
-  setTimeout(() => scrollTo(t.epId), 120);
+  if (prefs.openAt === 'last') setTimeout(() => scrollTo(t.epId), 120);
 }
 
 /** Scroll to the page-load target (call once after the first render). */

@@ -7167,7 +7167,7 @@
                     "nyaa": "https://nyaa.si/view/1043491",
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "wapol-s-omnivorous-hurrah:urn:btih:91c2900b69470850a055b0bb0ff11e00e7ed6bfe",
                   "notes": [
                     "Canon."
@@ -10154,7 +10154,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "special-monsters:/detail/movie/tt30475122/tt30475122",
                   "notes": [
                     "**Spoiler Warning:** If watching here, **skip the last minute** (it flashes forward to scenes from this arc), or alternatively watch this special at any point after completing Thriller Bark."
@@ -10326,7 +10326,7 @@
                     "nyaa": null,
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "special-strong-world-episode-0-main:fun-pace-special-strong-world-episode-0",
                   "notes": [
                     "Alternative placement: the original One Pace release of this prologue reveals later story details, so if you use it instead of the Fun Pace version, watch it at the alternative placement later in this guide."
@@ -12650,7 +12650,7 @@
                     "nyaa": "https://nyaa.si/view/1043491",
                     "other": null
                   },
-                  "canon": false,
+                  "canon": true,
                   "id": "special-strong-world-episode-0-alternative-main:pace-special-strong-world-episode-0",
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",

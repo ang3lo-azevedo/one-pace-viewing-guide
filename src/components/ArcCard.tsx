@@ -61,7 +61,8 @@ export default function ArcCard(props: { node: FilteredNode }) {
   const badge = () => TYPE_BADGE[props.node.type] ?? TYPE_BADGE.arc;
   // Whole arcs that are extras (films, specials, Live Action, filler arcs) sit indented and tagged.
   const isExtraNode = () =>
-    props.node.type !== 'arc' || props.node.groups.every((g) => extraCategory(g as Group, props.node as GuideNode) !== null);
+    // By content, not type: a canon special (Strong World Episode 0, Monsters) is main route.
+    props.node.groups.length > 0 && props.node.groups.every((g) => extraCategory(g as Group, props.node as GuideNode) !== null);
   const isNonCanonNode = () => props.node.groups.every((g) => g.episodes.every((e) => e.nonCanon));
   // Canon episodes in this arc (independent of filters), for the summary line.
   const canonEntries = flatEpisodes.filter((f) => f.ep.canon && nodeKeyOf(f) === props.node.uid);

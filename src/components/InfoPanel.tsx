@@ -109,9 +109,10 @@ export default function InfoPanel() {
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Extra and Non-canon tags:</b> Extra is anything outside the
-              One Pace route (films, specials, filler, Live Action, original anime). Non-canon is what is not part of
-              the story (films, filler and most specials). The Live Action and a few specials are extras but still
-              canon, so "Hide extras" and "Hide non-canon" are separate switches.
+              main route (films, most specials, filler, Live Action, original anime). Non-canon is what is not part of
+              the story (films, filler and most specials). Canon specials (Strong World Episode 0, Monsters) are part
+              of the main route. The Live Action is canon but an extra, so "Hide extras" and "Hide non-canon" are
+              separate switches.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Live Action:</b> it introduces characters and reveals earlier

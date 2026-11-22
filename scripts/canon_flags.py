@@ -2,7 +2,7 @@
 """Mark non-canon entries in src/data/data.json (`nonCanon: true`).
 
 "Canon" here means the story, not the main viewing route: the Live Action series and a
-few specials are canon but optional extras, while films and filler are not canon.
+few specials are canon (and part of the main route: `canon: true`), while films and filler are not canon.
 
   * Filler of any kind (Fun Pace, anime filler, entries whose info says "Filler") and all
     films are non-canon.

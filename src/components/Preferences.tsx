@@ -1,5 +1,5 @@
 import { For, Show, createSignal, type JSX } from 'solid-js';
-import { prefs, setPrefs, setVersion, type Prefs } from '../store/prefs';
+import { prefs, setPrefs, setVersion, toggleExtra, type Prefs } from '../store/prefs';
 import { VERSION_SETS } from '../lib/versions';
 import { wasOpen } from '../lib/restore';
 
@@ -121,7 +121,19 @@ export default function Preferences() {
             />
           </Group>
 
-          <Group title="Versions" note="Your main route for each of these. The others stay listed as optional alternatives. Changing one reloads the page.">
+          <Group title="Versions" note="Your main route for each of these. Changing one reloads the page.">
+            <Choice<boolean>
+              label="The other versions"
+              value={!prefs.hiddenExtras.includes('alternatives')}
+              onPick={(show) => {
+                if (show !== !prefs.hiddenExtras.includes('alternatives')) toggleExtra('alternatives');
+              }}
+              options={[
+                { value: true, label: 'Show as Alternative' },
+                { value: false, label: 'Hide' },
+              ]}
+              hint="Shown, they stay in the list tagged Alternative and never count as remaining. Also hides other alternative cuts (like the unfixed Fish-Man Island 07)."
+            />
             <For each={VERSION_SETS}>
               {(set) => <Choice<string> label={set.label} value={prefs.versions[set.key]} onPick={(v) => setVersion(set.key, v)} options={set.options} />}
             </For>

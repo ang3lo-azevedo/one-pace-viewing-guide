@@ -10,7 +10,7 @@ import SagaSection from './components/SagaSection';
 import InfoPanel from './components/InfoPanel';
 import TraktMenu from './components/TraktMenu';
 import ProgressMenu from './components/ProgressMenu';
-import SettingsMenu from './components/SettingsMenu';
+import Preferences from './components/Preferences';
 
 export default function App() {
   // Jump to the last episode you watched once the list has rendered.
@@ -46,7 +46,6 @@ export default function App() {
               </svg>
               <span class="hidden sm:inline">Source</span>
             </a>
-            <SettingsMenu />
             <ProgressMenu />
             <TraktMenu />
             <button
@@ -65,6 +64,7 @@ export default function App() {
 
       <main class="mx-auto max-w-5xl space-y-4 px-3 py-4 sm:px-4 sm:py-6">
         <VoyageHero />
+        <Preferences />
         <InfoPanel />
 
         <div class="space-y-4">

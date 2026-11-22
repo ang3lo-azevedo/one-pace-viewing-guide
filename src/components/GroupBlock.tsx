@@ -57,7 +57,7 @@ export default function GroupBlock(props: {
             ▶
           </span>
           <span
-            class="chip no-edge shrink-0 text-[10px] uppercase tracking-wide"
+            class="chip border-transparent shrink-0 text-[10px] uppercase tracking-wide"
             style={{ color: kindColor(props.group.kind), 'background-color': kindColor(props.group.kind) + '1f' }}
           >
             {kindLabel(props.group.kind)}

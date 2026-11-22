@@ -9,7 +9,7 @@ interface Option<T> {
   title?: string;
 }
 
-/** A small inline version of a Settings choice, shown where it applies. */
+/** A small inline version of a Preferences choice, shown where it applies. */
 export function InlineChoice<T>(props: { label: string; options: Option<T>[]; value: T; onPick: (v: T) => void; hint?: string }) {
   return (
     <div class="flex flex-wrap items-center gap-1.5 rounded-md bg-sea-100 px-2.5 py-1.5 text-xs dark:bg-sea-900/70">
@@ -17,9 +17,9 @@ export function InlineChoice<T>(props: { label: string; options: Option<T>[]; va
       <For each={props.options}>
         {(o) => (
           <button
-            class="angled angled-edge angled-sm border px-2 py-0.5 text-[11px] font-semibold transition-colors"
+            class="rounded-md border px-2 py-0.5 text-[11px] font-semibold transition-colors"
             classList={{
-              'no-edge bg-accent-500 text-white': props.value === o.value,
+              'bg-accent-500 text-white': props.value === o.value,
               'border-sea-300 text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300': props.value !== o.value,
             }}
             aria-pressed={props.value === o.value}
@@ -59,7 +59,7 @@ export default function VersionPicker(props: { node: { uid: string } }) {
             value={prefs.versions[key]}
             onPick={(v) => setVersion(key, v)}
             options={set.options}
-            hint="Also in Settings. The other version stays as an alternative."
+            hint="Also in Preferences. The other version stays as an alternative."
           />
         );
       }}

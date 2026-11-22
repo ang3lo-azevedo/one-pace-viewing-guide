@@ -103,45 +103,15 @@ h3 {
 }
 
 .chip {
-  @apply inline-flex items-center gap-1 border px-2.5 py-1 text-xs font-medium transition-colors;
+  @apply inline-flex items-center gap-1 rounded-md border px-2.5 py-1 text-xs font-medium transition-colors;
 }
 
 /* Red call-to-action, One Pace style */
 .btn-watch {
-  @apply inline-flex items-center gap-1 bg-strawhat-500 px-3 py-1 text-xs font-bold text-white
+  @apply inline-flex items-center gap-1 rounded-md bg-strawhat-500 px-3 py-1 text-xs font-bold text-white
     transition-colors hover:bg-strawhat-600;
 }
 
-/*
- * Angled buttons: the top-left and bottom-right corners are cut off. Outlined ones get the
- * border drawn along the cut too (a thin diagonal in each corner, in the text colour).
- */
-.chip,
-.btn-watch,
-.angled {
-  --cut: 7px;
-  border-radius: 0;
-  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
-}
-.chip,
-.angled-edge {
-  /* Border and the diagonal corner edges share one colour, derived from the text colour. */
-  --edge: color-mix(in srgb, currentColor 45%, transparent);
-  border-color: var(--edge);
-  background-image:
-    linear-gradient(to bottom right, transparent 50%, var(--edge) 50%, var(--edge) calc(50% + 1.2px), transparent calc(50% + 1.2px)),
-    linear-gradient(to bottom right, transparent calc(50% - 1.2px), var(--edge) calc(50% - 1.2px), var(--edge) 50%, transparent 50%);
-  background-size: var(--cut) var(--cut);
-  background-position: top left, bottom right;
-  background-repeat: no-repeat;
-  background-origin: border-box; /* line up with the clip, which is measured from the outer edge */
-}
-.no-edge {
-  --edge: transparent;
-}
-.angled-sm {
-  --cut: 5px;
-}
 
 /* Progress bar fill */
 .voyage-fill {

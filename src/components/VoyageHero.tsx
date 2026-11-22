@@ -131,7 +131,7 @@ function CustomPace() {
       placeholder="Custom"
       aria-label="Custom pace a day"
       title={'Type your own pace a day, e.g. 90, 1h30, 1:30, 1.5h or 2 eps. Press Enter to apply.'}
-      class="w-20 angled angled-edge angled-sm border bg-white px-2 py-0.5 text-[11px] font-semibold outline-none dark:bg-sea-900"
+      class="w-20 rounded-md border bg-white px-2 py-0.5 text-[11px] font-semibold outline-none dark:bg-sea-900"
       classList={{
         'border-accent-500 text-accent-600 dark:text-accent-300': !preset() && prefs.paceMinutes != null && !bad(),
         'border-red-500 text-red-600': bad(),
@@ -177,7 +177,7 @@ function FinishLine() {
               <button
                 role="radio"
                 aria-checked={prefs.paceMinutes === value}
-                class="angled angled-sm px-2 py-0.5 text-[11px] font-semibold transition-colors"
+                class="rounded-md px-2 py-0.5 text-[11px] font-semibold transition-colors"
                 classList={{
                   'bg-accent-500 text-white': prefs.paceMinutes === value,
                   'text-sea-500 hover:text-sea-800 dark:text-sea-400 dark:hover:text-sea-100': prefs.paceMinutes !== value,
@@ -221,7 +221,7 @@ function RateJustWatched(props: { id: string; title: string; onDone: () => void 
         <For each={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}>
           {(n) => (
             <button
-              class="angled angled-sm h-7 w-7 text-xs font-bold tabular-nums transition-colors"
+              class="rounded-md h-7 w-7 text-xs font-bold tabular-nums transition-colors"
               classList={{
                 'bg-[#ed1c24] text-white': mine() === n,
                 'bg-sea-200 text-sea-700 hover:bg-[#ed1c24]/70 hover:text-white dark:bg-sea-800 dark:text-sea-200': mine() !== n,

@@ -13,7 +13,7 @@ guide.sagas.forEach((saga, si) =>
   }),
 );
 
-// Interchangeable versions (Settings, see versions.ts): the picked one is the main route, the
+// Interchangeable versions (Preferences, see versions.ts): the picked one is the main route, the
 // others become optional alternatives. Applied once at load; changing one reloads the page.
 export const versionChoice: Versions = (() => {
   try {

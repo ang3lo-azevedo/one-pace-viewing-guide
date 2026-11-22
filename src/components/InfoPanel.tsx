@@ -105,7 +105,7 @@ export default function InfoPanel() {
           <ul class="space-y-1.5 text-xs text-sea-500 dark:text-sea-400">
             <li>
               <b class="text-sea-700 dark:text-sea-200">Spoiler-safe:</b> episode subtitles are hidden until you hover
-              them. Turn it off in the top bar to see full titles.
+              them. Turn it off in Preferences to see full titles.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Extra and Non-canon tags:</b> Extra is anything outside the
@@ -115,12 +115,12 @@ export default function InfoPanel() {
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Live Action:</b> it introduces characters and reveals earlier
-              than the anime. In Settings you can keep each episode next to its arc, or move the whole show after
+              than the anime. In Preferences you can keep each episode next to its arc, or move the whole show after
               Post-Enies Lobby or after Thriller Bark (the safest point).
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Final Saga:</b> Egghead and Elbaph can stay inside one Final
-              Saga or be listed as separate sections, in Settings.
+              Saga or be listed as separate sections, in Preferences.
             </li>
             <li>
               <b class="text-sea-700 dark:text-sea-200">Lengths:</b> real runtimes from onepace.net, Trakt (movies,
@@ -135,7 +135,7 @@ export default function InfoPanel() {
               day, like 90, 1h30 or 2 eps. Each remaining episode, arc and saga shows when you'd reach it at that pace.
             </li>
             <li>
-              <b class="text-sea-700 dark:text-sea-200">Versions:</b> in Settings, pick the One Piece Log or One Pace
+              <b class="text-sea-700 dark:text-sea-200">Versions:</b> in Preferences, pick the One Piece Log or One Pace
               for Fish-Man Island, and Fun Pace or the original anime for filler like G-8.
             </li>
             <li>

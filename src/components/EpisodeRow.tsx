@@ -191,7 +191,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
               <For each={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}>
                 {(n) => (
                   <button
-                    class="angled angled-sm h-6 w-6 text-[11px] font-bold tabular-nums transition-colors"
+                    class="rounded-md h-6 w-6 text-[11px] font-bold tabular-nums transition-colors"
                     classList={{
                       'bg-[#ed1c24] text-white': myRating() === n,
                       'bg-sea-200 text-sea-700 hover:bg-[#ed1c24]/70 hover:text-white dark:bg-sea-800 dark:text-sea-200': myRating() !== n,

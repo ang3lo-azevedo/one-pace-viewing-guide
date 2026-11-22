@@ -55,53 +55,6 @@ export default function FilterBar() {
             ⚙ Filters{anyFilter() ? ' •' : ''}
           </button>
 
-          {/* Phones: one row that scrolls sideways. Wider screens: inline with the rest. */}
-          <div class="no-scrollbar -mx-3 flex w-[calc(100%+1.5rem)] flex-nowrap items-center gap-2 overflow-x-auto px-3 sm:contents">
-          <Toggle
-              active={prefs.canonOnly}
-              onClick={() => setPrefs('canonOnly', !prefs.canonOnly)}
-              title="Show only the main One Pace route: hides movies, specials, Live Action, filler, original anime and alternatives"
-            >
-              {prefs.canonOnly ? '● Extras hidden' : '○ Hide extras'}
-            </Toggle>
-
-            <Toggle
-              active={prefs.hideNonCanon}
-              onClick={() => setPrefs('hideNonCanon', !prefs.hideNonCanon)}
-              title="Hide what is not story canon (films, filler, most specials). Canon extras like the Live Action and Monsters stay."
-            >
-              {prefs.hideNonCanon ? '● Non-canon hidden' : '○ Hide non-canon'}
-            </Toggle>
-
-            <Toggle active={prefs.spoilerSafe} onClick={() => setPrefs('spoilerSafe', !prefs.spoilerSafe)} title="Hide episode subtitles; reveal on hover">
-              🛡 Spoiler-safe
-            </Toggle>
-
-            <div
-              class="inline-flex shrink-0 items-center gap-1 angled angled-edge border border-sea-300 p-0.5 dark:border-sea-600"
-              role="radiogroup"
-              aria-label="Default stream"
-              title="Where the red ▶ watch button on each episode opens"
-            >
-              <span class="hidden pl-2 pr-0.5 text-[11px] font-semibold text-sea-400 sm:inline">Watch on</span>
-              <For each={[['onepace', 'One Pace'], ['stremio', 'Stremio']] as const}>
-                {([value, label]) => (
-                  <button
-                    role="radio"
-                    aria-checked={prefs.streamSource === value}
-                    class="angled angled-sm px-2.5 py-0.5 text-xs font-semibold transition-colors"
-                    classList={{
-                      'bg-strawhat-500 text-white shadow-sm': prefs.streamSource === value,
-                      'text-sea-400 hover:text-sea-700 dark:hover:text-sea-100': prefs.streamSource !== value,
-                    }}
-                    onClick={() => setPrefs('streamSource', value)}
-                  >
-                    {label}
-                  </button>
-                )}
-              </For>
-            </div>
-          </div>
         </div>
 
         <Show when={showMore()}>

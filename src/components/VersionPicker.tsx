@@ -17,9 +17,9 @@ export function InlineChoice<T>(props: { label: string; options: Option<T>[]; va
       <For each={props.options}>
         {(o) => (
           <button
-            class="rounded-md border px-2 py-0.5 text-[11px] font-semibold transition-colors"
+            class="angled angled-edge angled-sm border px-2 py-0.5 text-[11px] font-semibold transition-colors"
             classList={{
-              'border-accent-500 bg-accent-500 text-white': props.value === o.value,
+              'no-edge bg-accent-500 text-white': props.value === o.value,
               'border-sea-300 text-sea-500 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-300': props.value !== o.value,
             }}
             aria-pressed={props.value === o.value}

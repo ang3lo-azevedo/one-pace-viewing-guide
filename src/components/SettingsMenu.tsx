@@ -16,9 +16,9 @@ function Choice<T>(props: { label: string; hint?: string; options: Option<T>[]; 
         <For each={props.options}>
           {(o) => (
             <button
-              class="rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors"
+              class="angled angled-edge border px-2.5 py-0.5 text-xs font-semibold transition-colors"
               classList={{
-                'border-accent-400 bg-accent-500 text-white': props.value === o.value,
+                'no-edge bg-accent-500 text-white': props.value === o.value,
                 'border-sea-600 text-sea-300 hover:border-accent-400 hover:text-accent-300': props.value !== o.value,
               }}
               aria-pressed={props.value === o.value}
@@ -59,6 +59,43 @@ export default function SettingsMenu() {
       </button>
       <Show when={open()}>
         <div class="absolute inset-x-3 z-40 mt-2 sm:inset-x-auto sm:right-0 max-h-[75vh] sm:w-80 space-y-3.5 overflow-y-auto rounded-xl border border-sea-700 bg-sea-900 p-3 text-sm text-sea-100 shadow-xl">
+          <Choice<'onepace' | 'stremio'>
+            label="Watch on"
+            value={prefs.streamSource}
+            onPick={(v) => setPrefs('streamSource', v)}
+            options={[
+              { value: 'onepace', label: 'One Pace', title: 'The red watch button opens onepace.net' },
+              { value: 'stremio', label: 'Stremio', title: 'The red watch button opens Stremio Web' },
+            ]}
+          />
+          <Choice<boolean>
+            label="Spoiler-safe"
+            value={prefs.spoilerSafe}
+            onPick={(v) => setPrefs('spoilerSafe', v)}
+            options={[
+              { value: true, label: 'On', title: 'Hide episode subtitles; reveal on hover' },
+              { value: false, label: 'Off', title: 'Show full episode titles' },
+            ]}
+          />
+          <Choice<boolean>
+            label="Extras"
+            value={prefs.canonOnly}
+            onPick={(v) => setPrefs('canonOnly', v)}
+            options={[
+              { value: false, label: 'Show' },
+              { value: true, label: 'Hide', title: 'Only the main One Pace route: hides movies, specials, Live Action, filler, original anime and alternatives' },
+            ]}
+          />
+          <Choice<boolean>
+            label="Non-canon"
+            value={prefs.hideNonCanon}
+            onPick={(v) => setPrefs('hideNonCanon', v)}
+            options={[
+              { value: false, label: 'Show' },
+              { value: true, label: 'Hide', title: 'Hide films, filler and most specials. Canon extras like the Live Action stay.' },
+            ]}
+          />
+          <div class="border-t border-sea-700" />
           <div class="text-[11px] leading-snug text-sea-400">Which version is your main route. The others stay listed as optional alternatives.</div>
           <For each={VERSION_SETS}>
             {(set) => (

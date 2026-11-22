@@ -29,7 +29,7 @@ export default function FilterBar() {
   const anyFilter = () => hasActiveFilters() || prefs.hiddenExtras.length > 0;
 
   return (
-    <div class="sticky top-0 z-20 border-b border-sea-200 bg-sea-50 dark:border-sea-800 dark:bg-sea-950">
+    <div class="filter-bar sticky top-0 z-20 border-b border-sea-200 bg-white shadow-[0_1px_6px_rgba(16,42,60,0.06)] dark:border-sea-800 dark:bg-sea-950 dark:shadow-none">
       <div ref={bar} class="mx-auto max-w-5xl px-3 py-2.5 sm:px-4">
         <div class="flex flex-wrap items-center gap-2">
           <div class="relative min-w-0 flex-1 sm:min-w-[11rem]">
@@ -78,7 +78,7 @@ export default function FilterBar() {
             </Toggle>
 
             <div
-              class="inline-flex shrink-0 items-center gap-1 rounded-md border border-sea-300 p-0.5 dark:border-sea-600"
+              class="inline-flex shrink-0 items-center gap-1 angled angled-edge border border-sea-300 p-0.5 dark:border-sea-600"
               role="radiogroup"
               aria-label="Default stream"
               title="Where the red ▶ watch button on each episode opens"
@@ -89,7 +89,7 @@ export default function FilterBar() {
                   <button
                     role="radio"
                     aria-checked={prefs.streamSource === value}
-                    class="rounded px-2.5 py-0.5 text-xs font-semibold transition-colors"
+                    class="angled angled-sm px-2.5 py-0.5 text-xs font-semibold transition-colors"
                     classList={{
                       'bg-strawhat-500 text-white shadow-sm': prefs.streamSource === value,
                       'text-sea-400 hover:text-sea-700 dark:hover:text-sea-100': prefs.streamSource !== value,

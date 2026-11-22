@@ -27,6 +27,7 @@
   --color-accent-400: #66c0ef;
   --color-accent-500: #3aa6de;
   --color-accent-600: #2b86b8;
+  --color-accent-700: #1f6a93;
 
   --color-strawhat-500: #ff0408;
   --color-strawhat-600: #d10306;
@@ -41,8 +42,12 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  @apply bg-sea-50 text-sea-900 antialiased;
+  @apply text-sea-900 antialiased;
   font-family: var(--font-sans);
+  background-color: #f2f6f9;
+  /* A soft sky glow at the top, the light counterpart of the dark theme's. */
+  background-image: radial-gradient(1200px 520px at 50% -8%, rgba(102, 192, 239, 0.16), transparent 65%);
+  background-attachment: fixed;
 }
 .dark body {
   @apply bg-sea-950 text-sea-50;
@@ -69,15 +74,17 @@ h3 {
 /* Reusable surfaces. Solid colours, so sticky headers never show what scrolls behind them. */
 :root {
   --card-bg: #fff;
-  --group-bg: var(--color-sea-50);
+  --group-bg: #f5f8fa;
 }
 .dark {
   --card-bg: color-mix(in srgb, var(--color-sea-900) 70%, var(--color-sea-950));
   --group-bg: color-mix(in srgb, var(--color-sea-950) 50%, var(--card-bg));
 }
 .card {
-  @apply rounded-xl border border-sea-200 shadow-sm;
+  @apply rounded-xl border;
+  border-color: #dbe4ea;
   background-color: var(--card-bg);
+  box-shadow: 0 1px 2px rgba(16, 42, 60, 0.05), 0 2px 8px -2px rgba(16, 42, 60, 0.07);
 }
 .dark .card {
   @apply border-sea-800 shadow-none;
@@ -96,14 +103,44 @@ h3 {
 }
 
 .chip {
-  @apply inline-flex items-center gap-1 rounded-md border px-2.5 py-1 text-xs font-medium
-    transition-colors;
+  @apply inline-flex items-center gap-1 border px-2.5 py-1 text-xs font-medium transition-colors;
 }
 
 /* Red call-to-action, One Pace style */
 .btn-watch {
-  @apply inline-flex items-center gap-1 rounded-md bg-strawhat-500 px-3 py-1 text-xs font-bold
-    text-white transition-colors hover:bg-strawhat-600;
+  @apply inline-flex items-center gap-1 bg-strawhat-500 px-3 py-1 text-xs font-bold text-white
+    transition-colors hover:bg-strawhat-600;
+}
+
+/*
+ * Angled buttons: the top-left and bottom-right corners are cut off. Outlined ones get the
+ * border drawn along the cut too (a thin diagonal in each corner, in the text colour).
+ */
+.chip,
+.btn-watch,
+.angled {
+  --cut: 7px;
+  border-radius: 0;
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+.chip,
+.angled-edge {
+  /* Border and the diagonal corner edges share one colour, derived from the text colour. */
+  --edge: color-mix(in srgb, currentColor 45%, transparent);
+  border-color: var(--edge);
+  background-image:
+    linear-gradient(to bottom right, transparent 50%, var(--edge) 50%, var(--edge) calc(50% + 1.2px), transparent calc(50% + 1.2px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1.2px), var(--edge) calc(50% - 1.2px), var(--edge) 50%, transparent 50%);
+  background-size: var(--cut) var(--cut);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  background-origin: border-box; /* line up with the clip, which is measured from the outer edge */
+}
+.no-edge {
+  --edge: transparent;
+}
+.angled-sm {
+  --cut: 5px;
 }
 
 /* Progress bar fill */
@@ -132,4 +169,32 @@ h3 {
 }
 .focus-flash {
   animation: focus-flash 2.5s ease-out;
+}
+
+/*
+ * Light theme tuning for the page body and filter bar (the header and its menus stay dark):
+ * softer tracks and tiles, and darker greys and blues so small text keeps its contrast on white.
+ */
+html:not(.dark) :is(main, .filter-bar) {
+  .bg-sea-200 {
+    background-color: #e1e9ee;
+  }
+  .bg-sea-100 {
+    background-color: #ecf2f5;
+  }
+  .border-sea-200 {
+    border-color: #dbe4ea;
+  }
+  .text-sea-400 {
+    color: #5d7581;
+  }
+  .text-sea-500 {
+    color: #4f6874;
+  }
+  .text-accent-500 {
+    color: var(--color-accent-600);
+  }
+  .text-accent-600 {
+    color: var(--color-accent-700);
+  }
 }

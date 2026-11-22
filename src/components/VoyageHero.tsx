@@ -3,7 +3,9 @@ import { fmtDate, fmtDuration, fmtFromNow, fmtHours, fmtSpan, parsePace, stats }
 import { formatBerry } from '../lib/bounties';
 import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
-import { splitTitle } from '../lib/guide';
+import { flatById, splitTitle } from '../lib/guide';
+import { pauseNote, shortName, waitingOn } from '../lib/pause';
+import { inlineMd } from '../lib/format';
 import { setWatched } from '../store/progress';
 import { isConnected, rateEpisode, trakt } from '../store/trakt';
 import { RATING_WORDS } from './EpisodeRow';
@@ -275,6 +277,9 @@ function ContinueWatching() {
               {title()}
             </div>
             <div class="truncate text-xs text-sea-500 dark:text-sea-400">{n().nodeTitle}</div>
+            <Show when={waitingOn(n().ep.id).length > 0 ? pauseNote(flatById.get(n().ep.id)!) : null}>
+              {(note) => <div class="mt-1 text-xs font-semibold text-accent-700 dark:text-accent-300" innerHTML={'⏸ ' + inlineMd(note())} />}
+            </Show>
           </div>
           <div class="flex flex-wrap items-center gap-1.5">
             <Show when={link()}>
@@ -287,14 +292,15 @@ function ContinueWatching() {
             <button
               class="chip border-sea-300 text-xs font-semibold text-sea-600 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-200"
               onClick={() => {
-                const ep = n().ep;
+                // Paused episode: mark the special in between first, the episode itself after.
+                const ep = waitingOn(n().ep.id)[0]?.ep ?? n().ep;
                 setWatched(ep.id, true);
                 if (isConnected() && trakt.mapped[ep.id] && !trakt.myRatings[ep.id])
                   setJustWatched({ id: ep.id, title: prefs.spoilerSafe ? splitTitle(ep.title).label : ep.title });
               }}
-              title="Mark this episode watched and move on to the next one"
+              title={waitingOn(n().ep.id).length ? 'You finish this episode after the special: mark the special first' : 'Mark this episode watched and move on to the next one'}
             >
-              ✓ Mark watched
+              ✓ {waitingOn(n().ep.id).length ? `Mark ${shortName(waitingOn(n().ep.id)[0])} watched` : 'Mark watched'}
             </button>
             <button
               class="chip border-sea-300 text-xs font-semibold text-sea-600 hover:border-accent-400 hover:text-accent-500 dark:border-sea-600 dark:text-sea-200"

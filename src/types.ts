@@ -32,6 +32,8 @@ export interface Episode {
   /** Trakt community rating (only present when the episode has votes on Trakt). */
   traktRating?: number;
   traktVotes?: number;
+  /** Minutes you skip at this placement (e.g. the spoilery last minute of Monsters); taken off the runtime. */
+  skipMinutes?: number;
   /** "anime" when the Trakt rating is the vote-weighted rating of the anime episodes covered. */
   traktRatingFrom?: 'anime';
   /** Where this episode lives on the Trakt One Pace show. */
@@ -91,6 +93,8 @@ export interface Group {
    * the alternative.
    */
   version?: string;
+  /** A placement preference that moves this section (e.g. "monsters"), see versions.ts. */
+  setting?: string;
   /** Unique key assigned at load ("saga.node.group" indices). */
   uid: string;
 }

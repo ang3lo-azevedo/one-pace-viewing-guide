@@ -10167,10 +10167,12 @@
                   "traktRating": 8.4,
                   "traktVotes": 947,
                   "runtime": 26,
-                  "runtimeSource": "trakt"
+                  "runtimeSource": "trakt",
+                  "skipMinutes": 1
                 }
               ],
-              "afterEpisode": "one-pace:thriller-bark-13"
+              "afterEpisode": "one-pace:thriller-bark-13",
+              "setting": "monsters"
             }
           ]
         },

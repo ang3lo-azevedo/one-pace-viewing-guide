@@ -43,7 +43,10 @@ export function InlineChoice<T>(props: { label: string; options: Option<T>[]; va
 const versionsByUid = new Map<string, string[]>();
 for (const s of guide.sagas)
   for (const n of s.nodes) {
-    const keys = new Set([n.version, ...n.groups.map((g) => g.version)].filter(Boolean).map((v) => v!.split(':')[0]));
+    const keys = new Set([
+      ...[n.version, ...n.groups.map((g) => g.version)].filter(Boolean).map((v) => v!.split(':')[0]),
+      ...n.groups.map((g) => g.setting).filter((v): v is string => !!v),
+    ]);
     if (keys.size) versionsByUid.set(n.uid, [...keys]);
   }
 
@@ -55,11 +58,11 @@ export default function VersionPicker(props: { node: { uid: string } }) {
         const set = versionSet.get(key)!;
         return (
           <InlineChoice<string>
-            label={key === 'strongworld' ? 'Watch it' : 'Watching'}
+            label={key === 'strongworld' || key === 'monsters' ? `Watch ${set.label}` : 'Watching'}
             value={prefs.versions[key]}
             onPick={(v) => setVersion(key, v)}
             options={set.options}
-            hint="Also in Preferences. The other version stays as an alternative."
+            hint={set.placement ? 'Also in Preferences.' : 'Also in Preferences. The other version stays as an alternative.'}
           />
         );
       }}

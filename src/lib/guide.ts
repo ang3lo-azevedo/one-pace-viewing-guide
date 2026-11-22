@@ -63,6 +63,28 @@ for (const saga of guide.sagas)
     node.groups = node.groups.map((g, i) => ({ g, i })).sort((x, y) => late(x.g) - late(y.g) || x.i - y.i).map((x) => x.g);
   }
 
+// Monsters after Thriller Bark: no longer inside episode 13, so no pause, nothing skipped,
+// and the "pause here" / "skip the last minute" notes go.
+if (versionChoice.monsters === 'after')
+  for (const saga of guide.sagas)
+    for (const node of saga.nodes)
+      for (const group of node.groups) {
+        if (group.setting !== 'monsters') continue;
+        const anchor = group.afterEpisode;
+        delete group.afterEpisode;
+        for (const ep of group.episodes) {
+          delete ep.skipMinutes;
+          ep.notes = (ep.notes ?? []).filter((n) => !/skip the last minute/i.test(n));
+        }
+        for (const g of node.groups) for (const ep of g.episodes) if (ep.id === anchor) ep.notes = (ep.notes ?? []).filter((n) => !/^Pause at/i.test(n));
+      }
+
+// Minutes skipped at this placement come off the runtime (Monsters: skip its last minute).
+for (const saga of guide.sagas)
+  for (const node of saga.nodes)
+    for (const group of node.groups)
+      for (const ep of group.episodes) if (ep.skipMinutes && ep.runtime) ep.runtime -= ep.skipMinutes;
+
 export interface FlatEpisode {
   ep: Episode;
   group: Group;

@@ -1,3 +1,4 @@
+import { waitingOn } from './pause';
 import { createMemo, createRoot, createSignal } from 'solid-js';
 import { visibleSagas } from './filter';
 import { isWatched } from '../store/progress';
@@ -104,6 +105,13 @@ export const nextUp = createRoot(() =>
     const list = rows();
     const start = lastWatchedIndex(list) + 1;
     const todo = (r: Row) => !r.alt && !isDone(r.ep.id);
+    // Just finished a special watched mid-episode (Monsters inside Thriller Bark 13): go back
+    // and finish that episode before moving on.
+    const last = list[start - 1];
+    if (last?.anchorOf) {
+      const anchor = list.find((r) => r.ep.id === last.anchorOf);
+      if (anchor && todo(anchor) && !waitingOn(anchor.ep.id).length) return anchor;
+    }
     for (let i = start; i < list.length; i++) if (todo(list[i])) return list[i];
     for (let i = 0; i < start; i++) if (todo(list[i])) return list[i];
     return null;

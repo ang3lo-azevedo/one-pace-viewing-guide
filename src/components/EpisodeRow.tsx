@@ -9,6 +9,7 @@ import { prefs } from '../store/prefs';
 import { LINK_LABEL, LINK_ORDER, primaryLinkKey } from '../lib/links';
 import { isConnected, rateEpisode, trakt } from '../store/trakt';
 import { splitTitle } from '../lib/guide';
+import { shortName, waitingOn } from '../lib/pause';
 import { NonCanonTag } from './Tags';
 import { SERIESGRAPH_SHOW, firstAnimeEpisode, inlineMd } from '../lib/format';
 import { config } from '../config';
@@ -84,7 +85,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
       parts.push({
         label: 'Length',
         value: real ? fmtDuration(min) : `~${fmtDuration(min)}`,
-        title: real ? `Length from ${SOURCE_NAME[props.ep.runtimeSource ?? ''] ?? 'the source'}` : 'Estimated length (no published length)',
+        title: real ? `Length from ${SOURCE_NAME[props.ep.runtimeSource ?? ''] ?? 'the source'}${props.ep.skipMinutes ? `, minus the ${props.ep.skipMinutes} min you skip here` : ''}` : 'Estimated length (no published length)',
       });
     const eta = stats().eta[props.ep.id];
     return eta && !watched() ? [...parts, { label: 'ETA', value: fmtDate(eta), title: 'When you should get here at your current pace' }] : parts;
@@ -99,6 +100,9 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
       class="group/ep flex scroll-mt-40 flex-wrap items-start gap-x-3 gap-y-1.5 rounded-lg px-2 py-2 sm:flex-nowrap transition-colors hover:bg-sea-100 dark:hover:bg-sea-800/50"
       classList={{ 'opacity-55': watched() || viaAlternative() || skippable() }}
     >
+      <Show
+        when={!watched() && waitingOn(props.ep.id).length}
+        fallback={
       <label class="mt-0.5 flex cursor-pointer items-center">
         <input
           type="checkbox"
@@ -112,6 +116,17 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
           aria-label={`Mark ${displayed()} watched`}
         />
       </label>
+        }
+      >
+        {/* Paused mid-way for a special: you finish (and check) it after that. */}
+        <span
+          class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-dashed border-sea-400 text-[10px] font-bold text-sea-500 dark:border-sea-500 dark:text-sea-400"
+          title={`Finish this after ${waitingOn(props.ep.id).map(shortName).join(', ')}, then check it`}
+          aria-label="Paused: finish after the special below"
+        >
+          ❚❚
+        </span>
+      </Show>
 
       <div class="min-w-0 flex-1">
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1">

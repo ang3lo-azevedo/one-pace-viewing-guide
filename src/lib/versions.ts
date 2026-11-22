@@ -13,6 +13,8 @@ export interface VersionSet {
   canon?: boolean;
   /** Hidden together with "Filler & Fun Pace" whichever version you pick. */
   filler?: boolean;
+  /** Not two versions of a section but where one is placed (applied in guide.ts). */
+  placement?: boolean;
   hint?: string;
 }
 
@@ -55,6 +57,16 @@ export const VERSION_SETS: VersionSet[] = [
     options: [
       { value: 'funpace', label: 'Fun Pace', title: 'Paced cut of the filler' },
       { value: 'original', label: 'Original anime', title: 'The full original anime episode' },
+    ],
+  },
+  {
+    key: 'monsters',
+    label: 'Monsters',
+    default: 'inside',
+    placement: true,
+    options: [
+      { value: 'inside', label: 'Inside Thriller Bark 13', title: 'Pause the episode at 06:40, watch it, skip its last minute' },
+      { value: 'after', label: 'After Thriller Bark', title: 'Watch it in full after the arc' },
     ],
   },
   {

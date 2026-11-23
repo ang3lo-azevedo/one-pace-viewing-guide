@@ -16,6 +16,7 @@ import { Tags } from './Tags';
 import { extraCategory } from '../lib/guide';
 import type { Group, GuideNode } from '../types';
 import { SERIESGRAPH_SHOW } from '../lib/format';
+import { starHref, starTitle } from '../lib/ratingLinks';
 import GroupBlock from './GroupBlock';
 import VersionPicker, { LiveActionPicker } from './VersionPicker';
 import { focusTarget, reveal } from '../lib/focus';
@@ -59,6 +60,15 @@ export default function ArcCard(props: { node: FilteredNode }) {
   });
 
   const badge = () => TYPE_BADGE[props.node.type] ?? TYPE_BADGE.arc;
+  // Films, specials and filler: the header star links where its entry's rating comes from.
+  const entryStar = () => {
+    for (const g of props.node.groups)
+      for (const e of g.episodes) {
+        const href = starHref(e, g.kind);
+        if (href) return { href, title: starTitle(e, g.kind) };
+      }
+    return null;
+  };
   // Whole arcs that are extras (films, specials, Live Action, filler arcs) sit indented and tagged.
   const isExtraNode = () =>
     // By content, not type: a canon special (Strong World Episode 0, Monsters) is main route.
@@ -108,8 +118,8 @@ export default function ArcCard(props: { node: FilteredNode }) {
               <RatingBadge
                 rating={props.node.rating}
                 color={tierForRating(props.node.rating)?.color ?? null}
-                href={props.node.type === 'arc' ? SERIESGRAPH_SHOW : null}
-                title={props.node.type === 'arc' ? `Average of this arc\'s One Pace episodes on SeriesGraph (${props.node.rating}). Open One Piece on SeriesGraph` : undefined}
+                href={props.node.type === 'arc' ? SERIESGRAPH_SHOW : entryStar()?.href}
+                title={props.node.type === 'arc' ? `Average of this arc\'s One Pace episodes on SeriesGraph (${props.node.rating}). Open One Piece on SeriesGraph` : entryStar()?.title}
               />
               <Show when={props.node.isAlternative}>
                 <span class="chip border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>

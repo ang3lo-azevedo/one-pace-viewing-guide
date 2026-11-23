@@ -1,3 +1,5 @@
+import TraktBadge from './TraktBadge';
+import { starHref, starTitle } from '../lib/ratingLinks';
 import RatingBadge from './RatingBadge';
 import InfoLine from './InfoLine';
 import { episodeInfo } from '../lib/format';
@@ -292,12 +294,8 @@ function ContinueWatching() {
             <div class="truncate text-xs text-sea-500 dark:text-sea-400">{n().nodeTitle}</div>
             {/* The same details as the episode's row in the list. */}
             <div class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1">
-              <RatingBadge rating={n().ep.rating} color={n().ep.tierColor} />
-              <Show when={n().ep.traktRating && prefs.ratingsShown !== 'seriesgraph'}>
-                <span class="inline-flex items-center rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24]">
-                  Trakt {n().ep.traktRating?.toFixed(1)}
-                </span>
-              </Show>
+              <RatingBadge rating={n().ep.rating} color={n().ep.tierColor} href={starHref(n().ep, n().kind)} title={starTitle(n().ep, n().kind)} />
+              <TraktBadge ep={n().ep} />
               <InfoLine parts={details(n())} />
             </div>
             <Show when={n().ep.description}>

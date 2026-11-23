@@ -49,11 +49,12 @@ npm run ratings     # python3 -I scripts/fetch_ratings.py
 ```
 
 Each episode also shows its Trakt community rating (with vote count on hover) when it has
-votes on Trakt (`npm run trakt-ratings`). Both refreshes run automatically before every build.
+votes on Trakt (`npm run trakt-ratings`). All these refreshes run automatically before every build.
 
 This updates episode, arc and saga ratings (and their tier colors) from SeriesGraph's
-API. Live Action, movie and other entries without One Piece anime episode numbers keep
-their existing ratings.
+API. The Live Action gets its ratings from SeriesGraph's Live Action page, and films and
+specials get theirs straight from IMDb's public ratings dataset
+(`python3 -I scripts/fetch_imdb_ratings.py`), using the IMDb id from the Trakt mapping.
 
 ## Trakt sync (optional)
 

@@ -11,9 +11,10 @@ import { isConnected, rateEpisode, trakt } from '../store/trakt';
 import { splitTitle } from '../lib/guide';
 import { shortName, waitingOn } from '../lib/pause';
 import { NonCanonTag } from './Tags';
-import { SERIESGRAPH_SHOW, firstAnimeEpisode, inlineMd } from '../lib/format';
-import { config } from '../config';
+import { inlineMd } from '../lib/format';
 import RatingBadge from './RatingBadge';
+import TraktBadge from './TraktBadge';
+import { starHref, starTitle } from '../lib/ratingLinks';
 import Tooltip from './Tooltip';
 
 const SOURCE_NAME: Record<string, string> = {
@@ -26,35 +27,7 @@ const SOURCE_NAME: Record<string, string> = {
 
 export const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];
 
-/** Section kinds whose star rating is not a SeriesGraph One Piece anime rating. */
-const NOT_SERIESGRAPH = new Set(['netflix', 'movie', 'upcoming', 'original-continuation']);
-
-/** Live Action episodes numbered across seasons, as SeriesGraph does (S2E1 is episode 9). */
-const LIVE_ACTION_SG = 'https://seriesgraph.com/show/111110-one-piece';
-
 export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonCanon?: boolean }) {
-  // The star rating averages the anime episodes this entry adapts; link to the first one.
-  const sgHref = () => {
-    // SeriesGraph episode pages are /episode/S<season>E<episode>; it lists the whole anime as season 1.
-    if (props.kind === 'netflix') {
-      const m = props.ep.title.match(/S(\d+)E(\d+)/);
-      return m ? `${LIVE_ACTION_SG}/episode/S${+m[1]}E${+m[2]}` : LIVE_ACTION_SG;
-    }
-    if (NOT_SERIESGRAPH.has(props.kind ?? '')) return null;
-    const n = firstAnimeEpisode(props.ep.anime);
-    return n ? `${SERIESGRAPH_SHOW}/episode/S1E${n}` : null;
-  };
-  // Films and specials: their IMDb page.
-  const imdbHref = () => (props.ep.traktMovie?.imdb ? `https://www.imdb.com/title/${props.ep.traktMovie.imdb}/` : null);
-  const traktHref = () => {
-    if (props.ep.traktMovie) return `https://trakt.tv/movies/${props.ep.traktMovie.slug}`;
-    const t = props.ep.traktEpisode;
-    // Rated from the anime: open the first anime episode it covers.
-    const a = props.ep.traktAnime?.[0];
-    if (props.ep.traktRatingFrom === 'anime' && a) return `https://trakt.tv/shows/one-piece/seasons/${a[0]}/episodes/${a[1]}`;
-    if (t) return `https://trakt.tv/shows/${t.show ?? config.traktShowSlug}/seasons/${t.season}/episodes/${t.number}`;
-    return a ? `https://trakt.tv/shows/one-piece/seasons/${a[0]}/episodes/${a[1]}` : null;
-  };
   const watched = () => isWatched(props.ep.id);
   const [rating, setRating] = createSignal(false);
   const canRate = () => isConnected() && !!trakt.mapped[props.ep.id];
@@ -130,38 +103,11 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
 
       <div class="min-w-0 flex-1">
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <RatingBadge
-            rating={props.ep.rating}
-            color={props.ep.tierColor}
-            href={sgHref() ?? imdbHref()}
-            title={
-              props.kind === 'netflix'
-                ? `SeriesGraph rating ${props.ep.rating} (Live Action). Open on SeriesGraph`
-                : sgHref()
-                  ? `SeriesGraph rating ${props.ep.rating}, averaged over anime ${props.ep.anime}. Open on SeriesGraph`
-                  : imdbHref()
-                    ? `Rating ${props.ep.rating}. Open on IMDb`
-                    : undefined
-            }
-          />
+          <RatingBadge rating={props.ep.rating} color={props.ep.tierColor} href={starHref(props.ep, props.kind)} title={starTitle(props.ep, props.kind)} />
           <Show when={props.showNonCanon && props.ep.nonCanon}>
             <NonCanonTag />
           </Show>
-          <Show when={props.ep.traktRating && prefs.ratingsShown !== 'seriesgraph'}>
-            <a
-              href={traktHref() ?? `https://trakt.tv/shows/${config.traktShowSlug}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-0.5 rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24] hover:bg-[#ed1c24]/10"
-              title={
-                props.ep.traktRatingFrom === 'anime'
-                  ? `Trakt rating ${props.ep.traktRating}: the original anime episodes this covers (${props.ep.traktVotes} votes). Open on Trakt`
-                  : `Trakt rating ${props.ep.traktRating} (${props.ep.traktVotes} vote${props.ep.traktVotes === 1 ? '' : 's'}). Open on Trakt`
-              }
-            >
-              Trakt {props.ep.traktRating?.toFixed(1)}
-            </a>
-          </Show>
+          <TraktBadge ep={props.ep} />
           <Show
             when={tipText()}
             fallback={

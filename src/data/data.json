@@ -5123,7 +5123,7 @@
           "id": "one-piece-movie-04",
           "type": "movie",
           "title": "One Piece Movie 04: Dead End Adventure",
-          "rating": 7.3,
+          "rating": 7.1,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -5142,7 +5142,7 @@
                 {
                   "title": "One Piece Movie 04: Dead End Adventure (2003)",
                   "fullTitle": "One Piece Movie 04: Dead End Adventure (2003)",
-                  "rating": 7.3,
+                  "rating": 7.1,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -5165,6 +5165,7 @@
                     "Early One Piece film, not canon."
                   ],
                   "nonCanon": true,
+                  "imdbVotes": 3616,
                   "traktMovie": {
                     "slug": "one-piece-dead-end-adventure-2003",
                     "trakt": 30394,
@@ -7462,7 +7463,7 @@
           "id": "one-piece-movie-06",
           "type": "movie",
           "title": "One Piece Movie 06: Baron Omatsuri and the Secret Island",
-          "rating": 7.2,
+          "rating": 7.3,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -7481,7 +7482,7 @@
                 {
                   "title": "One Piece Movie 06: Baron Omatsuri and the Secret Island (2005)",
                   "fullTitle": "One Piece Movie 06: Baron Omatsuri and the Secret Island (2005)",
-                  "rating": 7.2,
+                  "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -7504,6 +7505,7 @@
                     "Non-canon film."
                   ],
                   "nonCanon": true,
+                  "imdbVotes": 4443,
                   "traktMovie": {
                     "slug": "one-piece-baron-omatsuri-and-the-secret-island-2005",
                     "trakt": 30396,
@@ -10160,6 +10162,7 @@
                     "**Spoiler Warning:** If watching here, **skip the last minute** (it flashes forward to scenes from this arc), or alternatively watch this special at any point after completing Thriller Bark."
                   ],
                   "skipMinutes": 1,
+                  "imdbVotes": 3247,
                   "traktMovie": {
                     "slug": "monsters-103-mercies-dragon-damnation-2024",
                     "trakt": 994908,
@@ -10290,7 +10293,7 @@
           "id": "special-strong-world-episode-0",
           "type": "special",
           "title": "Special: Strong World (Episode 0)",
-          "rating": 8.1,
+          "rating": 7.5,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -10309,8 +10312,8 @@
                 {
                   "title": "Fun Pace Special: Strong World (Episode 0)",
                   "fullTitle": "Fun Pace Special: Strong World (Episode 0)",
-                  "rating": 8.1,
-                  "tierColor": "#28B463",
+                  "rating": 7.5,
+                  "tierColor": "#F4D03F",
                   "pace": "FunPace",
                   "paceNumber": null,
                   "anime": "OVA",
@@ -10331,6 +10334,7 @@
                   "notes": [
                     "Alternative placement: the original One Pace release of this prologue reveals later story details, so if you use it instead of the Fun Pace version, watch it at the alternative placement later in this guide."
                   ],
+                  "imdbVotes": 1070,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
                     "trakt": 168446,
@@ -10350,7 +10354,7 @@
           "id": "one-piece-movie-10-strong-world",
           "type": "movie",
           "title": "One Piece Movie 10: Strong World",
-          "rating": 7.8,
+          "rating": 7.4,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -10369,7 +10373,7 @@
                 {
                   "title": "One Piece Movie 10: Strong World (2009)",
                   "fullTitle": "One Piece Movie 10: Strong World (2009)",
-                  "rating": 7.8,
+                  "rating": 7.4,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -10392,6 +10396,7 @@
                     "Watch order: this film fits right after the current arc. If you watch the anime tie-in prequel Little East Blue, use the Fun Pace version, as the original broadcast version reveals later story details. The film can also be saved for the alternative placement later in this guide."
                   ],
                   "nonCanon": true,
+                  "imdbVotes": 8857,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
                     "trakt": 27466,
@@ -12614,7 +12619,7 @@
           "id": "special-strong-world-episode-0-alternative",
           "type": "special",
           "title": "Special: Strong World (Episode 0) (Alternative)",
-          "rating": 8.1,
+          "rating": 7.5,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -12633,8 +12638,8 @@
                 {
                   "title": "Pace Special: Strong World (Episode 0)",
                   "fullTitle": "Pace Special: Strong World (Episode 0)",
-                  "rating": 8.1,
-                  "tierColor": "#28B463",
+                  "rating": 7.5,
+                  "tierColor": "#F4D03F",
                   "pace": "Pace",
                   "paceNumber": null,
                   "anime": null,
@@ -12652,6 +12657,7 @@
                   },
                   "canon": true,
                   "id": "special-strong-world-episode-0-alternative-main:pace-special-strong-world-episode-0",
+                  "imdbVotes": 1070,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
                     "trakt": 168446,
@@ -12671,7 +12677,7 @@
           "id": "one-piece-movie-10-strong-world-alternative",
           "type": "movie",
           "title": "One Piece Movie 10: Strong World (Alternative)",
-          "rating": 7.8,
+          "rating": 7.4,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -12690,7 +12696,7 @@
                 {
                   "title": "One Piece Movie 10: Strong World (2009)",
                   "fullTitle": "One Piece Movie 10: Strong World (2009)",
-                  "rating": 7.8,
+                  "rating": 7.4,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -12710,6 +12716,7 @@
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-alternative-main:movie-10-strong-world-2009-written-by-oda",
                   "nonCanon": true,
+                  "imdbVotes": 8857,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
                     "trakt": 27466,
@@ -12729,7 +12736,7 @@
           "id": "special-3d2y",
           "type": "special",
           "title": "Special: 3D2Y",
-          "rating": 8.0,
+          "rating": 7.5,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -12748,8 +12755,8 @@
                 {
                   "title": "3D2Y",
                   "fullTitle": "3D2Y",
-                  "rating": 8.0,
-                  "tierColor": "#28B463",
+                  "rating": 7.5,
+                  "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "TV Special 08",
@@ -12768,6 +12775,7 @@
                   "canon": false,
                   "id": "special-3d2y-main:3d2y",
                   "nonCanon": true,
+                  "imdbVotes": 2529,
                   "traktEpisode": {
                     "season": 27,
                     "number": 8,
@@ -13094,7 +13102,7 @@
           "id": "special-fan-letter",
           "type": "special",
           "title": "Special: Fan Letter",
-          "rating": 9.3,
+          "rating": 9.2,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -13113,7 +13121,7 @@
                 {
                   "title": "One Piece Fan Letter",
                   "fullTitle": "One Piece Fan Letter",
-                  "rating": 9.3,
+                  "rating": 9.2,
                   "tierColor": "#186A3B",
                   "pace": null,
                   "paceNumber": null,
@@ -13133,6 +13141,7 @@
                   "canon": false,
                   "id": "special-fan-letter-main:one-piece-fan-letter",
                   "nonCanon": true,
+                  "imdbVotes": 25827,
                   "traktMovie": {
                     "slug": "one-piece-fan-letter-2024-10-20",
                     "trakt": 1400060,
@@ -15036,7 +15045,7 @@
           "id": "special-glorious-island",
           "type": "special",
           "title": "Special: Glorious Island",
-          "rating": 7.1,
+          "rating": 6.1,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -15055,8 +15064,8 @@
                 {
                   "title": "Special: Glorious Island (2012 Film Z prologue short)",
                   "fullTitle": "Special: Glorious Island (2012 Film Z prologue short)",
-                  "rating": 7.1,
-                  "tierColor": "#F4D03F",
+                  "rating": 6.1,
+                  "tierColor": "#F39C12",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "Special",
@@ -15075,6 +15084,7 @@
                   "canon": false,
                   "id": "special-glorious-island-main:special-glorious-island-2012-film-z-prologue-short",
                   "nonCanon": true,
+                  "imdbVotes": 208,
                   "traktMovie": {
                     "slug": "one-piece-glorious-island-2012",
                     "trakt": 532619,
@@ -15093,7 +15103,7 @@
           "id": "one-piece-movie-12-film-z",
           "type": "movie",
           "title": "One Piece Movie 12: Film Z",
-          "rating": 7.9,
+          "rating": 7.7,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -15112,7 +15122,7 @@
                 {
                   "title": "One Piece Movie 12: Film Z (2012)",
                   "fullTitle": "One Piece Movie 12: Film Z (2012)",
-                  "rating": 7.9,
+                  "rating": 7.7,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -15132,6 +15142,7 @@
                   "canon": false,
                   "id": "one-piece-movie-12-film-z-main:one-piece-movie-12-film-z-2012",
                   "nonCanon": true,
+                  "imdbVotes": 12114,
                   "traktMovie": {
                     "slug": "one-piece-film-z-2012",
                     "trakt": 112137,
@@ -17741,7 +17752,7 @@
           "id": "one-piece-movie-13-film-gold",
           "type": "movie",
           "title": "One Piece Movie 13: Film Gold",
-          "rating": 7.4,
+          "rating": 7.1,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -17760,7 +17771,7 @@
                 {
                   "title": "One Piece Movie 13: Film Gold (2016)",
                   "fullTitle": "One Piece Movie 13: Film Gold (2016)",
-                  "rating": 7.4,
+                  "rating": 7.1,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -17780,6 +17791,7 @@
                   "canon": false,
                   "id": "one-piece-movie-13-film-gold-main:one-piece-movie-13-film-gold-2016",
                   "nonCanon": true,
+                  "imdbVotes": 9285,
                   "traktMovie": {
                     "slug": "one-piece-film-gold-2016",
                     "trakt": 224554,
@@ -19711,7 +19723,7 @@
           "id": "one-piece-movie-14-stampede",
           "type": "movie",
           "title": "One Piece Movie 14: Stampede",
-          "rating": 7.6,
+          "rating": 7.5,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -19730,7 +19742,7 @@
                 {
                   "title": "One Piece Movie 14: Stampede (2019)",
                   "fullTitle": "One Piece Movie 14: Stampede (2019)",
-                  "rating": 7.6,
+                  "rating": 7.5,
                   "tierColor": "#F4D03F",
                   "pace": null,
                   "paceNumber": null,
@@ -19750,6 +19762,7 @@
                   "canon": false,
                   "id": "one-piece-movie-14-stampede-main:one-piece-movie-14-stampede-2019",
                   "nonCanon": true,
+                  "imdbVotes": 10263,
                   "traktMovie": {
                     "slug": "one-piece-stampede-2019",
                     "trakt": 419509,
@@ -24353,6 +24366,7 @@
                   "canon": false,
                   "id": "one-piece-movie-15-film-red-main:one-piece-movie-15-film-red-2022",
                   "nonCanon": true,
+                  "imdbVotes": 27453,
                   "traktMovie": {
                     "slug": "one-piece-film-red-2022",
                     "trakt": 722637,
@@ -24420,6 +24434,7 @@
                   "canon": false,
                   "id": "special-one-piece-heroines-main:/detail/series/tt34927513",
                   "nonCanon": true,
+                  "imdbVotes": 812,
                   "traktMovie": {
                     "slug": "one-piece-heroines-2026",
                     "trakt": 1380671,

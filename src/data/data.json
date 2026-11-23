@@ -20917,7 +20917,7 @@
             {
               "id": "one-pace-onigashima-raid",
               "label": "One Pace - Onigashima Raid (01–11)",
-              "kind": "onigashima",
+              "kind": "onepace",
               "canonPath": true,
               "isAlternative": false,
               "defaultOpen": true,
@@ -21309,7 +21309,7 @@
             {
               "id": "one-pace-onigashima-raid-12-31",
               "label": "One Pace - Onigashima Raid (12–31)",
-              "kind": "onigashima",
+              "kind": "onepace",
               "canonPath": true,
               "isAlternative": false,
               "defaultOpen": true,

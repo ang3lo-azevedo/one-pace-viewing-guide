@@ -90,7 +90,7 @@ const justWatchCountry = (() => {
   return region === 'gb' ? 'uk' : region;
 })();
 const justWatch = (title: string) => {
-  const name = title.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/^(Fun Pace Special|Pace Special|Movie|Special|TV Special)\s*\d*\s*[:-]\s*/i, '').trim();
+  const name = title.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/^(?:One Piece\s+)?(Fun Pace Special|Pace Special|Movie|Film|Special|TV Special)\s*\d*\s*[:-]\s*/i, '').trim();
   const q = /one piece/i.test(name) ? name : `One Piece ${name}`;
   return `https://www.justwatch.com/${justWatchCountry}/search?q=${encodeURIComponent(q)}`;
 };

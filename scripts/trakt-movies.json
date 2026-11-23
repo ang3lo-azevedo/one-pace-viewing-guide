@@ -2,7 +2,7 @@
   "_comment": "Guide entry title prefix -> Trakt movie slug. Used for real lengths, Trakt ratings and syncing.",
   "movies": [
     {
-      "title": "Movie 04",
+      "title": "One Piece Movie 04",
       "trakt": "one-piece-dead-end-adventure-2003"
     },
     {
@@ -10,7 +10,7 @@
       "trakt": "one-piece-baron-omatsuri-and-the-secret-island-2005"
     },
     {
-      "title": "Movie 10: Strong World",
+      "title": "One Piece Movie 10: Strong World",
       "trakt": "one-piece-film-strong-world-2010"
     },
     {

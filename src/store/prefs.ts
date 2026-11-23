@@ -5,7 +5,7 @@ import { readVersions, type Versions } from '../lib/versions';
 
 const KEY = 'op-prefs-v1';
 
-export type StreamSource = 'onepace' | 'stremio';
+export type StreamSource = 'onepace' | 'stremio' | 'netflix' | 'crunchyroll';
 export type Theme = 'dark' | 'light' | 'system';
 export type LiveActionPlacement = 'arc' | 'post-enies-lobby-arc' | 'thriller-bark-arc';
 import type { ExtraCategory } from '../lib/guide';

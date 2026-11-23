@@ -1,6 +1,7 @@
 import { For, Show, createSignal, type JSX } from 'solid-js';
 import { prefs, setPrefs, setVersion, toggleExtra, type Prefs } from '../store/prefs';
 import { VERSION_SETS } from '../lib/versions';
+import { LINK_LABEL } from '../lib/links';
 import { EXTRA_LABELS, type ExtraCategory } from '../lib/guide';
 import { CustomPace, PACES } from './VoyageHero';
 
@@ -76,7 +77,7 @@ export default function Preferences() {
         </span>
         <span class="font-display text-sm font-extrabold uppercase tracking-wide text-accent-600 dark:text-accent-400">Preferences</span>
         <span class="ml-auto hidden truncate text-[11px] text-sea-500 sm:inline dark:text-sea-400">
-          Watch on {prefs.streamSource === 'stremio' ? 'Stremio' : 'One Pace'} · Spoiler-safe {prefs.spoilerSafe ? 'on' : 'off'}
+          Watch on {LINK_LABEL[prefs.streamSource]} · Spoiler-safe {prefs.spoilerSafe ? 'on' : 'off'}
           {prefs.canonOnly ? ' · Extras hidden' : ''}
           {prefs.hideNonCanon ? ' · Non-canon hidden' : ''}
         </span>
@@ -92,7 +93,10 @@ export default function Preferences() {
               options={[
                 { value: 'onepace', label: 'One Pace', title: 'The red watch button opens onepace.net' },
                 { value: 'stremio', label: 'Stremio', title: 'The red watch button opens Stremio Web' },
+                { value: 'netflix', label: 'Netflix', title: 'For the Live Action' },
+                { value: 'crunchyroll', label: 'Crunchyroll', title: 'For the original anime episodes' },
               ]}
+              hint="The red watch button opens this when an entry has it, otherwise One Pace or Stremio. Films and specials also get a Where to stream link."
             />
             <Choice<boolean>
               label="Spoiler-safe"

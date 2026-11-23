@@ -79,6 +79,31 @@ if (versionChoice.monsters === 'after')
         for (const g of node.groups) for (const ep of g.episodes) if (ep.id === anchor) ep.notes = (ep.notes ?? []).filter((n) => !/^Pause at/i.test(n));
       }
 
+// Official streaming links, where there is one: Netflix for the Live Action (its show page;
+// Netflix has no public per-episode links), Crunchyroll for the original anime (a search, its
+// pages have opaque ids), and a JustWatch search for films and specials (which services have
+// it in your country).
+const NETFLIX_LIVE_ACTION = 'https://www.netflix.com/title/80217863';
+const CRUNCHYROLL_ONE_PIECE = 'https://www.crunchyroll.com/search?q=One%20Piece';
+const justWatchCountry = (() => {
+  const region = (typeof navigator !== 'undefined' ? navigator.language : 'en-US').split('-')[1]?.toLowerCase() ?? 'us';
+  return region === 'gb' ? 'uk' : region;
+})();
+const justWatch = (title: string) => {
+  const name = title.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/^(Fun Pace Special|Pace Special|Movie|Special|TV Special)\s*\d*\s*[:-]\s*/i, '').trim();
+  const q = /one piece/i.test(name) ? name : `One Piece ${name}`;
+  return `https://www.justwatch.com/${justWatchCountry}/search?q=${encodeURIComponent(q)}`;
+};
+for (const saga of guide.sagas)
+  for (const node of saga.nodes)
+    for (const group of node.groups)
+      for (const ep of group.episodes) {
+        if (group.kind === 'netflix') ep.links.netflix ??= NETFLIX_LIVE_ACTION;
+        if ((group.kind === 'original' || group.kind === 'original-continuation') && /^\s*\d/.test(ep.anime ?? ''))
+          ep.links.crunchyroll ??= CRUNCHYROLL_ONE_PIECE;
+        if (ep.traktMovie || group.kind === 'movie') ep.links.justwatch ??= justWatch(ep.fullTitle || ep.title);
+      }
+
 // Minutes skipped at this placement come off the runtime (Monsters: skip its last minute).
 for (const saga of guide.sagas)
   for (const node of saga.nodes)

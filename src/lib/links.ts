@@ -9,15 +9,18 @@ export const LINK_LABEL: Record<keyof EpisodeLinks, string> = {
   drive: 'Drive',
   nyaa: 'Nyaa',
   other: 'Watch',
+  crunchyroll: 'Crunchyroll',
+  justwatch: 'Where to stream',
 };
 
-export const LINK_ORDER: (keyof EpisodeLinks)[] = ['onepace', 'stremio', 'netflix', 'drive', 'mega', 'nyaa', 'other'];
+export const LINK_ORDER: (keyof EpisodeLinks)[] = ['onepace', 'stremio', 'netflix', 'crunchyroll', 'drive', 'mega', 'nyaa', 'other', 'justwatch'];
 
-/** The link the red ▶ button opens: the preferred stream source first, then any other. */
+/**
+ * The link the red ▶ button opens: your preferred service when the entry has it, then One Pace,
+ * Stremio, the official services, downloads, and last a "where to stream" search.
+ */
 export function primaryLinkKey(links: EpisodeLinks, source: StreamSource): keyof EpisodeLinks | null {
-  const first = source === 'onepace' ? 'onepace' : 'stremio';
-  const second = source === 'onepace' ? 'stremio' : 'onepace';
-  const chain: (keyof EpisodeLinks)[] = [first, second, 'drive', 'mega', 'nyaa', 'netflix', 'other'];
+  const chain: (keyof EpisodeLinks)[] = [source, 'onepace', 'stremio', 'netflix', 'crunchyroll', 'drive', 'mega', 'nyaa', 'other', 'justwatch'];
   for (const k of chain) if (links[k]) return k;
   return null;
 }

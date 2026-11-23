@@ -12,6 +12,9 @@ export interface EpisodeLinks {
   drive: string | null;
   nyaa: string | null;
   other: string | null;
+  /** Added at load (lib/guide.ts): Crunchyroll for the original anime, JustWatch for films and specials. */
+  crunchyroll?: string | null;
+  justwatch?: string | null;
 }
 
 export interface Episode {

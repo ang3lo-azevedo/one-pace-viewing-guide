@@ -1,3 +1,4 @@
+import Tooltip from './Tooltip';
 import TraktBadge from './TraktBadge';
 import { starHref, starTitle } from '../lib/ratingLinks';
 import RatingBadge from './RatingBadge';
@@ -288,8 +289,13 @@ function ContinueWatching() {
         <div class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-accent-400/30 bg-accent-400/10 px-3 py-2.5">
           <div class="min-w-0 flex-1">
             <div class="text-[10px] font-bold uppercase tracking-widest text-accent-600 dark:text-accent-400">Continue watching</div>
-            <div class="truncate font-display text-base font-extrabold" title={prefs.spoilerSafe ? undefined : n().ep.fullTitle}>
-              {title()}
+            {/* Like the list: hover (or focus) the title to see the full episode title. */}
+            <div class="font-display text-base font-extrabold">
+              <Tooltip text={n().ep.fullTitle && n().ep.fullTitle !== title() ? n().ep.fullTitle : null}>
+                <span classList={{ 'cursor-help decoration-dotted underline-offset-4 hover:underline': !!n().ep.fullTitle && n().ep.fullTitle !== title() }}>
+                  {title()}
+                </span>
+              </Tooltip>
             </div>
             <div class="truncate text-xs text-sea-500 dark:text-sea-400">{n().nodeTitle}</div>
             {/* The same details as the episode's row in the list. */}
@@ -355,7 +361,7 @@ export default function VoyageHero() {
 
   return (
     <div class="space-y-4">
-      <div class="card space-y-4 overflow-hidden p-4 sm:p-5">
+      <div class="card space-y-4 p-4 sm:p-5">
         <ContinueWatching />
         <Bar label="Canon route" detail={`${s().canonWatched} of ${s().canonTotal} episodes watched · % by watch time`} pct={s().canonPct} />
         <Show when={selectionLabel()}>

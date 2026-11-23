@@ -60,6 +60,16 @@ export const VERSION_SETS: VersionSet[] = [
     ],
   },
   {
+    key: 'wano',
+    label: 'Wano: Onigashima',
+    default: 'onepace',
+    canon: true,
+    options: [
+      { value: 'onepace', label: 'One Pace Raid, then Paced', title: 'Onigashima Raid 01-31, then Onigashima Paced from 29' },
+      { value: 'paced', label: 'Onigashima Paced', title: 'Onigashima Raid 01-11, then Onigashima Paced from 01' },
+    ],
+  },
+  {
     key: 'monsters',
     label: 'Monsters',
     default: 'inside',

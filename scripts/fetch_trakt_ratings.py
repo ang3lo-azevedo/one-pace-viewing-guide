@@ -87,6 +87,26 @@ def anime_numbers(text):
     return out
 
 
+def line_of(group, node):
+    """Release line (same as fetch_ratings.py): "One Pace", "Onigashima Paced", ... main and
+    alternative versions apart."""
+    name = re.sub(r"\s*\(Alternative\)\s*$", "", group["label"]).split(" - ")[0].strip()
+    return (group["kind"], name, bool(group.get("isAlternative") or node.get("isAlternative")))
+
+
+def anime_shares(data):
+    """{(line, anime number): releases of that line using it}: a split episode counts 1/N."""
+    users = {}
+    for saga in data["sagas"]:
+        for node in saga["nodes"]:
+            for group in node["groups"]:
+                line = line_of(group, node)
+                for ep in group["episodes"]:
+                    for n in set(anime_numbers(ep.get("anime"))):
+                        users.setdefault((line, n), set()).add(ep.get("paceNumber") or ep["id"])
+    return {k: len(v) for k, v in users.items()}
+
+
 def fetch(cid, slug):
     req = urllib.request.Request(
         f"https://api.trakt.tv/shows/{slug}/seasons?extended=full,episodes",
@@ -291,16 +311,21 @@ def main():
     # Few people rate One Pace episodes on Trakt. Entries without a Trakt rating of their own
     # get the vote-weighted rating of the original anime episodes they cover.
     # A rating from a handful of votes is noise, so the anime's wins below MIN_VOTES.
+    # Votes weight each anime episode, and an episode split across N releases counts 1/N.
+    shares = anime_shares(data)
+    line_by_ep = {e["id"]: line_of(g, n) for s in data["sagas"] for n in s["nodes"] for g in n["groups"] for e in g["episodes"]}
     from_anime = 0
     for e, g in entries:
         if g["kind"] in NO_ANIME_SYNC or "traktMovie" in e or e.get("traktVotes", 0) >= MIN_VOTES:
             continue
-        eps = [anime_eps[n] for n in anime_numbers(e.get("anime")) if n in anime_eps]
-        eps = [x for x in eps if x.get("rating") and x.get("votes")]
-        votes = sum(x["votes"] for x in eps)
-        if votes:
-            e["traktRating"] = round(sum(x["rating"] * x["votes"] for x in eps) / votes, 1)
-            e["traktVotes"] = votes
+        line = line_by_ep[e["id"]]
+        eps = [(n, anime_eps[n]) for n in anime_numbers(e.get("anime")) if n in anime_eps]
+        eps = [(n, x) for n, x in eps if x.get("rating") and x.get("votes")]
+        weights = [(x["rating"], x["votes"] / shares.get((line, n), 1)) for n, x in eps]
+        total = sum(w for _, w in weights)
+        if total:
+            e["traktRating"] = round(sum(r * w for r, w in weights) / total, 1)
+            e["traktVotes"] = sum(x["votes"] for _, x in eps)
             e["traktRatingFrom"] = "anime"
             from_anime += 1
 

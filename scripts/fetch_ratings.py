@@ -4,8 +4,9 @@
 SeriesGraph (https://seriesgraph.com/show/37854-one-piece) exposes per-anime-episode
 ratings via its JSON API. Each One Pace entry records the anime episode(s) it adapts
 (the `anime` field, e.g. "234-235" or "250-251, 256, 320"), so a rating is the mean of
-the SeriesGraph IMDb rating of those anime episodes, rounded to one decimal. This matches
-how the guide's ratings were originally derived.
+the SeriesGraph IMDb rating of those anime episodes, rounded to one decimal. An anime episode
+split across N releases counts 1/N in each. Arc and saga ratings are the mean of their canon
+episodes weighted by length.
 
 Entries whose `anime` field has no numeric anime episodes (Movies, OVAs, Specials, Live
 Action, text-only entries) are left untouched. Arc (node) and saga ratings are recomputed
@@ -70,6 +71,34 @@ def parse_anime(text):
     return nums
 
 
+def anime_shares(data, parse):
+    """How many releases of the same line use each anime episode, so a split episode counts
+    1/N in each (anime 353 is half of Thriller Bark 08 and half of 09).
+
+    A "line" is one series of releases (One Pace, Onigashima Paced, Fun Pace, the original
+    anime...), main and alternative versions counted separately, and several cuts of the same
+    release (fixed / tweaked variants, same Pace number) count once.
+    Returns {(line, anime number): number of releases}.
+    """
+    users = {}
+    for saga in data["sagas"]:
+        for node in saga["nodes"]:
+            for group in node["groups"]:
+                line = line_of(group, node)
+                for ep in group["episodes"]:
+                    release = ep.get("paceNumber") or ep["id"]
+                    for n in set(parse(ep.get("anime"))):
+                        users.setdefault((line, n), set()).add(release)
+    return {k: len(v) for k, v in users.items()}
+
+
+def line_of(group, node):
+    """The release line: "One Pace" (all its arcs), "Onigashima Paced", "Kuma Cut"... from the
+    section label, main and alternative versions apart."""
+    name = re.sub(r"\s*\(Alternative\)\s*$", "", group["label"]).split(" - ")[0].strip()
+    return (group["kind"], name, bool(group.get("isAlternative") or node.get("isAlternative")))
+
+
 def load_ratings(cache):
     if cache:
         with open(cache, encoding="utf-8") as f:
@@ -109,11 +138,13 @@ def main():
     updated = unchanged = skipped = 0
     big_changes = []
 
+    shares = anime_shares(data, parse_anime)
     for saga in data["sagas"]:
         saga_vals = []
         for node in saga["nodes"]:
             node_vals = []
             for group in node["groups"]:
+                line = line_of(group, node)
                 # The `anime` field of Live Action entries points at the adapted
                 # One Piece anime episodes, but Netflix is a different show with its
                 # own ratings, so never remap those.
@@ -121,7 +152,9 @@ def main():
                 for ep in group["episodes"]:
                     nums = [n for n in parse_anime(ep.get("anime")) if n in by_num] if remappable else []
                     if nums:
-                        new = round1(sum(Decimal(str(by_num[n])) for n in nums) / len(nums))
+                        # Mean of the anime episodes' IMDb ratings, a split episode counting 1/N.
+                        w = {n: Decimal(1) / shares.get((line, n), 1) for n in nums}
+                        new = round1(sum(Decimal(str(by_num[n])) * w[n] for n in nums) / sum(w.values()))
                         old = ep.get("rating")
                         if old != new:
                             updated += 1
@@ -135,14 +168,16 @@ def main():
                         skipped += 1
                     # Arc/saga ratings average every canon-route episode shown (One Pace,
                     # Onigashima Paced, Kuma Cut / Shaved Egghead, One Piece Log).
+                    # Weighted by length, so a 35-minute release counts more than a 15-minute one.
                     if ep.get("canon") and ep.get("rating") is not None:
-                        node_vals.append(ep["rating"])
-                        saga_vals.append(ep["rating"])
-            # Recompute arc/movie/special rating from its One Pace episodes when available.
+                        pair = (Decimal(str(ep["rating"])), Decimal(str(ep.get("runtime") or 24)))
+                        node_vals.append(pair)
+                        saga_vals.append(pair)
+            # Recompute arc/movie/special rating from its canon episodes when available.
             if node_vals:
-                node["rating"] = round1(sum(Decimal(str(v)) for v in node_vals) / len(node_vals))
+                node["rating"] = round1(sum(r * m for r, m in node_vals) / sum(m for _, m in node_vals))
         if saga_vals:
-            saga["rating"] = round1(sum(Decimal(str(v)) for v in saga_vals) / len(saga_vals))
+            saga["rating"] = round1(sum(r * m for r, m in saga_vals) / sum(m for _, m in saga_vals))
 
     # Live Action: its own SeriesGraph page (TMDB 111110), matched by season and episode.
     try:

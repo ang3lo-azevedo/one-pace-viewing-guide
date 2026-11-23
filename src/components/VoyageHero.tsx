@@ -1,5 +1,9 @@
+import RatingBadge from './RatingBadge';
+import InfoLine from './InfoLine';
+import { episodeInfo } from '../lib/format';
+import type { Episode } from '../types';
 import { For, Show, createSignal } from 'solid-js';
-import { fmtDate, fmtDuration, fmtFromNow, fmtHours, fmtSpan, parsePace, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, fmtFromNow, minutesForKind, fmtHours, fmtSpan, parsePace, stats } from '../lib/stats';
 import { formatBerry } from '../lib/bounties';
 import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
@@ -260,6 +264,15 @@ function ContinueWatching() {
     if (!n) return '';
     return prefs.spoilerSafe ? splitTitle(n.ep.title).label : n.ep.title;
   };
+  // Release, anime episodes, chapters, length and when you would get there.
+  const details = (n: { ep: Episode; kind: string }) => {
+    const parts = episodeInfo(n.ep);
+    const min = n.ep.runtime ?? minutesForKind(n.kind);
+    if (min > 0) parts.push({ label: 'Length', value: n.ep.runtime ? fmtDuration(min) : `~${fmtDuration(min)}` });
+    const eta = stats().eta[n.ep.id];
+    if (eta) parts.push({ label: 'ETA', value: fmtDate(eta) });
+    return parts;
+  };
   return (
     <div class="space-y-2">
     <Show when={justWatched()}>
@@ -277,9 +290,25 @@ function ContinueWatching() {
               {title()}
             </div>
             <div class="truncate text-xs text-sea-500 dark:text-sea-400">{n().nodeTitle}</div>
+            {/* The same details as the episode's row in the list. */}
+            <div class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+              <RatingBadge rating={n().ep.rating} color={n().ep.tierColor} />
+              <Show when={n().ep.traktRating && prefs.ratingsShown !== 'seriesgraph'}>
+                <span class="inline-flex items-center rounded-md border border-[#ed1c24]/50 px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24]">
+                  Trakt {n().ep.traktRating?.toFixed(1)}
+                </span>
+              </Show>
+              <InfoLine parts={details(n())} />
+            </div>
+            <Show when={n().ep.description}>
+              <p class="mt-1 text-xs leading-relaxed text-sea-600 dark:text-sea-300" innerHTML={inlineMd(n().ep.description!)} />
+            </Show>
             <Show when={waitingOn(n().ep.id).length > 0 ? pauseNote(flatById.get(n().ep.id)!) : null}>
               {(note) => <div class="mt-1 text-xs font-semibold text-accent-700 dark:text-accent-300" innerHTML={'⏸ ' + inlineMd(note())} />}
             </Show>
+            <For each={(n().ep.notes ?? []).filter((t) => !/^Pause at/i.test(t))}>
+              {(note) => <div class="mt-1 text-xs text-accent-700 dark:text-accent-300" innerHTML={'⚑ ' + inlineMd(note)} />}
+            </For>
           </div>
           <div class="flex flex-wrap items-center gap-1.5">
             <Show when={link()}>

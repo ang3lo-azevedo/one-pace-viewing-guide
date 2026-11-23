@@ -23212,6 +23212,197 @@
               "version": "wano:paced"
             },
             {
+              "id": "onigashima-plus-09",
+              "label": "Onigashima+ 09 (extended)",
+              "kind": "onigashima",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_9",
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima+ (Google Drive)",
+                    "url": "https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P"
+                  }
+                ],
+                "text": ""
+              },
+              "episodes": [
+                {
+                  "title": "Onigashima+ 09 - My Name",
+                  "fullTitle": "My Name",
+                  "rating": 9.3,
+                  "tierColor": "#186A3B",
+                  "pace": "Onigashima Paced 9",
+                  "paceNumber": null,
+                  "anime": "994–995",
+                  "chapters": "986",
+                  "meta": "Onigashima Paced 9 • Anime 994–995 • Ch. 986",
+                  "description": "The same episode with anime-only scenes added back, like an Extended cut. Watch it instead of the regular one if you want those scenes.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": "https://drive.google.com/file/d/1V5CtUHi0EvLP67yeJoYvKouJrGVotv_z/view",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-plus:09",
+                  "traktAnime": [
+                    [
+                      21,
+                      994,
+                      5562321
+                    ],
+                    [
+                      21,
+                      995,
+                      5562322
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 349,
+                  "traktRatingFrom": "anime",
+                  "runtime": 20,
+                  "runtimeSource": "sheet"
+                }
+              ]
+            },
+            {
+              "id": "onigashima-plus-25",
+              "label": "Onigashima+ 25 (extended)",
+              "kind": "onigashima",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_25",
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima+ (Google Drive)",
+                    "url": "https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P"
+                  }
+                ],
+                "text": ""
+              },
+              "episodes": [
+                {
+                  "title": "Onigashima+ 25 - Ashura Doji",
+                  "fullTitle": "Ashura Doji",
+                  "rating": 8.5,
+                  "tierColor": "#28B463",
+                  "pace": "Onigashima Paced 25",
+                  "paceNumber": null,
+                  "anime": "1024–1025",
+                  "chapters": "1008",
+                  "meta": "Onigashima Paced 25 • Anime 1024–1025 • Ch. 1008",
+                  "description": "The same episode with anime-only scenes added back, like an Extended cut. Watch it instead of the regular one if you want those scenes.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": "https://drive.google.com/file/d/1ns6hp9DJFAfFH2FXIWJ9qcoNV3bwR-VG/view",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-plus:25",
+                  "traktAnime": [
+                    [
+                      21,
+                      1024,
+                      6502635
+                    ],
+                    [
+                      21,
+                      1025,
+                      6502636
+                    ]
+                  ],
+                  "traktRating": 7.7,
+                  "traktVotes": 307,
+                  "traktRatingFrom": "anime",
+                  "runtime": 20,
+                  "runtimeSource": "sheet"
+                }
+              ]
+            },
+            {
+              "id": "onigashima-plus-28",
+              "label": "Onigashima+ 28 (extended)",
+              "kind": "onigashima",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_28",
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima+ (Google Drive)",
+                    "url": "https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P"
+                  }
+                ],
+                "text": ""
+              },
+              "episodes": [
+                {
+                  "title": "Onigashima+ 28 - Anarchy in the BM",
+                  "fullTitle": "Anarchy in the BM",
+                  "rating": 8.3,
+                  "tierColor": "#28B463",
+                  "pace": "Onigashima Paced 28",
+                  "paceNumber": null,
+                  "anime": "1032–1034",
+                  "chapters": "1012–1013",
+                  "meta": "Onigashima Paced 28 • Anime 1032–1034 • Ch. 1012–1013",
+                  "description": "The same episode with anime-only scenes added back, like an Extended cut. Watch it instead of the regular one if you want those scenes.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": "https://drive.google.com/file/d/17Nn0aM0-Lqqg7HVBxCuY6GsQlFInsHV0/view",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-plus:28",
+                  "traktAnime": [
+                    [
+                      21,
+                      1032,
+                      6502643
+                    ],
+                    [
+                      21,
+                      1033,
+                      6502644
+                    ],
+                    [
+                      21,
+                      1034,
+                      6502645
+                    ]
+                  ],
+                  "traktRating": 7.8,
+                  "traktVotes": 496,
+                  "traktRatingFrom": "anime",
+                  "runtime": 30,
+                  "runtimeSource": "sheet"
+                }
+              ]
+            },
+            {
               "id": "onigashima-paced-onigashima-29-48",
               "label": "Onigashima Paced - Onigashima (29–48)",
               "kind": "onigashima",
@@ -24069,6 +24260,207 @@
               ]
             },
             {
+              "id": "onigashima-plus-33",
+              "label": "Onigashima+ 33 (extended)",
+              "kind": "onigashima",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_33",
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima+ (Google Drive)",
+                    "url": "https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P"
+                  }
+                ],
+                "text": ""
+              },
+              "episodes": [
+                {
+                  "title": "Onigashima+ 33 - The Stars Take the Stage",
+                  "fullTitle": "The Stars Take the Stage",
+                  "rating": 9.3,
+                  "tierColor": "#186A3B",
+                  "pace": "Onigashima Paced 33",
+                  "paceNumber": null,
+                  "anime": "1044–1046",
+                  "chapters": "1021–1022",
+                  "meta": "Onigashima Paced 33 • Anime 1044–1046 • Ch. 1021–1022",
+                  "description": "The same episode with anime-only scenes added back, like an Extended cut. Watch it instead of the regular one if you want those scenes.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": "https://drive.google.com/file/d/1wY-k_kqg_sB7XJKdu95HiTkBR-DokMze/view",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-plus:33",
+                  "traktAnime": [
+                    [
+                      21,
+                      1044,
+                      6887131
+                    ],
+                    [
+                      21,
+                      1045,
+                      6906099
+                    ],
+                    [
+                      21,
+                      1046,
+                      6935775
+                    ]
+                  ],
+                  "traktRating": 8.2,
+                  "traktVotes": 479,
+                  "traktRatingFrom": "anime",
+                  "runtime": 28,
+                  "runtimeSource": "sheet"
+                }
+              ]
+            },
+            {
+              "id": "onigashima-plus-40",
+              "label": "Onigashima+ 40 (extended)",
+              "kind": "onigashima",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_40",
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima+ (Google Drive)",
+                    "url": "https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P"
+                  }
+                ],
+                "text": ""
+              },
+              "episodes": [
+                {
+                  "title": "Onigashima+ 40 - Wings of the Pirate King",
+                  "fullTitle": "Wings of the Pirate King",
+                  "rating": 9.5,
+                  "tierColor": "#186A3B",
+                  "pace": "Onigashima Paced 40",
+                  "paceNumber": null,
+                  "anime": "1060–1062",
+                  "chapters": "1034–1036",
+                  "meta": "Onigashima Paced 40 • Anime 1060–1062 • Ch. 1034–1036",
+                  "description": "The same episode with anime-only scenes added back, like an Extended cut. Watch it instead of the regular one if you want those scenes.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": "https://drive.google.com/file/d/1hh3-xHSMTJG_JeJ4TP6wRLlbIH0ZBJGi/view",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-plus:40",
+                  "traktAnime": [
+                    [
+                      21,
+                      1060,
+                      7460545
+                    ],
+                    [
+                      21,
+                      1061,
+                      7493494
+                    ],
+                    [
+                      21,
+                      1062,
+                      7508824
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 638,
+                  "traktRatingFrom": "anime",
+                  "runtime": 28,
+                  "runtimeSource": "sheet"
+                }
+              ]
+            },
+            {
+              "id": "onigashima-plus-42",
+              "label": "Onigashima+ 42 (extended)",
+              "kind": "onigashima",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_42",
+              "info": {
+                "links": [
+                  {
+                    "label": "Onigashima+ (Google Drive)",
+                    "url": "https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P"
+                  }
+                ],
+                "text": ""
+              },
+              "episodes": [
+                {
+                  "title": "Onigashima+ 42 - The Main Attraction",
+                  "fullTitle": "The Main Attraction",
+                  "rating": 9.2,
+                  "tierColor": "#186A3B",
+                  "pace": "Onigashima Paced 42",
+                  "paceNumber": null,
+                  "anime": "1065–1067",
+                  "chapters": "1038–1040",
+                  "meta": "Onigashima Paced 42 • Anime 1065–1067 • Ch. 1038–1040",
+                  "description": "The same episode with anime-only scenes added back, like an Extended cut. Watch it instead of the regular one if you want those scenes.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": "https://drive.google.com/file/d/1wXMS1M-4i9maZ_AEvMTcXf69BQ-6HWm-/view",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-plus:42",
+                  "traktAnime": [
+                    [
+                      21,
+                      1065,
+                      10696914
+                    ],
+                    [
+                      21,
+                      1066,
+                      10700270
+                    ],
+                    [
+                      21,
+                      1067,
+                      10724419
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 532,
+                  "traktRatingFrom": "anime",
+                  "runtime": 39,
+                  "runtimeSource": "sheet"
+                }
+              ]
+            },
+            {
               "id": "onigashima-paced-end-of-wano",
               "label": "Onigashima Paced - End of Wano",
               "kind": "onigashima",
@@ -24100,6 +24492,7 @@
                   },
                   "canon": true,
                   "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_1",
+                  "notes": [],
                   "traktAnime": [
                     [
                       21,
@@ -24135,6 +24528,7 @@
                   },
                   "canon": true,
                   "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_2",
+                  "notes": [],
                   "traktAnime": [
                     [
                       21,
@@ -24175,6 +24569,7 @@
                   },
                   "canon": true,
                   "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_3",
+                  "notes": [],
                   "traktAnime": [
                     [
                       21,
@@ -24191,42 +24586,6 @@
                   "traktVotes": 327,
                   "traktRatingFrom": "anime",
                   "runtime": 33,
-                  "runtimeSource": "sheet"
-                },
-                {
-                  "title": "End of Wano 03.5 - Farewell (Filler)",
-                  "fullTitle": "Farewell (Filler)",
-                  "rating": 7.9,
-                  "tierColor": "#F4D03F",
-                  "pace": "End of Wano 3.5",
-                  "paceNumber": null,
-                  "anime": "1084",
-                  "chapters": null,
-                  "meta": "End of Wano 3.5 • Anime 1084 • Filler",
-                  "description": null,
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/pp_onipace/ONIG_WA_3.5",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": true,
-                  "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_3.5",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      21,
-                      1084,
-                      11014009
-                    ]
-                  ],
-                  "traktRating": 7.5,
-                  "traktVotes": 154,
-                  "traktRatingFrom": "anime",
-                  "runtime": 20,
                   "runtimeSource": "sheet"
                 },
                 {
@@ -24251,9 +24610,7 @@
                   },
                   "canon": true,
                   "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_4",
-                  "notes": [
-                    "**End of Wano 03.5** (Anime Episode 1084) is a standalone farewell expansion showing emotional Straw Hat goodbyes before departing Wano."
-                  ],
+                  "notes": [],
                   "traktAnime": [
                     [
                       21,
@@ -24281,6 +24638,55 @@
                 ],
                 "text": ""
               }
+            },
+            {
+              "id": "end-of-wano-filler",
+              "label": "Filler: End of Wano 03.5",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_3",
+              "episodes": [
+                {
+                  "title": "End of Wano 03.5 - Farewell (Filler)",
+                  "fullTitle": "Farewell (Filler)",
+                  "rating": 7.9,
+                  "tierColor": "#F4D03F",
+                  "pace": "End of Wano 3.5",
+                  "paceNumber": null,
+                  "anime": "1084",
+                  "chapters": null,
+                  "meta": "End of Wano 3.5 • Anime 1084 • Filler",
+                  "description": "Anime-only farewell episode: goodbyes before leaving Wano. Optional.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/pp_onipace/ONIG_WA_3.5",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "onigashima-paced-end-of-wano:/detail/series/pp_onipace/ONIG_WA_3.5",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      21,
+                      1084,
+                      11014009
+                    ]
+                  ],
+                  "traktRating": 7.5,
+                  "traktVotes": 154,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             }
           ]
         },

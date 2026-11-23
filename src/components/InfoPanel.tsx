@@ -41,6 +41,11 @@ const SECTIONS: { title: string; items: Source[] }[] = [
         what: 'Community edit used for the second half of Wano.',
       },
       {
+        name: 'Onigashima+ (Google Drive)',
+        url: 'https://drive.google.com/drive/folders/18HdY2EjcbcsfxXENIleSbhozYmKPxa-P',
+        what: 'Extended Onigashima Paced episodes with the anime-only scenes added back (like One Pace Extended cuts).',
+      },
+      {
         name: 'Kuma Cut + Shaved Egghead (spreadsheet)',
         url: 'https://docs.google.com/spreadsheets/d/1ODt-b2L9PyAr0xEWhj1yIOqp__crBFVXhvejblvP_mU/edit?usp=sharing',
         what: 'Community edits that continue Egghead past the latest One Pace release.',

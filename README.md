@@ -51,6 +51,10 @@ npm run ratings     # python3 -I scripts/fetch_ratings.py
 Each episode also shows its Trakt community rating (with vote count on hover) when it has
 votes on Trakt (`npm run trakt-ratings`). All these refreshes run automatically before every build.
 
+Wano follows One Pace's own releases and continues with Onigashima Paced after One Pace's last
+chapter. `scripts/sync_wano.py` (also run before every build) adds any new One Pace Wano release
+and moves the hand-off, so the Onigashima Paced episodes it now covers become the alternative.
+
 This updates episode, arc and saga ratings (and their tier colors) from SeriesGraph's
 API. The Live Action gets its ratings from SeriesGraph's Live Action page, and films and
 specials get theirs straight from IMDb's public ratings dataset

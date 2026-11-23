@@ -234,6 +234,7 @@ export function tierForRating(rating: number | null): Tier | null {
 const KIND_LABELS: Record<string, string> = {
   onepace: 'One Pace',
   onigashima: 'Onigashima Paced',
+  'onigashima-plus': 'Onigashima+',
   'kuma-shaved': 'Kuma Cut / Shaved',
   netflix: 'Live Action',
   funpace: 'Fun Pace',
@@ -256,6 +257,7 @@ export function kindLabel(kind: string): string {
 const KIND_COLORS: Record<string, string> = {
   onepace: '#0ea5e9',
   onigashima: '#0ea5e9',
+  'onigashima-plus': '#8b5cf6',
   'kuma-shaved': '#0ea5e9',
   netflix: '#e50914',
   funpace: '#a855f7',

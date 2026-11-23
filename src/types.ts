@@ -65,6 +65,7 @@ export interface Episode {
 export type GroupKind =
   | 'onepace'
   | 'onigashima'
+  | 'onigashima-plus'
   | 'kuma-shaved'
   | 'netflix'
   | 'funpace'

@@ -205,7 +205,7 @@ def main():
             m = re.match(r"S(\d+)E(\d+)", title)
             if m:
                 rt, src = live_rt.get((int(m.group(1)), int(m.group(2)))), "trakt"
-        elif g["kind"] == "onigashima" and e.get("pace"):
+        elif g["kind"] in ("onigashima", "onigashima-plus") and e.get("pace"):
             m = re.match(r"(Onigashima Paced|End of Wano)\s+([\d.]+)", e["pace"])
             if m:
                 block = "onigashima" if m.group(1).startswith("Onigashima") else "endofwano"

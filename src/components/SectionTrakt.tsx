@@ -8,13 +8,26 @@ import { RATING_WORDS } from './EpisodeRow';
  * Trakt rating of an arc or saga, and (for arcs, when connected) your own rating of it, which
  * rates its season of the One Pace show on Trakt.
  */
-export default function SectionTrakt(props: { rating?: number; season?: { number: number; trakt: number | null }; what: string }) {
+export default function SectionTrakt(props: {
+  rating?: number;
+  season?: { number: number; trakt: number | null };
+  what: string;
+  /** Episodes in this arc: your average rating of them is the suggested arc rating. */
+  episodeIds?: string[];
+}) {
   const [picking, setPicking] = createSignal(false);
   const key = () => (props.season?.trakt ? `season:${props.season.trakt}` : null);
   const mine = () => (key() ? trakt.myRatings[key()!] : undefined);
   const href = () =>
     props.season ? `https://trakt.tv/shows/${config.traktShowSlug}/seasons/${props.season.number}` : `https://trakt.tv/shows/${config.traktShowSlug}`;
   const stop = (e: MouseEvent) => e.stopPropagation();
+  // Your own ratings of the arc's episodes, averaged: the default when you rate the arc.
+  const suggestion = () => {
+    const mine = (props.episodeIds ?? []).map((id) => trakt.myRatings[id]).filter((r): r is number => !!r);
+    if (!mine.length) return null;
+    const avg = mine.reduce((a, b) => a + b, 0) / mine.length;
+    return { value: Math.min(10, Math.max(1, Math.round(avg))), avg, count: mine.length };
+  };
   return (
     <Show when={prefs.ratingsShown !== 'seriesgraph'}>
       <Show when={props.rating}>
@@ -43,6 +56,20 @@ export default function SectionTrakt(props: { rating?: number; season?: { number
             {mine() ? `♥ ${mine()}` : `♡ Rate ${props.what}`}
           </button>
           <Show when={picking()}>
+            <Show when={!mine() && suggestion()}>
+              {(sg) => (
+                <button
+                  class="rounded-md border border-[#ed1c24] px-1.5 py-[3px] text-[11px] font-semibold leading-none text-[#ed1c24] hover:bg-[#ed1c24] hover:text-white"
+                  title={`The average of your ${sg().count} episode rating${sg().count === 1 ? '' : 's'} in this ${props.what}: ${sg().avg.toFixed(1)}`}
+                  onClick={() => {
+                    void rateSeason(props.season!.trakt!, sg().value);
+                    setPicking(false);
+                  }}
+                >
+                  Use {sg().value} (your average {sg().avg.toFixed(1)})
+                </button>
+              )}
+            </Show>
             <For each={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}>
               {(n) => (
                 <button
@@ -50,6 +77,7 @@ export default function SectionTrakt(props: { rating?: number; season?: { number
                   classList={{
                     'bg-[#ed1c24] text-white': mine() === n,
                     'bg-sea-200 text-sea-700 hover:bg-[#ed1c24]/70 hover:text-white dark:bg-sea-800 dark:text-sea-200': mine() !== n,
+                    'ring-2 ring-[#ed1c24]': !mine() && suggestion()?.value === n,
                   }}
                   title={RATING_WORDS[n]}
                   onClick={() => {

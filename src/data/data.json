@@ -13103,6 +13103,9 @@
                   },
                   "canon": true,
                   "id": "one-pace:post-war-01",
+                  "notes": [
+                    "Pause at 22:33, then watch the anime-only scene below before continuing."
+                  ],
                   "traktEpisode": {
                     "season": 27,
                     "number": 1,
@@ -13169,6 +13172,9 @@
                   },
                   "canon": true,
                   "id": "one-pace:post-war-03",
+                  "notes": [
+                    "Pause at 19:53, then watch the ASL childhood filler below before continuing."
+                  ],
                   "traktEpisode": {
                     "season": 27,
                     "number": 3,
@@ -13301,10 +13307,7 @@
                   },
                   "canon": true,
                   "id": "one-pace:post-war-07",
-                  "notes": [
-                    "**Pause PW 01 at 22:33**: Filler Scene: Extended awakening sequence (Ep 491, 14:10–15:26).",
-                    "**Pause PW 03 at 19:53**: Watch Filler Episodes 497–499 (ASL childhood; safe up to Ep 500 at 07:37)."
-                  ],
+                  "notes": [],
                   "traktEpisode": {
                     "season": 27,
                     "number": 7,
@@ -13336,14 +13339,58 @@
               }
             },
             {
-              "id": "filler",
-              "label": "Filler",
+              "id": "anime-scene-491",
+              "label": "Anime-only scene (Episode 491)",
               "kind": "filler",
               "canonPath": false,
               "isAlternative": false,
-              "defaultOpen": false,
+              "defaultOpen": true,
               "rating": null,
               "notes": [],
+              "afterEpisode": "one-pace:post-war-01",
+              "episodes": [
+                {
+                  "title": "Anime-only scene: Episode 491 (14:10–15:26)",
+                  "fullTitle": "Landing at the Maiden Island! The Harsh Reality Falls upon Luffy!",
+                  "rating": 8.7,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "491",
+                  "chapters": null,
+                  "meta": "Anime 491, 14:10–15:26",
+                  "description": "An extended scene added by the anime. Play this part of the episode, then finish Post-War 01.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "nonCanon": true,
+                  "id": "anime-scene:491:14:10–15:26",
+                  "clip": "14:10–15:26",
+                  "runtime": 1,
+                  "runtimeSource": "clip",
+                  "traktRating": 8.3,
+                  "traktVotes": 161,
+                  "traktRatingFrom": "anime"
+                }
+              ]
+            },
+            {
+              "id": "filler-asl",
+              "label": "Filler: ASL childhood",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:post-war-03",
               "episodes": [
                 {
                   "title": "Episodes 497–499: ASL childhood filler",
@@ -13355,7 +13402,7 @@
                   "anime": "497–499",
                   "chapters": null,
                   "meta": "Anime 497–499 • Filler",
-                  "description": null,
+                  "description": "Safe to watch up to Episode 500 at 07:37.",
                   "links": {
                     "onepace": null,
                     "stremio": null,
@@ -13390,7 +13437,19 @@
                   "traktRatingFrom": "anime",
                   "runtime": 72,
                   "runtimeSource": "anime"
-                },
+                }
+              ]
+            },
+            {
+              "id": "filler",
+              "label": "Filler",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "episodes": [
                 {
                   "title": "Episode 506: The Straw Hats' Reactions",
                   "fullTitle": "Episode 506: The Straw Hats' Reactions",
@@ -20344,9 +20403,7 @@
                   },
                   "canon": true,
                   "id": "one-pace:whole-cake-island-36",
-                  "notes": [
-                    "**Longer fight:** Anime Episode 870 has more animation for the arc's final fight than One Pace keeps. Consider watching the original episode."
-                  ],
+                  "notes": [],
                   "traktEpisode": {
                     "season": 33,
                     "number": 36,
@@ -20446,9 +20503,7 @@
                   },
                   "canon": true,
                   "id": "one-pace:whole-cake-island-39",
-                  "notes": [
-                    "Anime Episode 818 has a longer version of this fight."
-                  ],
+                  "notes": [],
                   "traktEpisode": {
                     "season": 33,
                     "number": 39,
@@ -20478,6 +20533,54 @@
                 ],
                 "text": "Pace: Eps 348–386 • Anime: Eps 777–877 • Ch: 823–902"
               }
+            },
+            {
+              "id": "original-uncut-818-whole-cake-island-15",
+              "label": "Original anime episode 818 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-15",
+              "episodes": [
+                {
+                  "title": "Episode 0818 (S19E39) - The Undaunted…",
+                  "fullTitle": "The Undaunted Soul! Brook vs. Big Mom!",
+                  "rating": 9.2,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "818",
+                  "chapters": null,
+                  "meta": "Anime 818",
+                  "description": "The full original episode: its fight is longer than in One Pace. Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A39",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:818:one-pace:whole-cake-island-15",
+                  "traktAnime": [
+                    [
+                      19,
+                      818,
+                      2814918
+                    ]
+                  ],
+                  "traktRating": 8.3,
+                  "traktVotes": 194,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             },
             {
               "id": "original-uncut-804-whole-cake-island-10",
@@ -21149,7 +21252,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Wano 02 - Seppuku",
+                  "title": "Wano 02 Extended - Seppuku",
                   "fullTitle": "Seppuku",
                   "rating": 9.1,
                   "tierColor": "#186A3B",
@@ -21170,6 +21273,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-02",
+                  "notes": [
+                    "This extended version restores extended Zoro vs. Samurai combat (16:01–17:21, 29:50–31:26)."
+                  ],
                   "traktEpisode": {
                     "season": 35,
                     "number": 2,
@@ -22028,6 +22134,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-28",
+                  "notes": [
+                    "Pause at 13:39, then watch the anime-only scene below before continuing."
+                  ],
                   "traktEpisode": {
                     "season": 35,
                     "number": 28,
@@ -22127,11 +22236,7 @@
                   },
                   "canon": true,
                   "id": "one-pace-wano-acts-1-2:wano-31",
-                  "notes": [
-                    "**Directed by Megumi Ishitani:** Anime Episode 957 has film-like storyboarding for the news after the Reverie. Consider watching it uncut.",
-                    "**Wano 02 Extended** includes extended Zoro vs. Samurai combat (16:01–17:21, 29:50–31:26).",
-                    "Pause **Wano 28** at 13:39 to watch an anime-only scene (Anime Ep 954, 05:40–07:44)."
-                  ],
+                  "notes": [],
                   "traktEpisode": {
                     "season": 35,
                     "number": 31,
@@ -22161,6 +22266,49 @@
                 ],
                 "text": "Pace: Eps 390–451 • Anime: Eps 958–1034 (Full Raid: 958–1085) • Ch: 957–1013 (Full Raid: 957–1057) · Anime: Eps 890–958 • Ch: 909–956"
               }
+            },
+            {
+              "id": "anime-scene-954",
+              "label": "Anime-only scene (Episode 954)",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-wano-acts-1-2:wano-28",
+              "episodes": [
+                {
+                  "title": "Anime-only scene: Episode 954 (05:40–07:44)",
+                  "fullTitle": "Its Name is Enma! Oden's Great Swords!",
+                  "rating": 8.5,
+                  "tierColor": "#28B463",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "954",
+                  "chapters": null,
+                  "meta": "Anime 954, 05:40–07:44",
+                  "description": "A short scene added by the anime. Play this part of the episode, then finish Wano 28.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A63",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "nonCanon": true,
+                  "id": "anime-scene:954:05:40–07:44",
+                  "clip": "05:40–07:44",
+                  "runtime": 2,
+                  "runtimeSource": "clip",
+                  "traktRating": 7.8,
+                  "traktVotes": 163,
+                  "traktRatingFrom": "anime"
+                }
+              ]
             },
             {
               "id": "original-uncut-915-wano-11",
@@ -22970,9 +23118,7 @@
                   },
                   "canon": true,
                   "id": "one-pace-onigashima-raid:wano-43",
-                  "notes": [
-                    "**Directed by Megumi Ishitani:** Anime Episode 982 has film-like direction and animation. Consider watching it uncut."
-                  ],
+                  "notes": [],
                   "traktEpisode": {
                     "season": 35,
                     "number": 43,
@@ -23150,7 +23296,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Onigashima Raid 18 - I Can't Imagine Losing",
+                  "title": "Onigashima Raid 18 Extended - I Can't Imagine Losing",
                   "fullTitle": "I Can't Imagine Losing",
                   "rating": 8.8,
                   "tierColor": "#28B463",
@@ -23171,6 +23317,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-onigashima-raid:wano-49",
+                  "notes": [
+                    "This extended version restores expanded combat (09:14–10:55)."
+                  ],
                   "traktEpisode": {
                     "season": 35,
                     "number": 49,
@@ -23348,7 +23497,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Onigashima Raid 24 - Straw Hat Luffy",
+                  "title": "Onigashima Raid 24 Extended - Straw Hat Luffy",
                   "fullTitle": "Straw Hat Luffy",
                   "rating": 9.8,
                   "tierColor": "#1DA1F2",
@@ -23370,7 +23519,7 @@
                   "canon": true,
                   "id": "one-pace-onigashima-raid:wano-55",
                   "notes": [
-                    "**Directed by Megumi Ishitani:** Anime Episode 1015 is one of the highest-rated episodes of the anime. Consider watching the original episode uncut."
+                    "This extended version restores extensive battle scenes."
                   ],
                   "traktEpisode": {
                     "season": 35,
@@ -23594,7 +23743,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Onigashima Raid 31 - Anarchy in the BM (Big…",
+                  "title": "Onigashima Raid 31 Extended - Anarchy in the BM (Big…",
                   "fullTitle": "Anarchy in the BM (Big Mom)",
                   "rating": 8.7,
                   "tierColor": "#28B463",
@@ -23617,9 +23766,7 @@
                   "id": "one-pace-onigashima-raid:wano-62",
                   "notes": [
                     "Between **Wano 35** and **36**, an extra minute of a flashback fight exists in the original anime.",
-                    "Between **Wano 47** and **48**, a flashback duel is expanded in Anime Episode 994 (11:00–18:28).",
-                    "**Extended Episodes** with notable expansions include **Wano 49** (expanded combat 09:14–10:55), **Wano 55** (extensive battle scenes), and **Wano 62** (expanded battle sequences 15:44–18:54 & 26:54–30:18).",
-                    "One Pace now covers the raid up to Wano 62 (Chapter 1013 / Anime Episode 1034). To continue with **Onigashima Paced**, resume at **Onigashima 29** (Chapter 1014+ / Anime Episode 1035+)."
+                    "This extended version restores expanded battle sequences (15:44–18:54, 26:54–30:18)."
                   ],
                   "traktAnime": [
                     [
@@ -23692,6 +23839,49 @@
                 }
               ],
               "version": "wano:onepace"
+            },
+            {
+              "id": "anime-scene-994",
+              "label": "Anime-only scene (Episode 994)",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-47",
+              "episodes": [
+                {
+                  "title": "Anime-only scene: Episode 994 (11:00–18:28)",
+                  "fullTitle": "The Akazaya Face-off! Kikunojo vs. Kanjuro!",
+                  "rating": 9.0,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "994",
+                  "chapters": null,
+                  "meta": "Anime 994, 11:00–18:28",
+                  "description": "A flashback duel expanded by the anime. Watch this part of the episode between Wano 47 and 48.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A103",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "nonCanon": true,
+                  "id": "anime-scene:994:11:00–18:28",
+                  "clip": "11:00–18:28",
+                  "runtime": 7,
+                  "runtimeSource": "clip",
+                  "traktRating": 8.1,
+                  "traktVotes": 159,
+                  "traktRatingFrom": "anime"
+                }
+              ]
             },
             {
               "id": "original-uncut-982-wano-43",
@@ -27603,6 +27793,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-02",
+                  "notes": [
+                    "At 21:00 the anime adds a lo-fi acapella \"We Are!\" scene; this episode keeps it."
+                  ],
                   "traktEpisode": {
                     "season": 36,
                     "number": 2,
@@ -27780,7 +27973,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Egghead 08 - The Strongest Form of…",
+                  "title": "Egghead 08 Extended - The Strongest Form of…",
                   "fullTitle": "The Strongest Form of Humanity",
                   "rating": 9.2,
                   "tierColor": "#186A3B",
@@ -27801,6 +27994,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-08",
+                  "notes": [
+                    "This extended version restores expanded combat (04:34–08:10)."
+                  ],
                   "traktEpisode": {
                     "season": 36,
                     "number": 8,
@@ -27945,7 +28141,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Egghead 13 - The Emperor's Crew, The…",
+                  "title": "Egghead 13 Extended - The Emperor's Crew, The…",
                   "fullTitle": "The Emperor's Crew, The Red Hair Pirates",
                   "rating": 9.8,
                   "tierColor": "#1DA1F2",
@@ -27966,6 +28162,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-13",
+                  "notes": [
+                    "This extended version restores an anime-original scene (12:23–13:33)."
+                  ],
                   "traktEpisode": {
                     "season": 36,
                     "number": 13,
@@ -27978,7 +28177,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Egghead 14 - The Legendary Hero",
+                  "title": "Egghead 14 Extended - The Legendary Hero",
                   "fullTitle": "The Legendary Hero",
                   "rating": 9.2,
                   "tierColor": "#186A3B",
@@ -27999,6 +28198,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-14",
+                  "notes": [
+                    "This extended version restores an anime-original scene (00:00–03:07)."
+                  ],
                   "traktEpisode": {
                     "season": 36,
                     "number": 14,
@@ -28143,7 +28345,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Egghead 19 - Hostage Situation",
+                  "title": "Egghead 19 Extended - Hostage Situation",
                   "fullTitle": "Hostage Situation",
                   "rating": 8.8,
                   "tierColor": "#28B463",
@@ -28164,6 +28366,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-19",
+                  "notes": [
+                    "This extended version restores an anime-original scene (13:12–13:57)."
+                  ],
                   "traktEpisode": {
                     "season": 36,
                     "number": 19,
@@ -28670,7 +28875,7 @@
               "notes": [],
               "episodes": [
                 {
-                  "title": "Egghead 21 - ...",
+                  "title": "Egghead 21 Extended - ...",
                   "fullTitle": "Luffy vs. Kizaru",
                   "rating": 9.7,
                   "tierColor": "#1DA1F2",
@@ -28691,6 +28896,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-21",
+                  "notes": [
+                    "This extended version restores expanded fight scenes."
+                  ],
                   "traktEpisode": {
                     "season": 36,
                     "number": 21,
@@ -28724,11 +28932,7 @@
                   },
                   "canon": true,
                   "id": "one-pace-egghead:egghead-22",
-                  "notes": [
-                    "Pause **Egghead 02** at 21:00 for the *\"We Are!\"* lofi acapella acoustic scene.",
-                    "**Extended Episodes** with notable anime-original expanded scenes include **Egghead 08** (expanded combat 04:34–08:10), **Egghead 13** (12:23–13:33), **Egghead 14** (00:00–03:07), **Egghead 19** (13:12–13:57), and **Egghead 21** (expanded fight scenes).",
-                    "One Pace covers Egghead through Chapter 1096 (Anime Episode 1130). For unreleased episodes (Egghead 23+ covering Ch. 1097–1125 / Anime Eps 1131–1155), continue with **Kuma Cut** (1131–1136) $\\rightarrow$ **Shaved Egghead** (1137–1155) or the original uncut anime."
-                  ],
+                  "notes": [],
                   "traktAnime": [
                     [
                       22,

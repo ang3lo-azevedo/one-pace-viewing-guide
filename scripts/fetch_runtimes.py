@@ -188,6 +188,12 @@ def main():
 
     counts = {}
     for e, g in entries:
+        # Anime-only scenes keep the length of their clip ("05:40–07:44" is 2 minutes).
+        if e.get("clip"):
+            a, b = [sum(int(x) * m for x, m in zip(t.strip().split(":"), (60, 1))) for t in e["clip"].replace("-", "–").split("–")]
+            e["runtime"], e["runtimeSource"] = max(1, round((b - a) / 60)), "clip"
+            counts["clip"] = counts.get("clip", 0) + 1
+            continue
         e.pop("runtime", None)
         e.pop("runtimeSource", None)
         rt, src = None, None

@@ -275,7 +275,8 @@ def main():
     # syncs through the anime episodes it covers.
     cuts = 0
     for e, g in entries:
-        if "traktEpisode" in e or g["kind"] in NO_ANIME_SYNC:
+        # A scene clipped from an episode does not mean the whole anime episode was watched.
+        if "traktEpisode" in e or g["kind"] in NO_ANIME_SYNC or e.get("clip"):
             continue
         nums = anime_numbers(e.get("anime"))
         if nums and all(n in abs_index for n in nums):

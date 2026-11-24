@@ -23,6 +23,7 @@ const SOURCE_NAME: Record<string, string> = {
   anime: 'the original anime episodes on Trakt',
   sheet: "the project's spreadsheet",
   'sheet-average': "the project's spreadsheet (average for the arc)",
+  clip: 'the scene timestamps',
 };
 
 export const RATING_WORDS = ['', 'Weak Sauce', 'Terrible', 'Bad', 'Poor', 'Meh', 'Fair', 'Good', 'Great', 'Superb', 'Totally Ninja'];

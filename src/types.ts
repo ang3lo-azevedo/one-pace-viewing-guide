@@ -37,6 +37,8 @@ export interface Episode {
   traktVotes?: number;
   /** Minutes you skip at this placement (e.g. the spoilery last minute of Monsters); taken off the runtime. */
   skipMinutes?: number;
+  /** Part of an anime episode to watch ("05:40–07:44"): an anime-only scene. */
+  clip?: string;
   /** IMDb vote count behind the star of a film or special (fetch_imdb_ratings.py). */
   imdbVotes?: number;
   /** "anime" when the Trakt rating is the vote-weighted rating of the anime episodes covered. */

@@ -11,6 +11,7 @@ import InfoPanel from './components/InfoPanel';
 import TraktMenu from './components/TraktMenu';
 import ProgressMenu from './components/ProgressMenu';
 import Preferences from './components/Preferences';
+import WorldMap from './components/WorldMap';
 
 export default function App() {
   // Re-read after each theme change ("system" resolves to light or dark).
@@ -66,6 +67,7 @@ export default function App() {
 
       <main class="mx-auto max-w-5xl space-y-4 px-3 py-4 sm:px-4 sm:py-6">
         <VoyageHero />
+        <WorldMap />
         <Preferences />
         <InfoPanel />
 

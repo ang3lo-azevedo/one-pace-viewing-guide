@@ -75,10 +75,12 @@ h3 {
 :root {
   --card-bg: #fff;
   --group-bg: #f5f8fa;
+  --map-fog: #e8f1f6;
 }
 .dark {
   --card-bg: color-mix(in srgb, var(--color-sea-900) 70%, var(--color-sea-950));
   --group-bg: color-mix(in srgb, var(--color-sea-950) 50%, var(--card-bg));
+  --map-fog: var(--color-sea-950);
 }
 .card {
   @apply rounded-xl border;
@@ -167,4 +169,22 @@ html:not(.dark) :is(main, .filter-bar) {
   .text-accent-600 {
     color: var(--color-accent-700);
   }
+}
+
+/* World map: the pulsing ring on where you are, and labels readable over the sea. */
+@keyframes map-pulse {
+  0% { r: 7; opacity: 1; }
+  100% { r: 16; opacity: 0; }
+}
+.map-pulse {
+  animation: map-pulse 1.8s ease-out infinite;
+}
+.map-label {
+  paint-order: stroke;
+  stroke: var(--card-bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-pulse { animation: none; }
 }

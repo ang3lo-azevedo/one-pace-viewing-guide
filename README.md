@@ -55,8 +55,9 @@ Wano follows One Pace's own releases and continues with Onigashima Paced after O
 chapter. `scripts/sync_wano.py` (also run before every build) adds any new One Pace Wano release
 and moves the hand-off, so the Onigashima Paced episodes it now covers become the alternative.
 
-This updates episode, arc and saga ratings (and their tier colors) from SeriesGraph's
-API. The Live Action gets its ratings from SeriesGraph's Live Action page, and films and
+This updates episode, arc and saga ratings (and their tier colors). SeriesGraph's API gives
+the IMDb id of every anime episode, and the rating itself is read straight from IMDb's daily
+ratings file (SeriesGraph's copy is the fallback). The Live Action gets its ratings from SeriesGraph's Live Action page, and films and
 specials get theirs straight from IMDb's public ratings dataset
 (`python3 -I scripts/fetch_imdb_ratings.py`), using the IMDb id from the Trakt mapping.
 

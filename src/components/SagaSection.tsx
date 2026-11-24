@@ -87,7 +87,7 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
                 color={tierForRating(props.saga.rating)?.color ?? null}
                 size="md"
                 href={SERIESGRAPH_SHOW}
-                title={`Average of this saga\'s One Pace episodes on SeriesGraph (${props.saga.rating}). Open One Piece on SeriesGraph`}
+                title={`IMDb rating ${props.saga.rating}: the average of this saga\'s episodes, by length. Open One Piece\'s rating graph on SeriesGraph`}
               />
               <SectionTrakt rating={props.saga.traktRating} what="saga" />
             </div>

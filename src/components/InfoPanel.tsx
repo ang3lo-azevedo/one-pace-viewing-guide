@@ -72,7 +72,7 @@ const SECTIONS: { title: string; items: Source[] }[] = [
       {
         name: 'SeriesGraph',
         url: 'https://seriesgraph.com/show/37854-one-piece',
-        what: 'The star rating. Each entry is the average IMDb rating of the anime episodes it adapts. Arc and saga ratings average their One Pace episodes. Refreshed on every deploy.',
+        what: 'The star rating is IMDb\'s: each entry averages the IMDb ratings of the anime episodes it adapts (an episode split between two releases counts half in each), films and specials use their own IMDb rating, and arcs and sagas average their episodes by length. Read straight from IMDb\'s daily ratings file on every build; SeriesGraph provides the episode list and the rating graphs the stars link to.',
       },
       {
         name: 'Trakt',

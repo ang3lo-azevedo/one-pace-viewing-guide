@@ -24,10 +24,10 @@ export function starHref(ep: Episode, kind?: string): string | null {
 export function starTitle(ep: Episode, kind?: string): string | undefined {
   const href = starHref(ep, kind);
   if (!href) return undefined;
-  if (kind === 'netflix') return `SeriesGraph rating ${ep.rating} (Live Action). Open on SeriesGraph`;
+  if (kind === 'netflix') return `IMDb rating ${ep.rating} (Live Action). Open its rating graph on SeriesGraph`;
   if (href.includes('imdb.com'))
     return `IMDb rating ${ep.rating}${ep.imdbVotes ? ` (${ep.imdbVotes.toLocaleString()} votes)` : ''}. Open on IMDb`;
-  return `SeriesGraph rating ${ep.rating}, averaged over anime ${ep.anime}. Open on SeriesGraph`;
+  return `IMDb rating ${ep.rating}, averaged over anime ${ep.anime}. Open its rating graph on SeriesGraph`;
 }
 
 /** The Trakt page behind the Trakt rating. */

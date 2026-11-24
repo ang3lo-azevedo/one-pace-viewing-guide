@@ -123,7 +123,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
                 rating={props.node.rating}
                 color={tierForRating(props.node.rating)?.color ?? null}
                 href={props.node.type === 'arc' ? SERIESGRAPH_SHOW : entryStar()?.href}
-                title={props.node.type === 'arc' ? `Average of this arc\'s One Pace episodes on SeriesGraph (${props.node.rating}). Open One Piece on SeriesGraph` : entryStar()?.title}
+                title={props.node.type === 'arc' ? `IMDb rating ${props.node.rating}: the average of this arc\'s episodes, by length. Open One Piece\'s rating graph on SeriesGraph` : entryStar()?.title}
               />
               <SectionTrakt rating={props.node.traktRating} season={props.node.traktSeason} what={props.node.type === 'arc' ? 'arc' : 'entry'} episodeIds={idsOfNodeKey(props.node.uid)} />
               <Show when={props.node.isAlternative}>

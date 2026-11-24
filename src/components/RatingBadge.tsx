@@ -12,7 +12,7 @@ function readableText(hex: string): string {
   return lum > 0.6 ? '#1e293b' : '#ffffff';
 }
 
-/** The SeriesGraph star rating. With `href` it links to the rating's source page. */
+/** The star rating (IMDb). With `href` it links to the rating's source page. */
 export default function RatingBadge(props: {
   rating: number | null;
   color: string | null;
@@ -38,7 +38,7 @@ export default function RatingBadge(props: {
           'background-color': props.color ?? '#64748b',
           color: readableText(props.color ?? '#64748b'),
         }}
-        title={props.title ?? `SeriesGraph rating ${props.rating}${props.href ? ' (open on SeriesGraph)' : ''}`}
+        title={props.title ?? `IMDb rating ${props.rating}${props.href ? ' (open its source)' : ''}`}
       >
         <span aria-hidden="true">★</span>
         {props.rating?.toFixed(1)}

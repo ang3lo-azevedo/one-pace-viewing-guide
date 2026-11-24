@@ -2,7 +2,8 @@
 """Refresh episode ratings in src/data/data.json directly from SeriesGraph.
 
 SeriesGraph (https://seriesgraph.com/show/37854-one-piece) exposes per-anime-episode
-ratings via its JSON API. Each One Pace entry records the anime episode(s) it adapts
+IMDb ratings and IMDb ids via its JSON API; the rating itself is then read straight from IMDb's
+daily dataset (SeriesGraph's copy lags a few votes), falling back to SeriesGraph's. Each One Pace entry records the anime episode(s) it adapts
 (the `anime` field, e.g. "234-235" or "250-251, 256, 320"), so a rating is the mean of
 the SeriesGraph IMDb rating of those anime episodes, rounded to one decimal. An anime episode
 split across N releases counts 1/N in each. Arc and saga ratings are the mean of their canon
@@ -18,6 +19,7 @@ Usage:  python3 -I scripts/fetch_ratings.py
 Run with -I so a stray module in the CWD can't shadow the standard library.
 """
 import argparse
+import gzip
 import json
 import os
 import re
@@ -30,6 +32,7 @@ DATA = os.path.join(ROOT, "src", "data", "data.json")
 SHOW_ID = 37854
 API_URL = f"https://seriesgraph.com/api/shows/{SHOW_ID}/season-ratings"
 LIVE_ACTION_API = "https://seriesgraph.com/api/shows/111110/season-ratings"
+IMDB_URL = "https://datasets.imdbws.com/title.ratings.tsv.gz"
 
 # Keep tiers in sync with data.json meta.tiers / src/types.ts.
 TIERS = [
@@ -107,14 +110,45 @@ def load_ratings(cache):
         req = urllib.request.Request(API_URL, headers={"User-Agent": "one-pace-guide/1.0"})
         with urllib.request.urlopen(req, timeout=30) as resp:
             payload = json.load(resp)
-    by_num = {}
+    by_num, tconst = {}, {}
     for season in payload:
         for ep in season.get("episodes", []):
             n = ep.get("episode_number")
             rating = ep.get("imdb_rating") or ep.get("vote_average") or ep.get("community_avg")
             if n is not None and rating:
                 by_num[n] = rating
+            if n is not None and ep.get("tconst"):
+                tconst[n] = ep["tconst"]
+    # The rating itself straight from IMDb's daily dataset (SeriesGraph's copy lags a few votes).
+    fresh = imdb_ratings(set(tconst.values()))
+    for n, t in tconst.items():
+        if t in fresh:
+            by_num[n] = fresh[t]
+    print(f"IMDb: {sum(1 for t in tconst.values() if t in fresh)}/{len(tconst)} anime episodes rated straight from IMDb")
     return by_num
+
+
+_imdb_cache = {}
+
+
+def imdb_ratings(wanted):
+    """{tconst: rating} from IMDb's public daily ratings file; {} if it cannot be reached."""
+    if not wanted:
+        return {}
+    try:
+        if "all" not in _imdb_cache:
+            req = urllib.request.Request(IMDB_URL, headers={"User-Agent": "one-pace-guide/1.0"})
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                _imdb_cache["all"] = gzip.decompress(resp.read()).decode("utf-8")
+        out = {}
+        for line in _imdb_cache["all"].splitlines():
+            t, _, rest = line.partition("\t")
+            if t in wanted:
+                out[t] = float(rest.split("\t")[0])
+        return out
+    except Exception as exc:
+        print(f"IMDb dataset skipped, using SeriesGraph's copy: {exc}", file=sys.stderr)
+        return {}
 
 
 def main():
@@ -184,12 +218,18 @@ def main():
         req = urllib.request.Request(LIVE_ACTION_API, headers={"User-Agent": "one-pace-guide/1.0"})
         with urllib.request.urlopen(req, timeout=30) as resp:
             la = json.load(resp)
-        la_rating = {}
+        la_rating, la_tconst = {}, {}
         for season in la:
             for ep in season.get("episodes", []):
                 r = ep.get("imdb_rating") or ep.get("vote_average")
                 if r:
                     la_rating[(ep.get("season_number") or season.get("season_number"), ep.get("episode_number"))] = r
+                if ep.get("tconst"):
+                    la_tconst[(ep.get("season_number") or season.get("season_number"), ep.get("episode_number"))] = ep["tconst"]
+        fresh = imdb_ratings(set(la_tconst.values()))
+        for k, t in la_tconst.items():
+            if t in fresh:
+                la_rating[k] = fresh[t]
         la_updated = 0
         for saga in data["sagas"]:
             for node in saga["nodes"]:

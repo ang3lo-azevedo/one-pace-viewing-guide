@@ -136,7 +136,7 @@ export default function Preferences() {
               onPick={(v) => setPrefs('ratingsShown', v)}
               options={[
                 { value: 'both', label: 'Both' },
-                { value: 'seriesgraph', label: 'SeriesGraph', title: 'The star rating (IMDb ratings via SeriesGraph)' },
+                { value: 'seriesgraph', label: 'IMDb', title: 'Only the star rating (IMDb)' },
                 { value: 'trakt', label: 'Trakt' },
               ]}
             />

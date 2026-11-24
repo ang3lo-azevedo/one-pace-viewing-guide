@@ -400,9 +400,9 @@ export default function VoyageHero() {
 
         <Panel title="Saved vs the anime" accent="text-teal-700 dark:text-teal-300">
           <Big value={fmtSpan(s().savedSoFarMin)} label="saved so far, compared with the original anime" color="text-teal-600 dark:text-teal-300" />
-          <Row label="Story in the anime" value={fmtSpan(s().animeStoryMin)} title="Every original anime episode the main route covers" />
-          <Row label="Story on the main route" value={fmtSpan(s().canonMinTotal)} title="The same story through One Pace and the canon cuts" />
-          <Row label="Saved in total" value={fmtSpan(s().savedTotalMin)} title="The difference: time you save over the whole story" />
+          <Row label="Full anime" value={fmtSpan(s().animeStoryMin)} title="Every original anime episode the main route covers" />
+          <Row label="This guide's main route" value={fmtSpan(s().canonMinTotal)} title="The same story through One Pace and the canon cuts" />
+          <Row label="You save" value={fmtSpan(s().savedTotalMin)} title="The difference: time you save over the whole story" />
         </Panel>
 
         <Panel title="Journey" accent="text-sky-700 dark:text-accent-300">

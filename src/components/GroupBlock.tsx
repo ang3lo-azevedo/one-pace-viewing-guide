@@ -1,7 +1,7 @@
 import { For, Show, createSignal, createEffect } from 'solid-js';
 import { onlyIncluded, type FilteredGroup } from '../lib/filter';
 import { extraCategory, flatEpisodes, kindColor, kindLabel } from '../lib/guide';
-import { fmtDuration, stats } from '../lib/stats';
+import { fmtDuration, parentsOf, sharePartOf, stats } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
@@ -36,6 +36,13 @@ export default function GroupBlock(props: {
   });
 
   const prog = () => stats().perGroup[props.group.uid];
+  const share = () => {
+    const p = prog();
+    if (!p) return null;
+    const up = parentsOf(props.group.episodes[0]?.id);
+    const arc = up ? stats().perNode[up.nodeKey] : undefined;
+    return sharePartOf(p.minTotal, arc && up ? { min: arc.minTotal, name: up.nodeTitle } : undefined);
+  };
   const ids = () => onlyIncluded(flatEpisodes.filter((f) => f.group.uid === props.group.uid).map((f) => f.ep.id));
   const allWatched = () => ids().length > 0 && ids().every((id) => isWatched(id));
 
@@ -83,6 +90,13 @@ export default function GroupBlock(props: {
             <span class="text-[11px] tabular-nums text-sea-400 dark:text-sea-500" title="Watch time left / total">
               · {prog()!.minDone >= prog()!.minTotal ? fmtDuration(prog()!.minTotal) : `${fmtDuration(prog()!.minTotal - prog()!.minDone)} left of ${fmtDuration(prog()!.minTotal)}`}
             </span>
+            <Show when={share()}>
+              {(sh) => (
+                <span class="text-[11px] tabular-nums text-sea-400 dark:text-sea-500" title={sh().title}>
+                  · {sh().value}
+                </span>
+              )}
+            </Show>
           </span>
         </Show>
         <span class="shrink-0 text-xs tabular-nums text-sea-500 dark:text-sea-400">

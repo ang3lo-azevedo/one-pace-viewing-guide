@@ -10,7 +10,7 @@ import { tierForRating } from '../lib/guide';
 import { idsOfNodeKey, nodeKeyOf } from '../lib/layout';
 import { catchUpIds } from '../lib/catchup';
 import { prefs } from '../store/prefs';
-import { fmtDate, fmtDuration, fmtFromNow, minutesOf, stats } from '../lib/stats';
+import { parentsOf, sharePartOf, fmtDate, fmtDuration, fmtFromNow, minutesOf, stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
 import { Tags } from './Tags';
 import { extraCategory } from '../lib/guide';
@@ -86,7 +86,10 @@ export default function ArcCard(props: { node: FilteredNode }) {
     // Total of everything shown in this arc/saga (extras included), when it differs from the canon time.
     const total = p && p.minTotal > canonMinutes ? [{ label: 'Total', value: fmtDuration(p.minTotal), title: 'Everything shown here, including extras' }] : [];
     const left = p && p.minDone > 0 && p.minDone < p.minTotal ? [{ label: 'Left', value: fmtDuration(p.minTotal - p.minDone), title: 'Watch time left in your current selection' }] : [];
-    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: `At your current pace (${fmtFromNow(eta)})` }] : [])];
+    const up = parentsOf(props.node.groups[0]?.episodes[0]?.id);
+    const saga = up ? stats().perSaga[up.sagaKey] : undefined;
+    const share = p ? sharePartOf(p.minTotal, saga && up ? { min: saga.minTotal, name: up.sagaTitle } : undefined) : null;
+    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(share ? [share] : []), ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: `At your current pace (${fmtFromNow(eta)})` }] : [])];
   };
 
   return (

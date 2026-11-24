@@ -378,3 +378,21 @@ export function sharePart(epId: string): { label: string; value: string; title: 
     title: `${pct} of everything in your list${arc ? ` and ${fmtShare((min / arc) * 100)} of ${f.node.title}` : ''}, by watch time`,
   };
 }
+
+/**
+ * Share of your list for any amount of watch time (a saga, arc or section), with its share of
+ * the level above in the tooltip.
+ */
+export function sharePartOf(min: number, parent?: { min: number; name: string }): { label: string; value: string; title: string } | null {
+  const all = stats().minTotal;
+  if (!(min > 0) || !(all > 0)) return null;
+  const pct = fmtShare((min / all) * 100);
+  const up = parent && parent.min > 0 && parent.min !== min ? ` and ${fmtShare((min / parent.min) * 100)} of ${parent.name}` : '';
+  return { label: 'Share', value: pct, title: `${pct} of everything in your list${up}, by watch time` };
+}
+
+/** The saga and arc keys of a section's first entry (for "share of the level above"). */
+export function parentsOf(epId: string | undefined) {
+  const f = epId ? flatById.get(epId) : undefined;
+  return f ? { sagaKey: sagaKeyOf(f), nodeKey: nodeKeyOf(f), sagaTitle: f.saga.title, nodeTitle: f.node.title } : null;
+}

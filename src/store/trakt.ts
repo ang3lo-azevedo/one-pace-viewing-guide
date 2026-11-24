@@ -469,9 +469,32 @@ export async function loadMyRatings(): Promise<void> {
         for (const it of await rm.json())
           for (const ours of map.fromMovie.get(it.movie?.ids?.trakt) ?? []) if (it.rating) mine[ours] = it.rating;
     }
+    // Arcs: your season ratings on the One Pace show, keyed "season:<trakt id>".
+    const rs = await traktFetch('/sync/ratings/seasons');
+    if (rs.ok)
+      for (const it of await rs.json()) if (it.season?.ids?.trakt && it.rating) mine[`season:${it.season.ids.trakt}`] = it.rating;
     setTrakt('myRatings', mine);
   } catch {
     /* ignore */
+  }
+}
+
+/** Rate an arc (its season of the One Pace show on Trakt) 1-10, or remove your rating with null. */
+export async function rateSeason(seasonTraktId: number, rating: number | null): Promise<void> {
+  if (!isConnected()) return;
+  const key = `season:${seasonTraktId}`;
+  const prev = trakt.myRatings[key];
+  setTrakt('myRatings', key, rating ?? undefined!);
+  try {
+    const item = { ...(rating == null ? {} : { rating }), ids: { trakt: seasonTraktId } };
+    const r = await traktFetch(rating == null ? '/sync/ratings/remove' : '/sync/ratings', {
+      method: 'POST',
+      body: JSON.stringify({ seasons: [item] }),
+    });
+    if (!r.ok) throw new Error(`ratings ${r.status}`);
+  } catch (e) {
+    setTrakt('myRatings', key, prev ?? undefined!);
+    setTrakt('lastMessage', 'Rating failed: ' + (e as Error).message);
   }
 }
 

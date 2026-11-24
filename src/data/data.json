@@ -1451,7 +1451,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 1,
+            "trakt": 522009
+          },
+          "traktRating": 8.2
         },
         {
           "id": "orange-town-arc",
@@ -1640,7 +1645,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 2,
+            "trakt": 523013
+          },
+          "traktRating": 7.7
         },
         {
           "id": "syrup-village-arc",
@@ -1998,7 +2008,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 3,
+            "trakt": 523016
+          },
+          "traktRating": 7.6
         },
         {
           "id": "gaimon-arc",
@@ -2072,7 +2087,12 @@
                 "text": "Pace: Ep. 15 • Anime: Ep. 18 • Ch: 42, 22"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 4,
+            "trakt": 523018
+          },
+          "traktRating": 7.1
         },
         {
           "id": "baratie-arc",
@@ -2326,7 +2346,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Baratie 08 - The Fourth",
+                  "title": "Baratie 08 Extended - The Fourth",
                   "fullTitle": "The Fourth",
                   "rating": 8.4,
                   "tierColor": "#28B463",
@@ -2347,6 +2367,9 @@
                   },
                   "canon": true,
                   "id": "one-pace:baratie-08",
+                  "notes": [
+                    "This extended version restores scenes One Pace cuts from the regular release. Pick \"Extended\" on One Pace."
+                  ],
                   "traktAnime": [
                     [
                       1,
@@ -2465,7 +2488,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 5,
+            "trakt": 523020
+          },
+          "traktRating": 8.0
         },
         {
           "id": "arlong-park-arc",
@@ -2925,7 +2953,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 6,
+            "trakt": 523021
+          },
+          "traktRating": 8.1
         },
         {
           "id": "the-adventures-of-buggy-s-crew-arc",
@@ -2948,7 +2981,7 @@
               "notes": [],
               "episodes": [
                 {
-                  "title": "The Adventures of Buggy's Crew 01 - The Adventures of…",
+                  "title": "The Adventures of Buggy's Crew 01 Extended - The Adventures of…",
                   "fullTitle": "The Adventures of Buggy's Crew",
                   "rating": 6.2,
                   "tierColor": "#F39C12",
@@ -2969,6 +3002,9 @@
                   },
                   "canon": true,
                   "id": "one-pace:the-adventures-of-buggys-crew-01",
+                  "notes": [
+                    "This extended version restores scenes One Pace cuts from the regular release. Pick \"Extended\" on One Pace."
+                  ],
                   "traktEpisode": {
                     "season": 7,
                     "number": 1,
@@ -2999,7 +3035,12 @@
                 "text": "Pace: Ep. 34 • Anime: Eps 46–47 • Ch: 35–75"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 7,
+            "trakt": 523022
+          },
+          "traktRating": 7.0
         },
         {
           "id": "loguetown-arc",
@@ -3102,7 +3143,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Loguetown 03 - The Legend Begins",
+                  "title": "Loguetown 03 Extended - The Legend Begins",
                   "fullTitle": "The Legend Begins",
                   "rating": 8.4,
                   "tierColor": "#28B463",
@@ -3129,6 +3170,9 @@
                       "nyaa": "https://nyaa.si/view/2179021"
                     }
                   },
+                  "notes": [
+                    "This extended version restores scenes One Pace cuts from the regular release. Pick \"Extended\" on One Pace."
+                  ],
                   "traktEpisode": {
                     "season": 8,
                     "number": 3,
@@ -3262,9 +3306,15 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 8,
+            "trakt": 523023
+          },
+          "traktRating": 7.9
         }
-      ]
+      ],
+      "traktRating": 7.9
     },
     {
       "id": "alabasta-saga",
@@ -3431,7 +3481,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 9,
+            "trakt": 523024
+          },
+          "traktRating": 7.7
         },
         {
           "id": "whisky-peak-arc",
@@ -3587,7 +3642,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 10,
+            "trakt": 523025
+          },
+          "traktRating": 7.9
         },
         {
           "id": "diary-of-koby-meppo-arc",
@@ -3661,7 +3721,12 @@
                 "text": "Pace: Ep. 42 • Anime: Eps 68–69 • Ch: 83–119"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 11,
+            "trakt": 523026
+          },
+          "traktRating": 7.2
         },
         {
           "id": "little-garden-arc",
@@ -3953,7 +4018,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 12,
+            "trakt": 523027
+          },
+          "traktRating": 7.7
         },
         {
           "id": "drum-island-arc",
@@ -4381,7 +4451,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 13,
+            "trakt": 523028
+          },
+          "traktRating": 8.0
         },
         {
           "id": "alabasta-arc",
@@ -5117,7 +5192,12 @@
                 "text": "Pace: Eps 56–76 • Anime: Eps 92–130 • Ch: 155–217"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 14,
+            "trakt": 523029
+          },
+          "traktRating": 8.0
         },
         {
           "id": "one-piece-movie-04",
@@ -5178,9 +5258,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 7.6
         }
-      ]
+      ],
+      "traktRating": 7.9
     },
     {
       "id": "sky-island-saga",
@@ -5493,7 +5575,12 @@
                 "text": "Pace: Eps 77–84 • Anime: Eps 144–152 • Ch: 218–236"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 15,
+            "trakt": 523030
+          },
+          "traktRating": 7.9
         },
         {
           "id": "skypiea-arc",
@@ -6364,7 +6451,12 @@
                 "text": "Pace: Eps 85–109 • Anime: Eps 153–195, 203 • Ch: 237–303"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 16,
+            "trakt": 523031
+          },
+          "traktRating": 7.9
         },
         {
           "id": "g8-arc",
@@ -7065,9 +7157,11 @@
               },
               "version": "g8:original"
             }
-          ]
+          ],
+          "traktRating": 7.7
         }
-      ]
+      ],
+      "traktRating": 7.9
     },
     {
       "id": "water-7-saga",
@@ -7457,7 +7551,12 @@
                 "text": "Pace: Eps 110–116 • Anime: Eps 207–219, 226–228 • Ch: 304–321"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 17,
+            "trakt": 523032
+          },
+          "traktRating": 7.5
         },
         {
           "id": "one-piece-movie-06",
@@ -7518,7 +7617,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 7.8
         },
         {
           "id": "water-seven-arc",
@@ -8267,7 +8367,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 18,
+            "trakt": 523033
+          },
+          "traktRating": 8.1
         },
         {
           "id": "enies-lobby-arc",
@@ -9277,7 +9382,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 19,
+            "trakt": 523034
+          },
+          "traktRating": 8.3
         },
         {
           "id": "post-enies-lobby-arc",
@@ -9538,9 +9648,15 @@
                 "text": "Pace: Eps 162–166 • Anime: Eps 313–325 • Ch: 431–441"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 20,
+            "trakt": 523035
+          },
+          "traktRating": 8.3
         }
-      ]
+      ],
+      "traktRating": 8.1
     },
     {
       "id": "thriller-bark-saga",
@@ -10417,7 +10533,12 @@
               "afterEpisode": "one-pace:thriller-bark-13",
               "setting": "monsters"
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 21,
+            "trakt": 523036
+          },
+          "traktRating": 8.0
         },
         {
           "id": "filler-episode-384-boat-piece",
@@ -10527,7 +10648,8 @@
               ],
               "version": "boatpiece:original"
             }
-          ]
+          ],
+          "traktRating": 7.9
         },
         {
           "id": "special-strong-world-episode-0",
@@ -10588,7 +10710,8 @@
               ]
             }
           ],
-          "version": "strongworld:thriller-bark"
+          "version": "strongworld:thriller-bark",
+          "traktRating": 8.3
         },
         {
           "id": "one-piece-movie-10-strong-world",
@@ -10650,9 +10773,11 @@
               ]
             }
           ],
-          "version": "strongworld:thriller-bark"
+          "version": "strongworld:thriller-bark",
+          "traktRating": 8.0
         }
-      ]
+      ],
+      "traktRating": 8.0
     },
     {
       "id": "summit-war-saga",
@@ -11211,7 +11336,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 22,
+            "trakt": 523037
+          },
+          "traktRating": 8.3
         },
         {
           "id": "amazon-lily-arc",
@@ -11417,7 +11547,12 @@
                 "text": "Pace: Eps 201–205 • Anime: Eps 408–421 • Ch: 514–524"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 23,
+            "trakt": 523038
+          },
+          "traktRating": 8.0
         },
         {
           "id": "impel-down-arc",
@@ -11788,7 +11923,12 @@
                 "text": "Pace: Eps 206–215 • Anime: Eps 422–452 • Ch: 525–548"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 24,
+            "trakt": 523039
+          },
+          "traktRating": 8.1
         },
         {
           "id": "the-adventures-of-the-straw-hats-arc",
@@ -12025,7 +12165,12 @@
               },
               "version": "adventures:onepace"
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 25,
+            "trakt": 523040
+          },
+          "traktRating": 7.4
         },
         {
           "id": "marineford-arc",
@@ -13059,7 +13204,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 26,
+            "trakt": 523041
+          },
+          "traktRating": 8.7
         },
         {
           "id": "post-war-arc",
@@ -13488,7 +13638,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 27,
+            "trakt": 523042
+          },
+          "traktRating": 8.1
         },
         {
           "id": "special-strong-world-episode-0-alternative",
@@ -13668,9 +13823,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 8.0
         }
-      ]
+      ],
+      "traktRating": 8.3
     },
     {
       "id": "fish-man-island-saga",
@@ -13971,7 +14128,12 @@
               },
               "version": "fishman:onepace"
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 28,
+            "trakt": 523043
+          },
+          "traktRating": 8.3
         },
         {
           "id": "special-fan-letter",
@@ -14029,7 +14191,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 9.4
         },
         {
           "id": "fish-man-island-arc",
@@ -15839,7 +16002,12 @@
               ],
               "afterEpisode": "one-pace-alternative:fishman-island-14"
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 29,
+            "trakt": 523044
+          },
+          "traktRating": 7.8
         },
         {
           "id": "filler-z-s-ambition",
@@ -15914,7 +16082,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 7.4
         },
         {
           "id": "special-glorious-island",
@@ -15972,7 +16141,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 6.8
         },
         {
           "id": "one-piece-movie-12-film-z",
@@ -16030,9 +16200,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 8.2
         }
-      ]
+      ],
+      "traktRating": 7.9
     },
     {
       "id": "dressrosa-saga",
@@ -16936,7 +17108,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 30,
+            "trakt": 523045
+          },
+          "traktRating": 7.9
         },
         {
           "id": "dressrosa-arc",
@@ -18708,7 +18885,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 31,
+            "trakt": 523047
+          },
+          "traktRating": 8.0
         },
         {
           "id": "special-film-gold-episode-0",
@@ -18765,7 +18947,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 7.3
         },
         {
           "id": "one-piece-movie-13-film-gold",
@@ -18823,9 +19006,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 7.9
         }
-      ]
+      ],
+      "traktRating": 8.0
     },
     {
       "id": "whole-cake-island-saga",
@@ -19204,7 +19389,12 @@
                 "text": "Pace: Eps 338–347 • Anime: Eps 751–776 • Ch: 801–822"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 32,
+            "trakt": 523048
+          },
+          "traktRating": 7.7
         },
         {
           "id": "whole-cake-island-arc",
@@ -20928,7 +21118,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 33,
+            "trakt": 523049
+          },
+          "traktRating": 7.8
         },
         {
           "id": "reverie-arc",
@@ -21017,7 +21212,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Reverie 03 - The Empty Throne",
+                  "title": "Reverie 03 Extended - The Empty Throne",
                   "fullTitle": "The Empty Throne",
                   "rating": 7.8,
                   "tierColor": "#F4D03F",
@@ -21038,6 +21233,9 @@
                   },
                   "canon": true,
                   "id": "one-pace:reverie-03",
+                  "notes": [
+                    "This extended version restores scenes One Pace cuts from the regular release. Pick \"Extended\" on One Pace."
+                  ],
                   "traktEpisode": {
                     "season": 34,
                     "number": 3,
@@ -21068,7 +21266,12 @@
                 "text": "Pace: Eps 387–389 • Anime: Eps 878–889 • Ch: 903–908"
               }
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 34,
+            "trakt": 523050
+          },
+          "traktRating": 7.3
         },
         {
           "id": "one-piece-movie-14-stampede",
@@ -21126,7 +21329,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 8.2
         },
         {
           "id": "special-romance-dawn-v2",
@@ -21186,9 +21390,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 6.4
         }
-      ]
+      ],
+      "traktRating": 7.8
     },
     {
       "id": "wano-country-saga",
@@ -23792,7 +23998,7 @@
                   "runtimeSource": "onepace"
                 },
                 {
-                  "title": "Onigashima Raid 32 - The Ham",
+                  "title": "Onigashima Raid 32 Extended - The Ham",
                   "fullTitle": "The Ham",
                   "rating": 8.2,
                   "tierColor": "#28B463",
@@ -23813,7 +24019,9 @@
                   },
                   "canon": true,
                   "id": "one-pace-onigashima-raid:wano-63",
-                  "notes": [],
+                  "notes": [
+                    "This extended version restores scenes One Pace cuts from the regular release. Pick \"Extended\" on One Pace."
+                  ],
                   "traktAnime": [
                     [
                       21,
@@ -27516,7 +27724,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 35,
+            "trakt": 523051
+          },
+          "traktRating": 7.9
         },
         {
           "id": "special-uta-s-past",
@@ -27581,7 +27794,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 6.7
         },
         {
           "id": "one-piece-movie-15-film-red",
@@ -27639,9 +27853,11 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktRating": 7.7
         }
-      ]
+      ],
+      "traktRating": 7.9
     },
     {
       "id": "final-saga",
@@ -27716,7 +27932,8 @@
                 "text": "TV Special 15 (23 min) • Adapted from ONE PIECE novel HEROINES"
               }
             }
-          ]
+          ],
+          "traktRating": 8.0
         },
         {
           "id": "egghead-arc",
@@ -30041,7 +30258,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "traktSeason": {
+            "number": 36,
+            "trakt": 523052
+          },
+          "traktRating": 8.4
         },
         {
           "id": "elbaph-arc",
@@ -30951,7 +31173,8 @@
                 "text": ""
               }
             }
-          ]
+          ],
+          "traktRating": 8.5
         },
         {
           "id": "upcoming-films",
@@ -31025,7 +31248,8 @@
             }
           ]
         }
-      ]
+      ],
+      "traktRating": 8.4
     }
   ]
 }

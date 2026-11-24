@@ -12,6 +12,7 @@ import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import { prefs } from '../store/prefs';
 import RatingBadge from './RatingBadge';
+import SectionTrakt from './SectionTrakt';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import ArcCard from './ArcCard';
 import { FinalSagaPicker } from './VersionPicker';
@@ -88,6 +89,7 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
                 href={SERIESGRAPH_SHOW}
                 title={`Average of this saga\'s One Pace episodes on SeriesGraph (${props.saga.rating}). Open One Piece on SeriesGraph`}
               />
+              <SectionTrakt rating={props.saga.traktRating} what="saga" />
             </div>
             <InfoLine parts={info()} class="mt-0.5" />
           </div>

@@ -119,6 +119,10 @@ export interface GuideNode {
   chapters: string | null;
   isAlternative: boolean;
   groups: Group[];
+  /** Trakt rating: its season's on the One Pace show, or the mean of its episodes (fetch_trakt_ratings.py). */
+  traktRating?: number;
+  /** Its season of the One Pace show on Trakt (rate the arc there). */
+  traktSeason?: { number: number; trakt: number | null };
   /** The whole node is one version of a set ("strongworld:post-war"), see Group.version. */
   version?: string;
   /** Unique key assigned at load ("saga.node" indices); ids can repeat. */
@@ -129,6 +133,8 @@ export interface Saga {
   id: string;
   title: string;
   rating: number | null;
+  /** Length-weighted mean of its main-route episodes' Trakt ratings. */
+  traktRating?: number;
   pace: string | null;
   anime: string | null;
   chapters: string | null;

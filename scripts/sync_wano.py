@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Keep the Wano hand-off between One Pace and Onigashima Paced current (src/data/data.json).
+"""Follow One Pace's releases (src/data/data.json): Extended versions and the Wano hand-off.
+
+Every One Pace release that has an Extended version on onepace.net is listed as that version.
+
+The Wano hand-off between One Pace and Onigashima Paced is kept current:
 
 The guide follows One Pace's own Wano releases (wano-01..N on onepace.net, shown as Wano 01-31
 and Onigashima Raid 01..) and continues with the community Onigashima Paced edit after One
@@ -83,6 +87,33 @@ def main():
         })
 
     data = json.load(open(DATA, encoding="utf-8"))
+
+    # Every One Pace release that has an Extended version is listed as that version, like
+    # "Arlong Park 05 Extended" (Loguetown 01 is Extended only with Daddy the Father: skipped).
+    starts = [(m.start(), m.group(1)) for m in re.finditer(r'"slug":"([a-z0-9.-]+)","part":', html)]
+    extended = set()
+    for i, (pos, slug) in enumerate(starts):
+        end = starts[i + 1][0] if i + 1 < len(starts) else len(html)
+        if '"cut":"extended"' in html[pos:end]:
+            extended.add(slug)
+    switched = []
+    for s in data["sagas"]:
+        for n in s["nodes"]:
+            for g in n["groups"]:
+                for e in g["episodes"]:
+                    link = e["links"].get("onepace") or ""
+                    slug = link.split("#", 1)[1] if link.count("#") == 1 else None
+                    if slug not in extended or (e.get("withExtra") or {}).get("title") or " Extended" in e["title"]:
+                        continue
+                    head, sep, rest = e["title"].partition(" - ")
+                    e["title"] = f"{head} Extended{sep}{rest}"
+                    if not any("xtended version" in x for x in e.get("notes") or []):
+                        e["notes"] = (e.get("notes") or []) + [
+                            "This extended version restores scenes One Pace cuts from the regular release. Pick \"Extended\" on One Pace."]
+                    switched.append(head)
+    if switched:
+        print(f"Extended: now using the extended version of {', '.join(switched)}")
+
     wano = next(n for s in data["sagas"] for n in s["nodes"] if n["id"] == "wano-country-arc")
     raid = [g for g in wano["groups"] if g["label"].startswith("One Pace - Onigashima Raid")]
     raid_last = raid[-1]
@@ -91,6 +122,9 @@ def main():
     new = sorted(n for n in releases if n > max(have))
     if not new:
         print(f"Wano: One Pace is at wano-{max(have)}, nothing new")
+        if switched:
+            with open(DATA, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
         return
 
     # Pace numbers: the new releases continue after the last Raid episode; later ones shift.

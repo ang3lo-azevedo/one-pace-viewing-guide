@@ -330,13 +330,56 @@ def main():
             e["traktRatingFrom"] = "anime"
             from_anime += 1
 
+    # ---- arcs and sagas ---------------------------------------------------------
+    # Each arc is a season of the One Pace show on Trakt (rate it there). Seasons have hardly
+    # any votes, so an arc's Trakt rating is its season's when that has MIN_VOTES votes and
+    # otherwise the length-weighted mean of its main-route episodes; sagas always the mean.
+    season_ids = {se["number"]: se["ids"]["trakt"] for se in pace if se["number"] > 0}
+    season_votes = {se["number"]: (se.get("rating"), se.get("votes") or 0) for se in pace if se["number"] > 0}
+
+    def weighted(eps):
+        pairs = [(e["traktRating"], e.get("runtime") or 24) for e in eps if e.get("traktRating")]
+        total = sum(m for _, m in pairs)
+        return round(sum(r * m for r, m in pairs) / total, 1) if total else None
+
+    def main_route(node):
+        return [e for g in node["groups"] if not (g.get("isAlternative") or node.get("isAlternative"))
+                for e in g["episodes"] if e.get("canon")]
+
+    arcs_rated = 0
+    for s in data["sagas"]:
+        for k in ("traktRating", "traktSeason"):
+            s.pop(k, None)
+        saga_eps = []
+        for n in s["nodes"]:
+            for k in ("traktRating", "traktSeason"):
+                n.pop(k, None)
+            seasons = Counter(e["traktEpisode"]["season"] for g in n["groups"] if g["kind"] == "onepace"
+                              for e in g["episodes"] if (e.get("traktEpisode") or {}).get("season") and not e["traktEpisode"].get("show"))
+            if seasons and n["type"] == "arc":
+                sn = seasons.most_common(1)[0][0]
+                n["traktSeason"] = {"number": sn, "trakt": season_ids.get(sn)}
+            eps = main_route(n)
+            saga_eps += eps
+            # Films, specials and filler sections have no canon episodes: use their own entries.
+            if not eps:
+                eps = [e for g in n["groups"] if not (g.get("isAlternative") or n.get("isAlternative")) for e in g["episodes"]]
+            sr, sv = season_votes.get((n.get("traktSeason") or {}).get("number"), (None, 0))
+            r = round(float(sr), 1) if sr and sv >= MIN_VOTES else weighted(eps)
+            if r is not None:
+                n["traktRating"] = r
+                arcs_rated += 1
+        r = weighted(saga_eps)
+        if r is not None:
+            s["traktRating"] = r
+
     data["meta"]["traktRatingsSource"] = f"Trakt (https://trakt.tv/shows/{PACE_SHOW})"
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     missing = [e["title"] for e, _ in releases if e["id"] not in match]
     print(f"Trakt: {len(match)}/{len(releases)} One Pace releases mapped, {rated} with ratings, "
           f"{cuts} community cuts mapped to the original anime, {films} movies/specials, "
-          f"{live_mapped} Live Action episodes, {from_anime} rated from the anime episodes they cover")
+          f"{live_mapped} Live Action episodes, {from_anime} rated from the anime episodes they cover, {arcs_rated} arcs")
     if missing:
         print("  unmapped:", "; ".join(t[:30] for t in missing))
 

@@ -118,6 +118,7 @@ export const visibleSagas = createMemo<FilteredSaga[]>(() => {
             id,
             title: arc.title.replace(/ Arc$/, ''),
             rating: arc.rating,
+            traktRating: arc.traktRating,
             pace: arc.pace,
             anime: arc.anime,
             chapters: arc.chapters,

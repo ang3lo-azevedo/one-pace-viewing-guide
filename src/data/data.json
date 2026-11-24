@@ -32,7 +32,7 @@
     "nodeCount": 58,
     "episodeCount": 641,
     "canonPathCount": 541,
-    "paceNumberedCount": 442,
+    "paceNumberedCount": 443,
     "ratingsSource": "SeriesGraph IMDb (https://seriesgraph.com/show/37854-one-piece)",
     "traktRatingsSource": "Trakt (https://trakt.tv/shows/one-pace)",
     "idAliases": {
@@ -1312,7 +1312,7 @@
                     "trakt": 14221852
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 996,
+                  "traktVotes": 997,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
                   "runtimeSource": "onepace"
@@ -1345,7 +1345,7 @@
                     "trakt": 14221853
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 1200,
+                  "traktVotes": 1201,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -1378,7 +1378,7 @@
                     "trakt": 14221855
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 703,
+                  "traktVotes": 704,
                   "traktRatingFrom": "anime",
                   "runtime": 18,
                   "runtimeSource": "onepace"
@@ -1445,7 +1445,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 1968,
+                  "traktVotes": 1969,
                   "runtime": 66,
                   "runtimeSource": "trakt"
                 }
@@ -1634,7 +1634,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 1695,
+                  "traktVotes": 1696,
                   "runtime": 57,
                   "runtimeSource": "trakt"
                 }
@@ -1955,7 +1955,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 1553,
+                  "traktVotes": 1554,
                   "runtime": 59,
                   "runtimeSource": "trakt"
                 },
@@ -1992,7 +1992,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 1526,
+                  "traktVotes": 1528,
                   "runtime": 64,
                   "runtimeSource": "trakt"
                 }
@@ -2355,7 +2355,7 @@
                     ]
                   ],
                   "traktRating": 8.2,
-                  "traktVotes": 410,
+                  "traktVotes": 411,
                   "traktRatingFrom": "anime",
                   "runtime": 18,
                   "runtimeSource": "onepace"
@@ -2422,7 +2422,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 1485,
+                  "traktVotes": 1487,
                   "runtime": 52,
                   "runtimeSource": "trakt"
                 },
@@ -2459,7 +2459,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 1436,
+                  "traktVotes": 1438,
                   "runtime": 56,
                   "runtimeSource": "trakt"
                 }
@@ -2515,7 +2515,7 @@
                     "trakt": 14317899
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 741,
+                  "traktVotes": 742,
                   "traktRatingFrom": "anime",
                   "runtime": 30,
                   "runtimeSource": "onepace"
@@ -2548,7 +2548,7 @@
                     "trakt": 14317900
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 1112,
+                  "traktVotes": 1113,
                   "traktRatingFrom": "anime",
                   "runtime": 22,
                   "runtimeSource": "onepace"
@@ -2882,7 +2882,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 1464,
+                  "traktVotes": 1466,
                   "runtime": 60,
                   "runtimeSource": "trakt"
                 },
@@ -2919,7 +2919,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.4,
-                  "traktVotes": 1514,
+                  "traktVotes": 1516,
                   "runtime": 51,
                   "runtimeSource": "trakt"
                 }
@@ -3947,7 +3947,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 909,
+                  "traktVotes": 910,
                   "runtime": 58,
                   "runtimeSource": "trakt"
                 }
@@ -4301,7 +4301,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 919,
+                  "traktVotes": 920,
                   "runtime": 56,
                   "runtimeSource": "trakt"
                 },
@@ -4375,7 +4375,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.4,
-                  "traktVotes": 956,
+                  "traktVotes": 957,
                   "runtime": 64,
                   "runtimeSource": "trakt"
                 }
@@ -4696,8 +4696,8 @@
                     "number": 9,
                     "trakt": 14317953
                   },
-                  "traktRating": 8.2,
-                  "traktVotes": 531,
+                  "traktRating": 8.3,
+                  "traktVotes": 532,
                   "traktRatingFrom": "anime",
                   "runtime": 36,
                   "runtimeSource": "onepace"
@@ -4730,7 +4730,7 @@
                     "trakt": 14317954
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 514,
+                  "traktVotes": 516,
                   "traktRatingFrom": "anime",
                   "runtime": 36,
                   "runtimeSource": "onepace"
@@ -5165,14 +5165,14 @@
                     "Early One Piece film, not canon."
                   ],
                   "nonCanon": true,
-                  "imdbVotes": 3616,
+                  "imdbVotes": 3618,
                   "traktMovie": {
                     "slug": "one-piece-dead-end-adventure-2003",
                     "trakt": 30394,
                     "imdb": "tt1006926"
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 717,
+                  "traktVotes": 718,
                   "runtime": 95,
                   "runtimeSource": "trakt"
                 }
@@ -5271,7 +5271,7 @@
                     "trakt": 14317968
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 485,
+                  "traktVotes": 486,
                   "traktRatingFrom": "anime",
                   "runtime": 32,
                   "runtimeSource": "onepace"
@@ -5436,7 +5436,7 @@
                     "trakt": 14317973
                   },
                   "traktRating": 8.3,
-                  "traktVotes": 507,
+                  "traktVotes": 508,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -5609,7 +5609,7 @@
                     "trakt": 14317981
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 470,
+                  "traktVotes": 471,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -5642,7 +5642,7 @@
                     "trakt": 14317982
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 464,
+                  "traktVotes": 466,
                   "traktRatingFrom": "anime",
                   "runtime": 29,
                   "runtimeSource": "onepace"
@@ -5741,7 +5741,7 @@
                     "trakt": 14317985
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 474,
+                  "traktVotes": 475,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
                   "runtimeSource": "onepace"
@@ -7505,7 +7505,7 @@
                     "Non-canon film."
                   ],
                   "nonCanon": true,
-                  "imdbVotes": 4443,
+                  "imdbVotes": 4445,
                   "traktMovie": {
                     "slug": "one-piece-baron-omatsuri-and-the-secret-island-2005",
                     "trakt": 30396,
@@ -7634,7 +7634,7 @@
                     "trakt": 14318013
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 641,
+                  "traktVotes": 642,
                   "traktRatingFrom": "anime",
                   "runtime": 43,
                   "runtimeSource": "onepace"
@@ -8269,7 +8269,7 @@
                     "trakt": 14318031
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 410,
+                  "traktVotes": 411,
                   "traktRatingFrom": "anime",
                   "runtime": 26,
                   "runtimeSource": "onepace"
@@ -8302,7 +8302,7 @@
                     "trakt": 14318032
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 396,
+                  "traktVotes": 398,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
                   "runtimeSource": "onepace"
@@ -8335,7 +8335,7 @@
                     "trakt": 14318033
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 392,
+                  "traktVotes": 394,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "onepace"
@@ -8368,7 +8368,7 @@
                     "trakt": 14318034
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 382,
+                  "traktVotes": 383,
                   "traktRatingFrom": "anime",
                   "runtime": 25,
                   "runtimeSource": "onepace"
@@ -8830,7 +8830,7 @@
                     "trakt": 14318048
                   },
                   "traktRating": 8.3,
-                  "traktVotes": 378,
+                  "traktVotes": 379,
                   "traktRatingFrom": "anime",
                   "runtime": 19,
                   "runtimeSource": "onepace"
@@ -8863,7 +8863,7 @@
                     "trakt": 14318049
                   },
                   "traktRating": 8.5,
-                  "traktVotes": 592,
+                  "traktVotes": 593,
                   "traktRatingFrom": "anime",
                   "runtime": 31,
                   "runtimeSource": "onepace"
@@ -9406,7 +9406,7 @@
                     "trakt": 14318064
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 741,
+                  "traktVotes": 742,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -9439,7 +9439,7 @@
                     "trakt": 14318068
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 378,
+                  "traktVotes": 379,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -9604,7 +9604,7 @@
                     "trakt": 14318085
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 368,
+                  "traktVotes": 369,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -9637,7 +9637,7 @@
                     "trakt": 14318086
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 551,
+                  "traktVotes": 553,
                   "traktRatingFrom": "anime",
                   "runtime": 21,
                   "runtimeSource": "onepace"
@@ -10162,7 +10162,7 @@
                     "**Spoiler Warning:** If watching here, **skip the last minute** (it flashes forward to scenes from this arc), or alternatively watch this special at any point after completing Thriller Bark."
                   ],
                   "skipMinutes": 1,
-                  "imdbVotes": 3247,
+                  "imdbVotes": 3248,
                   "traktMovie": {
                     "slug": "monsters-103-mercies-dragon-damnation-2024",
                     "trakt": 994908,
@@ -10396,7 +10396,7 @@
                     "Watch order: this film fits right after the current arc. If you watch the anime tie-in prequel Little East Blue, use the Fun Pace version, as the original broadcast version reveals later story details. The film can also be saved for the alternative placement later in this guide."
                   ],
                   "nonCanon": true,
-                  "imdbVotes": 8857,
+                  "imdbVotes": 8859,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
                     "trakt": 27466,
@@ -10470,7 +10470,7 @@
                     "trakt": 14318101
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 355,
+                  "traktVotes": 356,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -10503,7 +10503,7 @@
                     "trakt": 14318102
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 356,
+                  "traktVotes": 357,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -11116,7 +11116,7 @@
                     "trakt": 14318113
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 497,
+                  "traktVotes": 499,
                   "traktRatingFrom": "anime",
                   "runtime": 25,
                   "runtimeSource": "onepace"
@@ -11149,7 +11149,7 @@
                     "trakt": 14318114
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 661,
+                  "traktVotes": 665,
                   "traktRatingFrom": "anime",
                   "runtime": 39,
                   "runtimeSource": "onepace"
@@ -11182,7 +11182,7 @@
                     "trakt": 14318115
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 333,
+                  "traktVotes": 335,
                   "traktRatingFrom": "anime",
                   "runtime": 26,
                   "runtimeSource": "onepace"
@@ -11215,7 +11215,7 @@
                     "trakt": 14318116
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 844,
+                  "traktVotes": 845,
                   "traktRatingFrom": "anime",
                   "runtime": 35,
                   "runtimeSource": "onepace"
@@ -12358,8 +12358,8 @@
                     "number": 3,
                     "trakt": 14318142
                   },
-                  "traktRating": 7.7,
-                  "traktVotes": 757,
+                  "traktRating": 7.8,
+                  "traktVotes": 758,
                   "traktRatingFrom": "anime",
                   "runtime": 42,
                   "runtimeSource": "onepace"
@@ -12425,7 +12425,7 @@
                     "trakt": 14318144
                   },
                   "traktRating": 8.5,
-                  "traktVotes": 512,
+                  "traktVotes": 513,
                   "traktRatingFrom": "anime",
                   "runtime": 45,
                   "runtimeSource": "onepace"
@@ -12716,7 +12716,7 @@
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-alternative-main:movie-10-strong-world-2009-written-by-oda",
                   "nonCanon": true,
-                  "imdbVotes": 8857,
+                  "imdbVotes": 8859,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
                     "trakt": 27466,
@@ -12949,8 +12949,8 @@
                       856732
                     ]
                   ],
-                  "traktRating": 8.4,
-                  "traktVotes": 339,
+                  "traktRating": 8.3,
+                  "traktVotes": 340,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13141,7 +13141,7 @@
                   "canon": false,
                   "id": "special-fan-letter-main:one-piece-fan-letter",
                   "nonCanon": true,
-                  "imdbVotes": 25827,
+                  "imdbVotes": 25835,
                   "traktMovie": {
                     "slug": "one-piece-fan-letter-2024-10-20",
                     "trakt": 1400060,
@@ -13216,7 +13216,7 @@
                     ]
                   ],
                   "traktRating": 8.0,
-                  "traktVotes": 499,
+                  "traktVotes": 502,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13261,7 +13261,7 @@
                     ]
                   ],
                   "traktRating": 7.9,
-                  "traktVotes": 490,
+                  "traktVotes": 492,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13646,7 +13646,7 @@
                     ]
                   ],
                   "traktRating": 7.8,
-                  "traktVotes": 460,
+                  "traktVotes": 461,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13691,7 +13691,7 @@
                     ]
                   ],
                   "traktRating": 7.5,
-                  "traktVotes": 462,
+                  "traktVotes": 465,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13731,7 +13731,7 @@
                     ]
                   ],
                   "traktRating": 8.0,
-                  "traktVotes": 318,
+                  "traktVotes": 320,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13781,7 +13781,7 @@
                     ]
                   ],
                   "traktRating": 8.3,
-                  "traktVotes": 632,
+                  "traktVotes": 635,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -13836,7 +13836,7 @@
                     ]
                   ],
                   "traktRating": 7.8,
-                  "traktVotes": 761,
+                  "traktVotes": 763,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "trakt"
@@ -14046,7 +14046,7 @@
                     "trakt": 14318166
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 332,
+                  "traktVotes": 334,
                   "traktRatingFrom": "anime",
                   "runtime": 31,
                   "runtimeSource": "onepace"
@@ -14079,7 +14079,7 @@
                     "trakt": 14318167
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 497,
+                  "traktVotes": 500,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -14112,7 +14112,7 @@
                     "trakt": 14318168
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 323,
+                  "traktVotes": 324,
                   "traktRatingFrom": "anime",
                   "runtime": 27,
                   "runtimeSource": "onepace"
@@ -14409,7 +14409,7 @@
                     "trakt": 14318178
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 612,
+                  "traktVotes": 615,
                   "traktRatingFrom": "anime",
                   "runtime": 34,
                   "runtimeSource": "onepace"
@@ -14442,7 +14442,7 @@
                     "trakt": 14318179
                   },
                   "traktRating": 7.5,
-                  "traktVotes": 310,
+                  "traktVotes": 312,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -14475,7 +14475,7 @@
                     "trakt": 14318181
                   },
                   "traktRating": 8.3,
-                  "traktVotes": 481,
+                  "traktVotes": 483,
                   "traktRatingFrom": "anime",
                   "runtime": 36,
                   "runtimeSource": "onepace"
@@ -14508,7 +14508,7 @@
                     "trakt": 14318182
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 459,
+                  "traktVotes": 461,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -14909,7 +14909,7 @@
                     ]
                   ],
                   "traktRating": 8.0,
-                  "traktVotes": 318,
+                  "traktVotes": 320,
                   "traktRatingFrom": "anime",
                   "runtime": 30,
                   "runtimeSource": "onepace"
@@ -14956,7 +14956,7 @@
                     "trakt": 14318180
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 318,
+                  "traktVotes": 320,
                   "traktRatingFrom": "anime",
                   "runtime": 30,
                   "runtimeSource": "onepace"
@@ -15142,14 +15142,14 @@
                   "canon": false,
                   "id": "one-piece-movie-12-film-z-main:one-piece-movie-12-film-z-2012",
                   "nonCanon": true,
-                  "imdbVotes": 12114,
+                  "imdbVotes": 12117,
                   "traktMovie": {
                     "slug": "one-piece-film-z-2012",
                     "trakt": 112137,
                     "imdb": "tt2375379"
                   },
                   "traktRating": 8.2,
-                  "traktVotes": 1384,
+                  "traktVotes": 1386,
                   "runtime": 108,
                   "runtimeSource": "trakt"
                 }
@@ -15545,7 +15545,7 @@
                     "trakt": 14318203
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 317,
+                  "traktVotes": 318,
                   "traktRatingFrom": "anime",
                   "runtime": 25,
                   "runtimeSource": "onepace"
@@ -16573,7 +16573,7 @@
                     "trakt": 14318253
                   },
                   "traktRating": 8.2,
-                  "traktVotes": 351,
+                  "traktVotes": 353,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "onepace"
@@ -16606,7 +16606,7 @@
                     "trakt": 14318254
                   },
                   "traktRating": 8.4,
-                  "traktVotes": 541,
+                  "traktVotes": 542,
                   "traktRatingFrom": "anime",
                   "runtime": 26,
                   "runtimeSource": "onepace"
@@ -17497,7 +17497,7 @@
                     "trakt": 14318287
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 541,
+                  "traktVotes": 542,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -17530,7 +17530,7 @@
                     "trakt": 14318288
                   },
                   "traktRating": 8.2,
-                  "traktVotes": 733,
+                  "traktVotes": 734,
                   "traktRatingFrom": "anime",
                   "runtime": 39,
                   "runtimeSource": "onepace"
@@ -17791,7 +17791,7 @@
                   "canon": false,
                   "id": "one-piece-movie-13-film-gold-main:one-piece-movie-13-film-gold-2016",
                   "nonCanon": true,
-                  "imdbVotes": 9285,
+                  "imdbVotes": 9287,
                   "traktMovie": {
                     "slug": "one-piece-film-gold-2016",
                     "trakt": 224554,
@@ -17930,7 +17930,7 @@
                     "trakt": 14318295
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 576,
+                  "traktVotes": 577,
                   "traktRatingFrom": "anime",
                   "runtime": 26,
                   "runtimeSource": "onepace"
@@ -17963,7 +17963,7 @@
                     "trakt": 14318296
                   },
                   "traktRating": 7.5,
-                  "traktVotes": 761,
+                  "traktVotes": 762,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -18095,7 +18095,7 @@
                     "trakt": 14318300
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 615,
+                  "traktVotes": 617,
                   "traktRatingFrom": "anime",
                   "runtime": 29,
                   "runtimeSource": "onepace"
@@ -18128,7 +18128,7 @@
                     "trakt": 14318301
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 806,
+                  "traktVotes": 810,
                   "traktRatingFrom": "anime",
                   "runtime": 32,
                   "runtimeSource": "onepace"
@@ -18161,7 +18161,7 @@
                     "trakt": 14318302
                   },
                   "traktRating": 7.8,
-                  "traktVotes": 789,
+                  "traktVotes": 790,
                   "traktRatingFrom": "anime",
                   "runtime": 44,
                   "runtimeSource": "onepace"
@@ -18301,7 +18301,7 @@
                     "trakt": 14318351
                   },
                   "traktRating": 7.5,
-                  "traktVotes": 775,
+                  "traktVotes": 776,
                   "traktRatingFrom": "anime",
                   "runtime": 31,
                   "runtimeSource": "onepace"
@@ -18334,7 +18334,7 @@
                     "trakt": 14318353
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 549,
+                  "traktVotes": 550,
                   "traktRatingFrom": "anime",
                   "runtime": 31,
                   "runtimeSource": "onepace"
@@ -19495,7 +19495,7 @@
                     "trakt": 14318409
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 370,
+                  "traktVotes": 371,
                   "traktRatingFrom": "anime",
                   "runtime": 34,
                   "runtimeSource": "onepace"
@@ -19660,7 +19660,7 @@
                     "trakt": 14311091
                   },
                   "traktRating": 6.8,
-                  "traktVotes": 833,
+                  "traktVotes": 834,
                   "traktRatingFrom": "anime",
                   "runtime": 35,
                   "runtimeSource": "onepace"
@@ -19762,14 +19762,14 @@
                   "canon": false,
                   "id": "one-piece-movie-14-stampede-main:one-piece-movie-14-stampede-2019",
                   "nonCanon": true,
-                  "imdbVotes": 10263,
+                  "imdbVotes": 10267,
                   "traktMovie": {
                     "slug": "one-piece-stampede-2019",
                     "trakt": 419509,
                     "imdb": "tt9430698"
                   },
                   "traktRating": 8.2,
-                  "traktVotes": 1740,
+                  "traktVotes": 1743,
                   "runtime": 101,
                   "runtimeSource": "trakt"
                 }
@@ -19928,7 +19928,7 @@
                     "trakt": 14318420
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 599,
+                  "traktVotes": 600,
                   "traktRatingFrom": "anime",
                   "runtime": 29,
                   "runtimeSource": "onepace"
@@ -19961,7 +19961,7 @@
                     "trakt": 14318421
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 379,
+                  "traktVotes": 381,
                   "traktRatingFrom": "anime",
                   "runtime": 34,
                   "runtimeSource": "onepace"
@@ -19993,8 +19993,8 @@
                     "number": 4,
                     "trakt": 14318422
                   },
-                  "traktRating": 7.7,
-                  "traktVotes": 378,
+                  "traktRating": 7.8,
+                  "traktVotes": 380,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
                   "runtimeSource": "onepace"
@@ -20753,7 +20753,7 @@
                     "trakt": 14318445
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 337,
+                  "traktVotes": 339,
                   "traktRatingFrom": "anime",
                   "runtime": 30,
                   "runtimeSource": "onepace"
@@ -20786,7 +20786,7 @@
                     "trakt": 14318446
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 328,
+                  "traktVotes": 330,
                   "traktRatingFrom": "anime",
                   "runtime": 27,
                   "runtimeSource": "onepace"
@@ -21281,8 +21281,8 @@
                     "number": 42,
                     "trakt": 14318460
                   },
-                  "traktRating": 8.4,
-                  "traktVotes": 509,
+                  "traktRating": 8.3,
+                  "traktVotes": 512,
                   "traktRatingFrom": "anime",
                   "runtime": 33,
                   "runtimeSource": "onepace"
@@ -21308,7 +21308,7 @@
             },
             {
               "id": "one-pace-onigashima-raid-12-31",
-              "label": "One Pace - Onigashima Raid (12–31)",
+              "label": "One Pace - Onigashima Raid (12–32)",
               "kind": "onepace",
               "canonPath": true,
               "isAlternative": false,
@@ -21347,7 +21347,7 @@
                     "trakt": 14318461
                   },
                   "traktRating": 8.5,
-                  "traktVotes": 361,
+                  "traktVotes": 362,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -21964,7 +21964,7 @@
                 {
                   "title": "Onigashima Raid 31 - Anarchy in the BM (Big…",
                   "fullTitle": "Anarchy in the BM (Big Mom)",
-                  "rating": 8.5,
+                  "rating": 8.7,
                   "tierColor": "#28B463",
                   "pace": "Pace 451",
                   "paceNumber": 451,
@@ -22006,10 +22006,56 @@
                       6502645
                     ]
                   ],
-                  "traktRating": 7.8,
+                  "traktRating": 7.9,
                   "traktVotes": 496,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
+                  "runtimeSource": "onepace"
+                },
+                {
+                  "title": "Onigashima Raid 32 - The Ham",
+                  "fullTitle": "The Ham",
+                  "rating": 8.2,
+                  "tierColor": "#28B463",
+                  "pace": "Pace 452",
+                  "paceNumber": 452,
+                  "anime": "1034–1036",
+                  "chapters": "1014–1015",
+                  "meta": "Pace 452 • Anime 1034–1036 • Ch. 1014–1015",
+                  "description": null,
+                  "links": {
+                    "onepace": "https://onepace.net/en/watch#wano-63",
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "one-pace-onigashima-raid:wano-63",
+                  "notes": [],
+                  "traktAnime": [
+                    [
+                      21,
+                      1034,
+                      6502645
+                    ],
+                    [
+                      21,
+                      1035,
+                      6502646
+                    ],
+                    [
+                      21,
+                      1036,
+                      6505972
+                    ]
+                  ],
+                  "traktRating": 7.6,
+                  "traktVotes": 482,
+                  "traktRatingFrom": "anime",
+                  "runtime": 32,
                   "runtimeSource": "onepace"
                 }
               ],
@@ -22017,7 +22063,7 @@
             },
             {
               "id": "onigashima-paced-onigashima",
-              "label": "Onigashima Paced - Onigashima (01–28)",
+              "label": "Onigashima Paced - Onigashima (01–29)",
               "kind": "onigashima",
               "canonPath": true,
               "isAlternative": false,
@@ -23194,6 +23240,51 @@
                   "traktRatingFrom": "anime",
                   "runtime": 30,
                   "runtimeSource": "sheet"
+                },
+                {
+                  "title": "Onigashima 29 - A Lifelong Ham Actor",
+                  "fullTitle": "A Lifelong Ham Actor",
+                  "rating": 8.2,
+                  "tierColor": "#28B463",
+                  "pace": "Onigashima Paced 29",
+                  "paceNumber": null,
+                  "anime": "1034–1036",
+                  "chapters": "1014–1015",
+                  "meta": "Onigashima Paced 29 • Anime 1034–1036 • Ch. 1014–1015",
+                  "description": null,
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/pp_onipace/ONIG_29",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": true,
+                  "id": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_29",
+                  "traktAnime": [
+                    [
+                      21,
+                      1034,
+                      6502645
+                    ],
+                    [
+                      21,
+                      1035,
+                      6502646
+                    ],
+                    [
+                      21,
+                      1036,
+                      6505972
+                    ]
+                  ],
+                  "traktRating": 7.6,
+                  "traktVotes": 482,
+                  "traktRatingFrom": "anime",
+                  "runtime": 35,
+                  "runtimeSource": "sheet"
                 }
               ],
               "info": {
@@ -23404,7 +23495,7 @@
             },
             {
               "id": "onigashima-paced-onigashima-29-48",
-              "label": "Onigashima Paced - Onigashima (29–48)",
+              "label": "Onigashima Paced - Onigashima (30–48)",
               "kind": "onigashima",
               "canonPath": true,
               "isAlternative": false,
@@ -23412,51 +23503,6 @@
               "rating": null,
               "notes": [],
               "episodes": [
-                {
-                  "title": "Onigashima 29 - A Lifelong Ham Actor",
-                  "fullTitle": "A Lifelong Ham Actor",
-                  "rating": 8.2,
-                  "tierColor": "#28B463",
-                  "pace": "Onigashima Paced 29",
-                  "paceNumber": null,
-                  "anime": "1034–1036",
-                  "chapters": "1014–1015",
-                  "meta": "Onigashima Paced 29 • Anime 1034–1036 • Ch. 1014–1015",
-                  "description": null,
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/pp_onipace/ONIG_29",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": true,
-                  "id": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_29",
-                  "traktAnime": [
-                    [
-                      21,
-                      1034,
-                      6502645
-                    ],
-                    [
-                      21,
-                      1035,
-                      6502646
-                    ],
-                    [
-                      21,
-                      1036,
-                      6505972
-                    ]
-                  ],
-                  "traktRating": 7.6,
-                  "traktVotes": 482,
-                  "traktRatingFrom": "anime",
-                  "runtime": 35,
-                  "runtimeSource": "sheet"
-                },
                 {
                   "title": "Onigashima 30 - This is Otama!!",
                   "fullTitle": "This is Otama!!",
@@ -23927,7 +23973,7 @@
                     ]
                   ],
                   "traktRating": 9.0,
-                  "traktVotes": 638,
+                  "traktVotes": 639,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "sheet"
@@ -24092,7 +24138,7 @@
                     ]
                   ],
                   "traktRating": 8.7,
-                  "traktVotes": 383,
+                  "traktVotes": 384,
                   "traktRatingFrom": "anime",
                   "runtime": 25,
                   "runtimeSource": "sheet"
@@ -24132,7 +24178,7 @@
                     ]
                   ],
                   "traktRating": 9.0,
-                  "traktVotes": 502,
+                  "traktVotes": 503,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "sheet"
@@ -24386,7 +24432,7 @@
                     ]
                   ],
                   "traktRating": 8.9,
-                  "traktVotes": 638,
+                  "traktVotes": 639,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "sheet"
@@ -24798,14 +24844,14 @@
                   "canon": false,
                   "id": "one-piece-movie-15-film-red-main:one-piece-movie-15-film-red-2022",
                   "nonCanon": true,
-                  "imdbVotes": 27453,
+                  "imdbVotes": 27458,
                   "traktMovie": {
                     "slug": "one-piece-film-red-2022",
                     "trakt": 722637,
                     "imdb": "tt16183464"
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 3378,
+                  "traktVotes": 3379,
                   "runtime": 115,
                   "runtimeSource": "trakt"
                 }
@@ -24819,7 +24865,7 @@
       "id": "final-saga",
       "title": "Final Saga",
       "rating": 8.9,
-      "pace": "Pace 452–473",
+      "pace": "Pace 453–474",
       "anime": "1086–1155+",
       "chapters": "1058–1125+",
       "nodes": [
@@ -24866,7 +24912,7 @@
                   "canon": false,
                   "id": "special-one-piece-heroines-main:/detail/series/tt34927513",
                   "nonCanon": true,
-                  "imdbVotes": 812,
+                  "imdbVotes": 814,
                   "traktMovie": {
                     "slug": "one-piece-heroines-2026",
                     "trakt": 1380671,
@@ -24895,7 +24941,7 @@
           "type": "arc",
           "title": "Egghead Arc",
           "rating": 9.0,
-          "pace": "Pace 452–473",
+          "pace": "Pace 453–474",
           "anime": "1086–1155+",
           "chapters": "1058–1125+",
           "isAlternative": false,
@@ -24915,11 +24961,11 @@
                   "fullTitle": "New Emperors",
                   "rating": 9.2,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 452",
-                  "paceNumber": 452,
+                  "pace": "Pace 453",
+                  "paceNumber": 453,
                   "anime": "1086–1088",
                   "chapters": "1058–1059",
-                  "meta": "Pace 452 • Anime 1086–1088 • Ch. 1058–1059",
+                  "meta": "Pace 453 • Anime 1086–1088 • Ch. 1058–1059",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-01",
@@ -24948,11 +24994,11 @@
                   "fullTitle": "The Matter Involving Captain Koby",
                   "rating": 9.3,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 453",
-                  "paceNumber": 453,
+                  "pace": "Pace 454",
+                  "paceNumber": 454,
                   "anime": "1087–1088",
                   "chapters": "1059–1060",
-                  "meta": "Pace 453 • Anime 1087–1088 • Ch. 1059–1060",
+                  "meta": "Pace 454 • Anime 1087–1088 • Ch. 1059–1060",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-02",
@@ -24981,11 +25027,11 @@
                   "fullTitle": "Future Island Egghead",
                   "rating": 9.1,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 454",
-                  "paceNumber": 454,
+                  "pace": "Pace 455",
+                  "paceNumber": 455,
                   "anime": "1089–1090",
                   "chapters": "1060–1061",
-                  "meta": "Pace 454 • Anime 1089–1090 • Ch. 1060–1061",
+                  "meta": "Pace 455 • Anime 1089–1090 • Ch. 1060–1061",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-03",
@@ -25014,11 +25060,11 @@
                   "fullTitle": "Adventure in the Land of Science",
                   "rating": 8.6,
                   "tierColor": "#28B463",
-                  "pace": "Pace 455",
-                  "paceNumber": 455,
+                  "pace": "Pace 456",
+                  "paceNumber": 456,
                   "anime": "1091–1093",
                   "chapters": "1062–1063",
-                  "meta": "Pace 455 • Anime 1091–1093 • Ch. 1062–1063",
+                  "meta": "Pace 456 • Anime 1091–1093 • Ch. 1062–1063",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-04",
@@ -25047,11 +25093,11 @@
                   "fullTitle": "The Six Vegapunks",
                   "rating": 8.3,
                   "tierColor": "#28B463",
-                  "pace": "Pace 456",
-                  "paceNumber": 456,
+                  "pace": "Pace 457",
+                  "paceNumber": 457,
                   "anime": "1093–1095",
                   "chapters": "1064–1065",
-                  "meta": "Pace 456 • Anime 1093–1095 • Ch. 1064–1065",
+                  "meta": "Pace 457 • Anime 1093–1095 • Ch. 1064–1065",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-05",
@@ -25080,11 +25126,11 @@
                   "fullTitle": "The Will of Ohara",
                   "rating": 8.9,
                   "tierColor": "#28B463",
-                  "pace": "Pace 457",
-                  "paceNumber": 457,
+                  "pace": "Pace 458",
+                  "paceNumber": 458,
                   "anime": "1096–1097",
                   "chapters": "1066",
-                  "meta": "Pace 457 • Anime 1096–1097 • Ch. 1066",
+                  "meta": "Pace 458 • Anime 1096–1097 • Ch. 1066",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-06",
@@ -25113,11 +25159,11 @@
                   "fullTitle": "Punk Records",
                   "rating": 8.6,
                   "tierColor": "#28B463",
-                  "pace": "Pace 458",
-                  "paceNumber": 458,
+                  "pace": "Pace 459",
+                  "paceNumber": 459,
                   "anime": "1097–1099",
                   "chapters": "1067–1068",
-                  "meta": "Pace 458 • Anime 1097–1099 • Ch. 1067–1068",
+                  "meta": "Pace 459 • Anime 1097–1099 • Ch. 1067–1068",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-07",
@@ -25146,11 +25192,11 @@
                   "fullTitle": "The Strongest Form of Humanity",
                   "rating": 9.2,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 459",
-                  "paceNumber": 459,
+                  "pace": "Pace 460",
+                  "paceNumber": 460,
                   "anime": "1099–1102",
                   "chapters": "1069–1070",
-                  "meta": "Pace 459 • Anime 1099–1102 • Ch. 1069–1070",
+                  "meta": "Pace 460 • Anime 1099–1102 • Ch. 1069–1070",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-08",
@@ -25179,11 +25225,11 @@
                   "fullTitle": "The Weight of Memory",
                   "rating": 8.5,
                   "tierColor": "#28B463",
-                  "pace": "Pace 460",
-                  "paceNumber": 460,
+                  "pace": "Pace 461",
+                  "paceNumber": 461,
                   "anime": "1102–1104",
                   "chapters": "1071–1072",
-                  "meta": "Pace 460 • Anime 1102–1104 • Ch. 1071–1072",
+                  "meta": "Pace 461 • Anime 1102–1104 • Ch. 1071–1072",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-09",
@@ -25212,11 +25258,11 @@
                   "fullTitle": "Miss Buckingham Stussy",
                   "rating": 8.1,
                   "tierColor": "#28B463",
-                  "pace": "Pace 461",
-                  "paceNumber": 461,
+                  "pace": "Pace 462",
+                  "paceNumber": 462,
                   "anime": "1104–1107",
                   "chapters": "1073–1074",
-                  "meta": "Pace 461 • Anime 1104–1107 • Ch. 1073–1074",
+                  "meta": "Pace 462 • Anime 1104–1107 • Ch. 1073–1074",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-10",
@@ -25245,11 +25291,11 @@
                   "fullTitle": "Labophase Death Game",
                   "rating": 8.4,
                   "tierColor": "#28B463",
-                  "pace": "Pace 462",
-                  "paceNumber": 462,
+                  "pace": "Pace 463",
+                  "paceNumber": 463,
                   "anime": "1107–1109",
                   "chapters": "1075–1076",
-                  "meta": "Pace 462 • Anime 1107–1109 • Ch. 1075–1076",
+                  "meta": "Pace 463 • Anime 1107–1109 • Ch. 1075–1076",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-11",
@@ -25278,11 +25324,11 @@
                   "fullTitle": "Escape Limit",
                   "rating": 8.2,
                   "tierColor": "#28B463",
-                  "pace": "Pace 463",
-                  "paceNumber": 463,
+                  "pace": "Pace 464",
+                  "paceNumber": 464,
                   "anime": "1108, 1110–1111",
                   "chapters": "1077–1078",
-                  "meta": "Pace 463 • Anime 1108, 1110–1111 • Ch. 1077–1078",
+                  "meta": "Pace 464 • Anime 1108, 1110–1111 • Ch. 1077–1078",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-12",
@@ -25311,11 +25357,11 @@
                   "fullTitle": "The Emperor's Crew, The Red Hair Pirates",
                   "rating": 9.8,
                   "tierColor": "#1DA1F2",
-                  "pace": "Pace 464",
-                  "paceNumber": 464,
+                  "pace": "Pace 465",
+                  "paceNumber": 465,
                   "anime": "1112",
                   "chapters": "1079",
-                  "meta": "Pace 464 • Anime 1112 • Ch. 1079",
+                  "meta": "Pace 465 • Anime 1112 • Ch. 1079",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-13",
@@ -25344,11 +25390,11 @@
                   "fullTitle": "The Legendary Hero",
                   "rating": 9.2,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 465",
-                  "paceNumber": 465,
+                  "pace": "Pace 466",
+                  "paceNumber": 466,
                   "anime": "1113–1115",
                   "chapters": "1080–1081",
-                  "meta": "Pace 465 • Anime 1113–1115 • Ch. 1080–1081",
+                  "meta": "Pace 466 • Anime 1113–1115 • Ch. 1080–1081",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-14",
@@ -25377,11 +25423,11 @@
                   "fullTitle": "Let's Go and Take It!!",
                   "rating": 8.3,
                   "tierColor": "#28B463",
-                  "pace": "Pace 466",
-                  "paceNumber": 466,
+                  "pace": "Pace 467",
+                  "paceNumber": 467,
                   "anime": "1116–1117",
                   "chapters": "1082–1083",
-                  "meta": "Pace 466 • Anime 1116–1117 • Ch. 1082–1083",
+                  "meta": "Pace 467 • Anime 1116–1117 • Ch. 1082–1083",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-15",
@@ -25410,11 +25456,11 @@
                   "fullTitle": "The Attempted Murder of a Celestial Dragon",
                   "rating": 9.2,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 467",
-                  "paceNumber": 467,
+                  "pace": "Pace 468",
+                  "paceNumber": 468,
                   "anime": "1118–1119",
                   "chapters": "1084–1085",
-                  "meta": "Pace 467 • Anime 1118–1119 • Ch. 1084–1085",
+                  "meta": "Pace 468 • Anime 1118–1119 • Ch. 1084–1085",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-16",
@@ -25443,11 +25489,11 @@
                   "fullTitle": "The Five Elders",
                   "rating": 9.0,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 468",
-                  "paceNumber": 468,
+                  "pace": "Pace 469",
+                  "paceNumber": 469,
                   "anime": "1119–1120",
                   "chapters": "1085–1086",
-                  "meta": "Pace 468 • Anime 1119–1120 • Ch. 1085–1086",
+                  "meta": "Pace 469 • Anime 1119–1120 • Ch. 1085–1086",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-17",
@@ -25476,11 +25522,11 @@
                   "fullTitle": "The Final Lesson",
                   "rating": 9.7,
                   "tierColor": "#1DA1F2",
-                  "pace": "Pace 469",
-                  "paceNumber": 469,
+                  "pace": "Pace 470",
+                  "paceNumber": 470,
                   "anime": "1121–1122",
                   "chapters": "1087–1088",
-                  "meta": "Pace 469 • Anime 1121–1122 • Ch. 1087–1088",
+                  "meta": "Pace 470 • Anime 1121–1122 • Ch. 1087–1088",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-18",
@@ -25509,11 +25555,11 @@
                   "fullTitle": "Hostage Situation",
                   "rating": 8.8,
                   "tierColor": "#28B463",
-                  "pace": "Pace 470",
-                  "paceNumber": 470,
+                  "pace": "Pace 471",
+                  "paceNumber": 471,
                   "anime": "1123–1124",
                   "chapters": "1089–1090",
-                  "meta": "Pace 470 • Anime 1123–1124 • Ch. 1089–1090",
+                  "meta": "Pace 471 • Anime 1123–1124 • Ch. 1089–1090",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-19",
@@ -25542,11 +25588,11 @@
                   "fullTitle": "Sentomaru",
                   "rating": 9.3,
                   "tierColor": "#186A3B",
-                  "pace": "Pace 471",
-                  "paceNumber": 471,
+                  "pace": "Pace 472",
+                  "paceNumber": 472,
                   "anime": "1125–1126",
                   "chapters": "1091–1092",
-                  "meta": "Pace 471 • Anime 1125–1126 • Ch. 1091–1092",
+                  "meta": "Pace 472 • Anime 1125–1126 • Ch. 1091–1092",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-20",
@@ -25575,11 +25621,11 @@
                   "fullTitle": "Luffy vs. Kizaru",
                   "rating": 9.7,
                   "tierColor": "#1DA1F2",
-                  "pace": "Pace 472",
-                  "paceNumber": 472,
+                  "pace": "Pace 473",
+                  "paceNumber": 473,
                   "anime": "1127–1128",
                   "chapters": "1093–1094",
-                  "meta": "Pace 472 • Anime 1127–1128 • Ch. 1093–1094",
+                  "meta": "Pace 473 • Anime 1127–1128 • Ch. 1093–1094",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-21",
@@ -25598,7 +25644,7 @@
                     "trakt": 14318499
                   },
                   "traktRating": 8.7,
-                  "traktVotes": 435,
+                  "traktVotes": 437,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -25608,11 +25654,11 @@
                   "fullTitle": "Kuma Bear",
                   "rating": 9.7,
                   "tierColor": "#1DA1F2",
-                  "pace": "Pace 473",
-                  "paceNumber": 473,
+                  "pace": "Pace 474",
+                  "paceNumber": 474,
                   "anime": "1129–1130",
                   "chapters": "1095–1096",
-                  "meta": "Pace 473 • Anime 1129–1130 • Ch. 1095–1096",
+                  "meta": "Pace 474 • Anime 1129–1130 • Ch. 1095–1096",
                   "description": null,
                   "links": {
                     "onepace": "https://onepace.net/en/watch#egghead-22",
@@ -25664,7 +25710,7 @@
                     "url": "https://web.stremio.com/#/detail/series/onepace?season=37"
                   }
                 ],
-                "text": "Pace: Eps 452–473 • Anime: Eps 1086–1130 (Full Arc: 1086–1155) • Ch: 1058–1096 (Full Arc: 1058–1125)"
+                "text": "Pace: Eps 453–474 • Anime: Eps 1086–1130 (Full Arc: 1086–1155) • Ch: 1058–1096 (Full Arc: 1058–1125)"
               }
             },
             {
@@ -25712,7 +25758,7 @@
                     ]
                   ],
                   "traktRating": 8.7,
-                  "traktVotes": 435,
+                  "traktVotes": 437,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "sheet"
@@ -26352,7 +26398,7 @@
                     ]
                   ],
                   "traktRating": 8.8,
-                  "traktVotes": 198,
+                  "traktVotes": 199,
                   "traktRatingFrom": "anime",
                   "runtime": 17,
                   "runtimeSource": "sheet"
@@ -26392,7 +26438,7 @@
                     ]
                   ],
                   "traktRating": 8.7,
-                  "traktVotes": 390,
+                  "traktVotes": 391,
                   "traktRatingFrom": "anime",
                   "runtime": 32,
                   "runtimeSource": "sheet"
@@ -26708,7 +26754,7 @@
                     ]
                   ],
                   "traktRating": 7.9,
-                  "traktVotes": 178,
+                  "traktVotes": 179,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "anime"
@@ -27408,7 +27454,7 @@
                     ]
                   ],
                   "traktRating": 9.1,
-                  "traktVotes": 398,
+                  "traktVotes": 399,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "anime"
@@ -27443,7 +27489,7 @@
                     ]
                   ],
                   "traktRating": 9.2,
-                  "traktVotes": 419,
+                  "traktVotes": 420,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "anime"

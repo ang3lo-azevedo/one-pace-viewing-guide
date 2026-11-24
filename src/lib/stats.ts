@@ -1,5 +1,5 @@
 import { createMemo } from 'solid-js';
-import { displayOrder, guide, type FlatEpisode } from './guide';
+import { displayOrder, flatById, guide, type FlatEpisode } from './guide';
 import { nodeKeyOf, orderedEntries, sagaKeyOf } from './layout';
 import { episodeIncluded } from './filter';
 import { isWatched, watchedAt } from '../store/progress';
@@ -355,4 +355,26 @@ export function parsePace(text: string): number | null {
   m = t.match(/^(\d+)$/);
   if (m) return +m[1] || null;
   return null;
+}
+
+/** "0.21%" for small shares, "1.4%" from 1% up. */
+export const fmtShare = (pct: number) => `${pct < 1 ? pct.toFixed(2) : pct.toFixed(1)}%`;
+
+/**
+ * How much of your list an entry is, by watch time, as an InfoLine part (with its share of its
+ * arc in the tooltip). Null for entries that do not count (alternatives, hidden content).
+ */
+export function sharePart(epId: string): { label: string; value: string; title: string } | null {
+  const f = flatById.get(epId);
+  if (!f || isAlternativeEntry(f) || !episodeIncluded(f.ep, f.group, f.node)) return null;
+  const min = minutesOf(f);
+  const all = stats().minTotal;
+  if (!(min > 0) || !(all > 0)) return null;
+  const arc = stats().perNode[nodeKeyOf(f)]?.minTotal;
+  const pct = fmtShare((min / all) * 100);
+  return {
+    label: 'Share',
+    value: pct,
+    title: `${pct} of everything in your list${arc ? ` and ${fmtShare((min / arc) * 100)} of ${f.node.title}` : ''}, by watch time`,
+  };
 }

@@ -6,7 +6,7 @@ import InfoLine from './InfoLine';
 import { episodeInfo } from '../lib/format';
 import type { Episode } from '../types';
 import { For, Show, createSignal } from 'solid-js';
-import { fmtDate, fmtDuration, fmtFromNow, minutesForKind, fmtHours, fmtSpan, parsePace, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, fmtFromNow, minutesForKind, sharePart, fmtHours, fmtSpan, parsePace, stats } from '../lib/stats';
 import { formatBerry } from '../lib/bounties';
 import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
@@ -272,6 +272,8 @@ function ContinueWatching() {
     const parts = episodeInfo(n.ep);
     const min = n.ep.runtime ?? minutesForKind(n.kind);
     if (min > 0) parts.push({ label: 'Length', value: n.ep.runtime ? fmtDuration(min) : `~${fmtDuration(min)}` });
+    const share = sharePart(n.ep.id);
+    if (share) parts.push(share);
     const eta = stats().eta[n.ep.id];
     if (eta) parts.push({ label: 'ETA', value: fmtDate(eta) });
     return parts;

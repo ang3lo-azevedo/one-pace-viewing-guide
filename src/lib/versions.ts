@@ -32,7 +32,8 @@ export const VERSION_SETS: VersionSet[] = [
   {
     key: 'adventures',
     label: 'The Adventures of the Straw Hats',
-    default: 'original',
+    // One Pace tells the same cover stories in one episode (23 min vs 1h 36m).
+    default: 'onepace',
     canon: true,
     options: [
       { value: 'original', label: 'Original anime', title: 'Episodes 453-456 in full' },

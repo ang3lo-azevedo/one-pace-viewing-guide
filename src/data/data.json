@@ -8218,6 +8218,54 @@
                 ],
                 "text": "Pace: Eps 117–136 • Anime: Eps 229–263 • Ch: 322–374"
               }
+            },
+            {
+              "id": "original-uncut-236-water-seven-05",
+              "label": "Original anime episode 236 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:water-seven-05",
+              "episodes": [
+                {
+                  "title": "Episode 0236 (S11E10) - Luffy vs.…",
+                  "fullTitle": "Luffy vs. Usopp! Collision of Two Men's Pride!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "236",
+                  "chapters": null,
+                  "meta": "Anime 236",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A11%3A10",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:236:one-pace:water-seven-05",
+                  "traktAnime": [
+                    [
+                      8,
+                      236,
+                      856445
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 250,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             }
           ]
         },
@@ -9084,6 +9132,150 @@
                 ],
                 "text": "Pace: Eps 137–161 • Anime: Eps 263–312 • Ch: 375–430"
               }
+            },
+            {
+              "id": "original-uncut-278-enies-lobby-10",
+              "label": "Original anime episode 278 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:enies-lobby-10",
+              "episodes": [
+                {
+                  "title": "Episode 0278 (S11E52) - Say You…",
+                  "fullTitle": "Say You Want to Live! We Are Your Friends!!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "278",
+                  "chapters": null,
+                  "meta": "Anime 278",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A11%3A52",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:278:one-pace:enies-lobby-10",
+                  "traktAnime": [
+                    [
+                      9,
+                      278,
+                      856487
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 261,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-309-enies-lobby-23",
+              "label": "Original anime episode 309 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:enies-lobby-23",
+              "episodes": [
+                {
+                  "title": "Episode 0309 (S11E83) - Fists Full…",
+                  "fullTitle": "Fists Full of Emotion! Luffy Unleashes Gatling with All His Might!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "309",
+                  "chapters": null,
+                  "meta": "Anime 309",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A11%3A83",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:309:one-pace:enies-lobby-23",
+                  "traktAnime": [
+                    [
+                      9,
+                      309,
+                      856518
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 220,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-312-enies-lobby-25",
+              "label": "Original anime episode 312 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:enies-lobby-25",
+              "episodes": [
+                {
+                  "title": "Episode 0312 (S11E86) - Thank You,…",
+                  "fullTitle": "Thank You, Merry! Snow Falls Over the Parting Sea!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "312",
+                  "chapters": null,
+                  "meta": "Anime 312",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A11%3A86",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:312:one-pace:enies-lobby-25",
+                  "traktAnime": [
+                    [
+                      9,
+                      312,
+                      856521
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 267,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             }
           ]
         },
@@ -10127,6 +10319,54 @@
               }
             },
             {
+              "id": "original-uncut-377-thriller-bark-20",
+              "label": "Original anime episode 377 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:thriller-bark-20",
+              "episodes": [
+                {
+                  "title": "Episode 0377 (S12E52) - The Pain…",
+                  "fullTitle": "The Pain of My Crewmates Is My Pain! Zoro's Desperate Fight!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "377",
+                  "chapters": null,
+                  "meta": "Anime 377",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A12%3A52",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:377:one-pace:thriller-bark-20",
+                  "traktAnime": [
+                    [
+                      10,
+                      377,
+                      856586
+                    ]
+                  ],
+                  "traktRating": 9.2,
+                  "traktVotes": 252,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
               "id": "special-monsters",
               "label": "Special: Monsters",
               "kind": "special",
@@ -10826,6 +11066,150 @@
                 ],
                 "text": "Pace: Eps 190–200 • Anime: Eps 385–405 • Ch: 490–513"
               }
+            },
+            {
+              "id": "original-uncut-404-sabaody-archipelago-10",
+              "label": "Original anime episode 404 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:sabaody-archipelago-10",
+              "episodes": [
+                {
+                  "title": "Episode 0404 (S13E23) - Admiral Kizaru's…",
+                  "fullTitle": "Admiral Kizaru's Fierce Assault! The Straw Hats Face Certain Death!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "404",
+                  "chapters": null,
+                  "meta": "Anime 404",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A23",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:404:one-pace:sabaody-archipelago-10",
+                  "traktAnime": [
+                    [
+                      11,
+                      404,
+                      856613
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 195,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-396-sabaody-archipelago-06",
+              "label": "Original anime episode 396 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:sabaody-archipelago-06",
+              "episodes": [
+                {
+                  "title": "Episode 0396 (S13E15) - The Fist…",
+                  "fullTitle": "The Fist Explodes! Destroy the Auction",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "396",
+                  "chapters": null,
+                  "meta": "Anime 396",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A15",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:396:one-pace:sabaody-archipelago-06",
+                  "traktAnime": [
+                    [
+                      11,
+                      396,
+                      856605
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 219,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-405-sabaody-archipelago-11",
+              "label": "Original anime episode 405 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:sabaody-archipelago-11",
+              "episodes": [
+                {
+                  "title": "Episode 0405 (S13E24) - Eliminated Friends…",
+                  "fullTitle": "Eliminated Friends – The Final Day of the Straw Hat Crew",
+                  "rating": 9.8,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "405",
+                  "chapters": null,
+                  "meta": "Anime 405",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.8 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A24",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:405:one-pace:sabaody-archipelago-11",
+                  "traktAnime": [
+                    [
+                      11,
+                      405,
+                      856614
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 241,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             }
           ]
         },
@@ -12242,6 +12626,438 @@
                 ],
                 "text": "Pace: Eps 217–233 • Anime: Eps 457–489 • Ch: 549–580"
               }
+            },
+            {
+              "id": "original-uncut-488-marineford-17",
+              "label": "Original anime episode 488 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-17",
+              "episodes": [
+                {
+                  "title": "Episode 0488 (S14E7) - The Desperate…",
+                  "fullTitle": "The Desperate Scream! Courageous Moments that Will Change the Future",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "488",
+                  "chapters": null,
+                  "meta": "Anime 488",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A14%3A7",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:488:one-pace:marineford-17",
+                  "traktAnime": [
+                    [
+                      13,
+                      488,
+                      856697
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 181,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-489-marineford-17",
+              "label": "Original anime episode 489 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-17",
+              "episodes": [
+                {
+                  "title": "Episode 0489 (S14E8) - Here Comes…",
+                  "fullTitle": "Here Comes Shanks! The War of the Best is Finally Over!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "489",
+                  "chapters": null,
+                  "meta": "Anime 489",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A14%3A8",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:489:one-pace:marineford-17",
+                  "traktAnime": [
+                    [
+                      13,
+                      489,
+                      856698
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 188,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-474-marineford-09",
+              "label": "Original anime episode 474 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-09",
+              "episodes": [
+                {
+                  "title": "Episode 0474 (S13E93) - Execution Order…",
+                  "fullTitle": "Execution Order Issued! Break Through the Encircling Walls!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "474",
+                  "chapters": null,
+                  "meta": "Anime 474",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A93",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:474:one-pace:marineford-09",
+                  "traktAnime": [
+                    [
+                      13,
+                      474,
+                      856683
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 184,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-480-marineford-12",
+              "label": "Original anime episode 480 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-12",
+              "episodes": [
+                {
+                  "title": "Episode 0480 (S13E99) - Each on…",
+                  "fullTitle": "Each on Different Paths! Luffy vs. Garp!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "480",
+                  "chapters": null,
+                  "meta": "Anime 480",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A99",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:480:one-pace:marineford-12",
+                  "traktAnime": [
+                    [
+                      13,
+                      480,
+                      856689
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 194,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-481-marineford-13",
+              "label": "Original anime episode 481 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-13",
+              "episodes": [
+                {
+                  "title": "Episode 0481 (S13E100) - Ace Rescued!…",
+                  "fullTitle": "Ace Rescued! Whitebeard's Final Order!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "481",
+                  "chapters": null,
+                  "meta": "Anime 481",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A100",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:481:one-pace:marineford-13",
+                  "traktAnime": [
+                    [
+                      13,
+                      481,
+                      856690
+                    ]
+                  ],
+                  "traktRating": 9.2,
+                  "traktVotes": 200,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-482-marineford-13",
+              "label": "Original anime episode 482 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-13",
+              "episodes": [
+                {
+                  "title": "Episode 0482 (S14E1) - The Power…",
+                  "fullTitle": "The Power That Can Burn Even Fire! Akainu's Ruthless Pursuit!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "482",
+                  "chapters": null,
+                  "meta": "Anime 482",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A14%3A1",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:482:one-pace:marineford-13",
+                  "traktAnime": [
+                    [
+                      13,
+                      482,
+                      856691
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 204,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-483-marineford-14",
+              "label": "Original anime episode 483 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-14",
+              "episodes": [
+                {
+                  "title": "Episode 0483 (S14E2) - Looking for…",
+                  "fullTitle": "Looking for the Answer!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "483",
+                  "chapters": null,
+                  "meta": "Anime 483",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A14%3A2",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:483:one-pace:marineford-14",
+                  "traktAnime": [
+                    [
+                      13,
+                      483,
+                      856692
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 230,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-484-marineford-14",
+              "label": "Original anime episode 484 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-14",
+              "episodes": [
+                {
+                  "title": "Episode 0484 (S14E3) - The Navy…",
+                  "fullTitle": "The Navy Headquarters Falls! Whitebeard's Unspeakable Wrath!",
+                  "rating": 9.8,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "484",
+                  "chapters": null,
+                  "meta": "Anime 484",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.8 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A14%3A3",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:484:one-pace:marineford-14",
+                  "traktAnime": [
+                    [
+                      13,
+                      484,
+                      856693
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 186,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-485-marineford-15",
+              "label": "Original anime episode 485 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:marineford-15",
+              "episodes": [
+                {
+                  "title": "Episode 0485 (S14E4) - Ending the…",
+                  "fullTitle": "Ending the Matter! Whitebeard vs. The Blackbeard Pirates!",
+                  "rating": 9.8,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "485",
+                  "chapters": null,
+                  "meta": "Anime 485",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.8 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A14%3A4",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:485:one-pace:marineford-15",
+                  "traktAnime": [
+                    [
+                      13,
+                      485,
+                      856694
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 199,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             }
           ]
         },
@@ -17688,6 +18504,150 @@
                 ],
                 "text": "Pace: Eps 290–337 • Anime: Eps 629–746 • Ch: 700–800"
               }
+            },
+            {
+              "id": "original-uncut-723-dressrosa-40",
+              "label": "Original anime episode 723 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:dressrosa-40",
+              "episodes": [
+                {
+                  "title": "Episode 0723 (S17E95) - A Collision…",
+                  "fullTitle": "A Collision of Haki! Luffy vs. Doflamingo!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "723",
+                  "chapters": null,
+                  "meta": "Anime 723",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A17%3A95",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:723:one-pace:dressrosa-40",
+                  "traktAnime": [
+                    [
+                      17,
+                      723,
+                      2081888
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 185,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-706-dressrosa-34",
+              "label": "Original anime episode 706 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:dressrosa-34",
+              "episodes": [
+                {
+                  "title": "Episode 0706 (S17E78) - Advance, Law!…",
+                  "fullTitle": "Advance, Law! The Kindhearted Man's Final Fight!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "706",
+                  "chapters": null,
+                  "meta": "Anime 706",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A17%3A78",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:706:one-pace:dressrosa-34",
+                  "traktAnime": [
+                    [
+                      17,
+                      706,
+                      1945379
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 196,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-726-dressrosa-42",
+              "label": "Original anime episode 726 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:dressrosa-42",
+              "episodes": [
+                {
+                  "title": "Episode 0726 (S17E98) - Fourth Gear!…",
+                  "fullTitle": "Fourth Gear! The Phenomenal Bounce-man!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "726",
+                  "chapters": null,
+                  "meta": "Anime 726",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A17%3A98",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:726:one-pace:dressrosa-42",
+                  "traktAnime": [
+                    [
+                      17,
+                      726,
+                      2104443
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 213,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             }
           ]
         },
@@ -19520,6 +20480,294 @@
               }
             },
             {
+              "id": "original-uncut-804-whole-cake-island-10",
+              "label": "Original anime episode 804 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-10",
+              "episodes": [
+                {
+                  "title": "Episode 0804 (S19E25) - To the…",
+                  "fullTitle": "To the East Blue! Sanji's Resolute Departure!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "804",
+                  "chapters": null,
+                  "meta": "Anime 804",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A25",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:804:one-pace:whole-cake-island-10",
+                  "traktAnime": [
+                    [
+                      19,
+                      804,
+                      2638074
+                    ]
+                  ],
+                  "traktRating": 8.0,
+                  "traktVotes": 198,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-825-whole-cake-island-17",
+              "label": "Original anime episode 825 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-17",
+              "episodes": [
+                {
+                  "title": "Episode 0825 (S19E46) - A Liar!…",
+                  "fullTitle": "A Liar! Luffy and Sanji!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "825",
+                  "chapters": null,
+                  "meta": "Anime 825",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A46",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:825:one-pace:whole-cake-island-17",
+                  "traktAnime": [
+                    [
+                      19,
+                      825,
+                      2873308
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 198,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-871-whole-cake-island-37",
+              "label": "Original anime episode 871 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-37",
+              "episodes": [
+                {
+                  "title": "Episode 0871 (S19E92) - Finally, It's…",
+                  "fullTitle": "Finally, It's Over! The Climax of the Intense Fight against Katakuri!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "871",
+                  "chapters": null,
+                  "meta": "Anime 871",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A92",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:871:one-pace:whole-cake-island-37",
+                  "traktAnime": [
+                    [
+                      19,
+                      871,
+                      3314222
+                    ]
+                  ],
+                  "traktRating": 8.2,
+                  "traktVotes": 182,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-808-whole-cake-island-11",
+              "label": "Original anime episode 808 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-11",
+              "episodes": [
+                {
+                  "title": "Episode 0808 (S19E29) - A Heartbreaking…",
+                  "fullTitle": "A Heartbreaking Duel! Luffy vs Sanji! (2)",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "808",
+                  "chapters": null,
+                  "meta": "Anime 808",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A29",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:808:one-pace:whole-cake-island-11",
+                  "traktAnime": [
+                    [
+                      19,
+                      808,
+                      2708401
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 228,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-817-whole-cake-island-14",
+              "label": "Original anime episode 817 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-14",
+              "episodes": [
+                {
+                  "title": "Episode 0817 (S19E38) - Moist Cigarette!…",
+                  "fullTitle": "Moist Cigarette! The Night Before Sanji's Wedding!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "817",
+                  "chapters": null,
+                  "meta": "Anime 817",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A38",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:817:one-pace:whole-cake-island-14",
+                  "traktAnime": [
+                    [
+                      19,
+                      817,
+                      2789578
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 207,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-870-whole-cake-island-36",
+              "label": "Original anime episode 870 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace:whole-cake-island-36",
+              "episodes": [
+                {
+                  "title": "Episode 0870 (S19E91) - A Fist…",
+                  "fullTitle": "A Fist of Divine Speed! Another Fourth Gear Application Activated!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "870",
+                  "chapters": null,
+                  "meta": "Anime 870",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A19%3A91",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:870:one-pace:whole-cake-island-36",
+                  "traktAnime": [
+                    [
+                      19,
+                      870,
+                      3314221
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 194,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
               "id": "filler",
               "label": "Filler",
               "kind": "filler",
@@ -20915,6 +22163,150 @@
               }
             },
             {
+              "id": "original-uncut-915-wano-11",
+              "label": "Original anime episode 915 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-wano-acts-1-2:wano-11",
+              "episodes": [
+                {
+                  "title": "Episode 0915 (S21E24) - Destructive! One…",
+                  "fullTitle": "Destructive! One Shot, One Kill – Thunder Bagua!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "915",
+                  "chapters": null,
+                  "meta": "Anime 915",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A24",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:915:one-pace-wano-acts-1-2:wano-11",
+                  "traktAnime": [
+                    [
+                      21,
+                      915,
+                      3881158
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 201,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-957-wano-31",
+              "label": "Original anime episode 957 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-wano-acts-1-2:wano-31",
+              "episodes": [
+                {
+                  "title": "Episode 0957 (S21E66) - Big News!…",
+                  "fullTitle": "Big News! An Incident That Will Affect the Seven Warlords!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "957",
+                  "chapters": null,
+                  "meta": "Anime 957",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A66",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:957:one-pace-wano-acts-1-2:wano-31",
+                  "traktAnime": [
+                    [
+                      21,
+                      957,
+                      4637538
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 182,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-914-wano-11",
+              "label": "Original anime episode 914 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-wano-acts-1-2:wano-11",
+              "episodes": [
+                {
+                  "title": "Episode 0914 (S21E23) - Finally Clashing!…",
+                  "fullTitle": "Finally Clashing! The Ferocious Luffy vs. Kaido!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "914",
+                  "chapters": null,
+                  "meta": "Anime 914",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A23",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:914:one-pace-wano-acts-1-2:wano-11",
+                  "traktAnime": [
+                    [
+                      21,
+                      914,
+                      3868976
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 198,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
               "id": "one-pace-onigashima-raid",
               "label": "One Pace - Onigashima Raid (01–11)",
               "kind": "onepace",
@@ -21305,6 +22697,246 @@
                 ],
                 "text": "Pace: Eps 421–451 • Anime: Eps 958–1034 • Ch: 957–1013"
               }
+            },
+            {
+              "id": "original-uncut-958-wano-32",
+              "label": "Original anime episode 958 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-32",
+              "episodes": [
+                {
+                  "title": "Episode 0958 (S21E67) - A Legendary…",
+                  "fullTitle": "A Legendary Battle! Garp and Roger!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "958",
+                  "chapters": null,
+                  "meta": "Anime 958",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A67",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:958:one-pace-onigashima-raid:wano-32",
+                  "traktAnime": [
+                    [
+                      21,
+                      958,
+                      4718103
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 181,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-965-wano-37",
+              "label": "Original anime episode 965 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-37",
+              "episodes": [
+                {
+                  "title": "Episode 0965 (S21E74) - Crossing Swords!…",
+                  "fullTitle": "Crossing Swords! Roger and Whitebeard!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "965",
+                  "chapters": null,
+                  "meta": "Anime 965",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A74",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:965:one-pace-onigashima-raid:wano-37",
+                  "traktAnime": [
+                    [
+                      21,
+                      965,
+                      4826497
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 184,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-972-wano-40",
+              "label": "Original anime episode 972 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-40",
+              "episodes": [
+                {
+                  "title": "Episode 0972 (S21E81) - The End…",
+                  "fullTitle": "The End of the Battle! Oden vs. Kaido!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "972",
+                  "chapters": null,
+                  "meta": "Anime 972",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A81",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:972:one-pace-onigashima-raid:wano-40",
+                  "traktAnime": [
+                    [
+                      21,
+                      972,
+                      5117370
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 165,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-968-wano-38",
+              "label": "Original anime episode 968 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-38",
+              "episodes": [
+                {
+                  "title": "Episode 0968 (S21E77) - The King…",
+                  "fullTitle": "The King of the Pirates is Born! Arriving at the Last Island!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "968",
+                  "chapters": null,
+                  "meta": "Anime 968",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A77",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:968:one-pace-onigashima-raid:wano-38",
+                  "traktAnime": [
+                    [
+                      21,
+                      968,
+                      4958627
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 198,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-974-wano-40",
+              "label": "Original anime episode 974 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-40",
+              "episodes": [
+                {
+                  "title": "Episode 0974 (S21E83) - Oden Wouldn't…",
+                  "fullTitle": "Oden Wouldn't Be Oden If It Wasn't Boiled!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "974",
+                  "chapters": null,
+                  "meta": "Anime 974",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A83",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:974:one-pace-onigashima-raid:wano-40",
+                  "traktAnime": [
+                    [
+                      21,
+                      974,
+                      5117372
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 176,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             },
             {
               "id": "one-pace-onigashima-raid-12-31",
@@ -22060,6 +23692,390 @@
                 }
               ],
               "version": "wano:onepace"
+            },
+            {
+              "id": "original-uncut-982-wano-43",
+              "label": "Original anime episode 982 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-43",
+              "episodes": [
+                {
+                  "title": "Episode 0982 (S21E91) - Kaido’s Trump…",
+                  "fullTitle": "Kaido’s Trump Card! The Tobi Roppo Appear!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "982",
+                  "chapters": null,
+                  "meta": "Anime 982",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A91",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:982:one-pace-onigashima-raid:wano-43",
+                  "traktAnime": [
+                    [
+                      21,
+                      982,
+                      5282960
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 189,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-995-wano-48",
+              "label": "Original anime episode 995 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-48",
+              "episodes": [
+                {
+                  "title": "Episode 0995 (S21E104) - Raid! Inheriting…",
+                  "fullTitle": "Raid! Inheriting Oden's Will!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "995",
+                  "chapters": null,
+                  "meta": "Anime 995",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A104",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:995:one-pace-onigashima-raid:wano-48",
+                  "traktAnime": [
+                    [
+                      21,
+                      995,
+                      5562322
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 190,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1026-wano-60",
+              "label": "Original anime episode 1026 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-60",
+              "episodes": [
+                {
+                  "title": "Episode 1026 (S21E135) - The Supernovas…",
+                  "fullTitle": "The Supernovas Strike Back! The Mission to Tear Apart the Emperors!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1026",
+                  "chapters": null,
+                  "meta": "Anime 1026",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A135",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1026:one-pace-onigashima-raid:wano-60",
+                  "traktAnime": [
+                    [
+                      21,
+                      1026,
+                      6502637
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 170,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1027-wano-60",
+              "label": "Original anime episode 1027 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-60",
+              "episodes": [
+                {
+                  "title": "Episode 1027 (S21E136) - Defend Luffy!…",
+                  "fullTitle": "Defend Luffy! Zoro and Law’s Sword Technique!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1027",
+                  "chapters": null,
+                  "meta": "Anime 1027",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A136",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1027:one-pace-onigashima-raid:wano-60",
+                  "traktAnime": [
+                    [
+                      21,
+                      1027,
+                      6502638
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 184,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1033-wano-62",
+              "label": "Original anime episode 1033 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-62",
+              "episodes": [
+                {
+                  "title": "Episode 1033 (S21E142) - The Conclusion!…",
+                  "fullTitle": "The Conclusion! Luffy, Accelerating Fist of the Supreme King",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1033",
+                  "chapters": null,
+                  "meta": "Anime 1033",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A142",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1033:one-pace-onigashima-raid:wano-62",
+                  "traktAnime": [
+                    [
+                      21,
+                      1033,
+                      6502644
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 180,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1015-wano-55",
+              "label": "Original anime episode 1015 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-55",
+              "episodes": [
+                {
+                  "title": "Episode 1015 (S21E124) - Straw Hat…",
+                  "fullTitle": "Straw Hat Luffy! The Man Who Will Become the King of the Pirates!",
+                  "rating": 9.8,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1015",
+                  "chapters": null,
+                  "meta": "Anime 1015",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.8 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A124",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1015:one-pace-onigashima-raid:wano-55",
+                  "traktAnime": [
+                    [
+                      21,
+                      1015,
+                      5886709
+                    ]
+                  ],
+                  "traktRating": 9.6,
+                  "traktVotes": 326,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1017-wano-56",
+              "label": "Original anime episode 1017 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-56",
+              "episodes": [
+                {
+                  "title": "Episode 1017 (S21E126) - Barrage of…",
+                  "fullTitle": "Barrage of Powerful Techniques! The Fierce Attacks of the Worst Generation!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1017",
+                  "chapters": null,
+                  "meta": "Anime 1017",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A126",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1017:one-pace-onigashima-raid:wano-56",
+                  "traktAnime": [
+                    [
+                      21,
+                      1017,
+                      5886711
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 193,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1028-wano-60",
+              "label": "Original anime episode 1028 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-onigashima-raid:wano-60",
+              "episodes": [
+                {
+                  "title": "Episode 1028 (S21E137) - Surpass the…",
+                  "fullTitle": "Surpass the Emperor of the Sea! Luffy Strikes Back with an Iron Fist!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1028",
+                  "chapters": null,
+                  "meta": "Anime 1028",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A137",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1028:one-pace-onigashima-raid:wano-60",
+                  "traktAnime": [
+                    [
+                      21,
+                      1028,
+                      6502639
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 205,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
             },
             {
               "id": "onigashima-paced-onigashima",
@@ -23303,6 +25319,390 @@
               "version": "wano:paced"
             },
             {
+              "id": "original-uncut-982-ONIG_1",
+              "label": "Original anime episode 982 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_1",
+              "episodes": [
+                {
+                  "title": "Episode 0982 (S21E91) - Kaido’s Trump…",
+                  "fullTitle": "Kaido’s Trump Card! The Tobi Roppo Appear!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "982",
+                  "chapters": null,
+                  "meta": "Anime 982",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A91",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:982:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_1",
+                  "traktAnime": [
+                    [
+                      21,
+                      982,
+                      5282960
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 189,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-995-ONIG_9",
+              "label": "Original anime episode 995 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_9",
+              "episodes": [
+                {
+                  "title": "Episode 0995 (S21E104) - Raid! Inheriting…",
+                  "fullTitle": "Raid! Inheriting Oden's Will!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "995",
+                  "chapters": null,
+                  "meta": "Anime 995",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A104",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:995:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_9",
+                  "traktAnime": [
+                    [
+                      21,
+                      995,
+                      5562322
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 190,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1026-ONIG_26",
+              "label": "Original anime episode 1026 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_26",
+              "episodes": [
+                {
+                  "title": "Episode 1026 (S21E135) - The Supernovas…",
+                  "fullTitle": "The Supernovas Strike Back! The Mission to Tear Apart the Emperors!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1026",
+                  "chapters": null,
+                  "meta": "Anime 1026",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A135",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1026:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_26",
+                  "traktAnime": [
+                    [
+                      21,
+                      1026,
+                      6502637
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 170,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1027-ONIG_26",
+              "label": "Original anime episode 1027 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_26",
+              "episodes": [
+                {
+                  "title": "Episode 1027 (S21E136) - Defend Luffy!…",
+                  "fullTitle": "Defend Luffy! Zoro and Law’s Sword Technique!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1027",
+                  "chapters": null,
+                  "meta": "Anime 1027",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A136",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1027:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_26",
+                  "traktAnime": [
+                    [
+                      21,
+                      1027,
+                      6502638
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 184,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1033-ONIG_28",
+              "label": "Original anime episode 1033 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_28",
+              "episodes": [
+                {
+                  "title": "Episode 1033 (S21E142) - The Conclusion!…",
+                  "fullTitle": "The Conclusion! Luffy, Accelerating Fist of the Supreme King",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1033",
+                  "chapters": null,
+                  "meta": "Anime 1033",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A142",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1033:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_28",
+                  "traktAnime": [
+                    [
+                      21,
+                      1033,
+                      6502644
+                    ]
+                  ],
+                  "traktRating": 8.4,
+                  "traktVotes": 180,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1015-ONIG_20",
+              "label": "Original anime episode 1015 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_20",
+              "episodes": [
+                {
+                  "title": "Episode 1015 (S21E124) - Straw Hat…",
+                  "fullTitle": "Straw Hat Luffy! The Man Who Will Become the King of the Pirates!",
+                  "rating": 9.8,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1015",
+                  "chapters": null,
+                  "meta": "Anime 1015",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.8 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A124",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1015:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_20",
+                  "traktAnime": [
+                    [
+                      21,
+                      1015,
+                      5886709
+                    ]
+                  ],
+                  "traktRating": 9.6,
+                  "traktVotes": 326,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1017-ONIG_21",
+              "label": "Original anime episode 1017 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_21",
+              "episodes": [
+                {
+                  "title": "Episode 1017 (S21E126) - Barrage of…",
+                  "fullTitle": "Barrage of Powerful Techniques! The Fierce Attacks of the Worst Generation!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1017",
+                  "chapters": null,
+                  "meta": "Anime 1017",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A126",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1017:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_21",
+                  "traktAnime": [
+                    [
+                      21,
+                      1017,
+                      5886711
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 193,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1028-ONIG_26",
+              "label": "Original anime episode 1028 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_26",
+              "episodes": [
+                {
+                  "title": "Episode 1028 (S21E137) - Surpass the…",
+                  "fullTitle": "Surpass the Emperor of the Sea! Luffy Strikes Back with an Iron Fist!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1028",
+                  "chapters": null,
+                  "meta": "Anime 1028",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A137",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1028:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_26",
+                  "traktAnime": [
+                    [
+                      21,
+                      1028,
+                      6502639
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 205,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
               "id": "onigashima-plus-09",
               "label": "Onigashima+ 09 (extended)",
               "kind": "onigashima-plus",
@@ -24306,6 +26706,198 @@
               ]
             },
             {
+              "id": "original-uncut-1061-ONIG_40",
+              "label": "Original anime episode 1061 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_40",
+              "episodes": [
+                {
+                  "title": "Episode 1061 (S21E170) - The Strike…",
+                  "fullTitle": "The Strike of an Ifrit! Sanji vs. Queen",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1061",
+                  "chapters": null,
+                  "meta": "Anime 1061",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A170",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1061:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_40",
+                  "traktAnime": [
+                    [
+                      21,
+                      1061,
+                      7493494
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 200,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1076-ONIG_47",
+              "label": "Original anime episode 1076 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_47",
+              "episodes": [
+                {
+                  "title": "Episode 1076 (S21E185) - The World…",
+                  "fullTitle": "The World That Luffy Wants!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1076",
+                  "chapters": null,
+                  "meta": "Anime 1076",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A185",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1076:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_47",
+                  "traktAnime": [
+                    [
+                      21,
+                      1076,
+                      10843837
+                    ]
+                  ],
+                  "traktRating": 9.0,
+                  "traktVotes": 203,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1062-ONIG_40",
+              "label": "Original anime episode 1062 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_40",
+              "episodes": [
+                {
+                  "title": "Episode 1062 (S21E171) - The Three-Sword…",
+                  "fullTitle": "The Three-Sword Style of the Supreme King! Zoro vs. King",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1062",
+                  "chapters": null,
+                  "meta": "Anime 1062",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A171",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1062:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_40",
+                  "traktAnime": [
+                    [
+                      21,
+                      1062,
+                      7508824
+                    ]
+                  ],
+                  "traktRating": 9.3,
+                  "traktVotes": 268,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1066-ONIG_42",
+              "label": "Original anime episode 1066 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_42",
+              "episodes": [
+                {
+                  "title": "Episode 1066 (S21E175) - Here Comes…",
+                  "fullTitle": "Here Comes the Main Act! Powerful Techniques of Shockwave and Magnetism!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1066",
+                  "chapters": null,
+                  "meta": "Anime 1066",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A21%3A175",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1066:onigashima-paced-onigashima:/detail/series/pp_onipace/ONIG_42",
+                  "traktAnime": [
+                    [
+                      21,
+                      1066,
+                      10700270
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 193,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
               "id": "onigashima-plus-33",
               "label": "Onigashima+ 33 (extended)",
               "kind": "onigashima-plus",
@@ -24948,7 +27540,7 @@
           "groups": [
             {
               "id": "one-pace-egghead",
-              "label": "One Pace - Egghead",
+              "label": "One Pace - Egghead (01–20)",
               "kind": "onepace",
               "canonPath": true,
               "isAlternative": false,
@@ -25615,7 +28207,468 @@
                   "traktRatingFrom": "anime",
                   "runtime": 30,
                   "runtimeSource": "onepace"
-                },
+                }
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "One Pace Episode Guide (Google Sheets)",
+                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1664435609#gid=1664435609"
+                  },
+                  {
+                    "label": "One Pace Web",
+                    "url": "https://onepace.net/en/watch#egghead"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/onepace?season=37"
+                  }
+                ],
+                "text": "Pace: Eps 453–474 • Anime: Eps 1086–1130 (Full Arc: 1086–1155) • Ch: 1058–1096 (Full Arc: 1058–1125)"
+              }
+            },
+            {
+              "id": "original-uncut-1093-egghead-04",
+              "label": "Original anime episode 1093 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-04",
+              "episodes": [
+                {
+                  "title": "Episode 1093 (S22E8) - The Winner…",
+                  "fullTitle": "The Winner Takes All! Law vs. Blackbeard!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1093",
+                  "chapters": null,
+                  "meta": "Anime 1093",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A8",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1093:one-pace-egghead:egghead-04",
+                  "traktAnime": [
+                    [
+                      22,
+                      1093,
+                      11329033
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 203,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1101-egghead-08",
+              "label": "Original anime episode 1101 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-08",
+              "episodes": [
+                {
+                  "title": "Episode 1101 (S22E16) - The Strongest…",
+                  "fullTitle": "The Strongest Form of Humanity! The Seraphim's Powers!",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1101",
+                  "chapters": null,
+                  "meta": "Anime 1101",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A16",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1101:one-pace-egghead:egghead-08",
+                  "traktAnime": [
+                    [
+                      22,
+                      1101,
+                      11699100
+                    ]
+                  ],
+                  "traktRating": 8.5,
+                  "traktVotes": 210,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1121-egghead-18",
+              "label": "Original anime episode 1121 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-18",
+              "episodes": [
+                {
+                  "title": "Episode 1121 (S22E36) - Garp and…",
+                  "fullTitle": "Garp and Kuzan - A Master and a Pupil's Beliefs Clash",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1121",
+                  "chapters": null,
+                  "meta": "Anime 1121",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A36",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1121:one-pace-egghead:egghead-18",
+                  "traktAnime": [
+                    [
+                      22,
+                      1121,
+                      12272172
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 214,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1089-egghead-03",
+              "label": "Original anime episode 1089 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-03",
+              "episodes": [
+                {
+                  "title": "Episode 1089 (S22E4) - Entering a…",
+                  "fullTitle": "Entering a New Chapter! Luffy and Sabo's Paths!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1089",
+                  "chapters": null,
+                  "meta": "Anime 1089",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A4",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1089:one-pace-egghead:egghead-03",
+                  "traktAnime": [
+                    [
+                      22,
+                      1089,
+                      11167257
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 228,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1100-egghead-08",
+              "label": "Original anime episode 1100 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-08",
+              "episodes": [
+                {
+                  "title": "Episode 1100 (S22E15) - Powers on…",
+                  "fullTitle": "Powers on a Different Level! Luffy vs. Lucci!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1100",
+                  "chapters": null,
+                  "meta": "Anime 1100",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A15",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1100:one-pace-egghead:egghead-08",
+                  "traktAnime": [
+                    [
+                      22,
+                      1100,
+                      11642951
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 252,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1112-egghead-13",
+              "label": "Original anime episode 1112 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-13",
+              "episodes": [
+                {
+                  "title": "Episode 1112 (S22E27) - Clash! Shanks…",
+                  "fullTitle": "Clash! Shanks vs. Eustass Kid",
+                  "rating": 9.8,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1112",
+                  "chapters": null,
+                  "meta": "Anime 1112",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.8 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A27",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1112:one-pace-egghead:egghead-13",
+                  "traktAnime": [
+                    [
+                      22,
+                      1112,
+                      12046438
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 240,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1114-egghead-14",
+              "label": "Original anime episode 1114 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-14",
+              "episodes": [
+                {
+                  "title": "Episode 1114 (S22E29) - For the…",
+                  "fullTitle": "For the Beloved Pupil - The Fist of Vice Admiral Garp!",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1114",
+                  "chapters": null,
+                  "meta": "Anime 1114",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A29",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1114:one-pace-egghead:egghead-14",
+                  "traktAnime": [
+                    [
+                      22,
+                      1114,
+                      12097490
+                    ]
+                  ],
+                  "traktRating": 8.9,
+                  "traktVotes": 215,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1115-egghead-14",
+              "label": "Original anime episode 1115 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-14",
+              "episodes": [
+                {
+                  "title": "Episode 1115 (S22E30) - The Navy…",
+                  "fullTitle": "The Navy Surprised! The Navy Headquarters' Former Admiral, Kuzan",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1115",
+                  "chapters": null,
+                  "meta": "Anime 1115",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A30",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1115:one-pace-egghead:egghead-14",
+                  "traktAnime": [
+                    [
+                      22,
+                      1115,
+                      12113073
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 201,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1122-egghead-18",
+              "label": "Original anime episode 1122 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-18",
+              "episodes": [
+                {
+                  "title": "Episode 1122 (S22E37) - The Last…",
+                  "fullTitle": "The Last Lesson! Impact Inherited",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1122",
+                  "chapters": null,
+                  "meta": "Anime 1122",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A37",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1122:one-pace-egghead:egghead-18",
+                  "traktAnime": [
+                    [
+                      22,
+                      1122,
+                      12282674
+                    ]
+                  ],
+                  "traktRating": 9.1,
+                  "traktVotes": 235,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "one-pace-egghead-21-22",
+              "label": "One Pace - Egghead (21–22)",
+              "kind": "onepace",
+              "canonPath": true,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "episodes": [
                 {
                   "title": "Egghead 21 - ...",
                   "fullTitle": "Luffy vs. Kizaru",
@@ -25695,27 +28748,203 @@
                   "runtimeSource": "onepace"
                 }
               ],
-              "info": {
-                "links": [
-                  {
-                    "label": "One Pace Episode Guide (Google Sheets)",
-                    "url": "https://docs.google.com/spreadsheets/d/1HQRMJgu_zArp-sLnvFMDzOyjdsht87eFLECxMK858lA/edit?gid=1664435609#gid=1664435609"
+              "version": "egghead:onepace"
+            },
+            {
+              "id": "original-uncut-1127-egghead-21",
+              "label": "Original anime episode 1127 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-21",
+              "episodes": [
+                {
+                  "title": "Episode 1127 (S22E42) - Luffy vs.…",
+                  "fullTitle": "Luffy vs. Kizaru!  A Fierce Kaleidoscopic Battle",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1127",
+                  "chapters": null,
+                  "meta": "Anime 1127",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A42",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
                   },
-                  {
-                    "label": "One Pace Web",
-                    "url": "https://onepace.net/en/watch#egghead"
+                  "canon": false,
+                  "id": "original-uncut:1127:one-pace-egghead:egghead-21",
+                  "traktAnime": [
+                    [
+                      22,
+                      1127,
+                      12986031
+                    ]
+                  ],
+                  "traktRating": 8.6,
+                  "traktVotes": 217,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1129-egghead-22",
+              "label": "Original anime episode 1129 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-22",
+              "episodes": [
+                {
+                  "title": "Episode 1129 (S22E44) - Kuma's Past…",
+                  "fullTitle": "Kuma's Past - Better Off Dead in This World",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1129",
+                  "chapters": null,
+                  "meta": "Anime 1129",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.6 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A44",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
                   },
-                  {
-                    "label": "Stremio Web",
-                    "url": "https://web.stremio.com/#/detail/series/onepace?season=37"
-                  }
-                ],
-                "text": "Pace: Eps 453–474 • Anime: Eps 1086–1130 (Full Arc: 1086–1155) • Ch: 1058–1096 (Full Arc: 1058–1125)"
-              }
+                  "canon": false,
+                  "id": "original-uncut:1129:one-pace-egghead:egghead-22",
+                  "traktAnime": [
+                    [
+                      22,
+                      1129,
+                      13018505
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 222,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1128-egghead-21",
+              "label": "Original anime episode 1128 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-21",
+              "episodes": [
+                {
+                  "title": "Episode 1128 (S22E43) - The Nightmare…",
+                  "fullTitle": "The Nightmare Strikes - Godhead of Science & Defense, St. Saturn",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1128",
+                  "chapters": null,
+                  "meta": "Anime 1128",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A43",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1128:one-pace-egghead:egghead-21",
+                  "traktAnime": [
+                    [
+                      22,
+                      1128,
+                      13000613
+                    ]
+                  ],
+                  "traktRating": 8.8,
+                  "traktVotes": 220,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ]
+            },
+            {
+              "id": "original-uncut-1130-egghead-22",
+              "label": "Original anime episode 1130 (uncut)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "afterEpisode": "one-pace-egghead:egghead-22",
+              "episodes": [
+                {
+                  "title": "Episode 1130 (S22E45) - A History…",
+                  "fullTitle": "A History Erased! God Valley of Despair",
+                  "rating": 9.7,
+                  "tierColor": "#1DA1F2",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "1130",
+                  "chapters": null,
+                  "meta": "Anime 1130",
+                  "description": "The full original episode, one of the best-rated episodes of the anime (9.7 on IMDb). Watch it instead of this release if you want it uncut.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A22%3A45",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-uncut:1130:one-pace-egghead:egghead-22",
+                  "traktAnime": [
+                    [
+                      22,
+                      1130,
+                      13062943
+                    ]
+                  ],
+                  "traktRating": 8.7,
+                  "traktVotes": 212,
+                  "traktRatingFrom": "anime",
+                  "runtime": 23,
+                  "runtimeSource": "anime"
+                }
+              ]
             },
             {
               "id": "kuma-cut",
-              "label": "Kuma Cut",
+              "label": "Kuma Cut (01–03)",
               "kind": "kuma-shaved",
               "canonPath": true,
               "isAlternative": false,
@@ -25832,7 +29061,33 @@
                   "traktRatingFrom": "anime",
                   "runtime": 19,
                   "runtimeSource": "sheet"
-                },
+                }
+              ],
+              "info": {
+                "links": [
+                  {
+                    "label": "Kuma Cut + Shaved Egghead Spreadsheet",
+                    "url": "https://docs.google.com/spreadsheets/d/1ODt-b2L9PyAr0xEWhj1yIOqp__crBFVXhvejblvP_mU/edit?usp=sharing"
+                  },
+                  {
+                    "label": "Stremio Web",
+                    "url": "https://web.stremio.com/#/detail/series/pp_KUMA_SHAVED?season=1"
+                  }
+                ],
+                "text": "Anime: Eps 1131–1136 (Optional recap: Eps 1127–1130) • Ch: 1097–1102"
+              },
+              "version": "egghead:kuma"
+            },
+            {
+              "id": "kuma-cut-04-09",
+              "label": "Kuma Cut (04–09)",
+              "kind": "kuma-shaved",
+              "canonPath": true,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": 9.4,
+              "notes": [],
+              "episodes": [
                 {
                   "title": "04 - Kuma Cut 1131",
                   "fullTitle": "Kuma Cut 1131",
@@ -26043,20 +29298,7 @@
                   "runtime": 20,
                   "runtimeSource": "sheet"
                 }
-              ],
-              "info": {
-                "links": [
-                  {
-                    "label": "Kuma Cut + Shaved Egghead Spreadsheet",
-                    "url": "https://docs.google.com/spreadsheets/d/1ODt-b2L9PyAr0xEWhj1yIOqp__crBFVXhvejblvP_mU/edit?usp=sharing"
-                  },
-                  {
-                    "label": "Stremio Web",
-                    "url": "https://web.stremio.com/#/detail/series/pp_KUMA_SHAVED?season=1"
-                  }
-                ],
-                "text": "Anime: Eps 1131–1136 (Optional recap: Eps 1127–1130) • Ch: 1097–1102"
-              }
+              ]
             },
             {
               "id": "shaved-egghead",

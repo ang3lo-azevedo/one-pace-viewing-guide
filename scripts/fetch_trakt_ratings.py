@@ -90,7 +90,7 @@ def anime_numbers(text):
 def line_of(group, node):
     """Release line (same as fetch_ratings.py): "One Pace", "Onigashima Paced", ... main and
     alternative versions apart."""
-    name = re.sub(r"\s*\(Alternative\)\s*$", "", group["label"]).split(" - ")[0].strip()
+    name = re.sub(r"(\s*\([^)]*\))+\s*$", "", group["label"]).split(" - ")[0].strip()
     return (group["kind"], name, bool(group.get("isAlternative") or node.get("isAlternative")))
 
 

@@ -95,7 +95,7 @@ def anime_shares(data, parse):
 def line_of(group, node):
     """The release line: "One Pace" (all its arcs), "Onigashima Paced", "Kuma Cut"... from the
     section label, main and alternative versions apart."""
-    name = re.sub(r"\s*\(Alternative\)\s*$", "", group["label"]).split(" - ")[0].strip()
+    name = re.sub(r"(\s*\([^)]*\))+\s*$", "", group["label"]).split(" - ")[0].strip()
     return (group["kind"], name, bool(group.get("isAlternative") or node.get("isAlternative")))
 
 

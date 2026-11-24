@@ -71,6 +71,16 @@ export const VERSION_SETS: VersionSet[] = [
     ],
   },
   {
+    key: 'egghead',
+    label: 'Egghead: the end',
+    default: 'onepace',
+    canon: true,
+    options: [
+      { value: 'onepace', label: 'One Pace, then Kuma Cut', title: 'Egghead 01-22, then Kuma Cut from 04' },
+      { value: 'kuma', label: 'Kuma Cut', title: 'Egghead 01-20, then Kuma Cut from 01' },
+    ],
+  },
+  {
     key: 'monsters',
     label: 'Monsters',
     default: 'inside',

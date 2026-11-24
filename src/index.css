@@ -171,20 +171,32 @@ html:not(.dark) :is(main, .filter-bar) {
   }
 }
 
-/* World map: the pulsing ring on where you are, and labels readable over the sea. */
-@keyframes map-pulse {
-  0% { r: 7; opacity: 1; }
-  100% { r: 16; opacity: 0; }
-}
-.map-pulse {
-  animation: map-pulse 1.8s ease-out infinite;
-}
+/* World map: labels readable over the sea, the moving route and the bobbing ship. */
 .map-label {
   paint-order: stroke;
   stroke: var(--card-bg);
   stroke-width: 3px;
   stroke-linejoin: round;
 }
+@keyframes map-route {
+  to { stroke-dashoffset: -24; }
+}
+.map-route {
+  animation: map-route 1.2s linear infinite;
+}
+@keyframes map-ship {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-1.5px) rotate(2deg); }
+}
+.map-ship {
+  animation: map-ship 2.4s ease-in-out infinite;
+}
+.map-island {
+  transition: fill 0.4s;
+}
+.map-box:active {
+  cursor: grabbing;
+}
 @media (prefers-reduced-motion: reduce) {
-  .map-pulse { animation: none; }
+  .map-route, .map-ship { animation: none; }
 }

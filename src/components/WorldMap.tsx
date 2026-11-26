@@ -1,7 +1,7 @@
 import { For, Show, createEffect, createMemo, createSignal, on, onCleanup } from 'solid-js';
 import { flatEpisodes, guide } from '../lib/guide';
 import { nextUp, revealEpisode } from '../lib/focus';
-import { fmtDuration, stats } from '../lib/stats';
+import { fmtDuration, stats, watchedPart } from '../lib/stats';
 import { prefs } from '../store/prefs';
 import { wasOpen } from '../lib/restore';
 import type { GuideNode } from '../types';
@@ -598,6 +598,7 @@ export default function WorldMap() {
                     const prog = () => arcProgress(id)!;
                     const node = nodeById.get(id)!;
                     const pct = () => (prog().minTotal ? (prog().minDone / prog().minTotal) * 100 : 0);
+                    const seen = () => watchedPart(flatEpisodes.filter((f) => f.node.uid === node.uid).map((f) => f.ep.id), prog().watched === prog().total);
                     return (
                       <div class="mt-2 space-y-1">
                         <div class="flex items-center gap-1.5">
@@ -609,6 +610,13 @@ export default function WorldMap() {
                         <div class="h-1.5 overflow-hidden rounded-full bg-sea-200 dark:bg-sea-800">
                           <div class="h-full rounded-full bg-accent-500" style={{ width: `${pct()}%` }} />
                         </div>
+                        <Show when={seen()}>
+                          {(w) => (
+                            <div class="text-[11px] text-sea-500 dark:text-sea-400" title={w().title}>
+                              {w().label} {w().value}
+                            </div>
+                          )}
+                        </Show>
                         <div class="flex items-center gap-2 text-[11px] text-sea-500 dark:text-sea-400">
                           <span>
                             {prog().watched}/{prog().total} · {Math.round(pct())}%

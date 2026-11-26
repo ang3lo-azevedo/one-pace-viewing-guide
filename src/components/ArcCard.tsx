@@ -10,7 +10,7 @@ import { tierForRating } from '../lib/guide';
 import { idsOfNodeKey, nodeKeyOf } from '../lib/layout';
 import { catchUpIds } from '../lib/catchup';
 import { prefs } from '../store/prefs';
-import { parentsOf, sharePartOf, fmtDate, fmtDuration, fmtFromNow, minutesOf, stats } from '../lib/stats';
+import { parentsOf, sharePartOf, watchedPart, fmtDate, fmtDuration, fmtFromNow, minutesOf, stats } from '../lib/stats';
 import RatingBadge from './RatingBadge';
 import SectionTrakt from './SectionTrakt';
 import { Tags } from './Tags';
@@ -90,7 +90,8 @@ export default function ArcCard(props: { node: FilteredNode }) {
     const up = parentsOf(props.node.groups[0]?.episodes[0]?.id);
     const saga = up ? stats().perSaga[up.sagaKey] : undefined;
     const share = p ? sharePartOf(p.minTotal, saga && up ? { min: saga.minTotal, name: up.sagaTitle } : undefined) : null;
-    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(share ? [share] : []), ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: `At your current pace (${fmtFromNow(eta)})` }] : [])];
+    const seen = p ? watchedPart(arcIds(), p.watched === p.total) : null;
+    return [...parts, ...(t ? [t] : []), ...total, ...left, ...(share ? [share] : []), ...(seen ? [seen] : []), ...(eta ? [{ label: 'Done by', value: fmtDate(eta), title: `At your current pace (${fmtFromNow(eta)})` }] : [])];
   };
 
   return (

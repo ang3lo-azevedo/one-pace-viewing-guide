@@ -396,3 +396,72 @@ export function parentsOf(epId: string | undefined) {
   const f = epId ? flatById.get(epId) : undefined;
   return f ? { sagaKey: sagaKeyOf(f), nodeKey: nodeKeyOf(f), sagaTitle: f.saga.title, nodeTitle: f.node.title } : null;
 }
+
+// ---- When you watched things (times from marking episodes here or from Trakt) ----
+
+const dayOf = (t: number) => new Date(t).toDateString();
+const thisYear = () => new Date().getFullYear();
+
+/** "Tue, 3 Jan 2026, 21:10". */
+export function fmtDateTime(t: number): string {
+  return new Date(t).toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+/** "3–12 Jan", "28 Dec 2025 – 4 Jan 2026" (in your locale's order). */
+export function fmtDateRange(a: number, b: number): string {
+  if (dayOf(a) === dayOf(b)) return fmtDate(b);
+  const years = new Date(a).getFullYear() !== thisYear() || new Date(b).getFullYear() !== thisYear();
+  const f = new Intl.DateTimeFormat(undefined, years ? { day: 'numeric', month: 'short', year: 'numeric' } : { day: 'numeric', month: 'short' });
+  const range = (f as Intl.DateTimeFormat & { formatRange?: (a: Date, b: Date) => string }).formatRange;
+  return range ? range.call(f, new Date(a), new Date(b)) : `${f.format(a)} – ${f.format(b)}`;
+}
+
+export interface WatchSpan {
+  first: number;
+  last: number;
+  /** Watched with a known time / watched at all. */
+  timed: number;
+  watched: number;
+}
+
+/** First and last time you watched any of these episodes, or null when none has a time. */
+export function watchSpan(ids: string[]): WatchSpan | null {
+  let first = Infinity;
+  let last = 0;
+  let timed = 0;
+  let watched = 0;
+  for (const id of ids) {
+    if (!isWatched(id)) continue;
+    watched++;
+    const t = watchedAt(id);
+    if (t == null) continue;
+    timed++;
+    if (t < first) first = t;
+    if (t > last) last = t;
+  }
+  return timed ? { first, last, timed, watched } : null;
+}
+
+/** Info line part: when you watched an arc, saga or section ("Watched 3–12 Jan"). */
+export function watchedPart(ids: string[], complete: boolean): { label: string; value: string; title: string } | null {
+  const s = watchSpan(ids);
+  if (!s) return null;
+  const days = Math.round((new Date(dayOf(s.last)).getTime() - new Date(dayOf(s.first)).getTime()) / 86_400_000) + 1;
+  const lines = [
+    `Started ${fmtDateTime(s.first)}`,
+    complete ? `Finished ${fmtDateTime(s.last)}` : `Last watched ${fmtDateTime(s.last)}`,
+  ];
+  if (days > 1) lines.push(complete ? `Took ${days} days` : `${days} days so far`);
+  if (s.timed < s.watched) lines.push(`${s.watched - s.timed} more watched at an unknown time`);
+  return {
+    label: complete ? 'Watched' : 'Watching since',
+    value: complete ? fmtDateRange(s.first, s.last) : fmtDate(s.first),
+    title: lines.join('\n'),
+  };
+}
+
+/** Info line part for one episode ("Watched 12 Jan"). */
+export function watchedOnPart(id: string): { label: string; value: string; title: string } | null {
+  const t = isWatched(id) ? watchedAt(id) : null;
+  return t ? { label: 'Watched', value: fmtDate(t), title: fmtDateTime(t) } : null;
+}

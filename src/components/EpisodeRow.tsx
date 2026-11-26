@@ -1,6 +1,6 @@
 import { For, Show, createMemo, createSignal } from 'solid-js';
 import InfoLine from './InfoLine';
-import { fmtDate, fmtDuration, minutesForKind, sharePart, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, minutesForKind, sharePart, stats, watchedOnPart } from '../lib/stats';
 import { isDone, notNeeded } from '../lib/alternatives';
 import { episodeInfo } from '../lib/format';
 import type { Episode } from '../types';
@@ -63,6 +63,8 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
       });
     const share = sharePart(props.ep.id);
     if (share) parts.push(share);
+    const seen = watchedOnPart(props.ep.id);
+    if (seen) parts.push(seen);
     const eta = stats().eta[props.ep.id];
     return eta && !watched() ? [...parts, { label: 'ETA', value: fmtDate(eta), title: 'When you should get here at your current pace' }] : parts;
   });

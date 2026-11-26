@@ -6,7 +6,8 @@ import InfoLine from './InfoLine';
 import { episodeInfo } from '../lib/format';
 import type { Episode } from '../types';
 import { For, Show, createSignal } from 'solid-js';
-import { fmtDate, fmtDuration, fmtFromNow, minutesForKind, sharePart, fmtHours, fmtSpan, parsePace, stats } from '../lib/stats';
+import { fmtDate, fmtDuration, fmtFromNow, minutesForKind, sharePart, fmtHours, fmtSpan, parsePace, stats, watchSpan, fmtDateTime } from '../lib/stats';
+import { allIds } from '../lib/guide';
 import { formatBerry } from '../lib/bounties';
 import { nextUp, revealEpisode } from '../lib/focus';
 import { LINK_LABEL, primaryLinkKey } from '../lib/links';
@@ -381,6 +382,14 @@ export default function VoyageHero() {
             {(k) => <Row label="Main route" value={`${k.watched}/${k.total}`} title={`${fmtSpan(k.minWatched)} of ${fmtSpan(k.minTotal)} watched`} />}
           </For>
           <Row label="One Pace episodes" value={`${s().onePaceWatched}/${s().onePaceTotal}`} title="One Pace's own numbered releases (part of the main route)" />
+          <Show when={watchSpan(allIds)}>
+            {(w) => (
+              <>
+                <Row label="Started" value={fmtDate(w().first)} title={fmtDateTime(w().first) + (w().timed < w().watched ? `\nEarliest with a known time: ${w().watched - w().timed} watched at an unknown time` : '')} />
+                <Row label="Last watched" value={fmtDate(w().last)} title={fmtDateTime(w().last)} />
+              </>
+            )}
+          </Show>
         </Panel>
 
         <Show when={s().kinds.some((k) => k.key !== 'main')}>

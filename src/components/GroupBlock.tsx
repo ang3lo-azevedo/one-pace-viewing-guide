@@ -1,7 +1,7 @@
 import { For, Show, createSignal, createEffect } from 'solid-js';
 import { onlyIncluded, type FilteredGroup } from '../lib/filter';
 import { extraCategory, flatEpisodes, kindColor, kindLabel } from '../lib/guide';
-import { fmtDuration, parentsOf, sharePartOf, stats } from '../lib/stats';
+import { fmtDuration, parentsOf, sharePartOf, stats, watchedPart } from '../lib/stats';
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
@@ -45,6 +45,7 @@ export default function GroupBlock(props: {
   };
   const ids = () => onlyIncluded(flatEpisodes.filter((f) => f.group.uid === props.group.uid).map((f) => f.ep.id));
   const allWatched = () => ids().length > 0 && ids().every((id) => isWatched(id));
+  const seen = () => watchedPart(ids(), allWatched());
 
   return (
     <div
@@ -94,6 +95,13 @@ export default function GroupBlock(props: {
               {(sh) => (
                 <span class="text-[11px] tabular-nums text-sea-400 dark:text-sea-500" title={sh().title}>
                   · {sh().value}
+                </span>
+              )}
+            </Show>
+            <Show when={seen()}>
+              {(w) => (
+                <span class="whitespace-nowrap text-[11px] tabular-nums text-sea-400 dark:text-sea-500" title={w().title}>
+                  · {w().label === 'Watched' ? '' : 'since '}{w().value}
                 </span>
               )}
             </Show>

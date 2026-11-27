@@ -1345,7 +1345,7 @@
                     "trakt": 14221853
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 1204,
+                  "traktVotes": 1205,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -1481,7 +1481,7 @@
                 {
                   "title": "Orange Town 01 - ...",
                   "fullTitle": "Enter: Nami",
-                  "rating": 7.7,
+                  "rating": 7.8,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 5",
                   "paceNumber": 5,
@@ -1639,7 +1639,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 1697,
+                  "traktVotes": 1698,
                   "runtime": 57,
                   "runtimeSource": "trakt"
                 }
@@ -1965,7 +1965,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 1555,
+                  "traktVotes": 1556,
                   "runtime": 59,
                   "runtimeSource": "trakt"
                 },
@@ -4371,7 +4371,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 922,
+                  "traktVotes": 923,
                   "runtime": 56,
                   "runtimeSource": "trakt"
                 },
@@ -4408,7 +4408,7 @@
                     "show": "one-piece-2023"
                   },
                   "traktRating": 8.6,
-                  "traktVotes": 1014,
+                  "traktVotes": 1015,
                   "runtime": 61,
                   "runtimeSource": "trakt"
                 },
@@ -5245,7 +5245,7 @@
                     "Early One Piece film, not canon."
                   ],
                   "nonCanon": true,
-                  "imdbVotes": 3620,
+                  "imdbVotes": 3622,
                   "traktMovie": {
                     "slug": "one-piece-dead-end-adventure-2003",
                     "trakt": 30394,
@@ -7604,7 +7604,7 @@
                     "Non-canon film."
                   ],
                   "nonCanon": true,
-                  "imdbVotes": 4449,
+                  "imdbVotes": 4452,
                   "traktMovie": {
                     "slug": "one-piece-baron-omatsuri-and-the-secret-island-2005",
                     "trakt": 30396,
@@ -8851,7 +8851,7 @@
                     "trakt": 14318044
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 385,
+                  "traktVotes": 387,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
                   "runtimeSource": "onepace"
@@ -8884,7 +8884,7 @@
                     "trakt": 14318045
                   },
                   "traktRating": 7.3,
-                  "traktVotes": 696,
+                  "traktVotes": 700,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "onepace"
@@ -8917,7 +8917,7 @@
                     "trakt": 14318046
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 389,
+                  "traktVotes": 391,
                   "traktRatingFrom": "anime",
                   "runtime": 26,
                   "runtimeSource": "onepace"
@@ -8950,7 +8950,7 @@
                     "trakt": 14318047
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 370,
+                  "traktVotes": 372,
                   "traktRatingFrom": "anime",
                   "runtime": 21,
                   "runtimeSource": "onepace"
@@ -8983,7 +8983,7 @@
                     "trakt": 14318048
                   },
                   "traktRating": 8.3,
-                  "traktVotes": 379,
+                  "traktVotes": 381,
                   "traktRatingFrom": "anime",
                   "runtime": 19,
                   "runtimeSource": "onepace"
@@ -9016,7 +9016,7 @@
                     "trakt": 14318049
                   },
                   "traktRating": 8.5,
-                  "traktVotes": 594,
+                  "traktVotes": 596,
                   "traktRatingFrom": "anime",
                   "runtime": 31,
                   "runtimeSource": "onepace"
@@ -10518,7 +10518,7 @@
                     "**Spoiler Warning:** If watching here, **skip the last minute** (it flashes forward to scenes from this arc), or alternatively watch this special at any point after completing Thriller Bark."
                   ],
                   "skipMinutes": 1,
-                  "imdbVotes": 3249,
+                  "imdbVotes": 3253,
                   "traktMovie": {
                     "slug": "monsters-103-mercies-dragon-damnation-2024",
                     "trakt": 994908,
@@ -10541,9 +10541,161 @@
           "traktRating": 8.0
         },
         {
+          "id": "filler-spa-island",
+          "type": "filler",
+          "title": "Filler: Spa Island Vacation! (Episodes 382–383)",
+          "rating": null,
+          "pace": null,
+          "anime": null,
+          "chapters": null,
+          "isAlternative": false,
+          "groups": [
+            {
+              "id": "filler-spa-island-main",
+              "label": "Filler: Spa Island Vacation! (Episodes 382–383)",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "episodes": [
+                {
+                  "title": "Fun Pace: Spa Island Vacation!",
+                  "fullTitle": "Fun Pace: Spa Island Vacation!",
+                  "rating": 6.3,
+                  "tierColor": "#F39C12",
+                  "pace": "FunPace 21.1",
+                  "paceNumber": null,
+                  "anime": "382–383",
+                  "chapters": null,
+                  "meta": "Anime 382–383 • FunPace 21.1",
+                  "description": "Two-episode filler on a hot spring island.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
+                    "drive": "https://drive.google.com/drive/folders/1RNWXuSh_al874WGH_tpLy5G3deH8NtN6",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "filler-spa-island-main:fun-pace-spa-island-vacation",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      11,
+                      382,
+                      856591
+                    ],
+                    [
+                      11,
+                      383,
+                      856592
+                    ]
+                  ],
+                  "traktRating": 7.2,
+                  "traktVotes": 290,
+                  "traktRatingFrom": "anime",
+                  "runtime": 31,
+                  "runtimeSource": "sheet"
+                }
+              ],
+              "version": "spaisland:funpace"
+            },
+            {
+              "id": "original-anime-alternative",
+              "label": "Original Anime (Alternative)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "episodes": [
+                {
+                  "title": "Episode 382 (Spa Island Vacation! 1)",
+                  "fullTitle": "Episode 382 (Spa Island Vacation! 1)",
+                  "rating": 6.3,
+                  "tierColor": "#F39C12",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "382",
+                  "chapters": null,
+                  "meta": "Original Uncut Anime Episode 382",
+                  "description": "Two-episode filler on a hot spring island.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A1",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A1",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      11,
+                      382,
+                      856591
+                    ]
+                  ],
+                  "traktRating": 7.2,
+                  "traktVotes": 147,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 383 (Spa Island Vacation! 2)",
+                  "fullTitle": "Episode 383 (Spa Island Vacation! 2)",
+                  "rating": 6.3,
+                  "tierColor": "#F39C12",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "383",
+                  "chapters": null,
+                  "meta": "Original Uncut Anime Episode 383",
+                  "description": "Two-episode filler on a hot spring island.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A2",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A2",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      11,
+                      383,
+                      856592
+                    ]
+                  ],
+                  "traktRating": 7.3,
+                  "traktVotes": 143,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ],
+              "version": "spaisland:original"
+            }
+          ],
+          "traktRating": 7.2
+        },
+        {
           "id": "filler-episode-384-boat-piece",
           "type": "filler",
-          "title": "Filler: Episode 384 (\"Boat Piece\")",
+          "title": "Filler: Brook's Struggle (\"Boat Piece\")",
           "rating": 7.3,
           "pace": null,
           "anime": null,
@@ -10552,7 +10704,7 @@
           "groups": [
             {
               "id": "filler-episode-384-boat-piece-main",
-              "label": "Filler: Episode 384 (\"Boat Piece\")",
+              "label": "Filler: Brook's Struggle (\"Boat Piece\")",
               "kind": "filler",
               "canonPath": false,
               "isAlternative": false,
@@ -10561,8 +10713,8 @@
               "notes": [],
               "episodes": [
                 {
-                  "title": "Fun Pace: Episode 384 (\"Boat Piece\")",
-                  "fullTitle": "Fun Pace: Episode 384 (\"Boat Piece\")",
+                  "title": "Fun Pace: Brook's Struggle (\"Boat Piece\")",
+                  "fullTitle": "Fun Pace: Brook's Struggle (\"Boat Piece\")",
                   "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": "FunPace 21.2",
@@ -10576,7 +10728,7 @@
                     "stremio": null,
                     "netflix": null,
                     "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
-                    "drive": "https://drive.google.com/drive/folders/1wglxsln46TVM4LFOo4kVK910fyfl-fWS",
+                    "drive": "https://drive.google.com/drive/folders/1_EL-SXWRjK9R272OK-b6I4D9Byue0n-U",
                     "nyaa": null,
                     "other": null
                   },
@@ -10591,7 +10743,7 @@
                     ]
                   ],
                   "traktRating": 7.9,
-                  "traktVotes": 154,
+                  "traktVotes": 155,
                   "traktRatingFrom": "anime",
                   "runtime": 20,
                   "runtimeSource": "sheet"
@@ -10610,8 +10762,8 @@
               "notes": [],
               "episodes": [
                 {
-                  "title": "Episode 384 (\"Boat Piece\")",
-                  "fullTitle": "Episode 384 (\"Boat Piece\")",
+                  "title": "Episode 384 (Brook's Struggle (\"Boat Piece\"))",
+                  "fullTitle": "Episode 384 (Brook's Struggle (\"Boat Piece\"))",
                   "rating": 7.3,
                   "tierColor": "#F4D03F",
                   "pace": null,
@@ -10622,7 +10774,7 @@
                   "description": "Slice-of-life filler about daily life aboard the ship.",
                   "links": {
                     "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A11%3A12",
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A3",
                     "netflix": null,
                     "mega": null,
                     "drive": null,
@@ -10640,7 +10792,7 @@
                     ]
                   ],
                   "traktRating": 7.9,
-                  "traktVotes": 154,
+                  "traktVotes": 155,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "anime"
@@ -10672,30 +10824,27 @@
               "notes": [],
               "episodes": [
                 {
-                  "title": "Fun Pace Special: Strong World (Episode 0)",
-                  "fullTitle": "Fun Pace Special: Strong World (Episode 0)",
+                  "title": "Pace Special: Strong World (Episode 0)",
+                  "fullTitle": "Pace Special: Strong World (Episode 0)",
                   "rating": 7.5,
                   "tierColor": "#F4D03F",
-                  "pace": "FunPace",
+                  "pace": "Pace",
                   "paceNumber": null,
-                  "anime": "OVA",
+                  "anime": null,
                   "chapters": "0",
-                  "meta": "Anime OVA • Ch. 0 • FunPace",
+                  "meta": "One Pace release • Ch. 0 • Pace",
                   "description": "Canon prologue written by Eiichiro Oda. Watch right before Movie 10: Strong World.",
                   "links": {
-                    "onepace": null,
+                    "onepace": "https://onepace.net/en/releases#urn:btih:a3b449356e0e57fac111b7382d55d0a1fa5ddafb",
                     "stremio": null,
                     "netflix": null,
-                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
-                    "drive": "https://drive.google.com/drive/folders/1wglxsln46TVM4LFOo4kVK910fyfl-fWS",
-                    "nyaa": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": "https://nyaa.si/view/1043491",
                     "other": null
                   },
                   "canon": true,
                   "id": "special-strong-world-episode-0-main:fun-pace-special-strong-world-episode-0",
-                  "notes": [
-                    "Alternative placement: the original One Pace release of this prologue reveals later story details, so if you use it instead of the Fun Pace version, watch it at the alternative placement later in this guide."
-                  ],
                   "imdbVotes": 1070,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
@@ -10712,6 +10861,315 @@
           ],
           "version": "strongworld:thriller-bark",
           "traktRating": 8.3
+        },
+        {
+          "id": "filler-little-east-blue",
+          "type": "filler",
+          "title": "Filler: Little East Blue (Episodes 426–429)",
+          "rating": null,
+          "pace": null,
+          "anime": null,
+          "chapters": null,
+          "isAlternative": false,
+          "groups": [
+            {
+              "id": "filler-little-east-blue-main",
+              "label": "Filler: Little East Blue (Episodes 426–429)",
+              "kind": "filler",
+              "canonPath": false,
+              "isAlternative": false,
+              "defaultOpen": true,
+              "rating": null,
+              "notes": [],
+              "episodes": [
+                {
+                  "title": "Fun Pace: Little East Blue 01 - No Place Like Home",
+                  "fullTitle": "Fun Pace: Little East Blue 01 - No Place Like Home",
+                  "rating": 6.3,
+                  "tierColor": "#F39C12",
+                  "pace": "FunPace 21.3",
+                  "paceNumber": null,
+                  "anime": "426–427",
+                  "chapters": null,
+                  "meta": "Anime 426–427 • FunPace 21.3",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
+                    "drive": "https://drive.google.com/drive/folders/13s5Vh65fqt0dGntB4rdULUumwznPNNgn",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "filler-little-east-blue-main:fun-pace-little-east-blue-01",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      13,
+                      426,
+                      856635
+                    ],
+                    [
+                      13,
+                      427,
+                      856636
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 247,
+                  "traktRatingFrom": "anime",
+                  "runtime": 22,
+                  "runtimeSource": "sheet-average"
+                },
+                {
+                  "title": "Fun Pace: Little East Blue 02 - Amigo Pirates",
+                  "fullTitle": "Fun Pace: Little East Blue 02 - Amigo Pirates",
+                  "rating": 6.2,
+                  "tierColor": "#F39C12",
+                  "pace": "FunPace 21.3",
+                  "paceNumber": null,
+                  "anime": "428",
+                  "chapters": null,
+                  "meta": "Anime 428 • FunPace 21.3",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
+                    "drive": "https://drive.google.com/drive/folders/13s5Vh65fqt0dGntB4rdULUumwznPNNgn",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "filler-little-east-blue-main:fun-pace-little-east-blue-02",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      13,
+                      428,
+                      856637
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 115,
+                  "traktRatingFrom": "anime",
+                  "runtime": 22,
+                  "runtimeSource": "sheet-average"
+                },
+                {
+                  "title": "Fun Pace: Little East Blue 03 - Boss Fight",
+                  "fullTitle": "Fun Pace: Little East Blue 03 - Boss Fight",
+                  "rating": 6.2,
+                  "tierColor": "#F39C12",
+                  "pace": "FunPace 21.3",
+                  "paceNumber": null,
+                  "anime": "429",
+                  "chapters": null,
+                  "meta": "Anime 429 • FunPace 21.3",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": null,
+                    "netflix": null,
+                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
+                    "drive": "https://drive.google.com/drive/folders/13s5Vh65fqt0dGntB4rdULUumwznPNNgn",
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "filler-little-east-blue-main:fun-pace-little-east-blue-03",
+                  "nonCanon": true,
+                  "traktAnime": [
+                    [
+                      13,
+                      429,
+                      856638
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 116,
+                  "traktRatingFrom": "anime",
+                  "runtime": 22,
+                  "runtimeSource": "sheet-average"
+                }
+              ],
+              "version": "littleeastblue:funpace"
+            },
+            {
+              "id": "original-anime-alternative",
+              "label": "Original Anime (Alternative)",
+              "kind": "original",
+              "canonPath": false,
+              "isAlternative": true,
+              "defaultOpen": false,
+              "rating": null,
+              "notes": [],
+              "episodes": [
+                {
+                  "title": "Episode 426 (Little East Blue 1)",
+                  "fullTitle": "Episode 426 (Little East Blue 1)",
+                  "rating": 6.4,
+                  "tierColor": "#F39C12",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "426",
+                  "chapters": null,
+                  "meta": "Original Uncut Anime Episode 426",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A45",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A45",
+                  "nonCanon": true,
+                  "notes": [
+                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
+                  ],
+                  "traktAnime": [
+                    [
+                      13,
+                      426,
+                      856635
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 127,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 427 (Little East Blue 2)",
+                  "fullTitle": "Episode 427 (Little East Blue 2)",
+                  "rating": 6.1,
+                  "tierColor": "#F39C12",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "427",
+                  "chapters": null,
+                  "meta": "Original Uncut Anime Episode 427",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A46",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A46",
+                  "nonCanon": true,
+                  "notes": [
+                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
+                  ],
+                  "traktAnime": [
+                    [
+                      13,
+                      427,
+                      856636
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 120,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 428 (Little East Blue 3)",
+                  "fullTitle": "Episode 428 (Little East Blue 3)",
+                  "rating": 6.2,
+                  "tierColor": "#F39C12",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "428",
+                  "chapters": null,
+                  "meta": "Original Uncut Anime Episode 428",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A47",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A47",
+                  "nonCanon": true,
+                  "notes": [
+                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
+                  ],
+                  "traktAnime": [
+                    [
+                      13,
+                      428,
+                      856637
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 115,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                },
+                {
+                  "title": "Episode 429 (Little East Blue 4)",
+                  "fullTitle": "Episode 429 (Little East Blue 4)",
+                  "rating": 6.2,
+                  "tierColor": "#F39C12",
+                  "pace": null,
+                  "paceNumber": null,
+                  "anime": "429",
+                  "chapters": null,
+                  "meta": "Original Uncut Anime Episode 429",
+                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
+                  "links": {
+                    "onepace": null,
+                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A48",
+                    "netflix": null,
+                    "mega": null,
+                    "drive": null,
+                    "nyaa": null,
+                    "other": null
+                  },
+                  "canon": false,
+                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A48",
+                  "nonCanon": true,
+                  "notes": [
+                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
+                  ],
+                  "traktAnime": [
+                    [
+                      13,
+                      429,
+                      856638
+                    ]
+                  ],
+                  "traktRating": 7.1,
+                  "traktVotes": 116,
+                  "traktRatingFrom": "anime",
+                  "runtime": 24,
+                  "runtimeSource": "anime"
+                }
+              ],
+              "version": "littleeastblue:original"
+            }
+          ],
+          "version": "strongworld:thriller-bark",
+          "traktRating": 7.1
         },
         {
           "id": "one-piece-movie-10-strong-world",
@@ -10756,10 +11214,10 @@
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-main:movie-10-strong-world-2009-written-by-oda",
                   "notes": [
-                    "Watch order: this film fits right after the current arc. If you watch the anime tie-in prequel Little East Blue, use the Fun Pace version, as the original broadcast version reveals later story details. The film can also be saved for the alternative placement later in this guide."
+                    "Watch order: this film fits right after Episode 0 and the optional Little East Blue. It can also be saved for the alternative placement later in this guide."
                   ],
                   "nonCanon": true,
-                  "imdbVotes": 8862,
+                  "imdbVotes": 8863,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
                     "trakt": 27466,
@@ -13674,10 +14132,10 @@
                   "paceNumber": null,
                   "anime": null,
                   "chapters": "0",
-                  "meta": "Original One Pace OVA release • Ch. 0 • Pace",
+                  "meta": "One Pace release • Ch. 0 • Pace",
                   "description": "Canon prologue written by Eiichiro Oda. Watch right before Movie 10: Strong World.",
                   "links": {
-                    "onepace": null,
+                    "onepace": "https://onepace.net/en/releases#urn:btih:a3b449356e0e57fac111b7382d55d0a1fa5ddafb",
                     "stremio": null,
                     "netflix": null,
                     "mega": null,
@@ -13746,7 +14204,7 @@
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-alternative-main:movie-10-strong-world-2009-written-by-oda",
                   "nonCanon": true,
-                  "imdbVotes": 8862,
+                  "imdbVotes": 8863,
                   "traktMovie": {
                     "slug": "one-piece-film-strong-world-2010",
                     "trakt": 27466,
@@ -14178,7 +14636,7 @@
                   "canon": false,
                   "id": "special-fan-letter-main:one-piece-fan-letter",
                   "nonCanon": true,
-                  "imdbVotes": 25844,
+                  "imdbVotes": 25846,
                   "traktMovie": {
                     "slug": "one-piece-fan-letter-2024-10-20",
                     "trakt": 1400060,
@@ -16187,7 +16645,7 @@
                   "canon": false,
                   "id": "one-piece-movie-12-film-z-main:one-piece-movie-12-film-z-2012",
                   "nonCanon": true,
-                  "imdbVotes": 12120,
+                  "imdbVotes": 12122,
                   "traktMovie": {
                     "slug": "one-piece-film-z-2012",
                     "trakt": 112137,
@@ -16295,7 +16753,7 @@
                     "trakt": 14318194
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 665,
+                  "traktVotes": 669,
                   "traktRatingFrom": "anime",
                   "runtime": 45,
                   "runtimeSource": "onepace"
@@ -16303,7 +16761,7 @@
                 {
                   "title": "Punk Hazard 03 - About My Torso",
                   "fullTitle": "About My Torso",
-                  "rating": 7.5,
+                  "rating": 7.6,
                   "tierColor": "#F4D03F",
                   "pace": "Pace 270",
                   "paceNumber": 270,
@@ -16328,7 +16786,7 @@
                     "trakt": 14318195
                   },
                   "traktRating": 7.9,
-                  "traktVotes": 522,
+                  "traktVotes": 523,
                   "traktRatingFrom": "anime",
                   "runtime": 29,
                   "runtimeSource": "onepace"
@@ -18054,7 +18512,7 @@
                     "trakt": 14318268
                   },
                   "traktRating": 7.5,
-                  "traktVotes": 484,
+                  "traktVotes": 485,
                   "traktRatingFrom": "anime",
                   "runtime": 25,
                   "runtimeSource": "onepace"
@@ -18087,7 +18545,7 @@
                     "trakt": 14318269
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 650,
+                  "traktVotes": 654,
                   "traktRatingFrom": "anime",
                   "runtime": 25,
                   "runtimeSource": "onepace"
@@ -18120,7 +18578,7 @@
                     "trakt": 14318270
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 678,
+                  "traktVotes": 682,
                   "traktRatingFrom": "anime",
                   "runtime": 22,
                   "runtimeSource": "onepace"
@@ -18153,7 +18611,7 @@
                     "trakt": 14318272
                   },
                   "traktRating": 8.0,
-                  "traktVotes": 342,
+                  "traktVotes": 344,
                   "traktRatingFrom": "anime",
                   "runtime": 21,
                   "runtimeSource": "onepace"
@@ -18186,7 +18644,7 @@
                     "trakt": 14318274
                   },
                   "traktRating": 8.2,
-                  "traktVotes": 352,
+                  "traktVotes": 354,
                   "traktRatingFrom": "anime",
                   "runtime": 28,
                   "runtimeSource": "onepace"
@@ -18219,7 +18677,7 @@
                     "trakt": 14318275
                   },
                   "traktRating": 8.3,
-                  "traktVotes": 360,
+                  "traktVotes": 361,
                   "traktRatingFrom": "anime",
                   "runtime": 29,
                   "runtimeSource": "onepace"
@@ -18993,7 +19451,7 @@
                   "canon": false,
                   "id": "one-piece-movie-13-film-gold-main:one-piece-movie-13-film-gold-2016",
                   "nonCanon": true,
-                  "imdbVotes": 9290,
+                  "imdbVotes": 9292,
                   "traktMovie": {
                     "slug": "one-piece-film-gold-2016",
                     "trakt": 224554,
@@ -19134,7 +19592,7 @@
                     "trakt": 14318295
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 578,
+                  "traktVotes": 579,
                   "traktRatingFrom": "anime",
                   "runtime": 26,
                   "runtimeSource": "onepace"
@@ -19167,7 +19625,7 @@
                     "trakt": 14318296
                   },
                   "traktRating": 7.5,
-                  "traktVotes": 763,
+                  "traktVotes": 767,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -19200,7 +19658,7 @@
                     "trakt": 14318297
                   },
                   "traktRating": 7.6,
-                  "traktVotes": 754,
+                  "traktVotes": 756,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -20978,8 +21436,8 @@
                 {
                   "title": "Episode 0817 (S19E38) - Moist Cigarette!…",
                   "fullTitle": "Moist Cigarette! The Night Before Sanji's Wedding!",
-                  "rating": 9.7,
-                  "tierColor": "#1DA1F2",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "817",
@@ -21316,7 +21774,7 @@
                   "canon": false,
                   "id": "one-piece-movie-14-stampede-main:one-piece-movie-14-stampede-2019",
                   "nonCanon": true,
-                  "imdbVotes": 10270,
+                  "imdbVotes": 10272,
                   "traktMovie": {
                     "slug": "one-piece-stampede-2019",
                     "trakt": 419509,
@@ -21653,7 +22111,7 @@
                     "trakt": 14318425
                   },
                   "traktRating": 7.4,
-                  "traktVotes": 357,
+                  "traktVotes": 358,
                   "traktRatingFrom": "anime",
                   "runtime": 31,
                   "runtimeSource": "onepace"
@@ -21685,8 +22143,8 @@
                     "number": 8,
                     "trakt": 14318426
                   },
-                  "traktRating": 7.7,
-                  "traktVotes": 535,
+                  "traktRating": 7.8,
+                  "traktVotes": 536,
                   "traktRatingFrom": "anime",
                   "runtime": 38,
                   "runtimeSource": "onepace"
@@ -22962,7 +23420,7 @@
                     "trakt": 14318458
                   },
                   "traktRating": 8.4,
-                  "traktVotes": 841,
+                  "traktVotes": 842,
                   "traktRatingFrom": "anime",
                   "runtime": 41,
                   "runtimeSource": "onepace"
@@ -23285,7 +23743,7 @@
                     ]
                   ],
                   "traktRating": 8.6,
-                  "traktVotes": 176,
+                  "traktVotes": 177,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "anime"
@@ -27619,7 +28077,7 @@
                     ]
                   ],
                   "traktRating": 7.9,
-                  "traktVotes": 328,
+                  "traktVotes": 329,
                   "traktRatingFrom": "anime",
                   "runtime": 33,
                   "runtimeSource": "sheet"
@@ -27655,7 +28113,7 @@
                     ]
                   ],
                   "traktRating": 7.9,
-                  "traktVotes": 169,
+                  "traktVotes": 170,
                   "traktRatingFrom": "anime",
                   "runtime": 21,
                   "runtimeSource": "sheet"
@@ -27717,7 +28175,7 @@
                     ]
                   ],
                   "traktRating": 7.5,
-                  "traktVotes": 154,
+                  "traktVotes": 155,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "anime"
@@ -27840,14 +28298,14 @@
                   "canon": false,
                   "id": "one-piece-movie-15-film-red-main:one-piece-movie-15-film-red-2022",
                   "nonCanon": true,
-                  "imdbVotes": 27461,
+                  "imdbVotes": 27465,
                   "traktMovie": {
                     "slug": "one-piece-film-red-2022",
                     "trakt": 722637,
                     "imdb": "tt16183464"
                   },
                   "traktRating": 7.7,
-                  "traktVotes": 3383,
+                  "traktVotes": 3384,
                   "runtime": 115,
                   "runtimeSource": "trakt"
                 }
@@ -27910,7 +28368,7 @@
                   "canon": false,
                   "id": "special-one-piece-heroines-main:/detail/series/tt34927513",
                   "nonCanon": true,
-                  "imdbVotes": 816,
+                  "imdbVotes": 818,
                   "traktMovie": {
                     "slug": "one-piece-heroines-2026",
                     "trakt": 1380671,
@@ -27983,7 +28441,7 @@
                     "trakt": 14318479
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 519,
+                  "traktVotes": 521,
                   "traktRatingFrom": "anime",
                   "runtime": 24,
                   "runtimeSource": "onepace"
@@ -28019,7 +28477,7 @@
                     "trakt": 14318480
                   },
                   "traktRating": 8.1,
-                  "traktVotes": 348,
+                  "traktVotes": 350,
                   "traktRatingFrom": "anime",
                   "runtime": 23,
                   "runtimeSource": "onepace"
@@ -29130,8 +29588,8 @@
                 {
                   "title": "Egghead 22 - Kuma Bear",
                   "fullTitle": "Kuma Bear",
-                  "rating": 9.7,
-                  "tierColor": "#1DA1F2",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
                   "pace": "Pace 474",
                   "paceNumber": 474,
                   "anime": "1129–1130",
@@ -29329,8 +29787,8 @@
                 {
                   "title": "Episode 1130 (S22E45) - A History…",
                   "fullTitle": "A History Erased! God Valley of Despair",
-                  "rating": 9.7,
-                  "tierColor": "#1DA1F2",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
                   "pace": null,
                   "paceNumber": null,
                   "anime": "1130",
@@ -29451,8 +29909,8 @@
                 {
                   "title": "03 - Kuma Cut 1130",
                   "fullTitle": "Kuma Cut 1130",
-                  "rating": 9.7,
-                  "tierColor": "#1DA1F2",
+                  "rating": 9.6,
+                  "tierColor": "#186A3B",
                   "pace": "Kuma Cut Ep. 03",
                   "paceNumber": null,
                   "anime": "1130",
@@ -31025,7 +31483,7 @@
                 {
                   "title": "Episode 1177 (S23E22) - A Despicable…",
                   "fullTitle": "A Despicable Hostage Game - Sommers's Brazen Demands",
-                  "rating": 8.7,
+                  "rating": 8.6,
                   "tierColor": "#28B463",
                   "pace": null,
                   "paceNumber": null,

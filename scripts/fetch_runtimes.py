@@ -220,9 +220,9 @@ def main():
             m = re.search(r"(\d{4}(?:\+\d+)?)\s*$", e.get("fullTitle") or "")
             if m:
                 rt, src = community["kuma"].get(m.group(1)), "sheet"
-        elif title.startswith("Fun Pace: Episode 384") or (g["kind"] == "funpace" and n_title(e) in FUN_PACE_ROWS):
-            key = "21.2" if title.startswith("Fun Pace: Episode 384") else FUN_PACE_ROWS[n_title(e)]
-            row = community["funpace"].get(key)
+        elif re.match(r"FunPace \d", e.get("pace") or "") or (g["kind"] == "funpace" and n_title(e) in FUN_PACE_ROWS):
+            m = re.match(r"FunPace ([\d.]+)", e.get("pace") or "")
+            row = community["funpace"].get(m.group(1) if m else FUN_PACE_ROWS[n_title(e)])
             if row:
                 total, count = row
                 rt, src = round(total / max(count, 1)), "sheet" if count == 1 else "sheet-average"

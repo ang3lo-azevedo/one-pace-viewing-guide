@@ -19,7 +19,7 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "src", "data", "data.json")
 
-CANON_SPECIALS = ("Monsters: 103", "Fun Pace Special: Strong World", "Pace Special: Strong World", "Wapol")
+CANON_SPECIALS = ("Monsters: 103", "Pace Special: Strong World", "Wapol")
 
 
 def non_canon(e, g, n):

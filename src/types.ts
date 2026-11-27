@@ -38,6 +38,9 @@ export interface Episode {
   /** A fan edit of an official film or special (the One Pace Strong World Episode 0): rated and synced
    *  as the official entry on Trakt, but no Where to stream link (the edit is not on streaming services). */
   fanEdit?: boolean;
+  /** Release date (YYYY-MM-DD) of this version, and of its first release when older (One Pace re-releases). */
+  released?: string;
+  firstReleased?: string;
   /** Minutes you skip at this placement (e.g. the spoilery last minute of Monsters); taken off the runtime. */
   skipMinutes?: number;
   /** Part of an anime episode to watch ("05:40–07:44"): an anime-only scene. */

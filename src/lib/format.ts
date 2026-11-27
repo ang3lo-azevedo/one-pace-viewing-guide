@@ -17,6 +17,8 @@ export function inlineMd(text: string): string {
     .replace(/\$\\rightarrow\$/g, '→');
 }
 
+import { airedSpan, fmtDay, fmtSpan, publishedSpan, spanOf } from './dates';
+
 // ---- episode / chapter info ---------------------------------------------------
 
 /** Count the numbers in a list like "250–251, 256, 320" (null if it has none). */
@@ -63,7 +65,14 @@ export function releaseLabel(pace: string | null, meta: string | null): string |
 }
 
 /** Labelled parts for one episode: release number, anime episodes, manga chapters. */
-export function episodeInfo(ep: { pace: string | null; anime: string | null; chapters: string | null; meta: string | null }): InfoPart[] {
+export function episodeInfo(ep: {
+  pace: string | null;
+  anime: string | null;
+  chapters: string | null;
+  meta: string | null;
+  released?: string;
+  firstReleased?: string;
+}): InfoPart[] {
   const parts: InfoPart[] = [];
   const rel = releaseLabel(ep.pace, ep.meta);
   if (rel) parts.push({ label: '', value: rel });
@@ -91,7 +100,35 @@ export function episodeInfo(ep: { pace: string | null; anime: string | null; cha
       });
     } else parts.push({ label: 'Manga', value: extra });
   }
+  parts.push(...dateParts(ep));
   return parts;
+}
+
+/** When this came out: the release itself, the original anime broadcast, the manga chapters. */
+function dateParts(ep: { anime: string | null; chapters: string | null; released?: string; firstReleased?: string }): InfoPart[] {
+  const parts: InfoPart[] = [];
+  if (ep.released)
+    parts.push({
+      label: 'Released',
+      value: fmtDay(ep.released),
+      title: ep.firstReleased ? `First released ${fmtDay(ep.firstReleased)}; this version ${fmtDay(ep.released)}` : 'Release date of this version',
+    });
+  const aired = airedSpan(ep.anime);
+  if (aired) parts.push({ label: 'Aired', value: fmtSpan(aired), title: 'When the original anime episodes aired in Japan' });
+  const published = publishedSpan(ep.chapters);
+  if (published) parts.push({ label: 'Published', value: fmtSpan(published), title: 'When the manga chapters came out in Weekly Shonen Jump' });
+  return parts;
+}
+
+type Dated = { released?: string; groups?: { kind: string; isAlternative: boolean; episodes: { released?: string }[] }[]; nodes?: Dated[]; isAlternative?: boolean };
+/** First to latest One Pace release of an arc or saga's main route. */
+function releasedSpan(r: Dated) {
+  const nodes = r.nodes ?? [r];
+  return spanOf(
+    nodes
+      .filter((n) => !n.isAlternative)
+      .flatMap((n) => (n.groups ?? []).filter((g) => g.kind === 'onepace' && !g.isAlternative).flatMap((g) => g.episodes.map((e) => e.released))),
+  );
 }
 
 /** Arc/saga summary parts, with counts. */
@@ -103,6 +140,12 @@ export function rangeInfo(r: { pace: string | null; anime: string | null; chapte
   if (r.anime) parts.push({ label: 'Anime', value: r.anime + (a ? ` (${a})` : ''), title: a ? `${plural(a, 'original anime episode')}` : undefined });
   const c = countNumbers(r.chapters ? splitExtra(r.chapters).nums : null);
   if (r.chapters) parts.push({ label: 'Ch.', value: r.chapters + (c ? ` (${c})` : ''), title: c ? `${plural(c, 'manga chapter')}` : undefined });
+  const released = releasedSpan(r as Dated);
+  if (released) parts.push({ label: 'Released', value: fmtSpan(released), title: 'First to latest One Pace release here' });
+  const aired = airedSpan(r.anime);
+  if (aired) parts.push({ label: 'Aired', value: fmtSpan(aired), title: 'When the original anime episodes aired in Japan' });
+  const published = publishedSpan(r.chapters);
+  if (published) parts.push({ label: 'Published', value: fmtSpan(published), title: 'When the manga chapters came out in Weekly Shonen Jump' });
   return parts;
 }
 

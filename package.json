@@ -7,7 +7,7 @@
     "ratings": "python3 -I scripts/fetch_ratings.py",
     "dev": "vite",
     "trakt-ratings": "python3 -I scripts/fetch_trakt_ratings.py",
-    "prebuild": "(python3 -I scripts/sync_wano.py || true) && (python3 -I scripts/fetch_ratings.py || true) && (python3 -I scripts/fetch_trakt_ratings.py || true) && (python3 -I scripts/fetch_imdb_ratings.py || true) && (python3 -I scripts/fetch_runtimes.py || true)",
+    "prebuild": "(python3 -I scripts/sync_wano.py || true) && (python3 -I scripts/fetch_ratings.py || true) && (python3 -I scripts/fetch_trakt_ratings.py || true) && (python3 -I scripts/fetch_imdb_ratings.py || true) && (python3 -I scripts/fetch_runtimes.py || true) && (python3 -I scripts/fetch_release_dates.py || true)",
     "runtimes": "python3 -I scripts/fetch_runtimes.py",
     "build": "python3 -I scripts/check_ids.py && tsc --noEmit && vite build",
     "preview": "vite preview"

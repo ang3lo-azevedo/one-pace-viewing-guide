@@ -35,8 +35,8 @@ export interface Episode {
   /** Trakt community rating (only present when the episode has votes on Trakt). */
   traktRating?: number;
   traktVotes?: number;
-  /** A fan edit of an official film or special (the One Pace Strong World Episode 0): it still syncs
-   *  with the official entry on Trakt, but shows no rating and no Where to stream link. */
+  /** A fan edit of an official film or special (the One Pace Strong World Episode 0): rated and synced
+   *  as the official entry on Trakt, but no Where to stream link (the edit is not on streaming services). */
   fanEdit?: boolean;
   /** Minutes you skip at this placement (e.g. the spoilery last minute of Monsters); taken off the runtime. */
   skipMinutes?: number;

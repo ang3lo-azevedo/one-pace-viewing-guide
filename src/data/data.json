@@ -10655,7 +10655,7 @@
           "id": "special-strong-world-episode-0",
           "type": "special",
           "title": "Special: Strong World (Episode 0)",
-          "rating": null,
+          "rating": 7.5,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -10668,14 +10668,14 @@
               "canonPath": false,
               "isAlternative": false,
               "defaultOpen": true,
-              "rating": null,
+              "rating": 8.1,
               "notes": [],
               "episodes": [
                 {
                   "title": "Pace Special: Strong World (Episode 0)",
                   "fullTitle": "Pace Special: Strong World (Episode 0)",
-                  "rating": null,
-                  "tierColor": null,
+                  "rating": 7.5,
+                  "tierColor": "#F4D03F",
                   "pace": "Pace",
                   "paceNumber": null,
                   "anime": null,
@@ -10694,18 +10694,22 @@
                   "canon": true,
                   "id": "special-strong-world-episode-0-main:fun-pace-special-strong-world-episode-0",
                   "fanEdit": true,
+                  "imdbVotes": 1070,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
                     "trakt": 168446,
                     "imdb": "tt7947592"
                   },
+                  "traktRating": 8.3,
+                  "traktVotes": 315,
                   "runtime": 19,
                   "runtimeSource": "trakt"
                 }
               ]
             }
           ],
-          "version": "strongworld:thriller-bark"
+          "version": "strongworld:thriller-bark",
+          "traktRating": 8.3
         },
         {
           "id": "one-piece-movie-10-strong-world",
@@ -13643,7 +13647,7 @@
           "id": "special-strong-world-episode-0-alternative",
           "type": "special",
           "title": "Special: Strong World (Episode 0) (Alternative)",
-          "rating": null,
+          "rating": 7.5,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -13656,14 +13660,14 @@
               "canonPath": false,
               "isAlternative": true,
               "defaultOpen": true,
-              "rating": null,
+              "rating": 8.1,
               "notes": [],
               "episodes": [
                 {
                   "title": "Pace Special: Strong World (Episode 0)",
                   "fullTitle": "Pace Special: Strong World (Episode 0)",
-                  "rating": null,
-                  "tierColor": null,
+                  "rating": 7.5,
+                  "tierColor": "#F4D03F",
                   "pace": "Pace",
                   "paceNumber": null,
                   "anime": null,
@@ -13682,11 +13686,14 @@
                   "canon": true,
                   "id": "special-strong-world-episode-0-alternative-main:pace-special-strong-world-episode-0",
                   "fanEdit": true,
+                  "imdbVotes": 1070,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
                     "trakt": 168446,
                     "imdb": "tt7947592"
                   },
+                  "traktRating": 8.3,
+                  "traktVotes": 315,
                   "runtime": 19,
                   "runtimeSource": "trakt"
                 }

@@ -33,6 +33,8 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   const [rating, setRating] = createSignal(false);
   const canRate = () => isConnected() && !!trakt.mapped[props.ep.id];
   const myRating = () => trakt.myRatings[props.ep.id];
+  /** Rated as the one original anime episode it is (Boat Piece, uncut originals). */
+  const asAnime = () => !props.ep.traktEpisode?.trakt && props.ep.traktAnime?.length === 1;
   // Episodes with a cut that depends on an extra you watch (Skypiea 25 with the G-8 filler,
   // Loguetown 01 Extended with Daddy the Father).
   const extraShown = (cat: 'filler' | 'specials') => !prefs.canonOnly && !prefs.hideNonCanon && !prefs.hiddenExtras.includes(cat);
@@ -149,7 +151,7 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
                 'border-[#ed1c24]/50 text-[#ff5a5f] hover:bg-[#ed1c24]/10': !myRating(),
               }}
               onClick={() => setRating(!rating())}
-              title={myRating() ? `Your Trakt rating: ${myRating()} (${RATING_WORDS[myRating()!]}). Click to change.` : 'Rate this episode on Trakt'}
+              title={(myRating() ? `Your Trakt rating: ${myRating()} (${RATING_WORDS[myRating()!]}). Click to change.` : 'Rate this episode on Trakt') + (asAnime() ? `\nRated as anime episode ${props.ep.traktAnime![0][1]} on Trakt (shared with its other version)` : '')}
             >
               {myRating() ? `♥ Your rating ${myRating()}` : '♡ Rate on Trakt'}
             </button>

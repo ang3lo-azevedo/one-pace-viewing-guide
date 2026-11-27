@@ -234,6 +234,9 @@ interface MapResult {
   toAnime: Map<string, [number, number, number][]>; // our id -> anime [season, number, trakt]
   toMovie: Map<string, number>; // our id -> Trakt movie id (movies and specials)
   fromMovie: Map<number, string[]>; // Trakt movie id -> our ids (a film can appear twice)
+  /** Entries that are exactly one anime episode (Boat Piece, uncut originals): rated as that episode. */
+  toAnimeOne: Map<string, number>; // our id -> anime trakt episode id
+  fromAnimeOne: Map<number, string[]>; // anime trakt episode id -> our ids (main and alternative versions)
   matched: number;
   total: number;
 }
@@ -248,6 +251,8 @@ function getMap(): Promise<MapResult> {
   const toAnime = new Map<string, [number, number, number][]>();
   const toMovie = new Map<string, number>();
   const fromMovie = new Map<number, string[]>();
+  const toAnimeOne = new Map<string, number>();
+  const fromAnimeOne = new Map<number, string[]>();
   let total = 0;
   for (const s of guide.sagas)
     for (const n of s.nodes)
@@ -259,15 +264,22 @@ function getMap(): Promise<MapResult> {
             toTrakt.set(e.id, t.trakt);
             fromTrakt.set(t.trakt, e.id);
             bySeasonEp.set(`${t.show ?? config.traktShowSlug}:${t.season}:${t.number}`, e.id);
-          } else if (e.traktAnime?.length) toAnime.set(e.id, e.traktAnime);
+          } else if (e.traktAnime?.length) {
+            toAnime.set(e.id, e.traktAnime);
+            const one = e.traktAnime.length === 1 ? e.traktAnime[0][2] : null;
+            if (one) {
+              toAnimeOne.set(e.id, one);
+              fromAnimeOne.set(one, [...(fromAnimeOne.get(one) ?? []), e.id]);
+            }
+          }
           if (e.traktMovie) {
             total++;
             toMovie.set(e.id, e.traktMovie.trakt);
             fromMovie.set(e.traktMovie.trakt, [...(fromMovie.get(e.traktMovie.trakt) ?? []), e.id]);
           }
         }
-  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, toMovie, fromMovie, matched: toTrakt.size + toAnime.size + toMovie.size, total };
-  setTrakt('mapped', Object.fromEntries([...toTrakt.keys(), ...toMovie.keys()].map((k) => [k, true as const])));
+  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, toMovie, fromMovie, toAnimeOne, fromAnimeOne, matched: toTrakt.size + toAnime.size + toMovie.size, total };
+  setTrakt('mapped', Object.fromEntries([...toTrakt.keys(), ...toMovie.keys(), ...toAnimeOne.keys()].map((k) => [k, true as const])));
   return Promise.resolve(cachedMap);
 }
 
@@ -462,6 +474,8 @@ export async function loadMyRatings(): Promise<void> {
       for (const it of await r.json()) {
         const ours = map.fromTrakt.get(it.episode?.ids?.trakt);
         if (ours && it.rating) mine[ours] = it.rating;
+        // Entries that are one anime episode share that episode's rating.
+        for (const id of map.fromAnimeOne.get(it.episode?.ids?.trakt) ?? []) if (it.rating) mine[id] = it.rating;
       }
     if (map.toMovie.size) {
       const rm = await traktFetch('/sync/ratings/movies');
@@ -502,11 +516,13 @@ export async function rateSeason(seasonTraktId: number, rating: number | null): 
 export async function rateEpisode(ourId: string, rating: number | null): Promise<void> {
   if (!isConnected()) return;
   const map = await getMap();
-  const episode = map.toTrakt.get(ourId);
+  const episode = map.toTrakt.get(ourId) ?? map.toAnimeOne.get(ourId);
   const movie = map.toMovie.get(ourId);
   if (episode == null && movie == null) return;
-  // A film listed twice (main and alternative placement) shares one rating.
-  const same = movie != null ? (map.fromMovie.get(movie) ?? [ourId]) : [ourId];
+  // A film listed twice (main and alternative placement), or both versions of one anime
+  // episode (Fun Pace and original), share one rating.
+  const same =
+    movie != null ? (map.fromMovie.get(movie) ?? [ourId]) : !map.toTrakt.has(ourId) ? (map.fromAnimeOne.get(episode!) ?? [ourId]) : [ourId];
   const prev = trakt.myRatings[ourId];
   for (const id of same) setTrakt('myRatings', id, rating ?? undefined!);
   try {

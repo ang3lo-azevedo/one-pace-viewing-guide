@@ -43,6 +43,8 @@ export interface Prefs {
   openAt: 'last' | 'top';
   /** Offer to rate on Trakt right after marking an episode watched. */
   askRate: boolean;
+  /** Keep the preferences the same on all your devices through Trakt (see prefsSync.ts). */
+  syncPrefs: boolean;
   /** Ask before Mark arc / Mark saga / Catch up and other bulk changes. */
   confirmBulk: boolean;
   /** Which ratings the badges show. */
@@ -70,6 +72,7 @@ const DEFAULTS: Prefs = {
   revealWatched: true,
   openAt: 'last',
   askRate: true,
+  syncPrefs: false,
   confirmBulk: true,
   ratingsShown: 'both',
   longTimes: 'days',

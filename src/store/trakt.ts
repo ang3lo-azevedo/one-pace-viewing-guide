@@ -5,6 +5,7 @@ import { flatById, guide } from '../lib/guide';
 import { measurePace, PACE_WINDOW_DAYS, type Pace, type Play } from '../lib/pace';
 import type { Episode } from '../types';
 import { applyWatchTimes, onWatchedChange, progress } from './progress';
+import { resetPrefsSync, syncPrefs } from './prefsSync';
 
 const KEY = 'op-trakt-v1';
 const API = 'https://api.trakt.tv';
@@ -106,6 +107,7 @@ export async function connect() {
 }
 
 export function disconnect() {
+  resetPrefsSync();
   setTrakt({ accessToken: null, refreshToken: null, expiresAt: null, username: null, name: null, avatar: null, lastMessage: 'Disconnected.', myRatings: {}, lastSyncedAt: null, pace: null });
   persist();
 }
@@ -149,6 +151,7 @@ export async function handleRedirectCallback(): Promise<void> {
     });
     persist();
     await fetchUsername();
+    await syncPrefs();
     setTrakt('lastMessage', 'Connected to Trakt. Pulling your history…');
     await pullFromTrakt();
     await loadMyRatings();
@@ -187,7 +190,7 @@ async function ensureToken(): Promise<string | null> {
   return trakt.accessToken;
 }
 
-async function traktFetch(path: string, init?: RequestInit): Promise<Response> {
+export async function traktFetch(path: string, init?: RequestInit): Promise<Response> {
   const token = await ensureToken();
   return fetch(API + path, {
     ...init,
@@ -589,6 +592,7 @@ async function autoPull() {
   if (!isConnected() || trakt.status !== 'idle') return;
   if (lastPullAt && Date.now() - lastPullAt < AUTO_PULL_EVERY) return;
   await pullFromTrakt();
+  await syncPrefs();
 }
 
 let listenersAdded = false;
@@ -610,6 +614,7 @@ export async function initTrakt(): Promise<void> {
   }
   try {
     await fetchUsername();
+    await syncPrefs();
     await getMap();
     await autoPull();
     await loadMyRatings();

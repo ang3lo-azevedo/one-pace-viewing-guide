@@ -1,5 +1,7 @@
 import { For, Show, createSignal, type JSX } from 'solid-js';
 import { prefs, setPrefs, setVersion, toggleExtra, type Prefs } from '../store/prefs';
+import { prefsSyncState } from '../store/prefsSync';
+import { isConnected } from '../store/trakt';
 import { VERSION_SETS } from '../lib/versions';
 import { LINK_LABEL } from '../lib/links';
 import { EXTRA_LABELS, type ExtraCategory } from '../lib/guide';
@@ -80,6 +82,7 @@ export default function Preferences() {
           Watch on {LINK_LABEL[prefs.streamSource]} · Spoiler-safe {prefs.spoilerSafe ? 'on' : 'off'}
           {prefs.canonOnly ? ' · Extras hidden' : ''}
           {prefs.hideNonCanon ? ' · Non-canon hidden' : ''}
+          {prefs.syncPrefs && isConnected() && prefsSyncState().at ? ' · Synced with Trakt' : ''}
         </span>
       </button>
 
@@ -294,6 +297,24 @@ export default function Preferences() {
                 { value: false, label: "Don't ask" },
               ]}
               hint="Only when Trakt is connected."
+            />
+            <Choice<boolean>
+              label="Sync preferences with Trakt"
+              value={prefs.syncPrefs}
+              onPick={(v) => setPrefs('syncPrefs', v)}
+              options={[
+                { value: true, label: 'Sync' },
+                { value: false, label: 'This device only' },
+              ]}
+              hint={
+                !prefs.syncPrefs
+                  ? 'Keeps these the same on all your devices, in a private list on your Trakt account. The theme and where the site opens stay per device.'
+                  : !isConnected()
+                    ? 'Connect Trakt to sync.'
+                    : prefsSyncState().error
+                      ? `Could not sync with Trakt: ${prefsSyncState().error}`
+                      : 'Synced through a private list on your Trakt account. Turning this on takes the preferences already saved there. The theme and where the site opens stay per device.'
+              }
             />
             <Choice<boolean>
               label="Confirm bulk marks"

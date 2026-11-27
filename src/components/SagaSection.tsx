@@ -90,7 +90,7 @@ export default function SagaSection(props: { saga: FilteredSaga }) {
                 href={SERIESGRAPH_SHOW}
                 title={`IMDb rating ${props.saga.rating}: the average of this saga\'s episodes, by length. Open One Piece\'s rating graph on SeriesGraph`}
               />
-              <SectionTrakt rating={props.saga.traktRating} what="saga" />
+              <SectionTrakt rating={props.saga.traktRating} what="saga" episodeIds={sagaIds()} />
             </div>
             <InfoLine parts={info()} class="mt-0.5" />
           </div>

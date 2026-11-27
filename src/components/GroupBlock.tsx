@@ -5,6 +5,7 @@ import { fmtDuration, parentsOf, sharePartOf, stats, watchedPart } from '../lib/
 import { isWatched } from '../store/progress';
 import { confirmBulk } from '../lib/confirm';
 import EpisodeRow from './EpisodeRow';
+import SectionTrakt from './SectionTrakt';
 import { Tags } from './Tags';
 import { LiveActionPicker } from './VersionPicker';
 import type { FilteredNode } from '../lib/filter';
@@ -72,6 +73,9 @@ export default function GroupBlock(props: {
           </span>
           <span class="truncate text-sm font-bold">{props.group.label}</span>
           <Tags extra={isExtra()} nonCanon={!props.nodeNonCanon && allNonCanon()} />
+          <Show when={props.group.episodes.length > 1}>
+            <SectionTrakt what="section" episodeIds={ids()} />
+          </Show>
           <Show when={props.group.isAlternative}>
             <span class="chip shrink-0 border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
           </Show>

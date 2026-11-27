@@ -33,8 +33,8 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
   const [rating, setRating] = createSignal(false);
   const canRate = () => isConnected() && !!trakt.mapped[props.ep.id];
   const myRating = () => trakt.myRatings[props.ep.id];
-  /** Rated as the one original anime episode it is (Boat Piece, uncut originals). */
-  const asAnime = () => !props.ep.traktEpisode?.trakt && props.ep.traktAnime?.length === 1;
+  /** Rated as the original anime episodes it is made of (Fun Pace, Boat Piece, uncut originals). */
+  const animeEps = () => (props.ep.traktEpisode?.trakt || props.ep.traktMovie ? [] : (props.ep.traktAnime ?? []).map((a) => a[1]));
   // Episodes with a cut that depends on an extra you watch (Skypiea 25 with the G-8 filler,
   // Loguetown 01 Extended with Daddy the Father).
   const extraShown = (cat: 'filler' | 'specials') => !prefs.canonOnly && !prefs.hideNonCanon && !prefs.hiddenExtras.includes(cat);
@@ -151,7 +151,14 @@ export default function EpisodeRow(props: { ep: Episode; kind?: string; showNonC
                 'border-[#ed1c24]/50 text-[#ff5a5f] hover:bg-[#ed1c24]/10': !myRating(),
               }}
               onClick={() => setRating(!rating())}
-              title={(myRating() ? `Your Trakt rating: ${myRating()} (${RATING_WORDS[myRating()!]}). Click to change.` : 'Rate this episode on Trakt') + (asAnime() ? `\nRated as anime episode ${props.ep.traktAnime![0][1]} on Trakt (shared with its other version)` : '')}
+              title={
+                (myRating() ? `Your Trakt rating: ${myRating()} (${RATING_WORDS[Math.round(myRating()!)]}). Click to change.` : 'Rate this episode on Trakt') +
+                (animeEps().length === 1
+                  ? `\nRated as anime episode ${animeEps()[0]} on Trakt (shared with its other version)`
+                  : animeEps().length > 1
+                    ? `\nRates anime episodes ${animeEps().join(', ')} on Trakt, all with the same rating. Your rating here is your average of them.`
+                    : '')
+              }
             >
               {myRating() ? `♥ Your rating ${myRating()}` : '♡ Rate on Trakt'}
             </button>

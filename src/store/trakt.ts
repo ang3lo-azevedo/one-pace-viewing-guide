@@ -234,9 +234,12 @@ interface MapResult {
   toAnime: Map<string, [number, number, number][]>; // our id -> anime [season, number, trakt]
   toMovie: Map<string, number>; // our id -> Trakt movie id (movies and specials)
   fromMovie: Map<number, string[]>; // Trakt movie id -> our ids (a film can appear twice)
-  /** Entries that are exactly one anime episode (Boat Piece, uncut originals): rated as that episode. */
-  toAnimeOne: Map<string, number>; // our id -> anime trakt episode id
-  fromAnimeOne: Map<number, string[]>; // anime trakt episode id -> our ids (main and alternative versions)
+  /**
+   * Entries made of original anime episodes (Fun Pace, Onigashima Paced, Boat Piece, uncut
+   * originals): your rating is your average of those episodes, and rating it rates them all.
+   */
+  toAnimeEps: Map<string, number[]>; // our id -> anime trakt episode ids
+  fromAnimeEp: Map<number, string[]>; // anime trakt episode id -> our ids covering it
   matched: number;
   total: number;
 }
@@ -251,8 +254,8 @@ function getMap(): Promise<MapResult> {
   const toAnime = new Map<string, [number, number, number][]>();
   const toMovie = new Map<string, number>();
   const fromMovie = new Map<number, string[]>();
-  const toAnimeOne = new Map<string, number>();
-  const fromAnimeOne = new Map<number, string[]>();
+  const toAnimeEps = new Map<string, number[]>();
+  const fromAnimeEp = new Map<number, string[]>();
   let total = 0;
   for (const s of guide.sagas)
     for (const n of s.nodes)
@@ -266,10 +269,10 @@ function getMap(): Promise<MapResult> {
             bySeasonEp.set(`${t.show ?? config.traktShowSlug}:${t.season}:${t.number}`, e.id);
           } else if (e.traktAnime?.length) {
             toAnime.set(e.id, e.traktAnime);
-            const one = e.traktAnime.length === 1 ? e.traktAnime[0][2] : null;
-            if (one) {
-              toAnimeOne.set(e.id, one);
-              fromAnimeOne.set(one, [...(fromAnimeOne.get(one) ?? []), e.id]);
+            const eps = e.traktAnime.map((a) => a[2]).filter(Boolean);
+            if (eps.length) {
+              toAnimeEps.set(e.id, eps);
+              for (const t of eps) fromAnimeEp.set(t, [...(fromAnimeEp.get(t) ?? []), e.id]);
             }
           }
           if (e.traktMovie) {
@@ -278,8 +281,8 @@ function getMap(): Promise<MapResult> {
             fromMovie.set(e.traktMovie.trakt, [...(fromMovie.get(e.traktMovie.trakt) ?? []), e.id]);
           }
         }
-  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, toMovie, fromMovie, toAnimeOne, fromAnimeOne, matched: toTrakt.size + toAnime.size + toMovie.size, total };
-  setTrakt('mapped', Object.fromEntries([...toTrakt.keys(), ...toMovie.keys(), ...toAnimeOne.keys()].map((k) => [k, true as const])));
+  cachedMap = { toTrakt, fromTrakt, bySeasonEp, toAnime, toMovie, fromMovie, toAnimeEps, fromAnimeEp, matched: toTrakt.size + toAnime.size + toMovie.size, total };
+  setTrakt('mapped', Object.fromEntries([...toTrakt.keys(), ...toMovie.keys(), ...toAnimeEps.keys()].map((k) => [k, true as const])));
   return Promise.resolve(cachedMap);
 }
 
@@ -463,20 +466,34 @@ export async function loadTraktPace(): Promise<void> {
 
 // ---- ratings -----------------------------------------------------------------
 
+/** Your ratings of the original anime episodes that entries are made of (trakt id -> 1-10). */
+const animeMine = new Map<number, number>();
+
+/** Your rating of entries made of anime episodes: the average of the ones you rated. */
+function animeAverages(map: MapResult, ids: Iterable<string>): Record<string, number | undefined> {
+  const out: Record<string, number | undefined> = {};
+  for (const id of ids) {
+    const rated = (map.toAnimeEps.get(id) ?? []).map((t) => animeMine.get(t)).filter((r): r is number => r != null);
+    out[id] = rated.length ? Math.round((rated.reduce((a, b) => a + b, 0) / rated.length) * 10) / 10 : undefined;
+  }
+  return out;
+}
+
 /** Load your own episode ratings from Trakt. */
 export async function loadMyRatings(): Promise<void> {
   if (!isConnected()) return;
   try {
     const map = await getMap();
     const mine: Record<string, number> = {};
+    animeMine.clear();
     const r = await traktFetch('/sync/ratings/episodes');
     if (r.ok)
       for (const it of await r.json()) {
         const ours = map.fromTrakt.get(it.episode?.ids?.trakt);
         if (ours && it.rating) mine[ours] = it.rating;
-        // Entries that are one anime episode share that episode's rating.
-        for (const id of map.fromAnimeOne.get(it.episode?.ids?.trakt) ?? []) if (it.rating) mine[id] = it.rating;
+        if (it.rating && map.fromAnimeEp.has(it.episode?.ids?.trakt)) animeMine.set(it.episode.ids.trakt, it.rating);
       }
+    Object.assign(mine, animeAverages(map, map.toAnimeEps.keys()));
     if (map.toMovie.size) {
       const rm = await traktFetch('/sync/ratings/movies');
       if (rm.ok)
@@ -516,13 +533,13 @@ export async function rateSeason(seasonTraktId: number, rating: number | null): 
 export async function rateEpisode(ourId: string, rating: number | null): Promise<void> {
   if (!isConnected()) return;
   const map = await getMap();
-  const episode = map.toTrakt.get(ourId) ?? map.toAnimeOne.get(ourId);
+  const episode = map.toTrakt.get(ourId);
   const movie = map.toMovie.get(ourId);
+  const anime = episode == null && movie == null ? map.toAnimeEps.get(ourId) : undefined;
+  if (anime) return rateAnime(map, anime, rating);
   if (episode == null && movie == null) return;
-  // A film listed twice (main and alternative placement), or both versions of one anime
-  // episode (Fun Pace and original), share one rating.
-  const same =
-    movie != null ? (map.fromMovie.get(movie) ?? [ourId]) : !map.toTrakt.has(ourId) ? (map.fromAnimeOne.get(episode!) ?? [ourId]) : [ourId];
+  // A film listed twice (main and alternative placement) shares one rating.
+  const same = movie != null ? (map.fromMovie.get(movie) ?? [ourId]) : [ourId];
   const prev = trakt.myRatings[ourId];
   for (const id of same) setTrakt('myRatings', id, rating ?? undefined!);
   try {
@@ -534,6 +551,32 @@ export async function rateEpisode(ourId: string, rating: number | null): Promise
     if (!r.ok) throw new Error(`ratings ${r.status}`);
   } catch (e) {
     for (const id of same) setTrakt('myRatings', id, prev ?? undefined!);
+    setTrakt('lastMessage', 'Rating failed: ' + (e as Error).message);
+  }
+}
+
+/**
+ * Rate the original anime episodes an entry is made of (all with the same rating), then update
+ * every entry that covers any of them (the Fun Pace cut and the original episodes, for example).
+ */
+async function rateAnime(map: MapResult, eps: number[], rating: number | null): Promise<void> {
+  const before = new Map(eps.map((t) => [t, animeMine.get(t)]));
+  const touched = new Set(eps.flatMap((t) => map.fromAnimeEp.get(t) ?? []));
+  const apply = () => {
+    for (const [id, v] of Object.entries(animeAverages(map, touched))) setTrakt('myRatings', id, v!);
+  };
+  for (const t of eps) rating == null ? animeMine.delete(t) : animeMine.set(t, rating);
+  apply();
+  try {
+    const items = eps.map((t) => ({ ...(rating == null ? {} : { rating }), ids: { trakt: t } }));
+    const r = await traktFetch(rating == null ? '/sync/ratings/remove' : '/sync/ratings', {
+      method: 'POST',
+      body: JSON.stringify({ episodes: items }),
+    });
+    if (!r.ok) throw new Error(`ratings ${r.status}`);
+  } catch (e) {
+    for (const [t, v] of before) v == null ? animeMine.delete(t) : animeMine.set(t, v);
+    apply();
     setTrakt('lastMessage', 'Rating failed: ' + (e as Error).message);
   }
 }

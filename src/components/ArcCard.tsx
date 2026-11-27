@@ -15,7 +15,7 @@ import RatingBadge from './RatingBadge';
 import SectionTrakt from './SectionTrakt';
 import { Tags } from './Tags';
 import { extraCategory } from '../lib/guide';
-import type { Group, GuideNode } from '../types';
+import type { Episode, Group, GuideNode } from '../types';
 import { SERIESGRAPH_SHOW } from '../lib/format';
 import { starHref, starTitle } from '../lib/ratingLinks';
 import GroupBlock from './GroupBlock';
@@ -32,7 +32,14 @@ const TYPE_BADGE: Record<string, { label: string; cls: string }> = {
   liveaction: { label: 'Live Action', cls: 'border-red-500/40 text-red-600 dark:text-red-400' },
 };
 
+const WHAT: Record<string, string> = { arc: 'arc', movie: 'film', special: 'special', filler: 'filler' };
+
 export default function ArcCard(props: { node: FilteredNode }) {
+  // Films, specials and filler made of one entry: your rating of it shows (and is set) here.
+  const singleEntry = () => {
+    const main = props.node.groups.filter((g) => !g.isAlternative).flatMap((g) => g.episodes);
+    return main.length === 1 ? (main[0] as Episode) : undefined;
+  };
   // Arcs start collapsed; open them automatically when searching/filtering so matches show.
   const [open, setOpen] = createSignal(wasOpen(`arc:${props.node.uid}`) ?? (hasActiveFilters() || focusTarget?.nodeUid === props.node.uid));
   // Open when an episode inside is revealed (page load or "Continue watching").
@@ -126,7 +133,7 @@ export default function ArcCard(props: { node: FilteredNode }) {
                 href={props.node.type === 'arc' ? SERIESGRAPH_SHOW : entryStar()?.href}
                 title={props.node.type === 'arc' ? `IMDb rating ${props.node.rating}: the average of this arc\'s episodes, by length. Open One Piece\'s rating graph on SeriesGraph` : entryStar()?.title}
               />
-              <SectionTrakt rating={props.node.traktRating} season={props.node.traktSeason} what={props.node.type === 'arc' ? 'arc' : 'entry'} episodeIds={idsOfNodeKey(props.node.uid)} />
+              <SectionTrakt rating={props.node.traktRating} season={props.node.traktSeason} what={WHAT[props.node.type] ?? 'entry'} episodeIds={idsOfNodeKey(props.node.uid)} entry={props.node.type === 'arc' ? undefined : singleEntry()} />
               <Show when={props.node.isAlternative}>
                 <span class="chip border-sea-300 text-[10px] text-sea-500 dark:border-sea-600">Alternative</span>
               </Show>

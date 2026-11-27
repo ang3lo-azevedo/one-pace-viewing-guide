@@ -280,7 +280,7 @@ export default function Preferences() {
               value={prefs.openAt}
               onPick={(v) => setPrefs('openAt', v)}
               options={[
-                { value: 'last', label: 'Jump to my last episode' },
+                { value: 'last', label: 'Jump to my next episode' },
                 { value: 'top', label: 'Start at the top' },
               ]}
               hint="Either way your saga, arc and episode are opened; this is whether the page also scrolls down to it."

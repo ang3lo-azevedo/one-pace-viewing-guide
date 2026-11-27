@@ -64,18 +64,36 @@ function lastWatchedIndex(list: Row[]): number {
   return idx;
 }
 
-const lastWatchedTarget = (() => {
-  const list = rows();
+/** The next unwatched episode after your furthest-watched one (first episode if none). */
+function nextRow(list: Row[]): Row | null {
+  const start = lastWatchedIndex(list) + 1;
+  const todo = (r: Row) => !r.alt && !isDone(r.ep.id);
+  // Just finished a special watched mid-episode (Monsters inside Thriller Bark 13): go back
+  // and finish that episode before moving on.
+  const last = list[start - 1];
+  if (last?.anchorOf) {
+    const anchor = list.find((r) => r.ep.id === last.anchorOf);
+    if (anchor && todo(anchor) && !waitingOn(anchor.ep.id).length) return anchor;
+  }
+  for (let i = start; i < list.length; i++) if (todo(list[i])) return list[i];
+  for (let i = 0; i < start; i++) if (todo(list[i])) return list[i];
+  return null;
+}
+
+/** Your place: the next episode to watch, or the last watched one when everything is done. */
+function placeTarget(list: Row[] = rows()): FocusTarget | null {
   const i = lastWatchedIndex(list);
-  return i < 0 ? null : targetFor(list[i].ep.id, list);
-})();
+  if (i < 0) return null;
+  return targetFor((nextRow(list) ?? list[i]).ep.id, list);
+}
+
 // Your place opens on load either way; only "Jump to my last episode" also scrolls to it.
-const initial = lastWatchedTarget;
+const initial = placeTarget();
 
 /** The saga you are in (even when the page opens at the top), or null without progress. */
-export const homeSagaId: string | null = lastWatchedTarget?.sagaId ?? null;
+export const homeSagaId: string | null = initial?.sagaId ?? null;
 
-/** The episode opened on page load (furthest watched), or null without progress. */
+/** The episode opened on page load (your next one), or null without progress. */
 export const focusTarget: FocusTarget | null = initial;
 
 const [revealSignal, setReveal] = createSignal<FocusTarget | null>(initial);
@@ -113,10 +131,7 @@ if (typeof window !== 'undefined')
  */
 export function focusAfterSync() {
   if (focusTarget || touched) return;
-  const list = rows();
-  const i = lastWatchedIndex(list);
-  if (i < 0) return;
-  const t = targetFor(list[i].ep.id, list);
+  const t = placeTarget();
   if (!t) return;
   setReveal(t);
   if (prefs.openAt === 'last') setTimeout(() => scrollTo(t.epId), 120);
@@ -128,20 +143,4 @@ export function scrollToFocus() {
 }
 
 /** The next unwatched episode after your furthest-watched one (first episode if none). */
-export const nextUp = createRoot(() =>
-  createMemo<Row | null>(() => {
-    const list = rows();
-    const start = lastWatchedIndex(list) + 1;
-    const todo = (r: Row) => !r.alt && !isDone(r.ep.id);
-    // Just finished a special watched mid-episode (Monsters inside Thriller Bark 13): go back
-    // and finish that episode before moving on.
-    const last = list[start - 1];
-    if (last?.anchorOf) {
-      const anchor = list.find((r) => r.ep.id === last.anchorOf);
-      if (anchor && todo(anchor) && !waitingOn(anchor.ep.id).length) return anchor;
-    }
-    for (let i = start; i < list.length; i++) if (todo(list[i])) return list[i];
-    for (let i = 0; i < start; i++) if (todo(list[i])) return list[i];
-    return null;
-  }),
-);
+export const nextUp = createRoot(() => createMemo<Row | null>(() => nextRow(rows())));

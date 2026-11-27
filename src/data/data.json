@@ -10652,65 +10652,6 @@
           "traktRating": 7.9
         },
         {
-          "id": "special-romance-dawn-story",
-          "type": "special",
-          "title": "Special: Romance Dawn Story",
-          "rating": 6.3,
-          "pace": null,
-          "anime": null,
-          "chapters": null,
-          "isAlternative": false,
-          "groups": [
-            {
-              "id": "special-romance-dawn-story-main",
-              "label": "Special: Romance Dawn Story",
-              "kind": "special",
-              "canonPath": false,
-              "isAlternative": false,
-              "defaultOpen": true,
-              "rating": null,
-              "notes": [],
-              "episodes": [
-                {
-                  "title": "Romance Dawn Story (2008 OVA)",
-                  "fullTitle": "One Piece: Romance Dawn Story (2008 OVA)",
-                  "rating": 6.3,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "OVA",
-                  "chapters": "Prototype Special",
-                  "meta": "Anime OVA • Jump Super Anime Tour 2008 • Ch. Prototype Special",
-                  "description": "Adaptation of Romance Dawn, Oda's first prototype one-shot, with the Straw Hats in place of the original cast. Non-canon; best after Thriller Bark.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/movie/tt1345529/tt1345529",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "special-romance-dawn-story-main:romance-dawn-story-2008-ova",
-                  "nonCanon": true,
-                  "traktMovie": {
-                    "slug": "one-piece-romance-dawn-story-2008",
-                    "trakt": 268431,
-                    "imdb": "tt1345529"
-                  },
-                  "traktRating": 7.6,
-                  "traktVotes": 217,
-                  "imdbVotes": 354,
-                  "runtime": 33,
-                  "runtimeSource": "trakt"
-                }
-              ]
-            }
-          ],
-          "traktRating": 7.6
-        },
-        {
           "id": "special-strong-world-episode-0",
           "type": "special",
           "title": "Special: Strong World (Episode 0)",

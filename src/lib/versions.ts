@@ -51,16 +51,6 @@ export const VERSION_SETS: VersionSet[] = [
     ],
   },
   {
-    key: 'spaisland',
-    label: 'Spa Island Vacation! (Episodes 382–383)',
-    default: 'funpace',
-    filler: true,
-    options: [
-      { value: 'funpace', label: 'Fun Pace', title: 'Paced cut of the filler' },
-      { value: 'original', label: 'Original anime', title: 'The full original anime episodes' },
-    ],
-  },
-  {
     key: 'boatpiece',
     label: 'Brook\'s Struggle (Episode 384)',
     default: 'funpace',
@@ -105,18 +95,8 @@ export const VERSION_SETS: VersionSet[] = [
     label: 'Strong World',
     default: 'thriller-bark',
     options: [
-      { value: 'thriller-bark', label: 'After Thriller Bark', title: 'Episode 0, the optional Little East Blue (Fun Pace), then the film' },
+      { value: 'thriller-bark', label: 'After Thriller Bark', title: 'Episode 0, then the film' },
       { value: 'post-war', label: 'After Post-War', title: 'Episode 0, then the film' },
-    ],
-  },
-  {
-    key: 'littleeastblue',
-    label: 'Little East Blue (Episodes 426–429)',
-    default: 'funpace',
-    filler: true,
-    options: [
-      { value: 'funpace', label: 'Fun Pace', title: 'Paced cut with the spoilers taken out' },
-      { value: 'original', label: 'Original anime', title: 'The full original anime episodes (reveal later story details)' },
     ],
   },
 ];

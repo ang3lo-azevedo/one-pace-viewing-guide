@@ -10541,158 +10541,6 @@
           "traktRating": 8.0
         },
         {
-          "id": "filler-spa-island",
-          "type": "filler",
-          "title": "Filler: Spa Island Vacation! (Episodes 382–383)",
-          "rating": null,
-          "pace": null,
-          "anime": null,
-          "chapters": null,
-          "isAlternative": false,
-          "groups": [
-            {
-              "id": "filler-spa-island-main",
-              "label": "Filler: Spa Island Vacation! (Episodes 382–383)",
-              "kind": "filler",
-              "canonPath": false,
-              "isAlternative": false,
-              "defaultOpen": true,
-              "rating": null,
-              "notes": [],
-              "episodes": [
-                {
-                  "title": "Fun Pace: Spa Island Vacation!",
-                  "fullTitle": "Fun Pace: Spa Island Vacation!",
-                  "rating": 6.3,
-                  "tierColor": "#F39C12",
-                  "pace": "FunPace 21.1",
-                  "paceNumber": null,
-                  "anime": "382–383",
-                  "chapters": null,
-                  "meta": "Anime 382–383 • FunPace 21.1",
-                  "description": "Two-episode filler on a hot spring island.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": null,
-                    "netflix": null,
-                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
-                    "drive": "https://drive.google.com/drive/folders/1RNWXuSh_al874WGH_tpLy5G3deH8NtN6",
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "filler-spa-island-main:fun-pace-spa-island-vacation",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      11,
-                      382,
-                      856591
-                    ],
-                    [
-                      11,
-                      383,
-                      856592
-                    ]
-                  ],
-                  "traktRating": 7.2,
-                  "traktVotes": 290,
-                  "traktRatingFrom": "anime",
-                  "runtime": 31,
-                  "runtimeSource": "sheet"
-                }
-              ],
-              "version": "spaisland:funpace"
-            },
-            {
-              "id": "original-anime-alternative",
-              "label": "Original Anime (Alternative)",
-              "kind": "original",
-              "canonPath": false,
-              "isAlternative": true,
-              "defaultOpen": false,
-              "rating": null,
-              "notes": [],
-              "episodes": [
-                {
-                  "title": "Episode 382 (Spa Island Vacation! 1)",
-                  "fullTitle": "Episode 382 (Spa Island Vacation! 1)",
-                  "rating": 6.3,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "382",
-                  "chapters": null,
-                  "meta": "Original Uncut Anime Episode 382",
-                  "description": "Two-episode filler on a hot spring island.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A1",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A1",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      11,
-                      382,
-                      856591
-                    ]
-                  ],
-                  "traktRating": 7.2,
-                  "traktVotes": 147,
-                  "traktRatingFrom": "anime",
-                  "runtime": 24,
-                  "runtimeSource": "anime"
-                },
-                {
-                  "title": "Episode 383 (Spa Island Vacation! 2)",
-                  "fullTitle": "Episode 383 (Spa Island Vacation! 2)",
-                  "rating": 6.3,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "383",
-                  "chapters": null,
-                  "meta": "Original Uncut Anime Episode 383",
-                  "description": "Two-episode filler on a hot spring island.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A2",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A2",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      11,
-                      383,
-                      856592
-                    ]
-                  ],
-                  "traktRating": 7.3,
-                  "traktVotes": 143,
-                  "traktRatingFrom": "anime",
-                  "runtime": 24,
-                  "runtimeSource": "anime"
-                }
-              ],
-              "version": "spaisland:original"
-            }
-          ],
-          "traktRating": 7.2
-        },
-        {
           "id": "filler-episode-384-boat-piece",
           "type": "filler",
           "title": "Filler: Brook's Struggle (\"Boat Piece\")",
@@ -10807,7 +10655,7 @@
           "id": "special-strong-world-episode-0",
           "type": "special",
           "title": "Special: Strong World (Episode 0)",
-          "rating": 7.5,
+          "rating": null,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -10820,14 +10668,14 @@
               "canonPath": false,
               "isAlternative": false,
               "defaultOpen": true,
-              "rating": 8.1,
+              "rating": null,
               "notes": [],
               "episodes": [
                 {
                   "title": "Pace Special: Strong World (Episode 0)",
                   "fullTitle": "Pace Special: Strong World (Episode 0)",
-                  "rating": 7.5,
-                  "tierColor": "#F4D03F",
+                  "rating": null,
+                  "tierColor": null,
                   "pace": "Pace",
                   "paceNumber": null,
                   "anime": null,
@@ -10845,331 +10693,19 @@
                   },
                   "canon": true,
                   "id": "special-strong-world-episode-0-main:fun-pace-special-strong-world-episode-0",
-                  "imdbVotes": 1070,
+                  "fanEdit": true,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
                     "trakt": 168446,
                     "imdb": "tt7947592"
                   },
-                  "traktRating": 8.3,
-                  "traktVotes": 315,
                   "runtime": 19,
                   "runtimeSource": "trakt"
                 }
               ]
             }
           ],
-          "version": "strongworld:thriller-bark",
-          "traktRating": 8.3
-        },
-        {
-          "id": "filler-little-east-blue",
-          "type": "filler",
-          "title": "Filler: Little East Blue (Episodes 426–429)",
-          "rating": null,
-          "pace": null,
-          "anime": null,
-          "chapters": null,
-          "isAlternative": false,
-          "groups": [
-            {
-              "id": "filler-little-east-blue-main",
-              "label": "Filler: Little East Blue (Episodes 426–429)",
-              "kind": "filler",
-              "canonPath": false,
-              "isAlternative": false,
-              "defaultOpen": true,
-              "rating": null,
-              "notes": [],
-              "episodes": [
-                {
-                  "title": "Fun Pace: Little East Blue 01 - No Place Like Home",
-                  "fullTitle": "Fun Pace: Little East Blue 01 - No Place Like Home",
-                  "rating": 6.3,
-                  "tierColor": "#F39C12",
-                  "pace": "FunPace 21.3",
-                  "paceNumber": null,
-                  "anime": "426–427",
-                  "chapters": null,
-                  "meta": "Anime 426–427 • FunPace 21.3",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": null,
-                    "netflix": null,
-                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
-                    "drive": "https://drive.google.com/drive/folders/13s5Vh65fqt0dGntB4rdULUumwznPNNgn",
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "filler-little-east-blue-main:fun-pace-little-east-blue-01",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      13,
-                      426,
-                      856635
-                    ],
-                    [
-                      13,
-                      427,
-                      856636
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 247,
-                  "traktRatingFrom": "anime",
-                  "runtime": 22,
-                  "runtimeSource": "sheet-average"
-                },
-                {
-                  "title": "Fun Pace: Little East Blue 02 - Amigo Pirates",
-                  "fullTitle": "Fun Pace: Little East Blue 02 - Amigo Pirates",
-                  "rating": 6.2,
-                  "tierColor": "#F39C12",
-                  "pace": "FunPace 21.3",
-                  "paceNumber": null,
-                  "anime": "428",
-                  "chapters": null,
-                  "meta": "Anime 428 • FunPace 21.3",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": null,
-                    "netflix": null,
-                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
-                    "drive": "https://drive.google.com/drive/folders/13s5Vh65fqt0dGntB4rdULUumwznPNNgn",
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "filler-little-east-blue-main:fun-pace-little-east-blue-02",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      13,
-                      428,
-                      856637
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 115,
-                  "traktRatingFrom": "anime",
-                  "runtime": 22,
-                  "runtimeSource": "sheet-average"
-                },
-                {
-                  "title": "Fun Pace: Little East Blue 03 - Boss Fight",
-                  "fullTitle": "Fun Pace: Little East Blue 03 - Boss Fight",
-                  "rating": 6.2,
-                  "tierColor": "#F39C12",
-                  "pace": "FunPace 21.3",
-                  "paceNumber": null,
-                  "anime": "429",
-                  "chapters": null,
-                  "meta": "Anime 429 • FunPace 21.3",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": null,
-                    "netflix": null,
-                    "mega": "https://mega.nz/folder/D2AnVboT#jDllz0HMlVOVNBLdYxEmfQ",
-                    "drive": "https://drive.google.com/drive/folders/13s5Vh65fqt0dGntB4rdULUumwznPNNgn",
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "filler-little-east-blue-main:fun-pace-little-east-blue-03",
-                  "nonCanon": true,
-                  "traktAnime": [
-                    [
-                      13,
-                      429,
-                      856638
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 116,
-                  "traktRatingFrom": "anime",
-                  "runtime": 22,
-                  "runtimeSource": "sheet-average"
-                }
-              ],
-              "version": "littleeastblue:funpace"
-            },
-            {
-              "id": "original-anime-alternative",
-              "label": "Original Anime (Alternative)",
-              "kind": "original",
-              "canonPath": false,
-              "isAlternative": true,
-              "defaultOpen": false,
-              "rating": null,
-              "notes": [],
-              "episodes": [
-                {
-                  "title": "Episode 426 (Little East Blue 1)",
-                  "fullTitle": "Episode 426 (Little East Blue 1)",
-                  "rating": 6.4,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "426",
-                  "chapters": null,
-                  "meta": "Original Uncut Anime Episode 426",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A45",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A45",
-                  "nonCanon": true,
-                  "notes": [
-                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
-                  ],
-                  "traktAnime": [
-                    [
-                      13,
-                      426,
-                      856635
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 127,
-                  "traktRatingFrom": "anime",
-                  "runtime": 24,
-                  "runtimeSource": "anime"
-                },
-                {
-                  "title": "Episode 427 (Little East Blue 2)",
-                  "fullTitle": "Episode 427 (Little East Blue 2)",
-                  "rating": 6.1,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "427",
-                  "chapters": null,
-                  "meta": "Original Uncut Anime Episode 427",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A46",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A46",
-                  "nonCanon": true,
-                  "notes": [
-                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
-                  ],
-                  "traktAnime": [
-                    [
-                      13,
-                      427,
-                      856636
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 120,
-                  "traktRatingFrom": "anime",
-                  "runtime": 24,
-                  "runtimeSource": "anime"
-                },
-                {
-                  "title": "Episode 428 (Little East Blue 3)",
-                  "fullTitle": "Episode 428 (Little East Blue 3)",
-                  "rating": 6.2,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "428",
-                  "chapters": null,
-                  "meta": "Original Uncut Anime Episode 428",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A47",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A47",
-                  "nonCanon": true,
-                  "notes": [
-                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
-                  ],
-                  "traktAnime": [
-                    [
-                      13,
-                      428,
-                      856637
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 115,
-                  "traktRatingFrom": "anime",
-                  "runtime": 24,
-                  "runtimeSource": "anime"
-                },
-                {
-                  "title": "Episode 429 (Little East Blue 4)",
-                  "fullTitle": "Episode 429 (Little East Blue 4)",
-                  "rating": 6.2,
-                  "tierColor": "#F39C12",
-                  "pace": null,
-                  "paceNumber": null,
-                  "anime": "429",
-                  "chapters": null,
-                  "meta": "Original Uncut Anime Episode 429",
-                  "description": "Anime tie-in to Movie 10: Strong World. Optional, the film works without it.",
-                  "links": {
-                    "onepace": null,
-                    "stremio": "https://web.stremio.com/#/detail/series/tt0388629/tt0388629%3A13%3A48",
-                    "netflix": null,
-                    "mega": null,
-                    "drive": null,
-                    "nyaa": null,
-                    "other": null
-                  },
-                  "canon": false,
-                  "id": "original-anime-alternative:/detail/series/tt0388629/tt0388629%3A13%3A48",
-                  "nonCanon": true,
-                  "notes": [
-                    "Watch the Fun Pace version at this point: the original broadcast reveals later story details."
-                  ],
-                  "traktAnime": [
-                    [
-                      13,
-                      429,
-                      856638
-                    ]
-                  ],
-                  "traktRating": 7.1,
-                  "traktVotes": 116,
-                  "traktRatingFrom": "anime",
-                  "runtime": 24,
-                  "runtimeSource": "anime"
-                }
-              ],
-              "version": "littleeastblue:original"
-            }
-          ],
-          "version": "strongworld:thriller-bark",
-          "traktRating": 7.1
+          "version": "strongworld:thriller-bark"
         },
         {
           "id": "one-piece-movie-10-strong-world",
@@ -11214,7 +10750,7 @@
                   "canon": false,
                   "id": "one-piece-movie-10-strong-world-main:movie-10-strong-world-2009-written-by-oda",
                   "notes": [
-                    "Watch order: this film fits right after Episode 0 and the optional Little East Blue. It can also be saved for the alternative placement later in this guide."
+                    "Watch order: this film fits right after Episode 0. It can also be saved for the alternative placement later in this guide."
                   ],
                   "nonCanon": true,
                   "imdbVotes": 8863,
@@ -14107,7 +13643,7 @@
           "id": "special-strong-world-episode-0-alternative",
           "type": "special",
           "title": "Special: Strong World (Episode 0) (Alternative)",
-          "rating": 7.5,
+          "rating": null,
           "pace": null,
           "anime": null,
           "chapters": null,
@@ -14120,14 +13656,14 @@
               "canonPath": false,
               "isAlternative": true,
               "defaultOpen": true,
-              "rating": 8.1,
+              "rating": null,
               "notes": [],
               "episodes": [
                 {
                   "title": "Pace Special: Strong World (Episode 0)",
                   "fullTitle": "Pace Special: Strong World (Episode 0)",
-                  "rating": 7.5,
-                  "tierColor": "#F4D03F",
+                  "rating": null,
+                  "tierColor": null,
                   "pace": "Pace",
                   "paceNumber": null,
                   "anime": null,
@@ -14145,14 +13681,12 @@
                   },
                   "canon": true,
                   "id": "special-strong-world-episode-0-alternative-main:pace-special-strong-world-episode-0",
-                  "imdbVotes": 1070,
+                  "fanEdit": true,
                   "traktMovie": {
                     "slug": "one-piece-strong-world-episode-0-2010",
                     "trakt": 168446,
                     "imdb": "tt7947592"
                   },
-                  "traktRating": 8.3,
-                  "traktVotes": 315,
                   "runtime": 19,
                   "runtimeSource": "trakt"
                 }

@@ -101,7 +101,7 @@ for (const saga of guide.sagas)
         if (group.kind === 'netflix') ep.links.netflix ??= NETFLIX_LIVE_ACTION;
         if ((group.kind === 'original' || group.kind === 'original-continuation') && /^\s*\d/.test(ep.anime ?? ''))
           ep.links.crunchyroll ??= CRUNCHYROLL_ONE_PIECE;
-        if (ep.traktMovie || group.kind === 'movie') ep.links.justwatch ??= justWatch(ep.fullTitle || ep.title);
+        if ((ep.traktMovie || group.kind === 'movie') && !ep.fanEdit) ep.links.justwatch ??= justWatch(ep.fullTitle || ep.title);
       }
 
 // Minutes skipped at this placement come off the runtime (Monsters: skip its last minute).

@@ -303,7 +303,7 @@ def main():
         if not info:
             continue
         e["traktMovie"] = {"slug": slug, "trakt": info["ids"]["trakt"], "imdb": info["ids"].get("imdb")}
-        if info.get("rating") and info.get("votes"):
+        if info.get("rating") and info.get("votes") and not e.get("fanEdit"):  # a fan edit is not the official film
             e["traktRating"] = round(float(info["rating"]), 1)
             e["traktVotes"] = int(info["votes"])
         films += 1

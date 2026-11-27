@@ -63,6 +63,10 @@ def main():
             for g in n["groups"]:
                 for e in g["episodes"]:
                     hit = ratings.get((e.get("traktMovie") or {}).get("imdb"))
+                    if e.get("fanEdit"):  # a fan edit is not the official film: no rating of its own
+                        e["rating"] = e["tierColor"] = None
+                        e.pop("imdbVotes", None)
+                        hit = None
                     if not hit:
                         all_imdb = False
                         continue
@@ -74,6 +78,10 @@ def main():
             # Film and special sections: the star is their entry's IMDb rating.
             if node_vals and all_imdb:
                 n["rating"] = round1(sum(Decimal(str(v)) for v in node_vals) / len(node_vals))
+            elif all(e.get("fanEdit") for g in n["groups"] for e in g["episodes"]):
+                n["rating"] = None
+                for g in n["groups"]:
+                    g["rating"] = None
 
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
